@@ -1,5 +1,5 @@
-require_relative '../../sections'
-require_relative '../../messaging'
+require_relative '../sections'
+require_relative '../messaging'
 module ET3
   module Test
     class BasePage < ::SitePrism::Page

@@ -62,6 +62,7 @@ group :test do
   gem 'rspec-rails', '~> 3.7'
   gem 'site_prism', '~> 2.9'
   gem 'poltergeist', '~> 1.17'
+  gem 'database_cleaner', '~> 1.5'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

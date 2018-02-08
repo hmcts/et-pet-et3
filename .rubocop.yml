@@ -56,7 +56,7 @@ Style/AsciiComments:
   Enabled: true
   Exclude:
     - 'spec/**/*'
-Style/TrailingBlankLines:
+Layout/TrailingBlankLines:
   Enabled: true
 # Don't worry about long methods in specs.
 Metrics/MethodLength:
@@ -76,12 +76,12 @@ Rails/FilePath:
     - spec/routing/**/*
 
 # private/protected/public
-Style/AccessModifierIndentation:
+Layout/AccessModifierIndentation:
   EnforcedStyle: indent
 
 # Just indent parameters by two spaces. It's less volatile if methods change,
 # and there's less busy work lining things up.
-Style/AlignParameters:
+Layout/AlignParameters:
   EnforcedStyle: with_fixed_indentation
 
 Style/ClassAndModuleChildren:
@@ -98,24 +98,21 @@ Style/CollectionMethods:
     find_all: 'select'
 
 # Chain methods with trailing dots.
-Style/DotPosition:
+Layout/DotPosition:
   EnforcedStyle: trailing
-
-Style/FinalNewline:
-  Enabled: true
 
 # No, we don't prefer each_with_object
 Style/EachWithObject:
   Enabled: false
 
 # Prefer blank line after class/module start.
-Style/EmptyLinesAroundClassBody:
+Layout/EmptyLinesAroundClassBody:
   Enabled: false
 
-Style/EmptyLinesAroundModuleBody:
+Layout/EmptyLinesAroundModuleBody:
   Enabled: false
 
-Style/EmptyLinesAroundBlockBody:
+Layout/EmptyLinesAroundBlockBody:
   Enabled: false
 
 # We have a mixture at the moment, so don't enforce anything.

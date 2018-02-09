@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Fill in Respondent's Details" do
+RSpec.feature "Fill in Respondent's Details Page" do
   scenario "correctly will enable user to continue to next page" do
     respondents_details_page.load
 

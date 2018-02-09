@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Fill in Respondent's Details" do
   scenario "correctly will enable user to continue to next page" do
-    respondents_details.load
+    respondents_details_page.load
 
     given_i_am(:company01)
 
@@ -18,8 +18,8 @@ RSpec.feature "Fill in Respondent's Details" do
     answer_organisation_site_number_question
     answer_employment_at_site_question
 
-    respondents_details.next
+    respondents_details_page.next
 
-    expect(claimants_details).to be_visible
+    expect(claimants_details_page).to be_visible
   end
 end

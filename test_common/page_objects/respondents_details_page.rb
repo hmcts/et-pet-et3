@@ -15,7 +15,7 @@ module ET3
       :element :contact_number_question, :css "#respondent_contact_number"
       :element :contact_mobile_number_question, :css "#respondent_mobile_number"
       :elements :contact_preference_question, :css "fieldset span.xform-group label input.checkbox[name='How_would_you_prefer_us_to_contact_you']"
-      :element #email or fax
+      :element :contact_detail_question, :css "#respondent_email_address, #respondent_fax_number"
       :element :organisation_employ_gb_question, :css "#how_many_people_employed_in_gb"
       :element :organisation_site_number_question, :css "fieldset span.xform-group label input.checkbox[name='more_than_one_site_in_gb']"
       :element :employment_at_site_question, :css, "#if_yes_how_many_people"

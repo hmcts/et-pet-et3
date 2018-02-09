@@ -1,6 +1,6 @@
 module ET3
   module Test
-    class PersonasRegistry
+    class PersonasRepository
       PERSONAS_FILE = File.absolute_path('../fixtures/personas.yml', __FILE__)
       def initialize
         self.registry = {}

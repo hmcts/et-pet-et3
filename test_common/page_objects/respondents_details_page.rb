@@ -11,7 +11,7 @@ module ET3
       :element :town_question, :css "#respondent_towncity"
       :element :county_question, :css "#respondent_county"
       :element :postcode_question, :css "#respondent_postcode"
-      :element :DX_number_question, :css "#respondent_dx_address" # DX Address?
+      :element :dx_number_question, :css "#respondent_dx_address" # DX Address?
       :element :contact_number_question, :css "#respondent_contact_number"
       :element :contact_mobile_number_question, :css "#respondent_mobile_number"
       :elements :contact_preference_question, :css "fieldset span.xform-group label input.checkbox[name='How_would_you_prefer_us_to_contact_you']"

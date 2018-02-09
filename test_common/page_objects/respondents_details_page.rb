@@ -4,7 +4,7 @@ module ET3
       set_url '/form/respondents_details'
 
       element :case_number_question, :css, "#case_number"
-      element :name, :css, "#name_of_indiv_co_or_org"
+      element :name_question, :css, "#name_of_indiv_co_or_org"
       element :contact_question, :css, "#name_of_contact"
       element :building_name_question, :css, "#respondent_building_name_or_number"
       element :street_question, :css, "#respondent_street"

@@ -1,0 +1,26 @@
+- content_for :head
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+  = javascript_include_tag 'application'
+- content_for :body_end
+  javascript:
+    var showHideContent = new GOVUK.ShowHideContent();
+    showHideContent.init();
+  yield
+- content_for :content
+  .direction-ltr#content
+    main role="main"
+      .grid-row
+        .column-full
+          .phase-banner
+            .grid-row
+              .column-full
+                p
+                  strong.phase-tag Beta
+                  span 
+                    'This is a new service - your 
+                    a href='#' feedback
+                    '  will help us to improve it
+          .content-header
+            h1.heading-large data-behavior="heading" = t('calculation.common.page_header')
+          = yield
+= render template: "layouts/govuk_template"

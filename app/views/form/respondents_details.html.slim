@@ -1,40 +1,59 @@
 / TODO: Add required fields
 / TODO: Confirm DX Address?
 / TODO: Put inside (and build) form tags
-h1 Response to Claim
-h2 Respondent's Details
-#question_1.form-group
-  label.case_number.form-label for="case_number" Case Number*
-  input#case_number.form-control type="text"name='case_number'
-#question_2.form-group
-  label.name_of_indiv_co_or_org.form-label for="name_of_indiv_co_or_org" Name of Individual, Company or Organisation*
-  input#name_of_indiv_co_or_org.form-control type="text" name="name_of_indiv_co_or_org"
-#question3.form-group
-  label.name_of_contact.form-label for="name_of_contact" Name of Contact
-  input#name_of_contact.form-control type="text" name="name_of_contact"
-#question4.form-group
-  label.respondent_building_name_or_number.form-label for="respondent_building_name_or_number" Building Name or Number*
-  input#respondent_building_name_or_number.form-control type="text" name="respondent_building_name_or_number"
-#question5.form-group
-  label.respondent_street.form-label for="respondent_street" Street*
-  input#respondent_street.form-control type="text" name="respondent_street"
-#question6.form-group
-  label.respondent_towncity.form-label for="respondent_towncity" Town/City*
-  input#respondent_towncity.form-control type="text" name="respondent_towncity"
-#question7.form-group
-  label.responent_county.form-label for="respondent_county" County
-  input#respondent_county.form-control type="text" name="respondent_county"
-#question8.form-group
-  label.respondent_postcode.form-label for="respondent_postcode" Postcode*
-  input#respondent_postcode.form-control type="text" name="respondent_postcode"
-#question9.form-group
-  label.respondent_dx_address.form-label for="respondent_dx_address" Document Exchange (DX) Number
-  input#respondent_dx_address.form-control type="text" name="respondent_dx_address"
-#question10.form-group
-  label.respondent_contact_number.form-label for="respondent_contact_number" Contact Number
-  input#respondent_contact_number.form-control type="text" name="respondent_contact_number"
-#question11.form-group
-  label.respondent_mobile_number.form-label for="respondent_mobile_number" Mobile Number
-  input#respondent_mobile_number.form-control type="text" name="respondent_mobile_number"
-  span.hint If Different
-
+.content-body.respondents-details
+  h1 Response to Claim
+  h2 Respondent's Details
+  #question_1.form-group
+    label.case_number.form-label for="case_number" Case Number*
+    input#case_number.form-control type="text"name='case_number'
+  #question_2.form-group
+    label.name_of_indiv_co_or_org.form-label for="name_of_indiv_co_or_org" Name of Individual, Company or Organisation*
+    input#name_of_indiv_co_or_org.form-control type="text" name="name_of_indiv_co_or_org"
+  #question3.form-group
+    label.name_of_contact.form-label for="name_of_contact" Name of Contact
+    input#name_of_contact.form-control type="text" name="name_of_contact"
+  #question4.form-group
+    label.respondent_building_name_or_number.form-label for="respondent_building_name_or_number" Building Name or Number*
+    input#respondent_building_name_or_number.form-control type="text" name="respondent_building_name_or_number"
+  #question5.form-group
+    label.respondent_street.form-label for="respondent_street" Street*
+    input#respondent_street.form-control type="text" name="respondent_street"
+  #question6.form-group
+    label.respondent_towncity.form-label for="respondent_towncity" Town/City*
+    input#respondent_towncity.form-control type="text" name="respondent_towncity"
+  #question7.form-group
+    label.responent_county.form-label for="respondent_county" County
+    input#respondent_county.form-control type="text" name="respondent_county"
+  #question8.form-group
+    label.respondent_postcode.form-label for="respondent_postcode" Postcode*
+    input#respondent_postcode.form-control type="text" name="respondent_postcode"
+  #question9.form-group
+    label.respondent_dx_address.form-label for="respondent_dx_address" Document Exchange (DX) Number
+    input#respondent_dx_address.form-control type="text" name="respondent_dx_address"
+  #question10.form-group
+    label.respondent_contact_number.form-label for="respondent_contact_number" Contact Number
+    input#respondent_contact_number.form-control type="text" name="respondent_contact_number"
+  #question11.form-group
+    label.respondent_mobile_number.form-label for="respondent_mobile_number" Mobile Number
+    input#respondent_mobile_number.form-control type="text" name="respondent_mobile_number"
+    span.hint If Different
+  #question12.form-group
+    fieldset
+      legend
+        h1.heading-medium How do you want to be contacted?
+      .multiple-choice data-target="respondent_contact_email"
+        input#respondent_contact_preference_email.form-control type="radio" name="radio-contact-preference-group" value="Yes"
+        label.respondent_contact_preference_email.form-label for="respondent_contact_preferance_email" Email
+      #respondent_contact_email.panel.panel-border-narrow.js-hidden
+        label.form-label form="respondent_contact_email" Email Address*
+        input#respondent_contact_email.form-control name="respondent_contact_email" type="text"
+      .multiple-choice
+        input#respondent_contact_preference_post.form-control type="radio" name="radio-contact-preference-group" value="No"
+        label.respondent_contact_preference_post.form-label for="respondent_contact_preference_post" Post
+      .multiple-choice data-target="respondent_contact_fax"
+        input#respondent_contact_preference_fax.form-control type="radio" name="radio-contact-preference-group" value="No"
+        label.respondent_contact_preference_fax.form-label for="respondent_contact_preference_fax" Fax
+      #respondent_contact_fax.panel.panel-border-narrow.js-hidden
+        label.form-label form="respondent_contact_fax" Fax Number*
+        input#respondent_contact_fax.form-control name="respondent_contact_fax" type="text"

@@ -48,6 +48,10 @@ module ET3
       def answer_mobile_number_question
         respondents_details_page.mobile_number_question.set(user.mobile_number)
       end
+
+      def answer_contact_preference_question
+        respondents_details_page.contact_preference_question.choose(user.contact_preference)
+      end
     end
   end
 end

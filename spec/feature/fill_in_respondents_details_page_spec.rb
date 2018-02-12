@@ -1,6 +1,5 @@
 require 'rails_helper'
-
-RSpec.feature "Fill in Respondents Details Page" do#
+RSpec.feature "Fill in Respondents Details Page" do
   scenario "correctly will enable user to continue to next page" do
     respondents_details_page.load
 
@@ -15,7 +14,6 @@ RSpec.feature "Fill in Respondents Details Page" do#
     answer_postcode_question
     answer_contact_preference_question
     answer_organisation_site_number_question
-    answer_employment_at_site_question
 
     respondents_details_page.next
 

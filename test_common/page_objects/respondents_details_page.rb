@@ -14,32 +14,44 @@ module ET3
       element :dx_number_question, :css, "#respondent_dx_address" # DX Address?
       element :contact_number_question, :css, "#respondent_contact_number"
       element :contact_mobile_number_question, :css, "#respondent_mobile_number"
-      # elements :contact_preference_question, :css, "input.radio[name='radio-contact-preference-group']"
       section :contact_preference_question, :css, "#question12" do |q|
-        element :email, :css, '#respondent_contact_preference_email'
-        element :post, :css, '#respondent_contact_preference_post'
-        element :fax, :css, '#respondent_contact_preference_fax'
+        element :preference_email, :css, '#respondent_contact_preference_email'
+        element :preference_post, :css, '#respondent_contact_preference_post'
+        element :preference_fax, :css, '#respondent_contact_preference_fax'
         element :email_address, :css, '#respondent_contact_email'
         element :fax_number, :css, '#respondent_contact_fax'
 
         def set_for(user_persona)
           case user_persona.contact_preference
             when "email"
-              email.set(true)
+              preference_email.set(true)
               email_address.set(user_persona.email_address)
             when "post"
-              post.set(true)
-              # this doesn't need filling in beyond this point
+              preference_post.set(true)
             when "fax"
-              fax.set(true)
+              preference_fax.set(true)
               fax_number.set(user_persona.fax_number)
           end
         end
       end
-      element :organisation_employ_gb_question, :css, "#how_many_people_employed_in_gb"
-      element :organisation_site_number_question, :css, "fieldset span.xform-group label input.checkbox[name='more_than_one_site_in_gb']"
-      element :employment_at_site_question, :css, "#if_yes_how_many_people"
-      
+      element :organisation_employ_gb_question, :css, "#respondent_organisation_employ_gb"
+      # element :organisation_site_number_question, :css, "fieldset span.xform-group label input.checkbox[name='more_than_one_site_in_gb']"
+      section :organisation_site_number_question, :css, "#question14" do |q|
+        element :more_than_one_site, :css, '#respondent_more_than_one_site'
+        element :only_one_site, :css, '#respondent_only_one_site'
+        element :employment_at_site_number, :css, '#respondent_employment_at_site_number'
+
+        def set_for(user_persona)
+          if user_persona.organisation_site_number > 1
+            more_than_one_site.set(true)
+            employment_at_site_number.set(user_persona.employment_at_site)
+          end
+        end
+      end
+      element :continue_button, :button
+      def next
+        continue_button.click
+      end
     end
   end
 end

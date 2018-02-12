@@ -41,7 +41,7 @@
   #question12.form-group
     fieldset
       legend
-        h1.heading-medium How do you want to be contacted?
+        h1.heading-medium How would you prefer us to contact you?
       / Radio button for email preference
       .multiple-choice data-target="respondent_contact_email"
         input#respondent_contact_preference_email.form-control type="radio" name="radio-contact-preference-group" value="Yes"
@@ -62,3 +62,23 @@
       #respondent_contact_fax.panel.panel-border-narrow.js-hidden
         label.form-label form="respondent_contact_fax" Fax Number*
         input#respondent_contact_fax.form-control name="respondent_contact_fax" type="text"
+  #question13.form-group
+    label.respondent_organisation_employ_gb.form-label for="respondent_organisation_employ_gb" How many people does this organisation employ in Great Britain?
+    input#respondent_organisation_employ_gb.form-control type="text" name="respondent_organisation_employ_gb"
+  #question14.form-group
+    fieldset
+      legend
+        h1.heading-medium Does this organisation have more than one site in Great Britain?
+      / Radio button for more than one site
+      .multiple-choice data-target="respondent_employment_at_site_number"
+        input#respondent_more_than_one_site.form-control type="radio" name="radio-organisation-site-group" value="Yes"
+        label.respondent_more_than_one_site.form-label for="respondent_more_than_one_site" Yes
+      / Hidden field for number of employees at site where claimant worked, shows when radio button is clicked
+      #respondent_employment_at_site_number.panel.panel-border-narrow.js-hidden
+        label.form-label form="respondent_employment_at_site_number" How many people are employed at the place where the claimant worked?*
+        input#respondent_employment_at_site_number.form-control name="respondent_employment_at_site_number" type="text"
+      / Radio button for fax preference
+      .multiple-choice
+        input#respondent_only_one_site.form-control type="radio" name="radio-organisation-site-group" value="No"
+        label.respondent_only_one_site.form-label for="respondent_only_one_site" No
+  input.button type="submit" value="Save and continue"

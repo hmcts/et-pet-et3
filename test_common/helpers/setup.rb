@@ -52,6 +52,14 @@ module ET3
       def answer_contact_preference_question
         respondents_details_page.contact_preference_question.set_for(user)
       end
+
+      def answer_organisation_employ_gb_question
+        respondents_details_page.organisation_employ_gb_question.set(user.answer_organisation_employ_gb)
+      end
+
+      def answer_organisation_site_number_question
+        respondents_details_page.organisation_site_number_question.set_for(user)
+      end
     end
   end
 end

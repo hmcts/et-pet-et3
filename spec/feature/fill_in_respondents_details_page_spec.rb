@@ -14,7 +14,6 @@ RSpec.feature "Fill in Respondents Details Page" do#
     answer_town_question
     answer_postcode_question
     answer_contact_preference_question
-    answer_contact_detail_question
     answer_organisation_site_number_question
     answer_employment_at_site_question
 

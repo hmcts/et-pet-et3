@@ -50,7 +50,7 @@ module ET3
       end
 
       def answer_contact_preference_question
-        respondents_details_page.contact_preference_question.choose(user.contact_preference)
+        respondents_details_page.contact_preference_question.set_for(user)
       end
     end
   end

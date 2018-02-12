@@ -42,18 +42,23 @@
     fieldset
       legend
         h1.heading-medium How do you want to be contacted?
+      / Radio button for email preference
       .multiple-choice data-target="respondent_contact_email"
         input#respondent_contact_preference_email.form-control type="radio" name="radio-contact-preference-group" value="Yes"
         label.respondent_contact_preference_email.form-label for="respondent_contact_preferance_email" Email
+      / Hidden field for email address, shows when radio button is clicked
       #respondent_contact_email.panel.panel-border-narrow.js-hidden
         label.form-label form="respondent_contact_email" Email Address*
         input#respondent_contact_email.form-control name="respondent_contact_email" type="text"
+      / Radio button for post preference
       .multiple-choice
         input#respondent_contact_preference_post.form-control type="radio" name="radio-contact-preference-group" value="No"
         label.respondent_contact_preference_post.form-label for="respondent_contact_preference_post" Post
+      / Radio button for fax preference
       .multiple-choice data-target="respondent_contact_fax"
         input#respondent_contact_preference_fax.form-control type="radio" name="radio-contact-preference-group" value="No"
         label.respondent_contact_preference_fax.form-label for="respondent_contact_preference_fax" Fax
+      / Hidden field for fax number, shows when radio button is clicked
       #respondent_contact_fax.panel.panel-border-narrow.js-hidden
         label.form-label form="respondent_contact_fax" Fax Number*
         input#respondent_contact_fax.form-control name="respondent_contact_fax" type="text"

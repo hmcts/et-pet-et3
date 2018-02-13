@@ -1,0 +1,3 @@
+class RespondentsDetail < BaseForm
+  
+end

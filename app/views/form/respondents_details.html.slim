@@ -1,11 +1,9 @@
 / TODO: Add required fields
 / TODO: Confirm DX Address?
 / TODO: Put inside (and build) form tags
-/ TODO: Add page title yield
-/ TODO: Use yield for formatting
 .content-body.respondents-details
-  h1 Response to Claim
-  h2 Respondent's Details
+  - content_for :form_page_title do
+    = "Respondent's Details"
   #question_1.form-group
     label.case_number.form-label for="case_number" Case Number*
     input#case_number.form-control type="text"name='case_number'
@@ -39,6 +37,7 @@
   #question11.form-group
     label.respondent_mobile_number.form-label for="respondent_mobile_number" Mobile Number
     input#respondent_mobile_number.form-control type="text" name="respondent_mobile_number"
+    br/
     span.hint If Different
   #question12.form-group
     fieldset

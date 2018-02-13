@@ -1,5 +1,5 @@
-require 'active_model'
-class BaseForm
-  include ActiveModel::Model
-  include ActiveModelAttributes
-end
+class BaseForm < ActiveRecord::Base
+  establish_connection :adapter => :nulldb,
+    :schema  => 'config/nulldb_schema.rb'
+ end
+ 

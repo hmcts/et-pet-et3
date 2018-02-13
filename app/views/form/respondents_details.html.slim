@@ -4,82 +4,90 @@
 .content-body.respondents-details
   - content_for :form_page_title do
     = "Respondent's Details"
-  #question_1.form-group
-    label.case_number.form-label for="case_number" Case Number*
-    input#case_number.form-control type="text"name='case_number'
-  #question_2.form-group
-    label.name_of_indiv_co_or_org.form-label for="name_of_indiv_co_or_org" Name of Individual, Company or Organisation*
-    input#name_of_indiv_co_or_org.form-control type="text" name="name_of_indiv_co_or_org"
-  #question3.form-group
-    label.name_of_contact.form-label for="name_of_contact" Name of Contact
-    input#name_of_contact.form-control type="text" name="name_of_contact"
-  #question4.form-group
-    label.respondent_building_name_or_number.form-label for="respondent_building_name_or_number" Building Name or Number*
-    input#respondent_building_name_or_number.form-control type="text" name="respondent_building_name_or_number"
-  #question5.form-group
-    label.respondent_street.form-label for="respondent_street" Street*
-    input#respondent_street.form-control type="text" name="respondent_street"
-  #question6.form-group
-    label.respondent_towncity.form-label for="respondent_towncity" Town/City*
-    input#respondent_towncity.form-control type="text" name="respondent_towncity"
-  #question7.form-group
-    label.responent_county.form-label for="respondent_county" County
-    input#respondent_county.form-control type="text" name="respondent_county"
-  #question8.form-group
-    label.respondent_postcode.form-label for="respondent_postcode" Postcode*
-    input#respondent_postcode.form-control type="text" name="respondent_postcode"
-  #question9.form-group
-    label.respondent_dx_address.form-label for="respondent_dx_address" Document Exchange (DX) Number
-    input#respondent_dx_address.form-control type="text" name="respondent_dx_address"
-  #question10.form-group
-    label.respondent_contact_number.form-label for="respondent_contact_number" Contact Number
-    input#respondent_contact_number.form-control type="text" name="respondent_contact_number"
-  #question11.form-group
-    label.respondent_mobile_number.form-label for="respondent_mobile_number" Mobile Number
-    input#respondent_mobile_number.form-control type="text" name="respondent_mobile_number"
-    br/
-    span.hint If Different
-  #question12.form-group
-    fieldset
-      legend
-        h1.heading-medium How would you prefer us to contact you?
-      / Radio button for email preference
-      .multiple-choice data-target="respondent_contact_email"
-        input#respondent_contact_preference_email.form-control type="radio" name="radio-contact-preference-group" value="Yes"
-        label.respondent_contact_preference_email.form-label for="respondent_contact_preferance_email" Email
-      / Hidden field for email address, shows when radio button is clicked
-      #respondent_contact_email.panel.panel-border-narrow.js-hidden
-        label.form-label form="respondent_contact_email" Email Address*
-        input#respondent_contact_email.form-control name="respondent_contact_email" type="text"
-      / Radio button for post preference
-      .multiple-choice
-        input#respondent_contact_preference_post.form-control type="radio" name="radio-contact-preference-group" value="No"
-        label.respondent_contact_preference_post.form-label for="respondent_contact_preference_post" Post
-      / Radio button for fax preference
-      .multiple-choice data-target="respondent_contact_fax"
-        input#respondent_contact_preference_fax.form-control type="radio" name="radio-contact-preference-group" value="No"
-        label.respondent_contact_preference_fax.form-label for="respondent_contact_preference_fax" Fax
-      / Hidden field for fax number, shows when radio button is clicked
-      #respondent_contact_fax.panel.panel-border-narrow.js-hidden
-        label.form-label form="respondent_contact_fax" Fax Number*
-        input#respondent_contact_fax.form-control name="respondent_contact_fax" type="text"
-  #question13.form-group
-    label.respondent_organisation_employ_gb.form-label for="respondent_organisation_employ_gb" How many people does this organisation employ in Great Britain?
-    input#respondent_organisation_employ_gb.form-control type="text" name="respondent_organisation_employ_gb"
-  #question14.form-group
-    fieldset
-      legend
-        h1.heading-medium Does this organisation have more than one site in Great Britain?
-      / Radio button for more than one site
-      .multiple-choice data-target="respondent_employment_at_site_number"
-        input#respondent_more_than_one_site.form-control type="radio" name="radio-organisation-site-group" value="Yes"
-        label.respondent_more_than_one_site.form-label for="respondent_more_than_one_site" Yes
-      / Hidden field for number of employees at site where claimant worked, shows when radio button is clicked
-      #respondent_employment_at_site_number.panel.panel-border-narrow.js-hidden
-        label.form-label form="respondent_employment_at_site_number" How many people are employed at the place where the claimant worked?*
-        input#respondent_employment_at_site_number.form-control name="respondent_employment_at_site_number" type="text"
-      / Radio button for fax preference
-      .multiple-choice
-        input#respondent_only_one_site.form-control type="radio" name="radio-organisation-site-group" value="No"
-        label.respondent_only_one_site.form-label for="respondent_only_one_site" No
-  input.button type="submit" value="Save and continue"
+
+  = form_for @respondents_detail, url: form_respondents_details_path  do |f|
+    #question_1.form-group
+      label.case_number.form-label for="case_number" Case Number*
+      = f.text_field(:case_number, id: 'case_number', class: 'form-control')
+    #question_2.form-group
+      label.name_of_indiv_co_or_org.form-label for="name_of_indiv_co_or_org" Name of Individual, Company or Organisation*
+      = f.text_field(:name, id: 'name_of_indiv_co_or_org', class: 'form-control')
+    #question3.form-group
+      label.name_of_contact.form-label for="name_of_contact" Name of Contact
+      = f.text_field(:contact, id: 'name_of_contact', class: 'form-control')
+    #question4.form-group
+      label.respondent_building_name_or_number.form-label for="respondent_building_name_or_number" Building Name or Number*
+      = f.text_field(:building_name, id: 'respondent_building_name_or_number', class: 'form-control')
+    #question5.form-group
+      label.respondent_street.form-label for="respondent_street" Street*
+      = f.text_field(:street_name, id: 'respondent_street', class: 'form-control')
+    #question6.form-group
+      label.respondent_towncity.form-label for="respondent_towncity" Town/City*
+      = f.text_field(:town, id: 'respondent_towncity', class: 'form-control')
+    #question7.form-group
+      label.responent_county.form-label for="respondent_county" County
+      = f.text_field(:county, id: 'respondent_county', class: 'form-control')
+    #question8.form-group
+      label.respondent_postcode.form-label for="respondent_postcode" Postcode*
+      = f.text_field(:postcode, id: 'respondent_postcode', class: 'form-control')
+    #question9.form-group
+      label.respondent_dx_address.form-label for="respondent_dx_address" Document Exchange (DX) Number
+      = f.text_field(:dx_number, id: 'respondent_dx_address', class: 'form-control')
+    #question10.form-group
+      label.respondent_contact_number.form-label for="respondent_contact_number" Contact Number
+      = f.text_field(:contact_number, id: 'respondent_contact_number', class: 'form-control')
+    #question11.form-group
+      label.respondent_mobile_number.form-label for="respondent_mobile_number" Mobile Number
+      = f.text_field(:mobile_number, id: 'respondent_mobile_number', class: 'form-control')
+      br/
+      span.hint If Different
+    #question12.form-group
+      fieldset
+        legend
+          h1.heading-medium How would you prefer us to contact you?
+        / Radio button for email preference
+        .multiple-choice data-target="respondent_contact_email"
+          / TODO: Turn input into form object
+          input#respondent_contact_preference_email.form-control type="radio" name="radio-contact-preference-group" value="Yes"
+          label.respondent_contact_preference_email.form-label for="respondent_contact_preferance_email" Email
+        / Hidden field for email address, shows when radio button is clicked
+        #respondent_contact_email.panel.panel-border-narrow.js-hidden
+          label.form-label form="respondent_contact_email" Email Address*
+          = f.text_field(:email_address, id: 'respondent_contact_email', class: 'form-control')
+        / Radio button for post preference
+        .multiple-choice
+        / TODO: Turn input into form object
+
+          input#respondent_contact_preference_post.form-control type="radio" name="radio-contact-preference-group" value="No"
+          label.respondent_contact_preference_post.form-label for="respondent_contact_preference_post" Post
+        / Radio button for fax preference
+        .multiple-choice data-target="respondent_contact_fax"
+          / TODO: Turn input into form object
+          input#respondent_contact_preference_fax.form-control type="radio" name="radio-contact-preference-group" value="No"
+          label.respondent_contact_preference_fax.form-label for="respondent_contact_preference_fax" Fax
+        / Hidden field for fax number, shows when radio button is clicked
+        #respondent_contact_fax.panel.panel-border-narrow.js-hidden
+          label.form-label form="respondent_contact_fax" Fax Number*
+          = f.text_field(:fax_number, id: 'respondent_contact_fax', class: 'form-control')
+    #question13.form-group
+      label.respondent_organisation_employ_gb.form-label for="respondent_organisation_employ_gb" How many people does this organisation employ in Great Britain?
+      = f.text_field(:organisation_employ_gb, id: 'respondent_organisation_employ_gb', class: 'form-control')
+    #question14.form-group
+      fieldset
+        legend
+          h1.heading-medium Does this organisation have more than one site in Great Britain?
+        / Radio button for more than one site
+        .multiple-choice data-target="respondent_employment_at_site_number"
+          / TODO: Turn input into form object
+          input#respondent_more_than_one_site.form-control type="radio" name="radio-organisation-site-group" value="Yes"
+          label.respondent_more_than_one_site.form-label for="respondent_more_than_one_site" Yes
+        / Hidden field for number of employees at site where claimant worked, shows when radio button is clicked
+        #respondent_employment_at_site_number.panel.panel-border-narrow.js-hidden
+          label.form-label form="respondent_employment_at_site_number" How many people are employed at the place where the claimant worked?*
+          = f.text_field(:employment_at_site_number, id: 'respondent_employment_at_site_number', class: 'form-control')
+        / Radio button for fax preference
+        .multiple-choice
+          / TODO: Turn input into form object
+          input#respondent_only_one_site.form-control type="radio" name="radio-organisation-site-group" value="No"
+          label.respondent_only_one_site.form-label for="respondent_only_one_site" No
+    = f.submit("Save and continue", class: 'button')

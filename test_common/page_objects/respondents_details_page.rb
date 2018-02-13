@@ -48,7 +48,7 @@ module ET3
           end
         end
       end
-      element :continue_button, :button
+      element :continue_button, :button, "Save and continue"
       def next
         continue_button.click
       end

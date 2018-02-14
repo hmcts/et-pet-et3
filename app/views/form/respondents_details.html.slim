@@ -1,6 +1,5 @@
 / TODO: Add required fields
 / TODO: Confirm DX Address?
-/ TODO: Put inside (and build) form tags
 .content-body.respondents-details
   - content_for :form_page_title do
     = "Respondent's Details"
@@ -47,8 +46,7 @@
           h1.heading-medium How would you prefer us to contact you?
         / Radio button for email preference
         .multiple-choice data-target="respondent_contact_email"
-          / TODO: Turn input into form object
-          input#respondent_contact_preference_email.form-control type="radio" name="radio-contact-preference-group" value="Yes"
+          = f.radio_button('contact_preference', 'email', class: 'form-control')
           label.respondent_contact_preference_email.form-label for="respondent_contact_preferance_email" Email
         / Hidden field for email address, shows when radio button is clicked
         #respondent_contact_email.panel.panel-border-narrow.js-hidden
@@ -56,14 +54,11 @@
           = f.text_field(:email_address, id: 'respondent_contact_email', class: 'form-control')
         / Radio button for post preference
         .multiple-choice
-        / TODO: Turn input into form object
-
-          input#respondent_contact_preference_post.form-control type="radio" name="radio-contact-preference-group" value="No"
+          = f.radio_button('contact_preference', 'post', class: 'form-control')
           label.respondent_contact_preference_post.form-label for="respondent_contact_preference_post" Post
         / Radio button for fax preference
         .multiple-choice data-target="respondent_contact_fax"
-          / TODO: Turn input into form object
-          input#respondent_contact_preference_fax.form-control type="radio" name="radio-contact-preference-group" value="No"
+          = f.radio_button('contact_preference', 'fax', class: 'form-control')
           label.respondent_contact_preference_fax.form-label for="respondent_contact_preference_fax" Fax
         / Hidden field for fax number, shows when radio button is clicked
         #respondent_contact_fax.panel.panel-border-narrow.js-hidden
@@ -78,8 +73,7 @@
           h1.heading-medium Does this organisation have more than one site in Great Britain?
         / Radio button for more than one site
         .multiple-choice data-target="respondent_employment_at_site_number"
-          / TODO: Turn input into form object
-          input#respondent_more_than_one_site.form-control type="radio" name="radio-organisation-site-group" value="Yes"
+          = f.radio_button('organisation_site_number', 'yes', class: 'form-control')
           label.respondent_more_than_one_site.form-label for="respondent_more_than_one_site" Yes
         / Hidden field for number of employees at site where claimant worked, shows when radio button is clicked
         #respondent_employment_at_site_number.panel.panel-border-narrow.js-hidden
@@ -87,7 +81,6 @@
           = f.text_field(:employment_at_site_number, id: 'respondent_employment_at_site_number', class: 'form-control')
         / Radio button for fax preference
         .multiple-choice
-          / TODO: Turn input into form object
-          input#respondent_only_one_site.form-control type="radio" name="radio-organisation-site-group" value="No"
+          = f.radio_button('organisation_site_number', 'no', class: 'form-control')
           label.respondent_only_one_site.form-label for="respondent_only_one_site" No
     = f.submit("Save and continue", class: 'button')

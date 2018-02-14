@@ -15,9 +15,9 @@ module ET3
       element :contact_number_question, :css, "#respondent_contact_number"
       element :contact_mobile_number_question, :css, "#respondent_mobile_number"
       section :contact_preference_question, :css, "#question12" do |q|
-        element :preference_email, :css, '#respondent_contact_preference_email'
-        element :preference_post, :css, '#respondent_contact_preference_post'
-        element :preference_fax, :css, '#respondent_contact_preference_fax'
+        element :preference_email, :css, '#respondents_detail_contact_preference_email'
+        element :preference_post, :css, '#respondents_detail_contact_preference_post'
+        element :preference_fax, :css, '#respondents_detail_contact_preference_fax'
         element :email_address, :css, '#respondent_contact_email'
         element :fax_number, :css, '#respondent_contact_fax'
 
@@ -37,8 +37,8 @@ module ET3
       element :organisation_employ_gb_question, :css, "#respondent_organisation_employ_gb"
       # element :organisation_site_number_question, :css, "fieldset span.xform-group label input.checkbox[name='more_than_one_site_in_gb']"
       section :organisation_site_number_question, :css, "#question14" do |q|
-        element :more_than_one_site, :css, '#respondent_more_than_one_site'
-        element :only_one_site, :css, '#respondent_only_one_site'
+        element :more_than_one_site, :css, '#respondents_detail_organisation_site_number_yes'
+        element :only_one_site, :css, '#respondents_detail_organisation_site_number_no'
         element :employment_at_site_number, :css, '#respondent_employment_at_site_number'
 
         def set_for(user_persona)

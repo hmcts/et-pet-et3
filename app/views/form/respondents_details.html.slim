@@ -5,10 +5,10 @@
     = "Respondent's Details"
 
   = form_for @respondents_detail, url: form_respondents_details_path  do |f|
-    #question_1.form-group
+    #question1.form-group
       label.case_number.form-label for="case_number" Case Number*
       = f.text_field(:case_number, id: 'case_number', class: 'form-control')
-    #question_2.form-group
+    #question2.form-group
       label.name_of_indiv_co_or_org.form-label for="name_of_indiv_co_or_org" Name of Individual, Company or Organisation*
       = f.text_field(:name, id: 'name_of_indiv_co_or_org', class: 'form-control')
     #question3.form-group

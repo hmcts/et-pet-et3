@@ -1,7 +1,7 @@
 module ET3
   module Test
     class RespondentsDetailsPage < BasePage
-      set_url '/form/respondents_details'
+      set_url '/respond/respondents_details'
 
       element :case_number_question, :css, "#case_number"
       element :name_question, :css, "#name_of_indiv_co_or_org"

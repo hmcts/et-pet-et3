@@ -4,7 +4,7 @@
   - content_for :form_page_title do
     = "Respondent's Details"
 
-  = form_for @respondents_detail, url: form_respondents_details_path  do |f|
+  = form_for @respondents_detail, url: respondents_details_path, method: :patch  do |f|
     #question1.form-group
       label.case_number.form-label for="case_number" Case Number*
       = f.text_field(:case_number, id: 'case_number', class: 'form-control')

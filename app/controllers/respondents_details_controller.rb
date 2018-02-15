@@ -1,18 +1,13 @@
-class FormController < ApplicationController
-
-  def respondents_details
+class RespondentsDetailsController < ApplicationController
+  def edit
     @respondents_detail = RespondentsDetail.new
   end
 
   def update
     @respondents_detail = RespondentsDetail.new(respondents_detail_params)
     if @respondents_detail.valid?
-      redirect_to form_claimants_details_path
+      redirect_to edit_claimants_details_path
     end
-  end
-
-  def claimants_details
-    head :ok
   end
 
   private

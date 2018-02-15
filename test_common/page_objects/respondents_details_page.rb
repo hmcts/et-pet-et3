@@ -35,7 +35,6 @@ module ET3
         end
       end
       element :organisation_employ_gb_question, :css, "#respondent_organisation_employ_gb"
-      # element :organisation_site_number_question, :css, "fieldset span.xform-group label input.checkbox[name='more_than_one_site_in_gb']"
       section :organisation_site_number_question, :css, "#question14" do |q|
         element :more_than_one_site, :css, '#respondents_detail_organisation_site_number_yes'
         element :only_one_site, :css, '#respondents_detail_organisation_site_number_no'

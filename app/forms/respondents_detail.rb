@@ -17,4 +17,17 @@ class RespondentsDetail < BaseForm
   attribute :organisation_site_number, :integer
   attribute :employment_at_site_number, :integer
 
+  # validates :case_number, :name, :building_name, :street_name, :town, :postcode, presence: true, on: :update
+  # validates :email_address, presence: true, if: :prefer_email?
+  # validates :fax_number, presence: true, if: :prefer_fax?
+
+  # private
+
+  # def prefer_email?
+  #   contact_preference == "email"
+  # end
+
+  # def prefer_fax?
+  #   contact_preference == "fax"
+  # end
 end

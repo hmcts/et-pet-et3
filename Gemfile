@@ -62,7 +62,8 @@ group :test do
   gem 'capybara-screenshot', '~> 1.0'
   gem 'rspec-rails', '~> 3.7'
   gem 'site_prism', '~> 2.9'
-  gem 'poltergeist', '~> 1.17'
+  gem 'chromedriver-helper', '~> 1.1'
+  gem 'geckodriver-helper', '~> 0.0'
   gem 'database_cleaner', '~> 1.5'
 end
 

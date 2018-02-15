@@ -1,7 +1,8 @@
 require 'rails_helper'
-RSpec.feature "Fill in Respondents Details Page" do
+RSpec.feature "Fill in Respondents Details Page", js: true do
   scenario "correctly will enable user to continue to next page" do
     respondents_details_page.load
+    @claimants_details_page = ET3::Test::ClaimantsDetailsPage.new
 
     given_i_am(:company01)
 
@@ -17,6 +18,6 @@ RSpec.feature "Fill in Respondents Details Page" do
 
     respondents_details_page.next
 
-    expect(claimants_details_page).to be_visible
+    expect(@claimants_details_page).to be_displayed
   end
 end

@@ -2,7 +2,7 @@ module ET3
   module Test
     module GdsMultipleChoiceOptionSection
       extend ActiveSupport::Concern
-      
+
       included do
         element :checkbox, 'input[type=checkbox]'
         element :label, 'label'

@@ -6,37 +6,48 @@
 
   = form_for @respondents_detail, url: respondents_details_path, method: :patch  do |f|
     #question1.form-group
-      label.case_number.form-label for="case_number" Case Number*
+      label.case_number.form-label for="case_number"
+        span Case Number*
       = f.text_field(:case_number, id: 'case_number', class: 'form-control')
     #question2.form-group
-      label.name_of_indiv_co_or_org.form-label for="name_of_indiv_co_or_org" Name of Individual, Company or Organisation*
+      label.name_of_indiv_co_or_org.form-label for="name_of_indiv_co_or_org"
+        span Name of Individual, Company or Organisation*
       = f.text_field(:name, id: 'name_of_indiv_co_or_org', class: 'form-control')
     #question3.form-group
-      label.name_of_contact.form-label for="name_of_contact" Name of Contact
+      label.name_of_contact.form-label for="name_of_contact"
+        span Name of Contact
       = f.text_field(:contact, id: 'name_of_contact', class: 'form-control')
     #question4.form-group
-      label.respondent_building_name_or_number.form-label for="respondent_building_name_or_number" Building Name or Number*
+      label.respondent_building_name_or_number.form-label for="respondent_building_name_or_number"
+        span Building Name or Number*
       = f.text_field(:building_name, id: 'respondent_building_name_or_number', class: 'form-control')
     #question5.form-group
-      label.respondent_street.form-label for="respondent_street" Street*
+      label.respondent_street.form-label for="respondent_street"
+        span Street*
       = f.text_field(:street_name, id: 'respondent_street', class: 'form-control')
     #question6.form-group
-      label.respondent_towncity.form-label for="respondent_towncity" Town/City*
+      label.respondent_towncity.form-label for="respondent_towncity"
+        span Town/City*
       = f.text_field(:town, id: 'respondent_towncity', class: 'form-control')
     #question7.form-group
-      label.responent_county.form-label for="respondent_county" County
+      label.responent_county.form-label for="respondent_county"
+        span County
       = f.text_field(:county, id: 'respondent_county', class: 'form-control')
     #question8.form-group
-      label.respondent_postcode.form-label for="respondent_postcode" Postcode*
+      label.respondent_postcode.form-label for="respondent_postcode"
+        span Postcode*
       = f.text_field(:postcode, id: 'respondent_postcode', class: 'form-control')
     #question9.form-group
-      label.respondent_dx_address.form-label for="respondent_dx_address" Document Exchange (DX) Number
+      label.respondent_dx_address.form-label for="respondent_dx_address"
+        span Document Exchange (DX) Number
       = f.text_field(:dx_number, id: 'respondent_dx_address', class: 'form-control')
     #question10.form-group
-      label.respondent_contact_number.form-label for="respondent_contact_number" Contact Number
+      label.respondent_contact_number.form-label for="respondent_contact_number"
+        span Contact Number
       = f.text_field(:contact_number, id: 'respondent_contact_number', class: 'form-control')
     #question11.form-group
-      label.respondent_mobile_number.form-label for="respondent_mobile_number" Mobile Number
+      label.respondent_mobile_number.form-label for="respondent_mobile_number"
+        span Mobile Number
       = f.text_field(:mobile_number, id: 'respondent_mobile_number', class: 'form-control')
       br/
       span.hint If Different

@@ -22,7 +22,7 @@ company02:
   organisation_site_number: 5
   employment_at_site: 42
 
-company_03:
+company03:
   case_number: 2345678/2018
   name: another_co
   contact: jim

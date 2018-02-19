@@ -7,8 +7,6 @@ RSpec.feature "Access Start Page", js: true do
     start_page.load
 
     expect(start_page).to be_displayed
-    expect(start_page).to have_header
-    expect(start_page).to have_introduction
   end
 
   scenario "user will be able to start form" do

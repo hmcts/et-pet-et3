@@ -37,6 +37,7 @@ gem 'slim-rails', '~> 3.1'
 gem 'govuk_template', '~> 0.23.0'
 gem 'govuk_elements_rails', '~> 3.1'
 gem 'jquery-rails', '~> 4.3'
+gem 'activerecord-nulldb-adapter', '~> 0.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -61,7 +62,9 @@ group :test do
   gem 'capybara-screenshot', '~> 1.0'
   gem 'rspec-rails', '~> 3.7'
   gem 'site_prism', '~> 2.9'
-  gem 'poltergeist', '~> 1.17'
+  gem 'chromedriver-helper', '~> 1.1'
+  gem 'geckodriver-helper', '~> 0.0'
+  gem 'database_cleaner', '~> 1.5'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

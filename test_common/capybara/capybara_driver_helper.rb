@@ -1,9 +1,9 @@
-require 'capybara/poltergeist'
 Capybara.configure do |config|
-  driver = ENV.fetch('DRIVER', 'poltergeist').to_sym
+  driver = ENV.fetch('DRIVER', 'chromedriver').to_sym
   config.javascript_driver = driver
   config.default_max_wait_time = 10
   config.match = :prefer_exact
+  config.exact = true
   config.ignore_hidden_elements = false
   config.visible_text_only = true
 end
@@ -17,6 +17,19 @@ end
 
 Capybara.register_driver :chrome do |app|
   Capybara::Selenium::Driver.new(app, browser: :chrome, url: ENV.fetch('SELENIUM_URL', 'http://localhost:4444/wd/hub'))
+end
+
+Capybara.register_driver :chromedriver do |app|
+  options = Selenium::WebDriver::Chrome::Options.new
+  options.add_argument('--no-sandbox')
+  options.add_argument('--headless')
+  Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
+end
+
+Capybara.register_driver :firefoxdriver do |app|
+  options = Selenium::WebDriver::Firefox::Options.new
+  options.headless!
+  Capybara::Selenium::Driver.new(app, browser: :firefox, options: options)
 end
 
 Capybara.register_driver :safari do |app|

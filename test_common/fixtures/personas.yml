@@ -1,0 +1,35 @@
+company01:
+  case_number: 7654321/2017
+  name: dodgy_co
+  contact: john
+  building_name: the_shard
+  street_name: downing_street
+  town: westminster
+  postcode: wc1 1aa
+  contact_preference: email
+  email_address: john@dodgyco.com
+  organisation_site_number: 1
+
+company02:
+  case_number: 1234567/2016
+  name: honest_co
+  contact: anne
+  building_name: london_eye
+  street_name: some_street
+  town: some_town
+  postcode: N0 5AY
+  contact_preference: post
+  organisation_site_number: 5
+  employment_at_site: 42
+
+company03:
+  case_number: 2345678/2018
+  name: another_co
+  contact: jim
+  building_name: some_building
+  street_name: a_street
+  town: a_town
+  postcode: YE5 9LS
+  contact_preference: fax
+  fax_number: 02081234567
+  organisation_site_number: 1

@@ -1,0 +1,40 @@
+en:
+  questions:
+    case_number:
+      label: Case Number*
+    name:
+      label: Name of Individual, Company or Organisation*
+    contact:
+      label: Name of Contact
+    building_name:
+      label: Building Name or Number*
+    street:
+      label: Street*
+    town:
+      label: Town/City*
+    county:
+      label: County
+    postcode:
+      label: Postcode*
+    dx_number:
+      label: Document Exchange (DX) Number
+    contact_number:
+      label: Contact Number
+    contact_mobile_number:
+      label: Mobile Number
+    contact_preference:
+      label: How would you prefer us to contact you?
+      email:
+        label: Email
+      post:
+        label: Post
+      fax:
+        label: Fax
+    organisation_employ_gb:
+      label: How many people does this organisation employ in Great Britain?
+    organisation_site_number:
+      label: Does this organisation have more than one site in Great Britain?
+      more_than_one_site:
+        label: 'Yes'
+      only_one_site:
+        label: 'No'

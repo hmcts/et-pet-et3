@@ -60,6 +60,26 @@ module ET3
       def answer_organisation_site_number_question
         respondents_details_page.organisation_site_number_question.set_for(user)
       end
+
+      def answer_claimants_name_question
+        claimants_details_page.claimants_name_question.set(user)
+      end
+
+      def answer_early_conciliation_details_question
+        claimants_details_page.early_conciliation_details_question.set(user)
+      end
+
+      def answer_employment_dates_question
+        claimants_details_page.employment_dates_question.set(user)
+      end
+
+      def answer_continued_employment_question
+        claimants_details_page.continued_employment_question.set(user)
+      end
+
+      def answer_claimants_description_of_job_or_title_question
+        claimants_details_page.claimants_description_of_job_or_title_question.set(user)
+      end
     end
   end
 end

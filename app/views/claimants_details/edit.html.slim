@@ -15,11 +15,11 @@
           h1.heading-medium Do you agree with the details given by the claimant about Early Conciliation with Acas?
         / Radio button for 'Yes'
         .multiple-choice
-          = f.radio_button('early_conciliation_details', 'yes', class: 'form-control')
+          = f.radio_button('early_conciliation_details', true, class: 'form-control')
           label.early_conciliation_details.form-label for="early_conciliation_details" Yes
         / Radio button for 'No'
         .multiple-choice
-          = f.radio_button('early_conciliation_details', 'no', class: 'form-control')
+          = f.radio_button('early_conciliation_details', false, class: 'form-control')
           label.early_conciliation_details.form-label for="early_conciliation_details" No
     #question3.form-group
       fieldset
@@ -27,11 +27,11 @@
           h1.heading-medium Are the dates of employment given by the claimant correct?*
         / Radio button for 'Yes'
         .multiple-choice
-          = f.radio_button('employment_dates', 'yes', class: 'form-control')
+          = f.radio_button('employment_dates', true, class: 'form-control')
           label.employment_dates.form-label for="employment_dates" Yes
         / Radio button for 'No'
         .multiple-choice
-          = f.radio_button('employment_dates', 'no', class: 'form-control')
+          = f.radio_button('employment_dates', false, class: 'form-control')
           label.employment_dates.form-label for="employment_dates" No
     #question4.form-group
       fieldset
@@ -39,11 +39,11 @@
           h1.heading-medium Is their employment continuing?
         / Radio button for 'Yes'
         .multiple-choice
-          = f.radio_button('continued_employment', 'yes', class: 'form-control')
+          = f.radio_button('continued_employment', true, class: 'form-control')
           label.continued_employment.form-label for="continued_employment" Yes
         / Radio button for 'No'
         .multiple-choice
-          = f.radio_button('continued_employment', 'no', class: 'form-control')
+          = f.radio_button('continued_employment', false, class: 'form-control')
           label.continued_employment.form-label for="continued_employment" No
     #question5.form-group
       fieldset
@@ -51,11 +51,11 @@
           h1.heading-medium Is the claimant's description of their job or job title correct?
         / Radio button for 'Yes'
         .multiple-choice
-          = f.radio_button('claimants_description_of_job_or_title', 'yes', class: 'form-control')
+          = f.radio_button('claimants_description_of_job_or_title', true, class: 'form-control')
           label.claimants_description_of_job_or_title.form-label for="claimants_description_of_job_or_title" Yes
         / Radio button for 'No'
         .multiple-choice
-          = f.radio_button('claimants_description_of_job_or_title', 'no', class: 'form-control')
+          = f.radio_button('claimants_description_of_job_or_title', false, class: 'form-control')
           label.claimants_description_of_job_or_title.form-label for="claimants_description_of_job_or_title" No
 
     = f.submit("Save and continue", class: 'button')

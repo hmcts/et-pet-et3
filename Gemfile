@@ -47,6 +47,9 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'rubocop', '~> 0.52.1'
   gem 'rubocop-rspec', '~> 1.22'
+  #VSCode debugger
+  gem 'ruby-debug-ide', '~> 0.6.1'
+  gem 'debase', '~> 0.2.2'
 end
 
 group :development do

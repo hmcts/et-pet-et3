@@ -9,6 +9,12 @@ company01:
   contact_preference: email
   email_address: john@dodgyco.com
   organisation_site_number: 1
+  claimants_name: jane
+  early_conciliation_details: 'Yes'
+  employment_dates: 'Yes'
+  continued_employment: 'No'
+  claimants_description_of_job_or_title: 'Yes'
+
 
 company02:
   case_number: 1234567/2016
@@ -21,6 +27,11 @@ company02:
   contact_preference: post
   organisation_site_number: 5
   employment_at_site: 42
+  claimants_name: alex
+  early_conciliation_details: 'No'
+  employment_dates: 'No'
+  continued_employment: 'Yes'
+  claimants_description_of_job_or_title: 'No'
 
 company03:
   case_number: 2345678/2018
@@ -33,3 +44,8 @@ company03:
   contact_preference: fax
   fax_number: 02081234567
   organisation_site_number: 1
+  claimants_name: joe
+  early_conciliation_details: 'No'
+  employment_dates: 'No'
+  continued_employment: 'No'
+  claimants_description_of_job_or_title: 'No'

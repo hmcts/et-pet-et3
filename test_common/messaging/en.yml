@@ -42,7 +42,7 @@ en:
     # Claimant's Details Page
     claimants_name:
       label: "Claimant's Name"
-    early_conciliation_details:
+    agree_with_early_conciliation_details:
       label: Do you agree with the details given by the claimant about Early Conciliation with Acas?
       'yes':
         label: 'Yes'
@@ -50,7 +50,7 @@ en:
         label: 'No'
       disagree_conciliation_reason:
         label: Why do you disagree with the claimant?
-    employment_dates:
+    agree_with_employment_dates:
       label: Are the dates of employment given by the claimant correct?*
       'yes':
         label: 'Yes'
@@ -64,7 +64,7 @@ en:
         label: Why do you disagree with the dates given by the claimant*
     continued_employment:
       label: Is their employment continuing?
-    claimants_description_of_job_or_title:
+    agree_with_claimants_description_of_job_or_title:
       label: Is the claimant's description of their job or job title correct?
       'yes':
         label: 'Yes'

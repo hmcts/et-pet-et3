@@ -10,10 +10,10 @@ RSpec.describe ClaimantsDetail, type: :model do
       expect(claimant_detail.claimants_name).to eql 'jane'
     end
 
-    it 'with early conciliation details only' do
-      claimant_detail = described_class.new(early_conciliation_details: true)
+    it 'agree with early conciliation details only' do
+      claimant_detail = described_class.new(agree_with_early_conciliation_details: true)
 
-      expect(claimant_detail.early_conciliation_details).to be true
+      expect(claimant_detail.agree_with_early_conciliation_details).to be true
     end
 
     it 'with disagree conciliation reason only' do
@@ -22,10 +22,10 @@ RSpec.describe ClaimantsDetail, type: :model do
       expect(claimant_detail.disagree_conciliation_reason).to eql 'lorem ipsum conciliation'
     end
 
-    it 'with employment dates only' do
-      claimant_detail = described_class.new(employment_dates:false)
+    it 'agree with employment dates only' do
+      claimant_detail = described_class.new(agree_with_employment_dates: false)
 
-      expect(claimant_detail.employment_dates).to be false
+      expect(claimant_detail.agree_with_employment_dates).to be false
     end
 
     it 'with employment start date only' do
@@ -52,10 +52,10 @@ RSpec.describe ClaimantsDetail, type: :model do
       expect(claimant_detail.continued_employment).to be false
     end
 
-    it 'with claimants description of job or title only' do
-      claimant_detail = described_class.new(claimants_description_of_job_or_title: false)
+    it 'agree with claimants description of job or title only' do
+      claimant_detail = described_class.new(agree_with_claimants_description_of_job_or_title: false)
 
-      expect(claimant_detail.claimants_description_of_job_or_title).to be false
+      expect(claimant_detail.agree_with_claimants_description_of_job_or_title).to be false
     end
 
     it 'with disagree claimants job or title reason only' do

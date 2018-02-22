@@ -67,20 +67,20 @@ module ET3
         claimants_details_page.claimants_name_question.set(user.claimants_name)
       end
 
-      def answer_early_conciliation_details_question
-        claimants_details_page.early_conciliation_details_question.set_for(user)
+      def answer_agree_with_early_conciliation_details_question
+        claimants_details_page.agree_with_early_conciliation_details_question.set_for(user)
       end
 
-      def answer_employment_dates_question
-        claimants_details_page.employment_dates_question.set_for(user)
+      def answer_agree_with_employment_dates_question
+        claimants_details_page.agree_with_employment_dates_question.set_for(user)
       end
 
       def answer_continued_employment_question
         claimants_details_page.continued_employment_question.set(user.continued_employment)
       end
 
-      def answer_claimants_description_of_job_or_title_question
-        claimants_details_page.claimants_description_of_job_or_title_question.set_for(user)
+      def answer_agree_with_claimants_description_of_job_or_title_question
+        claimants_details_page.agree_with_claimants_description_of_job_or_title_question.set_for(user)
       end
     end
   end

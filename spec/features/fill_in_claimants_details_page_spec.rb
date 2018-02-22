@@ -8,10 +8,10 @@ RSpec.feature "Fill in Claimants Details Page", js: true do
     given_i_am(:company01)
 
     answer_claimants_name_question
-    answer_early_conciliation_details_question
-    answer_employment_dates_question
+    answer_agree_with_early_conciliation_details_question
+    answer_agree_with_employment_dates_question
     answer_continued_employment_question
-    answer_claimants_description_of_job_or_title_question
+    answer_agree_with_claimants_description_of_job_or_title_question
 
     claimants_details_page.next
 

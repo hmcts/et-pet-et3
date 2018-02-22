@@ -49,36 +49,38 @@ module ET3
         respondents_details_page.mobile_number_question.set(user.mobile_number)
       end
 
+      # TODO: Work on info passed into setup.rb
       def answer_contact_preference_question
         respondents_details_page.contact_preference_question.set_for(user)
       end
 
       def answer_organisation_employ_gb_question
-        respondents_details_page.organisation_employ_gb_question.set(user.answer_organisation_employ_gb)
+        respondents_details_page.organisation_employ_gb_question.set(user.organisation_employ_gb)
       end
 
+      # TODO: Work on info passed into setup.rb
       def answer_organisation_site_number_question
         respondents_details_page.organisation_site_number_question.set_for(user)
       end
 
       def answer_claimants_name_question
-        claimants_details_page.claimants_name_question.set(user)
+        claimants_details_page.claimants_name_question.set(user.claimants_name)
       end
 
       def answer_early_conciliation_details_question
-        claimants_details_page.early_conciliation_details_question.set(user)
+        claimants_details_page.early_conciliation_details_question.set_for(user)
       end
 
       def answer_employment_dates_question
-        claimants_details_page.employment_dates_question.set(user)
+        claimants_details_page.employment_dates_question.set_for(user)
       end
 
       def answer_continued_employment_question
-        claimants_details_page.continued_employment_question.set(user)
+        claimants_details_page.continued_employment_question.set(user.continued_employment)
       end
 
       def answer_claimants_description_of_job_or_title_question
-        claimants_details_page.claimants_description_of_job_or_title_question.set(user)
+        claimants_details_page.claimants_description_of_job_or_title_question.set_for(user)
       end
     end
   end

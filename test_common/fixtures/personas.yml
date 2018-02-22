@@ -10,10 +10,15 @@ company01:
   email_address: john@dodgyco.com
   organisation_site_number: 1
   claimants_name: jane
-  early_conciliation_details: 'Yes'
-  employment_dates: 'Yes'
+  early_conciliation_details: 'No'
+  disagree_conciliation_reason: 'lorem ipsum conciliation'
+  employment_dates: 'No'
+  employment_start: 01/01/2017
+  employment_end: 31/12/2017
+  disagree_employment: 'lorem ipsum employment'
   continued_employment: 'No'
-  claimants_description_of_job_or_title: 'Yes'
+  claimants_description_of_job_or_title: 'No'
+  disagree_claimants_job_or_title: 'lorem ipsum job title'
 
 
 company02:
@@ -29,6 +34,7 @@ company02:
   employment_at_site: 42
   claimants_name: alex
   early_conciliation_details: 'No'
+  disagree_conciliation_reason: 'lorem ipsum'
   employment_dates: 'No'
   continued_employment: 'Yes'
   claimants_description_of_job_or_title: 'No'

@@ -1,0 +1,80 @@
+/ TODO: Add required fields
+/ TODO: Check if there are "hidden" elements on the Jadu form
+.content-body.claimants-details
+  - content_for :form_page_title do
+    = "Claimant's Details"
+
+  = form_for @claimants_detail, url: claimants_details_path, method: :patch  do |f|
+    #question1.form-group
+      label.claimants_name.form-label for="claimants_name"
+        span Claimant's Name
+      = f.text_field(:claimants_name, id: 'claimants_name', class: 'form-control')
+    #question2.form-group
+      fieldset
+        legend
+          h1.heading-medium Do you agree with the details given by the claimant about Early Conciliation with Acas?
+        / Radio button for 'Yes'
+        .multiple-choice
+          = f.radio_button(:agree_with_early_conciliation_details, true, class: 'form-control')
+          = f.label(:agree_with_early_conciliation_details_true, 'Yes', class: 'form-label')
+        / Radio button for 'No'
+        .multiple-choice data-target="disagree_conciliation_reason"
+          = f.radio_button(:agree_with_early_conciliation_details, false, class: 'form-control')
+          = f.label(:agree_with_early_conciliation_details_false, 'No', class: 'form-label')
+        / Hidden field for disagreement reason, shows when radio button is clicked
+        #disagree_conciliation_reason.panel.panel-border-narrow.js-hidden
+          = f.label(:disagree_conciliation_reason, 'Why do you disagree with the claimant?', class: 'form-label')
+          = f.text_area(:disagree_conciliation_reason, class: 'form-control')
+    #question3.form-group
+      fieldset
+        legend
+          h1.heading-medium Are the dates of employment given by the claimant correct?*
+        / Radio button for 'Yes'
+        .multiple-choice
+          = f.radio_button(:agree_with_employment_dates, true, class: 'form-control')
+          = f.label(:agree_with_employment_dates_true, 'Yes', class: 'form-label')
+        / Radio button for 'No'
+        .multiple-choice data-target="disagree_employment_dates"
+          = f.radio_button(:agree_with_employment_dates, false, class: 'form-control')
+          = f.label(:agree_with_employment_dates_false, 'No', class: 'form-label')
+        #disagree_employment_dates.panel.panel-border-narrow.js-hidden
+          fieldset
+            .form-group
+              = f.label(:employment_start, 'When their employment started*', class: 'form-label')
+              = f.date_field(:employment_start, class: 'form-control')
+            .form-group
+              = f.label(:employment_end, 'When their employment ended or will end*', class: 'form-label')
+              = f.date_field(:employment_end, class: 'form-control')
+            .form-group
+              = f.label(:disagree_employment, 'Why do you disagree with the dates given by the claimant*', class: 'form-label')
+              = f.text_area(:disagree_employment, class: 'form-control')
+    #question4.form-group
+      fieldset
+        legend
+          h1.heading-medium Is their employment continuing?
+        / Radio button for 'Yes'
+        .multiple-choice
+          = f.radio_button(:continued_employment, true, class: 'form-control')
+          = f.label(:continued_employment_true, 'Yes', class: 'form-label')
+        / Radio button for 'No'
+        .multiple-choice
+          = f.radio_button(:continued_employment, false, class: 'form-control')
+          = f.label(:continued_employment_false, 'No', class: 'form-label')
+    #question5.form-group
+      fieldset
+        legend
+          h1.heading-medium Is the claimant's description of their job or job title correct?
+        / Radio button for 'Yes'
+        .multiple-choice
+          = f.radio_button(:agree_with_claimants_description_of_job_or_title, true, class: 'form-control')
+          = f.label(:agree_with_claimants_description_of_job_or_title_true, 'Yes', class: 'form-label')
+        / Radio button for 'No'
+        .multiple-choice data-target="disagree_claimants_job_or_title"
+          = f.radio_button(:agree_with_claimants_description_of_job_or_title, false, class: 'form-control')
+          = f.label(:agree_with_claimants_description_of_job_or_title_false, 'No', class: 'form-label')
+        #disagree_claimants_job_or_title.panel.panel-border-narrow.js-hidden
+          = f.label(:disagree_claimants_job_or_title, 'Please give the details you believe to be correct', class: 'form-label')
+          = f.text_area(:disagree_claimants_job_or_title, class: 'form-control')
+
+
+    = f.submit("Save and continue", class: 'button')

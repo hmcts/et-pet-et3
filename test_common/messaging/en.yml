@@ -1,5 +1,6 @@
 en:
   questions:
+    # Respondent's Details Page
     case_number:
       label: Case Number*
     name:
@@ -38,3 +39,36 @@ en:
         label: 'Yes'
       only_one_site:
         label: 'No'
+    # Claimant's Details Page
+    claimants_name:
+      label: "Claimant's Name"
+    agree_with_early_conciliation_details:
+      label: Do you agree with the details given by the claimant about Early Conciliation with Acas?
+      'yes':
+        label: 'Yes'
+      'no':
+        label: 'No'
+      disagree_conciliation_reason:
+        label: Why do you disagree with the claimant?
+    agree_with_employment_dates:
+      label: Are the dates of employment given by the claimant correct?*
+      'yes':
+        label: 'Yes'
+      'no':
+        label: 'No'
+      employment_start:
+        label: When their employment started*
+      employment_end:
+        label: When their employment ended or will end*
+      disagree_employment:
+        label: Why do you disagree with the dates given by the claimant*
+    continued_employment:
+      label: Is their employment continuing?
+    agree_with_claimants_description_of_job_or_title:
+      label: Is the claimant's description of their job or job title correct?
+      'yes':
+        label: 'Yes'
+      'no':
+        label: 'No'
+      disagree_claimants_job_or_title:
+        label: Please give the details you believe to be correct

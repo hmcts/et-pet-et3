@@ -71,39 +71,41 @@ module ET3
 
       section :contact_preference_question, :single_choice_option, 'questions.contact_preference.label', exact: true do |q|
 
-        section :preference_email, :fieldset_question_labelled, 'questions.contact_preference.email.label' do
-          element :selector, :css, 'input[type="radio"]'
-          element :field, :css, 'input[type="text"]'
-
-          def set(value)
-            selector.set(true)
-            field.set(value)
-          end
-        end
-
-        section :preference_post, :fieldset_question_labelled, 'questions.contact_preference.post.label' do
+        section :select_email, :gds_multiple_choice_option, 'questions.contact_preference.email.label' do
           element :selector, :css, 'input[type="radio"]'
 
           delegate :set, to: :selector
         end
 
-        section :preference_fax, :fieldset_question_labelled, 'questions.contact_preference.fax.label' do
+        section :select_post, :gds_multiple_choice_option, 'questions.contact_preference.post.label' do
           element :selector, :css, 'input[type="radio"]'
-          element :field, :css, 'input[type="text"]'
 
-          def set(value)
-            selector.set(true)
-            field.set(value)
-          end
+          delegate :set, to: :selector
+        end
+
+        section :select_fax, :gds_multiple_choice_option, 'questions.contact_preference.fax.label' do
+          element :selector, :css, 'input[type="radio"]'
+
+          delegate :set, to: :selector
+        end
+
+        section :preference_email, :inputtext_labelled, 'questions.contact_preference.email.input_label' do
+          delegate :set, to: :root_element
+        end
+
+        section :preference_fax, :inputtext_labelled, 'questions.contact_preference.fax.input_label' do
+          delegate :set, to: :root_element
         end
 
         def set_for(user_persona)
           case user_persona.contact_preference
             when "email"
+              select_email.set(true)
               preference_email.set(user_persona.email_address)
             when "post"
-              preference_post.set(true)
+              select_post.set(true)
             when "fax"
+              select_fax.set(true)
               preference_fax.set(user_persona.fax_number)
           end
         end
@@ -117,27 +119,28 @@ module ET3
       
       section :organisation_site_number_question, :single_choice_option, 'questions.organisation_site_number.label', exact: true do |q|
         
-        section :more_than_one_site, :fieldset_question_labelled, 'questions.organisation_site_number.more_than_one_site.label', exact: true do
-          element :selector, :css, 'input[type="radio"]'
-          element :field, :css, 'input[type="text"]'
-
-          def set(value)
-            selector.set(true)
-            field.set(value)
-          end
+        section :yes, :gds_multiple_choice_option, 'questions.organisation_site_number.yes.label', exact: true do
+          element :selector, :css, 'input'
+          
+          delegate :set, to: :selector
         end
 
-        section :only_one_site, :fieldset_question_labelled, 'questions.organisation_site_number.only_one_site.label', exact: true do
-          element :selector, :css, 'input[type="radio"]'
+        section :no, :gds_multiple_choice_option, 'questions.organisation_site_number.no.label', exact: true do
+          element :selector, :css, 'input'
 
           delegate :set, to: :selector
         end
 
+        section :employment_at_site_number, :inputtext_labelled, 'questions.organisation_site_number.employment_at_site.label', exact: true do
+          delegate :set, to: :root_element
+        end
+
         def set_for(user_persona)
           if user_persona.organisation_site_number > 1
-            more_than_one_site.set(user_persona.employment_at_site)
+            yes.set(true)
+            employment_at_site.set(user_persona.employment_at_site)
           else 
-            only_one_site.set(true)
+            no.set(true)
           end
         end
       end

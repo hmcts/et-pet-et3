@@ -25,7 +25,7 @@ RSpec.describe EarningsAndBenefits, type: :model do
     it 'with queried_pay_before_tax only' do
       earnings_and_benefits = described_class.new(queried_pay_before_tax: 100)
 
-      expect(earnings_and_benefits.queried_pay_before_tax).to be 100
+      expect(earnings_and_benefits.queried_pay_before_tax).to be 100.00
     end
 
     it 'with queried_pay_before_tax_period only' do
@@ -37,7 +37,7 @@ RSpec.describe EarningsAndBenefits, type: :model do
     it 'with queried_take_home_pay only' do
       earnings_and_benefits = described_class.new(queried_take_home_pay: 100)
 
-      expect(earnings_and_benefits.queried_take_home_pay).to be 100
+      expect(earnings_and_benefits.queried_take_home_pay).to be 100.00
     end
 
     it 'with queried_take_home_pay_period only' do

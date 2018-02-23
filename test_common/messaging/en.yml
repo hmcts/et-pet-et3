@@ -72,3 +72,6 @@ en:
         label: 'No'
       disagree_claimants_job_or_title:
         label: Please give the details you believe to be correct
+    # Earnings and Benefits Page
+    agree_with_claimants_hours:
+      label: Are the claimant's hours of work correct?

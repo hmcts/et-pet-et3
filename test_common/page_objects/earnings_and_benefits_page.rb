@@ -49,53 +49,81 @@ module ET3
           delegate :set, to: :root_element
         end
 
-        #TODO: Build selector
-        section :queried_pay_before_tax_period, :SELECTOR_HERE, 'questions.agree_with_earnings_details.queried_pay_before_tax_period.label', exact: true do
+        section :queried_pay_before_tax_period, :single_choice_option, 'questions.agree_with_earnings_details.queried_pay_before_tax_period.label', exact: true do
+          
+          section :queried_pay_before_tax_period_monthly, :gds_multiple_choice_option, 'questions.agree_with_earnings_details.queried_pay_before_tax_period_monthly.label', exact: true do
+            element :selector, :css, 'input'
+
+            delegate :set, to: :selector
+          end
+
+          section :queried_pay_before_tax_period_weekly, :gds_multiple_choice_option, 'questions.agree_with_earnings_details.queried_pay_before_tax_period_weekly.label', exact: true do
+            element :selector, :css, 'input'
+
+            delegate :set, to: :selector
+          end
+        end
+
+        section :queried_take_home_pay, :inputtext_labelled, 'questions.agree_with_earnings_details.queried_take_home_pay.label', exact: true do
           delegate :set, to: :root_element
         end
 
-        section :queried_take_home_pay, :inputtext_labelled, 'questions.agree_with_earnings_details.queued_take_home_pay.label', exact: true do
-          delegate :set, to: :root_element
-        end
+        section :queried_take_home_pay_period, :single_choice_option, 'questions.agree_with_earnings_details.queried_take_home_pay_period.label', exact: true do
+          
+          section :queried_take_home_pay_period_monthly, :gds_multiple_choice_option, 'questions.agree_with_earnings_details.queried_take_home_pay_period_monthly.label', exact: true do
+            element :selector, :css, 'input'
 
-        #TODO: Build selector
-        section :queried_take_home_pay_period, :SELECTOR_HERE, 'questions.agree_with_earnings_details.queued_take_home_pay_period.label', exact: true do
-          delegate :set, to: :root_element
+            delegate :set, to: :selector
+          end
+
+          section :queried_take_home_pay_period_weekly, :gds_multiple_choice_option, 'questions.agree_with_earnings_details.queried_take_home_pay_period_weekly.label', exact: true do
+            element :selector, :css, 'input'
+
+            delegate :set, to: :selector
+          end
         end
 
         def set_for(user_persona)
           if user_persona.agree_with_earnings_details == 'No'
             no.set(true)
             queried_pay_before_tax.set(user_persona.queried_pay_before_tax)
-            queried_pay_before_tax_period.set(user_persona.queried_pay_before_tax_period)
+            if queried_pay_before_tax_period == 'Monthly'
+              queried_pay_before_tax_period_monthly.set(true)
+            elsif queried_pay_before_tax_period == 'Weekly'
+              queried_pay_before_tax_period_weekly.set(true)
+            end
             queried_take_home_pay.set(user_persona.queried_take_home_pay)
-            queried_take_home_pay_period.set(user_persona.queried_take_home_pay_period)
+            if queried_take_home_pay_period == 'Monthly'
+              queried_take_home_pay_period_monthly.set(true)
+            elsif queried_take_home_pay_period == 'Weekly'
+              queried_take_home_pay_period_weekly.set(true)
+            end
           else
             yes.set(true)
           end
         end
       end
 
-      section :agree_with_claimant_notice_question, :single_choice_option, 'questions.agree_with_claimant_notice_question.label', exact: true do
+      section :agree_with_claimant_notice_question, :single_choice_option, 'questions.agree_with_claimant_notice.label', exact: true do
 
-        section :yes, :gds_multiple_choice_option, 'question.agree_with_claimant_notice_question.yes.label', exact: true do
+        section :yes, :gds_multiple_choice_option, 'questions.agree_with_claimant_notice.yes.label', exact: true do
           element :selector, :css, 'input'
 
           delegate :set, to: :selector
         end
 
-        section :no, :gds_multiple_choice_option, 'question.agree_with_claimant_notice_question.no.label', exact: true do
+        section :no, :gds_multiple_choice_option, 'questions.agree_with_claimant_notice.no.label', exact: true do
           element :selector, :css, 'input'
 
           delegate :set, to: :selector
         end
 
-        section :disagree_claimant_notice_reason, :textarea_labelled, 'questions.agree_with_claimants_hours.disagree_claimant_notice_reason.label', exact: true do
+        section :disagree_claimant_notice_reason, :textarea_labelled, 'questions.agree_with_claimant_notice.disagree_claimant_notice_reason.label', exact: true do
           delegate :set, to: :root_element
         end
 
         def set_for(user_persona)
-          if user_persona.agree_with_claimant_notice_question == 'No'
+          if user_persona.agree_with_claimant_notice == 'No'
             no.set(true)
             disagree_claimant_notice_reason.set(user_persona.disagree_claimant_notice_reason)
           else
@@ -106,19 +134,19 @@ module ET3
 
       section :agree_with_claimant_pension_benefits_question, :single_choice_option, 'questions.agree_with_claimant_pension_benefits.label', exact: true do
         
-        section :yes, :gds_multiple_choice_option, 'question.agree_with_claimant_pension_benefits.yes.label', exact: true do
+        section :yes, :gds_multiple_choice_option, 'questions.agree_with_claimant_pension_benefits.yes.label', exact: true do
           element :selector, :css, 'input'
 
           delegate :set, to: :selector
         end
 
-        section :no, :gds_multiple_choice_option, 'question.agree_with_claimant_pension_benefits.no.label', exact: true do
+        section :no, :gds_multiple_choice_option, 'questions.agree_with_claimant_pension_benefits.no.label', exact: true do
           element :selector, :css, 'input'
 
           delegate :set, to: :selector
         end
 
-        section :disagree_claimant_pension_benefits_reason, :textarea_labelled, 'question.agree_with_claimant_pension_benefits.disagree claimant_pension_benefits_reason.label', exact: true do
+        section :disagree_claimant_pension_benefits_reason, :textarea_labelled, 'questions.agree_with_claimant_pension_benefits.disagree_claimant_pension_benefits_reason.label', exact: true do
           delegate :set, to: :root_element
         end
 
@@ -131,6 +159,11 @@ module ET3
           end
         end
 
+      end
+
+      element :continue_button, :button, "Save and continue"
+      def next
+        continue_button.click
       end
     end
   end

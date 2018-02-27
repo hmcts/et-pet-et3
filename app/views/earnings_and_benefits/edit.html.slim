@@ -36,40 +36,41 @@
           = f.label(:agree_with_earnings_details, 'No', class: 'form-label')
           span If No, please give the details you believe to be correct
         / Hidden wrapper for correcting claimant's details, shows when radio button is clicked
-        #disagree_earnings_details.panel.panel-border-narrow.js-hidden.form-group
-          fieldset
-            legend
-              h2.heading-medium Pay before tax
-            .form-group
-              = f.label(:queried_pay_before_tax, 'Pay before tax', class: 'form-label')
-              = f.text_field(:queried_pay_before_tax, class: 'form-control')
-              span Incl. overtime, commission, bonuses, etc.
-          fieldset
-            legend
-              h2.heading-medium Period Selection
-            .multiple-choice
-              = f.radio_button(:queried_pay_before_tax_period, 'monthly', class: 'form-control')
-              = f.label(:queried_pay_before_tax_period, 'Monthly', class: 'form-label')
-            .multiple-choice
-              = f.radio_button(:queried_pay_before_tax_period, 'weekly', class: 'form-control')
-              = f.label(:queried_pay_before_tax_period, 'Weekly', class: 'form-label')
-          fieldset
-            legend
-              h2.heading-medium Normal take-home pay
-            .form-group
-              = f.label(:queried_take_home_pay, 'Normal take-home pay', class: 'form-label')
-              = f.text_field(:queried_take_home_pay, class: 'form-control')
-              span Incl. overtime, commission, bonuses, etc.
-          fieldset
-            legend
-              h2.heading-medium Period Selection
-            .multiple-choice
-              = f.radio_button(:queried_take_home_pay_period, 'monthly', class: 'form-control')
-              = f.label(:queried_take_home_pay_period, 'Monthly', class: 'form-label')
-            .multiple-choice
-              = f.radio_button(:queried_take_home_pay_period, 'weekly', class: 'form-control')
-              = f.label(:queried_take_home_pay_period, 'Weekly', class: 'form-label')
-
+        #disagree_earnings_details.panel.panel-border-narrow.js-hidden
+          .pay-before-tax
+            fieldset
+              legend
+                h2.heading-medium Pay before tax
+              .form-group
+                = f.label(:queried_pay_before_tax, 'Pay before tax', class: 'form-label')
+                = f.text_field(:queried_pay_before_tax, class: 'form-control')
+                span Incl. overtime, commission, bonuses, etc.
+            fieldset
+              legend
+                h2.heading-medium Pay before tax period
+              .multiple-choice
+                = f.radio_button(:queried_pay_before_tax_period, 'monthly', class: 'form-control')
+                = f.label(:queried_pay_before_tax_period, 'Monthly', class: 'form-label')
+              .multiple-choice
+                = f.radio_button(:queried_pay_before_tax_period, 'weekly', class: 'form-control')
+                = f.label(:queried_pay_before_tax_period, 'Weekly', class: 'form-label')
+          .normal-take-home-pay
+            fieldset
+              legend
+                h2.heading-medium Normal take-home pay
+              .form-group
+                = f.label(:queried_take_home_pay, 'Normal take-home pay', class: 'form-label')
+                = f.text_field(:queried_take_home_pay, class: 'form-control')
+                span Incl. overtime, commission, bonuses, etc.
+            fieldset
+              legend
+                h2.heading-medium Normal take-home pay period
+              .multiple-choice
+                = f.radio_button(:queried_take_home_pay_period, 'monthly', class: 'form-control')
+                = f.label(:queried_take_home_pay_period, 'Monthly', class: 'form-label')
+              .multiple-choice
+                = f.radio_button(:queried_take_home_pay_period, 'weekly', class: 'form-control')
+                = f.label(:queried_take_home_pay_period, 'Weekly', class: 'form-label')
     #question3.form-group
       fieldset
         legend

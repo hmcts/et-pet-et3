@@ -45,58 +45,63 @@ module ET3
           delegate :set, to: :selector
         end
 
-        section :queried_pay_before_tax, :inputtext_labelled, 'questions.agree_with_earnings_details.queried_pay_before_tax.label', exact: true do
-          delegate :set, to: :root_element
-        end
-
-        section :queried_pay_before_tax_period, :single_choice_option, 'questions.agree_with_earnings_details.queried_pay_before_tax_period.label', exact: true do
+        section :queried_pay_before_tax, :embedded_single_choice_option, 'questions.agree_with_earnings_details.queried_pay_before_tax.label', exact: true do
           
-          section :queried_pay_before_tax_period_monthly, :gds_multiple_choice_option, 'questions.agree_with_earnings_details.queried_pay_before_tax_period_monthly.label', exact: true do
+          section :field, :inputtext_labelled, 'questions.agree_with_earnings_details.queried_pay_before_tax.label', exact: true do
+            delegate :set, to: :root_element
+          end
+
+          section :monthly, :gds_multiple_choice_option, 'questions.agree_with_earnings_details.queried_pay_before_tax_period.monthly.label', exact: true do
             element :selector, :css, 'input'
 
             delegate :set, to: :selector
           end
 
-          section :queried_pay_before_tax_period_weekly, :gds_multiple_choice_option, 'questions.agree_with_earnings_details.queried_pay_before_tax_period_weekly.label', exact: true do
+          section :weekly, :gds_multiple_choice_option, 'questions.agree_with_earnings_details.queried_pay_before_tax_period.weekly.label', exact: true do
             element :selector, :css, 'input'
 
             delegate :set, to: :selector
           end
+
+          delegate :set, to: :field
+
         end
 
-        section :queried_take_home_pay, :inputtext_labelled, 'questions.agree_with_earnings_details.queried_take_home_pay.label', exact: true do
-          delegate :set, to: :root_element
-        end
-
-        section :queried_take_home_pay_period, :single_choice_option, 'questions.agree_with_earnings_details.queried_take_home_pay_period.label', exact: true do
+        section :queried_take_home_pay, :embedded_single_choice_option, 'questions.agree_with_earnings_details.queried_take_home_pay.label', exact: true do
           
-          section :queried_take_home_pay_period_monthly, :gds_multiple_choice_option, 'questions.agree_with_earnings_details.queried_take_home_pay_period_monthly.label', exact: true do
+          section :field, :inputtext_labelled, 'questions.agree_with_earnings_details.queried_take_home_pay.label', exact: true do
+            delegate :set, to: :root_element
+          end
+          
+          section :monthly, :gds_multiple_choice_option, 'questions.agree_with_earnings_details.queried_take_home_pay_period.monthly.label', exact: true do
             element :selector, :css, 'input'
 
             delegate :set, to: :selector
           end
 
-          section :queried_take_home_pay_period_weekly, :gds_multiple_choice_option, 'questions.agree_with_earnings_details.queried_take_home_pay_period_weekly.label', exact: true do
+          section :weekly, :gds_multiple_choice_option, 'questions.agree_with_earnings_details.queried_take_home_pay_period.weekly.label', exact: true do
             element :selector, :css, 'input'
 
             delegate :set, to: :selector
           end
+
+          delegate :set, to: :field
         end
 
         def set_for(user_persona)
           if user_persona.agree_with_earnings_details == 'No'
             no.set(true)
             queried_pay_before_tax.set(user_persona.queried_pay_before_tax)
-            if queried_pay_before_tax_period == 'Monthly'
-              queried_pay_before_tax_period_monthly.set(true)
-            elsif queried_pay_before_tax_period == 'Weekly'
-              queried_pay_before_tax_period_weekly.set(true)
+            if user_persona.queried_pay_before_tax_period == 'Monthly'
+              queried_pay_before_tax.monthly.set(true)
+            elsif user_persona.queried_pay_before_tax_period == 'Weekly'
+              queried_pay_before_tax.weekly.set(true)
             end
             queried_take_home_pay.set(user_persona.queried_take_home_pay)
-            if queried_take_home_pay_period == 'Monthly'
-              queried_take_home_pay_period_monthly.set(true)
-            elsif queried_take_home_pay_period == 'Weekly'
-              queried_take_home_pay_period_weekly.set(true)
+            if user_persona.queried_take_home_pay_period == 'Monthly'
+              queried_take_home_pay.monthly.set(true)
+            elsif user_persona.queried_take_home_pay_period == 'Weekly'
+              queried_take_home_pay.weekly.set(true)
             end
           else
             yes.set(true)

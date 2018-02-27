@@ -17,6 +17,10 @@ module ET3
         ET3::Test::EarningsAndBenefitsPage.new
       end
 
+      def response_page
+        ET3::Test::ResponsePage.new
+      end
+
       # Define other pages here
     end
   end

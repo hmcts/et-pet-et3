@@ -100,6 +100,11 @@ module ET3
         earnings_and_benefits_page.agree_with_claimant_pension_benefits_question.set_for(user)
       end
 
+      # Response Page
+      def answer_defend_claim_question
+        response_page.defend_claim_question.set_for(user)
+      end
+
     end
   end
 end

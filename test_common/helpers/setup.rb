@@ -105,6 +105,11 @@ module ET3
         response_page.defend_claim_question.set_for(user)
       end
 
+      # Your Representative Page
+      def answer_have_representative_question
+        your_representative_page.have_representative_question.set_for(user)
+      end
+
     end
   end
 end

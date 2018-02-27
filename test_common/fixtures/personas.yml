@@ -19,6 +19,17 @@ company01:
   continued_employment: 'No'
   claimants_description_of_job_or_title: 'No'
   disagree_claimants_job_or_title: 'lorem ipsum job title'
+  agree_with_claimants_hours: 'No'
+  queried_hours: 32
+  agree_with_earnings_details: 'No'
+  queried_pay_before_tax: 1000
+  queried_pay_before_tax_period: 'Monthly'
+  queried_take_home_pay: 900
+  queried_take_home_pay_period: 'Monthly'
+  agree_with_claimant_notice: 'No'
+  disagree_claimant_notice_reason: 'lorem ipsum notice reason'
+  agree_with_claimant_pension_benefits: 'No'
+  disagree_claimant_pension_benefits_reason: 'lorem ipsum claimant pension'
 
 
 company02:

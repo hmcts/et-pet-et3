@@ -127,4 +127,4 @@ en:
       'no':
         label: 'No'
       defend_claim_facts:
-        label: Please set out the facts which you rely on to defend the claim.
+        label: Please set out the facts which you rely on to defend the claim

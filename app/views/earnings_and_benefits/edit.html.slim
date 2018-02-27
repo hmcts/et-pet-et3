@@ -37,7 +37,9 @@
           span If No, please give the details you believe to be correct
         / Hidden wrapper for correcting claimant's details, shows when radio button is clicked
         #disagree_earnings_details.panel.panel-border-narrow.js-hidden
+          / Wrapper for 'Pay Before Tax Questions'
           .pay-before-tax
+            / Text input for financial value
             fieldset
               legend
                 h2.heading-medium Pay before tax
@@ -45,16 +47,21 @@
                 = f.label(:queried_pay_before_tax, 'Pay before tax', class: 'form-label')
                 = f.text_field(:queried_pay_before_tax, class: 'form-control')
                 span Incl. overtime, commission, bonuses, etc.
+            / Radio buttons for period selection
             fieldset
               legend
                 h2.heading-medium Pay before tax period
+              / Monthly
               .multiple-choice
                 = f.radio_button(:queried_pay_before_tax_period, 'monthly', class: 'form-control')
                 = f.label(:queried_pay_before_tax_period_monthly, 'Monthly', class: 'form-label')
+              / Weekly
               .multiple-choice
                 = f.radio_button(:queried_pay_before_tax_period, 'weekly', class: 'form-control')
                 = f.label(:queried_pay_before_tax_period_weekly, 'Weekly', class: 'form-label')
+          / Wrapper for 'Normal Take Home Pay Questions'
           .normal-take-home-pay
+            / Text input for financial value
             fieldset
               legend
                 h2.heading-medium Normal take-home pay
@@ -62,12 +69,15 @@
                 = f.label(:queried_take_home_pay, 'Normal take-home pay', class: 'form-label')
                 = f.text_field(:queried_take_home_pay, class: 'form-control')
                 span Incl. overtime, commission, bonuses, etc.
+            / Radio buttons for period selection
             fieldset
               legend
                 h2.heading-medium Normal take-home pay period
+              / Monthly
               .multiple-choice
                 = f.radio_button(:queried_take_home_pay_period, 'monthly', class: 'form-control')
                 = f.label(:queried_take_home_pay_period_monthly, 'Monthly', class: 'form-label')
+              / Weekly
               .multiple-choice
                 = f.radio_button(:queried_take_home_pay_period, 'weekly', class: 'form-control')
                 = f.label(:queried_take_home_pay_period_weekly, 'Weekly', class: 'form-label')

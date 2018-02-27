@@ -1,0 +1,28 @@
+/ TODO: Add required fields
+/ TODO: Check if there are "hidden" elements on the Jadu form
+.content-body.earnings-and-benefits
+  - content_for :form_page_title do
+    = "Response"
+
+  = form_for @response, url: response_path, method: :patch  do |f|
+    #question1.form-group
+      fieldset
+        legend
+          h1.heading-medium Do you defend the claim?*
+        / Radio button for 'Yes'
+        .multiple-choice data-target="defend_claim_text"
+          = f.radio_button(:defend_claim, true, class: 'form-control')
+          = f.label(:defend_claim_true, 'Yes', class: 'form-label')
+        / Hidden field for defend claim facts, shows when radio button is clicked
+        #defend_claim_text.panel.panel-border-narrow.js-hidden
+          = f.label(:defend_claim_facts, 'Please set out the facts which you rely on to defend the claim', class: 'form-label')
+          p
+            span If you exceed 25 lines you will not receive full details of your response in the PDF returned to you on submission of the form. 
+          = f.text_area(:defend_claim_facts, class: 'form-control')
+          p
+            span PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 2500 characters) if you would like to include more please use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
+        / Radio button for 'No'
+        .multiple-choice
+          = f.radio_button(:defend_claim, false, class: 'form-control')
+          = f.label(:defend_claim_false, 'No', class: 'form-label')
+    = f.submit("Save and continue", class: 'button')

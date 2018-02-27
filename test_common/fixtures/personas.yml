@@ -30,6 +30,8 @@ company01:
   disagree_claimant_notice_reason: 'lorem ipsum notice reason'
   agree_with_claimant_pension_benefits: 'No'
   disagree_claimant_pension_benefits_reason: 'lorem ipsum claimant pension'
+  defend_claim: 'Yes'
+  defend_claim_facts: 'lorem ipsum defence'
 
 
 company02:

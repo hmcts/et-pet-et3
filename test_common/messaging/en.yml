@@ -119,4 +119,12 @@ en:
         label: 'No'
       disagree_claimant_pension_benefits_reason:
         label: Please give the details you believe to be correct.
-    
+    # Response Page
+    defend_claim:
+      label: Do you defend the claim?*
+      'yes':
+        label: 'Yes'
+      'no':
+        label: 'No'
+      defend_claim_facts:
+        label: Please set out the facts which you rely on to defend the claim

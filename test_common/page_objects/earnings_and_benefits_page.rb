@@ -68,7 +68,7 @@ module ET3
         end
 
         section :queried_take_home_pay, :embedded_single_choice_option, 'questions.agree_with_earnings_details.queried_take_home_pay.label', exact: true do
-          
+
           section :field, :inputtext_labelled, 'questions.agree_with_earnings_details.queried_take_home_pay.label', exact: true do
             delegate :set, to: :root_element
           end

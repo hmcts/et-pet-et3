@@ -76,3 +76,51 @@ en:
         label: 'No'
       disagree_claimants_job_or_title:
         label: Please give the details you believe to be correct
+    # Earnings and Benefits Page
+    agree_with_claimants_hours:
+      label: Are the claimant's hours of work correct?
+      'yes':
+        label: 'Yes'
+      'no':
+        label: 'No'
+      queried_hours:
+        label: Please enter the details you believe to be correct
+    agree_with_earnings_details:
+      label: Are the earnings details given by the claimant correct?
+      'yes':
+        label: 'Yes'
+      'no':
+        label: 'No'
+      queried_pay_before_tax:
+        label: 'Pay before tax'
+      queried_pay_before_tax_period:
+        label: 'Pay before tax period'
+        monthly:
+          label: 'Monthly'
+        weekly:
+          label: 'Weekly'
+      queried_take_home_pay:
+        label: 'Normal take-home pay'
+      queried_take_home_pay_period:
+        label: 'Normal take-home pay period'
+        monthly:
+          label: 'Monthly'
+        weekly:
+          label: 'Weekly'
+    agree_with_claimant_notice:
+      label: Is the information given by the claimant correct about being paid for, or working a period of notice?
+      'yes':
+        label: 'Yes'
+      'no':
+        label: 'No'
+      disagree_claimant_notice_reason:
+        label: Please give the details you believe to be correct below. If you didn't give notice or pay them instead of letting them work their notice please explain what happened and why
+    agree_with_claimant_pension_benefits:
+      label: Are the details about pension and other benefits e.g. company car, medical insurance, etc. given by the claimant correct?
+      'yes':
+        label: 'Yes'
+      'no':
+        label: 'No'
+      disagree_claimant_pension_benefits_reason:
+        label: Please give the details you believe to be correct.
+    

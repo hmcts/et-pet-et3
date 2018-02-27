@@ -13,6 +13,10 @@ module ET3
         ET3::Test::ClaimantsDetailsPage.new
       end
 
+      def earnings_and_benefits_page
+        ET3::Test::EarningsAndBenefitsPage.new
+      end
+
       # Define other pages here
     end
   end

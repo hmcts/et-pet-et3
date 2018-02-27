@@ -73,14 +73,14 @@
           h1.heading-medium Does this organisation have more than one site in Great Britain?
         / Radio button for more than one site
         .multiple-choice data-target="respondent_employment_at_site_number"
-          = f.radio_button(:organisation_site_number, true, class: 'form-control')
-          = f.label(:organisation_site_number, 'Yes', class: 'form-label')
+          = f.radio_button(:organisation_more_than_one_site, true, class: 'form-control')
+          = f.label(:organisation_more_than_one_site_true, 'Yes', class: 'form-label')
         / Hidden field for number of employees at site where claimant worked, shows when radio button is clicked
         #respondent_employment_at_site_number.panel.panel-border-narrow.js-hidden
           = f.label(:employment_at_site_number, 'How many people are employed at the place where the claimant worked?*', class: 'form-label')
           = f.text_field(:employment_at_site_number, class: 'form-control')
         / Radio button for fax preference
         .multiple-choice
-          = f.radio_button(:organisation_site_number, false, class: 'form-control')
-          = f.label(:organisation_site_number, 'No', class: 'form-label')
+          = f.radio_button(:organisation_more_than_one_site, false, class: 'form-control')
+          = f.label(:organisation_more_than_one_site_false, 'No', class: 'form-label')
     = f.submit("Save and continue", class: 'button')

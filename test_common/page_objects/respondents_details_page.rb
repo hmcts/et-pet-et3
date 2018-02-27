@@ -117,26 +117,26 @@ module ET3
         delegate :set, to: :field
       end
       
-      section :organisation_site_number_question, :single_choice_option, 'questions.organisation_site_number.label', exact: true do |q|
+      section :organisation_more_than_one_site_question, :single_choice_option, 'questions.organisation_more_than_one_site.label', exact: true do |q|
         
-        section :yes, :gds_multiple_choice_option, 'questions.organisation_site_number.yes.label', exact: true do
+        section :yes, :gds_multiple_choice_option, 'questions.organisation_more_than_one_site.yes.label', exact: true do
           element :selector, :css, 'input'
           
           delegate :set, to: :selector
         end
 
-        section :no, :gds_multiple_choice_option, 'questions.organisation_site_number.no.label', exact: true do
+        section :no, :gds_multiple_choice_option, 'questions.organisation_more_than_one_site.no.label', exact: true do
           element :selector, :css, 'input'
 
           delegate :set, to: :selector
         end
 
-        section :employment_at_site_number, :inputtext_labelled, 'questions.organisation_site_number.employment_at_site.label', exact: true do
+        section :employment_at_site_number, :inputtext_labelled, 'questions.organisation_more_than_one_site.employment_at_site.label', exact: true do
           delegate :set, to: :root_element
         end
 
         def set_for(user_persona)
-          if user_persona.organisation_site_number > 1
+          if user_persona.organisation_site_number == 'Yes'
             yes.set(true)
             employment_at_site.set(user_persona.employment_at_site)
           else 

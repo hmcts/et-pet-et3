@@ -59,8 +59,8 @@ module ET3
       end
 
       # TODO: Work on info passed into setup.rb
-      def answer_organisation_site_number_question
-        respondents_details_page.organisation_site_number_question.set_for(user)
+      def answer_organisation_more_than_one_site_question
+        respondents_details_page.organisation_more_than_one_site_question.set_for(user)
       end
 
       def answer_claimants_name_question

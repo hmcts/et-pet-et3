@@ -14,7 +14,7 @@ class RespondentsDetail < BaseForm
   attribute :email_address, :string
   attribute :fax_number, :string
   attribute :organisation_employ_gb, :integer
-  attribute :organisation_site_number, :boolean
+  attribute :organisation_more_than_one_site, :boolean
   attribute :employment_at_site_number, :integer
 
   # validates :case_number, :name, :building_name, :street_name, :town, :postcode, presence: true, on: :update

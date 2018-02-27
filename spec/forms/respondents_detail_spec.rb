@@ -84,14 +84,14 @@ RSpec.describe RespondentsDetail, type: :model do
 
     it 'with fax number only' do
       respondent_detail = described_class.new(fax_number: '0207 123 4567')
-      
+
       expect(respondent_detail.fax_number).to eql '0207 123 4567'
     end
 
-    it 'with organisation_site_number only' do
-      respondent_detail = described_class.new(organisation_site_number: false)
+    it 'with organisation_more_than_one_site only' do
+      respondent_detail = described_class.new(organisation_more_than_one_site: false)
 
-      expect(respondent_detail.organisation_site_number).to be false
+      expect(respondent_detail.organisation_more_than_one_site).to be false
     end
 
     it 'with employment at site number only' do

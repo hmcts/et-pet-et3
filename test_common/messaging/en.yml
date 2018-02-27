@@ -35,7 +35,7 @@ en:
         input_label: Fax number*
     organisation_employ_gb:
       label: How many people does this organisation employ in Great Britain?
-    organisation_site_number:
+    organisation_more_than_one_site:
       label: Does this organisation have more than one site in Great Britain?
       'yes':
         label: 'Yes'

@@ -27,18 +27,22 @@ en:
       label: How would you prefer us to contact you?
       email:
         label: Email
+        input_label: Email address*
       post:
         label: Post
       fax:
         label: Fax
+        input_label: Fax number*
     organisation_employ_gb:
       label: How many people does this organisation employ in Great Britain?
-    organisation_site_number:
+    organisation_more_than_one_site:
       label: Does this organisation have more than one site in Great Britain?
-      more_than_one_site:
+      'yes':
         label: 'Yes'
-      only_one_site:
+      'no':
         label: 'No'
+      employment_at_site_number:
+        label: How many people are employed at the place where the claimant worked?*
     # Claimant's Details Page
     claimants_name:
       label: "Claimant's Name"

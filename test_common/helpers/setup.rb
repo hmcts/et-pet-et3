@@ -58,8 +58,8 @@ module ET3
         respondents_details_page.organisation_employ_gb_question.set(user.organisation_employ_gb)
       end
 
-      def answer_organisation_site_number_question
-        respondents_details_page.organisation_site_number_question.set_for(user)
+      def answer_organisation_more_than_one_site_question
+        respondents_details_page.organisation_more_than_one_site_question.set_for(user)
       end
 
       # Claimant's Details Page

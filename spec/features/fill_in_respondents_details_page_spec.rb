@@ -15,7 +15,7 @@ RSpec.feature "Fill in Respondents Details Page", js: true do
     answer_town_question
     answer_postcode_question
     answer_contact_preference_question
-    answer_organisation_site_number_question
+    answer_organisation_more_than_one_site_question
 
     respondents_details_page.next
 

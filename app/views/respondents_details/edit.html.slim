@@ -6,49 +6,38 @@
 
   = form_for @respondents_detail, url: respondents_details_path, method: :patch  do |f|
     #question1.form-group
-      label.case_number.form-label for="case_number"
-        span Case Number*
-      = f.text_field(:case_number, id: 'case_number', class: 'form-control')
+      = f.label(:case_number, 'Case Number*', class: 'form-label')
+      = f.text_field(:case_number, class: 'form-control')
     #question2.form-group
-      label.name_of_indiv_co_or_org.form-label for="name_of_indiv_co_or_org"
-        span Name of Individual, Company or Organisation*
-      = f.text_field(:name, id: 'name_of_indiv_co_or_org', class: 'form-control')
+      = f.label(:name_of_indiv_co_or_org, 'Name of Individual, Company or Organisation*', class:'form-label')
+      = f.text_field(:name, class: 'form-control')
     #question3.form-group
-      label.name_of_contact.form-label for="name_of_contact"
-        span Name of Contact
-      = f.text_field(:contact, id: 'name_of_contact', class: 'form-control')
+      = f.label(:contact, 'Name of Contact', class: 'form-label')
+      = f.text_field(:contact, class: 'form-control')
     #question4.form-group
-      label.respondent_building_name_or_number.form-label for="respondent_building_name_or_number"
-        span Building Name or Number*
-      = f.text_field(:building_name, id: 'respondent_building_name_or_number', class: 'form-control')
+      = f.label(:building_name, 'Building Name or Number*', class: 'form-label')
+      = f.text_field(:building_name, class: 'form-control')
     #question5.form-group
-      label.respondent_street.form-label for="respondent_street"
-        span Street*
-      = f.text_field(:street_name, id: 'respondent_street', class: 'form-control')
+      = f.label(:street_name, 'Street*', class: 'form-label')
+      = f.text_field(:street_name, class: 'form-control')
     #question6.form-group
-      label.respondent_towncity.form-label for="respondent_towncity"
-        span Town/City*
-      = f.text_field(:town, id: 'respondent_towncity', class: 'form-control')
+      = f.label(:town, 'Town/City*', class: 'form-label')
+      = f.text_field(:town, class: 'form-control')
     #question7.form-group
-      label.responent_county.form-label for="respondent_county"
-        span County
-      = f.text_field(:county, id: 'respondent_county', class: 'form-control')
+      = f.label(:county, 'County', class: 'form-label')
+      = f.text_field(:county, class: 'form-control')
     #question8.form-group
-      label.respondent_postcode.form-label for="respondent_postcode"
-        span Postcode*
-      = f.text_field(:postcode, id: 'respondent_postcode', class: 'form-control')
+      = f.label(:postcode, 'Postcode*', class: 'form-label')
+      = f.text_field(:postcode, class: 'form-control')
     #question9.form-group
-      label.respondent_dx_address.form-label for="respondent_dx_address"
-        span Document Exchange (DX) Number
-      = f.text_field(:dx_number, id: 'respondent_dx_address', class: 'form-control')
+      = f.label(:dx_number, 'Document Exchange (DX) Number', class: 'form-label')
+      = f.text_field(:dx_number, class: 'form-control')
     #question10.form-group
-      label.respondent_contact_number.form-label for="respondent_contact_number"
-        span Contact Number
-      = f.text_field(:contact_number, id: 'respondent_contact_number', class: 'form-control')
+      = f.label(:contact_number, 'Contact Number', class: 'form-label')
+      = f.text_field(:contact_number, class: 'form-control')
     #question11.form-group
-      label.respondent_mobile_number.form-label for="respondent_mobile_number"
-        span Mobile Number
-      = f.text_field(:mobile_number, id: 'respondent_mobile_number', class: 'form-control')
+      = f.label(:mobile_number, 'Mobile Number', class: 'form-label')
+      = f.text_field(:mobile_number, class: 'form-control')
       br/
       span.hint If Different
     #question12.form-group
@@ -57,41 +46,41 @@
           h1.heading-medium How would you prefer us to contact you?
         / Radio button for email preference
         .multiple-choice data-target="respondent_contact_email"
-          = f.radio_button('contact_preference', 'email', class: 'form-control')
-          label.respondent_contact_preference_email.form-label for="respondent_contact_preferance_email" Email
+          = f.radio_button(:contact_preference, 'email', class: 'form-control')
+          = f.label(:contact_preference_email, 'Email', class: 'form-label')
         / Hidden field for email address, shows when radio button is clicked
         #respondent_contact_email.panel.panel-border-narrow.js-hidden
-          label.form-label form="respondent_contact_email" Email Address*
-          = f.text_field(:email_address, id: 'respondent_contact_email', class: 'form-control')
+          = f.label(:email_address, 'Email address*', class: 'form-label')
+          = f.text_field(:email_address, class: 'form-control')
         / Radio button for post preference
         .multiple-choice
-          = f.radio_button('contact_preference', 'post', class: 'form-control')
-          label.respondent_contact_preference_post.form-label for="respondent_contact_preference_post" Post
+          = f.radio_button(:contact_preference, 'post', class: 'form-control')
+          = f.label(:contact_preference_post, 'Post', class: 'form-label')
         / Radio button for fax preference
         .multiple-choice data-target="respondent_contact_fax"
-          = f.radio_button('contact_preference', 'fax', class: 'form-control')
-          label.respondent_contact_preference_fax.form-label for="respondent_contact_preference_fax" Fax
+          = f.radio_button(:contact_preference, 'fax', class: 'form-control')
+          = f.label(:contact_preference_fax, 'Fax', class: 'form-label')
         / Hidden field for fax number, shows when radio button is clicked
         #respondent_contact_fax.panel.panel-border-narrow.js-hidden
-          label.form-label form="respondent_contact_fax" Fax Number*
-          = f.text_field(:fax_number, id: 'respondent_contact_fax', class: 'form-control')
+          = f.label(:fax_number, 'Fax number*', class: 'form-label')
+          = f.text_field(:fax_number, class: 'form-control')
     #question13.form-group
-      label.respondent_organisation_employ_gb.form-label for="respondent_organisation_employ_gb" How many people does this organisation employ in Great Britain?
-      = f.text_field(:organisation_employ_gb, id: 'respondent_organisation_employ_gb', class: 'form-control')
+      = f.label(:organisation_employ_gb, 'How many people does this organisation employ in Great Britain?', class: 'form-label')
+      = f.text_field(:organisation_employ_gb, class: 'form-control')
     #question14.form-group
       fieldset
         legend
           h1.heading-medium Does this organisation have more than one site in Great Britain?
         / Radio button for more than one site
         .multiple-choice data-target="respondent_employment_at_site_number"
-          = f.radio_button('organisation_site_number', 'yes', class: 'form-control')
-          label.respondent_more_than_one_site.form-label for="respondent_more_than_one_site" Yes
+          = f.radio_button(:organisation_more_than_one_site, true, class: 'form-control')
+          = f.label(:organisation_more_than_one_site_true, 'Yes', class: 'form-label')
         / Hidden field for number of employees at site where claimant worked, shows when radio button is clicked
         #respondent_employment_at_site_number.panel.panel-border-narrow.js-hidden
-          label.form-label form="respondent_employment_at_site_number" How many people are employed at the place where the claimant worked?*
-          = f.text_field(:employment_at_site_number, id: 'respondent_employment_at_site_number', class: 'form-control')
+          = f.label(:employment_at_site_number, 'How many people are employed at the place where the claimant worked?*', class: 'form-label')
+          = f.text_field(:employment_at_site_number, class: 'form-control')
         / Radio button for fax preference
         .multiple-choice
-          = f.radio_button('organisation_site_number', 'no', class: 'form-control')
-          label.respondent_only_one_site.form-label for="respondent_only_one_site" No
+          = f.radio_button(:organisation_more_than_one_site, false, class: 'form-control')
+          = f.label(:organisation_more_than_one_site_false, 'No', class: 'form-label')
     = f.submit("Save and continue", class: 'button')

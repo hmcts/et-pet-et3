@@ -8,7 +8,7 @@ company01:
   postcode: wc1 1aa
   contact_preference: email
   email_address: john@dodgyco.com
-  organisation_site_number: 1
+  organisation_more_than_one_site: 'No'
   claimants_name: jane
   early_conciliation_details: 'No'
   disagree_conciliation_reason: 'lorem ipsum conciliation'
@@ -43,7 +43,7 @@ company02:
   town: some_town
   postcode: N0 5AY
   contact_preference: post
-  organisation_site_number: 5
+  organisation_more_than_one_site: 'Yes'
   employment_at_site: 42
   claimants_name: alex
   early_conciliation_details: 'No'
@@ -62,7 +62,7 @@ company03:
   postcode: YE5 9LS
   contact_preference: fax
   fax_number: 02081234567
-  organisation_site_number: 1
+  organisation_more_than_one_site: 'No'
   claimants_name: joe
   early_conciliation_details: 'No'
   employment_dates: 'No'

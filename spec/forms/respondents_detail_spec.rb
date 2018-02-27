@@ -40,10 +40,34 @@ RSpec.describe RespondentsDetail, type: :model do
       expect(respondent_detail.town).to eql 'westminster'
     end
 
+    it 'with county only' do
+      respondent_detail = described_class.new(county: 'greater london')
+
+      expect(respondent_detail.county).to eql 'greater london'
+    end
+
     it 'with postcode only' do
       respondent_detail = described_class.new(postcode: 'wc1 1aa')
 
       expect(respondent_detail.postcode).to eql 'wc1 1aa'
+    end
+
+    it 'with DX number only' do
+      respondent_detail = described_class.new(dx_number: '123456')
+
+      expect(respondent_detail.dx_number).to eql '123456'
+    end
+
+    it 'with contact number only' do
+      respondent_detail = described_class.new(contact_number: '0207 123 4567')
+
+      expect(respondent_detail.contact_number).to eql '0207 123 4567'
+    end
+
+    it 'with mobile number only' do
+      respondent_detail = described_class.new(mobile_number: '07123456789')
+
+      expect(respondent_detail.mobile_number).to eql '07123456789'
     end
 
     it 'with contact_preference only' do
@@ -58,10 +82,22 @@ RSpec.describe RespondentsDetail, type: :model do
       expect(respondent_detail.email_address).to eql 'johndodgyco.com'
     end
 
-    it 'with organisation_site_number only' do
-      respondent_detail = described_class.new(organisation_site_number: 1)
+    it 'with fax number only' do
+      respondent_detail = described_class.new(fax_number: '0207 123 4567')
 
-      expect(respondent_detail.organisation_site_number).to be 1
+      expect(respondent_detail.fax_number).to eql '0207 123 4567'
+    end
+
+    it 'with organisation_more_than_one_site only' do
+      respondent_detail = described_class.new(organisation_more_than_one_site: false)
+
+      expect(respondent_detail.organisation_more_than_one_site).to be false
+    end
+
+    it 'with employment at site number only' do
+      respondent_detail = described_class.new(employment_at_site_number: 20)
+
+      expect(respondent_detail.employment_at_site_number). to be 20
     end
   end
 

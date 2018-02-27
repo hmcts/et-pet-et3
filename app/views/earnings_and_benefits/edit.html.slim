@@ -12,11 +12,11 @@
         / Radio button for 'Yes'
         .multiple-choice
           = f.radio_button(:agree_with_claimants_hours, true, class: 'form-control')
-          = f.label(:agree_with_claimants_hours, 'Yes', class: 'form-label')
+          = f.label(:agree_with_claimants_hours_true, 'Yes', class: 'form-label')
         / Radio button for 'No'
         .multiple-choice data-target="disagree_claimants_hours"
           = f.radio_button(:agree_with_claimants_hours, false, class: 'form-control')
-          = f.label(:agree_with_claimants_hours, 'No', class: 'form-label')
+          = f.label(:agree_with_claimants_hours_false, 'No', class: 'form-label')
         / Hidden field for disagreement reason, shows when radio button is clicked
         #disagree_claimants_hours.panel.panel-border-narrow.js-hidden
           = f.label(:queried_hours, 'Please enter the details you believe to be correct', class: 'form-label')
@@ -29,11 +29,11 @@
         / Radio button for 'Yes'
         .multiple-choice
           = f.radio_button(:agree_with_earnings_details, true, class: 'form-control')
-          = f.label(:agree_with_earnings_details, 'Yes', class: 'form-label')
+          = f.label(:agree_with_earnings_details_true, 'Yes', class: 'form-label')
         / Radio button for 'No'
         .multiple-choice data-target="disagree_earnings_details"
           = f.radio_button(:agree_with_earnings_details, false, class: 'form-control')
-          = f.label(:agree_with_earnings_details, 'No', class: 'form-label')
+          = f.label(:agree_with_earnings_details_false, 'No', class: 'form-label')
           span If No, please give the details you believe to be correct
         / Hidden wrapper for correcting claimant's details, shows when radio button is clicked
         #disagree_earnings_details.panel.panel-border-narrow.js-hidden
@@ -50,10 +50,10 @@
                 h2.heading-medium Pay before tax period
               .multiple-choice
                 = f.radio_button(:queried_pay_before_tax_period, 'monthly', class: 'form-control')
-                = f.label(:queried_pay_before_tax_period, 'Monthly', class: 'form-label')
+                = f.label(:queried_pay_before_tax_period_monthly, 'Monthly', class: 'form-label')
               .multiple-choice
                 = f.radio_button(:queried_pay_before_tax_period, 'weekly', class: 'form-control')
-                = f.label(:queried_pay_before_tax_period, 'Weekly', class: 'form-label')
+                = f.label(:queried_pay_before_tax_period_weekly, 'Weekly', class: 'form-label')
           .normal-take-home-pay
             fieldset
               legend
@@ -67,10 +67,10 @@
                 h2.heading-medium Normal take-home pay period
               .multiple-choice
                 = f.radio_button(:queried_take_home_pay_period, 'monthly', class: 'form-control')
-                = f.label(:queried_take_home_pay_period, 'Monthly', class: 'form-label')
+                = f.label(:queried_take_home_pay_period_monthly, 'Monthly', class: 'form-label')
               .multiple-choice
                 = f.radio_button(:queried_take_home_pay_period, 'weekly', class: 'form-control')
-                = f.label(:queried_take_home_pay_period, 'Weekly', class: 'form-label')
+                = f.label(:queried_take_home_pay_period_weekly, 'Weekly', class: 'form-label')
     #question3.form-group
       fieldset
         legend
@@ -78,11 +78,11 @@
         / Radio button for 'Yes'
         .multiple-choice
           = f.radio_button(:agree_with_claimant_notice, true, class: 'form-control')
-          = f.label(:agree_with_claimant_notice, 'Yes', class: 'form-label')
+          = f.label(:agree_with_claimant_notice_true, 'Yes', class: 'form-label')
         / Radio button for 'No'
         .multiple-choice data-target="disagree_claimant_notice"
           = f.radio_button(:agree_with_claimant_notice, false, class: 'form-control')
-          = f.label(:agree_with_claimant_notice, 'No', class: 'form-label')
+          = f.label(:agree_with_claimant_notice_false, 'No', class: 'form-label')
         / Hidden field for disagreement reason, shows when radio button is clicked
         #disagree_claimant_notice.panel.panel-border-narrow.js-hidden
           = f.label(:disagree_claimant_notice_reason, 'Please give the details you believe to be correct below. If you didn\'t give notice or pay them instead of letting them work their notice please explain what happened and why', class: 'form-label')
@@ -95,11 +95,11 @@
         / Radio button for 'Yes'
         .multiple-choice
           = f.radio_button(:agree_with_claimant_pension_benefits, true, class: 'form-control')
-          = f.label(:agree_with_claimant_pension_benefits, 'Yes', class: 'form-label')
+          = f.label(:agree_with_claimant_pension_benefits_true, 'Yes', class: 'form-label')
         / Radio button for 'No'
         .multiple-choice data-target="disagree_claimant_pension_benefits"
           = f.radio_button(:agree_with_claimant_pension_benefits, false, class: 'form-control')
-          = f.label(:agree_with_claimant_pension_benefits, 'No', class: 'form-label')
+          = f.label(:agree_with_claimant_pension_benefits_false, 'No', class: 'form-label')
         / Hidden field for disagreement reason, shows when radio button is clicked
         #disagree_claimant_pension_benefits.panel.panel-border-narrow.js-hidden
           = f.label(:disagree_claimant_pension_benefits_reason, 'Please give the details you believe to be correct.', clas: 'form-label')

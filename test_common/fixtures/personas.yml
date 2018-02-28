@@ -32,6 +32,7 @@ company01:
   disagree_claimant_pension_benefits_reason: 'lorem ipsum claimant pension'
   defend_claim: 'Yes'
   defend_claim_facts: 'lorem ipsum defence'
+  have_representative: 'Yes'
 
 
 company02:
@@ -51,6 +52,7 @@ company02:
   employment_dates: 'No'
   continued_employment: 'Yes'
   claimants_description_of_job_or_title: 'No'
+  have_representative: 'No'
 
 company03:
   case_number: 2345678/2018

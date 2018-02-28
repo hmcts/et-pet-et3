@@ -22,7 +22,7 @@ module ET3
       end
 
       def your_representative_page
-        ET3::Test::YourRepresentativePage
+        ET3::Test::YourRepresentativePage.new
       end
 
       # Define other pages here

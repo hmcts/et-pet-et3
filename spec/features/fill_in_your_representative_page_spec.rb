@@ -1,7 +1,7 @@
 require 'rails_helper'
 RSpec.feature "Fill in Your Representative Page", js: true do
   let(:your_representatives_details_page) { ET3::Test::YourRepresentativesDetailsPage.new }
-  let(:employers_contract_claim_page) { T3::Test::EmployersContractClaimPage.new }
+  let(:employers_contract_claim_page) { ET3::Test::EmployersContractClaimPage.new }
 
   scenario "correctly will enable user to continue to representative details page" do
     your_representative_page.load

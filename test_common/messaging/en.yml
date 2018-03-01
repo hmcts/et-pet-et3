@@ -187,9 +187,11 @@ en:
     representative_contact_preference:
       label: How would you prefer us to contact your representative?
       email:
-        label: Email address*
+        label: Email
+        input_label: Email address*
       fax:
-        label: Fax Number*
+        label: Fax
+        input_label: Fax number*
     representative_disability:
       label: Does your representative have a disability?
       'yes':

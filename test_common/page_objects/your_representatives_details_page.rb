@@ -6,49 +6,49 @@ module ET3
       section :type_of_representative_question, :single_choice_option, 'questions.type_of_representative.label', exact: true do
         include ET3::Test::I18n
 
-        section :citizens_advice_bureau, :gds_multiple_choice, 'questions.type_of_representative.citizens_advice_bureau.label', exact: true do
+        section :citizens_advice_bureau, :gds_multiple_choice_option, 'questions.type_of_representative.citizens_advice_bureau.label', exact: true do
           element :selector, :css, 'input'
 
           delegate :set, to: :selector
         end
 
-        section :free_representation_unit, :gds_multiple_choice, 'questions.type_of_representative.free_representation_unit.label', exact: true do
+        section :free_representation_unit, :gds_multiple_choice_option, 'questions.type_of_representative.free_representation_unit.label', exact: true do
           element :selector, :css, 'input'
 
           delegate :set, to: :selector
         end
 
-        section :law_centre, :gds_multiple_choice, 'questions.type_of_representative.law_centre.label', exact: true do
+        section :law_centre, :gds_multiple_choice_option, 'questions.type_of_representative.law_centre.label', exact: true do
           element :selector, :css, 'input'
 
           delegate :set, to: :selector
         end
 
-        section :union, :gds_multiple_choice, 'questions.type_of_representative.union.label', exact: true do
+        section :union, :gds_multiple_choice_option, 'questions.type_of_representative.union.label', exact: true do
           element :selector, :css, 'input'
 
           delegate :set, to: :selector
         end
 
-        section :solicitor, :gds_multiple_choice, 'questions.type_of_representative.solicitor.label', exact: true do
+        section :solicitor, :gds_multiple_choice_option, 'questions.type_of_representative.solicitor.label', exact: true do
           element :selector, :css, 'input'
 
           delegate :set, to: :selector
         end
 
-        section :private_individual, :gds_multiple_choice, 'questions.type_of_representative.private_individual.label', exact: true do
+        section :private_individual, :gds_multiple_choice_option, 'questions.type_of_representative.private_individual.label', exact: true do
           element :selector, :css, 'input'
 
           delegate :set, to: :selector
         end
 
-        section :trade_association, :gds_multiple_choice, 'questions.type_of_representative.trade_association.label', exact: true do
+        section :trade_association, :gds_multiple_choice_option, 'questions.type_of_representative.trade_association.label', exact: true do
           element :selector, :css, 'input'
 
           delegate :set, to: :selector
         end
 
-        section :other, :gds_multiple_choice, 'questions.type_of_representative.other.label', exact: true do
+        section :other, :gds_multiple_choice_option, 'questions.type_of_representative.other.label', exact: true do
           element :selector, :css, 'input'
 
           delegate :set, to: :selector
@@ -178,12 +178,12 @@ module ET3
 
         def set_for(user_persona)
           case user_persona.representative_contact_preference
-            when "email"
+            when "Email"
               select_email.set(true)
               preference_email.set(user_persona.representative_email)
-            when "post"
+            when "Post"
               select_post.set(true)
-            when "fax"
+            when "Fax"
               select_fax.set(true)
               preference_fax.set(user_persona.representative_fax)
           end

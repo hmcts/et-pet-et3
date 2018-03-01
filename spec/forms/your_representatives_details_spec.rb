@@ -82,6 +82,18 @@ RSpec.describe YourRepresentativesDetails, type: :model do
       expect(your_representatives_details.representative_contact_preference).to eql 'email'
     end
 
+    it 'with representative_email only' do
+      your_representatives_details = described_class.new(representative_email: 'your@representative.email')
+
+      expect(your_representatives_details.representative_email).to eql 'your@representative.email'
+    end
+
+    it 'with representative_fax only' do
+      your_representatives_details = described_class.new(representative_fax: '0207 345 6789')
+
+      expect(your_representatives_details.representative_fax).to eql '0207 345 6789'
+    end
+
     it 'with representative_disability only' do
       your_representatives_details = described_class.new(representative_disability: true)
 

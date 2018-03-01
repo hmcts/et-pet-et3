@@ -12,5 +12,8 @@ class YourRepresentativesDetails < BaseForm
   attribute :representative_dx_number, :string
   attribute :representative_reference, :string
   attribute :representative_contact_preference, :string
+  attribute :representative_email, :string
+  attribute :representative_fax, :string
   attribute :representative_disability, :boolean
+  attribute :representative_disability_information, :text
 end

@@ -83,9 +83,9 @@ RSpec.describe YourRepresentativesDetails, type: :model do
     end
 
     it 'with representative_disability only' do
-      your_representatives_details = described_class.new(representative_disability: 'Yes')
+      your_representatives_details = described_class.new(representative_disability: true)
 
-      expect(your_representatives_details.representative_disability).to eql 'Yes'
+      expect(your_representatives_details.representative_disability).to be true
     end
   end
 end

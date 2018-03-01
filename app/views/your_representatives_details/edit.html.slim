@@ -1,0 +1,119 @@
+/ TODO: Add required fields
+/ TODO: Check if there are "hidden" elements on the Jadu form
+.content-body.your-representatives-details
+  - content_for :form_page_title do
+    = "Your Representative's Details"
+  
+  p Fill in this section if someone has agreed to represent you. If you do fill this in we will in future only contact your representative and not you
+
+  = form_for @your_representatives_details, url: your_representatives_details_path, method: :patch  do |f|
+    #question1.form-group
+      fieldset
+        legend
+          h1.heading-medium Type of representative*
+        / Radio button for CAB
+        .multiple-choice
+          = f.radio_button(:type_of_representative, "Citizen's Advice Bureau", class: 'form-control')
+          = f.label(:type_of_representative_citizens_advice_bureau, "Citizen's Advice Bureau", class: 'form-label')
+        / Radio button for FRU
+        .multiple-choice
+          = f.radio_button(:type_of_representative, "Free Representation Unit", class: 'form-control')
+          = f.label(:type_of_representative_free_representation_unit, "Free Representation Unit", class: 'form-label')
+        / Radio button for LC
+        .multiple-choice
+          = f.radio_button(:type_of_representative, "Law Centre", class: 'form-control')
+          = f.label(:type_of_representative_law_centre, "Law Centre", class: 'form-label')
+        / Radio button for Union
+        .multiple-choice
+          = f.radio_button(:type_of_representative, "Union", class: 'form-control')
+          = f.label(:type_of_representative_union, "Union", class: 'form-label')
+        / Radio button for Solicitor
+        .multiple-choice
+          = f.radio_button(:type_of_representative, "Solicitor", class: 'form-control')
+          = f.label(:type_of_representative_solicitor, "Solicitor", class: 'form-label')
+        / Radio button for Private Individual
+        .multiple-choice
+          = f.radio_button(:type_of_representative, "Private Individual", class: 'form-control')
+          = f.label(:type_of_representative_private_individual, "Private Individual", class: 'form-label')
+        / Radio button for TA
+        .multiple-choice
+          = f.radio_button(:type_of_representative, "Trade Association", class: 'form-control')
+          = f.label(:type_of_representative_trade_association, "Trade Association", class: 'form-label')
+        / Radio button for Other
+        .multiple-choice
+          = f.radio_button(:type_of_representative, "Other", class: 'form-control')
+          = f.label(:type_of_representative_other, "Other", class: 'form-label')
+    #question2.form-group
+      = f.label(:representative_org_name, "Name of the representative's organisation", class:'form-label')
+      = f.text_field(:representative_org_name, class: 'form-control')
+    #question3.form-group
+      = f.label(:representative_name, "Representative's Name*", class:'form-label')
+      = f.text_field(:representative_name, class: 'form-control')
+    #question4.form-group
+      = f.label(:representative_building, "Building Name or Number*", class:'form-label')
+      = f.text_field(:representative_building, class: 'form-control')
+    #question5.form-group
+      = f.label(:representative_street, "Street*", class:'form-label')
+      = f.text_field(:representative_street, class: 'form-control')
+    #question6.form-group
+      = f.label(:representative_town, "Town/City*", class:'form-label')
+      = f.text_field(:representative_town, class: 'form-control')
+    #question7.form-group
+      = f.label(:representative_county, "County", class:'form-label')
+      = f.text_field(:representative_county, class: 'form-control')
+    #question8.form-group
+      = f.label(:representative_postcode, "Postcode*", class:'form-label')
+      = f.text_field(:representative_postcode, class: 'form-control')
+    #question9.form-group
+      = f.label(:representative_phone, "Phone Number", class:'form-label')
+      = f.text_field(:representative_phone, class: 'form-control')
+    #question10.form-group
+      = f.label(:representative_mobile, "Mobile Number", class:'form-label')
+      = f.text_field(:representative_mobile, class: 'form-control')
+    #question11.form-group
+      = f.label(:representative_dx_number, "Document Exchange (DX) Number", class:'form-label')
+      = f.text_field(:representative_dx_number, class: 'form-control')
+    #question12.form-group
+      = f.label(:representative_reference, "Reference", class:'form-label')
+      = f.text_field(:representative_reference, class: 'form-control')
+    #question13.form-group
+      fieldset
+        legend
+          h1.heading-medium How would you prefer us to contact your representative?
+        / Radio button for email preference
+        .multiple-choice data-target="representative_contact_email"
+          = f.radio_button(:representative_contact_preference, 'email', class: 'form-control')
+          = f.label(:representative_contact_preference_email, 'Email', class: 'form-label')
+        / Hidden field for email address, shows when radio button is clicked
+        #representative_contact_email.panel.panel-border-narrow.js-hidden
+          = f.label(:representative_email, 'Email address*', class: 'form-label')
+          = f.text_field(:representative_email, class: 'form-control')
+        / Radio button for post preference
+        .multiple-choice
+          = f.radio_button(:representative_contact_preference, 'post', class: 'form-control')
+          = f.label(:representative_contact_preference_post, 'Post', class: 'form-label')
+        / Radio button for fax preference
+        .multiple-choice data-target="representative_contact_fax"
+          = f.radio_button(:representative_contact_preference, 'fax', class: 'form-control')
+          = f.label(:representative_contact_preference_fax, 'Fax', class: 'form-label')
+        / Hidden field for fax number, shows when radio button is clicked
+        #representative_contact_fax.panel.panel-border-narrow.js-hidden
+          = f.label(:representative_fax, 'Fax number*', class: 'form-label')
+          = f.text_field(:representative_fax, class: 'form-control')
+    #question14.form-group
+      fieldset
+        legend
+          h1.heading-medium Does your representative have a disability?
+        / Radio button for 'Yes'
+        .multiple-choice data-target="representative_disability_further_info"
+          = f.radio_button(:representative_disability, true, class: 'form-control')
+          = f.label(:representative_disability_true, 'Yes', class: 'form-label')
+        / Hidden field for further info on disabled representative, shows when radio button is clicked
+        #representative_disability_further_info.panel.panel-border-narrow.js-hidden
+          = f.label(:representative_disability_information, "If Yes, it would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises.*", class: 'form-label')
+          = f.text_area(:representative_disability_information, class: 'form-control')
+        / Radio button for 'No'
+        .multiple-choice
+          = f.radio_button(:representative_disability, false, class: 'form-control')
+          = f.label(:representative_disability_false, 'No', class: 'form-label')
+    = f.submit("Save and continue", class: 'button')

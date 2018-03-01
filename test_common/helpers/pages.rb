@@ -25,6 +25,10 @@ module ET3
         ET3::Test::YourRepresentativePage.new
       end
 
+      def your_representatives_details_page
+        ET3::Test::YourRepresentativesDetailsPage.new
+      end
+
       # Define other pages here
     end
   end

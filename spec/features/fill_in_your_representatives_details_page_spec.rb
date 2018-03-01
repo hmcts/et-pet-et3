@@ -1,6 +1,6 @@
 require 'rails_helper'
-RSpec.feature "Fill in Respondents Details Page", js: true do
-  let(:employers_contract_claim) { ET3::Test::EmployersContractClaimPage.new }
+RSpec.feature "Fill in Your Representatives Details Page", js: true do
+  let(:employers_contract_claim_page) { ET3::Test::EmployersContractClaimPage.new }
 
   scenario "correctly will enable user to continue to next page" do
     your_representatives_details_page.load

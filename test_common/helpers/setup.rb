@@ -110,6 +110,63 @@ module ET3
         your_representative_page.have_representative_question.set_for(user)
       end
 
+      # Your Representative's Details Page
+      def answer_type_of_representative_question
+        your_representatives_details_page.type_of_representative_question.set_for(user)
+      end
+
+      def answer_representative_org_name_question
+        your_representatives_details_page.representative_org_name_question.set(user.representative_org_name)
+      end
+
+      def answer_representative_name_question
+        your_representatives_details_page.representative_name_question.set(user.representative_name)
+      end
+
+      def answer_representative_building_question
+        your_representatives_details_page.representative_building_question.set(user.representative_building)
+      end
+
+      def answer_representative_street_question
+        your_representatives_details_page.representative_street_question.set(user.representative_street)
+      end
+
+      def answer_representative_town_question
+        your_representatives_details_page.representative_town_question.set(user.representative_town)
+      end
+
+      def answer_representative_county_question
+        your_representatives_details_page.representative_county_question.set(user.representative_county)
+      end
+
+      def answer_representative_postcode_question
+        your_representatives_details_page.representative_postcode_question.set(user.representative_postcode)
+      end
+
+      def answer_representative_phone_question
+        your_representatives_details_page.representative_phone_question.set(user.representative_phone)
+      end
+
+      def answer_representative_mobile_question
+        your_representatives_details_page.representative_mobile_question.set(user.representative_mobile)
+      end
+
+      def answer_representative_dx_number_question
+        your_representatives_details_page.representative_dx_number_question.set(user.representative_dx_number)
+      end
+
+      def answer_representative_reference_question
+        your_representatives_details_page.representative_reference_question.set(user.representative_reference)
+      end
+
+      def answer_representative_contact_preference_question
+        your_representatives_details_page.representative_contact_preference_question.set_for(user)
+      end
+
+      def answer_representative_disability_question
+        your_representatives_details_page.representative_disability_question.set_for(user)
+      end
+
     end
   end
 end

@@ -1,5 +1,5 @@
 class EmployersContractClaimsController < ApplicationController
   def edit
-    head :ok
+    @employers_contract_claim = EmployersContractClaim.new
   end
 end

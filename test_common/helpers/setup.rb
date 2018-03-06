@@ -173,7 +173,7 @@ module ET3
       end
 
       def upload_additional_information
-        employers_contract_claim_page.upload_additional_information.set_for(user)
+        employers_contract_claim_page.upload_additional_information.set(user.additional_information)
       end
     end
   end

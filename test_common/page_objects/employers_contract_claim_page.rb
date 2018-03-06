@@ -31,9 +31,18 @@ module ET3
         end
       end
       
-      #TODO: Build appropriate selector
-      section :upload_additional_information, :BUILD_SELECTOR, 'questions.make_employer_contract_claim.upload_additional_information.label', exact: true do
+      section :upload_additional_information, :question_labelled, 'questions.upload_additional_information.label', exact: true do
+        
+        element :upload, :css, 'input'
 
+        def set(file_path)
+          upload.set(Rails.root.join(file_path))
+        end
+      end
+
+      element :continue_button, :button, "Save and continue"
+      def next
+        continue_button.click
       end
     end
   end

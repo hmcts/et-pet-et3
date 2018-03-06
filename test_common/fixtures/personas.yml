@@ -51,6 +51,7 @@ company01:
   representative_disability_information: 'Lorem ipsum disability'
   make_employer_contract_claim: 'Yes'
   claim_information: 'lorem ipsum info'
+  additional_information: 'test_common/files/sample.rtf'
 
 
 company02:

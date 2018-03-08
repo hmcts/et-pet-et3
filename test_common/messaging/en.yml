@@ -139,3 +139,63 @@ en:
         label: 'Yes'
       'no':
         label: 'No'
+    # Your Representatives Details Page
+    type_of_representative:
+      label: Type of representative*
+      'yes':
+        label: 'Yes'
+      'no':
+        label: 'No'
+      citizens_advice_bureau:
+        label: Citizen's Advice Bureau
+      free_representation_unit:
+        label: Free Representation Unit
+      law_centre:
+        label: Law Centre
+      union:
+        label: Union
+      solicitor:
+        label: Solicitor
+      private_individual:
+        label: Private Individual
+      trade_association:
+        label: Trade Association
+      other:
+        label: Other
+    representative_org_name:
+      label: Name of the representative's organisation
+    representative_name:
+      label: Representative's Name*
+    representative_building:
+      label: Building Name or Number*
+    representative_street:
+      label: Street*
+    representative_town:
+      label: Town/City*
+    representative_county:
+      label: County
+    representative_postcode:
+      label: Postcode*
+    representative_phone:
+      label: Phone Number
+    representative_mobile:
+      label: Mobile Number
+    representative_dx_number:
+      label: Document Exchange (DX) Number
+    representative_reference:
+      label: Reference
+    representative_contact_preference:
+      label: How would you prefer us to contact your representative?
+      email:
+        label: Email
+        input_label: Email address*
+      fax:
+        label: Fax
+        input_label: Fax number*
+    representative_disability:
+      label: Does your representative have a disability?
+      'yes':
+        label: 'Yes'
+      'no':
+        label: 'No'
+      disability_information: If Yes, it would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises.*

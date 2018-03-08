@@ -33,6 +33,22 @@ company01:
   defend_claim: 'Yes'
   defend_claim_facts: 'lorem ipsum defence'
   have_representative: 'Yes'
+  type_of_representative: 'Private Individual'
+  representative_org_name: 'repco ltd'
+  representative_name: 'Jane Doe'
+  representative_building: 'Rep Building'
+  representative_street: 'Rep Street'
+  representative_town: 'Rep Town'
+  representative_county: 'Repo County'
+  representative_postcode: 'WC2 2BB'
+  representative_phone: '0207 987 6543'
+  representative_mobile: '07987654321'
+  representative_dx_number: 'dx address'
+  representative_reference: 'Rep Ref'
+  representative_contact_preference: 'Fax'
+  representative_fax: '0207 345 6789'
+  representative_disability: 'Yes'
+  representative_disability_information: 'Lorem ipsum disability'
 
 
 company02:

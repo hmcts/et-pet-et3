@@ -52,6 +52,8 @@ company01:
   make_employer_contract_claim: 'Yes'
   claim_information: 'lorem ipsum info'
   additional_information: 'test_common/files/sample.rtf'
+  email_receipt: 'email@recei.pt'
+  confirm_email_receipt: 'email@recei.pt'
 
 
 company02:

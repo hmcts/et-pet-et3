@@ -210,3 +210,20 @@ en:
         label: 'Please set out the background and details of your claim below, which should include all important dates.'
     upload_additional_information:
       label: Please upload a file to provide any important additional information about your response which you have not been able to include so far.
+    # Confirmation of Supplied Details Page
+    email_receipt:
+      label: Email Address
+    confirm_email_receipt:
+      label: Confirm Email Address
+    confirmation_of_respondents_details_answers:
+      caption: Respondent's Details
+    confirmation_of_claimants_details_answers:
+      caption: Claimant's Details
+    confirmation_of_earnings_and_benefits_answers:
+      caption: Earnings and Benefits
+    confirmation_of_response_answers:
+      caption: Response
+    confirmation_of_your_representative_answers:
+      caption: Your Representative
+    confirmation_of_employer_contract_claim_answers:
+      caption: Employer Contract Claim

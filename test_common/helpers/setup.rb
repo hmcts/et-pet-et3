@@ -175,6 +175,16 @@ module ET3
       def upload_additional_information
         employers_contract_claim_page.upload_additional_information.set(user.additional_information)
       end
+
+      # Confirmation of Supplied Details Page
+      def answer_email_receipt_question
+        confirmation_of_supplied_details_page.email_receipt_question.set(user.email_receipt)
+      end
+
+      def answer_confirm_email_receipt_question
+        confirmation_of_supplied_details_page.confirm_email_receipt_question.set(user.confirm_email_receipt)
+      end
+
     end
   end
 end

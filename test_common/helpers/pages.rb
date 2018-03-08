@@ -33,6 +33,10 @@ module ET3
         ET3::Test::EmployersContractClaimPage.new
       end
 
+      def confirmation_of_supplied_details_page
+        ET3::Test::ConfirmationOfSuppliedDetailsPage.new
+      end
+
       # Define other pages here
     end
   end

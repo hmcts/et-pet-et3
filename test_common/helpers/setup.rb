@@ -167,6 +167,14 @@ module ET3
         your_representatives_details_page.representative_disability_question.set_for(user)
       end
 
+      # Employers Contract Claim Page
+      def answer_make_employer_contract_claim_question
+        employers_contract_claim_page.make_employer_contract_claim_question.set_for(user)
+      end
+
+      def upload_additional_information
+        employers_contract_claim_page.upload_additional_information.set(user.additional_information)
+      end
     end
   end
 end

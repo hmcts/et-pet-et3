@@ -1,0 +1,32 @@
+/ TODO: Add required fields
+/ TODO: Confirm DX Address?
+.content-body.employers-contract-claim
+  - content_for :form_page_title do
+    = "Employers Contract Claim"
+
+  p Only available in limited circumstances where the Claimant has made a contract claim (see guidance) 
+
+  = form_for @employers_contract_claim, url: employers_contract_claim_path, method: :patch  do |f|
+    #question1.form-group
+      fieldset
+        legend
+          h1.heading-medium Do you wish to make an Employer Contract Claim?
+        / Radio button for 'No'
+        .multiple-choice
+          = f.radio_button(:make_employer_contract_claim, true, class: 'form-control')
+          = f.label(:make_employer_contract_claim_true, 'No', class: 'form-label')
+        / Radio button for 'Yes'
+        .multiple-choice data-target="make-claim-info"
+          = f.radio_button(:make_employer_contract_claim, false, class: 'form-control')
+          = f.label(:make_employer_contract_claim_false, 'Yes', class: 'form-label')
+        / Hidden field for contract claim information, shows when radio button is clicked
+        #make-claim-info.panel.panel-border-narrow.js-hidden
+          p If you exceed 50 lines you will not receive full details of your claim in the PDF returned to you on submission of the form. 
+          = f.label(:claim_information, 'Please set out the background and details of your claim below, which should include all important dates.', class: 'form-label')
+          = f.text_area(:claim_information, class: 'form-control')
+          p See guidance for more information on what details should be included. PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 4500 characters) if you would like to include more please use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
+    #question2.form-group
+      = f.label(:upload_additional_information, 'Please upload a file to provide any important additional information about your response which you have not been able to include so far.', class: 'form-label')
+      = f.file_field(:upload_additional_information)
+      p Supported file type: rtf
+    = f.submit("Save and continue", class: 'button')

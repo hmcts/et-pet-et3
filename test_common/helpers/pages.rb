@@ -29,6 +29,10 @@ module ET3
         ET3::Test::YourRepresentativesDetailsPage.new
       end
 
+      def employers_contract_claim_page
+        ET3::Test::EmployersContractClaimPage.new
+      end
+
       # Define other pages here
     end
   end

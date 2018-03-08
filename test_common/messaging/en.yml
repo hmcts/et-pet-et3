@@ -27,12 +27,12 @@ en:
       label: How would you prefer us to contact you?
       email:
         label: Email
-        input_label: Email address*
+        input_label: Email Address*
       post:
         label: Post
       fax:
         label: Fax
-        input_label: Fax number*
+        input_label: Fax Number*
     organisation_employ_gb:
       label: How many people does this organisation employ in Great Britain?
     organisation_more_than_one_site:

@@ -10,11 +10,13 @@ RSpec.describe EmployersContractClaim, type: :model do
       expect(employers_contract_claim.make_employer_contract_claim).to be true
     end
 
-    # Unit tests for upload functionality
-    it 'with defend_claim_facts only' do
-      # employers_contract_claim = described_class.new(uploaded_content: 'some sort of content test')
+    it 'with claim_information only' do
+      employers_contract_claim = described_class.new(claim_information: 'lorem ipsum claim')
 
-      # expect(employers_contract_claim.uploaded_content).to eql 'some sort of content test'
+      expect(employers_contract_claim.claim_information).to eql 'lorem ipsum claim'
     end
+
+    # TODO: Unit tests for upload functionality
+
   end
 end

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resource :your_representatives_details, only: [:edit, :update], path_names: { edit: ''}
     resource :employers_contract_claim, only: [:edit, :update], path_names: { edit: ''}
     resource :confirmation_of_supplied_details, only: [:edit, :update], path_names: { edit: ''}
+    resource :form_submission, only: [:edit, :update], path_names: { edit: ''}
   end
   get "/" => 'static_pages#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

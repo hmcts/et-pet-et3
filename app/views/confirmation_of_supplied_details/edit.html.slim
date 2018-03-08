@@ -1,0 +1,280 @@
+/ TODO: Add required fields
+.content-body.confirmation-of-supplied-details
+  - content_for :form_page_title do
+    = "Confirmation of Supplied Details"
+
+  h2.heading-medium Email Receipt
+  p Please enter your email address so that we can provided you with a receipt of your transaction.
+
+  = form_for @confirmation_of_supplied_details, url: confirmation_of_supplied_details_path, method: :patch  do |f|
+    #question1.form-group.form-group-compound
+      = f.label(:email_receipt, 'Email Address', class: 'form-label')
+      = f.text_field(:email_receipt, class: 'form-control')
+    #question2.form-group
+      = f.label(:confirm_email_receipt, 'Confirm Email Address', class: 'form-label')
+      = f.text_field(:confirm_email_receipt, class: 'form-control')
+    = f.submit("Submit Form", class: 'button')
+
+  h2.heading-medium Confirmation of Supplied Details
+  table
+    caption.heading-small Respondent's Details
+    thead
+      tr
+        th Question
+        th Answer
+    tbody
+      tr
+        td Case Number
+        td replaceme
+      tr
+        td Name of Individual, Company or Organisation
+        td replaceme
+      tr
+        td Name of Contact
+        td replaceme
+      tr
+        td Building Name or Number
+        td replaceme
+      tr
+        td Street
+        td replaceme
+      tr
+        td Town/City
+        td replaceme
+      tr
+        td County
+        td replaceme
+      tr
+        td Postcode
+        td replaceme
+      tr
+        td Document Exchance (DX) Number
+        td replaceme
+      tr
+        td Contact Number
+        td replaceme
+      tr
+        td Mobile Number
+        td replaceme
+      tr
+        td How would you prefer us to contact you?
+        td replaceme
+      tr
+        td Email Address
+        td replaceme
+      tr
+        td Fax Number
+        td replaceme
+      tr
+        td How many people does this organisation employ in Great Britain?
+        td replaceme
+      tr
+        td Does this organisation have more than one site in Great Britain?
+        td replaceme
+      tr
+        td How many people are employed at the place where the claimant worked? 
+        td replaceme
+      tr
+        td
+          = link_to("Edit Answers on this Page", edit_respondents_details_path, class: 'button')
+        td
+          a href="#content" Back to the top
+  table
+    caption.heading-small Claimant's Details
+    thead
+      tr
+        th Question
+        th Answer
+    tbody
+      tr
+        td Claimant's Name
+        td replaceme
+      tr
+        td Do you agree with the details given by the claimant about Early Conciliation with Acas?
+        td replaceme
+      tr
+        td Why do you disagree with the claimant?
+        td replaceme
+      tr
+        td Are the dates of employment given by the claimant correct? 
+        td replaceme
+      tr
+        td When their employment started
+        td replaceme
+      tr
+        td  When their employment ended or will end
+        td replaceme
+      tr
+        td Why do you disagree with the dates given by the claimant 
+        td replaceme
+      tr
+        td Is their employment continuing?
+        td replaceme
+      tr
+        td Is the claimant's description of their job or job title correct?
+        td replaceme
+      tr
+        td Please give the details you believe to be correct
+        td replaceme
+      tr
+        td
+          = link_to("Edit Answers on this Page", edit_claimants_details_path, class: 'button')
+        td
+          a href="#content" Back to the top
+  table
+    caption.heading-small Earnings and Benefits
+    thead
+      tr
+        th Question
+        th Answer
+    tbody
+      tr
+        td Are the claimant's hours of work correct?
+        td replaceme
+      tr
+        td Please enter the details you believe to be correct
+        td replaceme
+      tr
+        td Are the earnings details given by the claimant correct? 
+        td replaceme
+      tr
+        td Pay before tax 
+        td replaceme
+      tr
+        td Pay before tax period
+        td replaceme
+      tr
+        td Normal take-home pay 
+        td replaceme
+      tr
+        td Normal take-home pay period
+        td replaceme
+      tr
+        td Is the information given by the claimant correct about being paid for, or working a period of notice? 
+        td replaceme
+      tr
+        td Please give the details you believe to be correct below. If you didn't give notice or pay them instead of letting them work their notice please explain what happened and why 
+        td replaceme
+      tr
+        td Are the details about pension and other benefits e.g. company car, medical insurance, etc. given by the claimant correct?
+        td replaceme
+      tr
+        td Please give the details you believe to be correct.
+        td replaceme
+      tr
+        td
+          = link_to("Edit Answers on this Page", edit_earnings_and_benefits_path, class: 'button')
+        td
+          a href="#content" Back to the top
+  table
+    caption.heading-small Response
+    thead
+      tr
+        th Question
+        th Answer
+    tbody
+      tr
+        td Do you defend the claim?
+        td replaceme
+      tr
+        td
+          = link_to("Edit Answers on this Page", edit_response_path, class: 'button')
+        td
+          a href="#content" Back to the top
+  table
+    caption.heading-small Your Representative
+    thead
+      tr
+        th Question
+        th Answer
+    tbody
+      tr
+        td Do you have a representative?
+        td replaceme
+      tr
+        td
+          = link_to("Edit Answers on this Page", edit_your_representative_path, class: 'button')
+        td
+          a href="#content" Back to the top
+  table
+    caption.heading-small Your Representative's Details
+    thead
+      tr
+        th Question
+        th Answer
+      tr
+        td Type of Representative
+        td replaceme
+      tr
+        td Name of the Representative's Organisation
+        td replaceme
+      tr
+        td Representative's Name
+        td replaceme
+      tr
+        td Building Name or Number
+        td replaceme
+      tr
+        td Street
+        td replaceme
+      tr
+        td Town/City
+        td replaceme
+      tr
+        td County
+        td replaceme
+      tr
+        td Postcode
+        td replaceme
+      tr
+        td Phone Number
+        td replaceme
+      tr
+        td Mobile Number
+        td replaceme
+      tr
+        td Document Exchange (DX) Number
+        td replaceme
+      tr
+        td Reference
+        td replaceme
+      tr
+        td How would you prefer us to contact your representative?
+        td replaceme
+      tr
+        td Email Address
+        td replaceme
+      tr
+        td Fax Number
+        td replaceme
+      tr
+        td Does your representative have a disability?
+        td replaceme
+      tr
+        td If Yes, it would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises.
+        td replaceme
+      tr
+        td
+          = link_to("Edit Answers on this Page", edit_your_representatives_details_path, class: 'button')
+        td
+          a href="#content" Back to the top
+  table
+    caption.heading-small Employer Contract Claim
+    thead
+      tr
+        th Question
+        th Answer
+      tr
+        td Do you wish to make an Employer Contract Claim?
+        td replaceme
+      tr
+        td Please set out the background and details of your claim below, which should include all important dates. If you exceed 50 lines you will not receive full details of your claim in the PDF returned to you on submission of the form
+        td replaceme
+      tr
+        td Please upload a file to provide any important additional information about your response which you have not been able to include so far.
+        td replaceme
+      tr
+        td
+          = link_to("Edit Answers on this Page", edit_employers_contract_claim_path, class: 'button')
+        td
+          a href="#content" Back to the top

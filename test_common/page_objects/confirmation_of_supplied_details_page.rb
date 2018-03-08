@@ -11,12 +11,29 @@ module ET3
         delegate :set, to: :root_element
       end
 
-      element :confirmation_of_respondents_details_answers, :table_captioned, 'questions.confirmation_of_respondents_details_answers.caption', exact: true
-      element :confirmation_of_claimants_details_answers, :table_captioned, 'questions.confirmation_of_claimants_details_answers.caption', exact: true
-      element :confirmation_of_earnings_and_benefits_answers, :table_captioned, 'questions.confirmation_of_earnings_and_benefits_answers.caption', exact: true
-      element :confirmation_of_response_answers, :table_captioned, 'questions.confirmation_of_response_answers.caption', exact: true
-      element :confirmation_of_your_representative_answers, :table_captioned, 'questions.confirmation_of_your_representative_answers.caption', exact: true
-      element :confirmation_of_employer_contract_claim_answers, :table_captioned, 'questions.confirmation_of_employer_contract_claim_answers.caption', exact: true
+      section :confirmation_of_respondents_details_answers, :table_captioned, 'questions.confirmation_of_respondents_details_answers.caption', exact: true do
+        
+      end
+      
+      section :confirmation_of_claimants_details_answers, :table_captioned, 'questions.confirmation_of_claimants_details_answers.caption', exact: true do
+
+      end
+
+      section :confirmation_of_earnings_and_benefits_answers, :table_captioned, 'questions.confirmation_of_earnings_and_benefits_answers.caption', exact: true do
+
+      end
+
+      section :confirmation_of_response_answers, :table_captioned, 'questions.confirmation_of_response_answers.caption', exact: true do
+
+      end
+
+      section :confirmation_of_your_representative_answers, :table_captioned, 'questions.confirmation_of_your_representative_answers.caption', exact: true do
+
+      end
+
+      section :confirmation_of_employer_contract_claim_answers, :table_captioned, 'questions.confirmation_of_employer_contract_claim_answers.caption', exact: true do
+        
+      end
       
       element :continue_button, :button, "Submit Form"
       def submit_form

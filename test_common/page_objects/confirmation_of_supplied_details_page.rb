@@ -85,21 +85,201 @@ module ET3
       
       section :confirmation_of_claimants_details_answers, :table_captioned, 'questions.confirmation_of_claimants_details_answers.caption', exact: true do
 
+        section :claimants_name_row, :table_row, 'questions.claimants_name.label', exact: true do
+          element :claimants_name_answer, :return_answer
+        end
+
+        section :agree_with_early_conciliation_details_row, :table_row, 'questions.agree_with_early_conciliation_details.label', exact: true do
+          element :agree_with_early_conciliation_details_answer, :return_answer
+        end
+
+        section :disagree_conciliation_reason_row, :table_row, 'questions.agree_with_early_conciliation_details.disagree_conciliation_reason.label', exact: true do
+          element :disagree_conciliation_reason_answer, :return_answer
+        end
+
+        section :agree_with_employment_dates_row, :table_row, 'questions.agree_with_employment_dates.label', exact: true do
+          element :agree_with_employment_dates_answer, :return_answer
+        end
+
+        section :employment_start_row, :table_row, 'questions.agree_with_employment_dates.employment_start.label', exact: true do
+          element :employment_start_answer, :return_answer
+        end
+
+        section :employment_end_row, :table_row, 'questions.agree_with_employment_dates.employment_end.label', exact: true do
+          element :employment_end_answer, :return_answer
+        end
+
+        section :disagree_employment_row, :table_row, 'questions.agree_with_employment_dates.disagree_employment.label', exact: true do
+          element :disagree_employment_answer, :return_answer
+        end
+
+        section :continued_employment_row, :table_row, 'questions.continued_employment.label', exact: true do
+          element :continued_employment_answer, :return_answer
+        end
+
+        section :agree_with_claimants_description_of_job_or_title_row, :table_row, 'questions.agree_with_claimants_description_of_job_or_title.label', exact: true do
+          element :agree_with_claimants_description_of_job_or_title_answer, :return_answer
+        end
+
+        section :disagree_claimants_job_or_title_row, :table_row, 'questions.agree_with_claimants_description_of_job_or_title.disagree_claimants_job_or_title.label', exact: true do
+          element :disagree_claimants_job_or_title_answer, :return_answer
+        end
+
       end
 
       section :confirmation_of_earnings_and_benefits_answers, :table_captioned, 'questions.confirmation_of_earnings_and_benefits_answers.caption', exact: true do
 
+        section :agree_with_claimants_hours_row, :table_row, 'questions.agree_with_claimants_hours.label', exact: true do
+          element :agree_with_claimants_hours_answer, :return_answer
+        end
+
+        section :queried_hours_row, :table_row, 'questions.agree_with_claimants_hours.queried_hours.label', exact: true do
+          element :queried_hours_answer, :return_answer
+        end
+
+        section :agree_with_earnings_details_row, :table_row, 'questions.agree_with_earnings_details.label', exact: true do
+          element :agree_with_earnings_details_answer, :return_answer
+        end
+      
+        section :queried_pay_before_tax_row, :table_row, 'questions.agree_with_earnings_details.queried_pay_before_tax.label', exact: true do
+          element :queried_pay_before_tax_answer, :return_answer
+        end
+      
+        section :queried_pay_before_tax_period_row, :table_row, 'questions.agree_with_earnings_details.queried_pay_before_tax_period.label', exact: true do
+          element :queried_pay_before_tax_period_answer, :return_answer
+        end
+      
+        section :queried_take_home_pay_row, :table_row, 'questions.agree_with_earnings_details.queried_take_home_pay.label', exact: true do
+          element :queried_take_home_pay_answer, :return_answer
+        end
+      
+        section :queried_take_home_pay_period_row, :table_row, 'questions.agree_with_earnings_details.queried_take_home_pay_period.label', exact: true do
+          element :queried_take_home_pay_period_answer, :return_answer
+        end
+      
+        section :agree_with_claimant_notice_row, :table_row, 'questions.agree_with_claimant_notice.label', exact: true do
+          element :agree_with_claimant_notice_answer, :return_answer
+        end
+      
+        section :disagree_claimant_notice_reason_row, :table_row, 'questions.agree_with_claimant_notice.disagree_claimant_notice_reason.label', exact: true do
+          element :disagree_claimant_notice_reason_answer, :return_answer
+        end
+      
+        section :agree_with_claimant_pension_benefits_row, :table_row, 'questions.agree_with_claimant_pension_benefits.label', exact: true do
+          element :agree_with_claimant_pension_benefits_answer, :return_answer
+        end
+      
+        section :disagree_claimant_pension_benefits_reason_row, :table_row, 'questions.agree_with_claimant_pension_benefits.disagree_claimant_pension_benefits_reason.label', exact: true do
+          element :disagree_claimant_pension_benefits_reason_answer, :return_answer
+        end
+      
       end
 
       section :confirmation_of_response_answers, :table_captioned, 'questions.confirmation_of_response_answers.caption', exact: true do
+
+        section :defend_claim_row, :table_row, 'questions.defend_claim.label', exact: true do
+          element :defend_claim_answer, :return_answer
+        end
+
+        section :defend_claim_facts_row, :table_row, 'questions.defend_claim.defend_claim_facts.label', exact: true do
+          element :defend_claim_facts_answer, :return_answer
+        end
 
       end
 
       section :confirmation_of_your_representative_answers, :table_captioned, 'questions.confirmation_of_your_representative_answers.caption', exact: true do
 
+        section :have_representative_row, :table_row, 'questions.have_representative.label', exact: true do
+          element :have_representative_answer, :return_answer
+        end
+
+      end
+
+      section :confirmation_of_your_representatives_details_answers, :table_captioned, 'questions.confirmation_of_your_representatives_details_answers.caption', exact: true do
+
+        section :type_of_representative_row, :table_row, 'questions.type_of_representative.label', exact: true do
+          element :type_of_representative_answer, :return_answer
+        end
+        
+        section :representative_org_name_row, :table_row, 'questions.representative_org_name.label', exact: true do
+          element :representative_org_name_answer, :return_answer
+        end
+        
+        section :representative_name_row, :table_row, 'questions.representative_name.label', exact: true do
+          element :representative_name_answer, :return_answer
+        end
+        
+        section :representative_building_row, :table_row, 'questions.representative_building.label', exact: true do
+          element :representative_building_answer, :return_answer
+        end
+        
+        section :representative_street_row, :table_row, 'questions.representative_street.label', exact: true do
+          element :representative_street_answer, :return_answer
+        end
+        
+        section :representative_town_row, :table_row, 'questions.representative_town.label', exact: true do
+          element :representative_town_answer, :return_answer
+        end
+        
+        section :representative_county_row, :table_row, 'questions.representative_county.label', exact: true do
+          element :representative_county_answer, :return_answer
+        end
+        
+        section :representative_postcode_row, :table_row, 'questions.representative_postcode.label', exact: true do
+          element :representative_postcode_answer, :return_answer
+        end
+        
+        section :representative_phone_row, :table_row, 'questions.representative_phone.label', exact: true do
+          element :representative_phone_answer, :return_answer
+        end
+        
+        section :representative_mobile_row, :table_row, 'questions.representative_mobile.label', exact: true do
+          element :representative_mobile_answer, :return_answer
+        end
+        
+        section :representative_dx_number_row, :table_row, 'questions.representative_dx_number.label', exact: true do
+          element :representative_dx_number_answer, :return_answer
+        end
+        
+        section :representative_reference_row, :table_row, 'questions.representative_reference.label', exact: true do
+          element :representative_reference_answer, :return_answer
+        end
+        
+        section :representative_contact_preference_row, :table_row, 'questions.representative_contact_preference.label', exact: true do
+          element :representative_contact_preference_answer, :return_answer
+        end
+        
+        section :email_row, :table_row, 'questions.representative_contact_preference.email.input_label', exact: true do
+          element :email_answer, :return_answer
+        end
+        
+        section :fax_row, :table_row, 'questions.representative_contact_preference.fax.input_label', exact: true do
+          element :fax_answer, :return_answer
+        end
+        
+        section :representative_disability_row, :table_row, 'questions.representative_disability.label', exact: true do
+          element :representative_disability_answer, :return_answer
+        end
+        
+        section :disability_information_row, :table_row, 'questions.representative_disability.disability_information.label', exact: true do
+          element :disability_information_answer, :return_answer
+        end
+        
       end
 
       section :confirmation_of_employer_contract_claim_answers, :table_captioned, 'questions.confirmation_of_employer_contract_claim_answers.caption', exact: true do
+
+        section :make_employer_contract_claim_row, :table_row, 'questions.make_employer_contract_claim.label', exact: true do
+          element :make_employer_contract_claim_answer, :return_answer
+        end
+        
+        section :claim_information_row, :table_row, 'questions.make_employer_contract_claim.claim_information.label', exact: true do
+          element :claim_information_answer, :return_answer
+        end
+
+        section :upload_additional_information_row, :table_row, 'questions.upload_additional_information.label', exact: true do
+          element :upload_additional_information_answer, :return_answer
+        end
 
       end
       

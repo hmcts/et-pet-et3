@@ -101,6 +101,20 @@ RSpec.describe RespondentsDetail, type: :model do
     end
   end
 
+  describe ".to_h " do
+    it "will take two strings and convert them into a hash" do
+      respondent_detail = described_class.new(case_number: '7654321/2017')
+
+      expect(respondent_detail.to_h).to be_a(Hash)
+    end
+
+    it 'will return the value for a key' do
+      respondent_detail = described_class.new(case_number: '7654321/2017')
+
+      expect(respondent_detail.to_h).to include(case_number: '7654321/2017')
+    end
+  end
+
   # context "when not populated" do
   #   it "will not validate case_number" do
   #     respondent_detail = described_class.new(case_number: '')

@@ -16,4 +16,18 @@ RSpec.describe Response, type: :model do
       expect(response.defend_claim_facts).to eql 'lorem ipsum defend claim facts'
     end
   end
+
+  describe ".to_h " do
+    it "will take two strings and convert them into a hash" do
+      response = described_class.new(defend_claim: true)
+
+      expect(response.to_h).to be_a(Hash)
+    end
+
+    it 'will return the value for a key' do
+      response = described_class.new(defend_claim: true)
+
+      expect(response.to_h).to include(defend_claim: true)
+    end
+  end
 end

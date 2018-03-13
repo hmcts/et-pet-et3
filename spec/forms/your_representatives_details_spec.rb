@@ -100,4 +100,18 @@ RSpec.describe YourRepresentativesDetails, type: :model do
       expect(your_representatives_details.representative_disability).to be true
     end
   end
+
+  describe ".to_h " do
+    it "will take two strings and convert them into a hash" do
+      your_representatives_details = described_class.new(type_of_representative: 'Law Centre')
+
+      expect(your_representatives_details.to_h).to be_a(Hash)
+    end
+
+    it 'will return the value for a key' do
+      your_representatives_details = described_class.new(type_of_representative: 'Law Centre')
+
+      expect(your_representatives_details.to_h).to include(type_of_representative: 'Law Centre')
+    end
+  end
 end

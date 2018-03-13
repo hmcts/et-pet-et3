@@ -65,4 +65,17 @@ RSpec.describe ClaimantsDetail, type: :model do
     end
   end
 
+  describe ".to_h " do
+    it "will take two strings and convert them into a hash" do
+      claimant_detail = described_class.new(claimants_name: 'jane')
+
+      expect(claimant_detail.to_h).to be_a(Hash)
+    end
+
+    it 'will return the value for a key' do
+      claimant_detail = described_class.new(claimants_name: 'jane')
+
+      expect(claimant_detail.to_h).to include(claimants_name: 'jane')
+    end
+  end
 end

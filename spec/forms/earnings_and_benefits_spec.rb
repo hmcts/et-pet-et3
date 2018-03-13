@@ -71,4 +71,17 @@ RSpec.describe EarningsAndBenefits, type: :model do
     end
   end
 
+  describe ".to_h " do
+    it "will take two strings and convert them into a hash" do
+      earnings_and_benefits = described_class.new(agree_with_claimants_hours: true)
+
+      expect(earnings_and_benefits.to_h).to be_a(Hash)
+    end
+
+    it 'will return the value for a key' do
+      earnings_and_benefits = described_class.new(agree_with_claimants_hours: true)
+
+      expect(earnings_and_benefits.to_h).to include(agree_with_claimants_hours: true)
+    end
+  end
 end

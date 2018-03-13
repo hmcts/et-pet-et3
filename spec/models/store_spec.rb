@@ -2,12 +2,12 @@ require 'rails_helper'
 
 RSpec.describe Store, type: :model do
 
-  let(:populated_store) { described_class.new(uuid: 'ndlYb8c6ggOB68XKsACDqJNOGT01w4f5CLhXoIpyHiP7Kw18ILfjnbbinC1nFtTN', hash_store: { hash_key: :key_value }) }
+  let(:populated_store) { described_class.new(uuid: '32db7ef9-1144-464e-b561-9c8880b41d28', hash_store: { hash_key: :key_value }) }
 
-  it "stores a 64bit unique user id" do
-    store = described_class.new(uuid: 'NTtFn1CnibbnjfLI81wK7PiHypIoXhLC5f4w10TGONJqDCAsKX86BOgg6c8bYldn')
+  it "stores a SecureRandom.uuid" do
+    store = described_class.new(uuid: '8002e436-dc3a-452e-a4fd-9ba466c737b1')
 
-    expect(store.uuid).to eql 'NTtFn1CnibbnjfLI81wK7PiHypIoXhLC5f4w10TGONJqDCAsKX86BOgg6c8bYldn'
+    expect(store.uuid).to eql '8002e436-dc3a-452e-a4fd-9ba466c737b1'
   end
 
   it "serializes hash_store to retain hash type" do
@@ -29,9 +29,16 @@ RSpec.describe Store, type: :model do
   end
 
   it "saves the uuid to the database" do
-    store = described_class.new(uuid: 'NTtFn1CnibbnjfLI81wK7PiHypIoXhLC5f4w10TGONJqDCAsKX86BOgg6c8bYldn')
+    store = described_class.new(uuid: '8002e436-dc3a-452e-a4fd-9ba466c737b1')
 
     expect(store.save).to be true
+  end
+
+  it "generates a uuid before save" do
+    store = described_class.new
+
+    store.save
+    expect(store.uuid).to be_a(String)
   end
 
   it "saves the hash_store to the database" do
@@ -41,7 +48,7 @@ RSpec.describe Store, type: :model do
   end
 
   it "loads the uuid from the database" do
-    expect(populated_store.uuid).to eql 'ndlYb8c6ggOB68XKsACDqJNOGT01w4f5CLhXoIpyHiP7Kw18ILfjnbbinC1nFtTN'
+    expect(populated_store.uuid).to eql '32db7ef9-1144-464e-b561-9c8880b41d28'
   end
 
   it "loads the hash_store from the database" do

@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180313113318) do
+ActiveRecord::Schema.define(version: 20180313175459) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "stores", force: :cascade do |t|
     t.string "uuid"
-    t.text "hash_store"
+    t.text "hash_store", default: "--- {}\n"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["uuid"], name: "index_stores_on_uuid", unique: true

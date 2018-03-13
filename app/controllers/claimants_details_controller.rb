@@ -6,6 +6,7 @@ class ClaimantsDetailsController < ApplicationController
   def update
     @claimants_detail = ClaimantsDetail.new(claimants_detail_params)
     if @claimants_detail.valid?
+      current_store.hash_store[:claimants_detail_answers] = @claimants_detail.to_h
       redirect_to edit_earnings_and_benefits_path
     end
   end

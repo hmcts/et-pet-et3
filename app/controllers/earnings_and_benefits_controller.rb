@@ -6,6 +6,7 @@ class EarningsAndBenefitsController < ApplicationController
   def update
     @earnings_and_benefits = EarningsAndBenefits.new(earnings_and_benefits_params)
     if @earnings_and_benefits.valid?
+      current_store.hash_store[:earnings_and_benefits_answers] = @earnings_and_benefits.to_h
       redirect_to edit_response_path
     end
   end

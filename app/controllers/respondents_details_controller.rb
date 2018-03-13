@@ -6,6 +6,7 @@ class RespondentsDetailsController < ApplicationController
   def update
     @respondents_detail = RespondentsDetail.new(respondents_detail_params)
     if @respondents_detail.valid?
+      current_store.hash_store[:respondents_detail_answers] = @respondents_detail.to_h
       redirect_to edit_claimants_details_path
     end
   end

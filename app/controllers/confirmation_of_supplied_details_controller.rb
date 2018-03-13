@@ -6,6 +6,7 @@ class ConfirmationOfSuppliedDetailsController < ApplicationController
   def update
     @confirmation_of_supplied_details = ConfirmationOfSuppliedDetails.new(confirmation_of_supplied_details_params)
     if @confirmation_of_supplied_details.valid?
+      current_store.hash_store[:confirmation_of_supplied_details_answers] = @confirmation_of_supplied_details.to_h
       redirect_to form_submission_path
     end
   end

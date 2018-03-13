@@ -6,6 +6,7 @@ class ResponsesController < ApplicationController
   def update
     @response = Response.new(response_params)
     if @response.valid?
+      current_store.hash_store[:response_answers] = @response.to_h
       redirect_to edit_your_representative_path
     end
   end

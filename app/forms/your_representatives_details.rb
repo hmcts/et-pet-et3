@@ -17,7 +17,7 @@ class YourRepresentativesDetails < BaseForm
   attribute :representative_disability, :boolean
   attribute :representative_disability_information, :text
 
-  def to_h
+  def to_h # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
     {
       type_of_representative: type_of_representative,
       representative_org_name: representative_org_name,

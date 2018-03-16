@@ -82,7 +82,7 @@
           h1.heading-medium How would you prefer us to contact your representative?
         / Radio button for email preference
         .multiple-choice data-target="representative_contact_email"
-          = f.radio_button(:representative_contact_preference, 'email', class: 'form-control')
+          = f.radio_button(:representative_contact_preference, 'Email', class: 'form-control')
           = f.label(:representative_contact_preference_email, 'Email', class: 'form-label')
         / Hidden field for email address, shows when radio button is clicked
         #representative_contact_email.panel.panel-border-narrow.js-hidden
@@ -90,11 +90,11 @@
           = f.text_field(:representative_email, class: 'form-control')
         / Radio button for post preference
         .multiple-choice
-          = f.radio_button(:representative_contact_preference, 'post', class: 'form-control')
+          = f.radio_button(:representative_contact_preference, 'Post', class: 'form-control')
           = f.label(:representative_contact_preference_post, 'Post', class: 'form-label')
         / Radio button for fax preference
         .multiple-choice data-target="representative_contact_fax"
-          = f.radio_button(:representative_contact_preference, 'fax', class: 'form-control')
+          = f.radio_button(:representative_contact_preference, 'Fax', class: 'form-control')
           = f.label(:representative_contact_preference_fax, 'Fax', class: 'form-label')
         / Hidden field for fax number, shows when radio button is clicked
         #representative_contact_fax.panel.panel-border-narrow.js-hidden

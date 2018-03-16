@@ -11,7 +11,7 @@ class EarningsAndBenefits < BaseForm
   attribute :agree_with_claimant_pension_benefits, :boolean
   attribute :disagree_claimant_pension_benefits_reason, :text
 
-  def to_h # rubocop:disable Metrics/MethodLength  
+  def to_h # rubocop:disable Metrics/MethodLength
     {
       agree_with_claimants_hours: agree_with_claimants_hours,
       queried_hours: queried_hours,

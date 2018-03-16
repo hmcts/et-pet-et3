@@ -1,6 +1,13 @@
 class ConfirmationOfSuppliedDetailsController < ApplicationController
-  def edit
+  def edit # rubocop:disable Metrics/AbcSize
     @confirmation_of_supplied_details = ConfirmationOfSuppliedDetails.new
+    @respondents_detail_answers = current_store.hash_store[:respondents_detail_answers]
+    @claimants_detail_answers = current_store.hash_store[:claimants_detail_answers]
+    @earnings_and_benefits_answers = current_store.hash_store[:earnings_and_benefits_answers]
+    @response_answers = current_store.hash_store[:response_answers]
+    @your_representative_answers = current_store.hash_store[:your_representative_answers]
+    @your_representatives_details_answers = current_store.hash_store[:your_representatives_details_answers]
+    @employer_contract_claim_answers = current_store.hash_store[:employer_contract_claim_answers]
   end
 
   def update

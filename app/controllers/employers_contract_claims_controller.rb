@@ -15,6 +15,6 @@ class EmployersContractClaimsController < ApplicationController
 
   def employers_contract_claim_params
     params.require(:employers_contract_claim).permit(:make_employer_contract_claim, :claim_information,
-      :additional_information)
+      :upload_additional_information)
   end
 end

@@ -13,12 +13,12 @@
           h1.heading-medium Do you wish to make an Employer Contract Claim?
         / Radio button for 'No'
         .multiple-choice
-          = f.radio_button(:make_employer_contract_claim, true, class: 'form-control')
-          = f.label(:make_employer_contract_claim_true, 'No', class: 'form-label')
+          = f.radio_button(:make_employer_contract_claim, false, class: 'form-control')
+          = f.label(:make_employer_contract_claim_false, 'No', class: 'form-label')
         / Radio button for 'Yes'
         .multiple-choice data-target="make-claim-info"
-          = f.radio_button(:make_employer_contract_claim, false, class: 'form-control')
-          = f.label(:make_employer_contract_claim_false, 'Yes', class: 'form-label')
+          = f.radio_button(:make_employer_contract_claim, true, class: 'form-control')
+          = f.label(:make_employer_contract_claim_true, 'Yes', class: 'form-label')
         / Hidden field for contract claim information, shows when radio button is clicked
         #make-claim-info.panel.panel-border-narrow.js-hidden
           p If you exceed 50 lines you will not receive full details of your claim in the PDF returned to you on submission of the form. 

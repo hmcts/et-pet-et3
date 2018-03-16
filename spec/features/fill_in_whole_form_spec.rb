@@ -174,8 +174,7 @@ RSpec.feature "Fill in whole form", js: true do
     employer_contract_claim_table = confirmation_of_supplied_details_page.confirmation_of_employer_contract_claim_answers
     expect(employer_contract_claim_table.make_employer_contract_claim_row.make_employer_contract_claim_answer).to have_text true
     expect(employer_contract_claim_table.claim_information_row.claim_information_answer).to have_text "lorem ipsum info"
-    # TODO: Add expectation for the filename
-    # expect(employer_contract_claim_table.upload_additional_information_row.upload_additional_information_answer).to have_text "test_common/files/sample.rtf"
+    expect(employer_contract_claim_table.upload_additional_information_row.upload_additional_information_answer).to have_text "sample.rtf"
 
   end
 end

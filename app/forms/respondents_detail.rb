@@ -17,8 +17,7 @@ class RespondentsDetail < BaseForm
   attribute :organisation_more_than_one_site, :boolean
   attribute :employment_at_site_number, :integer
 
-  # TODO: Fix rubocop error
-  def to_h # rubocop:disable Metrics/MethodLength
+  def to_h # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
     {
       case_number: case_number,
       name: name,

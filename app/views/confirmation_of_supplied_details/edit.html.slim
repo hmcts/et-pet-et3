@@ -25,55 +25,55 @@
     tbody
       tr
         td Case Number*
-        td 7654321/2017
+        td = @respondents_detail_answers[:case_number]
       tr
         td Name of Individual, Company or Organisation*
-        td dodgy_co
+        td = @respondents_detail_answers[:name]
       tr
         td Name of Contact
-        td john
+        td = @respondents_detail_answers[:contact]
       tr
         td Building Name or Number*
-        td the_shard
+        td = @respondents_detail_answers[:building_name]
       tr
         td Street*
-        td downing_street
+        td = @respondents_detail_answers[:street_name]
       tr
         td Town/City*
-        td westminster
+        td = @respondents_detail_answers[:town]
       tr
         td County
-        td 
+        td = @respondents_detail_answers[:county]
       tr
         td Postcode*
-        td wc1 1aa
+        td = @respondents_detail_answers[:postcode]
       tr
         td Document Exchange (DX) Number
-        td 
+        td = @respondents_detail_answers[:dx_number]
       tr
         td Contact Number
-        td 
+        td = @respondents_detail_answers[:contact_number]
       tr
         td Mobile Number
-        td 
+        td = @respondents_detail_answers[:mobile_number]
       tr
         td How would you prefer us to contact you?
-        td email
+        td = @respondents_detail_answers[:contact_preference]
       tr
         td Email Address*
-        td john@dodgyco.com
+        td = @respondents_detail_answers[:email_address]
       tr
         td Fax Number*
-        td 
+        td = @respondents_detail_answers[:fax_number]
       tr
         td How many people does this organisation employ in Great Britain?
-        td 
+        td = @respondents_detail_answers[:organisation_employ_gb]
       tr
         td Does this organisation have more than one site in Great Britain?
-        td No
+        td = @respondents_detail_answers[:organisation_more_than_one_site]
       tr
         td How many people are employed at the place where the claimant worked?*
-        td No
+        td = @respondents_detail_answers[:employment_at_site_number]
       tr
         td
           = link_to("Edit Answers on this Page", edit_respondents_details_path, class: 'button')
@@ -88,37 +88,37 @@
     tbody
       tr
         td Claimant's Name
-        td jane
+        td = @claimants_detail_answers[:claimants_name]
       tr
         td Do you agree with the details given by the claimant about Early Conciliation with Acas?
-        td No
+        td = @claimants_detail_answers[:agree_with_early_conciliation_details]
       tr
         td Why do you disagree with the claimant?
-        td lorem ipsum conciliation
+        td = @claimants_detail_answers[:disagree_conciliation_reason]
       tr
         td Are the dates of employment given by the claimant correct?*
-        td No
+        td = @claimants_detail_answers[:agree_with_employment_dates]
       tr
         td When their employment started*
-        td 01/01/2017
+        td = @claimants_detail_answers[:employment_start]
       tr
         td  When their employment ended or will end*
-        td 31/12/2017
+        td = @claimants_detail_answers[:employment_end]
       tr
         td Why do you disagree with the dates given by the claimant*
-        td lorem ipsum employment
+        td = @claimants_detail_answers[:disagree_employment]
       tr
         td Is their employment continuing?
-        td No
+        td = @claimants_detail_answers[:continued_employment]
       tr
         td Is the claimant's description of their job or job title correct?
-        td No
+        td = @claimants_detail_answers[:agree_with_claimants_description_of_job_or_title]
       tr
         td Please give the details you believe to be correct
-        td lorem ipsum job title
+        td = @claimants_detail_answers[:disagree_claimants_job_or_title]
       tr
         td
-          = link_to("Edit Answers on this Page", edit_claimants_details_path, class: 'button')
+          = link_to("Edit Anclaimants_detailswers on this Page", edit_claimants_details_path, class: 'button')
         td
           a href="#content" Back to the top
   table
@@ -130,37 +130,37 @@
     tbody
       tr
         td Are the claimant's hours of work correct?
-        td No
+        td = @earnings_and_benefits_answers[:agree_with_claimants_hours]
       tr
         td Please enter the details you believe to be correct
-        td 32
+        td = @earnings_and_benefits_answers[:queried_hours]
       tr
         td Are the earnings details given by the claimant correct? 
-        td No
+        td = @earnings_and_benefits_answers[:agree_with_earnings_details]
       tr
         td Pay before tax 
-        td 1000
+        td = @earnings_and_benefits_answers[:queried_pay_before_tax]
       tr
         td Pay before tax period
-        td Monthly
+        td = @earnings_and_benefits_answers[:queried_pay_before_tax_period]
       tr
         td Normal take-home pay 
-        td 900
+        td = @earnings_and_benefits_answers[:queried_take_home_pay]
       tr
         td Normal take-home pay period
-        td Monthly
+        td = @earnings_and_benefits_answers[:queried_take_home_pay_period]
       tr
         td Is the information given by the claimant correct about being paid for, or working a period of notice? 
-        td No
+        td = @earnings_and_benefits_answers[:agree_with_claimant_notice]
       tr
         td Please give the details you believe to be correct below. If you didn't give notice or pay them instead of letting them work their notice please explain what happened and why 
-        td lorem ipsum notice reason
+        td = @earnings_and_benefits_answers[:disagree_claimant_notice_reason]
       tr
         td Are the details about pension and other benefits e.g. company car, medical insurance, etc. given by the claimant correct?
-        td No
+        td = @earnings_and_benefits_answers[:agree_with_claimant_pension_benefits]
       tr
         td Please give the details you believe to be correct.
-        td lorem ipsum claimant pension
+        td = @earnings_and_benefits_answers[:disagree_claimant_pension_benefits_reason]
       tr
         td
           = link_to("Edit Answers on this Page", edit_earnings_and_benefits_path, class: 'button')
@@ -175,10 +175,10 @@
     tbody
       tr
         td Do you defend the claim?*
-        td Yes
+        td = @response_answers[:defend_claim]
       tr
         td Please set out the facts which you rely on to defend the claim
-        td lorem ipsum defence
+        td = @response_answers[:defend_claim_facts]
       tr
         td
           = link_to("Edit Answers on this Page", edit_response_path, class: 'button')
@@ -193,7 +193,7 @@
     tbody
       tr
         td Do you have a representative?
-        td Yes
+        td = @your_representative_answers[:have_representative]
       tr
         td
           = link_to("Edit Answers on this Page", edit_your_representative_path, class: 'button')
@@ -207,55 +207,55 @@
         th Answer
       tr
         td Type of Representative*
-        td Private Individual
+        td = @your_representatives_details_answers[:type_of_representative]
       tr
         td Name of the Representative's Organisation
-        td repco ltd
+        td = @your_representatives_details_answers[:representative_org_name]
       tr
         td Representative's Name*
-        td Jane Doe
+        td = @your_representatives_details_answers[:representative_name]
       tr
         td Building Name or Number*
-        td Rep Building
+        td = @your_representatives_details_answers[:representative_building]
       tr
         td Street*
-        td Rep Street
+        td = @your_representatives_details_answers[:representative_street]
       tr
         td Town/City*
-        td Rep Town
+        td = @your_representatives_details_answers[:representative_town]
       tr
         td County
-        td Rep County
+        td = @your_representatives_details_answers[:representative_county]
       tr
         td Postcode*
-        td WC2 2BB
+        td = @your_representatives_details_answers[:representative_postcode]
       tr
         td Phone Number
-        td 0207 987 6543
+        td = @your_representatives_details_answers[:representative_phone]
       tr
         td Mobile Number
-        td 07987654321
+        td = @your_representatives_details_answers[:representative_mobile]
       tr
         td Document Exchange (DX) Number
-        td dx address
+        td = @your_representatives_details_answers[:representative_dx_number]
       tr
         td Reference
-        td Rep Ref
+        td = @your_representatives_details_answers[:representative_reference]
       tr
         td How would you prefer us to contact your representative?
-        td Fax
+        td = @your_representatives_details_answers[:representative_contact_preference]
       tr
         td Email Address*
-        td 
+        td = @your_representatives_details_answers[:representative_email]
       tr
         td Fax Number*
-        td 0207 345 6789
+        td = @your_representatives_details_answers[:representative_fax]
       tr
         td Does your representative have a disability?
-        td Yes
+        td = @your_representatives_details_answers[:representative_disability]
       tr
         td If Yes, it would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises.*
-        td Lorem ipsum disability
+        td = @your_representatives_details_answers[:representative_disability_information]
       tr
         td
           = link_to("Edit Answers on this Page", edit_your_representatives_details_path, class: 'button')
@@ -269,13 +269,13 @@
         th Answer
       tr
         td Do you wish to make an Employer Contract Claim?
-        td Yes
+        td = @employer_contract_claim_answers[:make_employer_contract_claim]
       tr
         td Please set out the background and details of your claim below, which should include all important dates.
-        td lorem ipsum info
+        td = @employer_contract_claim_answers[:claim_information]
       tr
         td Please upload a file to provide any important additional information about your response which you have not been able to include so far.
-        td test_common/files/sample.rtf
+        td = @employer_contract_claim_answers[:upload_additional_information]
       tr
         td
           = link_to("Edit Answers on this Page", edit_employers_contract_claim_path, class: 'button')

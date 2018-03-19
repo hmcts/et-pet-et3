@@ -21,7 +21,8 @@ class EmployersContractClaimsController < ApplicationController
   end
 
   def temp_change_upload_name(params)
-    params[:employers_contract_claim][:upload_additional_information] = params[:employers_contract_claim][:upload_additional_information].original_filename
+    filename = params[:employers_contract_claim][:upload_additional_information].original_filename
+    params[:employers_contract_claim][:upload_additional_information] = filename
     params
   end
 end

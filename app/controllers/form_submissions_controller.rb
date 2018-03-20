@@ -1,5 +1,3 @@
 class FormSubmissionsController < ApplicationController
-  def edit
-    head :ok
-  end
+  def index; end
 end

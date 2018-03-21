@@ -11,4 +11,18 @@ RSpec.describe YourRepresentative, type: :model do
     end
 
   end
+
+  describe ".to_h " do
+    it "will take two strings and convert them into a hash" do
+      your_representative = described_class.new(have_representative: true)
+
+      expect(your_representative.to_h).to be_a(Hash)
+    end
+
+    it 'will return the have_representative key and value pair' do
+      your_representative = described_class.new(have_representative: true)
+
+      expect(your_representative.to_h).to include(have_representative: true)
+    end
+  end
 end

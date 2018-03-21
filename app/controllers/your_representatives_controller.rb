@@ -6,6 +6,7 @@ class YourRepresentativesController < ApplicationController
   def update
     @your_representative = YourRepresentative.new(your_representative_params)
     if @your_representative.valid?
+      current_store.hash_store[:your_representative_answers] = @your_representative.to_h
       redirect_to next_page
     end
   end

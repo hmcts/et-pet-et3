@@ -10,7 +10,7 @@
     #question1.form-group
       fieldset
         legend
-          h1.heading-medium Type of representative*
+          h1.heading-medium Type of Representative*
         / Radio button for CAB
         .multiple-choice
           = f.radio_button(:type_of_representative, "Citizen's Advice Bureau", class: 'form-control')
@@ -44,7 +44,7 @@
           = f.radio_button(:type_of_representative, "Other", class: 'form-control')
           = f.label(:type_of_representative_other, "Other", class: 'form-label')
     #question2.form-group
-      = f.label(:representative_org_name, "Name of the representative's organisation", class:'form-label')
+      = f.label(:representative_org_name, "Name of the Representative's Organisation", class:'form-label')
       = f.text_field(:representative_org_name, class: 'form-control')
     #question3.form-group
       = f.label(:representative_name, "Representative's Name*", class:'form-label')
@@ -82,23 +82,23 @@
           h1.heading-medium How would you prefer us to contact your representative?
         / Radio button for email preference
         .multiple-choice data-target="representative_contact_email"
-          = f.radio_button(:representative_contact_preference, 'email', class: 'form-control')
+          = f.radio_button(:representative_contact_preference, 'Email', class: 'form-control')
           = f.label(:representative_contact_preference_email, 'Email', class: 'form-label')
         / Hidden field for email address, shows when radio button is clicked
         #representative_contact_email.panel.panel-border-narrow.js-hidden
-          = f.label(:representative_email, 'Email address*', class: 'form-label')
+          = f.label(:representative_email, 'Email Address*', class: 'form-label')
           = f.text_field(:representative_email, class: 'form-control')
         / Radio button for post preference
         .multiple-choice
-          = f.radio_button(:representative_contact_preference, 'post', class: 'form-control')
+          = f.radio_button(:representative_contact_preference, 'Post', class: 'form-control')
           = f.label(:representative_contact_preference_post, 'Post', class: 'form-label')
         / Radio button for fax preference
         .multiple-choice data-target="representative_contact_fax"
-          = f.radio_button(:representative_contact_preference, 'fax', class: 'form-control')
+          = f.radio_button(:representative_contact_preference, 'Fax', class: 'form-control')
           = f.label(:representative_contact_preference_fax, 'Fax', class: 'form-label')
         / Hidden field for fax number, shows when radio button is clicked
         #representative_contact_fax.panel.panel-border-narrow.js-hidden
-          = f.label(:representative_fax, 'Fax number*', class: 'form-label')
+          = f.label(:representative_fax, 'Fax Number*', class: 'form-label')
           = f.text_field(:representative_fax, class: 'form-control')
     #question14.form-group
       fieldset

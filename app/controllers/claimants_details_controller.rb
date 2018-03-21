@@ -6,6 +6,7 @@ class ClaimantsDetailsController < ApplicationController
   def update
     @claimants_detail = ClaimantsDetail.new(claimants_detail_params)
     if @claimants_detail.valid?
+      current_store.hash_store[:claimants_detail_answers] = @claimants_detail.to_h
       redirect_to edit_earnings_and_benefits_path
     end
   end
@@ -13,7 +14,9 @@ class ClaimantsDetailsController < ApplicationController
   private
 
   def claimants_detail_params
-    params.require(:claimants_detail).permit(:claimants_name, :early_conciliation_details, :employment_dates,
-      :continued_employment, :claimants_description_of_job_or_title)
+    params.require(:claimants_detail).permit(:claimants_name, :agree_with_early_conciliation_details,
+      :disagree_conciliation_reason, :agree_with_employment_dates, :employment_start, :employment_end,
+      :disagree_employment, :continued_employment, :agree_with_claimants_description_of_job_or_title,
+      :disagree_claimants_job_or_title)
   end
 end

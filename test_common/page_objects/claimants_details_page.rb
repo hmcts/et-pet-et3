@@ -70,8 +70,8 @@ module ET3
         def set_for(user_persona)
           if user_persona.agree_with_employment_dates == 'No'
             no.set(true)
-            employment_start.set(user_persona.agree_with_employment_start)
-            employment_end.set(user_persona.agree_with_employment_end)
+            employment_start.set(user_persona.employment_start)
+            employment_end.set(user_persona.employment_end)
             disagree_employment.set(user_persona.disagree_employment)
           else
             yes.set(true)

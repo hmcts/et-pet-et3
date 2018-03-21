@@ -22,7 +22,7 @@ module ET3
         end
 
         def set_for(user_persona)
-          if user_persona.make_employer_contract_claim
+          if user_persona.make_employer_contract_claim == "Yes"
             yes.set(true)
             claim_information.set(user_persona.claim_information)
           else

@@ -209,7 +209,7 @@ module ET3
         end
 
         def set_for(user_persona)
-          if user_persona.representative_disability == true
+          if user_persona.representative_disability == "Yes"
             yes.set(true)
             representative_disability_information.set(user_persona.representative_disability_information)
           else

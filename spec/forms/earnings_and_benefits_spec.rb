@@ -71,4 +71,78 @@ RSpec.describe EarningsAndBenefits, type: :model do
     end
   end
 
+  describe ".to_h " do
+    it "will take two strings and convert them into a hash" do
+      earnings_and_benefits = described_class.new(agree_with_claimants_hours: true)
+
+      expect(earnings_and_benefits.to_h).to be_a(Hash)
+    end
+
+    it 'will return the agree_with_claimants_hours key and value pair' do
+      earnings_and_benefits = described_class.new(agree_with_claimants_hours: true)
+
+      expect(earnings_and_benefits.to_h).to include(agree_with_claimants_hours: true)
+    end
+
+    it 'will return the queried_hours key and value pair' do
+      earnings_and_benefits = described_class.new(queried_hours: 32)
+
+      expect(earnings_and_benefits.to_h).to include(queried_hours: 32)
+    end
+
+    it 'will return the agree_with_earnings_details key and value pair' do
+      earnings_and_benefits = described_class.new(agree_with_earnings_details: false)
+
+      expect(earnings_and_benefits.to_h).to include(agree_with_earnings_details: false)
+    end
+
+    it 'will return the queried_pay_before_tax key and value pair' do
+      earnings_and_benefits = described_class.new(queried_pay_before_tax: 1000)
+
+      expect(earnings_and_benefits.to_h).to include(queried_pay_before_tax: 1000)
+    end
+
+    it 'will return the queried_pay_before_tax_period key and value pair' do
+      earnings_and_benefits = described_class.new(queried_pay_before_tax_period: 'Monthly')
+
+      expect(earnings_and_benefits.to_h).to include(queried_pay_before_tax_period: 'Monthly')
+    end
+
+    it 'will return the queried_take_home_pay key and value pair' do
+      earnings_and_benefits = described_class.new(queried_take_home_pay: 900)
+
+      expect(earnings_and_benefits.to_h).to include(queried_take_home_pay: 900)
+    end
+
+    it 'will return the queried_take_home_pay_period key and value pair' do
+      earnings_and_benefits = described_class.new(queried_take_home_pay_period: 'Monthly')
+
+      expect(earnings_and_benefits.to_h).to include(queried_take_home_pay_period: 'Monthly')
+    end
+
+    it 'will return the agree_with_claimant_notice key and value pair' do
+      earnings_and_benefits = described_class.new(agree_with_claimant_notice: false)
+
+      expect(earnings_and_benefits.to_h).to include(agree_with_claimant_notice: false)
+    end
+
+    it 'will return the disagree_claimant_notice_reason key and value pair' do
+      earnings_and_benefits = described_class.new(disagree_claimant_notice_reason: 'lorem ipsum notice reason')
+
+      expect(earnings_and_benefits.to_h).to include(disagree_claimant_notice_reason: 'lorem ipsum notice reason')
+    end
+
+    it 'will return the agree_with_claimant_pension_benefits key and value pair' do
+      earnings_and_benefits = described_class.new(agree_with_claimant_pension_benefits: false)
+
+      expect(earnings_and_benefits.to_h).to include(agree_with_claimant_pension_benefits: false)
+    end
+
+    it 'will return the disagree_claimant_pension_benefits_reason key and value pair' do
+      earnings_and_benefits = described_class.new(disagree_claimant_pension_benefits_reason: 'lorem ipsum claimant pension reason')
+
+      expect(earnings_and_benefits.to_h).to include(disagree_claimant_pension_benefits_reason: 'lorem ipsum claimant pension reason')
+    end
+
+  end
 end

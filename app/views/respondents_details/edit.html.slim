@@ -50,7 +50,7 @@
           = f.label(:contact_preference_email, 'Email', class: 'form-label')
         / Hidden field for email address, shows when radio button is clicked
         #respondent_contact_email.panel.panel-border-narrow.js-hidden
-          = f.label(:email_address, 'Email address*', class: 'form-label')
+          = f.label(:email_address, 'Email Address*', class: 'form-label')
           = f.text_field(:email_address, class: 'form-control')
         / Radio button for post preference
         .multiple-choice
@@ -62,7 +62,7 @@
           = f.label(:contact_preference_fax, 'Fax', class: 'form-label')
         / Hidden field for fax number, shows when radio button is clicked
         #respondent_contact_fax.panel.panel-border-narrow.js-hidden
-          = f.label(:fax_number, 'Fax number*', class: 'form-label')
+          = f.label(:fax_number, 'Fax Number*', class: 'form-label')
           = f.text_field(:fax_number, class: 'form-control')
     #question13.form-group
       = f.label(:organisation_employ_gb, 'How many people does this organisation employ in Great Britain?', class: 'form-label')

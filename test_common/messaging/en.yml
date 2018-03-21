@@ -27,12 +27,12 @@ en:
       label: How would you prefer us to contact you?
       email:
         label: Email
-        input_label: Email address*
+        input_label: Email Address*
       post:
         label: Post
       fax:
         label: Fax
-        input_label: Fax number*
+        input_label: Fax Number*
     organisation_employ_gb:
       label: How many people does this organisation employ in Great Britain?
     organisation_more_than_one_site:
@@ -141,7 +141,7 @@ en:
         label: 'No'
     # Your Representatives Details Page
     type_of_representative:
-      label: Type of representative*
+      label: Type of Representative*
       'yes':
         label: 'Yes'
       'no':
@@ -163,7 +163,7 @@ en:
       other:
         label: Other
     representative_org_name:
-      label: Name of the representative's organisation
+      label: Name of the Representative's Organisation
     representative_name:
       label: Representative's Name*
     representative_building:
@@ -188,17 +188,18 @@ en:
       label: How would you prefer us to contact your representative?
       email:
         label: Email
-        input_label: Email address*
+        input_label: Email Address*
       fax:
         label: Fax
-        input_label: Fax number*
+        input_label: Fax Number*
     representative_disability:
       label: Does your representative have a disability?
       'yes':
         label: 'Yes'
       'no':
         label: 'No'
-      disability_information: If Yes, it would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises.*
+      disability_information:
+        label: If Yes, it would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises.*
     # Employers Contract Claim Page
     make_employer_contract_claim:
       label: Do you wish to make an Employer Contract Claim?
@@ -210,3 +211,23 @@ en:
         label: 'Please set out the background and details of your claim below, which should include all important dates.'
     upload_additional_information:
       label: Please upload a file to provide any important additional information about your response which you have not been able to include so far.
+    # Confirmation of Supplied Details Page
+    email_receipt:
+      label: Email Address
+    confirm_email_receipt:
+      label: Confirm Email Address
+    # Captions for Tables on CoSD Page
+    confirmation_of_respondents_details_answers:
+      caption: Respondent's Details
+    confirmation_of_claimants_details_answers:
+      caption: Claimant's Details
+    confirmation_of_earnings_and_benefits_answers:
+      caption: Earnings and Benefits
+    confirmation_of_response_answers:
+      caption: Response
+    confirmation_of_your_representative_answers:
+      caption: Your Representative
+    confirmation_of_your_representatives_details_answers:
+      caption: Your Representative's Details
+    confirmation_of_employer_contract_claim_answers:
+      caption: Employer Contract Claim

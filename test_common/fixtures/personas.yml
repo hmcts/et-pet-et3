@@ -5,19 +5,24 @@ company01:
   building_name: the_shard
   street_name: downing_street
   town: westminster
+  county: london
   postcode: wc1 1aa
+  dx_number: input_format
+  contact_number: 02081234567
+  contact_mobile_number: 07123456789
   contact_preference: email
   email_address: john@dodgyco.com
+  organisation_employ_gb: 100
   organisation_more_than_one_site: 'No'
   claimants_name: jane
-  early_conciliation_details: 'No'
+  agree_with_early_conciliation_details: 'No'
   disagree_conciliation_reason: 'lorem ipsum conciliation'
-  employment_dates: 'No'
+  agree_with_employment_dates: 'No'
   employment_start: 01/01/2017
-  employment_end: 31/12/2017
+  employment_end: 12/31/2017
   disagree_employment: 'lorem ipsum employment'
   continued_employment: 'No'
-  claimants_description_of_job_or_title: 'No'
+  agree_with_claimants_description_of_job_or_title: 'No'
   disagree_claimants_job_or_title: 'lorem ipsum job title'
   agree_with_claimants_hours: 'No'
   queried_hours: 32
@@ -39,7 +44,7 @@ company01:
   representative_building: 'Rep Building'
   representative_street: 'Rep Street'
   representative_town: 'Rep Town'
-  representative_county: 'Repo County'
+  representative_county: 'Rep County'
   representative_postcode: 'WC2 2BB'
   representative_phone: '0207 987 6543'
   representative_mobile: '07987654321'
@@ -52,6 +57,8 @@ company01:
   make_employer_contract_claim: 'Yes'
   claim_information: 'lorem ipsum info'
   additional_information: 'test_common/files/sample.rtf'
+  email_receipt: 'email@recei.pt'
+  confirm_email_receipt: 'email@recei.pt'
 
 
 company02:

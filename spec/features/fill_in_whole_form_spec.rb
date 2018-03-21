@@ -1,5 +1,6 @@
 require 'rails_helper'
 RSpec.feature "Fill in whole form", js: true do
+  let(:start_page) { ET3::Test::StartPage.new }
   let(:respondents_details_page) { ET3::Test::RespondentsDetailsPage.new }
   let(:claimants_details_page) { ET3::Test::ClaimantsDetailsPage.new }
   let(:earnings_and_benefits_page) { ET3::Test::EarningsAndBenefitsPage.new }
@@ -10,7 +11,11 @@ RSpec.feature "Fill in whole form", js: true do
 
   scenario "correctly will flow without error" do
 
-    respondents_details_page.load
+    start_page.load
+    expect(start_page).to be_displayed
+    
+    start_page.next
+    expect(respondents_details_page).to be_displayed
 
     given_i_am(:company01)
 
@@ -77,6 +82,9 @@ RSpec.feature "Fill in whole form", js: true do
 
     employers_contract_claim_page.next
     expect(confirmation_of_supplied_details_page).to be_displayed
+
+    answer_email_receipt_question
+    answer_confirm_email_receipt_question
 
     # TODO: Use appropriate context blocks
 
@@ -175,6 +183,9 @@ RSpec.feature "Fill in whole form", js: true do
     expect(employer_contract_claim_table.make_employer_contract_claim_row.make_employer_contract_claim_answer).to have_text true
     expect(employer_contract_claim_table.claim_information_row.claim_information_answer).to have_text "lorem ipsum info"
     expect(employer_contract_claim_table.upload_additional_information_row.upload_additional_information_answer).to have_text "sample.rtf"
+
+    confirmation_of_supplied_details_page.submit_form
+    expect(form_submission_page).to be_displayed
 
   end
 end

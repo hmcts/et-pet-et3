@@ -24,10 +24,16 @@ RSpec.describe Response, type: :model do
       expect(response.to_h).to be_a(Hash)
     end
 
-    it 'will return the value for a key' do
+    it 'will return the defend_claim key and value pair' do
       response = described_class.new(defend_claim: true)
 
       expect(response.to_h).to include(defend_claim: true)
+    end
+
+    it 'will return the defend_claim_facts key and value pair' do
+      response = described_class.new(defend_claim_facts: 'lorem ipsum defence')
+
+      expect(response.to_h).to include(defend_claim_facts: 'lorem ipsum defence')
     end
   end
 end

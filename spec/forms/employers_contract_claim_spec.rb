@@ -22,15 +22,24 @@ RSpec.describe EmployersContractClaim, type: :model do
 
   describe ".to_h " do
     it "will take two strings and convert them into a hash" do
-      employers_contract_claim = described_class.new(make_employer_contract_claim: true, claim_information: 'lorem ipsum claim', uploaded_content: 'path/to/file.rtf')
+      employers_contract_claim = described_class.new(make_employer_contract_claim: true, claim_information: 'lorem ipsum claim', upload_additional_information: 'path/to/file.rtf')
 
       expect(employers_contract_claim.to_h).to be_a(Hash)
     end
 
-    it 'will return the value for a key' do
+    it 'will return the make_employer_contract_claim key and value pair' do
       employers_contract_claim = described_class.new(make_employer_contract_claim: true)
 
       expect(employers_contract_claim.to_h).to include(make_employer_contract_claim: true)
     end
+
+    it 'will return the claim_information key and value pair' do
+      employers_contract_claim = described_class.new(claim_information: 'lorem ipsum claim info')
+
+      expect(employers_contract_claim.to_h).to include(claim_information: 'lorem ipsum claim info')
+    end
+
+    # TODO: Unit test for upload functionality in hash_store
+
   end
 end

@@ -25,55 +25,55 @@
     tbody
       tr
         td Case Number*
-        td = @respondents_detail_answers[:case_number]
+        td = @hash_store[:respondents_detail_answers][:case_number]
       tr
         td Name of Individual, Company or Organisation*
-        td = @respondents_detail_answers[:name]
+        td = @hash_store[:respondents_detail_answers][:name]
       tr
         td Name of Contact
-        td = @respondents_detail_answers[:contact]
+        td = @hash_store[:respondents_detail_answers][:contact]
       tr
         td Building Name or Number*
-        td = @respondents_detail_answers[:building_name]
+        td = @hash_store[:respondents_detail_answers][:building_name]
       tr
         td Street*
-        td = @respondents_detail_answers[:street_name]
+        td = @hash_store[:respondents_detail_answers][:street_name]
       tr
         td Town/City*
-        td = @respondents_detail_answers[:town]
+        td = @hash_store[:respondents_detail_answers][:town]
       tr
         td County
-        td = @respondents_detail_answers[:county]
+        td = @hash_store[:respondents_detail_answers][:county]
       tr
         td Postcode*
-        td = @respondents_detail_answers[:postcode]
+        td = @hash_store[:respondents_detail_answers][:postcode]
       tr
         td Document Exchange (DX) Number
-        td = @respondents_detail_answers[:dx_number]
+        td = @hash_store[:respondents_detail_answers][:dx_number]
       tr
         td Contact Number
-        td = @respondents_detail_answers[:contact_number]
+        td = @hash_store[:respondents_detail_answers][:contact_number]
       tr
         td Mobile Number
-        td = @respondents_detail_answers[:mobile_number]
+        td = @hash_store[:respondents_detail_answers][:mobile_number]
       tr
         td How would you prefer us to contact you?
-        td = @respondents_detail_answers[:contact_preference]
+        td = @hash_store[:respondents_detail_answers][:contact_preference]
       tr
         td Email Address*
-        td = @respondents_detail_answers[:email_address]
+        td = @hash_store[:respondents_detail_answers][:email_address]
       tr
         td Fax Number*
-        td = @respondents_detail_answers[:fax_number]
+        td = @hash_store[:respondents_detail_answers][:fax_number]
       tr
         td How many people does this organisation employ in Great Britain?
-        td = @respondents_detail_answers[:organisation_employ_gb]
+        td = @hash_store[:respondents_detail_answers][:organisation_employ_gb]
       tr
         td Does this organisation have more than one site in Great Britain?
-        td = @respondents_detail_answers[:organisation_more_than_one_site]
+        td = @hash_store[:respondents_detail_answers][:organisation_more_than_one_site]
       tr
         td How many people are employed at the place where the claimant worked?*
-        td = @respondents_detail_answers[:employment_at_site_number]
+        td = @hash_store[:respondents_detail_answers][:employment_at_site_number]
       tr
         td
           = link_to("Edit Answers on this Page", edit_respondents_details_path, class: 'button')
@@ -88,34 +88,34 @@
     tbody
       tr
         td Claimant's Name
-        td = @claimants_detail_answers[:claimants_name]
+        td = @hash_store[:claimants_detail_answers][:claimants_name]
       tr
         td Do you agree with the details given by the claimant about Early Conciliation with Acas?
-        td = @claimants_detail_answers[:agree_with_early_conciliation_details]
+        td = @hash_store[:claimants_detail_answers][:agree_with_early_conciliation_details]
       tr
         td Why do you disagree with the claimant?
-        td = @claimants_detail_answers[:disagree_conciliation_reason]
+        td = @hash_store[:claimants_detail_answers][:disagree_conciliation_reason]
       tr
         td Are the dates of employment given by the claimant correct?*
-        td = @claimants_detail_answers[:agree_with_employment_dates]
+        td = @hash_store[:claimants_detail_answers][:agree_with_employment_dates]
       tr
         td When their employment started*
-        td = @claimants_detail_answers[:employment_start]
+        td = @hash_store[:claimants_detail_answers][:employment_start]
       tr
         td  When their employment ended or will end*
-        td = @claimants_detail_answers[:employment_end]
+        td = @hash_store[:claimants_detail_answers][:employment_end]
       tr
         td Why do you disagree with the dates given by the claimant*
-        td = @claimants_detail_answers[:disagree_employment]
+        td = @hash_store[:claimants_detail_answers][:disagree_employment]
       tr
         td Is their employment continuing?
-        td = @claimants_detail_answers[:continued_employment]
+        td = @hash_store[:claimants_detail_answers][:continued_employment]
       tr
         td Is the claimant's description of their job or job title correct?
-        td = @claimants_detail_answers[:agree_with_claimants_description_of_job_or_title]
+        td = @hash_store[:claimants_detail_answers][:agree_with_claimants_description_of_job_or_title]
       tr
         td Please give the details you believe to be correct
-        td = @claimants_detail_answers[:disagree_claimants_job_or_title]
+        td = @hash_store[:claimants_detail_answers][:disagree_claimants_job_or_title]
       tr
         td
           = link_to("Edit Anclaimants_detailswers on this Page", edit_claimants_details_path, class: 'button')
@@ -130,37 +130,37 @@
     tbody
       tr
         td Are the claimant's hours of work correct?
-        td = @earnings_and_benefits_answers[:agree_with_claimants_hours]
+        td = @hash_store[:earnings_and_benefits_answers][:agree_with_claimants_hours]
       tr
         td Please enter the details you believe to be correct
-        td = @earnings_and_benefits_answers[:queried_hours]
+        td = @hash_store[:earnings_and_benefits_answers][:queried_hours]
       tr
         td Are the earnings details given by the claimant correct? 
-        td = @earnings_and_benefits_answers[:agree_with_earnings_details]
+        td = @hash_store[:earnings_and_benefits_answers][:agree_with_earnings_details]
       tr
         td Pay before tax 
-        td = @earnings_and_benefits_answers[:queried_pay_before_tax]
+        td = @hash_store[:earnings_and_benefits_answers][:queried_pay_before_tax]
       tr
         td Pay before tax period
-        td = @earnings_and_benefits_answers[:queried_pay_before_tax_period]
+        td = @hash_store[:earnings_and_benefits_answers][:queried_pay_before_tax_period]
       tr
         td Normal take-home pay 
-        td = @earnings_and_benefits_answers[:queried_take_home_pay]
+        td = @hash_store[:earnings_and_benefits_answers][:queried_take_home_pay]
       tr
         td Normal take-home pay period
-        td = @earnings_and_benefits_answers[:queried_take_home_pay_period]
+        td = @hash_store[:earnings_and_benefits_answers][:queried_take_home_pay_period]
       tr
         td Is the information given by the claimant correct about being paid for, or working a period of notice? 
-        td = @earnings_and_benefits_answers[:agree_with_claimant_notice]
+        td = @hash_store[:earnings_and_benefits_answers][:agree_with_claimant_notice]
       tr
         td Please give the details you believe to be correct below. If you didn't give notice or pay them instead of letting them work their notice please explain what happened and why 
-        td = @earnings_and_benefits_answers[:disagree_claimant_notice_reason]
+        td = @hash_store[:earnings_and_benefits_answers][:disagree_claimant_notice_reason]
       tr
         td Are the details about pension and other benefits e.g. company car, medical insurance, etc. given by the claimant correct?
-        td = @earnings_and_benefits_answers[:agree_with_claimant_pension_benefits]
+        td = @hash_store[:earnings_and_benefits_answers][:agree_with_claimant_pension_benefits]
       tr
         td Please give the details you believe to be correct.
-        td = @earnings_and_benefits_answers[:disagree_claimant_pension_benefits_reason]
+        td = @hash_store[:earnings_and_benefits_answers][:disagree_claimant_pension_benefits_reason]
       tr
         td
           = link_to("Edit Answers on this Page", edit_earnings_and_benefits_path, class: 'button')
@@ -175,10 +175,10 @@
     tbody
       tr
         td Do you defend the claim?*
-        td = @response_answers[:defend_claim]
+        td = @hash_store[:response_answers][:defend_claim]
       tr
         td Please set out the facts which you rely on to defend the claim
-        td = @response_answers[:defend_claim_facts]
+        td = @hash_store[:response_answers][:defend_claim_facts]
       tr
         td
           = link_to("Edit Answers on this Page", edit_response_path, class: 'button')
@@ -193,7 +193,7 @@
     tbody
       tr
         td Do you have a representative?
-        td = @your_representative_answers[:have_representative]
+        td = @hash_store[:your_representative_answers][:have_representative]
       tr
         td
           = link_to("Edit Answers on this Page", edit_your_representative_path, class: 'button')
@@ -207,55 +207,55 @@
         th Answer
       tr
         td Type of Representative*
-        td = @your_representatives_details_answers[:type_of_representative]
+        td = @hash_store[:your_representatives_details_answers][:type_of_representative]
       tr
         td Name of the Representative's Organisation
-        td = @your_representatives_details_answers[:representative_org_name]
+        td = @hash_store[:your_representatives_details_answers][:representative_org_name]
       tr
         td Representative's Name*
-        td = @your_representatives_details_answers[:representative_name]
+        td = @hash_store[:your_representatives_details_answers][:representative_name]
       tr
         td Building Name or Number*
-        td = @your_representatives_details_answers[:representative_building]
+        td = @hash_store[:your_representatives_details_answers][:representative_building]
       tr
         td Street*
-        td = @your_representatives_details_answers[:representative_street]
+        td = @hash_store[:your_representatives_details_answers][:representative_street]
       tr
         td Town/City*
-        td = @your_representatives_details_answers[:representative_town]
+        td = @hash_store[:your_representatives_details_answers][:representative_town]
       tr
         td County
-        td = @your_representatives_details_answers[:representative_county]
+        td = @hash_store[:your_representatives_details_answers][:representative_county]
       tr
         td Postcode*
-        td = @your_representatives_details_answers[:representative_postcode]
+        td = @hash_store[:your_representatives_details_answers][:representative_postcode]
       tr
         td Phone Number
-        td = @your_representatives_details_answers[:representative_phone]
+        td = @hash_store[:your_representatives_details_answers][:representative_phone]
       tr
         td Mobile Number
-        td = @your_representatives_details_answers[:representative_mobile]
+        td = @hash_store[:your_representatives_details_answers][:representative_mobile]
       tr
         td Document Exchange (DX) Number
-        td = @your_representatives_details_answers[:representative_dx_number]
+        td = @hash_store[:your_representatives_details_answers][:representative_dx_number]
       tr
         td Reference
-        td = @your_representatives_details_answers[:representative_reference]
+        td = @hash_store[:your_representatives_details_answers][:representative_reference]
       tr
         td How would you prefer us to contact your representative?
-        td = @your_representatives_details_answers[:representative_contact_preference]
+        td = @hash_store[:your_representatives_details_answers][:representative_contact_preference]
       tr
         td Email Address*
-        td = @your_representatives_details_answers[:representative_email]
+        td = @hash_store[:your_representatives_details_answers][:representative_email]
       tr
         td Fax Number*
-        td = @your_representatives_details_answers[:representative_fax]
+        td = @hash_store[:your_representatives_details_answers][:representative_fax]
       tr
         td Does your representative have a disability?
-        td = @your_representatives_details_answers[:representative_disability]
+        td = @hash_store[:your_representatives_details_answers][:representative_disability]
       tr
         td If Yes, it would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises.*
-        td = @your_representatives_details_answers[:representative_disability_information]
+        td = @hash_store[:your_representatives_details_answers][:representative_disability_information]
       tr
         td
           = link_to("Edit Answers on this Page", edit_your_representatives_details_path, class: 'button')
@@ -269,13 +269,13 @@
         th Answer
       tr
         td Do you wish to make an Employer Contract Claim?
-        td = @employer_contract_claim_answers[:make_employer_contract_claim]
+        td = @hash_store[:employer_contract_claim_answers][:make_employer_contract_claim]
       tr
         td Please set out the background and details of your claim below, which should include all important dates.
-        td = @employer_contract_claim_answers[:claim_information]
+        td = @hash_store[:employer_contract_claim_answers][:claim_information]
       tr
         td Please upload a file to provide any important additional information about your response which you have not been able to include so far.
-        td = @employer_contract_claim_answers[:upload_additional_information]
+        td = @hash_store[:employer_contract_claim_answers][:upload_additional_information]
       tr
         td
           = link_to("Edit Answers on this Page", edit_employers_contract_claim_path, class: 'button')

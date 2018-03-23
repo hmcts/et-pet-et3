@@ -9,11 +9,28 @@ RSpec.feature "Fill in whole form", js: true do
   let(:your_representatives_details_page) { ET3::Test::YourRepresentativesDetailsPage.new }
   let(:employers_contract_claim_page) { ET3::Test::EmployersContractClaimPage.new }
 
+  before do
+    stub_request(:post, "https://et-api-example.com/v2/repondents/response").
+      with(headers: { content_type: 'application/json', 'Accept': 'application/json' }).
+      to_return(
+        headers: { content_type: 'application/json' },
+        body:
+          {
+            "data": {
+              "reference": "992000000100",
+              "submitted_at": "2018-01-01 12:00:00 GMT+00",
+              "pdf": "s3/link/to/form/pdf"
+            }
+          }.to_json,
+        status: 201
+      )
+  end
+
   scenario "correctly will flow without error" do
 
     start_page.load
     expect(start_page).to be_displayed
-    
+
     start_page.next
     expect(respondents_details_page).to be_displayed
 
@@ -186,6 +203,72 @@ RSpec.feature "Fill in whole form", js: true do
 
     confirmation_of_supplied_details_page.submit_form
     expect(form_submission_page).to be_displayed
-
+    expect(a_request(:post, "https://et-api-example.com/v2/repondents/response").
+      with(
+        body: {
+          "case_number": "7654321/2017",
+          "name": "dodgy_co",
+          "contact": "john",
+          "building_name": "the_shard",
+          "street_name": "downing_street",
+          "town": "westminster",
+          "county": "",
+          "postcode": "wc1 1aa",
+          "dx_number": "",
+          "contact_number": "",
+          "mobile_number": "",
+          "contact_preference": "email",
+          "email_address": "john@dodgyco.com",
+          "fax_number": "",
+          "organisation_employ_gb": nil,
+          "organisation_more_than_one_site": false,
+          "employment_at_site_number": nil,
+          "claimants_name": "jane",
+          "agree_with_early_conciliation_details": false,
+          "disagree_conciliation_reason": "lorem ipsum conciliation",
+          "agree_with_employment_dates": false,
+          "employment_start": "Sun, 01 Jan 2017",
+          "employment_end": "Sun, 31 Dec 2017",
+          "disagree_employment": "lorem ipsum employment",
+          "continued_employment": true,
+          "agree_with_claimants_description_of_job_or_title": false,
+          "disagree_claimants_job_or_title": "lorem ipsum job title",
+          "agree_with_claimants_hours": false,
+          "queried_hours": 32.0,
+          "agree_with_earnings_details": false,
+          "queried_pay_before_tax": 1000.0,
+          "queried_pay_before_tax_period": "Monthly",
+          "queried_take_home_pay": 900.0,
+          "queried_take_home_pay_period": "Monthly",
+          "agree_with_claimant_notice": false,
+          "disagree_claimant_notice_reason": "lorem ipsum notice reason",
+          "agree_with_claimant_pension_benefits": false,
+          "disagree_claimant_pension_benefits_reason": "lorem ipsum claimant pension",
+          "defend_claim": true,
+          "defend_claim_facts": "lorem ipsum defence",
+          "have_representative": true,
+          "type_of_representative": "Private Individual",
+          "representative_org_name": "repco ltd",
+          "representative_name": "Jane Doe",
+          "representative_building": "Rep Building",
+          "representative_street": "Rep Street",
+          "representative_town": "Rep Town",
+          "representative_county": "Rep County",
+          "representative_postcode": "WC2 2BB",
+          "representative_phone": "0207 987 6543",
+          "representative_mobile": "07987654321",
+          "representative_dx_number": "dx address",
+          "representative_reference": "Rep Ref",
+          "representative_contact_preference": "Fax",
+          "representative_email": "",
+          "representative_fax": "0207 345 6789",
+          "representative_disability": true,
+          "representative_disability_information": "Lorem ipsum disability",
+          "make_employer_contract_claim": true,
+          "claim_information": "lorem ipsum info",
+          "upload_additional_information": "sample.rtf"
+        }.to_json,
+        headers: { content_type: 'application/json', 'Accept': 'application/json' }
+      )).to have_been_made.at_least_once
   end
 end

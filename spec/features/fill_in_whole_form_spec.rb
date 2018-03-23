@@ -227,8 +227,8 @@ RSpec.feature "Fill in whole form", js: true do
           "agree_with_early_conciliation_details": false,
           "disagree_conciliation_reason": "lorem ipsum conciliation",
           "agree_with_employment_dates": false,
-          "employment_start": "Sun, 01 Jan 2017",
-          "employment_end": "Sun, 31 Dec 2017",
+          "employment_start": "2017-01-01",
+          "employment_end": "2017-12-31",
           "disagree_employment": "lorem ipsum employment",
           "continued_employment": true,
           "agree_with_claimants_description_of_job_or_title": false,
@@ -266,7 +266,9 @@ RSpec.feature "Fill in whole form", js: true do
           "representative_disability_information": "Lorem ipsum disability",
           "make_employer_contract_claim": true,
           "claim_information": "lorem ipsum info",
-          "upload_additional_information": "sample.rtf"
+          "upload_additional_information": "sample.rtf",
+          "email_receipt": "email@recei.pt",
+          "confirm_email_receipt": "email@recei.pt"
         }.to_json,
         headers: { content_type: 'application/json', 'Accept': 'application/json' }
       )).to have_been_made.at_least_once

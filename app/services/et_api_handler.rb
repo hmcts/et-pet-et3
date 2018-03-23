@@ -3,8 +3,10 @@ require 'httparty'
 class EtApiHandler
 
   def self.submit(form_hash)
-    one_dimensional_hash = {}
-    form_hash.each_value { |hash_collection| hash_collection.each { |key, value| one_dimensional_hash[key] = value } }
+    # form_hash is a key/value pair for each page in the form
+    # The key states the page name, the value is a group of hashes
+    # The line below flattens this while retaining the hash structure
+    one_dimensional_hash = form_hash.values.inject(&:merge)
 
     HTTParty.post("https://et-api-example.com/v2/repondents/response",
       body: one_dimensional_hash.to_json,

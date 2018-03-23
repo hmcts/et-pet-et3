@@ -47,6 +47,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'rubocop', '~> 0.52.1'
   gem 'rubocop-rspec', '~> 1.22'
+  gem 'simplecov', '~> 0.15'
   #VSCode debugger
   gem 'ruby-debug-ide', '~> 0.6.1'
   gem 'debase', '~> 0.2.2'
@@ -63,8 +64,9 @@ end
 
 group :test do
   gem 'capybara-screenshot', '~> 1.0'
+  gem 'cucumber-rails', '~> 1.5', :require => false
   gem 'rspec-rails', '~> 3.7'
-  gem 'site_prism', '~> 2.9'
+  gem 'site_prism', '~> 2.10'
   gem 'chromedriver-helper', '~> 1.1'
   gem 'geckodriver-helper', '~> 0.0'
   gem 'database_cleaner', '~> 1.5'

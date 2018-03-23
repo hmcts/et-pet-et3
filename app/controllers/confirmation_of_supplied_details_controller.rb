@@ -1,5 +1,3 @@
-require 'httparty'
-
 class ConfirmationOfSuppliedDetailsController < ApplicationController
   def edit
     @confirmation_of_supplied_details = ConfirmationOfSuppliedDetails.new

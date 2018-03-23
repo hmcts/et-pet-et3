@@ -40,7 +40,7 @@ module ET3
       def form_submission_page
         ET3::Test::FormSubmissionPage.new
       end
-      
+
       # Define other pages here
     end
   end

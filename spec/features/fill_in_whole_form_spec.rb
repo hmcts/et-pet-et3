@@ -271,6 +271,6 @@ RSpec.feature "Fill in whole form", js: true do
           "confirm_email_receipt": "email@recei.pt"
         }.to_json,
         headers: { content_type: 'application/json', 'Accept': 'application/json' }
-      )).to have_been_made.at_least_once
+      )).to have_been_made.once
   end
 end

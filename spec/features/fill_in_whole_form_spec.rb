@@ -21,10 +21,7 @@ RSpec.feature "Fill in whole form", js: true do
   scenario "correctly will flow without error" do
 
     start_page.load
-    expect(start_page).to be_displayed
-
     start_page.next
-    expect(respondents_details_page).to be_displayed
 
     given_i_am(:company01)
 
@@ -39,7 +36,6 @@ RSpec.feature "Fill in whole form", js: true do
     answer_organisation_more_than_one_site_question
 
     respondents_details_page.next
-    expect(claimants_details_page).to be_displayed
 
     answer_claimants_name_question
     answer_agree_with_early_conciliation_details_question
@@ -48,7 +44,6 @@ RSpec.feature "Fill in whole form", js: true do
     answer_agree_with_claimants_description_of_job_or_title_question
 
     claimants_details_page.next
-    expect(earnings_and_benefits_page).to be_displayed
 
     answer_agree_with_claimants_hours_question
     answer_agree_with_earnings_details_question
@@ -56,17 +51,14 @@ RSpec.feature "Fill in whole form", js: true do
     answer_agree_with_claimant_pension_benefits_question
 
     earnings_and_benefits_page.next
-    expect(response_page).to be_displayed
 
     answer_defend_claim_question
 
     response_page.next
-    expect(your_representative_page).to be_displayed
 
     answer_have_representative_question
 
     your_representative_page.next
-    expect(your_representatives_details_page).to be_displayed
 
     answer_type_of_representative_question
     answer_representative_org_name_question
@@ -84,13 +76,11 @@ RSpec.feature "Fill in whole form", js: true do
     answer_representative_disability_question
 
     your_representatives_details_page.next
-    expect(employers_contract_claim_page).to be_displayed
 
     answer_make_employer_contract_claim_question
     upload_additional_information
 
     employers_contract_claim_page.next
-    expect(confirmation_of_supplied_details_page).to be_displayed
 
     answer_email_receipt_question
     answer_confirm_email_receipt_question

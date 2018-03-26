@@ -1,4 +1,4 @@
-@wip
+@wip @javascript
 
 Feature: Response to claim landing page
 

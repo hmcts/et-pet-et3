@@ -51,6 +51,7 @@ group :development, :test do
   #VSCode debugger
   gem 'ruby-debug-ide', '~> 0.6.1'
   gem 'debase', '~> 0.2.2'
+  gem 'pry', '~> 0.10.3'
 end
 
 group :development do

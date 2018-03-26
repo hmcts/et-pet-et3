@@ -4,13 +4,15 @@
     p.font-large 
       ' Your reference number, which should be quoted on all correspondence, is
     p.font-large
-      strong.bold.reference-number &lt;Reference Here&gt;
+      strong.bold.reference-number = @reference_number
   p Thank you for your submission. It has been forwarded to the Default office who will contact you in due course.
   p
     strong.bold Alexandra House, 14-22 The Parsonage, Manchester, M3 2JA
     br
     strong.bold Telephone: 0161 833 6100
-  p Submission Date: &lt;Date&gt;
+  p 
+    | Submission Date:
+    span.submission-date = @submission_date
   a.download-pdf href="#" A PDF version of your completed form is now available for download ICON HERE
   p 
     ' PDF (Portable Document Format) files can be read using applications such as:

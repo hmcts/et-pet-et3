@@ -2,6 +2,7 @@ require 'securerandom'
 class Store < ApplicationRecord
   attribute :uuid, :string
   serialize :hash_store
+  serialize :api_response
   before_validation :generate_uuid, unless: :uuid_present?
 
   private

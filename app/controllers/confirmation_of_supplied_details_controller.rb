@@ -8,7 +8,7 @@ class ConfirmationOfSuppliedDetailsController < ApplicationController
     @confirmation_of_supplied_details = ConfirmationOfSuppliedDetails.new(confirmation_of_supplied_details_params)
     if @confirmation_of_supplied_details.valid?
       current_store.hash_store[:confirmation_of_supplied_details_answers] = @confirmation_of_supplied_details.to_h
-      EtApiHandler.submit(current_store.hash_store)
+      current_store.api_response = EtApiHandler.submit(current_store.hash_store)
       redirect_to form_submission_path
     end
   end

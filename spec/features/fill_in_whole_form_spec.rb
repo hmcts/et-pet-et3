@@ -1,13 +1,5 @@
 require 'rails_helper'
 RSpec.feature "Fill in whole form", js: true do
-  let(:start_page) { ET3::Test::StartPage.new }
-  let(:respondents_details_page) { ET3::Test::RespondentsDetailsPage.new }
-  let(:claimants_details_page) { ET3::Test::ClaimantsDetailsPage.new }
-  let(:earnings_and_benefits_page) { ET3::Test::EarningsAndBenefitsPage.new }
-  let(:response_page) { ET3::Test::ResponsePage.new }
-  let(:your_representative_page) { ET3::Test::YourRepresentativePage.new }
-  let(:your_representatives_details_page) { ET3::Test::YourRepresentativesDetailsPage.new }
-  let(:employers_contract_claim_page) { ET3::Test::EmployersContractClaimPage.new }
 
   before do
     stub_request(:post, "https://et-api-example.com/v2/repondents/response").
@@ -18,7 +10,7 @@ RSpec.feature "Fill in whole form", js: true do
           {
             "data": {
               "reference": "992000000100",
-              "submitted_at": "2018-01-01 12:00:00 GMT+00",
+              "submitted_at": "2018-01-13 14:00",
               "pdf": "s3/link/to/form/pdf"
             }
           }.to_json,
@@ -272,5 +264,11 @@ RSpec.feature "Fill in whole form", js: true do
         }.to_json,
         headers: { content_type: 'application/json', 'Accept': 'application/json' }
       )).to have_been_made.once
+
+    expect(form_submission_page).to have_submission_confirmation
+    expect(form_submission_page.reference_number).to have_text "992000000100"
+    expect(form_submission_page.submission_date).to have_text "2018-01-13 14:00"
+    expect(form_submission_page).to have_download_pdf
+
   end
 end

@@ -37,6 +37,10 @@ module ET3
         ET3::Test::ConfirmationOfSuppliedDetailsPage.new
       end
 
+      def form_submission_page
+        ET3::Test::FormSubmissionPage.new
+      end
+
       # Define other pages here
     end
   end

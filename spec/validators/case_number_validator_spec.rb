@@ -54,4 +54,12 @@ RSpec.describe CaseNumberValidator do
     expect(model.errors.details[:case_number]).to include a_hash_including(error: :invalid)
   end
 
+  it 'will not validate a string with a symbol in it' do
+    model = model_class.new(case_number: "76@432/12017")
+
+    model.valid?
+
+    expect(model.errors.details[:case_number]).to include a_hash_including(error: :invalid)
+  end
+
 end

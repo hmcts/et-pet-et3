@@ -7,7 +7,7 @@ company01:
   town: westminster
   county: london
   postcode: wc1 1aa
-  dx_number: input_format
+  dx_number: 724060 Derby 21
   contact_number: 02081234567
   contact_mobile_number: 07123456789
   contact_preference: email
@@ -70,7 +70,7 @@ erroneously_entering_data:
   town: null
   county: london
   postcode: string
-  dx_number: null # currently unknown
+  dx_number: 724060 Derby 21 (no validation)
   contact_number: string
   contact_mobile_number: string
   contact_preference: fax

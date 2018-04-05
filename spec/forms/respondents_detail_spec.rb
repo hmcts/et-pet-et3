@@ -5,7 +5,7 @@ RSpec.describe RespondentsDetail, type: :model do
   let(:populated_respondent_detail) {
     described_class.new(
       case_number: '7654321/2017', name: 'dodgy_co', contact: 'John Smith', building_name: 'the_shard', street_name: 'downing_street',
-      town: 'westminster', county: 'greater london', postcode: 'wc1 1aa', dx_number: '123456', contact_number: '0207 123 4567',
+      town: 'westminster', county: 'greater london', postcode: 'wc1 1aa', dx_number: '724060 Derby 21', contact_number: '0207 123 4567',
       mobile_number: '07123456789', contact_preference: 'email', email_address: 'john@dodgyco.com', fax_number: '0207 123 4567',
       organisation_employ_gb: 100, organisation_more_than_one_site: true, employment_at_site_number: 20
     )
@@ -20,8 +20,6 @@ RSpec.describe RespondentsDetail, type: :model do
 
       expect(populated_respondent_detail.errors.details[:case_number]).to include a_hash_including(error: :invalid)
     end
-
-    # TODO: RST-1033 Build DX Number validation
 
     it 'will not validate an incorrect email address' do
       populated_respondent_detail.contact_preference = "email"
@@ -127,7 +125,7 @@ RSpec.describe RespondentsDetail, type: :model do
     end
 
     it 'returns the correct DX number' do
-      expect(populated_respondent_detail.dx_number).to eql '123456'
+      expect(populated_respondent_detail.dx_number).to eql '724060 Derby 21'
     end
 
     it 'returns the correct contact number' do
@@ -201,7 +199,7 @@ RSpec.describe RespondentsDetail, type: :model do
     end
 
     it 'will return the dx_number key and value pair' do
-      expect(populated_respondent_detail.to_h).to include(dx_number: '123456')
+      expect(populated_respondent_detail.to_h).to include(dx_number: '724060 Derby 21')
     end
 
     it 'will return the contact_number key and value pair' do

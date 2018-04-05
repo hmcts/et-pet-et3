@@ -39,7 +39,6 @@ class RespondentsDetail < BaseForm
     }
   end
 
-  # TODO: RST-1033 Add validation for DX Number
   validates :name, :building_name, :street_name, :town, presence: true
   validates :case_number, case_number: true
   validates :contact,

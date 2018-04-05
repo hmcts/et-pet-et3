@@ -33,11 +33,14 @@ module ET3
         respondents_details_page.town_question.set(user.town)
       end
 
+      def answer_county_question
+        respondents_details_page.county_question.set(user.county)
+      end
+
       def answer_postcode_question
         respondents_details_page.postcode_question.set(user.postcode)
       end
 
-      # Not currently used in test suite
       def answer_dx_number_question
         respondents_details_page.dx_number_question.set(user.dx_number)
       end
@@ -46,8 +49,8 @@ module ET3
         respondents_details_page.contact_number_question.set(user.contact_number)
       end
 
-      def answer_mobile_number_question
-        respondents_details_page.mobile_number_question.set(user.mobile_number)
+      def answer_contact_mobile_number_question
+        respondents_details_page.contact_mobile_number_question.set(user.contact_mobile_number)
       end
 
       def answer_contact_preference_question

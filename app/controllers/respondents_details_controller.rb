@@ -8,6 +8,8 @@ class RespondentsDetailsController < ApplicationController
     if @respondents_detail.valid?
       current_store.hash_store[:respondents_detail_answers] = @respondents_detail.to_h
       redirect_to edit_claimants_details_path
+    else
+      render :edit
     end
   end
 

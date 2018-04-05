@@ -2,47 +2,47 @@ en:
   questions:
     # Respondent's Details Page
     case_number:
-      label: Case Number*
+      label: Case Number
     name:
-      label: Name of Individual, Company or Organisation*
+      label: Name of Individual, Company or Organisation
     contact:
-      label: Name of Contact
+      label: Name of Contact (optional)
     building_name:
-      label: Building Name or Number*
+      label: Building Name or Number
     street:
-      label: Street*
+      label: Street
     town:
-      label: Town/City*
+      label: Town/City
     county:
-      label: County
+      label: County (optional)
     postcode:
-      label: Postcode*
+      label: Postcode
     dx_number:
-      label: Document Exchange (DX) Number
+      label: Document Exchange (DX) Number (optional)
     contact_number:
-      label: Contact Number
-    contact_mobile_number:
-      label: Mobile Number
+      label: Contact Number (optional)
+    mobile_number:
+      label: Mobile Number (optional)
     contact_preference:
-      label: How would you prefer us to contact you?
+      label: How would you prefer us to contact you? (optional)
       email:
         label: Email
-        input_label: Email Address*
+        input_label: Email Address
       post:
         label: Post
       fax:
         label: Fax
-        input_label: Fax Number*
+        input_label: Fax Number
     organisation_employ_gb:
-      label: How many people does this organisation employ in Great Britain?
+      label: How many people does this organisation employ in Great Britain? (optional)
     organisation_more_than_one_site:
-      label: Does this organisation have more than one site in Great Britain?
+      label: Does this organisation have more than one site in Great Britain? (optional)
       'yes':
         label: 'Yes'
       'no':
         label: 'No'
       employment_at_site_number:
-        label: How many people are employed at the place where the claimant worked?*
+        label: How many people are employed at the place where the claimant worked?
     # Claimant's Details Page
     claimants_name:
       label: "Claimant's Name"
@@ -231,3 +231,12 @@ en:
       caption: Your Representative's Details
     confirmation_of_employer_contract_claim_answers:
       caption: Employer Contract Claim
+  errors:
+    header: 'Please review the following'
+    messages:
+      # TODO: RST-1033 DX Number
+      blank: can't be blank
+      contains_no_spaces: must contain at least one space
+      contains_numbers: must not contain numbers
+      invalid: is invalid
+      not_a_number: is not a number

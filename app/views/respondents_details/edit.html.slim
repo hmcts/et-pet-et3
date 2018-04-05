@@ -1,86 +1,42 @@
-/ TODO: Add required fields
 / TODO: Confirm DX Address?
 .content-body.respondents-details
   - content_for :form_page_title do
     = "Respondent's Details"
 
   = form_for @respondents_detail, url: respondents_details_path, method: :patch  do |f|
-    #question1.form-group
-      = f.label(:case_number, 'Case Number*', class: 'form-label')
-      = f.text_field(:case_number, class: 'form-control')
-    #question2.form-group
-      = f.label(:name_of_indiv_co_or_org, 'Name of Individual, Company or Organisation*', class:'form-label')
-      = f.text_field(:name, class: 'form-control')
-    #question3.form-group
-      = f.label(:contact, 'Name of Contact', class: 'form-label')
-      = f.text_field(:contact, class: 'form-control')
-    #question4.form-group
-      = f.label(:building_name, 'Building Name or Number*', class: 'form-label')
-      = f.text_field(:building_name, class: 'form-control')
-    #question5.form-group
-      = f.label(:street_name, 'Street*', class: 'form-label')
-      = f.text_field(:street_name, class: 'form-control')
-    #question6.form-group
-      = f.label(:town, 'Town/City*', class: 'form-label')
-      = f.text_field(:town, class: 'form-control')
-    #question7.form-group
-      = f.label(:county, 'County', class: 'form-label')
-      = f.text_field(:county, class: 'form-control')
-    #question8.form-group
-      = f.label(:postcode, 'Postcode*', class: 'form-label')
-      = f.text_field(:postcode, class: 'form-control')
-    #question9.form-group
-      = f.label(:dx_number, 'Document Exchange (DX) Number', class: 'form-label')
-      = f.text_field(:dx_number, class: 'form-control')
-    #question10.form-group
-      = f.label(:contact_number, 'Contact Number', class: 'form-label')
-      = f.text_field(:contact_number, class: 'form-control')
-    #question11.form-group
-      = f.label(:mobile_number, 'Mobile Number', class: 'form-label')
-      = f.text_field(:mobile_number, class: 'form-control')
-      br/
-      span.hint If Different
-    #question12.form-group
-      fieldset
-        legend
-          h1.heading-medium How would you prefer us to contact you?
-        / Radio button for email preference
-        .multiple-choice data-target="respondent_contact_email"
-          = f.radio_button(:contact_preference, 'email', class: 'form-control')
-          = f.label(:contact_preference_email, 'Email', class: 'form-label')
-        / Hidden field for email address, shows when radio button is clicked
-        #respondent_contact_email.panel.panel-border-narrow.js-hidden
-          = f.label(:email_address, 'Email Address*', class: 'form-label')
-          = f.text_field(:email_address, class: 'form-control')
-        / Radio button for post preference
-        .multiple-choice
-          = f.radio_button(:contact_preference, 'post', class: 'form-control')
-          = f.label(:contact_preference_post, 'Post', class: 'form-label')
-        / Radio button for fax preference
-        .multiple-choice data-target="respondent_contact_fax"
-          = f.radio_button(:contact_preference, 'fax', class: 'form-control')
-          = f.label(:contact_preference_fax, 'Fax', class: 'form-label')
-        / Hidden field for fax number, shows when radio button is clicked
-        #respondent_contact_fax.panel.panel-border-narrow.js-hidden
-          = f.label(:fax_number, 'Fax Number*', class: 'form-label')
-          = f.text_field(:fax_number, class: 'form-control')
-    #question13.form-group
-      = f.label(:organisation_employ_gb, 'How many people does this organisation employ in Great Britain?', class: 'form-label')
-      = f.text_field(:organisation_employ_gb, class: 'form-control')
-    #question14.form-group
-      fieldset
-        legend
-          h1.heading-medium Does this organisation have more than one site in Great Britain?
-        / Radio button for more than one site
-        .multiple-choice data-target="respondent_employment_at_site_number"
-          = f.radio_button(:organisation_more_than_one_site, true, class: 'form-control')
-          = f.label(:organisation_more_than_one_site_true, 'Yes', class: 'form-label')
-        / Hidden field for number of employees at site where claimant worked, shows when radio button is clicked
+
+    = GovukElementsErrorsHelper.error_summary @respondents_detail,
+      "Please review the following",
+      "Optional description of the errors and how to correct them"
+
+    = f.text_field :case_number
+    = f.text_field :name
+    = f.text_field :contact
+    = f.text_field :building_name
+    = f.text_field :street_name
+    = f.text_field :town
+    = f.text_field :county
+    = f.text_field :postcode
+    = f.text_field :dx_number
+    = f.text_field :contact_number
+    = f.text_field :mobile_number
+    = f.radio_button_fieldset :contact_preference do |b|
+      = content_tag :div, {class: 'multiple-choice', data: { target: :respondent_contact_email }} do
+        = b.radio_button(:contact_preference, :email) + label(:contact_preference, t('helpers.label.respondents_detail.contact_preference.choices.email'), value: :email)
+      #respondent_contact_email.panel.panel-border-narrow.js-hidden
+        = f.text_field :email_address
+      = content_tag :div, {class: 'multiple-choice'} do
+        = b.radio_button(:contact_preference, :post) + label(:contact_preference, t('helpers.label.respondents_detail.contact_preference.choices.post'), value: :post)
+      = content_tag :div, {class: 'multiple-choice', data: { target: :respondent_contact_fax }} do
+        = b.radio_button(:contact_preference, :fax) + label(:contact_preference, t('helpers.label.respondents_detail.contact_preference.choices.fax'), value: :fax)
+      #respondent_contact_fax.panel.panel-border-narrow.js-hidden
+        = f.text_field :fax_number
+    = f.text_field :organisation_employ_gb
+    = f.radio_button_fieldset :employment_at_site_number do |b|
+        = content_tag :div, {class: 'multiple-choice', data: { target: :respondent_employment_at_site_number }} do
+          = b.radio_button(:organisation_more_than_one_site, true) + label(:organisation_more_than_one_site, t('helpers.label.respondents_detail.organisation_more_than_one_site.choices.yes'), value: :yes)
         #respondent_employment_at_site_number.panel.panel-border-narrow.js-hidden
-          = f.label(:employment_at_site_number, 'How many people are employed at the place where the claimant worked?*', class: 'form-label')
-          = f.text_field(:employment_at_site_number, class: 'form-control')
-        / Radio button for fax preference
-        .multiple-choice
-          = f.radio_button(:organisation_more_than_one_site, false, class: 'form-control')
-          = f.label(:organisation_more_than_one_site_false, 'No', class: 'form-label')
+          = f.text_field :employment_at_site_number
+        = content_tag :div, {class: 'multiple-choice'} do
+          = b.radio_button(:organisation_more_than_one_site, false) + label(:organisation_more_than_one_site, t('helpers.label.respondents_detail.organisation_more_than_one_site.choices.no'), value: :no)
     = f.submit("Save and continue", class: 'button')

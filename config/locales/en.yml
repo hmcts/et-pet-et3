@@ -63,9 +63,8 @@ en:
             'no': 'No'
         employment_at_site_number: How many people are employed at the place where the claimant worked?
     hint:
-      # TODO: RST-1041 Add Hints
-      # respondents_detail:
-      #   mobile_number: If different to your primary contact number
+      respondents_detail:
+        mobile_number: If different to your primary contact number
   errors:
     messages:
       contains_no_spaces: must contain spaces

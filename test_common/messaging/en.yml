@@ -234,7 +234,6 @@ en:
   errors:
     header: 'Please review the following'
     messages:
-      # TODO: RST-1033 DX Number
       blank: can't be blank
       contains_no_spaces: must contain at least one space
       contains_numbers: must not contain numbers

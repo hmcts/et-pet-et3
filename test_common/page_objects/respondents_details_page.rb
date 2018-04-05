@@ -64,7 +64,6 @@ module ET3
             
       section :dx_number_question, :question_labelled, 'questions.dx_number.label', exact: false do
         element :field, :css, "input"
-        # TODO: RST-1033 error element
 
         delegate :set, to: :field
       end

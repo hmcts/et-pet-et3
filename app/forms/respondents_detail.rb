@@ -72,6 +72,6 @@ class RespondentsDetail < BaseForm
   end
 
   def more_than_one_site?
-    organisation_more_than_one_site == true
+    organisation_more_than_one_site
   end
 end

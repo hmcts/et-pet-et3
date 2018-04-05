@@ -36,9 +36,11 @@ gem 'jbuilder', '~> 2.5'
 gem 'slim-rails', '~> 3.1'
 gem 'govuk_template', '~> 0.23.0'
 gem 'govuk_elements_rails', '~> 3.1'
+gem 'govuk_elements_form_builder',  '~>1.2'
 gem 'jquery-rails', '~> 4.3'
 gem 'activerecord-nulldb-adapter', '~> 0.3'
 gem 'httparty', '~> 0.16'
+gem 'uk_postcode', '~> 2.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

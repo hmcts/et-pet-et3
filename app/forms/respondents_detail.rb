@@ -39,17 +39,39 @@ class RespondentsDetail < BaseForm
     }
   end
 
-  # validates :case_number, :name, :building_name, :street_name, :town, :postcode, presence: true, on: :update
-  # validates :email_address, presence: true, if: :prefer_email?
-  # validates :fax_number, presence: true, if: :prefer_fax?
+  # TODO: RST-1033 Add validation for DX Number
+  validates :name, :building_name, :street_name, :town, presence: true
+  validates :case_number, case_number: true
+  validates :contact,
+    persons_name: true,
+    allow_blank: true
+  validates :postcode, postcode: true
+  validates :organisation_more_than_one_site, inclusion: { in: [true, false] }
+  validates :contact_number, :mobile_number,
+    phone_number: true,
+    allow_blank: true
+  validates :email_address,
+    email_address: true,
+    if: :prefer_email?
+  validates :fax_number,
+    phone_number: true,
+    if: :prefer_fax?
+  validates :employment_at_site_number, numericality: true, if: :more_than_one_site?
+  validates :organisation_employ_gb,
+    numericality: true,
+    allow_blank: true
 
-  # private
+  private
 
-  # def prefer_email?
-  #   contact_preference == "email"
-  # end
+  def prefer_email?
+    contact_preference == "email"
+  end
 
-  # def prefer_fax?
-  #   contact_preference == "fax"
-  # end
+  def prefer_fax?
+    contact_preference == "fax"
+  end
+
+  def more_than_one_site?
+    organisation_more_than_one_site
+  end
 end

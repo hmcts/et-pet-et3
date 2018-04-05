@@ -1,7 +1,7 @@
 company01:
   case_number: 7654321/2017
   name: dodgy_co
-  contact: john
+  contact: John Smith
   building_name: the_shard
   street_name: downing_street
   town: westminster
@@ -61,38 +61,20 @@ company01:
   confirm_email_receipt: 'email@recei.pt'
 
 
-company02:
-  case_number: 1234567/2016
-  name: honest_co
-  contact: anne
-  building_name: london_eye
-  street_name: some_street
-  town: some_town
-  postcode: N0 5AY
-  contact_preference: post
-  organisation_more_than_one_site: 'Yes'
-  employment_at_site: 42
-  claimants_name: alex
-  early_conciliation_details: 'No'
-  disagree_conciliation_reason: 'lorem ipsum'
-  employment_dates: 'No'
-  continued_employment: 'Yes'
-  claimants_description_of_job_or_title: 'No'
-  have_representative: 'No'
-
-company03:
-  case_number: 2345678/2018
-  name: another_co
-  contact: jim
-  building_name: some_building
-  street_name: a_street
-  town: a_town
-  postcode: YE5 9LS
+erroneously_entering_data:
+  case_number: 7@54321/2017
+  name: null
+  contact: 'J0hn Sm1th'
+  building_name: null
+  street_name: null
+  town: null
+  county: london
+  postcode: string
+  dx_number: null # currently unknown
+  contact_number: string
+  contact_mobile_number: string
   contact_preference: fax
-  fax_number: 02081234567
-  organisation_more_than_one_site: 'No'
-  claimants_name: joe
-  early_conciliation_details: 'No'
-  employment_dates: 'No'
-  continued_employment: 'No'
-  claimants_description_of_job_or_title: 'No'
+  fax_number: string
+  organisation_employ_gb: string
+  organisation_more_than_one_site: 'Yes'
+  employment_at_site_number: string

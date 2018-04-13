@@ -56,20 +56,52 @@ module ET3
           delegate :set, to: :selector
         end
 
-        section :employment_start, :question_labelled, 'questions.agree_with_employment_dates.employment_start.label', exact: false do
-          element :field, :css, 'input'
+        section :employment_start, :single_choice_option, 'questions.agree_with_employment_dates.employment_start.label', exact: false do
+
+          section :day, :question_labelled, 'questions.agree_with_employment_dates.employment_start.day.label', exact: true do
+            element :field, :css, 'input'
+
+            delegate :set, to: :field
+          end
+
+          section :month, :question_labelled, 'questions.agree_with_employment_dates.employment_start.month.label', exact: true do
+            element :field, :css, 'input'
+
+            delegate :set, to: :field
+          end
+
+          section :year, :question_labelled, 'questions.agree_with_employment_dates.employment_start.year.label', exact: true do
+            element :field, :css, 'input'
+
+            delegate :set, to: :field
+          end
+
           element :error_blank, :exact_error_text, 'errors.messages.blank', exact: false
 
-
-          delegate :set, to: :field
         end
 
-        section :employment_end, :question_labelled, 'questions.agree_with_employment_dates.employment_end.label', exact: false do
-          element :field, :css, 'input'
+        section :employment_end, :single_choice_option, 'questions.agree_with_employment_dates.employment_end.label', exact: false do
+
+          section :day, :question_labelled, 'questions.agree_with_employment_dates.employment_end.day.label', exact: true do
+            element :field, :css, 'input'
+
+            delegate :set, to: :field
+          end
+
+          section :month, :question_labelled, 'questions.agree_with_employment_dates.employment_end.month.label', exact: true do
+            element :field, :css, 'input'
+
+            delegate :set, to: :field
+          end
+
+          section :year, :question_labelled, 'questions.agree_with_employment_dates.employment_end.year.label', exact: true do
+            element :field, :css, 'input'
+
+            delegate :set, to: :field
+          end
+
           element :error_blank, :exact_error_text, 'errors.messages.blank', exact: false
 
-
-          delegate :set, to: :field
         end
 
         section :disagree_employment, :question_labelled, 'questions.agree_with_employment_dates.disagree_employment.label', exact: false do
@@ -84,8 +116,18 @@ module ET3
         def set_for(user_persona)
           if user_persona.agree_with_employment_dates == 'No'
             no.set(true)
-            employment_start.set(user_persona.employment_start) unless user_persona.employment_start == nil
-            employment_end.set(user_persona.employment_end) unless user_persona.employment_end == nil
+            if user_persona.employment_start != nil
+              day, month, year = user_persona.employment_start.split('/')
+              employment_start.day.set(day)
+              employment_start.month.set(month)
+              employment_start.year.set(year)
+            end
+            if user_persona.employment_end != nil
+              day, month, year = user_persona.employment_end.split('/')
+              employment_end.day.set(day)
+              employment_end.month.set(month)
+              employment_end.year.set(year)
+            end
             disagree_employment.set(user_persona.disagree_employment) unless user_persona.disagree_employment == nil
           else
             yes.set(true)

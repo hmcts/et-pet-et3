@@ -62,8 +62,20 @@ en:
         label: 'No'
       employment_start:
         label: When their employment started
+        day:
+          label: Day
+        month:
+          label: Month
+        year:
+          label: Year
       employment_end:
         label: When their employment ended or will end
+        day:
+          label: Day
+        month:
+          label: Month
+        year:
+          label: Year
       disagree_employment:
         label: Why do you disagree with the dates given by the claimant
     continued_employment:

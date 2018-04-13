@@ -36,6 +36,11 @@ en:
       respondents_detail:
         contact_preference: How would you prefer us to contact you? (optional)
         employment_at_site_number: Does this organisation have more than one site in Great Britain? (optional)
+      claimants_detail:
+        agree_with_early_conciliation_details: Do you agree with the details given by the claimant about Early Conciliation with Acas? (optional)
+        agree_with_employment_dates: Are the dates of employment given by the claimant correct?
+        continued_employment: Is their employment continuing? (optional)
+        agree_with_claimants_description_of_job_or_title: Is the claimant's description of their job or job title correct? (optional)
     label:
       respondents_detail:
         case_number: Case Number
@@ -62,6 +67,29 @@ en:
             'yes': 'Yes'
             'no': 'No'
         employment_at_site_number: How many people are employed at the place where the claimant worked?
+      claimants_detail:
+        claimants_name: Claimant's Name (optional)
+        agree_with_early_conciliation_details:
+          choices:
+            'yes': 'Yes'
+            'no': 'No'
+        disagree_conciliation_reason: Why do you disagree with the claimant? (optional)
+        agree_with_employment_dates:
+          choices:
+            'yes': 'Yes'
+            'no': 'No'
+        employment_start: When their employment started
+        employment_end: When their employment ended or will end
+        disagree_employment: Why do you disagree with the dates given by the claimant
+        continued_employment:
+          choices:              
+            'yes': 'Yes'
+            'no': 'No'
+        agree_with_claimants_description_of_job_or_title:
+          choices:
+            'yes': 'Yes'
+            'no': 'No'
+        disagree_claimants_job_or_title: Please give the details you believe to be correct (optional)
     hint:
       respondents_detail:
         mobile_number: If different to your primary contact number

@@ -1,4 +1,6 @@
 class ClaimantsDetail < BaseForm
+  acts_as_gov_uk_date :employment_start, :employment_end,
+    validate_if: :disagree_with_employment_dates?
   attribute :claimants_name, :string
   attribute :agree_with_early_conciliation_details, :boolean
   attribute :disagree_conciliation_reason, :text
@@ -24,4 +26,19 @@ class ClaimantsDetail < BaseForm
       disagree_claimants_job_or_title: disagree_claimants_job_or_title
     }
   end
+
+  validates :claimants_name,
+    persons_name: true,
+    allow_blank: true
+  validates :agree_with_employment_dates, inclusion: { in: [true, false] }
+  validates :employment_start, :employment_end, :disagree_employment,
+    presence: true,
+    if: :disagree_with_employment_dates?
+
+  private
+
+  def disagree_with_employment_dates?
+    !agree_with_employment_dates
+  end
+
 end

@@ -14,7 +14,7 @@ company01:
   email_address: john@dodgyco.com
   organisation_employ_gb: 100
   organisation_more_than_one_site: 'No'
-  claimants_name: jane
+  claimants_name: Jane Doe
   agree_with_early_conciliation_details: 'No'
   disagree_conciliation_reason: 'lorem ipsum conciliation'
   agree_with_employment_dates: 'No'

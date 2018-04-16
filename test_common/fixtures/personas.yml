@@ -1,4 +1,5 @@
 company01:
+  # Respondents Details
   case_number: 7654321/2017
   name: dodgy_co
   contact: John Smith
@@ -14,6 +15,7 @@ company01:
   email_address: john@dodgyco.com
   organisation_employ_gb: 100
   organisation_more_than_one_site: 'No'
+  # Claimants Details
   claimants_name: Jane Doe
   agree_with_early_conciliation_details: 'No'
   disagree_conciliation_reason: 'lorem ipsum conciliation'
@@ -24,6 +26,7 @@ company01:
   continued_employment: 'No'
   agree_with_claimants_description_of_job_or_title: 'No'
   disagree_claimants_job_or_title: 'lorem ipsum job title'
+  # Earnings and Benefits Page
   agree_with_claimants_hours: 'No'
   queried_hours: 32
   agree_with_earnings_details: 'No'
@@ -90,3 +93,18 @@ erroneously_entering_data:
   continued_employment: 'No'
   agree_with_claimants_description_of_job_or_title: 'Yes'
   disagree_claimants_job_or_title: null
+  # Earnings and Benefits Page
+  agree_with_claimants_hours: 'No'
+  queried_hours: string
+  agree_with_earnings_details: 'No'
+  queried_pay_before_tax: string
+  queried_pay_before_tax_period: 'Weekly'
+  queried_take_home_pay: string
+  queried_take_home_pay_period: 'Weekly'
+  agree_with_claimant_notice: 'No'
+  disagree_claimant_notice_reason: |
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
+  agree_with_claimant_pension_benefits: 'No'
+  disagree_claimant_pension_benefits_reason: |
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate e
+

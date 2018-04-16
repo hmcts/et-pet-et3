@@ -1,118 +1,52 @@
-/ TODO: Add required fields
-/ TODO: Check if there are "hidden" elements on the Jadu form
 .content-body.earnings-and-benefits
   - content_for :form_page_title do
     = "Earnings and Benefits"
 
   = form_for @earnings_and_benefits, url: earnings_and_benefits_path, method: :patch  do |f|
-    #question1.form-group
-      fieldset
-        legend
-          h1.heading-medium Are the claimant's hours of work correct?
-        / Radio button for 'Yes'
-        .multiple-choice
-          = f.radio_button(:agree_with_claimants_hours, true, class: 'form-control')
-          = f.label(:agree_with_claimants_hours_true, 'Yes', class: 'form-label')
-        / Radio button for 'No'
-        .multiple-choice data-target="disagree_claimants_hours"
-          = f.radio_button(:agree_with_claimants_hours, false, class: 'form-control')
-          = f.label(:agree_with_claimants_hours_false, 'No', class: 'form-label')
-        / Hidden field for disagreement reason, shows when radio button is clicked
-        #disagree_claimants_hours.panel.panel-border-narrow.js-hidden
-          = f.label(:queried_hours, 'Please enter the details you believe to be correct', class: 'form-label')
-          = f.text_field(:queried_hours, class: 'form-control')
-          span hours each week
-    #question2.form-group
-      fieldset
-        legend
-          h1.heading-medium Are the earnings details given by the claimant correct?
-        / Radio button for 'Yes'
-        .multiple-choice
-          = f.radio_button(:agree_with_earnings_details, true, class: 'form-control')
-          = f.label(:agree_with_earnings_details_true, 'Yes', class: 'form-label')
-        / Radio button for 'No'
-        .multiple-choice data-target="disagree_earnings_details"
-          = f.radio_button(:agree_with_earnings_details, false, class: 'form-control')
-          = f.label(:agree_with_earnings_details_false, 'No', class: 'form-label')
-          span If No, please give the details you believe to be correct
-        / Hidden wrapper for correcting claimant's details, shows when radio button is clicked
-        #disagree_earnings_details.panel.panel-border-narrow.js-hidden
-          / Wrapper for 'Pay Before Tax Questions'
-          .pay-before-tax
-            / Text input for financial value
-            fieldset
-              legend
-                h2.heading-medium Pay before tax
-              .form-group
-                = f.label(:queried_pay_before_tax, 'Pay before tax', class: 'form-label')
-                = f.text_field(:queried_pay_before_tax, class: 'form-control')
-                span Incl. overtime, commission, bonuses, etc.
-            / Radio buttons for period selection
-            fieldset
-              legend
-                h2.heading-medium Pay before tax period
-              / Monthly
-              .multiple-choice
-                = f.radio_button(:queried_pay_before_tax_period, 'Monthly', class: 'form-control')
-                = f.label(:queried_pay_before_tax_period_monthly, 'Monthly', class: 'form-label')
-              / Weekly
-              .multiple-choice
-                = f.radio_button(:queried_pay_before_tax_period, 'Weekly', class: 'form-control')
-                = f.label(:queried_pay_before_tax_period_weekly, 'Weekly', class: 'form-label')
-          / Wrapper for 'Normal Take Home Pay Questions'
-          .normal-take-home-pay
-            / Text input for financial value
-            fieldset
-              legend
-                h2.heading-medium Normal take-home pay
-              .form-group
-                = f.label(:queried_take_home_pay, 'Normal take-home pay', class: 'form-label')
-                = f.text_field(:queried_take_home_pay, class: 'form-control')
-                span Incl. overtime, commission, bonuses, etc.
-            / Radio buttons for period selection
-            fieldset
-              legend
-                h2.heading-medium Normal take-home pay period
-              / Monthly
-              .multiple-choice
-                = f.radio_button(:queried_take_home_pay_period, 'Monthly', class: 'form-control')
-                = f.label(:queried_take_home_pay_period_monthly, 'Monthly', class: 'form-label')
-              / Weekly
-              .multiple-choice
-                = f.radio_button(:queried_take_home_pay_period, 'Weekly', class: 'form-control')
-                = f.label(:queried_take_home_pay_period_weekly, 'Weekly', class: 'form-label')
-    #question3.form-group
-      fieldset
-        legend
-          h1.heading-medium Is the information given by the claimant correct about being paid for, or working a period of notice? 
-        / Radio button for 'Yes'
-        .multiple-choice
-          = f.radio_button(:agree_with_claimant_notice, true, class: 'form-control')
-          = f.label(:agree_with_claimant_notice_true, 'Yes', class: 'form-label')
-        / Radio button for 'No'
-        .multiple-choice data-target="disagree_claimant_notice"
-          = f.radio_button(:agree_with_claimant_notice, false, class: 'form-control')
-          = f.label(:agree_with_claimant_notice_false, 'No', class: 'form-label')
-        / Hidden field for disagreement reason, shows when radio button is clicked
-        #disagree_claimant_notice.panel.panel-border-narrow.js-hidden
-          = f.label(:disagree_claimant_notice_reason, 'Please give the details you believe to be correct below. If you didn\'t give notice or pay them instead of letting them work their notice please explain what happened and why', class: 'form-label')
-          = f.text_area(:disagree_claimant_notice_reason, class: 'form-control')
-          span PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 400 characters) if you would like to include more please use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
-    #question4.form-group
-      fieldset
-        legend
-          h1.heading-medium Are the details about pension and other benefits e.g. company car, medical insurance, etc. given by the claimant correct?
-        / Radio button for 'Yes'
-        .multiple-choice
-          = f.radio_button(:agree_with_claimant_pension_benefits, true, class: 'form-control')
-          = f.label(:agree_with_claimant_pension_benefits_true, 'Yes', class: 'form-label')
-        / Radio button for 'No'
-        .multiple-choice data-target="disagree_claimant_pension_benefits"
-          = f.radio_button(:agree_with_claimant_pension_benefits, false, class: 'form-control')
-          = f.label(:agree_with_claimant_pension_benefits_false, 'No', class: 'form-label')
-        / Hidden field for disagreement reason, shows when radio button is clicked
-        #disagree_claimant_pension_benefits.panel.panel-border-narrow.js-hidden
-          = f.label(:disagree_claimant_pension_benefits_reason, 'Please give the details you believe to be correct.', clas: 'form-label')
-          = f.text_area(:disagree_claimant_pension_benefits_reason, class: 'form-control')
-          span PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 350 characters) if you would like to include more please use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
+
+    = GovukElementsErrorsHelper.error_summary @earnings_and_benefits,
+    "Please review the following",
+    "Optional description of the errors and how to correct them"
+
+    = f.radio_button_fieldset :agree_with_claimants_hours do |b|
+      = content_tag :div, {class: 'multiple-choice'} do
+        = b.radio_button(:agree_with_claimants_hours, true) + label(:agree_with_claimants_hours_true, t('helpers.label.earnings_and_benefits.agree_with_claimants_hours.choices.yes'), value: :yes)
+      = content_tag :div, {class: 'multiple-choice', data: { target: :disagree_claimants_hours }} do
+        = b.radio_button(:agree_with_claimants_hours, false) + label(:agree_with_claimants_hours_false, t('helpers.label.earnings_and_benefits.agree_with_claimants_hours.choices.no'), value: :no)
+      #disagree_claimants_hours.panel.panel-border-narrow.js-hidden
+        = f.text_field :queried_hours
+    = f.radio_button_fieldset :agree_with_earnings_details do |b|
+      = content_tag :div, {class: 'multiple-choice'} do
+        = b.radio_button(:agree_with_earnings_details, true) + label(:agree_with_earnings_details_true, t('helpers.label.earnings_and_benefits.agree_with_earnings_details.choices.yes'), value: :yes)
+      = content_tag :div, {class: 'multiple-choice', data: {target: :disagree_earnings_details }} do
+        = b.radio_button(:agree_with_earnings_details, false) + label(:agree_with_earnings_details_false, t('helpers.label.earnings_and_benefits.agree_with_earnings_details.choices.no'), value: :no)
+      #disagree_earnings_details.panel.panel-border-narrow.js-hidden
+        = content_tag :div, {class: 'pay-before-tax'} do
+          = f.text_field :queried_pay_before_tax
+          = f.radio_button_fieldset :queried_pay_before_tax_period do |c|
+            = content_tag :div, {class: 'multiple-choice'} do
+              = c.radio_button(:queried_pay_before_tax_period, 'Monthly') + label(:queried_pay_before_tax_period_monthly, t('helpers.label.earnings_and_benefits.queried_pay_before_tax_period.choices.monthly'), value: :monthly)
+            = content_tag :div, {class: 'multiple-choice'} do
+              = c.radio_button(:queried_pay_before_tax_period, 'Weekly') + label(:queried_pay_before_tax_period_weekly, t('helpers.label.earnings_and_benefits.queried_pay_before_tax_period.choices.weekly'), value: :weekly)
+        = content_tag :div, {class: 'normal-take-home-pay'} do
+          = f.text_field :queried_take_home_pay
+          = f.radio_button_fieldset :queried_take_home_pay_period do |c|
+            = content_tag :div, {class: 'multiple-choice'} do
+              = c.radio_button(:queried_take_home_pay_period, 'Monthly') + label(:queried_take_home_pay_period_monthly, t('helpers.label.earnings_and_benefits.queried_take_home_pay_period.choices.monthly'), value: :monthly)
+            = content_tag :div, {class: 'multiple-choice'} do
+              = c.radio_button(:queried_take_home_pay_period, 'Weekly') + label(:queried_take_home_pay_period_weekly, t('helpers.label.earnings_and_benefits.queried_take_home_pay_period.choices.weekly'), value: :weekly)
+    = f.radio_button_fieldset :agree_with_claimant_notice do |b|
+      = content_tag :div, {class: 'multiple-choice'} do
+        = b.radio_button(:agree_with_claimant_notice, true) + label(:agree_with_claimant_notice_true, t('helpers.label.earnings_and_benefits.agree_with_claimant_notice.choices.yes'), value: :yes)
+      = content_tag :div, {class: 'multiple-choice', data: {target: :disagree_claimant_notice }} do
+        = b.radio_button(:agree_with_claimant_notice, false) + label(:agree_with_claimant_notice_false, t('helpers.label.earnings_and_benefits.agree_with_claimant_notice.choices.no'), value: :no)
+      #disagree_claimant_notice.panel.panel-border-narrow.js-hidden
+        = f.text_area :disagree_claimant_notice_reason
+    = f.radio_button_fieldset :agree_with_claimant_pension_benefits do |b|
+      = content_tag :div, {class: 'multiple-choice'} do
+        = b.radio_button(:agree_with_claimant_pension_benefits, true) + label(:agree_with_claimant_pension_benefits_true, t('helpers.label.earnings_and_benefits.agree_with_claimant_pension_benefits.choices.yes'), value: :yes)
+      = content_tag :div, {class: 'multiple-choice', data: {target: :disagree_claimant_pension_benefits }} do
+        = b.radio_button(:agree_with_claimant_pension_benefits, false) + label(:agree_with_claimant_pension_benefits_false, t('helpers.label.earnings_and_benefits.agree_with_claimant_pension_benefits.choices.no'), value: :no)
+      #disagree_claimant_pension_benefits.panel.panel-border-narrow.js-hidden
+        = f.text_area :disagree_claimant_pension_benefits_reason
     = f.submit("Save and continue", class: 'button')

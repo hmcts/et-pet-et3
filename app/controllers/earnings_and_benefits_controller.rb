@@ -8,6 +8,8 @@ class EarningsAndBenefitsController < ApplicationController
     if @earnings_and_benefits.valid?
       current_store.hash_store[:earnings_and_benefits_answers] = @earnings_and_benefits.to_h
       redirect_to edit_response_path
+    else
+      render :edit
     end
   end
 

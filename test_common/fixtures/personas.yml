@@ -14,7 +14,7 @@ company01:
   email_address: john@dodgyco.com
   organisation_employ_gb: 100
   organisation_more_than_one_site: 'No'
-  claimants_name: jane
+  claimants_name: Jane Doe
   agree_with_early_conciliation_details: 'No'
   disagree_conciliation_reason: 'lorem ipsum conciliation'
   agree_with_employment_dates: 'No'
@@ -62,6 +62,7 @@ company01:
 
 
 erroneously_entering_data:
+  # Respondents Details
   case_number: 7@54321/2017
   name: null
   contact: 'J0hn Sm1th'
@@ -78,3 +79,14 @@ erroneously_entering_data:
   organisation_employ_gb: string
   organisation_more_than_one_site: 'Yes'
   employment_at_site_number: string
+  # Claimants Details
+  claimants_name: J4ne D0e
+  agree_with_early_conciliation_details: 'Yes'
+  disagree_conciliation_reason: null
+  agree_with_employment_dates: 'No'
+  employment_start: null
+  employment_end: null
+  disagree_employment: null
+  continued_employment: 'No'
+  agree_with_claimants_description_of_job_or_title: 'Yes'
+  disagree_claimants_job_or_title: null

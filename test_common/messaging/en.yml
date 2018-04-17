@@ -45,37 +45,49 @@ en:
         label: How many people are employed at the place where the claimant worked?
     # Claimant's Details Page
     claimants_name:
-      label: "Claimant's Name"
+      label: Claimant's Name (optional)
     agree_with_early_conciliation_details:
-      label: Do you agree with the details given by the claimant about Early Conciliation with Acas?
+      label: Do you agree with the details given by the claimant about Early Conciliation with Acas? (optional)
       'yes':
         label: 'Yes'
       'no':
         label: 'No'
       disagree_conciliation_reason:
-        label: Why do you disagree with the claimant?
+        label: Why do you disagree with the claimant? (optional)
     agree_with_employment_dates:
-      label: Are the dates of employment given by the claimant correct?*
+      label: Are the dates of employment given by the claimant correct?
       'yes':
         label: 'Yes'
       'no':
         label: 'No'
       employment_start:
-        label: When their employment started*
+        label: When their employment started
+        day:
+          label: Day
+        month:
+          label: Month
+        year:
+          label: Year
       employment_end:
-        label: When their employment ended or will end*
+        label: When their employment ended or will end
+        day:
+          label: Day
+        month:
+          label: Month
+        year:
+          label: Year
       disagree_employment:
-        label: Why do you disagree with the dates given by the claimant*
+        label: Why do you disagree with the dates given by the claimant
     continued_employment:
-      label: Is their employment continuing?
+      label: Is their employment continuing? (optional)
     agree_with_claimants_description_of_job_or_title:
-      label: Is the claimant's description of their job or job title correct?
+      label: Is the claimant's description of their job or job title correct? (optional)
       'yes':
         label: 'Yes'
       'no':
         label: 'No'
       disagree_claimants_job_or_title:
-        label: Please give the details you believe to be correct
+        label: Please give the details you believe to be correct (optional)
     # Earnings and Benefits Page
     agree_with_claimants_hours:
       label: Are the claimant's hours of work correct?

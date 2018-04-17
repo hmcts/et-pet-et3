@@ -26,4 +26,19 @@ class EarningsAndBenefits < BaseForm
       disagree_claimant_pension_benefits_reason: disagree_claimant_pension_benefits_reason
     }
   end
+
+  validates :queried_hours, :queried_pay_before_tax, :queried_take_home_pay,
+    numericality: true,
+    allow_nil: true
+  validates :disagree_claimant_notice_reason,
+    length: {
+      maximum: 400,
+      too_long: "%{count} characters is the maximum allowed" # rubocop:disable Style/FormatStringToken
+    }
+  validates :disagree_claimant_pension_benefits_reason,
+    length: {
+      maximum: 350,
+      too_long: "%{count} characters is the maximum allowed" # rubocop:disable Style/FormatStringToken
+    }
+
 end

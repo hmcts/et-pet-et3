@@ -41,6 +41,13 @@ en:
         agree_with_employment_dates: Are the dates of employment given by the claimant correct?
         continued_employment: Is their employment continuing? (optional)
         agree_with_claimants_description_of_job_or_title: Is the claimant's description of their job or job title correct? (optional)
+      earnings_and_benefits:
+        agree_with_claimants_hours: Are the claimant's hours of work correct? (optional)
+        agree_with_earnings_details: Are the earnings details given by the claimant correct? (optional)
+        queried_pay_before_tax_period: Pay before tax period (optional)
+        queried_take_home_pay_period: Normal take-home pay period (optional)
+        agree_with_claimant_notice: Is the information given by the claimant correct about being paid for, or working a period of notice? (optional)
+        agree_with_claimant_pension_benefits: Are the details about pension and other benefits given by the claimant correct? (optional)
     label:
       respondents_detail:
         case_number: Case Number
@@ -90,9 +97,51 @@ en:
             'yes': 'Yes'
             'no': 'No'
         disagree_claimants_job_or_title: Please give the details you believe to be correct (optional)
+      earnings_and_benefits:
+        agree_with_claimants_hours:
+          choices:
+            'yes': 'Yes'
+            'no': 'No'
+        queried_hours: Please enter the details you believe to be correct (optional)
+        agree_with_earnings_details:
+          choices:
+            'yes': 'Yes'
+            'no': 'No'
+        queried_pay_before_tax: Pay before tax (optional)
+        queried_pay_before_tax_period:
+          choices:
+            monthly: Monthly
+            weekly: Weekly
+        queried_take_home_pay: Normal take-home pay (optional)
+        queried_take_home_pay_period:
+          choices:
+            monthly: Monthly
+            weekly: Weekly
+        agree_with_claimant_notice:
+          choices:
+            'yes': 'Yes'
+            'no': 'No'
+        disagree_claimant_notice_reason: |
+          Please give the details you believe to be correct below. If you didn't give notice or pay them instead of letting them work their notice please explain what happened and why (optional)
+        agree_with_claimant_pension_benefits:
+          choices:
+            'yes': 'Yes'
+            'no': 'No'
+        disagree_claimant_pension_benefits_reason:
+          Please give the details you believe to be correct. (optional)
     hint:
       respondents_detail:
         mobile_number: If different to your primary contact number
+      earnings_and_benefits:
+        queried_hours: In hours per week
+        agree_with_earnings_details: If No, please give the details you believe to be correct
+        queried_pay_before_tax: Including overtime, commission, bonuses, etc.
+        queried_take_home_pay: Including overtime, commission, bonuses, etc.
+        disagree_claimant_notice_reason: |
+          PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 400 characters) if you would like to include more please use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
+        agree_with_claimant_pension_benefits: "For example: company car, medical insurance, etc."
+        disagree_claimant_pension_benefits_reason: |
+          PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 350 characters) if you would like to include more please use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
   errors:
     messages:
       contains_no_spaces: must contain spaces

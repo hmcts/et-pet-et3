@@ -90,51 +90,51 @@ en:
         label: Please give the details you believe to be correct (optional)
     # Earnings and Benefits Page
     agree_with_claimants_hours:
-      label: Are the claimant's hours of work correct?
+      label: Are the claimant's hours of work correct? (optional)
       'yes':
         label: 'Yes'
       'no':
         label: 'No'
       queried_hours:
-        label: Please enter the details you believe to be correct
+        label: Please enter the details you believe to be correct (optional)
     agree_with_earnings_details:
-      label: Are the earnings details given by the claimant correct?
+      label: Are the earnings details given by the claimant correct? (optional)
       'yes':
         label: 'Yes'
       'no':
         label: 'No'
       queried_pay_before_tax:
-        label: 'Pay before tax'
+        label: Pay before tax (optional)
       queried_pay_before_tax_period:
-        label: 'Pay before tax period'
+        label: Pay before tax period (optional)
         monthly:
-          label: 'Monthly'
+          label: Monthly
         weekly:
-          label: 'Weekly'
+          label: Weekly
       queried_take_home_pay:
-        label: 'Normal take-home pay'
+        label: Normal take-home pay (optional)
       queried_take_home_pay_period:
-        label: 'Normal take-home pay period'
+        label: Normal take-home pay period (optional)
         monthly:
-          label: 'Monthly'
+          label: Monthly
         weekly:
-          label: 'Weekly'
+          label: Weekly
     agree_with_claimant_notice:
-      label: Is the information given by the claimant correct about being paid for, or working a period of notice?
+      label: Is the information given by the claimant correct about being paid for, or working a period of notice? (optional)
       'yes':
         label: 'Yes'
       'no':
         label: 'No'
       disagree_claimant_notice_reason:
-        label: Please give the details you believe to be correct below. If you didn't give notice or pay them instead of letting them work their notice please explain what happened and why
+        label: Please give the details you believe to be correct below. If you didn't give notice or pay them instead of letting them work their notice please explain what happened and why (optional)
     agree_with_claimant_pension_benefits:
-      label: Are the details about pension and other benefits e.g. company car, medical insurance, etc. given by the claimant correct?
+      label: Are the details about pension and other benefits given by the claimant correct? (optional)
       'yes':
         label: 'Yes'
       'no':
         label: 'No'
       disagree_claimant_pension_benefits_reason:
-        label: Please give the details you believe to be correct.
+        label: Please give the details you believe to be correct. (optional)
     # Response Page
     defend_claim:
       label: Do you defend the claim?*
@@ -251,3 +251,4 @@ en:
       contains_numbers: must not contain numbers
       invalid: is invalid
       not_a_number: is not a number
+      too_long: characters is the maximum allowed

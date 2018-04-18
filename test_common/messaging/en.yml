@@ -137,13 +137,13 @@ en:
         label: Please give the details you believe to be correct. (optional)
     # Response Page
     defend_claim:
-      label: Do you defend the claim?*
+      label: Do you defend the claim?
       'yes':
         label: 'Yes'
       'no':
         label: 'No'
       defend_claim_facts:
-        label: Please set out the facts which you rely on to defend the claim
+        label: Please set out the facts which you rely on to defend the claim (optional)
     # Your Representatives Page
     have_representative:
       label: Do you have a representative?
@@ -252,3 +252,4 @@ en:
       invalid: is invalid
       not_a_number: is not a number
       too_long: characters is the maximum allowed
+      inclusion: is not included in the list

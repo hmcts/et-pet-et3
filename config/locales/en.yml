@@ -48,6 +48,8 @@ en:
         queried_take_home_pay_period: Normal take-home pay period (optional)
         agree_with_claimant_notice: Is the information given by the claimant correct about being paid for, or working a period of notice? (optional)
         agree_with_claimant_pension_benefits: Are the details about pension and other benefits given by the claimant correct? (optional)
+      response:
+        defend_claim: Do you defend the claim?
     label:
       respondents_detail:
         case_number: Case Number
@@ -129,6 +131,12 @@ en:
             'no': 'No'
         disagree_claimant_pension_benefits_reason:
           Please give the details you believe to be correct. (optional)
+      response:
+        defend_claim:
+          choices:
+            'yes': 'Yes'
+            'no': 'No'
+        defend_claim_facts: Please set out the facts which you rely on to defend the claim (optional)
     hint:
       respondents_detail:
         mobile_number: If different to your primary contact number
@@ -138,10 +146,17 @@ en:
         queried_pay_before_tax: Including overtime, commission, bonuses, etc.
         queried_take_home_pay: Including overtime, commission, bonuses, etc.
         disagree_claimant_notice_reason: |
-          PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 400 characters) if you would like to include more please use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
+          PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 400 characters) if you would like to include more please
+          use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
         agree_with_claimant_pension_benefits: "For example: company car, medical insurance, etc."
         disagree_claimant_pension_benefits_reason: |
-          PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 350 characters) if you would like to include more please use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
+          PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 350 characters) if you would like to include more please
+          use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
+      response:
+        defend_claim_facts: |
+          PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 2500 characters) if you would like to include more please
+          use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
+          If you exceed 25 lines you will not receive full details of your response in the PDF returned to you on submission of the form.
   errors:
     messages:
       contains_no_spaces: must contain spaces

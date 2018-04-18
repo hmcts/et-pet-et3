@@ -1,20 +1,16 @@
-/ TODO: Add required fields
-/ TODO: Check if there are "hidden" elements on the Jadu form
-.content-body.earnings-and-benefits
+.content-body.your-representative
   - content_for :form_page_title do
     = "Your Representative"
 
   = form_for @your_representative, url: your_representative_path, method: :patch  do |f|
-    #question1.form-group
-      fieldset
-        legend
-          h1.heading-medium Do you have a representative?
-        / Radio button for 'Yes'
-        .multiple-choice
-          = f.radio_button(:have_representative, true, class: 'form-control')
-          = f.label(:have_representative_true, 'Yes', class: 'form-label')
-        / Radio button for 'No'
-        .multiple-choice
-          = f.radio_button(:have_representative, false, class: 'form-control')
-          = f.label(:have_representative_false, 'No', class: 'form-label')
+
+    = GovukElementsErrorsHelper.error_summary @response,
+    "Please review the following",
+    "Optional description of the errors and how to correct them"    
+
+    = f.radio_button_fieldset :have_representative do |b|
+      = content_tag :div, {class: 'multiple-choice'} do
+        = b.radio_button(:have_representative, true) + label(:defend_claim_true, t('helpers.label.response.defend_claim.choices.yes'), value: :yes)
+      = content_tag :div, {class: 'multiple-choice'} do
+        = b.radio_button(:have_representative, false) + label(:defend_claim_false, t('helpers.label.response.defend_claim.choices.no'), value: :no)
     = f.submit("Save and continue", class: 'button')

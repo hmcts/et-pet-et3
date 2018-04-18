@@ -50,6 +50,8 @@ en:
         agree_with_claimant_pension_benefits: Are the details about pension and other benefits given by the claimant correct? (optional)
       response:
         defend_claim: Do you defend the claim?
+      your_representative:
+        have_representative: Do you have a representative? (optional)
     label:
       respondents_detail:
         case_number: Case Number
@@ -137,6 +139,11 @@ en:
             'yes': 'Yes'
             'no': 'No'
         defend_claim_facts: Please set out the facts which you rely on to defend the claim (optional)
+      your_representative:
+        have_representative:
+          choices:
+            'yes': 'Yes'
+            'no': 'No'
     hint:
       respondents_detail:
         mobile_number: If different to your primary contact number

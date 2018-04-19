@@ -1,3 +1,7 @@
 language: ruby
 cache:
   bundler
+before_script:
+  - rails db:create db:migrate
+scripts:
+  - bundle exec rspec

@@ -5,3 +5,6 @@ before_script:
   - bundle exec rails db:create db:migrate
 scripts:
   - bundle exec rspec
+addons:
+  chrome: stable
+  firefox: latest

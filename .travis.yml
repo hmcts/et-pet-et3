@@ -8,6 +8,6 @@ script:
 addons:
   chrome: stable
   firefox: latest
-  postgresql: "9.3.5"
+  postgresql: "9.3"
 services:
   - postgresql

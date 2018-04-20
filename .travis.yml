@@ -9,3 +9,5 @@ addons:
   chrome: stable
   firefox: latest
   postgresql: "9.3.5"
+services:
+  - postgresql

@@ -1,4 +1,3 @@
-/ TODO: Add required fields
 .content-body.confirmation-of-supplied-details
   - content_for :form_page_title do
     = "Confirmation of Supplied Details"
@@ -24,55 +23,55 @@
         th Answer
     tbody
       tr
-        td Case Number*
+        td = t('helpers.label.respondents_detail.case_number')
         td = @hash_store[:respondents_detail_answers][:case_number]
       tr
-        td Name of Individual, Company or Organisation*
+        td = t('helpers.label.respondents_detail.name')
         td = @hash_store[:respondents_detail_answers][:name]
       tr
-        td Name of Contact
+        td = t('helpers.label.respondents_detail.contact')
         td = @hash_store[:respondents_detail_answers][:contact]
       tr
-        td Building Name or Number*
+        td = t('helpers.label.respondents_detail.building_name')
         td = @hash_store[:respondents_detail_answers][:building_name]
       tr
-        td Street*
+        td = t('helpers.label.respondents_detail.street_name')
         td = @hash_store[:respondents_detail_answers][:street_name]
       tr
-        td Town/City*
+        td = t('helpers.label.respondents_detail.town')
         td = @hash_store[:respondents_detail_answers][:town]
       tr
-        td County
+        td = t('helpers.label.respondents_detail.county')
         td = @hash_store[:respondents_detail_answers][:county]
       tr
-        td Postcode*
+        td = t('helpers.label.respondents_detail.postcode')
         td = @hash_store[:respondents_detail_answers][:postcode]
       tr
-        td Document Exchange (DX) Number
+        td = t('helpers.label.respondents_detail.dx_number')
         td = @hash_store[:respondents_detail_answers][:dx_number]
       tr
-        td Contact Number
+        td = t('helpers.label.respondents_detail.contact_number')
         td = @hash_store[:respondents_detail_answers][:contact_number]
       tr
-        td Mobile Number
+        td = t('helpers.label.respondents_detail.mobile_number')
         td = @hash_store[:respondents_detail_answers][:mobile_number]
       tr
-        td How would you prefer us to contact you?
+        td = t('helpers.fieldset.respondents_detail.contact_preference')
         td = @hash_store[:respondents_detail_answers][:contact_preference]
       tr
-        td Email Address*
+        td = t('helpers.label.respondents_detail.email_address')
         td = @hash_store[:respondents_detail_answers][:email_address]
       tr
-        td Fax Number*
+        td = t('helpers.label.respondents_detail.fax_number')
         td = @hash_store[:respondents_detail_answers][:fax_number]
       tr
-        td How many people does this organisation employ in Great Britain?
+        td = t('helpers.label.respondents_detail.organisation_employ_gb')
         td = @hash_store[:respondents_detail_answers][:organisation_employ_gb]
       tr
-        td Does this organisation have more than one site in Great Britain?
+        td = t('helpers.fieldset.respondents_detail.organisation_more_than_one_site')
         td = @hash_store[:respondents_detail_answers][:organisation_more_than_one_site]
       tr
-        td How many people are employed at the place where the claimant worked?*
+        td = t('helpers.label.respondents_detail.employment_at_site_number')
         td = @hash_store[:respondents_detail_answers][:employment_at_site_number]
       tr
         td
@@ -87,38 +86,38 @@
         th Answer
     tbody
       tr
-        td Claimant's Name
+        td = t('helpers.label.claimants_detail.claimants_name')
         td = @hash_store[:claimants_detail_answers][:claimants_name]
       tr
-        td Do you agree with the details given by the claimant about Early Conciliation with Acas?
+        td = t('helpers.fieldset.claimants_detail.agree_with_early_conciliation_details')
         td = @hash_store[:claimants_detail_answers][:agree_with_early_conciliation_details]
       tr
-        td Why do you disagree with the claimant?
+        td = t('helpers.label.claimants_detail.disagree_conciliation_reason')
         td = @hash_store[:claimants_detail_answers][:disagree_conciliation_reason]
       tr
-        td Are the dates of employment given by the claimant correct?*
+        td = t('helpers.fieldset.claimants_detail.agree_with_employment_dates')
         td = @hash_store[:claimants_detail_answers][:agree_with_employment_dates]
       tr
-        td When their employment started*
+        td = t('helpers.label.claimants_detail.employment_start')
         td = @hash_store[:claimants_detail_answers][:employment_start]
       tr
-        td  When their employment ended or will end*
+        td = t('helpers.label.claimants_detail.employment_end')
         td = @hash_store[:claimants_detail_answers][:employment_end]
       tr
-        td Why do you disagree with the dates given by the claimant*
+        td = t('helpers.label.claimants_detail.disagree_employment')
         td = @hash_store[:claimants_detail_answers][:disagree_employment]
       tr
-        td Is their employment continuing?
+        td = t('helpers.fieldset.claimants_detail.continued_employment')
         td = @hash_store[:claimants_detail_answers][:continued_employment]
       tr
-        td Is the claimant's description of their job or job title correct?
+        td = t('helpers.fieldset.claimants_detail.agree_with_claimants_description_of_job_or_title')
         td = @hash_store[:claimants_detail_answers][:agree_with_claimants_description_of_job_or_title]
       tr
-        td Please give the details you believe to be correct
+        td = t('helpers.label.claimants_detail.disagree_claimants_job_or_title')
         td = @hash_store[:claimants_detail_answers][:disagree_claimants_job_or_title]
       tr
         td
-          = link_to("Edit Anclaimants_detailswers on this Page", edit_claimants_details_path, class: 'button')
+          = link_to("Edit Answers on this Page", edit_claimants_details_path, class: 'button')
         td
           a href="#content" Back to the top
   table
@@ -129,37 +128,37 @@
         th Answer
     tbody
       tr
-        td Are the claimant's hours of work correct?
+        td = t('helpers.fieldset.earnings_and_benefits.agree_with_claimants_hours')
         td = @hash_store[:earnings_and_benefits_answers][:agree_with_claimants_hours]
       tr
-        td Please enter the details you believe to be correct
+        td = t('helpers.label.earnings_and_benefits.queried_hours')
         td = @hash_store[:earnings_and_benefits_answers][:queried_hours]
       tr
-        td Are the earnings details given by the claimant correct? 
+        td = t('helpers.fieldset.earnings_and_benefits.agree_with_earnings_details')
         td = @hash_store[:earnings_and_benefits_answers][:agree_with_earnings_details]
       tr
-        td Pay before tax 
+        td = t('helpers.label.earnings_and_benefits.queried_pay_before_tax')
         td = @hash_store[:earnings_and_benefits_answers][:queried_pay_before_tax]
       tr
-        td Pay before tax period
+        td = t('helpers.fieldset.earnings_and_benefits.queried_pay_before_tax_period')
         td = @hash_store[:earnings_and_benefits_answers][:queried_pay_before_tax_period]
       tr
-        td Normal take-home pay 
+        td = t('helpers.label.earnings_and_benefits.queried_take_home_pay')
         td = @hash_store[:earnings_and_benefits_answers][:queried_take_home_pay]
       tr
-        td Normal take-home pay period
+        td = t('helpers.fieldset.earnings_and_benefits.queried_take_home_pay_period')
         td = @hash_store[:earnings_and_benefits_answers][:queried_take_home_pay_period]
       tr
-        td Is the information given by the claimant correct about being paid for, or working a period of notice? 
+        td = t('helpers.fieldset.earnings_and_benefits.agree_with_claimant_notice')
         td = @hash_store[:earnings_and_benefits_answers][:agree_with_claimant_notice]
       tr
-        td Please give the details you believe to be correct below. If you didn't give notice or pay them instead of letting them work their notice please explain what happened and why 
+        td = t('helpers.label.earnings_and_benefits.disagree_claimant_notice_reason')
         td = @hash_store[:earnings_and_benefits_answers][:disagree_claimant_notice_reason]
       tr
-        td Are the details about pension and other benefits e.g. company car, medical insurance, etc. given by the claimant correct?
+        td = t('helpers.fieldset.earnings_and_benefits.agree_with_claimant_pension_benefits')
         td = @hash_store[:earnings_and_benefits_answers][:agree_with_claimant_pension_benefits]
       tr
-        td Please give the details you believe to be correct.
+        td = t('helpers.label.earnings_and_benefits.disagree_claimant_pension_benefits_reason')
         td = @hash_store[:earnings_and_benefits_answers][:disagree_claimant_pension_benefits_reason]
       tr
         td
@@ -174,10 +173,10 @@
         th Answer
     tbody
       tr
-        td Do you defend the claim?*
+        td = t('helpers.fieldset.response.defend_claim')
         td = @hash_store[:response_answers][:defend_claim]
       tr
-        td Please set out the facts which you rely on to defend the claim
+        td = t('helpers.label.response.defend_claim_facts')
         td = @hash_store[:response_answers][:defend_claim_facts]
       tr
         td
@@ -192,7 +191,7 @@
         th Answer
     tbody
       tr
-        td Do you have a representative?
+        td = t('helpers.fieldset.your_representative.have_representative')
         td = @hash_store[:your_representative_answers][:have_representative]
       tr
         td

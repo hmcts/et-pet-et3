@@ -2,20 +2,7 @@ require 'rails_helper'
 RSpec.feature "Fill in whole form", js: true do
 
   before do
-    stub_request(:post, "https://et-api-example.com/v2/repondents/response").
-      with(headers: { content_type: 'application/json', 'Accept': 'application/json' }).
-      to_return(
-        headers: { content_type: 'application/json' },
-        body:
-          {
-            "data": {
-              "reference": "992000000100",
-              "submitted_at": "2018-01-13 14:00",
-              "pdf": "s3/link/to/form/pdf"
-            }
-          }.to_json,
-        status: 201
-      )
+    stub_et_api
   end
 
   scenario "correctly will flow without error" do

@@ -2,8 +2,14 @@ require 'rails_helper'
 
 RSpec.feature "Access Form Submission Page", js: true do
 
+  before do
+    stub_et_api
+  end
+
   scenario "user will be able to read text" do
-    form_submission_page.load
+    given_i_am(:company01)
+    answer_all_questions
+    confirmation_of_supplied_details_page.submit_form
 
     expect(form_submission_page).to be_displayed
 
@@ -13,9 +19,11 @@ RSpec.feature "Access Form Submission Page", js: true do
   end
 
   scenario "user can navigate to the gov.uk homepage" do
-    form_submission_page.load
+    given_i_am(:company01)
+    answer_all_questions
+    confirmation_of_supplied_details_page.submit_form
 
-    form_submission_page.finish
+    form_submission_page.return
 
     expect(current_url).to eql 'https://www.gov.uk/'
   end

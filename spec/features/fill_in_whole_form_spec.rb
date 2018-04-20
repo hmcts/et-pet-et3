@@ -2,90 +2,14 @@ require 'rails_helper'
 RSpec.feature "Fill in whole form", js: true do
 
   before do
-    stub_request(:post, "https://et-api-example.com/v2/repondents/response").
-      with(headers: { content_type: 'application/json', 'Accept': 'application/json' }).
-      to_return(
-        headers: { content_type: 'application/json' },
-        body:
-          {
-            "data": {
-              "reference": "992000000100",
-              "submitted_at": "2018-01-13 14:00",
-              "pdf": "s3/link/to/form/pdf"
-            }
-          }.to_json,
-        status: 201
-      )
+    stub_et_api
   end
 
   scenario "correctly will flow without error" do
 
-    start_page.load
-    start_page.next
-
     given_i_am(:company01)
 
-    answer_case_number_question
-    answer_name_question
-    answer_contact_question
-    answer_building_name_question
-    answer_street_question
-    answer_town_question
-    answer_postcode_question
-    answer_contact_preference_question
-    answer_organisation_more_than_one_site_question
-
-    respondents_details_page.next
-
-    answer_claimants_name_question
-    answer_agree_with_early_conciliation_details_question
-    answer_agree_with_employment_dates_question
-    answer_continued_employment_question
-    answer_agree_with_claimants_description_of_job_or_title_question
-
-    claimants_details_page.next
-
-    answer_agree_with_claimants_hours_question
-    answer_agree_with_earnings_details_question
-    answer_agree_with_claimant_notice_question
-    answer_agree_with_claimant_pension_benefits_question
-
-    earnings_and_benefits_page.next
-
-    answer_defend_claim_question
-
-    response_page.next
-
-    answer_have_representative_question
-
-    your_representative_page.next
-
-    answer_type_of_representative_question
-    answer_representative_org_name_question
-    answer_representative_name_question
-    answer_representative_building_question
-    answer_representative_street_question
-    answer_representative_town_question
-    answer_representative_county_question
-    answer_representative_postcode_question
-    answer_representative_phone_question
-    answer_representative_mobile_question
-    answer_representative_dx_number_question
-    answer_representative_reference_question
-    answer_representative_contact_preference_question
-    answer_representative_disability_question
-
-    your_representatives_details_page.next
-
-    answer_make_employer_contract_claim_question
-    upload_additional_information
-
-    employers_contract_claim_page.next
-
-    answer_email_receipt_question
-    answer_confirm_email_receipt_question
-
-    # TODO: Use appropriate context blocks
+    answer_all_questions
 
     # Check respondent's details table
     expect(confirmation_of_supplied_details_page).to have_confirmation_of_respondents_details_answers
@@ -93,7 +17,7 @@ RSpec.feature "Fill in whole form", js: true do
     respondents_details_table = confirmation_of_supplied_details_page.confirmation_of_respondents_details_answers
     expect(respondents_details_table.case_number_row.case_number_answer).to have_text "7654321/2017"
     expect(respondents_details_table.name_row.name_answer).to have_text "dodgy_co"
-    expect(respondents_details_table.contact_row.contact_answer).to have_text "john"
+    expect(respondents_details_table.contact_row.contact_answer).to have_text "John Smith"
     expect(respondents_details_table.building_name_row.building_name_answer).to have_text "the_shard"
     expect(respondents_details_table.street_row.street_answer).to have_text "downing_street"
     expect(respondents_details_table.town_row.town_answer).to have_text "westminster"
@@ -106,17 +30,17 @@ RSpec.feature "Fill in whole form", js: true do
     expect(respondents_details_table.email_address_row.email_address_answer).to have_text "john@dodgyco.com"
     expect(respondents_details_table.fax_number_row.fax_number_answer).to have_text nil
     expect(respondents_details_table.organisation_employ_gb_row.organisation_employ_gb_answer).to have_text nil
-    expect(respondents_details_table.organisation_more_than_one_site_row.organisation_more_than_one_site_answer).to have_text "false"
+    expect(respondents_details_table.organisation_more_than_one_site_row.organisation_more_than_one_site_answer).to have_text nil
     expect(respondents_details_table.employment_at_site_number_row.employment_at_site_number_answer).to have_text nil
 
     # Check Claimant's Details Table
     expect(confirmation_of_supplied_details_page).to have_confirmation_of_claimants_details_answers
 
     claimants_details_table = confirmation_of_supplied_details_page.confirmation_of_claimants_details_answers
-    expect(claimants_details_table.claimants_name_row.claimants_name_answer).to have_text "jane"
-    expect(claimants_details_table.agree_with_early_conciliation_details_row.agree_with_early_conciliation_details_answer).to have_text nil
+    expect(claimants_details_table.claimants_name_row.claimants_name_answer).to have_text "Jane Doe"
+    expect(claimants_details_table.agree_with_early_conciliation_details_row.agree_with_early_conciliation_details_answer).to have_text "false"
     expect(claimants_details_table.disagree_conciliation_reason_row.disagree_conciliation_reason_answer).to have_text "lorem ipsum conciliation"
-    expect(claimants_details_table.agree_with_employment_dates_row.agree_with_employment_dates_answer).to have_text false
+    expect(claimants_details_table.agree_with_employment_dates_row.agree_with_employment_dates_answer).to have_text "false"
     expect(claimants_details_table.employment_start_row.employment_start_answer).to have_text "2017-01-01"
     expect(claimants_details_table.employment_end_row.employment_end_answer).to have_text "2017-12-31"
     expect(claimants_details_table.disagree_employment_row.disagree_employment_answer).to have_text "lorem ipsum employment"
@@ -190,7 +114,7 @@ RSpec.feature "Fill in whole form", js: true do
         body: {
           "case_number": "7654321/2017",
           "name": "dodgy_co",
-          "contact": "john",
+          "contact": "John Smith",
           "building_name": "the_shard",
           "street_name": "downing_street",
           "town": "westminster",
@@ -205,7 +129,7 @@ RSpec.feature "Fill in whole form", js: true do
           "organisation_employ_gb": nil,
           "organisation_more_than_one_site": false,
           "employment_at_site_number": nil,
-          "claimants_name": "jane",
+          "claimants_name": "Jane Doe",
           "agree_with_early_conciliation_details": false,
           "disagree_conciliation_reason": "lorem ipsum conciliation",
           "agree_with_employment_dates": false,

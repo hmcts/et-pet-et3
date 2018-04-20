@@ -1,0 +1,13 @@
+language: ruby
+cache:
+  bundler
+before_script:
+  - bundle exec rails db:create db:migrate
+script:
+  - bundle exec rspec
+addons:
+  chrome: stable
+  firefox: latest
+  postgresql: "9.3"
+services:
+  - postgresql

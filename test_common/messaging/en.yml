@@ -21,7 +21,7 @@ en:
       label: Document Exchange (DX) Number (optional)
     contact_number:
       label: Contact Number (optional)
-    mobile_number:
+    contact_mobile_number:
       label: Mobile Number (optional)
     contact_preference:
       label: How would you prefer us to contact you? (optional)

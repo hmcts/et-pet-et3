@@ -75,7 +75,7 @@ module ET3
         delegate :set, to: :field
       end
             
-      section :contact_mobile_number_question, :question_labelled, 'questions.mobile_number.label', exact: false do
+      section :contact_mobile_number_question, :question_labelled, 'questions.contact_mobile_number.label', exact: false do
         element :field, :css, "input"
         element :error_invalid, :exact_error_text, 'errors.messages.invalid', exact: false
 

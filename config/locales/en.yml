@@ -52,6 +52,10 @@ en:
         defend_claim: Do you defend the claim?
       your_representative:
         have_representative: Do you have a representative? (optional)
+      your_representatives_details:
+        type_of_representative: Type of Representative
+        representative_contact_preference: How would you prefer us to contact your representative? (optional)
+        representative_disability: Does your representative have a disability? (optional)
     label:
       respondents_detail:
         case_number: Case Number
@@ -144,6 +148,40 @@ en:
           choices:
             'yes': 'Yes'
             'no': 'No'
+      your_representatives_details:
+        type_of_representative:
+          choices:
+            citizens_advice_bureau: Citizen's Advice Bureau
+            free_representation_unit: Free Representation Unit
+            law_centre: Law Centre
+            union: Union
+            solicitor: Solicitor
+            private_individual: Private Individual
+            trade_association: Trade Association
+            other: Other
+        representative_org_name: Name of the Representative's Organisation (optional)
+        representative_name: Representative's Name
+        representative_building: Building Name or Number
+        representative_street: Street
+        representative_town: Town/City
+        representative_county: County (optional)
+        representative_postcode: Postcode
+        representative_phone: Phone Number (optional)
+        representative_mobile: Mobile Number (optional)
+        representative_dx_number: Document Exchange (DX) Number (optional)
+        representative_reference: Reference (optional)
+        representative_contact_preference:
+          choices:
+            email: Email
+            post: Post
+            fax: Fax
+        representative_email: Email Address
+        representative_fax: Fax Number
+        representative_disability:
+          choices:
+            'yes': 'Yes'
+            'no': 'No'
+        representative_disability_information: It would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises
     hint:
       respondents_detail:
         mobile_number: If different to your primary contact number
@@ -164,6 +202,10 @@ en:
           PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 2500 characters) if you would like to include more please
           use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
           If you exceed 25 lines you will not receive full details of your response in the PDF returned to you on submission of the form.
+      your_representatives_details:
+        representative_disability_information: |
+          PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 350 characters) if you would like to include more please
+          use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
   errors:
     messages:
       contains_no_spaces: must contain spaces

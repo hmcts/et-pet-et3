@@ -153,65 +153,61 @@ en:
         label: 'No'
     # Your Representatives Details Page
     type_of_representative:
-      label: Type of Representative*
-      'yes':
-        label: 'Yes'
-      'no':
-        label: 'No'
+      label: Type of Representative
       citizens_advice_bureau:
-        label: Citizen's Advice Bureau
+        label: Citizen's advice bureau
       free_representation_unit:
-        label: Free Representation Unit
+        label: Free representation unit
       law_centre:
-        label: Law Centre
+        label: Law centre
       union:
         label: Union
       solicitor:
         label: Solicitor
       private_individual:
-        label: Private Individual
+        label: Private individual
       trade_association:
-        label: Trade Association
+        label: Trade association
       other:
         label: Other
     representative_org_name:
-      label: Name of the Representative's Organisation
+      label: Name of the Representative's Organisation (optional)
     representative_name:
-      label: Representative's Name*
+      label: Representative's Name
     representative_building:
-      label: Building Name or Number*
+      label: Building Name or Number
     representative_street:
-      label: Street*
+      label: Street
     representative_town:
-      label: Town/City*
+      label: Town/City
     representative_county:
-      label: County
+      label: County (optional)
     representative_postcode:
-      label: Postcode*
+      label: Postcode
     representative_phone:
-      label: Phone Number
+      label: Phone Number (optional)
     representative_mobile:
-      label: Mobile Number
+      label: Mobile Number (optional)
     representative_dx_number:
-      label: Document Exchange (DX) Number
+      label: Document Exchange (DX) Number (optional)
     representative_reference:
-      label: Reference
+      label: Reference (optional)
     representative_contact_preference:
-      label: How would you prefer us to contact your representative?
+      label: How would you prefer us to contact your representative? (optional)
       email:
         label: Email
-        input_label: Email Address*
+        input_label: Email Address
       fax:
         label: Fax
-        input_label: Fax Number*
+        input_label: Fax Number
     representative_disability:
-      label: Does your representative have a disability?
+      label: Does your representative have a disability? (optional)
       'yes':
         label: 'Yes'
       'no':
         label: 'No'
       disability_information:
-        label: If Yes, it would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises.*
+        label: It would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises
     # Employers Contract Claim Page
     make_employer_contract_claim:
       label: Do you wish to make an Employer Contract Claim?

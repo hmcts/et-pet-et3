@@ -8,6 +8,8 @@ class YourRepresentativesDetailsController < ApplicationController
     if @your_representatives_details.valid?
       current_store.hash_store[:your_representatives_details_answers] = @your_representatives_details.to_h
       redirect_to employers_contract_claim_path
+    else
+      render :edit
     end
   end
 

@@ -38,4 +38,54 @@ class YourRepresentativesDetails < BaseForm
       representative_disability_information: representative_disability_information
     }
   end
+
+  validates :type_of_representative,
+    inclusion: {
+      in: [
+        "Citizens Advice Bureau",
+        "Free Representation Unit",
+        "Law Centre",
+        "Union",
+        "Solicitor",
+        "Private Individual",
+        "Trade Association",
+        "Other"
+      ]
+    }
+  validates :representative_name, persons_name: true
+  validates :representative_building,
+    :representative_street,
+    :representative_town,
+    presence: true
+  validates :representative_postcode, postcode: true
+  validates :representative_phone, :representative_mobile,
+    phone_number: true,
+    allow_blank: true
+  validates :representative_email,
+    email_address: true,
+    if: :prefer_email?
+  validates :representative_fax,
+    phone_number: true,
+    if: :prefer_fax?
+  validates :representative_disability_information,
+    length: {
+      maximum: 350,
+      too_long: "%{count} characters is the maximum allowed" # rubocop:disable Style/FormatStringToken
+    },
+    presence: true,
+    if: :representative_is_disabled?
+
+  private
+
+  def prefer_email?
+    representative_contact_preference == "email"
+  end
+
+  def prefer_fax?
+    representative_contact_preference == "fax"
+  end
+
+  def representative_is_disabled?
+    representative_disability
+  end
 end

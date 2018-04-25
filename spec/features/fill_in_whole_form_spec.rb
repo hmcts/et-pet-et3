@@ -93,7 +93,7 @@ RSpec.feature "Fill in whole form", js: true do
     expect(your_rep_details_table.representative_mobile_row.representative_mobile_answer).to have_text "07987654321"
     expect(your_rep_details_table.representative_dx_number_row.representative_dx_number_answer).to have_text "dx address"
     expect(your_rep_details_table.representative_reference_row.representative_reference_answer).to have_text "Rep Ref"
-    expect(your_rep_details_table.representative_contact_preference_row.representative_contact_preference_answer).to have_text "Fax"
+    expect(your_rep_details_table.representative_contact_preference_row.representative_contact_preference_answer).to have_text "fax"
     expect(your_rep_details_table.email_row.email_answer).to have_text nil
     expect(your_rep_details_table.fax_row.fax_answer).to have_text "0207 345 6789"
     expect(your_rep_details_table.representative_disability_row.representative_disability_answer).to have_text true
@@ -165,7 +165,7 @@ RSpec.feature "Fill in whole form", js: true do
           "representative_mobile": "07987654321",
           "representative_dx_number": "dx address",
           "representative_reference": "Rep Ref",
-          "representative_contact_preference": "Fax",
+          "representative_contact_preference": "fax",
           "representative_email": "",
           "representative_fax": "0207 345 6789",
           "representative_disability": true,

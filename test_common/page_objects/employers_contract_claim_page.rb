@@ -3,6 +3,8 @@ module ET3
     class EmployersContractClaimPage < BasePage
       set_url '/respond/employers_contract_claim'
 
+      element :error_header, :error_titled, 'errors.header', exact: true
+
       section :make_employer_contract_claim_question, :single_choice_option, 'questions.make_employer_contract_claim.label', exact: true do
 
         section :no, :gds_multiple_choice_option, 'questions.make_employer_contract_claim.no.label', exact: true do
@@ -21,6 +23,8 @@ module ET3
           delegate :set, to: :root_element
         end
 
+        element :error_too_long, :exact_error_text, 'errors.messages.too_long', exact: false
+
         def set_for(user_persona)
           if user_persona.make_employer_contract_claim == "Yes"
             yes.set(true)
@@ -28,15 +32,6 @@ module ET3
           else
             no.set(true)
           end
-        end
-      end
-      
-      section :upload_additional_information, :question_labelled, 'questions.upload_additional_information.label', exact: true do
-        
-        element :upload, :css, 'input'
-
-        def set(file_path)
-          upload.set(Rails.root.join(file_path))
         end
       end
 

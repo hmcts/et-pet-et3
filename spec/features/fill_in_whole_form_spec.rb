@@ -105,7 +105,6 @@ RSpec.feature "Fill in whole form", js: true do
     employer_contract_claim_table = confirmation_of_supplied_details_page.confirmation_of_employer_contract_claim_answers
     expect(employer_contract_claim_table.make_employer_contract_claim_row.make_employer_contract_claim_answer).to have_text true
     expect(employer_contract_claim_table.claim_information_row.claim_information_answer).to have_text "lorem ipsum info"
-    expect(employer_contract_claim_table.upload_additional_information_row.upload_additional_information_answer).to have_text "sample.rtf"
 
     confirmation_of_supplied_details_page.submit_form
     expect(form_submission_page).to be_displayed
@@ -172,7 +171,6 @@ RSpec.feature "Fill in whole form", js: true do
           "representative_disability_information": "Lorem ipsum disability",
           "make_employer_contract_claim": true,
           "claim_information": "lorem ipsum info",
-          "upload_additional_information": "sample.rtf",
           "email_receipt": "email@recei.pt",
           "confirm_email_receipt": "email@recei.pt"
         }.to_json,

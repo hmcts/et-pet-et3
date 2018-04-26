@@ -277,10 +277,6 @@ module ET3
           element :claim_information_answer, :return_answer
         end
 
-        section :upload_additional_information_row, :table_row_with_td_labelled, 'questions.upload_additional_information.label', exact: true do
-          element :upload_additional_information_answer, :return_answer
-        end
-
       end
       
       element :continue_button, :button, "Submit Form"

@@ -6,12 +6,13 @@
   p Please enter your email address so that we can provided you with a receipt of your transaction.
 
   = form_for @confirmation_of_supplied_details, url: confirmation_of_supplied_details_path, method: :patch  do |f|
-    #question1.form-group.form-group-compound
-      = f.label(:email_receipt, 'Email Address', class: 'form-label')
-      = f.text_field(:email_receipt, class: 'form-control')
-    #question2.form-group
-      = f.label(:confirm_email_receipt, 'Confirm Email Address', class: 'form-label')
-      = f.text_field(:confirm_email_receipt, class: 'form-control')
+
+    = GovukElementsErrorsHelper.error_summary @confirmation_of_supplied_details,
+    "Please review the following",
+    "Optional description of the errors and how to correct them" 
+
+    = f.text_field :email_receipt
+    = f.text_field :email_receipt_confirmation
     = f.submit("Submit Form", class: 'button')
 
   h2.heading-medium Confirmation of Supplied Details

@@ -14,12 +14,7 @@ RSpec.describe YourRepresentativesDetails, type: :model do
     )
   }
 
-  let(:three_hundred_fifty_one_chars) {
-    'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
-    ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo,
-    fringilla vel, aliquet nec, vulputate e'
-  }
+  let(:three_hundred_fifty_one_chars) { Faker::Lorem.characters(351) }
 
   context 'with validators' do
     it 'will not validate a name with numbers in' do

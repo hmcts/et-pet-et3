@@ -25,7 +25,7 @@ module ET3
       end
 
       def load
-        self.registry = YAML.load_file(PERSONAS_FILE).symbolize_keys
+        self.registry = YAML.safe_load(ERB.new(File.read(PERSONAS_FILE)).result).symbolize_keys
         self.loaded = true
       end
 

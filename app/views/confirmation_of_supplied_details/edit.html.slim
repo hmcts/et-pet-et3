@@ -267,14 +267,11 @@
         th Question
         th Answer
       tr
-        td Do you wish to make an Employer Contract Claim?
+        td = t('helpers.fieldset.employers_contract_claim.make_employer_contract_claim')
         td = @hash_store[:employer_contract_claim_answers][:make_employer_contract_claim]
       tr
-        td Please set out the background and details of your claim below, which should include all important dates.
+        td = t('helpers.label.employers_contract_claim.claim_information')
         td = @hash_store[:employer_contract_claim_answers][:claim_information]
-      tr
-        td Please upload a file to provide any important additional information about your response which you have not been able to include so far.
-        td = @hash_store[:employer_contract_claim_answers][:upload_additional_information]
       tr
         td
           = link_to("Edit Answers on this Page", edit_employers_contract_claim_path, class: 'button')

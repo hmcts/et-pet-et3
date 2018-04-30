@@ -210,15 +210,16 @@ en:
         label: It would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises
     # Employers Contract Claim Page
     make_employer_contract_claim:
-      label: Do you wish to make an Employer Contract Claim?
+      label: Do you wish to make an Employer Contract Claim? (optional)
       'yes':
         label: 'Yes'
       'no':
         label: 'No'
       claim_information:
-        label: 'Please set out the background and details of your claim below, which should include all important dates.'
-    upload_additional_information:
-      label: Please upload a file to provide any important additional information about your response which you have not been able to include so far.
+        label: 'Please set out the background and details of your claim below, which should include all important dates (optional)'
+      # TODO: RST-1090 Restore file upload on its own page
+        # upload_additional_information:
+        #   label: Please upload a file to provide any important additional information about your response which you have not been able to include so far (optional)
     # Confirmation of Supplied Details Page
     email_receipt:
       label: Email Address

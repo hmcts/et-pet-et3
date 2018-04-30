@@ -172,7 +172,7 @@ RSpec.feature "Fill in whole form", js: true do
           "make_employer_contract_claim": true,
           "claim_information": "lorem ipsum info",
           "email_receipt": "email@recei.pt",
-          "confirm_email_receipt": "email@recei.pt"
+          "email_receipt_confirmation": "email@recei.pt"
         }.to_json,
         headers: { content_type: 'application/json', 'Accept': 'application/json' }
       )).to have_been_made.once

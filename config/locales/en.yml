@@ -35,7 +35,7 @@ en:
     fieldset:
       respondents_detail:
         contact_preference: How would you prefer us to contact you? (optional)
-        organisation_more_than_one_site: Does this organisation have more than one site in Great Britain? (optional)
+        organisation_more_than_one_site: Does this organisation have more than one site in Great Britain?
       claimants_detail:
         agree_with_early_conciliation_details: Do you agree with the details given by the claimant about Early Conciliation with Acas? (optional)
         agree_with_employment_dates: Are the dates of employment given by the claimant correct?

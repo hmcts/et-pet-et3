@@ -36,7 +36,7 @@ en:
     organisation_employ_gb:
       label: How many people does this organisation employ in Great Britain? (optional)
     organisation_more_than_one_site:
-      label: Does this organisation have more than one site in Great Britain? (optional)
+      label: Does this organisation have more than one site in Great Britain?
       'yes':
         label: 'Yes'
       'no':

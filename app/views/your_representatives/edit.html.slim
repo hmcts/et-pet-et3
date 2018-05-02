@@ -4,10 +4,6 @@
 
   = form_for @your_representative, url: your_representative_path, method: :patch  do |f|
 
-    = GovukElementsErrorsHelper.error_summary @response,
-    "Please review the following",
-    "Optional description of the errors and how to correct them"    
-
     = f.radio_button_fieldset :have_representative do |b|
       = content_tag :div, {class: 'multiple-choice'} do
         = b.radio_button(:have_representative, true) + label(:defend_claim_true, t('helpers.label.response.defend_claim.choices.yes'), value: :yes)

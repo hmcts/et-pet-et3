@@ -4,9 +4,10 @@
 
   = form_for @response, url: response_path, method: :patch  do |f|
 
-    = GovukElementsErrorsHelper.error_summary @response,
-    "Please review the following",
-    "Optional description of the errors and how to correct them"
+    div data-turbolinks="false"
+      = GovukElementsErrorsHelper.error_summary @response,
+        "Please review the following",
+        "Clicking on an error will navigate you directly to the question. Please correct these errors before continuing."
 
     = f.radio_button_fieldset :defend_claim do |b|
       = content_tag :div, {class: 'multiple-choice', data: { target: :defend_claim_facts }} do

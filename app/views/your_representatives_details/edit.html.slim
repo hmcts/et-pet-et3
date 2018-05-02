@@ -1,7 +1,6 @@
-- content_for :page_title, "Response to Claim | Your Representative's Details"
+- content_for :form_page_title, "Your Representative's Details"
+- content_for :page_title, raw("#{content_for :form_page_title} | Response to Claim")
 .content-body.your-representatives-details
-  - content_for :form_page_title do
-    = "Your Representative's Details"
   
   p Fill in this section if someone has agreed to represent you. If you do fill this in we will in future only contact your representative and not you
 

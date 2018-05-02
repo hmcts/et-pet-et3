@@ -1,7 +1,6 @@
-- content_for :page_title, "Response to Claim | Earnings and Benefits"
+- content_for :form_page_title, "Earnings and Benefits"
+- content_for :page_title, raw("#{content_for :form_page_title} | Response to Claim")
 .content-body.earnings-and-benefits
-  - content_for :form_page_title do
-    = "Earnings and Benefits"
 
   = form_for @earnings_and_benefits, url: earnings_and_benefits_path, method: :patch  do |f|
 

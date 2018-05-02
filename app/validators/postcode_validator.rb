@@ -7,7 +7,7 @@ class PostcodeValidator < ActiveModel::EachValidator
   end
 
   def validate_each(record, attribute, value)
-    if value.nil?
+    if value.blank?
       record.errors.add(attribute, :blank)
     else
       postcode = postcode_service.parse(value)

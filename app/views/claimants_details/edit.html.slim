@@ -1,5 +1,5 @@
 - content_for :form_page_title, "Claimant's Details"
-- content_for :page_title, raw("#{content_for :form_page_title} | Response to Claim")
+- content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
 .content-body.claimants-details
 
   = form_for @claimants_detail, url: claimants_details_path, method: :patch  do |f|

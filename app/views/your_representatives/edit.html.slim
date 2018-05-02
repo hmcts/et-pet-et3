@@ -1,5 +1,5 @@
 - content_for :form_page_title, "Your Representative"
-- content_for :page_title, raw("#{content_for :form_page_title} | Response to Claim")
+- content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
 .content-body.your-representative
 
   = form_for @your_representative, url: your_representative_path, method: :patch  do |f|

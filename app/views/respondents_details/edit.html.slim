@@ -1,6 +1,6 @@
+- content_for :form_page_title, "Respondent's Details"
+- content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
 .content-body.respondents-details
-  - content_for :form_page_title do
-    = "Respondent's Details"
 
   = form_for @respondents_detail, url: respondents_details_path, method: :patch  do |f|
 

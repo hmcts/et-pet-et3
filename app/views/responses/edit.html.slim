@@ -1,6 +1,6 @@
+- content_for :form_page_title, "Response"
+- content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
 .content-body.response
-  - content_for :form_page_title do
-    = "Response"
 
   = form_for @response, url: response_path, method: :patch  do |f|
 

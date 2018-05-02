@@ -46,8 +46,16 @@ RSpec.describe ClaimantsDetail, type: :model do
       expect(populated_claimant_detail.employment_start.strftime('%d/%m/%Y')).to eql '01/01/2017'
     end
 
+    it 'returns the employment start date as a date type' do
+      expect(populated_claimant_detail.employment_start).to be_a Date
+    end
+
     it 'returns the employment end date' do
       expect(populated_claimant_detail.employment_end.strftime('%d/%m/%Y')).to eql '31/12/2017'
+    end
+
+    it 'returns the employment end date as a date type' do
+      expect(populated_claimant_detail.employment_end).to be_a Date
     end
 
     it 'returns the disagree employment reason' do

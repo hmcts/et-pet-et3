@@ -2,13 +2,21 @@ module ET3
   module Test
     class ConfirmationOfSuppliedDetailsPage < BasePage
       set_url '/respond/confirmation_of_supplied_details'
+      
+      element :error_header, :error_titled, 'errors.header', exact: true
 
-      section :email_receipt_question, :inputtext_labelled, 'questions.email_receipt.label', exact: true do
-        delegate :set, to: :root_element
+      section :email_receipt_question, :question_labelled, 'questions.email_receipt.label', exact: false do
+        element :field, :css, 'input'
+        element :error_invalid, :exact_error_text, 'errors.messages.invalid', exact: false
+
+        delegate :set, to: :field
       end
 
-      section :confirm_email_receipt_question, :inputtext_labelled, 'questions.confirm_email_receipt.label', exact: true do
-        delegate :set, to: :root_element
+      section :email_receipt_confirmation_question, :question_labelled, 'questions.email_receipt_confirmation.label', exact: false do
+        element :field, :css, 'input'
+        element :error_confirmation, :exact_error_text, 'errors.messages.confirmation', exact: false
+
+        delegate :set, to: :field
       end
 
       section :confirmation_of_respondents_details_answers, :table_captioned, 'questions.confirmation_of_respondents_details_answers.caption', exact: true do

@@ -222,9 +222,9 @@ en:
         #   label: Please upload a file to provide any important additional information about your response which you have not been able to include so far (optional)
     # Confirmation of Supplied Details Page
     email_receipt:
-      label: Email Address
-    confirm_email_receipt:
-      label: Confirm Email Address
+      label: Email Address (optional)
+    email_receipt_confirmation:
+      label: Confirm Email Address (optional)
     # Captions for Tables on CoSD Page
     confirmation_of_respondents_details_answers:
       caption: Respondent's Details
@@ -250,3 +250,4 @@ en:
       not_a_number: is not a number
       too_long: characters is the maximum allowed
       inclusion: is not included in the list
+      confirmation: doesn't match

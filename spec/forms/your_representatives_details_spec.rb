@@ -239,7 +239,7 @@ RSpec.describe YourRepresentativesDetails, type: :model do
 
       populated_your_representatives_details.valid?
 
-      expect(populated_your_representatives_details.errors.details[:representative_name]).to include a_hash_including(error: :invalid)
+      expect(populated_your_representatives_details.errors.details[:representative_name]).to include a_hash_including(error: :blank)
     end
 
     it 'will raise a validation error on representative_building' do

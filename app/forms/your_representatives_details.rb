@@ -52,7 +52,12 @@ class YourRepresentativesDetails < BaseForm
         "Other"
       ]
     }
-  validates :representative_name, persons_name: true
+  validates :representative_name,
+    presence: true,
+    if: proc { |c| c.representative_name.blank? }
+  validates :representative_name,
+    persons_name: true,
+    unless: proc { |c| c.representative_name.blank? }
   validates :representative_building,
     :representative_street,
     :representative_town,

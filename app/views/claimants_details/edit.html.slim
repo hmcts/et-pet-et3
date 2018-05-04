@@ -4,9 +4,10 @@
 
   = form_for @claimants_detail, url: claimants_details_path, method: :patch  do |f|
 
-    = GovukElementsErrorsHelper.error_summary @claimants_detail,
-    "Please review the following",
-    "Optional description of the errors and how to correct them"
+    div data-turbolinks="false"
+      = GovukElementsErrorsHelper.error_summary @claimants_detail,
+        "Please review the following",
+        "Clicking on an error will navigate you directly to the question. Please correct these errors before continuing."
 
     = f.text_field :claimants_name
     = f.radio_button_fieldset :agree_with_early_conciliation_details do |b|

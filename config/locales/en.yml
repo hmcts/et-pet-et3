@@ -192,7 +192,6 @@ en:
         claim_information: Please set out the background and details of your claim below, which should include all important dates (optional)
       confirmation_of_supplied_details:
         email_receipt: Email Address (optional)
-        email_receipt_confirmation: Confirm Email Address (optional)
     hint:
       respondents_detail:
         mobile_number: If different to your primary contact number
@@ -224,7 +223,6 @@ en:
           use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
           If you exceed 50 lines you will not receive full details of your claim in the PDF returned to you on submission of the form.
       confirmation_of_supplied_details:
-        email_receipt_confirmation: This field is mandatory if you would like an email receipt
         email_receipt: For example name@address.com
   errors:
     messages:

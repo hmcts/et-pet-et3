@@ -14,10 +14,6 @@
 
     = f.text_field :email_receipt
 
-    p Pressing "Submit Form" below will send the details confirmed below for processing.
-
-    = f.submit("Submit Form", class: 'button')
-
   h2.heading-medium Confirmation of Supplied Details
   table
     caption.heading-small Respondent's Details
@@ -280,4 +276,9 @@
         td
           = link_to("Edit answers on this page", edit_employers_contract_claim_path, class: 'button')
         td
-          a href="#content" Back to the top
+          a href="#content" Back to the top    p Pressing "Submit Form" at the foot of the page will send the details confirmed below for processing.
+    p Pressing "Submit Form" at the foot of the page will send the details confirmed below for processing.
+  
+    h2.heading-medium Confirmation of Supplied Details
+    br/
+    = f.submit("Submit Form", class: 'button')

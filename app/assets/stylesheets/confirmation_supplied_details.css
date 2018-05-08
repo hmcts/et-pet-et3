@@ -1,0 +1,4 @@
+.confirmation-of-supplied-details table td:nth-child(2) { min-width: 33% }
+
+.confirmation-of-supplied-details table td:nth-child(2),
+.confirmation-of-supplied-details table th:nth-child(2) { text-align: right }

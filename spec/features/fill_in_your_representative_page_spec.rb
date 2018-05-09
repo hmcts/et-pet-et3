@@ -26,4 +26,12 @@ RSpec.feature "Fill in Your Representative Page", js: true do
 
     expect(employers_contract_claim_page).to be_displayed
   end
+
+  scenario "without selecting a radio button will continue to employer's contract claim page" do
+    your_representative_page.load
+
+    your_representative_page.next
+
+    expect(employers_contract_claim_page).to be_displayed
+  end
 end

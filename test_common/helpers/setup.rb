@@ -184,10 +184,6 @@ module ET3
         confirmation_of_supplied_details_page.email_receipt_question.set(user.email_receipt)
       end
 
-      def answer_email_receipt_confirmation_question
-        confirmation_of_supplied_details_page.email_receipt_confirmation_question.set(user.email_receipt_confirmation)
-      end
-
       # Short of Entire Form
       def answer_all_to_employers_contract_claim # rubocop:disable Metrics/MethodLength
         start_page.load
@@ -310,7 +306,6 @@ module ET3
         employers_contract_claim_page.next
 
         answer_email_receipt_question
-        answer_email_receipt_confirmation_question
       end
 
       # Stub Calls to API

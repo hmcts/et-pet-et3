@@ -18,8 +18,8 @@
     = f.text_field :county
     = f.text_field :postcode
     = f.text_field :dx_number
-    = f.text_field :contact_number
-    = f.text_field :mobile_number
+    = f.telephone_field :contact_number
+    = f.telephone_field :mobile_number
     = f.radio_button_fieldset :contact_preference do |b|
       = content_tag :div, {class: 'multiple-choice', data: { target: :respondent_contact_email }} do
         = b.radio_button(:contact_preference, :email) + label(:contact_preference, t('helpers.label.respondents_detail.contact_preference.choices.email'), value: :email)

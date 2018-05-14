@@ -82,6 +82,8 @@ module ET3
           element :employment_at_site_number_answer, :return_answer
         end
 
+        element :edit_page_link, :link_named, 'links.confirmation_of_supplied_details.edit_page', exact: true
+
       end
       
       section :confirmation_of_claimants_details_answers, :table_captioned, 'questions.confirmation_of_claimants_details_answers.caption', exact: true do
@@ -175,6 +177,8 @@ module ET3
         section :disagree_claimant_pension_benefits_reason_row, :table_row_with_td_labelled, 'questions.agree_with_claimant_pension_benefits.disagree_claimant_pension_benefits_reason.label', exact: true do
           element :disagree_claimant_pension_benefits_reason_answer, :return_answer
         end
+
+        element :edit_page_link, :link_named, 'links.confirmation_of_supplied_details.edit_page', exact: true
       
       end
 
@@ -188,6 +192,8 @@ module ET3
           element :defend_claim_facts_answer, :return_answer
         end
 
+        element :edit_page_link, :link_named, 'links.confirmation_of_supplied_details.edit_page', exact: true
+
       end
 
       section :confirmation_of_your_representative_answers, :table_captioned, 'questions.confirmation_of_your_representative_answers.caption', exact: true do
@@ -195,6 +201,8 @@ module ET3
         section :have_representative_row, :table_row_with_td_labelled, 'questions.have_representative.label', exact: true do
           element :have_representative_answer, :return_answer
         end
+
+        element :edit_page_link, :link_named, 'links.confirmation_of_supplied_details.edit_page', exact: true
 
       end
 
@@ -267,6 +275,8 @@ module ET3
         section :disability_information_row, :table_row_with_td_labelled, 'questions.representative_disability.disability_information.label', exact: true do
           element :disability_information_answer, :return_answer
         end
+
+        element :edit_page_link, :link_named, 'links.confirmation_of_supplied_details.edit_page', exact: true
         
       end
 
@@ -279,6 +289,8 @@ module ET3
         section :claim_information_row, :table_row_with_td_labelled, 'questions.make_employer_contract_claim.claim_information.label', exact: true do
           element :claim_information_answer, :return_answer
         end
+
+        element :edit_page_link, :link_named, 'links.confirmation_of_supplied_details.edit_page', exact: true
 
       end
       

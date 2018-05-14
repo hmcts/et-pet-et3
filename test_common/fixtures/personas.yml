@@ -28,11 +28,11 @@ company01:
   disagree_claimants_job_or_title: 'lorem ipsum job title'
   # Earnings and Benefits
   agree_with_claimants_hours: 'No'
-  queried_hours: 32.0
+  queried_hours: 32
   agree_with_earnings_details: 'No'
-  queried_pay_before_tax: 1000.0
+  queried_pay_before_tax: 1000
   queried_pay_before_tax_period: 'Monthly'
-  queried_take_home_pay: 900.0
+  queried_take_home_pay: 900
   queried_take_home_pay_period: 'Monthly'
   agree_with_claimant_notice: 'No'
   disagree_claimant_notice_reason: 'lorem ipsum notice reason'

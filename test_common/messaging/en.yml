@@ -223,8 +223,6 @@ en:
     # Confirmation of Supplied Details Page
     email_receipt:
       label: Email Address (optional)
-    email_receipt_confirmation:
-      label: Confirm Email Address (optional)
     # Captions for Tables on CoSD Page
     confirmation_of_respondents_details_answers:
       caption: Respondent's Details

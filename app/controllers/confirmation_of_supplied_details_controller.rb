@@ -19,6 +19,6 @@ class ConfirmationOfSuppliedDetailsController < ApplicationController
   private
 
   def confirmation_of_supplied_details_params
-    params.require(:confirmation_of_supplied_details).permit(:email_receipt, :email_receipt_confirmation)
+    params.require(:confirmation_of_supplied_details).permit(:email_receipt)
   end
 end

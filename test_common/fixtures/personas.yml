@@ -66,7 +66,6 @@ company01:
   # TODO: RST-1090 Restore file upload on its own page
   # additional_information: 'test_common/files/sample.rtf'
   email_receipt: 'email@recei.pt'
-  email_receipt_confirmation: 'email@recei.pt'
 
 erroneously_entering_data:
   # Respondents Details
@@ -262,5 +261,4 @@ erroneously_entering_data_on_confirmation_of_supplied_details_page:
   claim_information: 'lorem ipsum info'
   # TODO: RST-1090 Restore file upload on its own page
   # additional_information: 'test_common/files/sample.rtf'
-  email_receipt: 'email@recei.pt'
-  email_receipt_confirmation: 'different@email.com'
+  email_receipt: 'string'

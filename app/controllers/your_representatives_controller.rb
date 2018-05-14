@@ -14,7 +14,7 @@ class YourRepresentativesController < ApplicationController
   private
 
   def your_representative_params
-    params.require(:your_representative).permit(:have_representative)
+    params.require(:your_representative).permit(:have_representative) if params[:your_representative]
   end
 
   def next_page

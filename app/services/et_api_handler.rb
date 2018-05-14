@@ -3,7 +3,7 @@ require 'httparty'
 class EtApiHandler
 
   def self.submit(form_hash)
-    http_response = HTTParty.post("#{ENV.fetch('ET_API_URL', 'https://et-api-example.com')}/v2/respondents/response",
+    http_response = HTTParty.post("#{ENV.fetch('ET_API_URL', 'https://et-api-example.com')}/v2/respondents/build_response",
       body: {
         "uuid": SecureRandom.uuid,
         "command": "SerialSequence",

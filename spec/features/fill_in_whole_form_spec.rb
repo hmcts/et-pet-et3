@@ -128,11 +128,11 @@ RSpec.feature "Fill in whole form", js: true do
           expect(request_body["data"][0]["data"]["agree_with_claimants_description_of_job_or_title"]).to eql(user_data.agree_with_claimants_description_of_job_or_title =='Yes')
           expect(request_body["data"][0]["data"]["disagree_claimants_job_or_title"]).to eql user_data.disagree_claimants_job_or_title
           expect(request_body["data"][0]["data"]["agree_with_claimants_hours"]).to eql(user_data.agree_with_claimants_hours == 'Yes')
-          expect(request_body["data"][0]["data"]["queried_hours"]).to eql user_data.queried_hours
+          expect(request_body["data"][0]["data"]["queried_hours"]).to eql user_data.queried_hours.to_f
           expect(request_body["data"][0]["data"]["agree_with_earnings_details"]).to eql(user_data.agree_with_earnings_details == 'Yes')
-          expect(request_body["data"][0]["data"]["queried_pay_before_tax"]).to eql user_data.queried_pay_before_tax
+          expect(request_body["data"][0]["data"]["queried_pay_before_tax"]).to eql user_data.queried_pay_before_tax.to_f
           expect(request_body["data"][0]["data"]["queried_pay_before_tax_period"]).to eql user_data.queried_pay_before_tax_period
-          expect(request_body["data"][0]["data"]["queried_take_home_pay"]).to eql user_data.queried_take_home_pay
+          expect(request_body["data"][0]["data"]["queried_take_home_pay"]).to eql user_data.queried_take_home_pay.to_f
           expect(request_body["data"][0]["data"]["queried_take_home_pay_period"]).to eql user_data.queried_take_home_pay_period
           expect(request_body["data"][0]["data"]["agree_with_claimant_notice"]).to eql(user_data.agree_with_claimant_notice == 'Yes')
           expect(request_body["data"][0]["data"]["disagree_claimant_notice_reason"]).to eql user_data.disagree_claimant_notice_reason

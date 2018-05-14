@@ -79,7 +79,7 @@ module ET3
       end
 
       def answer_continued_employment_question
-        claimants_details_page.continued_employment_question.set(user.continued_employment)
+        claimants_details_page.continued_employment_question.set_for(user)
       end
 
       def answer_agree_with_claimants_description_of_job_or_title_question
@@ -255,9 +255,14 @@ module ET3
         answer_building_name_question
         answer_street_question
         answer_town_question
+        answer_county_question
         answer_postcode_question
+        answer_dx_number_question
+        answer_contact_number_question
+        answer_contact_mobile_number_question
         answer_contact_preference_question
         answer_organisation_more_than_one_site_question
+        answer_organisation_employ_gb_question
 
         respondents_details_page.next
 
@@ -310,16 +315,18 @@ module ET3
 
       # Stub Calls to API
       def stub_et_api # rubocop:disable Metrics/MethodLength
-        stub_request(:post, "https://et-api-example.com/v2/respondents/response").
+        stub_request(:post, "https://et-api-example.com/v2/respondents/build_response").
           with(headers: { content_type: 'application/json', 'Accept': 'application/json' }).
           to_return(
             headers: { content_type: 'application/json' },
             body:
               {
-                "data": {
-                  "reference": "992000000100",
-                  "submitted_at": "2018-01-13 14:00",
-                  "pdf": "s3/link/to/form/pdf"
+                "meta": {
+                  "BuildResponse": {
+                    "reference": "992000000100",
+                    "submitted_at": "2018-01-13 14:00",
+                    "pdf": "s3/link/to/form/pdf"
+                  }
                 }
               }.to_json,
             status: 201

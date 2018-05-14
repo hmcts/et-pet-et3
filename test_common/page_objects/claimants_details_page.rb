@@ -136,9 +136,22 @@ module ET3
       end
 
       section :continued_employment_question, :single_choice_option, 'questions.continued_employment.label', exact: false do
-        element :field, :css, "input"
+        section :yes, :gds_multiple_choice_option, 'questions.continued_employment.yes.label' do
+          element :selector, :css, "input"
 
-        delegate :set, to: :field
+          delegate :set, to: :selector
+        end
+
+        section :no, :gds_multiple_choice_option, 'questions.continued_employment.no.label' do
+          element :selector, :css, "input"
+
+          delegate :set, to: :selector
+        end
+
+        def set_for(user_persona)
+          yes.set(true) if user_persona.continued_employment == 'Yes'
+          no.set(true) if user_persona.continued_employment == 'No'
+        end
       end
 
       section :agree_with_claimants_description_of_job_or_title_question, :single_choice_option, 'questions.agree_with_claimants_description_of_job_or_title.label', exact: false do

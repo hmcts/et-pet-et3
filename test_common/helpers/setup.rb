@@ -315,16 +315,18 @@ module ET3
 
       # Stub Calls to API
       def stub_et_api # rubocop:disable Metrics/MethodLength
-        stub_request(:post, "https://et-api-example.com/v2/respondents/response").
+        stub_request(:post, "https://et-api-example.com/v2/respondents/build_response").
           with(headers: { content_type: 'application/json', 'Accept': 'application/json' }).
           to_return(
             headers: { content_type: 'application/json' },
             body:
               {
-                "data": {
-                  "reference": "992000000100",
-                  "submitted_at": "2018-01-13 14:00",
-                  "pdf": "s3/link/to/form/pdf"
+                "meta": {
+                  "BuildResponse": {
+                    "reference": "992000000100",
+                    "submitted_at": "2018-01-13 14:00",
+                    "pdf": "s3/link/to/form/pdf"
+                  }
                 }
               }.to_json,
             status: 201

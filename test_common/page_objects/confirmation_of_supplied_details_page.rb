@@ -126,6 +126,8 @@ module ET3
           element :disagree_claimants_job_or_title_answer, :return_answer
         end
 
+        element :edit_page_link, :link_named, 'links.confirmation_of_supplied_details.edit_page', exact: true
+
       end
 
       section :confirmation_of_earnings_and_benefits_answers, :table_captioned, 'questions.confirmation_of_earnings_and_benefits_answers.caption', exact: true do

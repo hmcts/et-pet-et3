@@ -253,3 +253,6 @@ en:
       too_long: characters is the maximum allowed
       inclusion: is not included in the list
       confirmation: doesn't match
+  links:
+    confirmation_of_supplied_details:
+      edit_page: Edit answers on this page

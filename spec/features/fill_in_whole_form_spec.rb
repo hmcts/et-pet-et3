@@ -108,7 +108,7 @@ RSpec.feature "Fill in whole form", js: true do
 
     confirmation_of_supplied_details_page.submit_form
     expect(form_submission_page).to be_displayed
-    expect(a_request(:post, "https://et-api-example.com/v2/repondents/response").
+    expect(a_request(:post, "https://et-api-example.com/v2/respondents/response").
       with(
         body: {
           "case_number": "7654321/2017",

@@ -316,9 +316,9 @@ module ET3
       # Stub Calls to API
       def stub_et_api # rubocop:disable Metrics/MethodLength
         stub_request(:post, "https://et-api-example.com/v2/respondents/build_response").
-          with(headers: { content_type: 'application/json', 'Accept': 'application/json' }).
+          with(headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }).
           to_return(
-            headers: { content_type: 'application/json' },
+            headers: { 'Content-Type': 'application/json' },
             body:
               {
                 "meta": {

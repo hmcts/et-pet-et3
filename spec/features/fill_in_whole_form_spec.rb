@@ -15,7 +15,7 @@ RSpec.feature "Fill in whole form", js: true do
     expect(confirmation_of_supplied_details_page).to have_confirmation_of_respondents_details_answers
 
     respondents_details_table = confirmation_of_supplied_details_page.confirmation_of_respondents_details_answers
-    expect(respondents_details_table.case_number_row.case_number_answer).to have_text "7654321/2017"
+    expect(respondents_details_table.case_number_row.case_number_answer).to have_text "1454321/2017"
     expect(respondents_details_table.name_row.name_answer).to have_text "dodgy_co"
     expect(respondents_details_table.contact_row.contact_answer).to have_text "John Smith"
     expect(respondents_details_table.building_name_row.building_name_answer).to have_text "the_shard"

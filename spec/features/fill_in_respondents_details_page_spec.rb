@@ -59,9 +59,9 @@ RSpec.feature "Fill in Respondents Details Page", js: true do
 
   scenario "correctly will enable user to check answers and return to edit them" do
     respondents_details_page.load
- 
+
     given_i_am(:company01)
- 
+
     answer_case_number_question
     answer_name_question
     answer_contact_question
@@ -76,11 +76,11 @@ RSpec.feature "Fill in Respondents Details Page", js: true do
     answer_contact_preference_question
     answer_organisation_employ_gb_question
     answer_organisation_more_than_one_site_question
- 
+
     respondents_details_page.next
     visit confirmation_of_supplied_details_path
     confirmation_of_supplied_details_page.confirmation_of_respondents_details_answers.edit_page_link.click
- 
+
     expect(respondents_details_page).to be_displayed
     expect(respondents_details_page.case_number_question.field.value).to eql user.case_number
     expect(respondents_details_page.name_question.field.value).to eql user.name

@@ -64,9 +64,9 @@ RSpec.feature "Fill in Your Representatives Details Page", js: true do
 
   scenario "correctly will enable user to check answers and return to edit them" do
     your_representatives_details_page.load
- 
+
     given_i_am(:company01)
- 
+
     answer_type_of_representative_question
     answer_representative_org_name_question
     answer_representative_name_question

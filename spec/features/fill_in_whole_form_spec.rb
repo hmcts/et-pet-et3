@@ -125,7 +125,7 @@ RSpec.feature "Fill in whole form", js: true do
           expect(Date.parse(request_body["data"][0]["data"]["employment_end"]).strftime('%d/%m/%Y')).to eql user_data.employment_end
           expect(request_body["data"][0]["data"]["disagree_employment"]).to eql user_data.disagree_employment
           expect(request_body["data"][0]["data"]["continued_employment"]).to eql(user_data.continued_employment == 'Yes')
-          expect(request_body["data"][0]["data"]["agree_with_claimants_description_of_job_or_title"]).to eql(user_data.agree_with_claimants_description_of_job_or_title =='Yes')
+          expect(request_body["data"][0]["data"]["agree_with_claimants_description_of_job_or_title"]).to eql(user_data.agree_with_claimants_description_of_job_or_title == 'Yes')
           expect(request_body["data"][0]["data"]["disagree_claimants_job_or_title"]).to eql user_data.disagree_claimants_job_or_title
           expect(request_body["data"][0]["data"]["agree_with_claimants_hours"]).to eql(user_data.agree_with_claimants_hours == 'Yes')
           expect(request_body["data"][0]["data"]["queried_hours"]).to eql user_data.queried_hours.to_f

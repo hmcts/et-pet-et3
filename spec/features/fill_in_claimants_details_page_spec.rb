@@ -40,19 +40,19 @@ RSpec.feature "Fill in Claimants Details Page", js: true do
 
   scenario "correctly will enable user to check answers and return to edit them" do
     claimants_details_page.load
- 
+
     given_i_am(:company01)
- 
+
     answer_claimants_name_question
     answer_agree_with_early_conciliation_details_question
     answer_agree_with_employment_dates_question
     answer_continued_employment_question
     answer_agree_with_claimants_description_of_job_or_title_question
- 
+
     claimants_details_page.next
     visit confirmation_of_supplied_details_path
     confirmation_of_supplied_details_page.confirmation_of_claimants_details_answers.edit_page_link.click
- 
+
     expect(claimants_details_page).to be_displayed
     expect(claimants_details_page.claimants_name_question.field.value).to eql user.claimants_name
     expect(claimants_details_page.agree_with_early_conciliation_details_question.yes.has_checked_field?).to be true if user.agree_with_early_conciliation_details == 'Yes'

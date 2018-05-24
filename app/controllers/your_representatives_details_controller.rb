@@ -1,6 +1,6 @@
 class YourRepresentativesDetailsController < ApplicationController
   def edit
-    @your_representatives_details = YourRepresentativesDetails.new
+    @your_representatives_details ||= YourRepresentativesDetails.new(current_store.hash_store.fetch(:your_representatives_details_answers, {}))
   end
 
   def update

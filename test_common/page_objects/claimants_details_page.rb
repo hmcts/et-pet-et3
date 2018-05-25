@@ -80,7 +80,9 @@ module ET3
 
           def assert_date_for(user_persona)
             user_start_day, user_start_month, user_start_year = user_persona.employment_start.split('/')
-            day.field.value.to_i == user_start_day.to_i && month.field.value.to_i == user_start_month.to_i && year.field.value.to_i == user_start_year.to_i
+            day.has_css?("input[value='#{user_start_day.to_i}']") &&
+            month.has_css?("input[value='#{user_start_month.to_i}']") &&
+            year.has_css?("input[value='#{user_start_year.to_i}']")
           end
 
         end
@@ -109,7 +111,9 @@ module ET3
 
           def assert_date_for(user_persona)
             user_end_day, user_end_month, user_end_year = user_persona.employment_end.split('/')
-            day.field.value.to_i == user_end_day.to_i && month.field.value.to_i == user_end_month.to_i && year.field.value.to_i == user_end_year.to_i
+            day.has_css?("input[value='#{user_end_day.to_i}']") &&
+            month.has_css?("input[value='#{user_end_month.to_i}']") &&
+            year.has_css?("input[value='#{user_end_year.to_i}']")
           end
 
         end

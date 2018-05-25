@@ -79,7 +79,6 @@ module ET3
           element :error_blank, :exact_error_text, 'errors.messages.blank', exact: false
 
           def assert_date_for(user_persona)
-            byebug
             user_start_day, user_start_month, user_start_year = user_persona.employment_start.split('/')
             day.field.value.to_i == user_start_day.to_i && month.field.value.to_i == user_start_month.to_i && year.field.value.to_i == user_start_year.to_i
           end

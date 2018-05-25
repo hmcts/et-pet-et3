@@ -60,7 +60,8 @@ RSpec.feature "Fill in Claimants Details Page", js: true do
     expect(claimants_details_page.agree_with_early_conciliation_details_question.disagree_conciliation_reason.text).to eql user.disagree_conciliation_reason
     expect(claimants_details_page.agree_with_employment_dates_question.yes.has_checked_field?).to be true if user.agree_with_employment_dates == 'Yes'
     expect(claimants_details_page.agree_with_employment_dates_question.no.has_checked_field?).to be true if user.agree_with_employment_dates == 'No'
-    # TODO: Add expectation for employment start and end
+    expect(claimants_details_page.agree_with_employment_dates_question.employment_start.assert_date_for(user)).to be true if user.agree_with_employment_dates == 'No'
+    expect(claimants_details_page.agree_with_employment_dates_question.employment_end.assert_date_for(user)).to be true if user.agree_with_employment_dates == 'No'
     expect(claimants_details_page.agree_with_employment_dates_question.disagree_employment.field.text).to eql user.disagree_employment
     expect(claimants_details_page.continued_employment_question.yes.has_checked_field?).to be true if user.continued_employment == 'Yes'
     expect(claimants_details_page.continued_employment_question.no.has_checked_field?).to be true if user.continued_employment == 'No'

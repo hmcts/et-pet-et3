@@ -78,6 +78,12 @@ module ET3
 
           element :error_blank, :exact_error_text, 'errors.messages.blank', exact: false
 
+          def assert_date_for(user_persona)
+            byebug
+            user_start_day, user_start_month, user_start_year = user_persona.employment_start.split('/')
+            day.field.value.to_i == user_start_day.to_i && month.field.value.to_i == user_start_month.to_i && year.field.value.to_i == user_start_year.to_i
+          end
+
         end
 
         section :employment_end, :single_choice_option, 'questions.agree_with_employment_dates.employment_end.label', exact: false do
@@ -101,6 +107,11 @@ module ET3
           end
 
           element :error_blank, :exact_error_text, 'errors.messages.blank', exact: false
+
+          def assert_date_for(user_persona)
+            user_end_day, user_end_month, user_end_year = user_persona.employment_end.split('/')
+            day.field.value.to_i == user_end_day.to_i && month.field.value.to_i == user_end_month.to_i && year.field.value.to_i == user_end_year.to_i
+          end
 
         end
 

@@ -92,7 +92,7 @@ class EtApiHandler
           }
         ]
       }.to_json,
-      headers: { content_type: 'application/json', 'Accept': 'application/json' })
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' })
     http_response.parsed_response
   end
 end

@@ -1,6 +1,6 @@
 company01:
   # Respondents Details
-  case_number: 7654321/2017
+  case_number: 1454321/2017
   name: dodgy_co
   contact: John Smith
   building_name: the_shard
@@ -130,7 +130,7 @@ a_respondent_without_a_representative:
 
 erroneously_entering_data_on_employers_contract_claim_page:
   # Respondents Details
-  case_number: 7654321/2017
+  case_number: 1454321/2017
   name: dodgy_co
   contact: John Smith
   building_name: the_shard
@@ -196,7 +196,7 @@ erroneously_entering_data_on_employers_contract_claim_page:
 
 erroneously_entering_data_on_confirmation_of_supplied_details_page:
   # Respondents Details
-  case_number: 7654321/2017
+  case_number: 1454321/2017
   name: dodgy_co
   contact: John Smith
   building_name: the_shard

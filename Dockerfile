@@ -8,4 +8,6 @@ RUN npm install
 
 EXPOSE 8080
 
+RUN bash -c "bundle exec rake assets:precompile RAILS_ENV=production"
+
 CMD ["./run.sh"]

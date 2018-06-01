@@ -8,6 +8,6 @@ RUN npm install
 
 EXPOSE 8080
 
-RUN bash -c "bundle exec rake assets:precompile RAILS_ENV=production"
+RUN bundle exec rake assets:precompile RAILS_ENV=production SECRET_KEY_BASE=foobar
 
 CMD ["./run.sh"]

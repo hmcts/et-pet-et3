@@ -2,13 +2,21 @@
 - content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
 .content-body.additional-information
 
-  = form_for @additional_information, url: additional_information_path, method: :patch  do |f|
+  = form_tag(additional_information_path, method: "post", class: "dropzone", id: "upload-additional-file")
+  
+    .dz-default.dz-message.grid-row
+      .column-one-third.arrow-icon
+        p
+      .column-one-half
+        span.normal= "Drag and drop files here"
+        .bold-normal= "or"
+        .button-secondary Click here to upload a file
+
+  = form_for @additional_information, url: additional_information_path, method: :patch do |f|
 
     div data-turbolinks="false"
       = GovukElementsErrorsHelper.error_summary @additional_information,
         "Please review the following",
         "Clicking on an error will navigate you directly to the question. Please correct these errors before continuing."
-
-    / drag n drop here
 
     = f.submit("Save and continue", class: 'button')

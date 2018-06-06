@@ -45,6 +45,11 @@
 
   .button-secondary {
     margin: 0;
+    background-color: $light-blue;
+    &:hover {
+      // TODO: Use a better colour
+      background-color: $light-blue-50;
+    }
   }
 
   .dz-preview {

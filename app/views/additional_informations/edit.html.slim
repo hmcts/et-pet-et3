@@ -10,7 +10,15 @@
       .column-one-half
         span.normal= "Drag and drop files here"
         .bold-normal= "or"
-        .button-secondary Click here to upload a file
+        .button.button-secondary Click here to upload a file
+    
+    = hidden_field :aws, :key
+    = hidden_field :aws, :policy
+    = hidden_field :aws, 'x-amz-algorithm'
+    = hidden_field :aws, 'x-amz-credential'
+    = hidden_field :aws, 'x-amz-date'
+    = hidden_field :aws, 'x-amz-signature'
+    = hidden_field :aws, :success_action_status, value: 201
 
   = form_for @additional_information, url: additional_information_path, method: :patch do |f|
 

@@ -195,6 +195,8 @@ en:
     hint:
       respondents_detail:
         mobile_number: If different to your primary contact number
+      claimants_detail:
+        employment_dates: For example, 31 03 1980
       earnings_and_benefits:
         queried_hours: In hours per week
         agree_with_earnings_details: If No, please give the details you believe to be correct

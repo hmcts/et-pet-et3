@@ -175,8 +175,9 @@ module ET3
         employers_contract_claim_page.make_employer_contract_claim_question.set_for(user)
       end
 
-      def upload_additional_information
-        employers_contract_claim_page.upload_additional_information.set(user.additional_information)
+      # Additional Information Page
+      def answer_upload_additional_information_question
+        attach_file(nil, Rails.root.join('test_common', 'files', user.upload_additional_information), class: 'dz-hidden-input', visible: false)
       end
 
       # Confirmation of Supplied Details Page

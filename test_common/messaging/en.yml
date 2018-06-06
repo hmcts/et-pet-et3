@@ -221,9 +221,9 @@ en:
         label: 'No'
       claim_information:
         label: 'Please set out the background and details of your claim below, which should include all important dates (optional)'
-      # TODO: RST-1090 Restore file upload on its own page
-        # upload_additional_information:
-        #   label: Please upload a file to provide any important additional information about your response which you have not been able to include so far (optional)
+    # Additional Informatation Page
+    upload_additional_information:
+      label: Please upload a file to provide any important additional information about your response which you have not been able to include so far (optional)
     # Confirmation of Supplied Details Page
     email_receipt:
       label: Email Address (optional)

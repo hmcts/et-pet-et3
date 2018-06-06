@@ -63,8 +63,9 @@ company01:
   # Employers Contract Claim
   make_employer_contract_claim: 'Yes'
   claim_information: 'lorem ipsum info'
-  # TODO: RST-1090 Restore file upload on its own page
-  # additional_information: 'test_common/files/sample.rtf'
+  # Additional Information
+  upload_additional_information: sample.rtf
+  # Confirmation of Supplied Details
   email_receipt: 'email@recei.pt'
 
 erroneously_entering_data:

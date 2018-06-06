@@ -5,14 +5,15 @@ module ET3
 
       element :error_header, :error_titled, 'errors.header', exact: true
 
-      section :upload_additional_information_question, :single_choice_option, 'questions.upload_additional_information.label', exact: false do
-
-        element :field, :css, "input"
+      section :upload_additional_information_question, :css, 'form.upload-additional-file' do
+        include ET3::Test::I18n
+        
+        element :upload_select, :button, t('questions.upload_additional_information.label')
 
         element :error_too_long, :exact_error_text, 'errors.messages.too_long', exact: false
         element :error_inclusion, :exact_error_text, 'errors.messages.inclusion', exact: false
 
-        delegate :set, to: :field
+        delegate :set, to: :upload_select
       end
 
       element :continue_button, :button, "Save and continue"

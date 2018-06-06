@@ -72,9 +72,8 @@ $(document).ready(function(){
 			// Add a link to remove files that were erroneously uploaded
 			addRemoveLinks: true,
 			success: function(file, response){
-				// TODO: Build success function
-				console.log("success!");
-				// TODO: Take upload URL and pass it into the second form
+				// Take upload URL and pass it into the second form
+				$('#additional_information_upload_additional_information').val($.parseXML(response).getElementsByTagName("Location")[0].childNodes[0].nodeValue);
 			}
 		}
 	);

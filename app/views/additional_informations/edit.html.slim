@@ -2,6 +2,8 @@
 - content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
 .content-body.additional-information
 
+  p = t('helpers.label.additional_information.upload_additional_information')
+
   = form_tag(additional_information_path, method: "post", class: "dropzone", id: "upload-additional-file")
   
     .dz-default.dz-message.grid-row

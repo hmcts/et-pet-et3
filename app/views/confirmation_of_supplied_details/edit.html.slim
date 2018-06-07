@@ -279,5 +279,19 @@
             = link_to("Edit answers on this page", edit_employers_contract_claim_path)
           td
             = link_to "Back to the top", "#content"
+    table
+      caption.heading-small Additional Information
+      thead
+        tr
+          th Question
+          th Answer
+        tr
+          td = t('helpers.label.additional_information.upload_additional_information')
+          td = link_to("Download file", @hash_store.dig(:additional_information_answers, :upload_additional_information))
+        tr
+          td
+            = link_to("Edit answers on this page", edit_additional_information_path)
+          td
+            = link_to "Back to the top", "#content"
     br/
     = f.submit("Submit Form", class: 'button')

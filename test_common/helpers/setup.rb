@@ -311,6 +311,10 @@ module ET3
 
         employers_contract_claim_page.next
 
+        answer_upload_additional_information_question
+
+        additional_information_page.next
+
         answer_email_receipt_question
       end
 

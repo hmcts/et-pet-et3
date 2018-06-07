@@ -279,6 +279,14 @@ module ET3
         end
 
       end
+
+      section :confirmation_of_additional_information_answers, :table_captioned, 'questions.confirmation_of_additional_information_answers.caption', exact: true do
+
+        section :upload_additional_information_row, :table_row_with_td_labelled, 'questions.upload_additional_information.label', exact: true do
+          element :upload_additional_information_answer, :return_answer
+        end
+        
+      end
       
       element :continue_button, :button, "Submit Form"
       def submit_form

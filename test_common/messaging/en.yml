@@ -242,6 +242,8 @@ en:
       caption: Your Representative's Details
     confirmation_of_employer_contract_claim_answers:
       caption: Employer Contract Claim
+    confirmation_of_additional_information_answers:
+      caption: Additional Information
   errors:
     header: 'Please review the following'
     messages:

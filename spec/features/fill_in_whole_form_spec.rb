@@ -106,6 +106,12 @@ RSpec.feature "Fill in whole form", js: true do
     expect(employer_contract_claim_table.make_employer_contract_claim_row.make_employer_contract_claim_answer).to have_text true
     expect(employer_contract_claim_table.claim_information_row.claim_information_answer).to have_text "lorem ipsum info"
 
+    # Check Additional Information Table
+    expect(confirmation_of_supplied_details_page).to have_confirmation_of_additional_information_answers
+
+    additional_information_table = confirmation_of_supplied_details_page.confirmation_of_additional_information_answers
+    expect(additional_information_table.upload_additional_information_row.upload_additional_information_answer).to have_link('Download file', Rails.root.join('test_common', 'files', user.upload_additional_information)) if user.upload_additional_information 
+
     confirmation_of_supplied_details_page.submit_form
     expect(form_submission_page).to be_displayed
     aggregate_failures "testing request" do

@@ -191,4 +191,34 @@ RSpec.feature "Fill in whole form", js: true do
     expect(form_submission_page).to have_download_pdf
 
   end
+
+  scenario "correctly will delete hash_store and prevent the next user seeing answers on the respondents details page" do
+    given_i_am(:company01)
+
+    answer_all_questions
+    confirmation_of_supplied_details_page.submit_form
+    respondents_details_page.load
+
+    expect(respondents_details_page.case_number_question.field.value).to eql ""
+    expect(respondents_details_page.name_question.field.value).to eql ""
+    expect(respondents_details_page.contact_question.field.value).to eql ""
+    expect(respondents_details_page.building_name_question.field.value).to eql ""
+    expect(respondents_details_page.street_question.field.value).to eql ""
+    expect(respondents_details_page.town_question.field.value).to eql ""
+    expect(respondents_details_page.county_question.field.value).to eql ""
+    expect(respondents_details_page.postcode_question.field.value).to eql ""
+    expect(respondents_details_page.dx_number_question.field.value).to eql ""
+    expect(respondents_details_page.contact_number_question.field.value).to eql ""
+    expect(respondents_details_page.contact_mobile_number_question.field.value).to eql ""
+    expect(respondents_details_page.contact_preference_question.select_email.has_checked_field?).to be false
+    expect(respondents_details_page.contact_preference_question.preference_email.root_element.value).to eql ""
+    expect(respondents_details_page.contact_preference_question.select_post.has_checked_field?).to be false
+    expect(respondents_details_page.contact_preference_question.select_fax.has_checked_field?).to be false
+    expect(respondents_details_page.contact_preference_question.preference_fax.root_element.value).to eql ""
+    expect(respondents_details_page.organisation_employ_gb_question.field.value).to eql ""
+    expect(respondents_details_page.organisation_more_than_one_site_question.yes.has_checked_field?).to be false
+    expect(respondents_details_page.organisation_more_than_one_site_question.employment_at_site_number.root_element.value).to eql ""
+    expect(respondents_details_page.organisation_more_than_one_site_question.no.has_checked_field?).to be false
+
+  end
 end

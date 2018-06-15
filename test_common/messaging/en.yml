@@ -253,3 +253,10 @@ en:
       too_long: characters is the maximum allowed
       inclusion: is not included in the list
       confirmation: doesn't match
+  page_content:
+    not_found_page:
+      header: Page not found
+      subheader: Sorry, this page does not exist.
+      paragraph1: If you entered a web address, please check it's correct.
+      paragraph2: "To find out more please go to the %{href}."
+      link: Employment Tribunals Homepage

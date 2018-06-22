@@ -48,7 +48,6 @@ $(document).ready(function(){
 			- Network issue to API (no response)
 			- Network issue to/from S3 (API responds with bad data)
 		*/
-		debugger;
 	}
 
 	uploadAdditionalInfoDropzone = new Dropzone("#upload-additional-file", 
@@ -74,6 +73,7 @@ $(document).ready(function(){
 			success: function(file, response){
 				// Take upload URL and pass it into the second form
 				$('#additional_information_upload_additional_information').val($.parseXML(response).getElementsByTagName("Location")[0].childNodes[0].nodeValue);
+				$('#additional_information_upload_file_name').val(file.name);
 			}
 		}
 	);

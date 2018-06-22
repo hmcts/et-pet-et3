@@ -37,6 +37,7 @@ class EtApiHandler
               "defend_claim_facts": form_hash[:response_answers][:defend_claim_facts],
               "make_employer_contract_claim": form_hash[:employer_contract_claim_answers][:make_employer_contract_claim],
               "claim_information": form_hash[:employer_contract_claim_answers][:claim_information],
+              "additional_information_url": form_hash[:additional_information_answers][:upload_additional_information],
               "email_receipt": form_hash[:confirmation_of_supplied_details_answers][:email_receipt]
             },
             "uuid": SecureRandom.uuid

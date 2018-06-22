@@ -6,6 +6,7 @@ class ApiProxy < Rack::Proxy
     env["REQUEST_URI"] = "http://api.et.127.0.0.1.nip.io:3100/api/v2/s3/create_signed_url"
     env["REQUEST_PATH"] = "/api/v2/s3/create_signed_url"
     env["SCRIPT_NAME"] = "/api/v2/s3/create_signed_url"
+    env["PATH_INFO"] = ""
     env
   end
 

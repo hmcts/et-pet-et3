@@ -177,7 +177,23 @@ module ET3
 
       # Additional Information Page
       def answer_upload_additional_information_question
-        attach_file(nil, Rails.root.join('test_common', 'files', user.upload_additional_information), class: 'dz-hidden-input', visible: false)
+        # Source: https://stackoverflow.com/questions/32880524/how-do-you-test-uploading-a-file-with-capybara-and-dropzone-js
+
+        # Generate a fake input selector
+        page.execute_script <<-JS
+          fakeFileInput = window.$('<input/>').attr(
+            {id: 'fakeFileInput', type:'file'}
+          ).appendTo('body');
+        JS
+        # Attach the file to the fake input selector
+        attach_file("fakeFileInput", Rails.root.join('test_common', 'files', user.upload_additional_information))
+        # Add the file to a fileList array
+        page.execute_script("var fileList = [fakeFileInput.get(0).files[0]]")
+        # Trigger the fake drop event
+        page.execute_script <<-JS
+          var e = jQuery.Event('drop', { dataTransfer : { files : [fakeFileInput.get(0).files[0]] } });
+          $('.dropzone')[0].dropzone.listeners[0].events.drop(e);
+        JS
       end
 
       # Confirmation of Supplied Details Page
@@ -318,7 +334,7 @@ module ET3
         answer_email_receipt_question
       end
 
-      # Stub Calls to API
+      # Stub Submission Calls to API
       def stub_et_api # rubocop:disable Metrics/MethodLength
         stub_request(:post, "https://et-api-example.com/v2/respondents/build_response").
           with(headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }).
@@ -335,6 +351,47 @@ module ET3
                 }
               }.to_json,
             status: 201
+          )
+      end
+
+      # Stub Calls to API for S3 URLs
+      def stub_presigned_url_api_for_s3
+        stub_request(:post, "http://api.et.127.0.0.1.nip.io:3100/api/v2/s3/create_signed_url").
+          to_return(
+            headers: { 'Content-Type': 'application/json' },
+            body:
+              {
+                "data": {
+                  "fields": {
+                    "key": "1529575844061",
+                    "policy": "eyJleHBpcmF0aW9uIjoiMjAxOC0wNi0yMVQxMToxMDo0NFloiLCJjb25kaXRpb25zIjpbeyJidWNrZXQiOiJldGFwaWRpcmVjdGJ1Y2tldCJ9LHsia2V5IjoiMTUyOTU3NTg0NDA2MSJ9LHsieC1hbXotY3JlZGVudGlhbCI6ImFjY2Vzc0tleTEvMjAxODA2MjEvdXMtZWFzdC0xL3MzL2F3czRfcmVxdWVzdCJ9LHsieC1hbXotYWxnb3JpdGhtIjoiQVdTNC1ITUFDLVNIQTI1NiJ9LHsieC1hbXotZGF0ZSI6IjIwMTgwNjIxVDEwMTA0NFoifV19",
+                    "x-amz-algorithm": "AWS4-HMAC-SHA256",
+                    "x-amz-credential": "accessKey1/20180621/us-east-1/s3/aws4_request",
+                    "x-amz-date": "20180621T101044Z",
+                    "x-amz-signature": "52417c85d3302add1950ecf125ab3bb85b5b7b436b6473c00389375dbee43f21"
+                  },
+                  "url": "http://s3.et.127.0.0.1.nip.io:3100/etapidirectbucket"
+                },
+                "status": "accepted",
+                "uuid": "a333d77d-a42a-42b3-9d0c-1de77aea4317"
+              }.to_json
+          )
+      end
+
+      # TODO: RST-960 Stub the request to the presigned S3 URL, acknowledge the file is uploaded and provide a response in XML.
+      def stub_s3_submission
+        stub_request(:post, "http://s3.et.127.0.0.1.nip.io:3100/etapidirectbucket").
+          to_return(
+            headers: { 'Content-Type': 'application/xml'},
+            body:
+              {
+                "PostResponse": {
+                  "Bucket": "etapidirectbucket",
+                  "Key": "1529593762980",
+                  "ETag": "&#34;ded7be3cf57f73a42ab39da2439025bb&#34;",
+                  "Location": "http://s3.et.127.0.0.1.nip.io:3100/etapidirectbucket/1529593762980"
+                }
+              }.to_xml
           )
       end
 

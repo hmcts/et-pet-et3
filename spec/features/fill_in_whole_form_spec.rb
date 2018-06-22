@@ -3,6 +3,9 @@ RSpec.feature "Fill in whole form", js: true do
 
   before do
     stub_et_api
+    stub_presigned_url_api_for_s3
+    # TODO: RST-960 Stub the AJAX request which enables the file to be uploaded and a response returned
+    # stub_s3_submission
   end
 
   scenario "correctly will flow without error" do
@@ -110,7 +113,8 @@ RSpec.feature "Fill in whole form", js: true do
     expect(confirmation_of_supplied_details_page).to have_confirmation_of_additional_information_answers
 
     additional_information_table = confirmation_of_supplied_details_page.confirmation_of_additional_information_answers
-    expect(additional_information_table.upload_additional_information_row.upload_additional_information_answer).to have_link('Download file', Rails.root.join('test_common', 'files', user.upload_additional_information)) if user.upload_additional_information 
+    # TODO: RST-960 When a file is uploaded then this page should have the file name.
+    # expect(additional_information_table.upload_additional_information_row.upload_additional_information_answer).to have_text(user.upload_additional_information) if user.upload_additional_information
 
     confirmation_of_supplied_details_page.submit_form
     expect(form_submission_page).to be_displayed
@@ -148,6 +152,7 @@ RSpec.feature "Fill in whole form", js: true do
           expect(request_body["data"][0]["data"]["defend_claim_facts"]).to eql user_data.defend_claim_facts
           expect(request_body["data"][0]["data"]["make_employer_contract_claim"]).to eql(user_data.make_employer_contract_claim == 'Yes')
           expect(request_body["data"][0]["data"]["claim_information"]).to eql user_data.claim_information
+          # upload information goes here
           expect(request_body["data"][0]["data"]["email_receipt"]).to eql user_data.email_receipt
           expect(request_body["data"][0]["uuid"]).to be_an_instance_of(String)
           expect(request_body["data"][1]["command"]).to eql "BuildRespondent"

@@ -2,6 +2,10 @@ require 'rails_helper'
 RSpec.feature "Fill in Additional Information Page", js: true do
   let(:confirmation_of_supplied_details_page) { ET3::Test::ConfirmationOfSuppliedDetailsPage.new }
 
+  before do
+    stub_presigned_url_api_for_s3
+  end
+
   scenario "correctly will enable user to continue to next page" do
     additional_information_page.load
 

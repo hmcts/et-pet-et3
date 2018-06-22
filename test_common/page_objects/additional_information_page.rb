@@ -5,10 +5,10 @@ module ET3
 
       element :error_header, :error_titled, 'errors.header', exact: true
 
-      section :upload_additional_information_question, :css, 'form.upload-additional-file' do
+      section :upload_additional_information_question, :css, 'form.dropzone' do
         include ET3::Test::I18n
         
-        element :upload_select, :button, t('questions.upload_additional_information.label')
+        element :upload_select, :select_button, 'questions.upload_additional_information.button'
 
         element :error_too_long, :exact_error_text, 'errors.messages.too_long', exact: false
         element :error_inclusion, :exact_error_text, 'errors.messages.inclusion', exact: false

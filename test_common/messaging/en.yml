@@ -224,6 +224,7 @@ en:
     # Additional Informatation Page
     upload_additional_information:
       label: Please upload a file to provide any important additional information about your response which you have not been able to include so far (optional)
+      button: Click here to upload a file
     # Confirmation of Supplied Details Page
     email_receipt:
       label: Email Address (optional)

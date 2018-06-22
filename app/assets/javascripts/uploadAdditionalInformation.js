@@ -30,10 +30,9 @@ $(document).ready(function(){
 					uuid: uuidv4(),
 					command: 'CreateSignedS3FormData',
 					async: false,
-					// TODO: Strip the data section out
 					data: {
-							key: Date.now()
-					}
+					    rubbish: '1'
+                    }
 			},
 			error: onGetPresignedError,
 			method: 'post',
@@ -72,7 +71,7 @@ $(document).ready(function(){
 			addRemoveLinks: true,
 			success: function(file, response){
 				// Take upload URL and pass it into the second form
-				$('#additional_information_upload_additional_information').val($.parseXML(response).getElementsByTagName("Location")[0].childNodes[0].nodeValue);
+				$('#additional_information_upload_additional_information').val($.parseXML(response).getElementsByTagName("Key")[0].childNodes[0].nodeValue);
 				$('#additional_information_upload_file_name').val(file.name);
 			}
 		}

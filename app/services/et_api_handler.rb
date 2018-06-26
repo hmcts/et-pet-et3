@@ -60,7 +60,7 @@ class EtApiHandler
         "defend_claim_facts": form_hash[:response_answers][:defend_claim_facts],
         "make_employer_contract_claim": form_hash[:employer_contract_claim_answers][:make_employer_contract_claim],
         "claim_information": form_hash[:employer_contract_claim_answers][:claim_information],
-        "additional_information_key": form_hash[:additional_information_answers][:upload_additional_information],
+        "additional_information_key": (form_hash[:additional_information_answers][:upload_additional_information] == "" ? nil : form_hash[:additional_information_answers][:upload_additional_information]),
         "email_receipt": form_hash[:confirmation_of_supplied_details_answers][:email_receipt]
       },
       "uuid": SecureRandom.uuid
@@ -91,7 +91,7 @@ class EtApiHandler
       "uuid": SecureRandom.uuid
     }
 
-    data_array = [build_respondent_data, build_response_data]
+    data_array = [build_response_data, build_respondent_data]
     data_array.push(build_representative_data) if form_hash[:your_representative_answers][:have_representative]
 
     http_response = HTTParty.post("#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api')}/v2/respondents/build_response",

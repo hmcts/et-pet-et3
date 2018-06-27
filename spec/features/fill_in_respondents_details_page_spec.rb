@@ -99,8 +99,7 @@ RSpec.feature "Fill in Respondents Details Page", js: true do
     expect(respondents_details_page.contact_preference_question.select_fax.has_checked_field?).to be true if user.contact_preference == "Fax"
     expect(respondents_details_page.contact_preference_question.preference_fax.value).to eql user.fax_number if user.contact_preference == "Fax"
     expect(respondents_details_page.organisation_employ_gb_question.field.value.to_i).to eql user.organisation_employ_gb
-    expect(respondents_details_page.organisation_more_than_one_site_question.yes.has_checked_field?).to be true if user.organisation_more_than_one_site == "Yes"
+    expect(respondents_details_page.organisation_more_than_one_site_question.get).to eql user.organisation_more_than_one_site
     expect(respondents_details_page.organisation_more_than_one_site_question.employment_at_site_number.value).to eql user.employment_at_site_number if user.organisation_more_than_one_site == "Yes"
-    expect(respondents_details_page.organisation_more_than_one_site_question.no.has_checked_field?).to be true if user.organisation_more_than_one_site == "No"
   end
 end

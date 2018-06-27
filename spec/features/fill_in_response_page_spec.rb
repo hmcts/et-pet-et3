@@ -39,8 +39,7 @@ RSpec.feature "Fill in Respondents Details Page", js: true do
     confirmation_of_supplied_details_page.confirmation_of_response_answers.edit_page_link.click
 
     expect(response_page).to be_displayed
-    expect(response_page.defend_claim_question.yes.has_checked_field?).to be true if user.defend_claim == "Yes"
+    expect(response_page.defend_claim_question.get).to eql user.defend_claim
     expect(response_page.defend_claim_question.defend_claim_facts.root_element.value).to eql user.defend_claim_facts if user.defend_claim == "Yes"
-    expect(response_page.defend_claim_question.no.has_checked_field?).to be true if user.defend_claim == "No"
   end
 end

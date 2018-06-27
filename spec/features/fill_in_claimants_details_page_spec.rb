@@ -55,18 +55,14 @@ RSpec.feature "Fill in Claimants Details Page", js: true do
 
     expect(claimants_details_page).to be_displayed
     expect(claimants_details_page.claimants_name_question.field.value).to eql user.claimants_name
-    expect(claimants_details_page.agree_with_early_conciliation_details_question.yes.has_checked_field?).to be true if user.agree_with_early_conciliation_details == 'Yes'
-    expect(claimants_details_page.agree_with_early_conciliation_details_question.no.has_checked_field?).to be true if user.agree_with_early_conciliation_details == 'No'
+    expect(claimants_details_page.agree_with_early_conciliation_details_question.get).to eql user.agree_with_early_conciliation_details
     expect(claimants_details_page.agree_with_early_conciliation_details_question.disagree_conciliation_reason.text).to eql user.disagree_conciliation_reason
-    expect(claimants_details_page.agree_with_employment_dates_question.yes.has_checked_field?).to be true if user.agree_with_employment_dates == 'Yes'
-    expect(claimants_details_page.agree_with_employment_dates_question.no.has_checked_field?).to be true if user.agree_with_employment_dates == 'No'
+    expect(claimants_details_page.agree_with_employment_dates_question.get).to eql user.agree_with_employment_dates
     expect(claimants_details_page.agree_with_employment_dates_question.employment_start.assert_date_for(user)).to be true if user.agree_with_employment_dates == 'No'
     expect(claimants_details_page.agree_with_employment_dates_question.employment_end.assert_date_for(user)).to be true if user.agree_with_employment_dates == 'No'
     expect(claimants_details_page.agree_with_employment_dates_question.disagree_employment.field.text).to eql user.disagree_employment
-    expect(claimants_details_page.continued_employment_question.yes.has_checked_field?).to be true if user.continued_employment == 'Yes'
-    expect(claimants_details_page.continued_employment_question.no.has_checked_field?).to be true if user.continued_employment == 'No'
-    expect(claimants_details_page.agree_with_claimants_description_of_job_or_title_question.yes.has_checked_field?).to be true if user.agree_with_claimants_description_of_job_or_title_question == 'Yes'
-    expect(claimants_details_page.agree_with_claimants_description_of_job_or_title_question.no.has_checked_field?).to be true if user.agree_with_claimants_description_of_job_or_title_question == 'No'
+    expect(claimants_details_page.continued_employment_question.get).to eql user.continued_employment
+    expect(claimants_details_page.agree_with_claimants_description_of_job_or_title_question.get).to eql user.agree_with_claimants_description_of_job_or_title
     expect(claimants_details_page.agree_with_claimants_description_of_job_or_title_question.disagree_claimants_job_or_title.text).to eql user.disagree_claimants_job_or_title
   end
 end

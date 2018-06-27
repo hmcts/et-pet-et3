@@ -122,8 +122,7 @@ RSpec.feature "Fill in Your Representatives Details Page", js: true do
     expect(your_representatives_details_page.representative_contact_preference_question.select_post.has_checked_field?).to be true if user.representative_contact_preference == 'Post'
     expect(your_representatives_details_page.representative_contact_preference_question.select_fax.has_checked_field?).to be true if user.representative_contact_preference == 'Fax'
     expect(your_representatives_details_page.representative_contact_preference_question.preference_fax.root_element.value).to eql user.representative_fax if user.representative_contact_preference == 'Fax'
-    expect(your_representatives_details_page.representative_disability_question.yes.has_checked_field?).to be true if user.representative_disability == 'Yes'
+    expect(your_representatives_details_page.representative_disability_question.get).to eql user.representative_disability
     expect(your_representatives_details_page.representative_disability_question.representative_disability_information.root_element.value).to eql user.representative_disability_information if user.representative_disability == 'Yes'
-    expect(your_representatives_details_page.representative_disability_question.no.has_checked_field?).to be true if user.representative_disability == 'No'
   end
 end

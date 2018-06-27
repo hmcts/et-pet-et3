@@ -47,7 +47,6 @@ RSpec.feature "Fill in Your Representative Page", js: true do
     confirmation_of_supplied_details_page.confirmation_of_your_representative_answers.edit_page_link.click
 
     expect(your_representative_page).to be_displayed
-    expect(your_representative_page.have_representative_question.yes.has_checked_field?).to be true if user.have_representative == "Yes"
-    expect(your_representative_page.have_representative_question.no.has_checked_field?).to be true if user.have_representative == "No"
+    expect(your_representative_page.have_representative_question.get).to eql user.have_representative
   end
 end

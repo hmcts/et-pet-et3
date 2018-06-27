@@ -216,9 +216,8 @@ RSpec.feature "Fill in whole form", js: true do
     expect(respondents_details_page.contact_preference_question.select_fax.has_checked_field?).to be false
     expect(respondents_details_page.contact_preference_question.preference_fax.root_element.value).to eql ""
     expect(respondents_details_page.organisation_employ_gb_question.field.value).to eql ""
-    expect(respondents_details_page.organisation_more_than_one_site_question.yes.has_checked_field?).to be false
+    expect(respondents_details_page.organisation_more_than_one_site_question.get).to be nil
     expect(respondents_details_page.organisation_more_than_one_site_question.employment_at_site_number.root_element.value).to eql ""
-    expect(respondents_details_page.organisation_more_than_one_site_question.no.has_checked_field?).to be false
 
   end
 end

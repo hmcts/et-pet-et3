@@ -15,18 +15,7 @@ module ET3
       end
 
       section :agree_with_early_conciliation_details_question, :single_choice_option, 'questions.agree_with_early_conciliation_details.label', exact: false do
-        
-        section :yes, :gds_multiple_choice_option, 'questions.agree_with_early_conciliation_details.yes.label', exact: false do
-          element :selector, :css, 'input[type="radio"]'
-
-          delegate :set, to: :selector
-        end
-        
-        section :no, :gds_multiple_choice_option, 'questions.agree_with_early_conciliation_details.no.label', exact: false do
-          element :selector, :css, 'input[type="radio"]'
-          
-          delegate :set, to: :selector          
-        end
+        include SingleChoiceOptionSection
 
         section :disagree_conciliation_reason, :textarea_labelled, 'questions.agree_with_early_conciliation_details.disagree_conciliation_reason.label', exact: false do
           delegate :set, to: :root_element
@@ -43,18 +32,7 @@ module ET3
       end
 
       section :agree_with_employment_dates_question, :single_choice_option, 'questions.agree_with_employment_dates.label', exact: false do
-        
-        section :yes, :gds_multiple_choice_option, 'questions.agree_with_employment_dates.yes.label', exact: false do
-          element :selector, :css, 'input[type="radio"]'
-
-          delegate :set, to: :selector
-        end
-
-        section :no, :gds_multiple_choice_option, 'questions.agree_with_employment_dates.no.label', exact: false do
-          element :selector, :css, 'input[type="radio"]'
-
-          delegate :set, to: :selector
-        end
+        include SingleChoiceOptionSection
 
         section :employment_start, :single_choice_option, 'questions.agree_with_employment_dates.employment_start.label', exact: false do
 
@@ -150,17 +128,7 @@ module ET3
       end
 
       section :continued_employment_question, :single_choice_option, 'questions.continued_employment.label', exact: false do
-        section :yes, :gds_multiple_choice_option, 'questions.continued_employment.yes.label' do
-          element :selector, :css, "input"
-
-          delegate :set, to: :selector
-        end
-
-        section :no, :gds_multiple_choice_option, 'questions.continued_employment.no.label' do
-          element :selector, :css, "input"
-
-          delegate :set, to: :selector
-        end
+        include SingleChoiceOptionSection
 
         def set_for(user_persona)
           yes.set(true) if user_persona.continued_employment == 'Yes'
@@ -169,18 +137,7 @@ module ET3
       end
 
       section :agree_with_claimants_description_of_job_or_title_question, :single_choice_option, 'questions.agree_with_claimants_description_of_job_or_title.label', exact: false do
-        
-        section :yes, :gds_multiple_choice_option, 'questions.agree_with_claimants_description_of_job_or_title.yes.label' do
-          element :selector, :css, "input"
-
-          delegate :set, to: :selector
-        end
-
-        section :no, :gds_multiple_choice_option, 'questions.agree_with_claimants_description_of_job_or_title.no.label' do
-          element :selector, :css, "input"
-
-          delegate :set, to: :selector
-        end
+        include SingleChoiceOptionSection
 
         section :disagree_claimants_job_or_title, :textarea_labelled, 'questions.agree_with_claimants_description_of_job_or_title.disagree_claimants_job_or_title.label', exact: false do
           delegate :set, to: :root_element

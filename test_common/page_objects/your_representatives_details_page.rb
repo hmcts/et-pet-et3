@@ -206,17 +206,7 @@ module ET3
 
       section :representative_disability_question, :single_choice_option, 'questions.representative_disability.label', exact: false do
 
-        section :yes, :gds_multiple_choice_option, 'questions.representative_disability.yes.label', exact: true do
-          element :selector, :css, 'input'
-
-          delegate :set, to: :selector
-        end
-
-        section :no, :gds_multiple_choice_option, 'questions.representative_disability.no.label', exact: true do
-          element :selector, :css, 'input'
-
-          delegate :set, to: :selector
-        end
+        include SingleChoiceOptionSection
 
         section :representative_disability_information, :textarea_labelled, 'questions.representative_disability.disability_information.label', exact: :false do
           delegate :set, to: :root_element

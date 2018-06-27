@@ -256,3 +256,7 @@ en:
   links:
     confirmation_of_supplied_details:
       edit_page: Edit answers on this page
+  components:
+    single_choice_option_section:
+      'yes': "Yes"
+      'no': "No"

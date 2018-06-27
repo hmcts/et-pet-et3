@@ -184,66 +184,6 @@ module ET3
         confirmation_of_supplied_details_page.email_receipt_question.set(user.email_receipt)
       end
 
-      # Short of Entire Form
-      def answer_all_to_employers_contract_claim # rubocop:disable Metrics/MethodLength
-        start_page.load
-        start_page.next
-
-        answer_case_number_question
-        answer_name_question
-        answer_contact_question
-        answer_building_name_question
-        answer_street_question
-        answer_town_question
-        answer_postcode_question
-        answer_contact_preference_question
-        answer_organisation_more_than_one_site_question
-
-        respondents_details_page.next
-
-        answer_claimants_name_question
-        answer_agree_with_early_conciliation_details_question
-        answer_agree_with_employment_dates_question
-        answer_continued_employment_question
-        answer_agree_with_claimants_description_of_job_or_title_question
-
-        claimants_details_page.next
-
-        answer_agree_with_claimants_hours_question
-        answer_agree_with_earnings_details_question
-        answer_agree_with_claimant_notice_question
-        answer_agree_with_claimant_pension_benefits_question
-
-        earnings_and_benefits_page.next
-
-        answer_defend_claim_question
-
-        response_page.next
-
-        answer_have_representative_question
-
-        your_representative_page.next
-
-        answer_type_of_representative_question
-        answer_representative_org_name_question
-        answer_representative_name_question
-        answer_representative_building_question
-        answer_representative_street_question
-        answer_representative_town_question
-        answer_representative_county_question
-        answer_representative_postcode_question
-        answer_representative_phone_question
-        answer_representative_mobile_question
-        answer_representative_dx_number_question
-        answer_representative_reference_question
-        answer_representative_contact_preference_question
-        answer_representative_disability_question
-
-        your_representatives_details_page.next
-
-        answer_make_employer_contract_claim_question
-      end
-
       # Entire Form
       def answer_all_questions # rubocop:disable Metrics/MethodLength
         start_page.load

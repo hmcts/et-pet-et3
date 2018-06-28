@@ -7,17 +7,7 @@ module ET3
 
       section :make_employer_contract_claim_question, :single_choice_option, 'questions.make_employer_contract_claim.label', exact: true do
 
-        section :no, :gds_multiple_choice_option, 'questions.make_employer_contract_claim.no.label', exact: true do
-          element :selector, :css, 'input'
-
-          delegate :set, to: :selector
-        end
-
-        section :yes, :gds_multiple_choice_option, 'questions.make_employer_contract_claim.yes.label', exact: true do
-          element :selector, :css, 'input'
-
-          delegate :set, to: :selector
-        end
+        include SingleChoiceOptionSection
 
         section :claim_information, :textarea_labelled, 'questions.make_employer_contract_claim.claim_information.label', exact: true do
           delegate :set, to: :root_element

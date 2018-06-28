@@ -1,6 +1,7 @@
 class ResponsesController < ApplicationController
   def edit
-    @response = Response.new
+    @response ||= Response.new(current_store.hash_store.fetch(:response_answers, {}))
+
   end
 
   def update

@@ -5,17 +5,7 @@ module ET3
 
       section :have_representative_question, :single_choice_option, 'questions.have_representative.label', exact: true do
         
-        section :yes, :gds_multiple_choice_option, 'questions.have_representative.yes.label', exact: true do
-          element :selector, :css, 'input'
-
-          delegate :set, to: :selector
-        end
-
-        section :no, :gds_multiple_choice_option, 'questions.have_representative.no.label', exact: true do
-          element :selector, :css, 'input'
-
-          delegate :set, to: :selector
-        end
+        include SingleChoiceOptionSection
 
         def set_for(user_persona)
           if user_persona.have_representative == 'Yes'

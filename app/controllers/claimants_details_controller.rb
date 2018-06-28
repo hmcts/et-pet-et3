@@ -1,6 +1,6 @@
 class ClaimantsDetailsController < ApplicationController
   def edit
-    @claimants_detail = ClaimantsDetail.new
+    @claimants_detail ||= ClaimantsDetail.new(current_store.hash_store.fetch(:claimants_detail_answers, {}))
   end
 
   def update

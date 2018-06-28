@@ -1,6 +1,6 @@
 class YourRepresentativesController < ApplicationController
   def edit
-    @your_representative = YourRepresentative.new
+    @your_representative ||= YourRepresentative.new(current_store.hash_store.fetch(:your_representative_answers, {}))
   end
 
   def update

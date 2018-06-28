@@ -1,6 +1,6 @@
 class EarningsAndBenefitsController < ApplicationController
   def edit
-    @earnings_and_benefits = EarningsAndBenefits.new
+    @earnings_and_benefits ||= EarningsAndBenefits.new(current_store.hash_store.fetch(:earnings_and_benefits_answers, {}))
   end
 
   def update

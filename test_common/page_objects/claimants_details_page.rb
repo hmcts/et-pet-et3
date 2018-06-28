@@ -15,18 +15,7 @@ module ET3
       end
 
       section :agree_with_early_conciliation_details_question, :single_choice_option, 'questions.agree_with_early_conciliation_details.label', exact: false do
-        
-        section :yes, :gds_multiple_choice_option, 'questions.agree_with_early_conciliation_details.yes.label', exact: false do
-          element :selector, :css, 'input[type="radio"]'
-
-          delegate :set, to: :selector
-        end
-        
-        section :no, :gds_multiple_choice_option, 'questions.agree_with_early_conciliation_details.no.label', exact: false do
-          element :selector, :css, 'input[type="radio"]'
-          
-          delegate :set, to: :selector          
-        end
+        include SingleChoiceOptionSection
 
         section :disagree_conciliation_reason, :textarea_labelled, 'questions.agree_with_early_conciliation_details.disagree_conciliation_reason.label', exact: false do
           delegate :set, to: :root_element
@@ -43,18 +32,7 @@ module ET3
       end
 
       section :agree_with_employment_dates_question, :single_choice_option, 'questions.agree_with_employment_dates.label', exact: false do
-        
-        section :yes, :gds_multiple_choice_option, 'questions.agree_with_employment_dates.yes.label', exact: false do
-          element :selector, :css, 'input[type="radio"]'
-
-          delegate :set, to: :selector
-        end
-
-        section :no, :gds_multiple_choice_option, 'questions.agree_with_employment_dates.no.label', exact: false do
-          element :selector, :css, 'input[type="radio"]'
-
-          delegate :set, to: :selector
-        end
+        include SingleChoiceOptionSection
 
         section :employment_start, :single_choice_option, 'questions.agree_with_employment_dates.employment_start.label', exact: false do
 
@@ -77,6 +55,13 @@ module ET3
           end
 
           element :error_blank, :exact_error_text, 'errors.messages.blank', exact: false
+
+          def assert_date_for(user_persona)
+            user_start_day, user_start_month, user_start_year = user_persona.employment_start.split('/')
+            day.has_css?("input[value='#{user_start_day.to_i}']") &&
+            month.has_css?("input[value='#{user_start_month.to_i}']") &&
+            year.has_css?("input[value='#{user_start_year.to_i}']")
+          end
 
         end
 
@@ -101,6 +86,13 @@ module ET3
           end
 
           element :error_blank, :exact_error_text, 'errors.messages.blank', exact: false
+
+          def assert_date_for(user_persona)
+            user_end_day, user_end_month, user_end_year = user_persona.employment_end.split('/')
+            day.has_css?("input[value='#{user_end_day.to_i}']") &&
+            month.has_css?("input[value='#{user_end_month.to_i}']") &&
+            year.has_css?("input[value='#{user_end_year.to_i}']")
+          end
 
         end
 
@@ -136,17 +128,7 @@ module ET3
       end
 
       section :continued_employment_question, :single_choice_option, 'questions.continued_employment.label', exact: false do
-        section :yes, :gds_multiple_choice_option, 'questions.continued_employment.yes.label' do
-          element :selector, :css, "input"
-
-          delegate :set, to: :selector
-        end
-
-        section :no, :gds_multiple_choice_option, 'questions.continued_employment.no.label' do
-          element :selector, :css, "input"
-
-          delegate :set, to: :selector
-        end
+        include SingleChoiceOptionSection
 
         def set_for(user_persona)
           yes.set(true) if user_persona.continued_employment == 'Yes'
@@ -155,18 +137,7 @@ module ET3
       end
 
       section :agree_with_claimants_description_of_job_or_title_question, :single_choice_option, 'questions.agree_with_claimants_description_of_job_or_title.label', exact: false do
-        
-        section :yes, :gds_multiple_choice_option, 'questions.agree_with_claimants_description_of_job_or_title.yes.label' do
-          element :selector, :css, "input"
-
-          delegate :set, to: :selector
-        end
-
-        section :no, :gds_multiple_choice_option, 'questions.agree_with_claimants_description_of_job_or_title.no.label' do
-          element :selector, :css, "input"
-
-          delegate :set, to: :selector
-        end
+        include SingleChoiceOptionSection
 
         section :disagree_claimants_job_or_title, :textarea_labelled, 'questions.agree_with_claimants_description_of_job_or_title.disagree_claimants_job_or_title.label', exact: false do
           delegate :set, to: :root_element

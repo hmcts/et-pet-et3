@@ -15,7 +15,7 @@ class EtApiHandler
       }.to_json,
       headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' })
 
-    http_response.parsed_response
+    { data: http_response.parsed_response, status: http_response.code }
   end
 
   private

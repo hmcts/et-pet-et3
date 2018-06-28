@@ -230,11 +230,3 @@ en:
     messages:
       contains_no_spaces: must contain spaces
       contains_numbers: must not contain numbers
-  page_content:
-    not_found_page:
-      header: Page not found
-      subheader: Sorry, this page does not exist.
-      paragraph1: If you entered a web address, please check it's correct.
-      paragraph2_html: "To find out more please go to the %{href}."
-      link: Employment Tribunals Homepage
-    

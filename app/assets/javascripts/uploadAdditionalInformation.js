@@ -31,7 +31,7 @@ $(document).ready(function(){
 					command: 'CreateSignedS3FormData',
 					async: false,
 					data: {
-					    rubbish: '1'
+					    preventEmptyData: true
                     }
 			},
 			error: onGetPresignedError,

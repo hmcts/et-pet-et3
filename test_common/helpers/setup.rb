@@ -344,9 +344,11 @@ module ET3
               {
                 "meta": {
                   "BuildResponse": {
-                    "reference": "992000000100",
+                    "reference": "142000000100",
                     "submitted_at": "2018-01-13 14:00",
-                    "pdf": "s3/link/to/form/pdf"
+                    "pdf_url": "s3/link/to/form.pdf",
+                    "office_address": "Alexandra House, 14-22 The Parsonage, Manchester, M3 2JA",
+                    "office_phone_number": "0161 833 6100"
                   }
                 }
               }.to_json,

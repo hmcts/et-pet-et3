@@ -50,6 +50,9 @@
       // TODO: Use a better colour
       background-color: $light-blue-50;
     }
+    &:focus {
+      background-color: $light-blue;
+    }
   }
 
   .dz-preview {

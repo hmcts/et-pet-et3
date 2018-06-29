@@ -298,7 +298,7 @@ module ET3
 
       # Stub Calls to API for S3 URLs
       def stub_presigned_url_api_for_s3
-        stub_request(:post, "http://api.et.127.0.0.1.nip.io:3100/api/v2/s3/create_signed_url").
+        stub_request(:post, "#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api')}/v2/s3/create_signed_url").
           to_return(
             headers: { 'Content-Type': 'application/json' },
             body:

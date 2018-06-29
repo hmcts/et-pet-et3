@@ -20,6 +20,26 @@ module ET3
       def next
         continue_button.click
       end
+
+      def attach_additional_information_file(user)
+        # Source: https://stackoverflow.com/questions/32880524/how-do-you-test-uploading-a-file-with-capybara-and-dropzone-js
+
+        # Generate a fake input selector
+        page.execute_script <<-JS
+            fakeFileInput = window.$('<input/>').attr(
+              {id: 'fakeFileInput', type:'file'}
+            ).appendTo('body');
+        JS
+        # Attach the file to the fake input selector
+        attach_file("fakeFileInput", Rails.root.join('test_common', 'files', user.upload_additional_information))
+        # Add the file to a fileList array
+        page.execute_script("var fileList = [fakeFileInput.get(0).files[0]]")
+        # Trigger the fake drop event
+        page.execute_script <<-JS
+            var e = jQuery.Event('drop', { dataTransfer : { files : [fakeFileInput.get(0).files[0]] } });
+            $('.dropzone')[0].dropzone.listeners[0].events.drop(e);
+        JS
+      end
     end
   end
 end

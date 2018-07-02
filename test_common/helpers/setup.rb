@@ -175,8 +175,9 @@ module ET3
         employers_contract_claim_page.make_employer_contract_claim_question.set_for(user)
       end
 
-      def upload_additional_information
-        employers_contract_claim_page.upload_additional_information.set(user.additional_information)
+      # Additional Information Page
+      def answer_upload_additional_information_question
+        additional_information_page.attach_additional_information_file(user)
       end
 
       # Confirmation of Supplied Details Page
@@ -250,12 +251,16 @@ module ET3
 
         employers_contract_claim_page.next
 
+        answer_upload_additional_information_question
+
+        additional_information_page.next
+
         answer_email_receipt_question
       end
 
-      # Stub Calls to API
+      # Stub Submission Calls to API
       def stub_et_api # rubocop:disable Metrics/MethodLength
-        stub_request(:post, "https://et-api-example.com/v2/respondents/build_response").
+        stub_request(:post, "#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api')}/v2/respondents/build_response").
           with(headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }).
           to_return(
             headers: { 'Content-Type': 'application/json' },
@@ -263,13 +268,56 @@ module ET3
               {
                 "meta": {
                   "BuildResponse": {
-                    "reference": "992000000100",
+                    "reference": "142000000100",
                     "submitted_at": "2018-01-13 14:00",
-                    "pdf": "s3/link/to/form/pdf"
+                    "pdf_url": "s3/link/to/form.pdf",
+                    "office_address": "Alexandra House, 14-22 The Parsonage, Manchester, M3 2JA",
+                    "office_phone_number": "0161 833 6100"
                   }
                 }
               }.to_json,
-            status: 201
+            status: 202
+          )
+      end
+
+      # Stub Calls to API for S3 URLs
+      def stub_presigned_url_api_for_s3
+        stub_request(:post, "#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api')}/v2/s3/create_signed_url").
+          to_return(
+            headers: { 'Content-Type': 'application/json' },
+            body:
+              {
+                "data": {
+                  "fields": {
+                    "key": "1529575844061",
+                    "policy": "eyJleHBpcmF0aW9uIjoiMjAxOC0wNi0yMVQxMToxMDo0NFloiLCJjb25kaXRpb25zIjpbeyJidWNrZXQiOiJldGFwaWRpcmVjdGJ1Y2tldCJ9LHsia2V5IjoiMTUyOTU3NTg0NDA2MSJ9LHsieC1hbXotY3JlZGVudGlhbCI6ImFjY2Vzc0tleTEvMjAxODA2MjEvdXMtZWFzdC0xL3MzL2F3czRfcmVxdWVzdCJ9LHsieC1hbXotYWxnb3JpdGhtIjoiQVdTNC1ITUFDLVNIQTI1NiJ9LHsieC1hbXotZGF0ZSI6IjIwMTgwNjIxVDEwMTA0NFoifV19",
+                    "x-amz-algorithm": "AWS4-HMAC-SHA256",
+                    "x-amz-credential": "accessKey1/20180621/us-east-1/s3/aws4_request",
+                    "x-amz-date": "20180621T101044Z",
+                    "x-amz-signature": "52417c85d3302add1950ecf125ab3bb85b5b7b436b6473c00389375dbee43f21"
+                  },
+                  "url": "http://s3.et.127.0.0.1.nip.io:3100/etapidirectbucket"
+                },
+                "status": "accepted",
+                "uuid": "a333d77d-a42a-42b3-9d0c-1de77aea4317"
+              }.to_json
+          )
+      end
+
+      # TODO: RST-960 Stub the request to the presigned S3 URL, acknowledge the file is uploaded and provide a response in XML.
+      def stub_s3_submission
+        stub_request(:post, "http://s3.et.127.0.0.1.nip.io:3100/etapidirectbucket").
+          to_return(
+            headers: { 'Content-Type': 'application/xml'},
+            body:
+              {
+                "PostResponse": {
+                  "Bucket": "etapidirectbucket",
+                  "Key": "1529593762980",
+                  "ETag": "&#34;ded7be3cf57f73a42ab39da2439025bb&#34;",
+                  "Location": "http://s3.et.127.0.0.1.nip.io:3100/etapidirectbucket/1529593762980"
+                }
+              }.to_xml
           )
       end
 

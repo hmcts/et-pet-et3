@@ -7,17 +7,7 @@ module ET3
 
       section :agree_with_claimants_hours_question, :single_choice_option, 'questions.agree_with_claimants_hours.label', exact: false do
 
-        section :yes, :gds_multiple_choice_option, 'questions.agree_with_claimants_hours.yes.label', exact: false do
-          element :selector, :css, 'input'
-
-          delegate :set, to: :selector
-        end
-
-        section :no, :gds_multiple_choice_option, 'questions.agree_with_claimants_hours.no.label', exact: false do
-          element :selector, :css, 'input'
-
-          delegate :set, to: :selector
-        end
+        include SingleChoiceOptionSection
 
         section :queried_hours, :question_labelled, 'questions.agree_with_claimants_hours.queried_hours.label', exact: false do
           element :field, :css, 'input'
@@ -39,17 +29,7 @@ module ET3
 
       section :agree_with_earnings_details_question, :single_choice_option, 'questions.agree_with_earnings_details.label', exact: false do
 
-        section :yes, :gds_multiple_choice_option, 'questions.agree_with_earnings_details.yes.label', exact: false do
-          element :selector, :css, 'input'
-
-          delegate :set, to: :selector
-        end
-
-        section :no, :gds_multiple_choice_option, 'questions.agree_with_earnings_details.no.label', exact: false do
-          element :selector, :css, 'input'
-
-          delegate :set, to: :selector
-        end
+        include SingleChoiceOptionSection
 
         section :queried_pay_before_tax, :embedded_single_choice_option, 'questions.agree_with_earnings_details.queried_pay_before_tax_period.label', exact: true do
           
@@ -119,17 +99,7 @@ module ET3
 
       section :agree_with_claimant_notice_question, :single_choice_option, 'questions.agree_with_claimant_notice.label', exact: false do
 
-        section :yes, :gds_multiple_choice_option, 'questions.agree_with_claimant_notice.yes.label', exact: true do
-          element :selector, :css, 'input'
-
-          delegate :set, to: :selector
-        end
-
-        section :no, :gds_multiple_choice_option, 'questions.agree_with_claimant_notice.no.label', exact: true do
-          element :selector, :css, 'input'
-
-          delegate :set, to: :selector
-        end
+        include SingleChoiceOptionSection
 
         section :disagree_claimant_notice_reason, :textarea_labelled, 'questions.agree_with_claimant_notice.disagree_claimant_notice_reason.label', exact: false do
           delegate :set, to: :root_element
@@ -148,18 +118,8 @@ module ET3
       end
 
       section :agree_with_claimant_pension_benefits_question, :single_choice_option, 'questions.agree_with_claimant_pension_benefits.label', exact: false do
-        
-        section :yes, :gds_multiple_choice_option, 'questions.agree_with_claimant_pension_benefits.yes.label', exact: true do
-          element :selector, :css, 'input'
 
-          delegate :set, to: :selector
-        end
-
-        section :no, :gds_multiple_choice_option, 'questions.agree_with_claimant_pension_benefits.no.label', exact: true do
-          element :selector, :css, 'input'
-
-          delegate :set, to: :selector
-        end
+        include SingleChoiceOptionSection
 
         section :disagree_claimant_pension_benefits_reason, :textarea_labelled, 'questions.agree_with_claimant_pension_benefits.disagree_claimant_pension_benefits_reason.label', exact: false do
           delegate :set, to: :root_element

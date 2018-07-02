@@ -125,7 +125,7 @@ RSpec.feature "Fill in whole form", js: true do
           expect(Date.parse(request_body["data"][0]["data"]["employment_end"]).strftime('%d/%m/%Y')).to eql user_data.employment_end
           expect(request_body["data"][0]["data"]["disagree_employment"]).to eql user_data.disagree_employment
           expect(request_body["data"][0]["data"]["continued_employment"]).to eql(user_data.continued_employment == 'Yes')
-          expect(request_body["data"][0]["data"]["agree_with_claimants_description_of_job_or_title"]).to eql(user_data.agree_with_claimants_description_of_job_or_title =='Yes')
+          expect(request_body["data"][0]["data"]["agree_with_claimants_description_of_job_or_title"]).to eql(user_data.agree_with_claimants_description_of_job_or_title == 'Yes')
           expect(request_body["data"][0]["data"]["disagree_claimants_job_or_title"]).to eql user_data.disagree_claimants_job_or_title
           expect(request_body["data"][0]["data"]["agree_with_claimants_hours"]).to eql(user_data.agree_with_claimants_hours == 'Yes')
           expect(request_body["data"][0]["data"]["queried_hours"]).to eql user_data.queried_hours.to_f
@@ -189,6 +189,35 @@ RSpec.feature "Fill in whole form", js: true do
     expect(form_submission_page.reference_number).to have_text "992000000100"
     expect(form_submission_page.submission_date).to have_text "13/01/2018 14:00"
     expect(form_submission_page).to have_download_pdf
+
+  end
+
+  scenario "correctly will delete hash_store and prevent the next user seeing answers on the respondents details page" do
+    given_i_am(:company01)
+
+    answer_all_questions
+    confirmation_of_supplied_details_page.submit_form
+    respondents_details_page.load
+
+    expect(respondents_details_page.case_number_question.field.value).to eql ""
+    expect(respondents_details_page.name_question.field.value).to eql ""
+    expect(respondents_details_page.contact_question.field.value).to eql ""
+    expect(respondents_details_page.building_name_question.field.value).to eql ""
+    expect(respondents_details_page.street_question.field.value).to eql ""
+    expect(respondents_details_page.town_question.field.value).to eql ""
+    expect(respondents_details_page.county_question.field.value).to eql ""
+    expect(respondents_details_page.postcode_question.field.value).to eql ""
+    expect(respondents_details_page.dx_number_question.field.value).to eql ""
+    expect(respondents_details_page.contact_number_question.field.value).to eql ""
+    expect(respondents_details_page.contact_mobile_number_question.field.value).to eql ""
+    expect(respondents_details_page.contact_preference_question.select_email.has_checked_field?).to be false
+    expect(respondents_details_page.contact_preference_question.preference_email.root_element.value).to eql ""
+    expect(respondents_details_page.contact_preference_question.select_post.has_checked_field?).to be false
+    expect(respondents_details_page.contact_preference_question.select_fax.has_checked_field?).to be false
+    expect(respondents_details_page.contact_preference_question.preference_fax.root_element.value).to eql ""
+    expect(respondents_details_page.organisation_employ_gb_question.field.value).to eql ""
+    expect(respondents_details_page.organisation_more_than_one_site_question.get).to be nil
+    expect(respondents_details_page.organisation_more_than_one_site_question.employment_at_site_number.root_element.value).to eql ""
 
   end
 end

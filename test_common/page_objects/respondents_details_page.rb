@@ -137,17 +137,7 @@ module ET3
       
       section :organisation_more_than_one_site_question, :single_choice_option, 'questions.organisation_more_than_one_site.label', exact: false do |q|
         
-        section :yes, :gds_multiple_choice_option, 'questions.organisation_more_than_one_site.yes.label', exact: false do
-          element :selector, :css, 'input'
-          
-          delegate :set, to: :selector
-        end
-
-        section :no, :gds_multiple_choice_option, 'questions.organisation_more_than_one_site.no.label', exact: false do
-          element :selector, :css, 'input'
-
-          delegate :set, to: :selector
-        end
+        include SingleChoiceOptionSection
 
         section :employment_at_site_number, :inputtext_labelled, 'questions.organisation_more_than_one_site.employment_at_site_number.label', exact: false do
           delegate :set, to: :root_element

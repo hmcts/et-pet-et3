@@ -260,7 +260,7 @@ module ET3
 
       # Stub Submission Calls to API
       def stub_et_api # rubocop:disable Metrics/MethodLength
-        stub_request(:post, "http://api.et.127.0.0.1.nip.io:3100/api/v2/respondents/build_response").
+        stub_request(:post, "#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api')}/v2/respondents/build_response").
           with(headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }).
           to_return(
             headers: { 'Content-Type': 'application/json' },

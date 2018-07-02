@@ -6,20 +6,15 @@
     var showHideContent = new GOVUK.ShowHideContent();
     showHideContent.init();
   yield
+- content_for :inside_header
+  .header-proposition
+    .content
+      = link_to('Employment Tribunals', 'https://www.employmenttribunals.service.gov.uk/', {id: 'proposition-name'})
 - content_for :content
   .direction-ltr#content
     main role="main"
       .grid-row
         .column-full
-          .phase-banner
-            .grid-row
-              .column-full
-                p
-                  strong.phase-tag Beta
-                  span 
-                    'This is a new service - your 
-                    a href='#' feedback
-                    '  will help us to improve it
           .content-header
             h2.heading-medium data-behavior="heading" = yield(:form_page_title)
           = yield

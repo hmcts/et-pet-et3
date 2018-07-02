@@ -235,5 +235,5 @@ en:
       contains_numbers: must not contain numbers
   components:
     single_choice_option_section:
-      yes: "Yes"
-      no: "No"
+      'yes': "Yes"
+      'no': "No"

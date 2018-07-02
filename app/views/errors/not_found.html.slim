@@ -1,0 +1,14 @@
+- content_for :page_title, "Page Not Found - Response to Claim - MoJ"
+.content-body.page-not-found
+
+  h1.heading-xlarge
+    = t('page_content.not_found_page.header')
+
+  h2.heading-large
+    = t('page_content.not_found_page.subheader')
+
+  p
+    = t('page_content.not_found_page.paragraph1')
+
+  p 
+    = t('page_content.not_found_page.paragraph2_html', href: link_to(t('page_content.not_found_page.link'), 'https://www.gov.uk/courts-tribunals/employment-tribunal'))

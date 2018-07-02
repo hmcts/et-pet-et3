@@ -1,6 +1,6 @@
 require 'rails_helper'
 RSpec.feature "Fill in Employers Contract Claim Page", js: true do
-  let(:confirmation_of_supplied_details_page) { ET3::Test::ConfirmationOfSuppliedDetailsPage.new }
+  let(:additional_information_page) { ET3::Test::AdditionalInformationPage.new }
 
   scenario "correctly will enable user to continue to next page" do
     employers_contract_claim_page.load
@@ -9,7 +9,7 @@ RSpec.feature "Fill in Employers Contract Claim Page", js: true do
     answer_make_employer_contract_claim_question
     employers_contract_claim_page.next
 
-    expect(confirmation_of_supplied_details_page).to be_displayed
+    expect(additional_information_page).to be_displayed
   end
 
   scenario "incorrectly will provide errors" do

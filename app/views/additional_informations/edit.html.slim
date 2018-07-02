@@ -1,0 +1,35 @@
+- content_for :form_page_title, "Additional Information"
+- content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
+.content-body.additional-information
+
+  p = t('helpers.label.additional_information.upload_additional_information')
+
+  = form_tag(additional_information_path, method: "post", class: "dropzone", id: "upload-additional-file")
+  
+    .dz-default.dz-message.grid-row
+      .column-one-third.arrow-icon
+        p
+      .column-one-half
+        span.normal= "Drag and drop files here"
+        .bold-normal= "or"
+        button.button.button-secondary type="button" = t('helpers.label.additional_information.upload_button')
+
+    = hidden_field :aws, :key
+    = hidden_field :aws, :policy
+    = hidden_field :aws, 'x-amz-algorithm'
+    = hidden_field :aws, 'x-amz-credential'
+    = hidden_field :aws, 'x-amz-date'
+    = hidden_field :aws, 'x-amz-signature'
+    = hidden_field :aws, :success_action_status, value: 201
+
+  = form_for @additional_information, url: additional_information_path, method: :patch do |f|
+
+    div data-turbolinks="false"
+      = GovukElementsErrorsHelper.error_summary @additional_information,
+        "Please review the following",
+        "Clicking on an error will navigate you directly to the question. Please correct these errors before continuing."
+
+    = f.hidden_field :upload_additional_information
+    = f.hidden_field :upload_file_name
+
+    = f.submit("Save and continue", class: 'button')

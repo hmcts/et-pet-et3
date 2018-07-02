@@ -190,6 +190,9 @@ en:
             'yes': 'Yes'
             'no': 'No'
         claim_information: Please set out the background and details of your claim below, which should include all important dates (optional)
+      additional_information:
+        upload_additional_information: Please upload a file to provide any important additional information about your response which you have not been able to include so far (optional)
+        upload_button: Click here to upload a file
       confirmation_of_supplied_details:
         email_receipt: Email Address (optional)
     hint:

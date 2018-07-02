@@ -6,16 +6,18 @@
       ' Your reference number, which should be quoted on all correspondence, is
     p.font-large
       strong.bold.reference-number = @reference_number
-  p Thank you for your submission. It has been forwarded to the Default office who will contact you in due course.
+  p Thank you for your submission. It has been forwarded to the following office which will contact you in due course.
   p
-    strong.bold Alexandra House, 14-22 The Parsonage, Manchester, M3 2JA
+    strong.bold.office-address = @office_address
     br
-    strong.bold Telephone: 0161 833 6100
+    strong.bold.office-phone = @office_phone_number
   p 
     | Submission Date:
     span.submission-date = @submission_date
-  a.download-pdf href="#" A PDF version of your completed form is now available for download ICON HERE
-  p 
+    br
+    br
+    = link_to 'A PDF version of your completed form is now available for download', @pdf_url, class: 'download-pdf'
+  p
     ' PDF (Portable Document Format) files can be read using applications such as:
     a href="http://www.adobe.com/" Adobe's Acrobat Reader
   p Our national enquiry line can be contacted on:

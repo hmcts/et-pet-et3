@@ -1,0 +1,11 @@
+- content_for :page_title, "Session Expired - Response to Claim - MoJ"
+- content_for :disable_session_prompt
+    javascript:
+      sessionPrompt.disabled = true;
+.content-body.expired
+
+  h2.heading-xlarge Session Expired
+
+  p Your session has expired due to inactivity.
+
+  = link_to 'Service Homepage', 'https://www.employmenttribunals.service.gov.uk/'

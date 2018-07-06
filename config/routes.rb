@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     get "form_submission", to: "form_submissions#index"
   end
   get "/" => 'static_pages#index'
+  get "/session_expired" => 'static_pages#expired'
   mount ApiProxy.new(backend: 'http://api.et.127.0.0.1.nip.io:3100/api/v2/s3/create_signed_url', streaming: false), at: "/api/s3/create_signed_url"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

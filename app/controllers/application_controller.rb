@@ -3,6 +3,7 @@ require 'securerandom'
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  before_action :check_session_expiry, :set_session_expiry
   after_action :save_current_store
 
   # @return [Store] The store instance
@@ -27,4 +28,22 @@ class ApplicationController < ActionController::Base
     current_store.save
     session[:store_uuid] = current_store.uuid
   end
+
+  private
+
+  def set_session_expiry
+    session[:expires_at] = 1.hour.from_now
+  end
+
+  def check_session_expiry
+    if Time.current > session_expiration
+      redirect_to session_expired_path
+      reset_session
+    end
+  end
+
+  def session_expiration
+    session[:expires_at] ||= 1.hour.from_now
+  end
+
 end

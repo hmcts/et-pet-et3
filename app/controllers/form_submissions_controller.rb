@@ -1,4 +1,5 @@
 class FormSubmissionsController < ApplicationController
+  skip_before_action :check_session_expiry
 
   def index
     @reference_number = current_store.api_response[:data]["meta"]["BuildResponse"]["reference"]

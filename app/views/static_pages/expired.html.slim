@@ -1,8 +1,8 @@
 - content_for :page_title, "Session Expired - Response to Claim - MoJ"
 .content-body.expired
 
-  h2.heading-xlarge Session Expired
+  h2.heading-xlarge = t('components.session_expiry.header')
 
-  p Your session has expired due to inactivity.
+  p = t('components.session_expiry.content')
 
-  = link_to 'Service Homepage', 'https://www.employmenttribunals.service.gov.uk/'
+  = link_to t('components.session_expiry.homepage_link'), root_path

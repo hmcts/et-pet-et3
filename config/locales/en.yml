@@ -237,3 +237,17 @@ en:
     single_choice_option_section:
       'yes': "Yes"
       'no': "No"
+    sidebar:
+      header: Other Relevant Links
+      claim_link: How to make a claim
+      claim_href: http://www.justice.gov.uk/tribunals/employment/claims/making-a-claim
+      response_link: How to make a response
+      response_href: http://www.justice.gov.uk/tribunals/employment/claims/responding
+      help_fees_link: How to apply for help with fees
+      help_fees_href: https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees
+      contact_link: How to contact us
+      contact_href: http://www.justice.gov.uk/contacts/hmcts/tribunals/employment
+      download_link: Download a blank copy of this form
+      download_href: https://www.employmenttribunals.service.gov.uk/form/pdf/141ET3_0414v2.pdf
+      more_category_link: More from the Working, jobs and pensions category
+      more_category_href: http://gov.uk/browse/working

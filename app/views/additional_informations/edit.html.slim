@@ -4,7 +4,7 @@
 
   p = t('helpers.label.additional_information.upload_additional_information')
 
-  = form_tag(additional_information_path, method: "post", class: "dropzone", id: "upload-additional-file")
+  = form_tag(additional_information_path, method: "post", class: "dropzone", id: "upload-additional-file", authenticity_token: false, enforce_utf8: false)
   
     .dz-default.dz-message.grid-row
       .column-one-third.arrow-icon

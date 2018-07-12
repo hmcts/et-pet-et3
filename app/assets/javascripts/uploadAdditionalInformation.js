@@ -51,6 +51,11 @@ $(document).ready(function(){
         */
     }
 
+    function removeButtonElement() {
+        $("button.button.button-secondary").remove();
+    }
+
+
     let uploadAdditionalInfoDropzone = new Dropzone("#upload-additional-file",
         {
             // Only one file goes to the bucket via the URL
@@ -64,6 +69,7 @@ $(document).ready(function(){
                 getPresignedS3Url(function(presignedData) {
                     prepareAwsHiddenInputs(presignedData);
                     setUploadUrl(presignedData.url);
+                    removeButtonElement();
                     done();
                 });
             },
@@ -83,5 +89,9 @@ $(document).ready(function(){
         // TODO: RST-1220 - Error Handling:
         // Build a proper warning system for "too many files" warning.
         alert("too many files");
+    });
+
+    uploadAdditionalInfoDropzone.on("sending", function(file, xhr, formData) {
+        // Perhaps rebuild form without using hidden elements here?
     });
 });

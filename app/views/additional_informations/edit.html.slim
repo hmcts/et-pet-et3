@@ -20,7 +20,7 @@
     = hidden_field :aws, 'x-amz-credential'
     = hidden_field :aws, 'x-amz-date'
     = hidden_field :aws, 'x-amz-signature'
-    = hidden_field :aws, :success_action_status, value: 201
+    = hidden_field :aws, :success_action_status
 
   = form_for @additional_information, url: additional_information_path, method: :patch do |f|
 

@@ -20,7 +20,7 @@ $(document).ready(function(){
         $("#aws_x-amz-credential").attr("name", "x-amz-credential").val(responseData.fields["x-amz-credential"]);
         $("#aws_x-amz-date").attr("name", "x-amz-date").val(responseData.fields["x-amz-date"]);
         $("#aws_x-amz-signature").attr("name", "x-amz-signature").val(responseData.fields["x-amz-signature"]);
-        $("#aws_success_action_status").attr("name", "success_action_status");
+        $("#aws_success_action_status").attr("name", "success_action_status").val(responseData.fields["success_action_status"]);
     }
 
     function getPresignedS3Url (cb) {

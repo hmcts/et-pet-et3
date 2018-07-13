@@ -192,7 +192,7 @@ en:
         claim_information: Please set out the background and details of your claim below, which should include all important dates (optional)
       additional_information:
         upload_additional_information: Please upload a file to provide any important additional information about your response which you have not been able to include so far (optional)
-        upload_button: Click here to upload a file
+        upload_button: Click here to upload rtf file
       confirmation_of_supplied_details:
         email_receipt: Email Address (optional)
     hint:
@@ -227,6 +227,8 @@ en:
           PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 4500 characters) if you would like to include more please
           use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
           If you exceed 50 lines you will not receive full details of your claim in the PDF returned to you on submission of the form.
+      additional_information:
+        upload_additional_information: "Supported file type: .rtf"
       confirmation_of_supplied_details:
         email_receipt: For example name@address.com
   errors:

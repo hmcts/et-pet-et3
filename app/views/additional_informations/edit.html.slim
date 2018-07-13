@@ -3,6 +3,7 @@
 .content-body.additional-information
 
   p = t('helpers.label.additional_information.upload_additional_information')
+  p.form-hint = t('helpers.hint.additional_information.upload_additional_information')
 
   = form_tag(additional_information_path, method: "post", class: "dropzone", id: "upload-additional-file", authenticity_token: false, enforce_utf8: false)
   
@@ -10,7 +11,7 @@
       .column-one-third.arrow-icon
         p
       .column-one-half
-        span.normal= "Drag and drop files here"
+        span.normal= "Drag and drop .rtf files here"
         .bold-normal= "or"
         button.button.button-secondary#upload-button type="button" = t('helpers.label.additional_information.upload_button')
 

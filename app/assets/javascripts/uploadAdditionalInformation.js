@@ -66,6 +66,9 @@ $(document).ready(function(){
             acceptedFiles: ".rtf",
             // If file passes the accept check, call the API and use the returned values for the upload process
             accept: function(file, done) {
+                // Disable submit button until file is uploaded
+                $(":submit").prop("disabled", true);
+                // Get S3 form data
                 getPresignedS3Url(function(presignedData) {
                     prepareAwsHiddenInputs(presignedData);
                     setUploadUrl(presignedData.url);
@@ -81,6 +84,8 @@ $(document).ready(function(){
                 // Take upload URL and pass it into the second form
                 $("#additional_information_upload_additional_information").val($.parseXML(response).getElementsByTagName("Key")[0].childNodes[0].nodeValue);
                 $("#additional_information_upload_file_name").val(file.name);
+                // Re-enable submit button as upload has been successful
+                $(":submit").prop("disabled", false);
             }
         }
     );

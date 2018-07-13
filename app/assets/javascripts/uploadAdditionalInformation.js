@@ -20,7 +20,7 @@ $(document).ready(function(){
         $("#aws_x-amz-credential").attr("name", "x-amz-credential").val(responseData.fields["x-amz-credential"]);
         $("#aws_x-amz-date").attr("name", "x-amz-date").val(responseData.fields["x-amz-date"]);
         $("#aws_x-amz-signature").attr("name", "x-amz-signature").val(responseData.fields["x-amz-signature"]);
-        $("#aws_success_action_status").attr("name", "success_action_status");
+        $("#aws_success_action_status").attr("name", "success_action_status").val(responseData.fields["success_action_status"]);
     }
 
     function getPresignedS3Url (cb) {
@@ -51,6 +51,11 @@ $(document).ready(function(){
         */
     }
 
+    function removeButtonElement() {
+        $("button.button.button-secondary").remove();
+    }
+
+
     let uploadAdditionalInfoDropzone = new Dropzone("#upload-additional-file",
         {
             // Only one file goes to the bucket via the URL
@@ -64,6 +69,7 @@ $(document).ready(function(){
                 getPresignedS3Url(function(presignedData) {
                     prepareAwsHiddenInputs(presignedData);
                     setUploadUrl(presignedData.url);
+                    removeButtonElement();
                     done();
                 });
             },
@@ -83,5 +89,9 @@ $(document).ready(function(){
         // TODO: RST-1220 - Error Handling:
         // Build a proper warning system for "too many files" warning.
         alert("too many files");
+    });
+
+    uploadAdditionalInfoDropzone.on("sending", function(file, xhr, formData) {
+        // Perhaps rebuild form without using hidden elements here?
     });
 });

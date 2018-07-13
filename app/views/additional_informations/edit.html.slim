@@ -4,7 +4,7 @@
 
   p = t('helpers.label.additional_information.upload_additional_information')
 
-  = form_tag(additional_information_path, method: "post", class: "dropzone", id: "upload-additional-file")
+  = form_tag(additional_information_path, method: "post", class: "dropzone", id: "upload-additional-file", authenticity_token: false, enforce_utf8: false)
   
     .dz-default.dz-message.grid-row
       .column-one-third.arrow-icon
@@ -20,7 +20,7 @@
     = hidden_field :aws, 'x-amz-credential'
     = hidden_field :aws, 'x-amz-date'
     = hidden_field :aws, 'x-amz-signature'
-    = hidden_field :aws, :success_action_status, value: 201
+    = hidden_field :aws, :success_action_status
 
   = form_for @additional_information, url: additional_information_path, method: :patch do |f|
 

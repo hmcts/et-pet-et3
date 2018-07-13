@@ -237,6 +237,11 @@ en:
     single_choice_option_section:
       'yes': "Yes"
       'no': "No"
+    session_expiry:
+      header: Session Expired
+      content: |
+        Your session has expired due to inactivity. The information you have provided has not been saved. We apologise for the inconvenience and request that you fill in the form again.
+      homepage_link: Service Homepage
     sidebar:
       header: Other Relevant Links
       claim_link: How to make a claim

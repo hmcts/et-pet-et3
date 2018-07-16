@@ -22,7 +22,7 @@ module ET3
       section :contact_question, :question_labelled, 'questions.contact.label', exact: false do
         element :field, :css, "input"
         element :error_contains_numbers, :exact_error_text, 'errors.messages.contains_numbers', exact: false
-        element :error_contains_no_spaces, :exact_error_text, 'errors.messages.contains_no_spaces', exact: false
+        element :error_contains_invalid_name, :exact_error_text, 'errors.messages.invalid_name', exact: false
 
         delegate :set, to: :field
       end
@@ -57,7 +57,7 @@ module ET3
       section :postcode_question, :question_labelled, 'questions.postcode.label', exact: false do
         element :field, :css, "input"
         element :error_blank, :exact_error_text, 'errors.messages.blank', exact: false
-        element :error_invalid, :exact_error_text, 'errors.messages.invalid', exact: false
+        element :error_invalid_postcode, :exact_error_text, 'errors.messages.invalid_postcode', exact: false
 
         delegate :set, to: :field
       end
@@ -70,14 +70,14 @@ module ET3
             
       section :contact_number_question, :question_labelled, 'questions.contact_number.label', exact: false do
         element :field, :css, "input"
-        element :error_invalid, :exact_error_text, 'errors.messages.invalid', exact: false
+        element :error_invalid_phone_number, :exact_error_text, 'errors.messages.invalid_phone_number', exact: false
 
         delegate :set, to: :field
       end
             
       section :contact_mobile_number_question, :question_labelled, 'questions.contact_mobile_number.label', exact: false do
         element :field, :css, "input"
-        element :error_invalid, :exact_error_text, 'errors.messages.invalid', exact: false
+        element :error_invalid_phone_number, :exact_error_text, 'errors.messages.invalid_phone_number', exact: false
 
         delegate :set, to: :field
       end
@@ -110,8 +110,8 @@ module ET3
           delegate :set, to: :root_element
         end
 
-        element :error_invalid_email, :exact_error_text, 'errors.messages.invalid', exact: false
-        element :error_invalid_fax, :exact_error_text, 'errors.messages.invalid', exact: false
+        element :error_invalid_email, :exact_error_text, 'errors.messages.invalid_email', exact: false
+        element :error_invalid_fax, :exact_error_text, 'errors.messages.invalid_phone_number', exact: false
 
         def set_for(user_persona)
           case user_persona.contact_preference

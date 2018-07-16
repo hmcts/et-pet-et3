@@ -7,7 +7,7 @@ module ET3
 
       section :email_receipt_question, :question_labelled, 'questions.email_receipt.label', exact: false do
         element :field, :css, 'input'
-        element :error_invalid, :exact_error_text, 'errors.messages.invalid', exact: false
+        element :error_invalid_email, :exact_error_text, 'errors.messages.invalid_email', exact: false
 
         delegate :set, to: :field
       end

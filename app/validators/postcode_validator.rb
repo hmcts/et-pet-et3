@@ -11,7 +11,7 @@ class PostcodeValidator < ActiveModel::EachValidator
       record.errors.add(attribute, :blank)
     else
       postcode = postcode_service.parse(value)
-      record.errors.add(attribute, :invalid) unless postcode.full_valid?
+      record.errors.add(attribute, :invalid_postcode) unless postcode.full_valid?
     end
   end
 

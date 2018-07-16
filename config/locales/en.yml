@@ -202,7 +202,8 @@ en:
         employment_at_site_number: For example, 10
         organisation_employ_gb: For example, 10
       claimants_detail:
-        employment_dates: For example, 31 03 1980
+        employment_start: For example, 31 03 2010
+        employment_end: For example, 01 12 2017
       earnings_and_benefits:
         queried_hours: In hours per week
         agree_with_earnings_details: If No, please give the details you believe to be correct
@@ -253,6 +254,8 @@ en:
         not_a_number: Please enter how many people are employed at the place where the claimant worked as a number
       organisation_employ_gb:
         not_a_number: Please enter how many people the organisation employs in Great Britain as a number
+      claimants_name:
+        contains_numbers: Claimant's name must not contain numbers
   components:
     single_choice_option_section:
       'yes': "Yes"

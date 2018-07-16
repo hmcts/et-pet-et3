@@ -55,10 +55,10 @@ RSpec.feature "Fill in Your Representatives Details Page", js: true do
     expect(your_representatives_details_page.representative_building_question).to have_error_blank
     expect(your_representatives_details_page.representative_street_question).to have_error_blank
     expect(your_representatives_details_page.representative_town_question).to have_error_blank
-    expect(your_representatives_details_page.representative_postcode_question).to have_error_invalid
-    expect(your_representatives_details_page.representative_phone_question).to have_error_invalid
-    expect(your_representatives_details_page.representative_mobile_question).to have_error_invalid
-    expect(your_representatives_details_page.representative_contact_preference_question).to have_error_invalid
+    expect(your_representatives_details_page.representative_postcode_question).to have_error_invalid_postcode
+    expect(your_representatives_details_page.representative_phone_question).to have_error_invalid_phone_number
+    expect(your_representatives_details_page.representative_mobile_question).to have_error_invalid_phone_number
+    expect(your_representatives_details_page.representative_contact_preference_question).to have_error_invalid_email
     expect(your_representatives_details_page.representative_disability_question).to have_error_too_long
   end
 

@@ -205,10 +205,10 @@ en:
         employment_start: For example, 31 03 2010
         employment_end: For example, 01 12 2017
       earnings_and_benefits:
-        queried_hours: In hours per week
+        queried_hours: In hours per week. For example, 39
         agree_with_earnings_details: If No, please give the details you believe to be correct
-        queried_pay_before_tax: Including overtime, commission, bonuses, etc.
-        queried_take_home_pay: Including overtime, commission, bonuses, etc.
+        queried_pay_before_tax: Including overtime, commission, bonuses, etc. For example, 28000
+        queried_take_home_pay: Including overtime, commission, bonuses, etc. For example, 20000
         disagree_claimant_notice_reason: |
           PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 400 characters) if you would like to include more please
           use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
@@ -247,6 +247,7 @@ en:
       invalid_postcode: This is not a valid UK postcode
       invalid_phone_number: This is not a valid phone number
       inclusion: Please select an option
+      not_a_number: "%{attribute} is not a number"
     attributes:
       contact:
         contains_numbers: Name of contact must not contain numbers
@@ -256,6 +257,12 @@ en:
         not_a_number: Please enter how many people the organisation employs in Great Britain as a number
       claimants_name:
         contains_numbers: Claimant's name must not contain numbers
+      queried_hours:
+        not_a_number: Please enter the number of hours you believe to be correct as a number
+      queried_pay_before_tax:
+        not_a_number: Please enter the pay before tax as a number
+      queried_take_home_pay:
+        not_a_number: Please enter the normal take-home pay as a number
   components:
     single_choice_option_section:
       'yes': "Yes"

@@ -252,10 +252,13 @@ en:
       contains_no_spaces: must contain at least one space
       contains_numbers: must not contain numbers
       invalid: is invalid
+      invalid_email: This is not a valid email address
+      invalid_name: Please enter your full name
+      invalid_postcode: This is not a valid UK postcode
+      invalid_phone_number: This is not a valid phone number
       not_a_number: is not a number
       too_long: characters is the maximum allowed
-      inclusion: is not included in the list
-      confirmation: doesn't match
+      inclusion: Please select an option
   links:
     confirmation_of_supplied_details:
       edit_page: Edit answers on this page

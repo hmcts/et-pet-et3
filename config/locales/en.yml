@@ -99,7 +99,7 @@ en:
         employment_end: When their employment ended or will end
         disagree_employment: Why do you disagree with the dates given by the claimant
         continued_employment:
-          choices:              
+          choices:
             'yes': 'Yes'
             'no': 'No'
         agree_with_claimants_description_of_job_or_title:
@@ -197,7 +197,10 @@ en:
         email_receipt: Email Address (optional)
     hint:
       respondents_detail:
+        contact: For example, John Smith
         mobile_number: If different to your primary contact number
+        employment_at_site_number: For example, 10
+        organisation_employ_gb: For example, 10
       claimants_detail:
         employment_dates: For example, 31 03 1980
       earnings_and_benefits:
@@ -232,9 +235,24 @@ en:
       confirmation_of_supplied_details:
         email_receipt: For example name@address.com
   errors:
+    format: "%{message}"
     messages:
-      contains_no_spaces: must contain spaces
-      contains_numbers: must not contain numbers
+      contains_no_spaces: "%{attribute} must contain spaces"
+      contains_numbers: "%{attribute} must not contain numbers"
+      blank: "%{attribute} can't be blank"
+      invalid: "%{attribute} is invalid"
+      invalid_email: This is not a valid email address
+      invalid_name: Please enter your full name
+      invalid_postcode: This is not a valid UK postcode
+      invalid_phone_number: This is not a valid phone number
+      inclusion: Please select an option
+    attributes:
+      contact:
+        contains_numbers: Name of contact must not contain numbers
+      employment_at_site_number:
+        not_a_number: Please enter how many people are employed at the place where the claimant worked as a number
+      organisation_employ_gb:
+        not_a_number: Please enter how many people the organisation employs in Great Britain as a number
   components:
     single_choice_option_section:
       'yes': "Yes"

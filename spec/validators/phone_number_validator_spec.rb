@@ -19,7 +19,7 @@ RSpec.describe PhoneNumberValidator do
 
     model.valid?
 
-    expect(model.errors.details[:number]).to include a_hash_including(error: :invalid)
+    expect(model.errors.details[:number]).to include a_hash_including(error: :invalid_phone_number)
   end
 
   it 'will validate a string of integers with spaces' do
@@ -35,7 +35,7 @@ RSpec.describe PhoneNumberValidator do
 
     model.valid?
 
-    expect(model.errors.details[:number]).to include a_hash_including(error: :invalid)
+    expect(model.errors.details[:number]).to include a_hash_including(error: :invalid_phone_number)
   end
 
   it 'will validate a string that starts with an international call code' do
@@ -51,7 +51,7 @@ RSpec.describe PhoneNumberValidator do
 
     model.valid?
 
-    expect(model.errors.details[:number]).to include a_hash_including(error: :invalid)
+    expect(model.errors.details[:number]).to include a_hash_including(error: :invalid_phone_number)
   end
 
   it 'will validate a string with 7 integers and dashes' do

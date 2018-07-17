@@ -56,7 +56,7 @@ module ET3
           delegate :set, to: :selector
         end
 
-        element :error_inclusion, :exact_error_text, 'errors.messages.inclusion', exact: false
+        element :error_inclusion, :exact_error_text, 'errors.custom.type_of_representative.inclusion', exact: false
 
         def set_for(user_persona)
           case user_persona.type_of_representative

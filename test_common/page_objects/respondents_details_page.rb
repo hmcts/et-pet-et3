@@ -143,6 +143,7 @@ module ET3
           delegate :set, to: :root_element
         end
 
+        element :error_inclusion, :exact_error_text, 'errors.custom.organisation_more_than_one_site.inclusion', exact: false
         element :error_not_a_number, :exact_error_text, 'errors.custom.organisation_more_than_one_site.not_a_number', exact: false
 
         def set_for(user_persona)

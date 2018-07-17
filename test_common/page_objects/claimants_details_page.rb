@@ -54,6 +54,7 @@ module ET3
             delegate :set, to: :field
           end
 
+          element :error_inclusion, :exact_error_text, 'errors.custom.agree_with_employment_dates.inclusion', exact: false
           element :error_blank, :exact_error_text, 'errors.messages.blank', exact: false
 
           def assert_date_for(user_persona)

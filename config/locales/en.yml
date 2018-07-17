@@ -253,16 +253,22 @@ en:
         contains_numbers: Name of contact must not contain numbers
       employment_at_site_number:
         not_a_number: Please enter how many people are employed at the place where the claimant worked as a number
+      organisation_more_than_one_site:
+        inclusion: Please indicate whether the organisation has more than one site in Great Britain
       organisation_employ_gb:
         not_a_number: Please enter how many people the organisation employs in Great Britain as a number
       claimants_name:
         contains_numbers: Claimant's name must not contain numbers
+      agree_with_employment_dates:
+        inclusion: Please indicate whether you agree with the dates of employment provided by the claimant
       queried_hours:
         not_a_number: Please enter the number of hours you believe to be correct as a number
       queried_pay_before_tax:
         not_a_number: Please enter the pay before tax as a number
       queried_take_home_pay:
         not_a_number: Please enter the normal take-home pay as a number
+      type_of_representative:
+        inclusion: Please select the type of your representative
   components:
     single_choice_option_section:
       'yes': "Yes"

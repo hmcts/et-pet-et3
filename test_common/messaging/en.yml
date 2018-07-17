@@ -264,12 +264,15 @@ en:
         not_a_number: Please enter how many people the organisation employs in Great Britain as a number
       organisation_more_than_one_site:
         not_a_number: Please enter how many people are employed at the place where the claimant worked as a number
+        inclusion: Please indicate whether the organisation has more than one site in Great Britain
       queried_hours:
         not_a_number: Please enter the number of hours you believe to be correct as a number
       queried_pay_before_tax:
         not_a_number: Please enter the pay before tax as a number
       queried_take_home_pay:
         not_a_number: Please enter the normal take-home pay as a number
+      type_of_representative:
+        inclusion: Please select the type of your representative
   links:
     confirmation_of_supplied_details:
       edit_page: Edit answers on this page

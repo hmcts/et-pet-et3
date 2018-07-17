@@ -212,7 +212,7 @@ en:
         disagree_claimant_notice_reason: |
           PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 400 characters) if you would like to include more please
           use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
-        agree_with_claimant_pension_benefits: "For example: company car, medical insurance, etc."
+        agree_with_claimant_pension_benefits: For example, company car, medical insurance, etc.
         disagree_claimant_pension_benefits_reason: |
           PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 350 characters) if you would like to include more please
           use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
@@ -234,7 +234,7 @@ en:
       additional_information:
         upload_additional_information: "Supported file type: .rtf"
       confirmation_of_supplied_details:
-        email_receipt: For example name@address.com
+        email_receipt: For example, name@address.com
   errors:
     format: "%{message}"
     messages:

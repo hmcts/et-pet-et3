@@ -51,10 +51,15 @@ $(document).ready(function(){
         */
     }
 
-    function removeButtonElement() {
-        $("button.button.button-secondary").remove();
+    function removeButtonElement(button) {
+        return button.detach();
     }
 
+    function appendButtonElement(button) {
+        $(".dz-default.dz-message.grid-row .column-one-half").append(button);
+    }
+
+    var removedButton;
 
     let uploadAdditionalInfoDropzone = new Dropzone("#upload-additional-file",
         {
@@ -69,7 +74,7 @@ $(document).ready(function(){
                 getPresignedS3Url(function(presignedData) {
                     prepareAwsHiddenInputs(presignedData);
                     setUploadUrl(presignedData.url);
-                    removeButtonElement();
+                    removedButton = removeButtonElement($("#upload-button"));
                     done();
                 });
             },
@@ -78,6 +83,7 @@ $(document).ready(function(){
             // Add a link to remove files that were erroneously uploaded
             addRemoveLinks: true,
             success: function(file, response){
+                appendButtonElement(removedButton);
                 // Take upload URL and pass it into the second form
                 $("#additional_information_upload_additional_information").val($.parseXML(response).getElementsByTagName("Key")[0].childNodes[0].nodeValue);
                 $("#additional_information_upload_file_name").val(file.name);
@@ -89,9 +95,5 @@ $(document).ready(function(){
         // TODO: RST-1220 - Error Handling:
         // Build a proper warning system for "too many files" warning.
         alert("too many files");
-    });
-
-    uploadAdditionalInfoDropzone.on("sending", function(file, xhr, formData) {
-        // Perhaps rebuild form without using hidden elements here?
     });
 });

@@ -19,14 +19,15 @@
             h2.heading-medium data-behavior="heading" = yield(:form_page_title)
           = yield
         .column-one-third
-          .sidebar-header
-            h2.heading-medium =t('components.sidebar.header')
-          .sidebar-content
-            p = link_to(t('components.sidebar.claim_link'), t('components.sidebar.claim_href'))
-            p = link_to(t('components.sidebar.response_link'), t('components.sidebar.response_href'))
-            p = link_to(t('components.sidebar.help_fees_link'), t('components.sidebar.help_fees_href'))
-            p = link_to(t('components.sidebar.contact_link'), t('components.sidebar.contact_href'))
-            p = link_to(t('components.sidebar.download_link'), t('components.sidebar.download_href'))
-            p = link_to(t('components.sidebar.more_category_link'), t('components.sidebar.more_category_href'))
+          .sidebar
+            .sidebar-header
+              h2.heading-medium =t('components.sidebar.header')
+            .sidebar-content
+              p = link_to(t('components.sidebar.claim_link'), t('components.sidebar.claim_href'), target: :_blank)
+              p = link_to(t('components.sidebar.response_link'), t('components.sidebar.response_href'), target: :_blank)
+              p = link_to(t('components.sidebar.contact_link'), t('components.sidebar.contact_href'), target: :_blank)
+              p = link_to(t('components.sidebar.download_link'), t('components.sidebar.download_href'), target: :_blank)
+              hr
+              p = link_to(t('components.sidebar.more_category_link'), t('components.sidebar.more_category_href'), target: :_blank)
 
 = render template: "layouts/govuk_template"

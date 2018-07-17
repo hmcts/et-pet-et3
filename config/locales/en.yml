@@ -60,24 +60,24 @@ en:
         make_employer_contract_claim: Do you wish to make an Employer Contract Claim? (optional)
     label:
       respondents_detail:
-        case_number: Case Number
-        name: Name of Individual, Company or Organisation
-        contact: Name of Contact (optional)
-        building_name: Building Name or Number
+        case_number: Case number
+        name: Name of individual, company or organisation
+        contact: Name of contact (optional)
+        building_name: Building name or number
         street_name: Street
         town: Town/City
         county: County (optional)
         postcode: Postcode
-        dx_number: Document Exchange (DX) Number (optional)
-        contact_number: Contact Number (optional)
-        mobile_number: Mobile Number (optional)
+        dx_number: Document exchange (DX) number (optional)
+        contact_number: Contact number (optional)
+        mobile_number: Mobile number (optional)
         contact_preference:
           choices:
             email: Email
             post: Post
             fax: Fax
-        email_address: Email Address
-        fax_number: Fax Number
+        email_address: Email address
+        fax_number: Fax number
         organisation_employ_gb: How many people does this organisation employ in Great Britain? (optional)
         organisation_more_than_one_site:
           choices:
@@ -85,7 +85,7 @@ en:
             'no': 'No'
         employment_at_site_number: How many people are employed at the place where the claimant worked?
       claimants_detail:
-        claimants_name: Claimant's Name (optional)
+        claimants_name: Claimant's name (optional)
         agree_with_early_conciliation_details:
           choices:
             'yes': 'Yes'
@@ -153,32 +153,32 @@ en:
       your_representatives_details:
         type_of_representative:
           choices:
-            citizens_advice_bureau: Citizen's Advice Bureau
-            free_representation_unit: Free Representation Unit
-            law_centre: Law Centre
+            citizens_advice_bureau: Citizen's advice bureau
+            free_representation_unit: Free representation unit
+            law_centre: Law centre
             union: Union
             solicitor: Solicitor
-            private_individual: Private Individual
-            trade_association: Trade Association
+            private_individual: Private individual
+            trade_association: Trade association
             other: Other
-        representative_org_name: Name of the Representative's Organisation (optional)
-        representative_name: Representative's Name
-        representative_building: Building Name or Number
+        representative_org_name: Name of the representative's organisation (optional)
+        representative_name: Representative's name
+        representative_building: Building name or number
         representative_street: Street
         representative_town: Town/City
         representative_county: County (optional)
         representative_postcode: Postcode
-        representative_phone: Phone Number (optional)
-        representative_mobile: Mobile Number (optional)
-        representative_dx_number: Document Exchange (DX) Number (optional)
+        representative_phone: Phone number (optional)
+        representative_mobile: Mobile number (optional)
+        representative_dx_number: Document exchange (DX) number (optional)
         representative_reference: Reference (optional)
         representative_contact_preference:
           choices:
             email: Email
             post: Post
             fax: Fax
-        representative_email: Email Address
-        representative_fax: Fax Number
+        representative_email: Email address
+        representative_fax: Fax number
         representative_disability:
           choices:
             'yes': 'Yes'

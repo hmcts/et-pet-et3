@@ -13,7 +13,6 @@ RSpec.feature "View Sidebar", js: true do
 
     expect(start_page.sidebar).to have_link(t('components.sidebar.claim_link'), href: t('components.sidebar.claim_href'))
     expect(start_page.sidebar).to have_link(t('components.sidebar.response_link'), href: t('components.sidebar.response_href'))
-    expect(start_page.sidebar).to have_link(t('components.sidebar.help_fees_link'), href: t('components.sidebar.help_fees_href'))
     expect(start_page.sidebar).to have_link(t('components.sidebar.contact_link'), href: t('components.sidebar.contact_href'))
     expect(start_page.sidebar).to have_link(t('components.sidebar.download_link'), href: t('components.sidebar.download_href'))
     expect(start_page.sidebar).to have_link(t('components.sidebar.more_category_link'), href: t('components.sidebar.more_category_href'))
@@ -24,7 +23,6 @@ RSpec.feature "View Sidebar", js: true do
 
     expect(respondents_details_page.sidebar).to have_link(t('components.sidebar.claim_link'), href: t('components.sidebar.claim_href'))
     expect(respondents_details_page.sidebar).to have_link(t('components.sidebar.response_link'), href: t('components.sidebar.response_href'))
-    expect(respondents_details_page.sidebar).to have_link(t('components.sidebar.help_fees_link'), href: t('components.sidebar.help_fees_href'))
     expect(respondents_details_page.sidebar).to have_link(t('components.sidebar.contact_link'), href: t('components.sidebar.contact_href'))
     expect(respondents_details_page.sidebar).to have_link(t('components.sidebar.download_link'), href: t('components.sidebar.download_href'))
     expect(respondents_details_page.sidebar).to have_link(t('components.sidebar.more_category_link'), href: t('components.sidebar.more_category_href'))
@@ -35,7 +33,6 @@ RSpec.feature "View Sidebar", js: true do
 
     expect(claimants_details_page.sidebar).to have_link(t('components.sidebar.claim_link'), href: t('components.sidebar.claim_href'))
     expect(claimants_details_page.sidebar).to have_link(t('components.sidebar.response_link'), href: t('components.sidebar.response_href'))
-    expect(claimants_details_page.sidebar).to have_link(t('components.sidebar.help_fees_link'), href: t('components.sidebar.help_fees_href'))
     expect(claimants_details_page.sidebar).to have_link(t('components.sidebar.contact_link'), href: t('components.sidebar.contact_href'))
     expect(claimants_details_page.sidebar).to have_link(t('components.sidebar.download_link'), href: t('components.sidebar.download_href'))
     expect(claimants_details_page.sidebar).to have_link(t('components.sidebar.more_category_link'), href: t('components.sidebar.more_category_href'))
@@ -46,7 +43,6 @@ RSpec.feature "View Sidebar", js: true do
 
     expect(earnings_and_benefits_page.sidebar).to have_link(t('components.sidebar.claim_link'), href: t('components.sidebar.claim_href'))
     expect(earnings_and_benefits_page.sidebar).to have_link(t('components.sidebar.response_link'), href: t('components.sidebar.response_href'))
-    expect(earnings_and_benefits_page.sidebar).to have_link(t('components.sidebar.help_fees_link'), href: t('components.sidebar.help_fees_href'))
     expect(earnings_and_benefits_page.sidebar).to have_link(t('components.sidebar.contact_link'), href: t('components.sidebar.contact_href'))
     expect(earnings_and_benefits_page.sidebar).to have_link(t('components.sidebar.download_link'), href: t('components.sidebar.download_href'))
     expect(earnings_and_benefits_page.sidebar).to have_link(t('components.sidebar.more_category_link'), href: t('components.sidebar.more_category_href'))
@@ -57,7 +53,6 @@ RSpec.feature "View Sidebar", js: true do
 
     expect(response_page.sidebar).to have_link(t('components.sidebar.claim_link'), href: t('components.sidebar.claim_href'))
     expect(response_page.sidebar).to have_link(t('components.sidebar.response_link'), href: t('components.sidebar.response_href'))
-    expect(response_page.sidebar).to have_link(t('components.sidebar.help_fees_link'), href: t('components.sidebar.help_fees_href'))
     expect(response_page.sidebar).to have_link(t('components.sidebar.contact_link'), href: t('components.sidebar.contact_href'))
     expect(response_page.sidebar).to have_link(t('components.sidebar.download_link'), href: t('components.sidebar.download_href'))
     expect(response_page.sidebar).to have_link(t('components.sidebar.more_category_link'), href: t('components.sidebar.more_category_href'))
@@ -68,7 +63,6 @@ RSpec.feature "View Sidebar", js: true do
 
     expect(your_representative_page.sidebar).to have_link(t('components.sidebar.claim_link'), href: t('components.sidebar.claim_href'))
     expect(your_representative_page.sidebar).to have_link(t('components.sidebar.response_link'), href: t('components.sidebar.response_href'))
-    expect(your_representative_page.sidebar).to have_link(t('components.sidebar.help_fees_link'), href: t('components.sidebar.help_fees_href'))
     expect(your_representative_page.sidebar).to have_link(t('components.sidebar.contact_link'), href: t('components.sidebar.contact_href'))
     expect(your_representative_page.sidebar).to have_link(t('components.sidebar.download_link'), href: t('components.sidebar.download_href'))
     expect(your_representative_page.sidebar).to have_link(t('components.sidebar.more_category_link'), href: t('components.sidebar.more_category_href'))
@@ -79,7 +73,6 @@ RSpec.feature "View Sidebar", js: true do
 
     expect(your_representatives_details_page.sidebar).to have_link(t('components.sidebar.claim_link'), href: t('components.sidebar.claim_href'))
     expect(your_representatives_details_page.sidebar).to have_link(t('components.sidebar.response_link'), href: t('components.sidebar.response_href'))
-    expect(your_representatives_details_page.sidebar).to have_link(t('components.sidebar.help_fees_link'), href: t('components.sidebar.help_fees_href'))
     expect(your_representatives_details_page.sidebar).to have_link(t('components.sidebar.contact_link'), href: t('components.sidebar.contact_href'))
     expect(your_representatives_details_page.sidebar).to have_link(t('components.sidebar.download_link'), href: t('components.sidebar.download_href'))
     expect(your_representatives_details_page.sidebar).to have_link(t('components.sidebar.more_category_link'), href: t('components.sidebar.more_category_href'))
@@ -90,7 +83,6 @@ RSpec.feature "View Sidebar", js: true do
 
     expect(employers_contract_claim_page.sidebar).to have_link(t('components.sidebar.claim_link'), href: t('components.sidebar.claim_href'))
     expect(employers_contract_claim_page.sidebar).to have_link(t('components.sidebar.response_link'), href: t('components.sidebar.response_href'))
-    expect(employers_contract_claim_page.sidebar).to have_link(t('components.sidebar.help_fees_link'), href: t('components.sidebar.help_fees_href'))
     expect(employers_contract_claim_page.sidebar).to have_link(t('components.sidebar.contact_link'), href: t('components.sidebar.contact_href'))
     expect(employers_contract_claim_page.sidebar).to have_link(t('components.sidebar.download_link'), href: t('components.sidebar.download_href'))
     expect(employers_contract_claim_page.sidebar).to have_link(t('components.sidebar.more_category_link'), href: t('components.sidebar.more_category_href'))
@@ -101,7 +93,6 @@ RSpec.feature "View Sidebar", js: true do
 
     expect(additional_information_page.sidebar).to have_link(t('components.sidebar.claim_link'), href: t('components.sidebar.claim_href'))
     expect(additional_information_page.sidebar).to have_link(t('components.sidebar.response_link'), href: t('components.sidebar.response_href'))
-    expect(additional_information_page.sidebar).to have_link(t('components.sidebar.help_fees_link'), href: t('components.sidebar.help_fees_href'))
     expect(additional_information_page.sidebar).to have_link(t('components.sidebar.contact_link'), href: t('components.sidebar.contact_href'))
     expect(additional_information_page.sidebar).to have_link(t('components.sidebar.download_link'), href: t('components.sidebar.download_href'))
     expect(additional_information_page.sidebar).to have_link(t('components.sidebar.more_category_link'), href: t('components.sidebar.more_category_href'))
@@ -112,7 +103,6 @@ RSpec.feature "View Sidebar", js: true do
 
     expect(confirmation_of_supplied_details_page.sidebar).to have_link(t('components.sidebar.claim_link'), href: t('components.sidebar.claim_href'))
     expect(confirmation_of_supplied_details_page.sidebar).to have_link(t('components.sidebar.response_link'), href: t('components.sidebar.response_href'))
-    expect(confirmation_of_supplied_details_page.sidebar).to have_link(t('components.sidebar.help_fees_link'), href: t('components.sidebar.help_fees_href'))
     expect(confirmation_of_supplied_details_page.sidebar).to have_link(t('components.sidebar.contact_link'), href: t('components.sidebar.contact_href'))
     expect(confirmation_of_supplied_details_page.sidebar).to have_link(t('components.sidebar.download_link'), href: t('components.sidebar.download_href'))
     expect(confirmation_of_supplied_details_page.sidebar).to have_link(t('components.sidebar.more_category_link'), href: t('components.sidebar.more_category_href'))
@@ -125,7 +115,6 @@ RSpec.feature "View Sidebar", js: true do
 
     expect(form_submission_page.sidebar).to have_link(t('components.sidebar.claim_link'), href: t('components.sidebar.claim_href'))
     expect(form_submission_page.sidebar).to have_link(t('components.sidebar.response_link'), href: t('components.sidebar.response_href'))
-    expect(form_submission_page.sidebar).to have_link(t('components.sidebar.help_fees_link'), href: t('components.sidebar.help_fees_href'))
     expect(form_submission_page.sidebar).to have_link(t('components.sidebar.contact_link'), href: t('components.sidebar.contact_href'))
     expect(form_submission_page.sidebar).to have_link(t('components.sidebar.download_link'), href: t('components.sidebar.download_href'))
     expect(form_submission_page.sidebar).to have_link(t('components.sidebar.more_category_link'), href: t('components.sidebar.more_category_href'))

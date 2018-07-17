@@ -13,7 +13,7 @@
       .column-one-half
         span.normal= "Drag and drop .rtf files here"
         .bold-normal= "or"
-        button.button.button-secondary type="button" = t('helpers.label.additional_information.upload_button')
+        button.button.button-secondary#upload-button type="button" = t('helpers.label.additional_information.upload_button')
 
     = hidden_field :aws, :key
     = hidden_field :aws, :policy

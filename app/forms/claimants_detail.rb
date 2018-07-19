@@ -38,7 +38,7 @@ class ClaimantsDetail < BaseForm
   private
 
   def disagree_with_employment_dates?
-    !agree_with_employment_dates
+    agree_with_employment_dates == false
   end
 
 end

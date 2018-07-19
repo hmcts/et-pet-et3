@@ -24,9 +24,9 @@
         = b.radio_button(:agree_with_employment_dates, false) + label(:agree_with_employment_dates_false, t('helpers.label.claimants_detail.agree_with_employment_dates.choices.no'), value: :no)
       #disagree_employment_dates.panel.panel-border-narrow.js-hidden
         .form-group
-          = f.gov_uk_date_field :employment_start, legend_text: t('helpers.label.claimants_detail.employment_start'), form_hint_text: t('helpers.hint.claimants_detail.employment_dates')
+          = f.gov_uk_date_field :employment_start, legend_text: t('helpers.label.claimants_detail.employment_start'), form_hint_text: t('helpers.hint.claimants_detail.employment_start')
         .form-group
-          = f.gov_uk_date_field :employment_end, legend_text: t('helpers.label.claimants_detail.employment_end'), form_hint_text: t('helpers.hint.claimants_detail.employment_dates')
+          = f.gov_uk_date_field :employment_end, legend_text: t('helpers.label.claimants_detail.employment_end'), form_hint_text: t('helpers.hint.claimants_detail.employment_end')
         .form-group
           = f.text_area :disagree_employment
     = f.radio_button_fieldset :continued_employment do |b|

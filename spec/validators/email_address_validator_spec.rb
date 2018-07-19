@@ -51,7 +51,7 @@ RSpec.describe EmailAddressValidator do
 
     model.valid?
 
-    expect(model.errors.details[:email]).to include a_hash_including(error: :invalid)
+    expect(model.errors.details[:email]).to include a_hash_including(error: :invalid_email)
   end
 
   it 'will not validate an email address with a one character TLD' do
@@ -59,7 +59,7 @@ RSpec.describe EmailAddressValidator do
 
     model.valid?
 
-    expect(model.errors.details[:email]).to include a_hash_including(error: :invalid)
+    expect(model.errors.details[:email]).to include a_hash_including(error: :invalid_email)
   end
 
   it 'will not validate an email address with more than one "@"' do
@@ -67,7 +67,7 @@ RSpec.describe EmailAddressValidator do
 
     model.valid?
 
-    expect(model.errors.details[:email]).to include a_hash_including(error: :invalid)
+    expect(model.errors.details[:email]).to include a_hash_including(error: :invalid_email)
   end
 
   it 'will not validate an email address without a username/recipient' do
@@ -75,7 +75,7 @@ RSpec.describe EmailAddressValidator do
 
     model.valid?
 
-    expect(model.errors.details[:email]).to include a_hash_including(error: :invalid)
+    expect(model.errors.details[:email]).to include a_hash_including(error: :invalid_email)
   end
 
   it 'will not validate an email address without an "@" sign' do
@@ -83,7 +83,7 @@ RSpec.describe EmailAddressValidator do
 
     model.valid?
 
-    expect(model.errors.details[:email]).to include a_hash_including(error: :invalid)
+    expect(model.errors.details[:email]).to include a_hash_including(error: :invalid_email)
   end
 
 end

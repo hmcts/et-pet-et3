@@ -8,7 +8,7 @@ module ET3
       section :claimants_name_question, :question_labelled, 'questions.claimants_name.label', exact: false do
         element :field, :css, "input"
         element :error_contains_numbers, :exact_error_text, 'errors.messages.contains_numbers', exact: false
-        element :error_contains_no_spaces, :exact_error_text, 'errors.messages.contains_no_spaces', exact: false
+        element :error_invalid_name, :exact_error_text, 'errors.messages.invalid_name', exact: false
 
 
         delegate :set, to: :field
@@ -54,6 +54,7 @@ module ET3
             delegate :set, to: :field
           end
 
+          element :error_inclusion, :exact_error_text, 'errors.custom.agree_with_employment_dates.inclusion', exact: false
           element :error_blank, :exact_error_text, 'errors.messages.blank', exact: false
 
           def assert_date_for(user_persona)

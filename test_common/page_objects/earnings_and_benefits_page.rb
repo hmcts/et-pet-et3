@@ -15,7 +15,7 @@ module ET3
           delegate :set, to: :field
         end
 
-        element :error_not_a_number, :exact_error_text, 'errors.messages.not_a_number', exact: false
+        element :error_not_a_number, :exact_error_text, 'errors.custom.queried_hours.not_a_number', exact: false
 
         def set_for(user_persona)
           if user_persona.agree_with_claimants_hours == 'No'
@@ -49,6 +49,7 @@ module ET3
             delegate :set, to: :selector
           end
 
+          element :error_not_a_number, :exact_error_text, 'errors.custom.queried_pay_before_tax.not_a_number', exact: false
           delegate :set, to: :field
 
         end
@@ -71,11 +72,11 @@ module ET3
             delegate :set, to: :selector
           end
 
+          element :error_not_a_number, :exact_error_text, 'errors.custom.queried_take_home_pay.not_a_number', exact: false
+
           delegate :set, to: :field
         end
         
-        element :error_not_a_number, :exact_error_text, 'errors.messages.not_a_number', exact: false
-
         def set_for(user_persona)
           if user_persona.agree_with_earnings_details == 'No'
             no.set(true)

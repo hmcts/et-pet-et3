@@ -30,7 +30,7 @@ RSpec.describe YourRepresentativesDetails, type: :model do
 
       populated_your_representatives_details.valid?
 
-      expect(populated_your_representatives_details.errors.details[:representative_postcode]).to include a_hash_including(error: :invalid)
+      expect(populated_your_representatives_details.errors.details[:representative_postcode]).to include a_hash_including(error: :invalid_postcode)
     end
 
     it 'will not validate a contact_number with less than 7 integers' do
@@ -38,7 +38,7 @@ RSpec.describe YourRepresentativesDetails, type: :model do
 
       populated_your_representatives_details.valid?
 
-      expect(populated_your_representatives_details.errors.details[:representative_phone]).to include a_hash_including(error: :invalid)
+      expect(populated_your_representatives_details.errors.details[:representative_phone]).to include a_hash_including(error: :invalid_phone_number)
     end
 
     it 'will not validate a mobile_number with letter characters' do
@@ -46,7 +46,7 @@ RSpec.describe YourRepresentativesDetails, type: :model do
 
       populated_your_representatives_details.valid?
 
-      expect(populated_your_representatives_details.errors.details[:representative_mobile]).to include a_hash_including(error: :invalid)
+      expect(populated_your_representatives_details.errors.details[:representative_mobile]).to include a_hash_including(error: :invalid_phone_number)
     end
 
     it 'will not validate an email address without a domain' do
@@ -55,7 +55,7 @@ RSpec.describe YourRepresentativesDetails, type: :model do
 
       populated_your_representatives_details.valid?
 
-      expect(populated_your_representatives_details.errors.details[:representative_email]).to include a_hash_including(error: :invalid)
+      expect(populated_your_representatives_details.errors.details[:representative_email]).to include a_hash_including(error: :invalid_email)
     end
 
     it 'will not validate a fax number with a "+" outside the first character' do
@@ -64,7 +64,7 @@ RSpec.describe YourRepresentativesDetails, type: :model do
 
       populated_your_representatives_details.valid?
 
-      expect(populated_your_representatives_details.errors.details[:representative_fax]).to include a_hash_including(error: :invalid)
+      expect(populated_your_representatives_details.errors.details[:representative_fax]).to include a_hash_including(error: :invalid_phone_number)
     end
 
     it 'will not validate representative disability information over 350 characters' do
@@ -338,7 +338,7 @@ RSpec.describe YourRepresentativesDetails, type: :model do
 
       populated_your_representatives_details.valid?
 
-      expect(populated_your_representatives_details.errors.details[:representative_email]).to include a_hash_including(error: :invalid)
+      expect(populated_your_representatives_details.errors.details[:representative_email]).to include a_hash_including(error: :invalid_email)
     end
 
     it "will not raise a validation error if an email address is provided" do
@@ -356,7 +356,7 @@ RSpec.describe YourRepresentativesDetails, type: :model do
 
       populated_your_representatives_details.valid?
 
-      expect(populated_your_representatives_details.errors.details[:representative_fax]).to include a_hash_including(error: :invalid)
+      expect(populated_your_representatives_details.errors.details[:representative_fax]).to include a_hash_including(error: :invalid_phone_number)
     end
 
     it "will not raise a validation error if a fax number is provided" do

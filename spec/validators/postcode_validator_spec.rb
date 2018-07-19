@@ -56,7 +56,7 @@ RSpec.describe PostcodeValidator do
 
     model.valid?
 
-    expect(model.errors.details[:postcode]).to include a_hash_including(error: :invalid)
+    expect(model.errors.details[:postcode]).to include a_hash_including(error: :invalid_postcode)
   end
 
   it 'will return an error when nil' do

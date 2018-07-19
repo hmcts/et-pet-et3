@@ -31,8 +31,8 @@ RSpec.feature "Fill in Earnings and Benefits Page", js: true do
 
     expect(earnings_and_benefits_page).to have_error_header
     expect(earnings_and_benefits_page.agree_with_claimants_hours_question).to have_error_not_a_number
-    expect(earnings_and_benefits_page.agree_with_earnings_details_question).to have_error_not_a_number
-    expect(earnings_and_benefits_page.agree_with_earnings_details_question).to have_error_not_a_number
+    expect(earnings_and_benefits_page.agree_with_earnings_details_question.queried_pay_before_tax).to have_error_not_a_number
+    expect(earnings_and_benefits_page.agree_with_earnings_details_question.queried_take_home_pay).to have_error_not_a_number
     expect(earnings_and_benefits_page.agree_with_claimant_notice_question).to have_error_too_long
     expect(earnings_and_benefits_page.agree_with_claimant_pension_benefits_question).to have_error_too_long
   end

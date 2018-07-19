@@ -27,7 +27,7 @@ RSpec.describe RespondentsDetail, type: :model do
 
       populated_respondent_detail.valid?
 
-      expect(populated_respondent_detail.errors.details[:email_address]).to include a_hash_including(error: :invalid)
+      expect(populated_respondent_detail.errors.details[:email_address]).to include a_hash_including(error: :invalid_email)
     end
 
     it 'will not validate a name with numbers in' do
@@ -44,7 +44,7 @@ RSpec.describe RespondentsDetail, type: :model do
 
       populated_respondent_detail.valid?
 
-      expect(populated_respondent_detail.errors.details[:fax_number]).to include a_hash_including(error: :invalid)
+      expect(populated_respondent_detail.errors.details[:fax_number]).to include a_hash_including(error: :invalid_phone_number)
     end
 
     it 'will not validate a contact_number with letters' do
@@ -52,7 +52,7 @@ RSpec.describe RespondentsDetail, type: :model do
 
       populated_respondent_detail.valid?
 
-      expect(populated_respondent_detail.errors.details[:contact_number]).to include a_hash_including(error: :invalid)
+      expect(populated_respondent_detail.errors.details[:contact_number]).to include a_hash_including(error: :invalid_phone_number)
     end
 
     it 'will not validate a mobile_number with more than one "+"' do
@@ -60,7 +60,7 @@ RSpec.describe RespondentsDetail, type: :model do
 
       populated_respondent_detail.valid?
 
-      expect(populated_respondent_detail.errors.details[:mobile_number]).to include a_hash_including(error: :invalid)
+      expect(populated_respondent_detail.errors.details[:mobile_number]).to include a_hash_including(error: :invalid_phone_number)
     end
 
     it 'uses uk_postcode gem to prevent invalid postcodes being saved' do
@@ -68,7 +68,7 @@ RSpec.describe RespondentsDetail, type: :model do
 
       populated_respondent_detail.valid?
 
-      expect(populated_respondent_detail.errors.details[:postcode]).to include a_hash_including(error: :invalid)
+      expect(populated_respondent_detail.errors.details[:postcode]).to include a_hash_including(error: :invalid_postcode)
     end
 
     it 'uses numericality to invalidate employment at site not being a number' do
@@ -364,7 +364,7 @@ RSpec.describe RespondentsDetail, type: :model do
 
       populated_respondent_detail.valid?
 
-      expect(populated_respondent_detail.errors.details[:email_address]).to include a_hash_including(error: :invalid)
+      expect(populated_respondent_detail.errors.details[:email_address]).to include a_hash_including(error: :invalid_email)
     end
 
     it "will not raise a validation error if an email address is provided" do
@@ -384,7 +384,7 @@ RSpec.describe RespondentsDetail, type: :model do
 
       populated_respondent_detail.valid?
 
-      expect(populated_respondent_detail.errors.details[:fax_number]).to include a_hash_including(error: :invalid)
+      expect(populated_respondent_detail.errors.details[:fax_number]).to include a_hash_including(error: :invalid_phone_number)
     end
 
     it "will not raise a validation error if a fax number is provided" do

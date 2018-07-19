@@ -2,13 +2,13 @@ en:
   questions:
     # Respondent's Details Page
     case_number:
-      label: Case Number
+      label: Case number
     name:
-      label: Name of Individual, Company or Organisation
+      label: Name of individual, company or organisation
     contact:
-      label: Name of Contact (optional)
+      label: Name of contact (optional)
     building_name:
-      label: Building Name or Number
+      label: Building name or number
     street:
       label: Street
     town:
@@ -18,21 +18,21 @@ en:
     postcode:
       label: Postcode
     dx_number:
-      label: Document Exchange (DX) Number (optional)
+      label: Document exchange (DX) number (optional)
     contact_number:
-      label: Contact Number (optional)
+      label: Contact number (optional)
     contact_mobile_number:
-      label: Mobile Number (optional)
+      label: Mobile number (optional)
     contact_preference:
       label: How would you prefer us to contact you? (optional)
       email:
         label: Email
-        input_label: Email Address
+        input_label: Email address
       post:
         label: Post
       fax:
         label: Fax
-        input_label: Fax Number
+        input_label: Fax number
     organisation_employ_gb:
       label: How many people does this organisation employ in Great Britain? (optional)
     organisation_more_than_one_site:
@@ -45,7 +45,7 @@ en:
         label: How many people are employed at the place where the claimant worked?
     # Claimant's Details Page
     claimants_name:
-      label: Claimant's Name (optional)
+      label: Claimant's name (optional)
     agree_with_early_conciliation_details:
       label: Do you agree with the details given by the claimant about Early Conciliation with Acas? (optional)
       'yes':
@@ -175,11 +175,11 @@ en:
       other:
         label: Other
     representative_org_name:
-      label: Name of the Representative's Organisation (optional)
+      label: Name of the representative's organisation (optional)
     representative_name:
-      label: Representative's Name
+      label: Representative's name
     representative_building:
-      label: Building Name or Number
+      label: Building name or number
     representative_street:
       label: Street
     representative_town:
@@ -189,21 +189,21 @@ en:
     representative_postcode:
       label: Postcode
     representative_phone:
-      label: Phone Number (optional)
+      label: Phone number (optional)
     representative_mobile:
-      label: Mobile Number (optional)
+      label: Mobile number (optional)
     representative_dx_number:
-      label: Document Exchange (DX) Number (optional)
+      label: Document exchange (DX) number (optional)
     representative_reference:
       label: Reference (optional)
     representative_contact_preference:
       label: How would you prefer us to contact your representative? (optional)
       email:
         label: Email
-        input_label: Email Address
+        input_label: Email address
       fax:
         label: Fax
-        input_label: Fax Number
+        input_label: Fax number
     representative_disability:
       label: Does your representative have a disability? (optional)
       'yes':
@@ -252,10 +252,27 @@ en:
       contains_no_spaces: must contain at least one space
       contains_numbers: must not contain numbers
       invalid: is invalid
+      invalid_email: This is not a valid email address
+      invalid_name: Please enter your full name
+      invalid_postcode: This is not a valid UK postcode
+      invalid_phone_number: This is not a valid phone number
       not_a_number: is not a number
       too_long: characters is the maximum allowed
-      inclusion: is not included in the list
-      confirmation: doesn't match
+      inclusion: Please select an option
+    custom:
+      organisation_employ_gb:
+        not_a_number: Please enter how many people the organisation employs in Great Britain as a number
+      organisation_more_than_one_site:
+        not_a_number: Please enter how many people are employed at the place where the claimant worked as a number
+        inclusion: Please indicate whether the organisation has more than one site in Great Britain
+      queried_hours:
+        not_a_number: Please enter the number of hours you believe to be correct as a number
+      queried_pay_before_tax:
+        not_a_number: Please enter the pay before tax as a number
+      queried_take_home_pay:
+        not_a_number: Please enter the normal take-home pay as a number
+      type_of_representative:
+        inclusion: Please select the type of your representative
   links:
     confirmation_of_supplied_details:
       edit_page: Edit answers on this page

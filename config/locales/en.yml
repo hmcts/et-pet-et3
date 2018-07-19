@@ -60,24 +60,24 @@ en:
         make_employer_contract_claim: Do you wish to make an Employer Contract Claim? (optional)
     label:
       respondents_detail:
-        case_number: Case Number
-        name: Name of Individual, Company or Organisation
-        contact: Name of Contact (optional)
-        building_name: Building Name or Number
+        case_number: Case number
+        name: Name of individual, company or organisation
+        contact: Name of contact (optional)
+        building_name: Building name or number
         street_name: Street
         town: Town/City
         county: County (optional)
         postcode: Postcode
-        dx_number: Document Exchange (DX) Number (optional)
-        contact_number: Contact Number (optional)
-        mobile_number: Mobile Number (optional)
+        dx_number: Document exchange (DX) number (optional)
+        contact_number: Contact number (optional)
+        mobile_number: Mobile number (optional)
         contact_preference:
           choices:
             email: Email
             post: Post
             fax: Fax
-        email_address: Email Address
-        fax_number: Fax Number
+        email_address: Email address
+        fax_number: Fax number
         organisation_employ_gb: How many people does this organisation employ in Great Britain? (optional)
         organisation_more_than_one_site:
           choices:
@@ -85,7 +85,7 @@ en:
             'no': 'No'
         employment_at_site_number: How many people are employed at the place where the claimant worked?
       claimants_detail:
-        claimants_name: Claimant's Name (optional)
+        claimants_name: Claimant's name (optional)
         agree_with_early_conciliation_details:
           choices:
             'yes': 'Yes'
@@ -99,7 +99,7 @@ en:
         employment_end: When their employment ended or will end
         disagree_employment: Why do you disagree with the dates given by the claimant
         continued_employment:
-          choices:              
+          choices:
             'yes': 'Yes'
             'no': 'No'
         agree_with_claimants_description_of_job_or_title:
@@ -153,32 +153,32 @@ en:
       your_representatives_details:
         type_of_representative:
           choices:
-            citizens_advice_bureau: Citizen's Advice Bureau
-            free_representation_unit: Free Representation Unit
-            law_centre: Law Centre
+            citizens_advice_bureau: Citizen's advice bureau
+            free_representation_unit: Free representation unit
+            law_centre: Law centre
             union: Union
             solicitor: Solicitor
-            private_individual: Private Individual
-            trade_association: Trade Association
+            private_individual: Private individual
+            trade_association: Trade association
             other: Other
-        representative_org_name: Name of the Representative's Organisation (optional)
-        representative_name: Representative's Name
-        representative_building: Building Name or Number
+        representative_org_name: Name of the representative's organisation (optional)
+        representative_name: Representative's name
+        representative_building: Building name or number
         representative_street: Street
         representative_town: Town/City
         representative_county: County (optional)
         representative_postcode: Postcode
-        representative_phone: Phone Number (optional)
-        representative_mobile: Mobile Number (optional)
-        representative_dx_number: Document Exchange (DX) Number (optional)
+        representative_phone: Phone number (optional)
+        representative_mobile: Mobile number (optional)
+        representative_dx_number: Document exchange (DX) number (optional)
         representative_reference: Reference (optional)
         representative_contact_preference:
           choices:
             email: Email
             post: Post
             fax: Fax
-        representative_email: Email Address
-        representative_fax: Fax Number
+        representative_email: Email address
+        representative_fax: Fax number
         representative_disability:
           choices:
             'yes': 'Yes'
@@ -197,18 +197,22 @@ en:
         email_receipt: Email Address (optional)
     hint:
       respondents_detail:
+        contact: For example, John Smith
         mobile_number: If different to your primary contact number
+        employment_at_site_number: For example, 10
+        organisation_employ_gb: For example, 10
       claimants_detail:
-        employment_dates: For example, 31 03 1980
+        employment_start: For example, 31 03 2010
+        employment_end: For example, 01 12 2017
       earnings_and_benefits:
-        queried_hours: In hours per week
+        queried_hours: In hours per week. For example, 39
         agree_with_earnings_details: If No, please give the details you believe to be correct
-        queried_pay_before_tax: Including overtime, commission, bonuses, etc.
-        queried_take_home_pay: Including overtime, commission, bonuses, etc.
+        queried_pay_before_tax: Including overtime, commission, bonuses, etc. For example, 28000
+        queried_take_home_pay: Including overtime, commission, bonuses, etc. For example, 20000
         disagree_claimant_notice_reason: |
           PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 400 characters) if you would like to include more please
           use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
-        agree_with_claimant_pension_benefits: "For example: company car, medical insurance, etc."
+        agree_with_claimant_pension_benefits: For example, company car, medical insurance, etc.
         disagree_claimant_pension_benefits_reason: |
           PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 350 characters) if you would like to include more please
           use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
@@ -230,11 +234,41 @@ en:
       additional_information:
         upload_additional_information: "Supported file type: .rtf"
       confirmation_of_supplied_details:
-        email_receipt: For example name@address.com
+        email_receipt: For example, name@address.com
   errors:
+    format: "%{message}"
     messages:
-      contains_no_spaces: must contain spaces
-      contains_numbers: must not contain numbers
+      contains_no_spaces: "%{attribute} must contain spaces"
+      contains_numbers: "%{attribute} must not contain numbers"
+      blank: "%{attribute} can't be blank"
+      invalid: "%{attribute} is invalid"
+      invalid_email: This is not a valid email address
+      invalid_name: Please enter your full name
+      invalid_postcode: This is not a valid UK postcode
+      invalid_phone_number: This is not a valid phone number
+      inclusion: Please select an option
+      not_a_number: "%{attribute} is not a number"
+    attributes:
+      contact:
+        contains_numbers: Name of contact must not contain numbers
+      employment_at_site_number:
+        not_a_number: Please enter how many people are employed at the place where the claimant worked as a number
+      organisation_more_than_one_site:
+        inclusion: Please indicate whether the organisation has more than one site in Great Britain
+      organisation_employ_gb:
+        not_a_number: Please enter how many people the organisation employs in Great Britain as a number
+      claimants_name:
+        contains_numbers: Claimant's name must not contain numbers
+      agree_with_employment_dates:
+        inclusion: Please indicate whether you agree with the dates of employment provided by the claimant
+      queried_hours:
+        not_a_number: Please enter the number of hours you believe to be correct as a number
+      queried_pay_before_tax:
+        not_a_number: Please enter the pay before tax as a number
+      queried_take_home_pay:
+        not_a_number: Please enter the normal take-home pay as a number
+      type_of_representative:
+        inclusion: Please select the type of your representative
   components:
     single_choice_option_section:
       'yes': "Yes"

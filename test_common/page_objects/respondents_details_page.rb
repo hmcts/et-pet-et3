@@ -22,7 +22,7 @@ module ET3
       section :contact_question, :question_labelled, 'questions.contact.label', exact: false do
         element :field, :css, "input"
         element :error_contains_numbers, :exact_error_text, 'errors.messages.contains_numbers', exact: false
-        element :error_contains_no_spaces, :exact_error_text, 'errors.messages.contains_no_spaces', exact: false
+        element :error_contains_invalid_name, :exact_error_text, 'errors.messages.invalid_name', exact: false
 
         delegate :set, to: :field
       end
@@ -33,21 +33,21 @@ module ET3
 
         delegate :set, to: :field
       end
-      
+
       section :street_question, :question_labelled, 'questions.street.label', exact: false do
         element :field, :css, "input"
         element :error_blank, :exact_error_text, 'errors.messages.blank', exact: false
 
         delegate :set, to: :field
       end
-            
+
       section :town_question, :question_labelled, 'questions.town.label', exact: false do
         element :field, :css, "input"
         element :error_blank, :exact_error_text, 'errors.messages.blank', exact: false
 
         delegate :set, to: :field
       end
-            
+
       section :county_question, :question_labelled, 'questions.county.label', exact: false do
         element :field, :css, "input"
 
@@ -57,27 +57,27 @@ module ET3
       section :postcode_question, :question_labelled, 'questions.postcode.label', exact: false do
         element :field, :css, "input"
         element :error_blank, :exact_error_text, 'errors.messages.blank', exact: false
-        element :error_invalid, :exact_error_text, 'errors.messages.invalid', exact: false
+        element :error_invalid_postcode, :exact_error_text, 'errors.messages.invalid_postcode', exact: false
 
         delegate :set, to: :field
       end
-            
+
       section :dx_number_question, :question_labelled, 'questions.dx_number.label', exact: false do
         element :field, :css, "input"
 
         delegate :set, to: :field
       end
-            
+
       section :contact_number_question, :question_labelled, 'questions.contact_number.label', exact: false do
         element :field, :css, "input"
-        element :error_invalid, :exact_error_text, 'errors.messages.invalid', exact: false
+        element :error_invalid_phone_number, :exact_error_text, 'errors.messages.invalid_phone_number', exact: false
 
         delegate :set, to: :field
       end
-            
+
       section :contact_mobile_number_question, :question_labelled, 'questions.contact_mobile_number.label', exact: false do
         element :field, :css, "input"
-        element :error_invalid, :exact_error_text, 'errors.messages.invalid', exact: false
+        element :error_invalid_phone_number, :exact_error_text, 'errors.messages.invalid_phone_number', exact: false
 
         delegate :set, to: :field
       end
@@ -110,8 +110,8 @@ module ET3
           delegate :set, to: :root_element
         end
 
-        element :error_invalid_email, :exact_error_text, 'errors.messages.invalid', exact: false
-        element :error_invalid_fax, :exact_error_text, 'errors.messages.invalid', exact: false
+        element :error_invalid_email, :exact_error_text, 'errors.messages.invalid_email', exact: false
+        element :error_invalid_fax, :exact_error_text, 'errors.messages.invalid_phone_number', exact: false
 
         def set_for(user_persona)
           case user_persona.contact_preference
@@ -126,30 +126,31 @@ module ET3
           end
         end
       end
-            
+
       section :organisation_employ_gb_question, :question_labelled, 'questions.organisation_employ_gb.label', exact: false do
         element :field, :css, "input"
         element :error_blank, :exact_error_text, 'errors.messages.blank', exact: false
-        element :error_not_a_number, :exact_error_text, 'errors.messages.not_a_number', exact: false
+        element :error_not_a_number, :exact_error_text, 'errors.custom.organisation_employ_gb.not_a_number', exact: false
 
         delegate :set, to: :field
       end
-      
+
       section :organisation_more_than_one_site_question, :single_choice_option, 'questions.organisation_more_than_one_site.label', exact: false do |q|
-        
+
         include SingleChoiceOptionSection
 
         section :employment_at_site_number, :inputtext_labelled, 'questions.organisation_more_than_one_site.employment_at_site_number.label', exact: false do
           delegate :set, to: :root_element
         end
 
-        element :error_not_a_number, :exact_error_text, 'errors.messages.not_a_number', exact: false
+        element :error_inclusion, :exact_error_text, 'errors.custom.organisation_more_than_one_site.inclusion', exact: false
+        element :error_not_a_number, :exact_error_text, 'errors.custom.organisation_more_than_one_site.not_a_number', exact: false
 
         def set_for(user_persona)
           if user_persona.organisation_more_than_one_site == 'Yes'
             yes.set(true)
             employment_at_site_number.set(user_persona.employment_at_site_number)
-          else 
+          else
             no.set(true)
           end
         end

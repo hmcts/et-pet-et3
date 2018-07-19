@@ -43,7 +43,7 @@ RSpec.describe PersonsNameValidator do
 
     model.valid?
 
-    expect(model.errors.details[:name]).to include a_hash_including(error: :contains_no_spaces)
+    expect(model.errors.details[:name]).to include a_hash_including(error: :invalid_name)
   end
 
 end

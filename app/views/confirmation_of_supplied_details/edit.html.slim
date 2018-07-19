@@ -287,11 +287,15 @@
           th Answer
         tr
           td = t('helpers.label.additional_information.upload_additional_information')
-          td = @hash_store.dig(:additional_information_answers, :upload_file_name)
+          td
+            - if @hash_store.dig(:additional_information_answers, :upload_file_name)
+              = @hash_store[:additional_information_answers][:upload_file_name]
+              br
+              = link_to 'Remove file', remove_rtf_path, method: :delete
         tr
           td
             = link_to("Edit answers on this page", edit_additional_information_path)
           td
             = link_to "Back to the top", "#content"
-    br/
+    br
     = f.submit("Submit Form", class: 'button')

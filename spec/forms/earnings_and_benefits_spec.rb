@@ -18,7 +18,7 @@ RSpec.describe EarningsAndBenefits, type: :model do
     )
   }
 
-  let(:four_hundred_and_one_chars) { Faker::Lorem.characters(451) }
+  let(:four_hundred_and_one_chars) { Faker::Lorem.characters(401) }
 
   let(:three_hundred_fifty_one_chars) { Faker::Lorem.characters(351) }
 
@@ -229,4 +229,136 @@ RSpec.describe EarningsAndBenefits, type: :model do
       expect(populated_earnings_and_benefits).to be_valid
     end
   end
+
+  context "when agreeing with claimants hours of work" do
+    it 'will not validate queried hours' do
+      populated_earnings_and_benefits.agree_with_claimants_hours = true
+      populated_earnings_and_benefits.queried_hours = "a string"
+
+      expect(populated_earnings_and_benefits).to be_valid
+    end
+
+    it 'will not hash queried hours' do
+      populated_earnings_and_benefits.agree_with_claimants_hours = true
+      populated_earnings_and_benefits.queried_hours = "a string"
+
+      expect(populated_earnings_and_benefits.to_h).not_to include(:queried_hours)
+    end
+  end
+
+  context "when disagreeing with claimants hours of work" do
+    it 'will raise a validation error on queried hours' do
+      populated_earnings_and_benefits.agree_with_claimants_hours = false
+      populated_earnings_and_benefits.queried_hours = "a string"
+
+      populated_earnings_and_benefits.valid?
+
+      expect(populated_earnings_and_benefits.errors.details[:queried_hours]).to include a_hash_including(error: :not_a_number)
+    end
+  end
+
+  context "when agreeing with claimants earnings details" do
+    it 'will not validate queried pay before tax' do
+      populated_earnings_and_benefits.agree_with_earnings_details = true
+      populated_earnings_and_benefits.queried_pay_before_tax = "a string"
+
+      expect(populated_earnings_and_benefits).to be_valid
+    end
+
+    it 'will not validate queried take home pay' do
+      populated_earnings_and_benefits.agree_with_earnings_details = true
+      populated_earnings_and_benefits.queried_take_home_pay = "a string"
+
+      expect(populated_earnings_and_benefits).to be_valid
+    end
+
+    it 'will not hash queried pay before tax' do
+      populated_earnings_and_benefits.agree_with_earnings_details = true
+      populated_earnings_and_benefits.queried_pay_before_tax = "a string"
+
+      expect(populated_earnings_and_benefits.to_h).not_to include(:queried_pay_before_tax)
+    end
+
+    it 'will not hash queried take home pay' do
+      populated_earnings_and_benefits.agree_with_earnings_details = true
+      populated_earnings_and_benefits.queried_take_home_pay = "a string"
+
+      expect(populated_earnings_and_benefits.to_h).not_to include(:queried_take_home_pay)
+    end
+  end
+
+  context "when disagreeing with claimants earnings details" do
+    it 'will raise a validation error on queried pay before tax' do
+      populated_earnings_and_benefits.agree_with_earnings_details = false
+      populated_earnings_and_benefits.queried_pay_before_tax = "a string"
+
+      populated_earnings_and_benefits.valid?
+
+      expect(populated_earnings_and_benefits.errors.details[:queried_pay_before_tax]).to include a_hash_including(error: :not_a_number)
+    end
+
+    it 'will raise a validation error on queried take home pay' do
+      populated_earnings_and_benefits.agree_with_earnings_details = false
+      populated_earnings_and_benefits.queried_take_home_pay = "a string"
+
+      populated_earnings_and_benefits.valid?
+
+      expect(populated_earnings_and_benefits.errors.details[:queried_take_home_pay]).to include a_hash_including(error: :not_a_number)
+    end
+  end
+
+  context "when agreeing with claimants notice" do
+    it 'will not validate disagree claimant notice reason' do
+      populated_earnings_and_benefits.agree_with_claimant_notice = true
+      populated_earnings_and_benefits.disagree_claimant_notice_reason = four_hundred_and_one_chars
+
+      expect(populated_earnings_and_benefits).to be_valid
+    end
+
+    it 'will not hash disagree claimant notice reason' do
+      populated_earnings_and_benefits.agree_with_claimant_notice = true
+
+      expect(populated_earnings_and_benefits.to_h).not_to include(:disagree_claimant_notice_reason)
+    end
+  end
+
+  context "when disagreeing with claimants notice" do
+    it 'will raise a validation error on disagree claimant notice reason' do
+      populated_earnings_and_benefits.agree_with_claimants_hours = false
+      populated_earnings_and_benefits.disagree_claimant_notice_reason = four_hundred_and_one_chars
+
+      populated_earnings_and_benefits.valid?
+
+      expect(populated_earnings_and_benefits.errors.details[:disagree_claimant_notice_reason]).to include a_hash_including(error: :too_long)
+    end
+  end
+
+  context "when agreeing with claimant pension benefits" do
+    it 'will not validate disagree claimant pension benefits reason' do
+      populated_earnings_and_benefits.agree_with_claimant_pension_benefits = true
+      populated_earnings_and_benefits.disagree_claimant_pension_benefits_reason = three_hundred_fifty_one_chars
+
+      expect(populated_earnings_and_benefits).to be_valid
+    end
+
+    it 'will not hash disagree claimant pension benefits reason' do
+      populated_earnings_and_benefits.agree_with_claimant_pension_benefits = true
+      populated_earnings_and_benefits.disagree_claimant_pension_benefits_reason = three_hundred_fifty_one_chars
+
+      expect(populated_earnings_and_benefits.to_h).not_to include(:disagree_claimant_pension_benefits_reason)
+    end
+  end
+
+  context "when disagreeing with claimant pension benefits" do
+    it 'will raise a validation error on disagree claimant pension benefits reason' do
+      populated_earnings_and_benefits.agree_with_claimants_hours = false
+      populated_earnings_and_benefits.disagree_claimant_pension_benefits_reason = three_hundred_fifty_one_chars
+
+      populated_earnings_and_benefits.valid?
+
+      expect(populated_earnings_and_benefits.errors.details[:disagree_claimant_pension_benefits_reason]).to include a_hash_including(error: :too_long)
+    end
+  end
+
 end
+

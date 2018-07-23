@@ -219,6 +219,8 @@ RSpec.describe RespondentsDetail, type: :model do
     end
 
     it 'will return the fax_number key and value pair' do
+      populated_respondent_detail.contact_preference = "fax"
+
       expect(populated_respondent_detail.to_h).to include(fax_number: '0207 123 4567')
     end
 
@@ -374,6 +376,45 @@ RSpec.describe RespondentsDetail, type: :model do
       expect(populated_respondent_detail).to be_valid
     end
 
+    it "will not validate a fax number" do
+      populated_respondent_detail.contact_preference = "email"
+      populated_respondent_detail.fax_number = "invalid fax"
+
+      expect(populated_respondent_detail).to be_valid
+    end
+
+    it "will not hash a fax number" do
+      populated_respondent_detail.contact_preference = "email"
+      populated_respondent_detail.fax_number = "0203 123 4567"
+
+      expect(populated_respondent_detail.to_h).not_to include(:fax_number)
+    end
+
+  end
+
+  context "when post is the preferred contact method" do
+
+    it "will not validate an email address or fax number" do
+      populated_respondent_detail.contact_preference = "post"
+      populated_respondent_detail.email_address = "invalid email"
+      populated_respondent_detail.fax_number = "invalid fax"
+
+      expect(populated_respondent_detail).to be_valid
+    end
+
+    it "will not hash an email address" do
+      populated_respondent_detail.contact_preference = "post"
+      populated_respondent_detail.email_address = "john@dodgyco.com"
+
+      expect(populated_respondent_detail.to_h).not_to include(:email_address)
+    end
+
+    it "will not hash a fax number" do
+      populated_respondent_detail.contact_preference = "post"
+      populated_respondent_detail.fax_number = "0203 123 4567"
+
+      expect(populated_respondent_detail.to_h).not_to include(:fax_number)
+    end
   end
 
   context "when fax is the preferred contact method" do
@@ -394,6 +435,22 @@ RSpec.describe RespondentsDetail, type: :model do
       expect(populated_respondent_detail).to be_valid
     end
 
+    it "will not validate an email address" do
+      populated_respondent_detail.contact_preference = "fax"
+      populated_respondent_detail.fax_number = "0203 123 4567"
+      populated_respondent_detail.email_address = "invalid email"
+
+      populated_respondent_detail.valid?
+
+      expect(populated_respondent_detail).to be_valid
+    end
+
+    it "will not hash an email address" do
+      populated_respondent_detail.contact_preference = "fax"
+      populated_respondent_detail.email_address = "john@dodgyco.com"
+
+      expect(populated_respondent_detail.to_h).not_to include(:email_address)
+    end
   end
 
   context "when the organisation has more than one site" do
@@ -416,4 +473,23 @@ RSpec.describe RespondentsDetail, type: :model do
 
   end
 
-end
+  context "when the organisation does not have more than one site" do
+    it "will not validate an employment at site number" do
+      populated_respondent_detail.organisation_more_than_one_site = false
+      populated_respondent_detail.employment_at_site_number = "fsdf"
+
+      populated_respondent_detail.valid?
+
+      expect(populated_respondent_detail).to be_valid
+    end
+
+    it "will not hash an employment at site number" do
+      populated_respondent_detail.organisation_more_than_one_site = false
+      populated_respondent_detail.employment_at_site_number = 20
+
+      expect(populated_respondent_detail.to_h).not_to include(:employment_at_site_number)
+    end
+  end
+
+
+  end

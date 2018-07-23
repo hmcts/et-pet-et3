@@ -205,6 +205,7 @@ RSpec.describe YourRepresentativesDetails, type: :model do
     end
 
     it 'will return the representative_fax key and value pair' do
+      populated_your_representatives_details.representative_contact_preference = "fax"
       expect(populated_your_representatives_details.to_h).to include(representative_fax: '0207 345 6789')
     end
 
@@ -347,6 +348,45 @@ RSpec.describe YourRepresentativesDetails, type: :model do
 
       expect(populated_your_representatives_details).to be_valid
     end
+
+    it 'will not validate a fax number' do
+      populated_your_representatives_details.representative_contact_preference = "email"
+      populated_your_representatives_details.representative_fax = "invalid fax"
+
+      expect(populated_your_representatives_details).to be_valid
+    end
+
+    it 'will not hash a fax number' do
+      populated_your_representatives_details.representative_contact_preference = "email"
+      populated_your_representatives_details.representative_fax = "0203 123 4567"
+
+      expect(populated_your_representatives_details.to_h).not_to include(:representative_fax)
+    end
+  end
+
+  context "when post is the preferred contact method" do
+
+    it "will not validate an email address or fax number" do
+      populated_your_representatives_details.representative_contact_preference = "post"
+      populated_your_representatives_details.representative_email = "invalid email"
+      populated_your_representatives_details.representative_fax = "invalid fax"
+
+      expect(populated_your_representatives_details).to be_valid
+    end
+
+    it "will not hash an email address" do
+      populated_your_representatives_details.representative_contact_preference = "post"
+      populated_your_representatives_details.representative_email = "john@dodgyco.com"
+
+      expect(populated_your_representatives_details.to_h).not_to include(:representative_email)
+    end
+
+    it "will not hash a fax number" do
+      populated_your_representatives_details.representative_contact_preference = "post"
+      populated_your_representatives_details.representative_fax = "0203 123 4567"
+
+      expect(populated_your_representatives_details.to_h).not_to include(:representative_fax)
+    end
   end
 
   context "when fax is the preferred contact method" do
@@ -364,6 +404,20 @@ RSpec.describe YourRepresentativesDetails, type: :model do
       populated_your_representatives_details.representative_fax = "0203 123 4567"
 
       expect(populated_your_representatives_details).to be_valid
+    end
+
+    it "will not validate an email address" do
+      populated_your_representatives_details.representative_contact_preference = "fax"
+      populated_your_representatives_details.representative_email = "invalid email"
+
+      expect(populated_your_representatives_details).to be_valid
+    end
+
+    it "will not hash an email address" do
+      populated_your_representatives_details.representative_contact_preference = "fax"
+      populated_your_representatives_details.representative_email = "john@dodgyco.com"
+
+      expect(populated_your_representatives_details.to_h).not_to include(:representative_email)
     end
   end
 
@@ -384,6 +438,22 @@ RSpec.describe YourRepresentativesDetails, type: :model do
       populated_your_representatives_details.valid?
 
       expect(populated_your_representatives_details).to be_valid
+    end
+  end
+
+  context "when representative does not have a disability" do
+    it 'will not validate representative disability information' do
+      populated_your_representatives_details.representative_disability = false
+      populated_your_representatives_details.representative_disability_information = three_hundred_fifty_one_chars
+
+      expect(populated_your_representatives_details).to be_valid
+    end
+
+    it 'will not hash representative disability information' do
+      populated_your_representatives_details.representative_disability = false
+      populated_your_representatives_details.representative_disability_information = 'Lorem ipsum disability'
+
+      expect(populated_your_representatives_details.to_h).not_to include(:representative_disability_information)
     end
   end
 end

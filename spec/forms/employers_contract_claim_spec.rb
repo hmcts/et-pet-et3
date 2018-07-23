@@ -65,4 +65,30 @@ RSpec.describe EmployersContractClaim, type: :model do
       expect(populated_employers_contract_claim).to be_valid
     end
   end
+
+  context "when making an employer contract claim" do
+    it 'will raise a validation error on claim information' do
+      populated_employers_contract_claim.make_employer_contract_claim = true
+      populated_employers_contract_claim.claim_information = four_thousand_five_hundred_and_one_characters
+
+      populated_employers_contract_claim.valid?
+
+      expect(populated_employers_contract_claim.errors.details[:claim_information]).to include a_hash_including(error: :too_long)
+    end
+  end
+
+  context "when not making an employer contract claim" do
+    it 'will not validate claim information' do
+      populated_employers_contract_claim.make_employer_contract_claim = false
+      populated_employers_contract_claim.claim_information = four_thousand_five_hundred_and_one_characters
+
+      expect(populated_employers_contract_claim).to be_valid
+    end
+
+    it 'will not hash claim information' do
+      populated_employers_contract_claim.make_employer_contract_claim = false
+
+      expect(populated_employers_contract_claim.to_h).not_to include(:claim_information)
+    end
+  end
 end

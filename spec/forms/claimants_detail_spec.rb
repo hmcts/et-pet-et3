@@ -247,6 +247,8 @@ RSpec.describe ClaimantsDetail, type: :model do
       populated_claimant_detail.agree_with_employment_dates = false
       populated_claimant_detail.employment_end = nil
 
+      populated_claimant_detail.valid?
+
       expect(populated_claimant_detail.errors.details[:employment_end]).to include a_hash_including(error: :blank)
     end
 

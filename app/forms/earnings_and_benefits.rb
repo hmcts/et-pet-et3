@@ -12,33 +12,62 @@ class EarningsAndBenefits < BaseForm
   attribute :disagree_claimant_pension_benefits_reason, :text
 
   def to_h # rubocop:disable Metrics/MethodLength
-    {
+    earnings_and_benefits_hash = {
       agree_with_claimants_hours: agree_with_claimants_hours,
-      queried_hours: queried_hours,
       agree_with_earnings_details: agree_with_earnings_details,
-      queried_pay_before_tax: queried_pay_before_tax,
-      queried_pay_before_tax_period: queried_pay_before_tax_period,
-      queried_take_home_pay: queried_take_home_pay,
-      queried_take_home_pay_period: queried_take_home_pay_period,
       agree_with_claimant_notice: agree_with_claimant_notice,
-      disagree_claimant_notice_reason: disagree_claimant_notice_reason,
       agree_with_claimant_pension_benefits: agree_with_claimant_pension_benefits,
-      disagree_claimant_pension_benefits_reason: disagree_claimant_pension_benefits_reason
     }
+
+    earnings_and_benefits_hash.merge!(queried_hours: queried_hours) if earnings_and_benefits_hash[:agree_with_claimants_hours] == false
+    if earnings_and_benefits_hash[:agree_with_earnings_details] == false
+      earnings_and_benefits_hash.merge!(queried_pay_before_tax: queried_pay_before_tax,
+                                        queried_pay_before_tax_period: queried_pay_before_tax_period,
+                                        queried_take_home_pay: queried_take_home_pay,
+                                        queried_take_home_pay_period: queried_take_home_pay_period)
+    end
+    earnings_and_benefits_hash.merge!(disagree_claimant_notice_reason: disagree_claimant_notice_reason) if earnings_and_benefits_hash[:agree_with_claimant_notice] == false
+    earnings_and_benefits_hash.merge!(disagree_claimant_pension_benefits_reason: disagree_claimant_pension_benefits_reason) if earnings_and_benefits_hash[:agree_with_claimant_pension_benefits] == false
+
+    earnings_and_benefits_hash
   end
 
-  validates :queried_hours, :queried_pay_before_tax, :queried_take_home_pay,
+  validates :queried_hours,
     numericality: true,
-    allow_nil: true
+    allow_nil: true,
+    if: :disagree_claimants_hours?
+  validates :queried_pay_before_tax, :queried_take_home_pay,
+    numericality: true,
+    allow_nil: true,
+    if: :disagree_earnings_details?
   validates :disagree_claimant_notice_reason,
     length: {
       maximum: 400,
       too_long: "%{count} characters is the maximum allowed" # rubocop:disable Style/FormatStringToken
-    }
+    },
+    if: :disagree_claimants_notice?
   validates :disagree_claimant_pension_benefits_reason,
     length: {
       maximum: 350,
       too_long: "%{count} characters is the maximum allowed" # rubocop:disable Style/FormatStringToken
-    }
+    },
+    if: :disagree_claimants_pension_benefits?
 
+  private
+
+  def disagree_claimants_hours?
+    agree_with_claimants_hours == false
+  end
+
+  def disagree_earnings_details?
+    agree_with_earnings_details == false
+  end
+
+  def disagree_claimants_notice?
+    agree_with_claimant_notice == false
+  end
+
+  def disagree_claimants_pension_benefits?
+    agree_with_claimant_pension_benefits == false
+  end
 end

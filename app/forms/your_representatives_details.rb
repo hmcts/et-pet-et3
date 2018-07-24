@@ -18,7 +18,7 @@ class YourRepresentativesDetails < BaseForm
   attribute :representative_disability_information, :text
 
   def to_h # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-    {
+    representatives_detail_hash = {
       type_of_representative: type_of_representative,
       representative_org_name: representative_org_name,
       representative_name: representative_name,
@@ -32,11 +32,14 @@ class YourRepresentativesDetails < BaseForm
       representative_dx_number: representative_dx_number,
       representative_reference: representative_reference,
       representative_contact_preference: representative_contact_preference,
-      representative_email: representative_email,
-      representative_fax: representative_fax,
-      representative_disability: representative_disability,
-      representative_disability_information: representative_disability_information
+      representative_disability: representative_disability
     }
+
+    representatives_detail_hash[:representative_email] = representative_email if representatives_detail_hash[:representative_contact_preference] == "email"
+    representatives_detail_hash[:representative_fax] = representative_fax if representatives_detail_hash[:representative_contact_preference] == "fax"
+    representatives_detail_hash[:representative_disability_information] = representative_disability_information if representatives_detail_hash[:representative_disability]
+
+    representatives_detail_hash
   end
 
   validates :type_of_representative,

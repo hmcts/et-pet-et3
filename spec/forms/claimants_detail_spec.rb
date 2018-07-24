@@ -171,14 +171,65 @@ RSpec.describe ClaimantsDetail, type: :model do
     end
   end
 
+  context "when agreeing with early conciliation reason" do
+    it 'will not hash disagree conciliation reason' do
+      populated_claimant_detail.agree_with_early_conciliation_details = true
+      populated_claimant_detail.disagree_conciliation_reason = "will not be hashed"
+
+      expect(populated_claimant_detail.to_h).not_to include(:disagree_conciliation_reason)
+    end
+  end
+
   context "when disagreeing with early conciliation reason" do
     it 'will not raise a validation error on disagree conciliation reason' do
       populated_claimant_detail.agree_with_early_conciliation_details = false
       populated_claimant_detail.disagree_conciliation_reason = nil
 
-      populated_claimant_detail.valid?
+      expect(populated_claimant_detail).to be_valid
+    end
+  end
+
+  context "when agreeing with employment dates" do
+    it 'will not validate employment start' do
+      populated_claimant_detail.agree_with_employment_dates = true
+      populated_claimant_detail.employment_start = ""
 
       expect(populated_claimant_detail).to be_valid
+    end
+
+    it 'will not validate employment end' do
+      populated_claimant_detail.agree_with_employment_dates = true
+      populated_claimant_detail.employment_end = ""
+
+      expect(populated_claimant_detail).to be_valid
+    end
+
+    it 'will not validate disagree employment dates' do
+      populated_claimant_detail.agree_with_employment_dates = true
+      populated_claimant_detail.disagree_employment = ""
+
+      expect(populated_claimant_detail).to be_valid
+    end
+
+    it 'will not hash employment start' do
+      populated_claimant_detail.agree_with_employment_dates = true
+      populated_claimant_detail.employment_start = '01/01/2017'
+
+      expect(populated_claimant_detail.to_h).not_to include(:employment_start)
+    end
+
+    it 'will not hash employment end' do
+      populated_claimant_detail.agree_with_employment_dates = true
+      populated_claimant_detail.employment_end = '31/12/2017'
+
+      expect(populated_claimant_detail.to_h).not_to include(:employment_end)
+    end
+
+    it 'will not hash disagree employment dates' do
+      populated_claimant_detail.agree_with_employment_dates = true
+      populated_claimant_detail.disagree_employment = 'disagree employment reason'
+
+      expect(populated_claimant_detail.to_h).not_to include(:disagree_employment)
     end
   end
 
@@ -211,12 +262,19 @@ RSpec.describe ClaimantsDetail, type: :model do
     end
   end
 
+  context "when agreeing with description of job or title" do
+    it 'will not hash disagree claimants job or title' do
+      populated_claimant_detail.agree_with_claimants_description_of_job_or_title = true
+      populated_claimant_detail.disagree_claimants_job_or_title = "string that will not be hashed"
+
+      expect(populated_claimant_detail.to_h).not_to include(:disagree_claimants_job_or_title)
+    end
+  end
+
   context "when disagreeing with description of job or title" do
     it 'will not raise a validation error on disagree claimants job or title' do
       populated_claimant_detail.agree_with_claimants_description_of_job_or_title = false
       populated_claimant_detail.disagree_claimants_job_or_title = nil
-
-      populated_claimant_detail.valid?
 
       expect(populated_claimant_detail).to be_valid
     end

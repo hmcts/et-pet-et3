@@ -3,10 +3,13 @@ class Response < BaseForm
   attribute :defend_claim_facts, :text
 
   def to_h
-    {
+    response_hash = {
       defend_claim: defend_claim,
-      defend_claim_facts: defend_claim_facts
     }
+
+    response_hash[:defend_claim_facts] = defend_claim_facts if response_hash[:defend_claim]
+
+    response_hash
   end
 
   validates :defend_claim,
@@ -15,5 +18,12 @@ class Response < BaseForm
     length: {
       maximum: 2500,
       too_long: "%{count} characters is the maximum allowed" # rubocop:disable Style/FormatStringToken
-    }
+    },
+    if: :defend_claim?
+
+  private
+
+  def defend_claim?
+    defend_claim
+  end
 end

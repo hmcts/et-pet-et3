@@ -13,7 +13,7 @@ RSpec.describe "Check JSON Status", type: :request do
     it "responds with 'version_number', 'build_date', 'commit_id' and 'build_tag'" do
       get '/ping.json'
 
-      expect(JSON.parse(response.body)).to include 'version_number','build_date','commit_id','build_tag'
+      expect(JSON.parse(response.body)).to include 'version_number', 'build_date', 'commit_id', 'build_tag'
     end
   end
 

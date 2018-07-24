@@ -35,9 +35,9 @@ class YourRepresentativesDetails < BaseForm
       representative_disability: representative_disability
     }
 
-    representatives_detail_hash.merge!(representative_email: representative_email) if representatives_detail_hash[:representative_contact_preference] == "email"
-    representatives_detail_hash.merge!(representative_fax: representative_fax) if representatives_detail_hash[:representative_contact_preference] == "fax"
-    representatives_detail_hash.merge!(representative_disability_information: representative_disability_information) if representatives_detail_hash[:representative_disability]
+    representatives_detail_hash[:representative_email] = representative_email if representatives_detail_hash[:representative_contact_preference] == "email"
+    representatives_detail_hash[:representative_fax] = representative_fax if representatives_detail_hash[:representative_contact_preference] == "fax"
+    representatives_detail_hash[:representative_disability_information] = representative_disability_information if representatives_detail_hash[:representative_disability]
 
     representatives_detail_hash
   end

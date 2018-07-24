@@ -21,13 +21,13 @@ class ClaimantsDetail < BaseForm
       agree_with_claimants_description_of_job_or_title: agree_with_claimants_description_of_job_or_title,
     }
 
-    claimants_detail_hash.merge!(disagree_conciliation_reason: disagree_conciliation_reason) if claimants_detail_hash[:agree_with_early_conciliation_details] == false
+    claimants_detail_hash[:disagree_conciliation_reason] = disagree_conciliation_reason if claimants_detail_hash[:agree_with_early_conciliation_details] == false
     if claimants_detail_hash[:agree_with_employment_dates] == false
       claimants_detail_hash.merge!(employment_start: employment_start,
                                    employment_end: employment_end,
                                    disagree_employment: disagree_employment)
     end
-    claimants_detail_hash.merge!(disagree_claimants_job_or_title: disagree_claimants_job_or_title) if claimants_detail_hash[:agree_with_claimants_description_of_job_or_title] == false
+    claimants_detail_hash[:disagree_claimants_job_or_title] = disagree_claimants_job_or_title if claimants_detail_hash[:agree_with_claimants_description_of_job_or_title] == false
 
     claimants_detail_hash
   end

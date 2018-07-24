@@ -7,7 +7,7 @@ class Response < BaseForm
       defend_claim: defend_claim,
     }
 
-    response_hash.merge!(defend_claim_facts: defend_claim_facts) if response_hash[:defend_claim]
+    response_hash[:defend_claim_facts] = defend_claim_facts if response_hash[:defend_claim]
 
     response_hash
   end

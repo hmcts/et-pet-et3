@@ -35,9 +35,9 @@ class RespondentsDetail < BaseForm
       organisation_more_than_one_site: organisation_more_than_one_site,
     }
 
-    respondents_detail_hash.merge!(email_address: email_address) if respondents_detail_hash[:contact_preference] == "email"
-    respondents_detail_hash.merge!(fax_number: fax_number) if respondents_detail_hash[:contact_preference] == "fax"
-    respondents_detail_hash.merge!(employment_at_site_number: employment_at_site_number) if respondents_detail_hash[:organisation_more_than_one_site]
+    respondents_detail_hash[:email_address] = email_address if respondents_detail_hash[:contact_preference] == "email"
+    respondents_detail_hash[:fax_number] = fax_number if respondents_detail_hash[:contact_preference] == "fax"
+    respondents_detail_hash[:employment_at_site_number] = employment_at_site_number if respondents_detail_hash[:organisation_more_than_one_site]
 
     respondents_detail_hash
   end

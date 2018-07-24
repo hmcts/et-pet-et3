@@ -7,7 +7,7 @@ class EmployersContractClaim < BaseForm
       make_employer_contract_claim: make_employer_contract_claim
     }
 
-    employer_contract_claim_hash.merge!(claim_information: claim_information) if employer_contract_claim_hash[:make_employer_contract_claim]
+    employer_contract_claim_hash[:claim_information] = claim_information if employer_contract_claim_hash[:make_employer_contract_claim]
 
     employer_contract_claim_hash
   end

@@ -7,6 +7,9 @@
 # Ignore bundler config.
 /.bundle
 
+# Ignore spec example
+/spec/examples.txt
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
@@ -17,3 +20,5 @@
 /yarn-error.log
 
 .byebug_history
+.idea
+public/assets/**

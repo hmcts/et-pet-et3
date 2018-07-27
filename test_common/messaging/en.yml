@@ -1,0 +1,294 @@
+en:
+  questions:
+    # Respondent's Details Page
+    case_number:
+      label: Case number
+    name:
+      label: Name of individual, company or organisation
+    contact:
+      label: Name of contact (optional)
+    building_name:
+      label: Building name or number
+    street:
+      label: Street
+    town:
+      label: Town/City
+    county:
+      label: County (optional)
+    postcode:
+      label: Postcode
+    dx_number:
+      label: Document exchange (DX) number (optional)
+    contact_number:
+      label: Contact number (optional)
+    contact_mobile_number:
+      label: Mobile number (optional)
+    contact_preference:
+      label: How would you prefer us to contact you? (optional)
+      email:
+        label: Email
+        input_label: Email address
+      post:
+        label: Post
+      fax:
+        label: Fax
+        input_label: Fax number
+    organisation_employ_gb:
+      label: How many people does this organisation employ in Great Britain? (optional)
+    organisation_more_than_one_site:
+      label: Does this organisation have more than one site in Great Britain?
+      'yes':
+        label: 'Yes'
+      'no':
+        label: 'No'
+      employment_at_site_number:
+        label: How many people are employed at the place where the claimant worked?
+    # Claimant's Details Page
+    claimants_name:
+      label: Claimant's name (optional)
+    agree_with_early_conciliation_details:
+      label: Do you agree with the details given by the claimant about Early Conciliation with Acas? (optional)
+      'yes':
+        label: 'Yes'
+      'no':
+        label: 'No'
+      disagree_conciliation_reason:
+        label: Why do you disagree with the claimant? (optional)
+    agree_with_employment_dates:
+      label: Are the dates of employment given by the claimant correct?
+      'yes':
+        label: 'Yes'
+      'no':
+        label: 'No'
+      employment_start:
+        label: When their employment started
+        day:
+          label: Day
+        month:
+          label: Month
+        year:
+          label: Year
+      employment_end:
+        label: When their employment ended or will end
+        day:
+          label: Day
+        month:
+          label: Month
+        year:
+          label: Year
+      disagree_employment:
+        label: Why do you disagree with the dates given by the claimant
+    continued_employment:
+      label: Is their employment continuing? (optional)
+      'yes':
+        label: 'Yes'
+      'no':
+        label: 'No'
+    agree_with_claimants_description_of_job_or_title:
+      label: Is the claimant's description of their job or job title correct? (optional)
+      'yes':
+        label: 'Yes'
+      'no':
+        label: 'No'
+      disagree_claimants_job_or_title:
+        label: Please give the details you believe to be correct (optional)
+    # Earnings and Benefits Page
+    agree_with_claimants_hours:
+      label: Are the claimant's hours of work correct? (optional)
+      'yes':
+        label: 'Yes'
+      'no':
+        label: 'No'
+      queried_hours:
+        label: Please enter the details you believe to be correct (optional)
+    agree_with_earnings_details:
+      label: Are the earnings details given by the claimant correct? (optional)
+      'yes':
+        label: 'Yes'
+      'no':
+        label: 'No'
+      queried_pay_before_tax:
+        label: Pay before tax (optional)
+      queried_pay_before_tax_period:
+        label: Pay before tax period (optional)
+        monthly:
+          label: Monthly
+        weekly:
+          label: Weekly
+      queried_take_home_pay:
+        label: Normal take-home pay (optional)
+      queried_take_home_pay_period:
+        label: Normal take-home pay period (optional)
+        monthly:
+          label: Monthly
+        weekly:
+          label: Weekly
+    agree_with_claimant_notice:
+      label: Is the information given by the claimant correct about being paid for, or working a period of notice? (optional)
+      'yes':
+        label: 'Yes'
+      'no':
+        label: 'No'
+      disagree_claimant_notice_reason:
+        label: Please give the details you believe to be correct below. If you didn't give notice or pay them instead of letting them work their notice please explain what happened and why (optional)
+    agree_with_claimant_pension_benefits:
+      label: Are the details about pension and other benefits given by the claimant correct? (optional)
+      'yes':
+        label: 'Yes'
+      'no':
+        label: 'No'
+      disagree_claimant_pension_benefits_reason:
+        label: Please give the details you believe to be correct. (optional)
+    # Response Page
+    defend_claim:
+      label: Do you defend the claim?
+      'yes':
+        label: 'Yes'
+      'no':
+        label: 'No'
+      defend_claim_facts:
+        label: Please set out the facts which you rely on to defend the claim (optional)
+    # Your Representatives Page
+    have_representative:
+      label: Do you have a representative? (optional)
+      'yes':
+        label: 'Yes'
+      'no':
+        label: 'No'
+    # Your Representatives Details Page
+    type_of_representative:
+      label: Type of Representative
+      citizens_advice_bureau:
+        label: Citizen's advice bureau
+      free_representation_unit:
+        label: Free representation unit
+      law_centre:
+        label: Law centre
+      union:
+        label: Union
+      solicitor:
+        label: Solicitor
+      private_individual:
+        label: Private individual
+      trade_association:
+        label: Trade association
+      other:
+        label: Other
+    representative_org_name:
+      label: Name of the representative's organisation (optional)
+    representative_name:
+      label: Representative's name
+    representative_building:
+      label: Building name or number
+    representative_street:
+      label: Street
+    representative_town:
+      label: Town/City
+    representative_county:
+      label: County (optional)
+    representative_postcode:
+      label: Postcode
+    representative_phone:
+      label: Phone number (optional)
+    representative_mobile:
+      label: Mobile number (optional)
+    representative_dx_number:
+      label: Document exchange (DX) number (optional)
+    representative_reference:
+      label: Reference (optional)
+    representative_contact_preference:
+      label: How would you prefer us to contact your representative? (optional)
+      email:
+        label: Email
+        input_label: Email address
+      fax:
+        label: Fax
+        input_label: Fax number
+    representative_disability:
+      label: Does your representative have a disability? (optional)
+      'yes':
+        label: 'Yes'
+      'no':
+        label: 'No'
+      disability_information:
+        label: It would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises
+    # Employers Contract Claim Page
+    make_employer_contract_claim:
+      label: Do you wish to make an Employer Contract Claim? (optional)
+      'yes':
+        label: 'Yes'
+      'no':
+        label: 'No'
+      claim_information:
+        label: 'Please set out the background and details of your claim below, which should include all important dates (optional)'
+    # Additional Informatation Page
+    upload_additional_information:
+      label: Please upload a file to provide any important additional information about your response which you have not been able to include so far (optional)
+      button: Click here to upload a file
+    # Confirmation of Supplied Details Page
+    email_receipt:
+      label: Email Address (optional)
+    # Captions for Tables on CoSD Page
+    confirmation_of_respondents_details_answers:
+      caption: Respondent's Details
+    confirmation_of_claimants_details_answers:
+      caption: Claimant's Details
+    confirmation_of_earnings_and_benefits_answers:
+      caption: Earnings and Benefits
+    confirmation_of_response_answers:
+      caption: Response
+    confirmation_of_your_representative_answers:
+      caption: Your Representative
+    confirmation_of_your_representatives_details_answers:
+      caption: Your Representative's Details
+    confirmation_of_employer_contract_claim_answers:
+      caption: Employer Contract Claim
+    confirmation_of_additional_information_answers:
+      caption: Additional Information
+  errors:
+    header: 'Please review the following'
+    messages:
+      blank: can't be blank
+      contains_no_spaces: must contain at least one space
+      contains_numbers: must not contain numbers
+      invalid: is invalid
+      invalid_email: This is not a valid email address
+      invalid_name: Please enter your full name
+      invalid_postcode: This is not a valid UK postcode
+      invalid_phone_number: This is not a valid phone number
+      not_a_number: is not a number
+      too_long: characters is the maximum allowed
+      inclusion: Please select an option
+    custom:
+      organisation_employ_gb:
+        not_a_number: Please enter how many people the organisation employs in Great Britain as a number
+      organisation_more_than_one_site:
+        not_a_number: Please enter how many people are employed at the place where the claimant worked as a number
+        inclusion: Please indicate whether the organisation has more than one site in Great Britain
+      queried_hours:
+        not_a_number: Please enter the number of hours you believe to be correct as a number
+      queried_pay_before_tax:
+        not_a_number: Please enter the pay before tax as a number
+      queried_take_home_pay:
+        not_a_number: Please enter the normal take-home pay as a number
+      type_of_representative:
+        inclusion: Please select the type of your representative
+  links:
+    confirmation_of_supplied_details:
+      edit_page: Edit answers on this page
+  components:
+    single_choice_option_section:
+      'yes': "Yes"
+      'no': "No"
+    sidebar:
+      header: Other Relevant Links
+      claim_link: How to make a claim
+      claim_href: https://www.gov.uk/employment-tribunals
+      response_link: How to make a response
+      response_href: https://www.gov.uk/being-taken-to-employment-tribunal-by-employee
+      contact_link: How to contact us
+      contact_href: https://www.gov.uk/guidance/employment-tribunal-offices-and-venues
+      download_link: Download a blank copy of this form
+      download_href: https://www.employmenttribunals.service.gov.uk/form/pdf/141ET3_0414v2.pdf
+      more_category_link: More from the Working, jobs and pensions category
+      more_category_href: http://gov.uk/browse/working

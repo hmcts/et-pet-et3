@@ -10,6 +10,9 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
+//= require govuk/show-hide-content
 //= require rails-ujs
 //= require turbolinks
+//= require dropzone
 //= require_tree .

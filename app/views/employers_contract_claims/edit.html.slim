@@ -1,0 +1,21 @@
+- content_for :form_page_title, "Employer Contract Claim"
+- content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
+.content-body.employers-contract-claim
+
+  p Only available in limited circumstances where the Claimant has made a contract claim (see guidance) 
+
+  = form_for @employers_contract_claim, url: employers_contract_claim_path, method: :patch  do |f|
+
+    div data-turbolinks="false"
+      = GovukElementsErrorsHelper.error_summary @employers_contract_claim,
+        "Please review the following",
+        "Clicking on an error will navigate you directly to the question. Please correct these errors before continuing."
+
+    = f.radio_button_fieldset :make_employer_contract_claim do |b|
+      = content_tag :div, {class: 'multiple-choice'} do
+        = b.radio_button(:make_employer_contract_claim, false) + label(:make_employer_contract_claim, t('helpers.label.employers_contract_claim.make_employer_contract_claim.choices.no'), value: :no)
+      = content_tag :div, {class: 'multiple-choice', data: { target: :make_claim_info }} do
+        = b.radio_button(:make_employer_contract_claim, true) + label(:make_employer_contract_claim, t('helpers.label.employers_contract_claim.make_employer_contract_claim.choices.yes'), value: :yes)
+      #make_claim_info.panel.panel-border-narrow.js-hidden
+        = f.text_area :claim_information, size: "70x30"    
+    = f.submit("Save and continue", class: 'button')

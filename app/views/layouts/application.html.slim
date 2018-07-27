@@ -1,0 +1,35 @@
+- content_for :head
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+  = javascript_include_tag 'application'
+  = csrf_meta_tags
+  = yield(:page_head)
+- content_for :body_end
+  javascript:
+    var showHideContent = new GOVUK.ShowHideContent();
+    showHideContent.init();
+  yield
+- content_for :inside_header
+  .header-proposition
+    .content
+      = link_to('Employment Tribunals', 'https://www.employmenttribunals.service.gov.uk/', {id: 'proposition-name'})
+- content_for :content
+  .direction-ltr#content
+    main role="main"
+      .grid-row
+        .column-two-thirds
+          .content-header
+            h2.heading-medium data-behavior="heading" = yield(:form_page_title)
+          = yield
+        .column-one-third
+          .sidebar
+            .sidebar-header
+              h2.heading-medium =t('components.sidebar.header')
+            .sidebar-content
+              p = link_to(t('components.sidebar.claim_link'), t('components.sidebar.claim_href'), target: :_blank)
+              p = link_to(t('components.sidebar.response_link'), t('components.sidebar.response_href'), target: :_blank)
+              p = link_to(t('components.sidebar.contact_link'), t('components.sidebar.contact_href'), target: :_blank)
+              p = link_to(t('components.sidebar.download_link'), t('components.sidebar.download_href'), target: :_blank)
+              hr
+              p = link_to(t('components.sidebar.more_category_link'), t('components.sidebar.more_category_href'), target: :_blank)
+
+= render template: "layouts/govuk_template"

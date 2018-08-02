@@ -4,9 +4,9 @@ cache:
   directories:
   - tmp/parallel_runtime_log
 before_script:
-  - bundle exec rake parallel:create[4] parallel:migrate[4]
+  - bundle exec rake parallel:create parallel:migrate
 script:
-  - bundle exec rake parallel:spec[4]
+  - bundle exec rake parallel:spec
 addons:
   chrome: stable
   firefox: latest

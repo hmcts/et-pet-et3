@@ -1,6 +1,6 @@
 language: ruby
 cache:
-  bundler
+  bundler: true
   directories:
   - tmp/parallel_runtime_log
 before_script:

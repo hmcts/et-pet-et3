@@ -1,10 +1,12 @@
 language: ruby
 cache:
   bundler
+  directories:
+  - tmp/parallel_runtime_log
 before_script:
-  - bundle exec rails db:create db:migrate
+  - bundle exec rake parallel:create parallel:migrate
 script:
-  - bundle exec rspec
+  - bundle exec rake parallel:spec
 addons:
   chrome: stable
   firefox: latest

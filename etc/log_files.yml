@@ -1,7 +1,0 @@
-files: 
-  - /usr/src/app/log/production.log
-destination:
-  host: logs7.papertrailapp.com
-  port: 20568
-  protocol: tls
-pid_file: /var/run/remote_syslog.pid

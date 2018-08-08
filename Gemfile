@@ -62,6 +62,8 @@ group :development, :test do
   gem 'debase', '~> 0.2.2'
   # Run Rspec tests in parallel to speed the test suite up
   gem 'parallel_tests', '~> 2.22'
+  # Add .env file to store environment variables
+  gem 'dotenv', '~> 2.5'
 end
 
 group :development do

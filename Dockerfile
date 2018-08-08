@@ -1,4 +1,4 @@
-FROM ministryofjustice/ruby:2.3.3-webapp-onbuild
+FROM ministryofjustice/ruby:2.5.1-webapp-onbuild
 
 # Ensure the pdftk package is installed as a prereq for ruby PDF generation
 ENV DEBIAN_FRONTEND noninteractive

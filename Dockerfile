@@ -3,8 +3,6 @@ FROM ministryofjustice/ruby:2.5.1-webapp-onbuild
 # Ensure the pdftk package is installed as a prereq for ruby PDF generation
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN npm install
-
 EXPOSE 8080
 
 RUN bundle exec rails assets:precompile RAILS_ENV=production SECRET_KEY_BASE=foobar

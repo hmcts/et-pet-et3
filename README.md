@@ -5,8 +5,8 @@ Digital ET3 form within the in-house ET service, replacing a third party supplie
 
 ## Getting Started
 This is a Ruby on Rails app which uses [GOV.UK Elements](https://github.com/alphagov/govuk_elements) and sits within the ET service.
-The form submits to the [ET API](https://github.com/ministryofjustice/et_api) which can only be done via the [ET Full System](https://github.com/ministryofjustice/et-full-system).
-Running this app will enable development of the app itself, with its test suite mocking the final submission. 
+The form submits to the [ET API](https://github.com/ministryofjustice/et_api) which has been configured, via Docker, within the [ET Full System](https://github.com/ministryofjustice/et-full-system).
+Running this app will enable development of the app itself, with its test suite mocking the final submission.
 
 ### Prerequisites
 * Ruby 2.5.1 (we recommend using [RVM](https://rvm.io/))
@@ -22,7 +22,7 @@ Running this app will enable development of the app itself, with its test suite 
 1) Install npm (link above)
 1) Install Docker and Docker Compose (links above)
 1) Change directory into the repo and run `bundle install` to install the gems
-1) Rename `.env.example` to `.env`
+1) Copy `.env.example` and rename to `.env`
 1) Run `docker-compose build`
 1) Run `RAILS_ENV=development bundle exec rake parallel:create parallel:migrate`
 

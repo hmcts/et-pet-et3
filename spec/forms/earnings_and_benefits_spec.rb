@@ -7,9 +7,9 @@ RSpec.describe EarningsAndBenefits, type: :model do
       agree_with_claimants_hours: false,
       queried_hours: 20.5,
       agree_with_earnings_details: false,
-      queried_pay_before_tax: 900.25,
+      queried_pay_before_tax: '£12,345.67',
       queried_pay_before_tax_period: 'weekly',
-      queried_take_home_pay: 100.50,
+      queried_take_home_pay: '  15000  ',
       queried_take_home_pay_period: 'weekly',
       agree_with_claimant_notice: false,
       disagree_claimant_notice_reason: 'lorem ipsum notice',
@@ -79,7 +79,7 @@ RSpec.describe EarningsAndBenefits, type: :model do
     end
 
     it 'returns the correct queried_pay_before_tax' do
-      expect(populated_earnings_and_benefits.queried_pay_before_tax).to be 900.25
+      expect(populated_earnings_and_benefits.queried_pay_before_tax).to be 12345.67
     end
 
     it 'returns the correct queried_pay_before_tax_period' do
@@ -87,7 +87,7 @@ RSpec.describe EarningsAndBenefits, type: :model do
     end
 
     it 'returns the correct queried_take_home_pay' do
-      expect(populated_earnings_and_benefits.queried_take_home_pay).to be 100.5
+      expect(populated_earnings_and_benefits.queried_take_home_pay).to be 15000.0
     end
 
     it 'returns the correct queried_take_home_pay_period' do
@@ -129,7 +129,7 @@ RSpec.describe EarningsAndBenefits, type: :model do
     end
 
     it 'will return the queried_pay_before_tax key and value pair' do
-      expect(populated_earnings_and_benefits.to_h).to include(queried_pay_before_tax: 900.25)
+      expect(populated_earnings_and_benefits.to_h).to include(queried_pay_before_tax: 12345.67)
     end
 
     it 'will return the queried_pay_before_tax_period key and value pair' do
@@ -137,7 +137,7 @@ RSpec.describe EarningsAndBenefits, type: :model do
     end
 
     it 'will return the queried_take_home_pay key and value pair' do
-      expect(populated_earnings_and_benefits.to_h).to include(queried_take_home_pay: 100.5)
+      expect(populated_earnings_and_benefits.to_h).to include(queried_take_home_pay: 15000.00)
     end
 
     it 'will return the queried_take_home_pay_period key and value pair' do

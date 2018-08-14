@@ -2,21 +2,21 @@ class EarningsAndBenefits < BaseForm
   attribute :agree_with_claimants_hours, :boolean
   attribute :queried_hours, :float
   attribute :agree_with_earnings_details, :boolean
-  attribute :queried_pay_before_tax, :float
+  attribute :queried_pay_before_tax, :currency_float
   attribute :queried_pay_before_tax_period, :string
-  attribute :queried_take_home_pay, :float
+  attribute :queried_take_home_pay, :currency_float
   attribute :queried_take_home_pay_period, :string
   attribute :agree_with_claimant_notice, :boolean
   attribute :disagree_claimant_notice_reason, :text
   attribute :agree_with_claimant_pension_benefits, :boolean
   attribute :disagree_claimant_pension_benefits_reason, :text
 
-  def to_h # rubocop:disable Metrics/MethodLength
+  def to_h
     earnings_and_benefits_hash = {
       agree_with_claimants_hours: agree_with_claimants_hours,
       agree_with_earnings_details: agree_with_earnings_details,
       agree_with_claimant_notice: agree_with_claimant_notice,
-      agree_with_claimant_pension_benefits: agree_with_claimant_pension_benefits,
+      agree_with_claimant_pension_benefits: agree_with_claimant_pension_benefits
     }
 
     earnings_and_benefits_hash[:queried_hours] = queried_hours if earnings_and_benefits_hash[:agree_with_claimants_hours] == false

@@ -34,11 +34,11 @@ class EarningsAndBenefits < BaseForm
 
   validates :queried_hours,
     numericality: true,
-    allow_nil: true,
+    allow_blank: true,
     if: :disagree_claimants_hours?
   validates :queried_pay_before_tax, :queried_take_home_pay,
     numericality: true,
-    allow_nil: true,
+    allow_blank: true,
     if: :disagree_earnings_details?
   validates :disagree_claimant_notice_reason,
     length: {

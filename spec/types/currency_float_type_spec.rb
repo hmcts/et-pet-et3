@@ -42,6 +42,14 @@ RSpec.describe CurrencyFloatType do
     it 'casts floats with 6dp to floats with 2dp by truncating' do
       expect(type.cast(12345.678901)).to be 12345.67
     end
+
+    it 'does not cast an empty string' do
+      expect(type.cast('')).to eql ''
+    end
+
+    it 'returns nil' do
+      expect(type.cast(nil)).to be nil
+    end
   end
 
 end

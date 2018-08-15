@@ -34,6 +34,14 @@ RSpec.describe CurrencyFloatType do
     it 'casts strings without surrounding whitespace to floats' do
       expect(type.cast('     £12,345.67   ')).to be 12345.67
     end
+
+    it 'casts strings with 3dp to floats with 2dp by truncating' do
+      expect(type.cast('12345.678')).to be 12345.67
+    end
+
+    it 'casts floats with 6dp to floats with 2dp by truncating' do
+      expect(type.cast(12345.678901)).to be 12345.67
+    end
   end
 
 end

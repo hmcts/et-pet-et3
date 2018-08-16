@@ -1,6 +1,8 @@
 class EarningsAndBenefitsController < ApplicationController
   def edit
     @earnings_and_benefits ||= EarningsAndBenefits.new(current_store.hash_store.fetch(:earnings_and_benefits_answers, {}))
+    convert_to_currency(:queried_pay_before_tax) unless @earnings_and_benefits[:queried_pay_before_tax].nil?
+    convert_to_currency(:queried_take_home_pay) unless @earnings_and_benefits[:queried_take_home_pay].nil?
   end
 
   def update
@@ -20,5 +22,10 @@ class EarningsAndBenefitsController < ApplicationController
       :agree_with_earnings_details, :queried_pay_before_tax, :queried_pay_before_tax_period, :queried_take_home_pay,
       :queried_take_home_pay_period, :agree_with_claimant_notice, :disagree_claimant_notice_reason,
       :agree_with_claimant_pension_benefits, :disagree_claimant_pension_benefits_reason)
+  end
+
+  def convert_to_currency(attribute_symbol)
+    @earnings_and_benefits[attribute_symbol] =
+      view_context.number_to_currency(@earnings_and_benefits[attribute_symbol], unit: "")
   end
 end

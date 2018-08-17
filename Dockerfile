@@ -8,7 +8,8 @@ EXPOSE 8080
 RUN bundle exec rails assets:precompile RAILS_ENV=production SECRET_KEY_BASE=foobar
 RUN bundle exec rake non_digest_assets RAILS_ENV=production SECRET_KEY_BASE=foobar
 
-RUN wget https://github.com/papertrail/remote_syslog2/releases/download/v0.20/remote-syslog2_0.20_amd64.deb
-RUN dpkg -i remote-syslog2_0.20_amd64.deb
+RUN curl https://s3.amazonaws.com/aws-cloudwatch/downloads/latest/awslogs-agent-setup.py -O
+RUN mkdir /etc/cron.d
+RUN touch /etc/cron.d/awslogs
 
 CMD ["./run.sh"]

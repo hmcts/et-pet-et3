@@ -11,4 +11,9 @@ EXPOSE 8080
 RUN bundle exec rails assets:precompile RAILS_ENV=production SECRET_KEY_BASE=foobar
 RUN bundle exec rake non_digest_assets RAILS_ENV=production SECRET_KEY_BASE=foobar
 
+RUN apt-get install -y python-pip
+RUN curl https://s3.amazonaws.com/aws-cloudwatch/downloads/latest/awslogs-agent-setup.py -O
+RUN mkdir /etc/cron.d
+RUN touch /etc/cron.d/awslogs
+
 CMD ["./run.sh"]

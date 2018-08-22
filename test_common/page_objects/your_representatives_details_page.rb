@@ -207,26 +207,6 @@ module ET3
         end
       end
 
-      section :representative_disability_question, :single_choice_option, 'questions.representative_disability.label', exact: false do
-
-        include SingleChoiceOptionSection
-
-        section :representative_disability_information, :textarea_labelled, 'questions.representative_disability.disability_information.label', exact: :false do
-          delegate :set, to: :root_element
-        end
-
-        element :error_too_long, :exact_error_text, 'errors.messages.too_long', exact: false
-
-        def set_for(user_persona)
-          if user_persona.representative_disability == "Yes"
-            yes.set(true)
-            representative_disability_information.set(user_persona.representative_disability_information)
-          else
-            no.set(true)
-          end
-        end
-      end
-
       element :continue_button, :button, "Save and continue"
       def next
         continue_button.click

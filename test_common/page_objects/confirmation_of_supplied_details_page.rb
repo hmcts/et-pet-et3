@@ -267,18 +267,25 @@ module ET3
         section :fax_row, :table_row_with_td_labelled, 'questions.representative_contact_preference.fax.input_label', exact: true do
           element :fax_answer, :return_answer
         end
-        
-        section :representative_disability_row, :table_row_with_td_labelled, 'questions.representative_disability.label', exact: true do
-          element :representative_disability_answer, :return_answer
-        end
-        
-        section :disability_information_row, :table_row_with_td_labelled, 'questions.representative_disability.disability_information.label', exact: true do
-          element :disability_information_answer, :return_answer
-        end
 
         element :edit_page_link, :link_named, 'links.confirmation_of_supplied_details.edit_page', exact: true
         
       end
+
+      section :confirmation_of_disability_answers, :table_captioned, 'questions.confirmation_of_disability_answers.caption', exact: true do
+
+        section :disability_row, :table_row_with_td_labelled, 'questions.disability.label', exact: true do
+          element :disability_answer, :return_answer
+        end
+
+        section :disability_information_row, :table_row_with_td_labelled, 'questions.disability.disability_information.label', exact: true do
+          element :disability_information_answer, :return_answer
+        end
+
+        element :edit_page_link, :link_named, 'links.confirmation_of_supplied_details.edit_page', exact: true
+
+      end
+
 
       section :confirmation_of_employer_contract_claim_answers, :table_captioned, 'questions.confirmation_of_employer_contract_claim_answers.caption', exact: true do
 

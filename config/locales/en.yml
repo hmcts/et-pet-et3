@@ -55,7 +55,8 @@ en:
       your_representatives_details:
         type_of_representative: Type of Representative
         representative_contact_preference: How would you prefer us to contact your representative? (optional)
-        representative_disability: Does your representative have a disability? (optional)
+      disability:
+        disability: Do you have a disability? (optional)
       employers_contract_claim:
         make_employer_contract_claim: Do you wish to make an Employer Contract Claim? (optional)
     label:
@@ -179,11 +180,12 @@ en:
             fax: Fax
         representative_email: Email address
         representative_fax: Fax number
-        representative_disability:
+      disability:
+        disability:
           choices:
             'yes': 'Yes'
             'no': 'No'
-        representative_disability_information: It would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises
+        disability_information: It would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises
       employers_contract_claim:
         make_employer_contract_claim:
           choices:

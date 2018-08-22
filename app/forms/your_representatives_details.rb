@@ -32,12 +32,10 @@ class YourRepresentativesDetails < BaseForm
       representative_dx_number: representative_dx_number,
       representative_reference: representative_reference,
       representative_contact_preference: representative_contact_preference,
-      representative_disability: representative_disability
     }
 
     representatives_detail_hash[:representative_email] = representative_email if representatives_detail_hash[:representative_contact_preference] == "email"
     representatives_detail_hash[:representative_fax] = representative_fax if representatives_detail_hash[:representative_contact_preference] == "fax"
-    representatives_detail_hash[:representative_disability_information] = representative_disability_information if representatives_detail_hash[:representative_disability]
 
     representatives_detail_hash
   end

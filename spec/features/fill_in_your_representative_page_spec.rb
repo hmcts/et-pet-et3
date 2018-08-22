@@ -15,7 +15,7 @@ RSpec.feature "Fill in Your Representative Page", js: true do
     expect(your_representatives_details_page).to be_displayed
   end
 
-  scenario "correctly will enable user to continue to employer's contract claim page" do
+  scenario "correctly will enable user to continue to disability page" do
     your_representative_page.load
 
     given_i_am(:a_respondent_without_a_representative)
@@ -24,15 +24,15 @@ RSpec.feature "Fill in Your Representative Page", js: true do
 
     your_representative_page.next
 
-    expect(employers_contract_claim_page).to be_displayed
+    expect(disability_page).to be_displayed
   end
 
-  scenario "without selecting a radio button will continue to employer's contract claim page" do
+  scenario "without selecting a radio button will continue to disability page" do
     your_representative_page.load
 
     your_representative_page.next
 
-    expect(employers_contract_claim_page).to be_displayed
+    expect(disability_page).to be_displayed
   end
 
   scenario "correctly will enable user to check answers and return to edit them" do

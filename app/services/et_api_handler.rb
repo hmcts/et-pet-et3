@@ -105,8 +105,8 @@ class EtApiHandler
         "contact_preference": full_hash[:your_representatives_details_answers][:representative_contact_preference],
         "email_address": full_hash[:your_representatives_details_answers][:representative_email],
         "fax_number": full_hash[:your_representatives_details_answers][:representative_fax],
-        "disability": full_hash[:your_representatives_details_answers][:representative_disability],
-        "disability_information": full_hash[:your_representatives_details_answers][:representative_disability_information]
+        "disability": full_hash[:disability_answers][:disability],
+        "disability_information": full_hash[:disability_answers][:disability_information]
       },
       "uuid": SecureRandom.uuid
     }

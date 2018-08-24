@@ -194,8 +194,9 @@ erroneously_entering_data_on_confirmation_of_supplied_details_page:
   representative_reference: 'Rep Ref'
   representative_contact_preference: 'Fax'
   representative_fax: '0207 345 6789'
-  representative_disability: 'Yes'
-  representative_disability_information: 'Lorem ipsum disability'
+  # Disability
+  disability: 'Yes'
+  disability_information: 'Lorem ipsum disability'
   # Employers Contract Claim
   make_employer_contract_claim: 'Yes'
   claim_information: 'lorem ipsum info'

@@ -223,8 +223,8 @@ en:
           PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 2500 characters) if you would like to include more please
           use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
           If you exceed 25 lines you will not receive full details of your response in the PDF returned to you on submission of the form.
-      your_representatives_details:
-        representative_disability_information: |
+      disability:
+        disability_information: |
           PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 350 characters) if you would like to include more please
           use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
       employers_contract_claim:

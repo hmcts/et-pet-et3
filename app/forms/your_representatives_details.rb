@@ -14,8 +14,6 @@ class YourRepresentativesDetails < BaseForm
   attribute :representative_contact_preference, :string
   attribute :representative_email, :string
   attribute :representative_fax, :string
-  attribute :representative_disability, :boolean
-  attribute :representative_disability_information, :text
 
   def to_h # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
     representatives_detail_hash = {
@@ -73,13 +71,6 @@ class YourRepresentativesDetails < BaseForm
   validates :representative_fax,
     phone_number: true,
     if: :prefer_fax?
-  validates :representative_disability_information,
-    length: {
-      maximum: 350,
-      too_long: "%{count} characters is the maximum allowed" # rubocop:disable Style/FormatStringToken
-    },
-    presence: true,
-    if: :representative_is_disabled?
 
   private
 
@@ -89,9 +80,5 @@ class YourRepresentativesDetails < BaseForm
 
   def prefer_fax?
     representative_contact_preference == "fax"
-  end
-
-  def representative_is_disabled?
-    representative_disability
   end
 end

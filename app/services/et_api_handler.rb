@@ -78,7 +78,9 @@ class EtApiHandler
         "fax_number": full_hash[:respondents_detail_answers][:fax_number],
         "organisation_employ_gb": full_hash[:respondents_detail_answers][:organisation_employ_gb],
         "organisation_more_than_one_site": full_hash[:respondents_detail_answers][:organisation_more_than_one_site],
-        "employment_at_site_number": full_hash[:respondents_detail_answers][:employment_at_site_number]
+        "employment_at_site_number": full_hash[:respondents_detail_answers][:employment_at_site_number],
+        "disability": full_hash[:disability_answers][:disability],
+        "disability_information": full_hash[:disability_answers][:disability_information]
       },
       "uuid": SecureRandom.uuid
     }

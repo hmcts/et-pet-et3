@@ -42,13 +42,13 @@ class RespondentsDetail < BaseForm
     respondents_detail_hash
   end
 
-  validates :name, :building_name, :street_name, :town, presence: true
   validates :case_number, case_number: true
+  validates :name, presence: true
   validates :contact,
     persons_name: true,
     allow_blank: true
+  validates :building_name, :street_name, :town, presence: true
   validates :postcode, postcode: true
-  validates :organisation_more_than_one_site, inclusion: { in: [true, false] }
   validates :contact_number, :mobile_number,
     phone_number: true,
     allow_blank: true
@@ -58,10 +58,11 @@ class RespondentsDetail < BaseForm
   validates :fax_number,
     phone_number: true,
     if: :prefer_fax?
-  validates :employment_at_site_number, numericality: true, if: :more_than_one_site?
   validates :organisation_employ_gb,
     numericality: true,
     allow_blank: true
+  validates :organisation_more_than_one_site, inclusion: { in: [true, false] }
+  validates :employment_at_site_number, numericality: true, if: :more_than_one_site?
 
   private
 

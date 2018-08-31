@@ -166,8 +166,10 @@ module ET3
         your_representatives_details_page.representative_contact_preference_question.set_for(user)
       end
 
-      def answer_representative_disability_question
-        your_representatives_details_page.representative_disability_question.set_for(user)
+      # Disability Page
+
+      def answer_disability_question
+        disability_page.disability_question.set_for(user)
       end
 
       # Employers Contract Claim Page
@@ -243,9 +245,12 @@ module ET3
         answer_representative_dx_number_question
         answer_representative_reference_question
         answer_representative_contact_preference_question
-        answer_representative_disability_question
 
         your_representatives_details_page.next
+
+        answer_disability_question
+
+        disability_page.next
 
         answer_make_employer_contract_claim_question
 

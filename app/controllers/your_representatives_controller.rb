@@ -21,7 +21,7 @@ class YourRepresentativesController < ApplicationController
     if @your_representative.have_representative
       edit_your_representatives_details_path
     else
-      edit_employers_contract_claim_path
+      edit_disability_path
     end
   end
 end

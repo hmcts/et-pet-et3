@@ -78,6 +78,16 @@ RSpec.feature "View Sidebar", js: true do
     expect(your_representatives_details_page.sidebar).to have_link(t('components.sidebar.more_category_link'), href: t('components.sidebar.more_category_href'))
   end
 
+  scenario "disability page" do
+    disability_page.load
+
+    expect(disability_page.sidebar).to have_link(t('components.sidebar.claim_link'), href: t('components.sidebar.claim_href'))
+    expect(disability_page.sidebar).to have_link(t('components.sidebar.response_link'), href: t('components.sidebar.response_href'))
+    expect(disability_page.sidebar).to have_link(t('components.sidebar.contact_link'), href: t('components.sidebar.contact_href'))
+    expect(disability_page.sidebar).to have_link(t('components.sidebar.download_link'), href: t('components.sidebar.download_href'))
+    expect(disability_page.sidebar).to have_link(t('components.sidebar.more_category_link'), href: t('components.sidebar.more_category_href'))
+  end
+
   scenario "employer contract claim page" do
     employers_contract_claim_page.load
 

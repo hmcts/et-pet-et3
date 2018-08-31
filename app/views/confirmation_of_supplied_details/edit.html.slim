@@ -252,14 +252,26 @@
           td = t('helpers.label.your_representatives_details.representative_fax')
           td = @hash_store.dig(:your_representatives_details_answers, :representative_fax)
         tr
-          td = t('helpers.fieldset.your_representatives_details.representative_disability')
-          td = @hash_store.dig(:your_representatives_details_answers, :representative_disability)
-        tr
-          td = t('helpers.label.your_representatives_details.representative_disability_information')
-          td = @hash_store.dig(:your_representatives_details_answers, :representative_disability_information)
-        tr
           td
             = link_to("Edit answers on this page", edit_your_representatives_details_path)
+          td
+            = link_to "Back to the top", "#content"
+    table
+      caption.heading-small Disability
+      thead
+        tr
+          th Question
+          th Answer
+      tbody
+        tr
+          td = t('helpers.fieldset.disability.disability')
+          td = @hash_store.dig(:disability_answers, :disability)
+        tr
+          td = t('helpers.label.disability.disability_information')
+          td = @hash_store.dig(:disability_answers, :disability_information)
+        tr
+          td
+            = link_to("Edit answers on this page", edit_disability_path)
           td
             = link_to "Back to the top", "#content"
     table

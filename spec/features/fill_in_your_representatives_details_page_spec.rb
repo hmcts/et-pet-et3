@@ -1,6 +1,6 @@
 require 'rails_helper'
 RSpec.feature "Fill in Your Representatives Details Page", js: true do
-  let(:employers_contract_claim_page) { ET3::Test::EmployersContractClaimPage.new }
+  let(:disability_page) { ET3::Test::DisabilityPage.new }
 
   scenario "correctly will enable user to continue to next page" do
     your_representatives_details_page.load
@@ -20,11 +20,10 @@ RSpec.feature "Fill in Your Representatives Details Page", js: true do
     answer_representative_dx_number_question
     answer_representative_reference_question
     answer_representative_contact_preference_question
-    answer_representative_disability_question
 
     your_representatives_details_page.next
 
-    expect(employers_contract_claim_page).to be_displayed
+    expect(disability_page).to be_displayed
   end
 
   scenario "incorrectly will provide errors" do
@@ -45,7 +44,6 @@ RSpec.feature "Fill in Your Representatives Details Page", js: true do
     answer_representative_dx_number_question
     answer_representative_reference_question
     answer_representative_contact_preference_question
-    answer_representative_disability_question
 
     your_representatives_details_page.next
 
@@ -59,7 +57,6 @@ RSpec.feature "Fill in Your Representatives Details Page", js: true do
     expect(your_representatives_details_page.representative_phone_question).to have_error_invalid_phone_number
     expect(your_representatives_details_page.representative_mobile_question).to have_error_invalid_phone_number
     expect(your_representatives_details_page.representative_contact_preference_question).to have_error_invalid_email
-    expect(your_representatives_details_page.representative_disability_question).to have_error_too_long
   end
 
   scenario "correctly will enable user to check answers and return to edit them" do
@@ -80,7 +77,6 @@ RSpec.feature "Fill in Your Representatives Details Page", js: true do
     answer_representative_dx_number_question
     answer_representative_reference_question
     answer_representative_contact_preference_question
-    answer_representative_disability_question
 
     your_representatives_details_page.next
     visit confirmation_of_supplied_details_path
@@ -122,7 +118,5 @@ RSpec.feature "Fill in Your Representatives Details Page", js: true do
     expect(your_representatives_details_page.representative_contact_preference_question.select_post.has_checked_field?).to be true if user.representative_contact_preference == 'Post'
     expect(your_representatives_details_page.representative_contact_preference_question.select_fax.has_checked_field?).to be true if user.representative_contact_preference == 'Fax'
     expect(your_representatives_details_page.representative_contact_preference_question.preference_fax.root_element.value).to eql user.representative_fax if user.representative_contact_preference == 'Fax'
-    expect(your_representatives_details_page.representative_disability_question.get).to eql user.representative_disability
-    expect(your_representatives_details_page.representative_disability_question.representative_disability_information.root_element.value).to eql user.representative_disability_information if user.representative_disability == 'Yes'
   end
 end

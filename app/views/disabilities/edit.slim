@@ -1,0 +1,19 @@
+- content_for :form_page_title, "Disability"
+- content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
+.content-body.disability
+
+  = form_for @disability, url: disability_path, method: :patch  do |f|
+
+    div data-turbolinks="false"
+      = GovukElementsErrorsHelper.error_summary @disability,
+              "Please review the following",
+              "Clicking on an error will navigate you directly to the question. Please correct these errors before continuing."
+
+    = f.radio_button_fieldset :disability do |b|
+      = content_tag :div, {class: 'multiple-choice', data: { target: :disability_further_info }} do
+        = b.radio_button(:disability, true) + label(:disability, t('helpers.label.disability.disability.choices.yes'), value: :yes)
+      #disability_further_info.panel.panel-border-narrow.js-hidden
+        = f.text_area :disability_information, size: "70x20"
+      = content_tag :div, {class: 'multiple-choice'} do
+        = b.radio_button(:disability, false) + label(:disability, t('helpers.label.disability.disability.choices.no'), value: :no)
+    = f.submit("Save and continue", class: 'button')

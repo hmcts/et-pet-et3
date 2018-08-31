@@ -50,11 +50,4 @@
         = b.radio_button(:representative_contact_preference, :fax) + label(:representative_contact_preference, t('helpers.label.your_representatives_details.representative_contact_preference.choices.fax'), value: :fax)
       #representative_contact_fax.panel.panel-border-narrow.js-hidden
         = f.text_field :representative_fax
-    = f.radio_button_fieldset :representative_disability do |b|
-      = content_tag :div, {class: 'multiple-choice', data: { target: :representative_disability_further_info }} do
-        = b.radio_button(:representative_disability, true) + label(:representative_disability, t('helpers.label.your_representatives_details.representative_disability.choices.yes'), value: :yes)
-      #representative_disability_further_info.panel.panel-border-narrow.js-hidden
-        = f.text_area :representative_disability_information, size: "70x20"
-      = content_tag :div, {class: 'multiple-choice'} do
-        = b.radio_button(:representative_disability, false) + label(:representative_disability, t('helpers.label.your_representatives_details.representative_disability.choices.no'), value: :no)
     = f.submit("Save and continue", class: 'button')

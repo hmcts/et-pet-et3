@@ -6,6 +6,7 @@ class EtApiHandler
 
     data_array = [build_response_data(form_hash), build_respondent_data(form_hash)]
     data_array.push(build_representative_data(form_hash)) if form_hash[:your_representative_answers][:have_representative]
+    data_array[1][:data].merge!(build_disability_data(form_hash)) if form_hash[:disability_answers][:disability]
 
     http_response = HTTParty.post("#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api')}/v2/respondents/build_response",
       body: {
@@ -104,11 +105,16 @@ class EtApiHandler
         "reference": full_hash[:your_representatives_details_answers][:representative_reference],
         "contact_preference": full_hash[:your_representatives_details_answers][:representative_contact_preference],
         "email_address": full_hash[:your_representatives_details_answers][:representative_email],
-        "fax_number": full_hash[:your_representatives_details_answers][:representative_fax],
-        "disability": full_hash[:disability_answers][:disability],
-        "disability_information": full_hash[:disability_answers][:disability_information]
+        "fax_number": full_hash[:your_representatives_details_answers][:representative_fax]
       },
       "uuid": SecureRandom.uuid
+    }
+  end
+
+  def self.build_disability_data(full_hash)
+    {
+      "disability": full_hash[:disability_answers][:disability],
+      "disability_information": full_hash[:disability_answers][:disability_information]
     }
   end
 end

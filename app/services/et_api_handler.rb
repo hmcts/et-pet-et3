@@ -58,7 +58,7 @@ class EtApiHandler
   end
 
   def self.build_respondent_data(full_hash)
-    {
+    respondent_hash = {
       "command": "BuildRespondent",
       "data": {
         "name": full_hash[:respondents_detail_answers][:name],
@@ -82,6 +82,9 @@ class EtApiHandler
       },
       "uuid": SecureRandom.uuid
     }
+
+    respondent_hash[:data] = respondent_hash[:data].merge(build_disability_data(full_hash)) if full_hash[:disability_answers][:disability]
+    respondent_hash
   end
 
   def self.build_representative_data(full_hash)
@@ -104,11 +107,16 @@ class EtApiHandler
         "reference": full_hash[:your_representatives_details_answers][:representative_reference],
         "contact_preference": full_hash[:your_representatives_details_answers][:representative_contact_preference],
         "email_address": full_hash[:your_representatives_details_answers][:representative_email],
-        "fax_number": full_hash[:your_representatives_details_answers][:representative_fax],
-        "disability": full_hash[:disability_answers][:disability],
-        "disability_information": full_hash[:disability_answers][:disability_information]
+        "fax_number": full_hash[:your_representatives_details_answers][:representative_fax]
       },
       "uuid": SecureRandom.uuid
+    }
+  end
+
+  def self.build_disability_data(full_hash)
+    {
+      "disability": full_hash[:disability_answers][:disability],
+      "disability_information": full_hash[:disability_answers][:disability_information]
     }
   end
 end

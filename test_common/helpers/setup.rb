@@ -167,7 +167,6 @@ module ET3
       end
 
       # Disability Page
-
       def answer_disability_question
         disability_page.disability_question.set_for(user)
       end

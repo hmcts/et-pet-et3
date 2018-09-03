@@ -6,7 +6,6 @@ class EtApiHandler
 
     data_array = [build_response_data(form_hash), build_respondent_data(form_hash)]
     data_array.push(build_representative_data(form_hash)) if form_hash[:your_representative_answers][:have_representative]
-    data_array[1][:data].merge!(build_disability_data(form_hash)) if form_hash[:disability_answers][:disability]
 
     http_response = HTTParty.post("#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api')}/v2/respondents/build_response",
       body: {
@@ -59,7 +58,7 @@ class EtApiHandler
   end
 
   def self.build_respondent_data(full_hash)
-    {
+    respondent_hash = {
       "command": "BuildRespondent",
       "data": {
         "name": full_hash[:respondents_detail_answers][:name],
@@ -83,6 +82,9 @@ class EtApiHandler
       },
       "uuid": SecureRandom.uuid
     }
+
+    respondent_hash[:data] = respondent_hash[:data].merge(build_disability_data(full_hash)) if full_hash[:disability_answers][:disability]
+    respondent_hash
   end
 
   def self.build_representative_data(full_hash)

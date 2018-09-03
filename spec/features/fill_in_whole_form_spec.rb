@@ -177,6 +177,8 @@ RSpec.feature "Fill in whole form", js: true do
           expect(request_body["data"][1]["data"]["organisation_employ_gb"]).to eql user_data.organisation_employ_gb
           expect(request_body["data"][1]["data"]["organisation_more_than_one_site"]).to eql(user_data.organisation_more_than_one_site == 'Yes')
           expect(request_body["data"][1]["data"]["employment_at_site_number"]).to eql user_data.employment_at_site_number
+          expect(request_body["data"][1]["data"]["disability"]).to eql(user_data.disability == 'Yes')
+          expect(request_body["data"][1]["data"]["disability_information"]).to eql user_data.disability_information
           expect(request_body["data"][1]["uuid"]).to be_an_instance_of(String)
           expect(request_body["data"][2]["command"]).to eql "BuildRepresentative"
           expect(request_body["data"][2]["data"]["name"]).to eql user_data.representative_name
@@ -194,8 +196,6 @@ RSpec.feature "Fill in whole form", js: true do
           expect(request_body["data"][2]["data"]["contact_preference"].capitalize).to eql user_data.representative_contact_preference
           expect(request_body["data"][2]["data"]["email_address"]).to eql user_data.representative_email if user_data.representative_contact_preference == "email"
           expect(request_body["data"][2]["data"]["fax_number"]).to eql user_data.representative_fax if user_data.representative_contact_preference == "fax"
-          expect(request_body["data"][2]["data"]["disability"]).to eql(user_data.disability == 'Yes')
-          expect(request_body["data"][2]["data"]["disability_information"]).to eql user_data.disability_information
           expect(request_body["data"][2]["uuid"]).to be_an_instance_of(String)
           expect(request.headers).to include("Content-Type" => "application/json", "Accept" => "application/json")
         }).to have_been_made.once

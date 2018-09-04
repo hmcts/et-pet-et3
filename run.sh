@@ -15,7 +15,7 @@ esac
 
 ./expand_variables.sh
 python ./awslogs-agent-setup.py -n -r eu-west-1 -c ./awslogs.conf
-
+pkill awslogs
 supervisord -c /etc/supervisor.conf &
 
 echo "Running app"

@@ -12,4 +12,12 @@ RUN curl https://s3.amazonaws.com/aws-cloudwatch/downloads/latest/awslogs-agent-
 RUN mkdir /etc/cron.d
 RUN touch /etc/cron.d/awslogs
 
+RUN apt-get update
+RUN apt-get -y install supervisor
+RUN mkdir -p /var/log/supervisor
+RUN mkdir -p /etc/supervisor/conf.d/
+ADD supervisor_awslogs.conf /etc/supervisor/conf.d
+ADD supervisor.conf /etc/supervisor.conf
+
+
 CMD ["./run.sh"]

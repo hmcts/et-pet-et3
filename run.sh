@@ -16,6 +16,8 @@ esac
 ./expand_variables.sh
 python ./awslogs-agent-setup.py -n -r eu-west-1 -c ./awslogs.conf
 
+supervisord -c /etc/supervisor.conf &
+
 echo "Running app"
 
 bundle exec unicorn -p 8080 -c ./config/unicorn.rb -E production

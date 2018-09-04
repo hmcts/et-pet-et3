@@ -15,7 +15,7 @@ esac
 
 ./expand_variables.sh
 python ./awslogs-agent-setup.py -n -r eu-west-1 -c ./awslogs.conf
-pkill awslogs
+ps -eaf | grep awslogs | grep -v grep | awk -F' ' '{print $2'} | xargs kill -9
 supervisord -c /etc/supervisor.conf &
 
 echo "Running app"

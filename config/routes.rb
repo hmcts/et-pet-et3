@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resource :response, only: [:edit, :update], path_names: { edit: ''}
     resource :your_representative, only: [:edit, :update], path_names: { edit: ''}
     resource :your_representatives_details, only: [:edit, :update], path_names: { edit: ''}
+    resource :disability, only: [:edit, :update], path_names: { edit: ''}
     resource :employers_contract_claim, only: [:edit, :update], path_names: { edit: ''}
     resource :additional_information, only: [:create, :edit, :update], path_names: { edit: ''}
     resource :confirmation_of_supplied_details, only: [:edit, :update], path_names: { edit: ''}

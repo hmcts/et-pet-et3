@@ -300,7 +300,7 @@
         tr
           td = t('helpers.label.additional_information.upload_additional_information')
           td
-            = @hash_store[:additional_information_answers][:upload_file_name]
+            = @hash_store.dig(:additional_information_answers, :upload_file_name)
             - if uploaded_file_name
               br
               = link_to t('components.confirmation_of_supplied_details.remove_file_link'), remove_rtf_path, method: :delete

@@ -204,8 +204,9 @@ en:
       fax:
         label: Fax
         input_label: Fax number
-    representative_disability:
-      label: Does your representative have a disability? (optional)
+    # Disability Page
+    disability:
+      label: Do you have a disability? (optional)
       'yes':
         label: 'Yes'
       'no':
@@ -241,6 +242,8 @@ en:
       caption: Your Representative
     confirmation_of_your_representatives_details_answers:
       caption: Your Representative's Details
+    confirmation_of_disability_answers:
+      caption: Disability
     confirmation_of_employer_contract_claim_answers:
       caption: Employer Contract Claim
     confirmation_of_additional_information_answers:

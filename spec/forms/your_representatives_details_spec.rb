@@ -9,8 +9,7 @@ RSpec.describe YourRepresentativesDetails, type: :model do
       representative_county: 'Rep County', representative_postcode: 'WC2 2BB', representative_phone: '0207 987 6543',
       representative_mobile: '07987654321', representative_dx_number: 'DX 123 London 456', representative_reference: 'Rep Ref',
       representative_contact_preference: 'email', representative_email: 'your@representative.email',
-      representative_fax: '0207 345 6789', representative_disability: true,
-      representative_disability_information: 'Lorem ipsum disability'
+      representative_fax: '0207 345 6789'
     )
   }
 
@@ -67,13 +66,6 @@ RSpec.describe YourRepresentativesDetails, type: :model do
       expect(populated_your_representatives_details.errors.details[:representative_fax]).to include a_hash_including(error: :invalid_phone_number)
     end
 
-    it 'will not validate representative disability information over 350 characters' do
-      populated_your_representatives_details.representative_disability_information = three_hundred_fifty_one_chars
-
-      populated_your_representatives_details.valid?
-
-      expect(populated_your_representatives_details.errors.details[:representative_disability_information]).to include a_hash_including(error: :too_long)
-    end
   end
 
   context 'when correctly populated' do
@@ -136,10 +128,6 @@ RSpec.describe YourRepresentativesDetails, type: :model do
 
     it 'returns the representative_fax' do
       expect(populated_your_representatives_details.representative_fax).to eql '0207 345 6789'
-    end
-
-    it 'returns the representative_disability' do
-      expect(populated_your_representatives_details.representative_disability).to be true
     end
   end
 
@@ -207,14 +195,6 @@ RSpec.describe YourRepresentativesDetails, type: :model do
     it 'will return the representative_fax key and value pair' do
       populated_your_representatives_details.representative_contact_preference = "fax"
       expect(populated_your_representatives_details.to_h).to include(representative_fax: '0207 345 6789')
-    end
-
-    it 'will return the representative_disability key and value pair' do
-      expect(populated_your_representatives_details.to_h).to include(representative_disability: true)
-    end
-
-    it 'will return the representative_disability_information key and value pair' do
-      expect(populated_your_representatives_details.to_h).to include(representative_disability_information: 'Lorem ipsum disability')
     end
   end
 
@@ -323,13 +303,6 @@ RSpec.describe YourRepresentativesDetails, type: :model do
       expect(populated_your_representatives_details).to be_valid
     end
 
-    it 'will raise a validation error on representative_disability' do
-      populated_your_representatives_details.representative_disability = nil
-
-      populated_your_representatives_details.valid?
-
-      expect(populated_your_representatives_details).to be_valid
-    end
   end
 
   context "when email is the preferred contact method" do
@@ -421,39 +394,4 @@ RSpec.describe YourRepresentativesDetails, type: :model do
     end
   end
 
-  context 'when representative has disability' do
-    it 'will raise a validation if representative disability information is not entered' do
-      populated_your_representatives_details.representative_disability = true
-      populated_your_representatives_details.representative_disability_information = nil
-
-      populated_your_representatives_details.valid?
-
-      expect(populated_your_representatives_details.errors.details[:representative_disability_information]).to include a_hash_including(error: :blank)
-    end
-
-    it 'will not raise a validation if representative disability information is provided' do
-      populated_your_representatives_details.representative_disability = true
-      populated_your_representatives_details.representative_disability_information = 'Lorem ipsum disability'
-
-      populated_your_representatives_details.valid?
-
-      expect(populated_your_representatives_details).to be_valid
-    end
-  end
-
-  context "when representative does not have a disability" do
-    it 'will not validate representative disability information' do
-      populated_your_representatives_details.representative_disability = false
-      populated_your_representatives_details.representative_disability_information = three_hundred_fifty_one_chars
-
-      expect(populated_your_representatives_details).to be_valid
-    end
-
-    it 'will not hash representative disability information' do
-      populated_your_representatives_details.representative_disability = false
-      populated_your_representatives_details.representative_disability_information = 'Lorem ipsum disability'
-
-      expect(populated_your_representatives_details.to_h).not_to include(:representative_disability_information)
-    end
-  end
 end

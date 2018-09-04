@@ -19,5 +19,4 @@ RUN mkdir -p /etc/supervisor/conf.d/
 COPY supervisor_awslogs.conf /etc/supervisor/conf.d/
 COPY supervisor.conf /etc/supervisor.conf
 
-
 CMD ["./run.sh"]

@@ -99,8 +99,13 @@ RSpec.feature "Fill in whole form", js: true do
     expect(your_rep_details_table.representative_contact_preference_row.representative_contact_preference_answer).to have_text "fax"
     expect(your_rep_details_table.email_row.email_answer).to have_text nil
     expect(your_rep_details_table.fax_row.fax_answer).to have_text "0207 345 6789"
-    expect(your_rep_details_table.representative_disability_row.representative_disability_answer).to have_text true
-    expect(your_rep_details_table.disability_information_row.disability_information_answer).to have_text "Lorem ipsum disability"
+
+    # Check Disability Table
+    expect(confirmation_of_supplied_details_page).to have_confirmation_of_disability_answers
+
+    disability_table = confirmation_of_supplied_details_page.confirmation_of_disability_answers
+    expect(disability_table.disability_row.disability_answer).to have_text true
+    expect(disability_table.disability_information_row.disability_information_answer).to have_text "Lorem ipsum disability"
 
     # Check Employer Contract Claim Table
     expect(confirmation_of_supplied_details_page).to have_confirmation_of_employer_contract_claim_answers
@@ -172,6 +177,8 @@ RSpec.feature "Fill in whole form", js: true do
           expect(request_body["data"][1]["data"]["organisation_employ_gb"]).to eql user_data.organisation_employ_gb
           expect(request_body["data"][1]["data"]["organisation_more_than_one_site"]).to eql(user_data.organisation_more_than_one_site == 'Yes')
           expect(request_body["data"][1]["data"]["employment_at_site_number"]).to eql user_data.employment_at_site_number
+          expect(request_body["data"][1]["data"]["disability"]).to eql(user_data.disability == 'Yes')
+          expect(request_body["data"][1]["data"]["disability_information"]).to eql user_data.disability_information
           expect(request_body["data"][1]["uuid"]).to be_an_instance_of(String)
           expect(request_body["data"][2]["command"]).to eql "BuildRepresentative"
           expect(request_body["data"][2]["data"]["name"]).to eql user_data.representative_name
@@ -189,8 +196,6 @@ RSpec.feature "Fill in whole form", js: true do
           expect(request_body["data"][2]["data"]["contact_preference"].capitalize).to eql user_data.representative_contact_preference
           expect(request_body["data"][2]["data"]["email_address"]).to eql user_data.representative_email if user_data.representative_contact_preference == "email"
           expect(request_body["data"][2]["data"]["fax_number"]).to eql user_data.representative_fax if user_data.representative_contact_preference == "fax"
-          expect(request_body["data"][2]["data"]["disability"]).to eql(user_data.representative_disability == 'Yes')
-          expect(request_body["data"][2]["data"]["disability_information"]).to eql user_data.representative_disability_information
           expect(request_body["data"][2]["uuid"]).to be_an_instance_of(String)
           expect(request.headers).to include("Content-Type" => "application/json", "Accept" => "application/json")
         }).to have_been_made.once

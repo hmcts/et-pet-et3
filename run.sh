@@ -18,8 +18,6 @@ python ./awslogs-agent-setup.py -n -r eu-west-1 -c ./awslogs.conf
 ps -eaf | grep awslogs | grep -v grep | awk -F' ' '{print $2'} | xargs kill -9
 supervisord -c /etc/supervisor.conf &
 
-supervisord -c /etc/supervisor.conf &
-
 echo "Running app"
 
 bundle exec unicorn -p 8080 -c ./config/unicorn.rb -E production

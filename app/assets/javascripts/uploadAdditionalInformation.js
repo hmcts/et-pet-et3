@@ -96,4 +96,8 @@ $(document).ready(function(){
         // Build a proper warning system for "too many files" warning.
         alert("too many files");
     });
+
+    uploadAdditionalInfoDropzone.on("removedfile", function() {
+        $("#additional_information_upload_file_name").val(null);
+    });
 });

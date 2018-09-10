@@ -23,9 +23,6 @@ module ET3
         end
       end
 
-      def clear_browser_logs
-        page.driver.browser.manage.logs.get(:browser).delete_if { |x| x }
-      end
     end
   end
 end

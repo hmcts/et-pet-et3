@@ -15,6 +15,17 @@ module ET3
         element :more_category_link, :link_named, 'components.sidebar.more_category_link'
       end
 
+      def js_severe_errors
+        return [] unless page.driver.try(:browser).try(:browser) == :chromedriver
+        errors = page.driver.browser.manage.logs.get(:browser).select { |error| error.level == "SEVERE" }
+        errors.map do |error|
+          { message: error.message }
+        end
+      end
+
+      def clear_browser_logs
+        page.driver.browser.manage.logs.get(:browser).delete_if { |x| x }
+      end
     end
   end
 end

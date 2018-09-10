@@ -1,6 +1,10 @@
 module ET3
   module Test
     module Pages
+      def base_page
+        ET3::Test::BasePage.new
+      end
+
       def start_page
         ET3::Test::StartPage.new
       end

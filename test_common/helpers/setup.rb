@@ -274,7 +274,7 @@ module ET3
                   "BuildResponse": {
                     "reference": "142000000100",
                     "submitted_at": "2018-01-13 14:00",
-                    "pdf_url": "http://google.com",
+                    "pdf_url": "http://#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}/",
                     "office_address": "Alexandra House, 14-22 The Parsonage, Manchester, M3 2JA",
                     "office_phone_number": "0161 833 6100"
                   }

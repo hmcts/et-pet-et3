@@ -274,7 +274,29 @@ module ET3
                   "BuildResponse": {
                     "reference": "142000000100",
                     "submitted_at": "2018-01-13 14:00",
-                    "pdf_url": "s3/link/to/form.pdf",
+                    "pdf_url": "http://google.com",
+                    "office_address": "Alexandra House, 14-22 The Parsonage, Manchester, M3 2JA",
+                    "office_phone_number": "0161 833 6100"
+                  }
+                }
+              }.to_json,
+            status: 202
+          )
+      end
+
+      # Stub Submission Calls to API using Rack mounted PDF Download URL
+      def stub_submission_with_custom_pdf_download_link # rubocop:disable Metrics/MethodLength
+        stub_request(:post, "#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api')}/v2/respondents/build_response").
+          with(headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }).
+          to_return(
+            headers: { 'Content-Type': 'application/json' },
+            body:
+              {
+                "meta": {
+                  "BuildResponse": {
+                    "reference": "142000000100",
+                    "submitted_at": "2018-01-13 14:00",
+                    "pdf_url": "http://#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}/test/pdf-download",
                     "office_address": "Alexandra House, 14-22 The Parsonage, Manchester, M3 2JA",
                     "office_phone_number": "0161 833 6100"
                   }

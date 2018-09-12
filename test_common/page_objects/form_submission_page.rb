@@ -10,7 +10,9 @@ module ET3
 
       element :submission_date, :css, '.submission-date'
 
-      element :download_pdf, :css, '.download-pdf'
+      element :valid_pdf_download, :link_named, 'links.form_submission.valid_pdf_download'
+
+      element :invalid_pdf_download, :link_named, 'links.form_submission.invalid_pdf_download'
 
       element :return_to_govuk_button, :css, 'a.button.button-start'
       def return

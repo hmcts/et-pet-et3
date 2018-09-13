@@ -279,6 +279,9 @@ en:
   links:
     confirmation_of_supplied_details:
       edit_page: Edit answers on this page
+    form_submission:
+      invalid_pdf_download: Not quite ready yet - a PDF version of your completed form will be available for download shortly
+      valid_pdf_download: A PDF version of your completed form is now available for download
   components:
     single_choice_option_section:
       'yes': "Yes"
@@ -295,3 +298,5 @@ en:
       download_href: https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/719457/et3-eng.pdf
       more_category_link: More from the Working, jobs and pensions category
       more_category_href: http://gov.uk/browse/working
+    confirmation_of_supplied_details:
+      remove_file_link: Remove file

@@ -11,7 +11,7 @@ module ET3
 
       def next
         start_button.click
-      end      
+      end
     end
   end
 end

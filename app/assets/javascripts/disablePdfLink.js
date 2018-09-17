@@ -1,20 +1,26 @@
 $( document ).on('turbolinks:load', function() {
-    checkLinkStatus();
+    if ($('.download-pdf').length) {
+        checkLinkStatus();
+    }
 });
 
 function checkLinkStatus() {
-    let pdfUrl = $('.download-pdf').attr('href');
-    $.ajax({
-        url: pdfUrl,
-        success: function() {
-            $('.download-pdf').text('A PDF version of your completed form is now available for download')
-                .css('pointer-events', 'auto');
-        },
-        error: function() {
-            $('.download-pdf').text('Not quite ready yet - a PDF version of your completed form will be available for download shortly')
-                .css('pointer-events', 'none');
-            console.warn(`Unable to find PDF, retrying ${pdfUrl} 10 seconds`);
-            setTimeout(checkLinkStatus, 10000);
+    let url = $('.download-pdf').attr('href');
+    let http = new XMLHttpRequest();
+    http.overrideMimeType("application/pdf");
+    http.open('GET', url, true);
+    http.onload = function (e) {
+        if (http.readyState === 4) {
+            if (http.status === 200) {
+                $('.download-pdf').text('A PDF version of your completed form is now available for download')
+                    .css('pointer-events', 'auto');
+            } else {
+                $('.download-pdf').text('Not quite ready yet - a PDF version of your completed form will be available for download shortly')
+                    .css('pointer-events', 'none');
+                console.warn(`Unable to find PDF, retrying ${url} in 10 seconds`);
+                setTimeout(function() { checkLinkStatus() }, 10000);
+            }
         }
-    })
+    };
+    http.send();
 }

@@ -3,7 +3,8 @@ class FormSubmissionsController < ApplicationController
 
   def index
     @reference_number = current_store.api_response[:data]["meta"]["BuildResponse"]["reference"]
-    @submission_date = Time.zone.parse(current_store.api_response[:data]["meta"]["BuildResponse"]["submitted_at"]).strftime('%d/%m/%Y %H:%M')
+    @submission_date = Time.zone.parse(current_store.api_response[:data]["meta"]["BuildResponse"]["submitted_at"]).
+        in_time_zone(Rails.configuration.mailer_time_zone).strftime('%d/%m/%Y %H:%M')
     @pdf_url = current_store.api_response[:data]["meta"]["BuildResponse"]["pdf_url"]
     @office_address = current_store.api_response[:data]["meta"]["BuildResponse"]["office_address"]
     @office_phone_number = current_store.api_response[:data]["meta"]["BuildResponse"]["office_phone_number"]

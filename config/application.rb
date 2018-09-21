@@ -16,5 +16,7 @@ module Et3
     # -- all .rb files in that directory are automatically loaded.
 
     ActionView::Base.default_form_builder = GovukElementsFormBuilder::FormBuilder
+
+    config.mailer_time_zone = "London"
   end
 end

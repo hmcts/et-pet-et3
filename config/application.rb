@@ -17,6 +17,6 @@ module Et3
 
     ActionView::Base.default_form_builder = GovukElementsFormBuilder::FormBuilder
 
-    config.mailer_time_zone = "London"
+    config.time_zone = "London"
   end
 end

@@ -279,7 +279,7 @@ en:
       header: Session Expired
       content: |
         Your session has expired due to inactivity. The information you have provided has not been saved. We apologise for the inconvenience and request that you fill in the form again.
-      homepage_link: Service Homepage
+      homepage_link: Return to Employment Tribunal Response
     sidebar:
       header: Other Relevant Links
       claim_link: How to make a claim

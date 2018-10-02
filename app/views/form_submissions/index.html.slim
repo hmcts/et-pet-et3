@@ -1,8 +1,8 @@
 - content_for :page_title, "Application Complete | Response to Claim"
 .content-body.form-submission
   .govuk-box-highlight.submission-confirmation
-    h1.heading-xlarge Application complete
-    p.font-large 
+    h1.heading-xlarge = t 'components.form_submission.header'
+    p.font-large
       ' Your reference number, which should be quoted on all correspondence, is
     p.font-large
       strong.bold.reference-number = @reference_number

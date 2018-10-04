@@ -294,3 +294,5 @@ en:
       more_category_href: http://gov.uk/browse/working
     confirmation_of_supplied_details:
       remove_file_link: Remove file
+    form_submission:
+      header: Response complete

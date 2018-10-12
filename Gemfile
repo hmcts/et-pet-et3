@@ -83,6 +83,7 @@ group :test do
   gem 'database_cleaner', '~> 1.5'
   gem 'webmock', '~> 3.3'
   gem 'faker', '~> 1.8'
+  gem 'aws-sdk-s3', '~> 1.21'
 end
 
 group :production do

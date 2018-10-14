@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  et3:
+    image: 'et3_rails'
+    build:
+      context: ../../
+      dockerfile: docker/dev/Dockerfile
+    ports:
+      - 3000:3000
+  db:
+    image: postgres:9.6
+    ports:
+      - '${DB_PORT:-0}:5432'
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+volumes:
+  pg-data:

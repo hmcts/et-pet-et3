@@ -6,6 +6,9 @@ cache:
 env:
   global:
     - DB_PORT=5433
+before_install:
+  - chmod +x ./bin/wait-for-it.sh
+  - chmod +x docker-compose
 before_script:
   - ./bin/dev/docker-support-services up -d
   - ./bin/wait-for-it.sh localhost:5433

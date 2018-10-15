@@ -5,9 +5,9 @@ cache:
   - tmp/parallel_runtime_log
 before_script:
   - ./bin/dev/docker-support-services up -d
-  - ./bin/wait-for-it.sh localhost:9000
+  - ./bin/wait-for-it.sh localhost:5433
   - sleep 5
-  - ./bin/wait-for-it.sh localhost:9000
+  - ./bin/wait-for-it.sh localhost:5433
   - bundle exec rake parallel:create parallel:migrate
 script:
   - bundle exec rake parallel:spec

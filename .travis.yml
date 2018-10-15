@@ -3,6 +3,9 @@ cache:
   bundler: true
   directories:
   - tmp/parallel_runtime_log
+env:
+  global:
+    - DB_PORT=5433
 before_script:
   - ./bin/dev/docker-support-services up -d
   - ./bin/wait-for-it.sh localhost:5433

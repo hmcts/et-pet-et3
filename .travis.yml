@@ -6,6 +6,7 @@ cache:
 env:
   global:
     - DB_PORT=5433
+    - S3_PORT=9000
 before_install:
   - chmod +x ./bin/wait-for-it.sh
 before_script:
@@ -13,6 +14,7 @@ before_script:
   - ./bin/wait-for-it.sh localhost:5433
   - sleep 5
   - ./bin/wait-for-it.sh localhost:5433
+  - ./bin/wait-for-it.sh localhost:9000
   - bundle exec rake parallel:create parallel:migrate
 script:
   - bundle exec rake parallel:spec

@@ -8,8 +8,6 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
-# Add bootsnap for 5.2
-gem 'bootsnap', '~> 1.3'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 gem 'unicorn'
@@ -85,6 +83,11 @@ group :test do
   gem 'database_cleaner', '~> 1.5'
   gem 'webmock', '~> 3.3'
   gem 'faker', '~> 1.8'
+end
+
+group :production do
+  # Add bootsnap for 5.2
+  gem 'bootsnap', '~> 1.3'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

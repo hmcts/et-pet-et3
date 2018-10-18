@@ -23,7 +23,7 @@ services:
       - /tmp/videos:/home/seluser/videos
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
-      - ${ZALENIUM_PORT:-4444}:4444
+      - ${SELENIUM_PORT:-4444}:4444
     command: >
       start --desiredContainers 2
             --maxDockerSeleniumContainers 8

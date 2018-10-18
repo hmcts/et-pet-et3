@@ -9,7 +9,7 @@ services:
     volumes:
     - minio_data:/export
     ports:
-    - ${S3_PORT:-0}:9000
+    - ${S3_PORT:-9000}:9000
     environment:
       MINIO_ACCESS_KEY: accessKey1
       MINIO_SECRET_KEY: verySecretKey1

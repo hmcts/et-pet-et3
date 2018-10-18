@@ -23,8 +23,9 @@ Running this app will enable development of the app itself, with its test suite 
 1) Install Docker and Docker Compose (links above)
 1) Change directory into the repo and run `bundle install` to install the gems
 1) Copy `.env.example` and rename to `.env`
-1) Run `docker-compose build`
+1) Run `./bin/dev/docker-support-services up`
 1) Run `RAILS_ENV=development bundle exec rake parallel:create parallel:migrate`
+1) Run `RAILS_ENV=test bundle exec rake parallel:create parallel:migrate`
 
 ## Running Tests
 

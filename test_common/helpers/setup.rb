@@ -308,24 +308,27 @@ module ET3
 
       # Stub Calls to API for S3 URLs
       def stub_presigned_url_api_for_s3
+        s3_config = {
+            region: ENV.fetch('AWS_REGION', 'us-east-1'),
+            access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID', 'accessKey1'),
+            secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY', 'verySecretKey1'),
+            endpoint: ENV.fetch('AWS_ENDPOINT', 'http://localhost:9000/'),
+            force_path_style: ENV.fetch('AWS_S3_FORCE_PATH_STYLE', 'true') == 'true'
+        }
+        local_s3_client = Aws::S3::Client.new(s3_config)
+        aws_response = Aws::S3::Bucket.new(client: local_s3_client, name: ENV.fetch('S3_DIRECT_UPLOAD_BUCKET', 'et3directbuckettest')).
+                       presigned_post(key: "direct_uploads/#{SecureRandom.uuid}", success_action_status: '201')
         stub_request(:post, "#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api')}/v2/s3/create_signed_url").
           to_return(
             headers: { 'Content-Type': 'application/json' },
             body:
               {
                 "data": {
-                  "fields": {
-                    "key": "1529575844061",
-                    "policy": "eyJleHBpcmF0aW9uIjoiMjAxOC0wNi0yMVQxMToxMDo0NFloiLCJjb25kaXRpb25zIjpbeyJidWNrZXQiOiJldGFwaWRpcmVjdGJ1Y2tldCJ9LHsia2V5IjoiMTUyOTU3NTg0NDA2MSJ9LHsieC1hbXotY3JlZGVudGlhbCI6ImFjY2Vzc0tleTEvMjAxODA2MjEvdXMtZWFzdC0xL3MzL2F3czRfcmVxdWVzdCJ9LHsieC1hbXotYWxnb3JpdGhtIjoiQVdTNC1ITUFDLVNIQTI1NiJ9LHsieC1hbXotZGF0ZSI6IjIwMTgwNjIxVDEwMTA0NFoifV19",
-                    "x-amz-algorithm": "AWS4-HMAC-SHA256",
-                    "x-amz-credential": "accessKey1/20180621/us-east-1/s3/aws4_request",
-                    "x-amz-date": "20180621T101044Z",
-                    "x-amz-signature": "52417c85d3302add1950ecf125ab3bb85b5b7b436b6473c00389375dbee43f21"
-                  },
-                  "url": "http://s3.et.127.0.0.1.nip.io:3100/etapidirectbucket"
+                  "fields": aws_response.fields,
+                  "url": aws_response.url
                 },
                 "status": "accepted",
-                "uuid": "a333d77d-a42a-42b3-9d0c-1de77aea4317"
+                "uuid": SecureRandom.uuid
               }.to_json
           )
       end

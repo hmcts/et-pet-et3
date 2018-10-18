@@ -1,6 +1,8 @@
+require_relative '../helpers/upload_helper'
 module ET3
   module Test
     class AdditionalInformationPage < BasePage
+      include ET3::Test::UploadHelper
       set_url '/respond/additional_information'
 
       element :error_header, :error_titled, 'errors.header', exact: true
@@ -31,7 +33,9 @@ module ET3
             ).appendTo('body');
         JS
         # Attach the file to the fake input selector
-        attach_file("fakeFileInput", Rails.root.join('test_common', 'files', user.upload_additional_information))
+        force_remote do
+          attach_file("fakeFileInput", Rails.root.join('test_common', 'files', user.upload_additional_information))
+        end
         # Add the file to a fileList array
         page.execute_script("var fileList = [fakeFileInput.get(0).files[0]]")
         # Trigger the fake drop event

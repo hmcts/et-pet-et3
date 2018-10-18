@@ -308,15 +308,15 @@ module ET3
 
       # Stub Calls to API for S3 URLs
       def stub_presigned_url_api_for_s3
-        minio_config = {
+        s3_config = {
             region: ENV.fetch('AWS_REGION', 'us-east-1'),
             access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID', 'accessKey1'),
             secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY', 'verySecretKey1'),
             endpoint: ENV.fetch('AWS_ENDPOINT', 'http://localhost:9000/'),
             force_path_style: ENV.fetch('AWS_S3_FORCE_PATH_STYLE', 'true') == 'true'
         }
-        minio_s3_client = Aws::S3::Client.new(minio_config)
-        aws_response = Aws::S3::Bucket.new(client: minio_s3_client, name: ENV.fetch('S3_DIRECT_UPLOAD_BUCKET', 'et3directbuckettest')).
+        local_s3_client = Aws::S3::Client.new(s3_config)
+        aws_response = Aws::S3::Bucket.new(client: local_s3_client, name: ENV.fetch('S3_DIRECT_UPLOAD_BUCKET', 'et3directbuckettest')).
                        presigned_post(key: "direct_uploads/#{SecureRandom.uuid}", success_action_status: '201')
         stub_request(:post, "#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api')}/v2/s3/create_signed_url").
           to_return(

@@ -4,8 +4,6 @@ RSpec.feature "Fill in whole form", js: true do
   before do
     stub_et_api
     stub_presigned_url_api_for_s3
-    # TODO: RST-960 Stub the AJAX request which enables the file to be uploaded and a response returned
-    # stub_s3_submission
   end
 
   scenario "correctly will flow without error" do

@@ -7,6 +7,9 @@ module ET3
         super "#{ENV['ET3_URL']}#{url}"
       end
 
+      element :google_tag_manager_head_script, :xpath, XPath.generate {|x| x.css('head script')[x.string.n.contains("googletagmanager")]}, visible: false
+      element :google_tag_manager_body_noscript, :xpath, XPath.generate {|x| x.css('body noscript')[x.child(:iframe)[x.attr(:src).contains('googletagmanager')]]}
+
       section :sidebar, :sidebar_titled, 'components.sidebar.header' do
         element :claim_link, :link_named, 'components.sidebar.claim_link'
         element :response_link, :link_named, 'components.sidebar.response_link'
@@ -23,6 +26,14 @@ module ET3
         end
       end
 
+      def has_google_tag_manager_sections_for?(account)
+        google_tag_manager_head_script.native.inner_html.include?(account) &&
+            google_tag_manager_body_noscript.native.inner_html.include?(account)
+      end
+
+      def has_no_google_tag_manager_sections?
+        has_no_google_tag_manager_head_script? && has_no_google_tag_manager_body_noscript?
+      end
     end
   end
 end

@@ -233,6 +233,20 @@ RSpec.feature "Fill in whole form", js: true do
     expect(respondents_details_page.organisation_employ_gb_question.field.value).to eql ""
     expect(respondents_details_page.organisation_more_than_one_site_question.get).to be nil
     expect(respondents_details_page.organisation_more_than_one_site_question.employment_at_site_number.root_element.value).to eql ""
+  end
 
+  scenario "correctly followed by removing the uploaded file will not submit it to the API" do
+    given_i_am(:company01)
+
+    answer_all_questions
+
+    confirmation_of_supplied_details_page.confirmation_of_additional_information_answers.upload_additional_information_row.remove_file_link.click
+    confirmation_of_supplied_details_page.submit_form
+
+    expect(a_request(:post, "http://api.et.127.0.0.1.nip.io:3100/api/v2/respondents/build_response").
+        with { |request|
+          request_body = JSON.parse(request.body)
+          expect(request_body["data"][0]["data"]["additional_information_key"]).to be nil
+        }).to have_been_made.once
   end
 end

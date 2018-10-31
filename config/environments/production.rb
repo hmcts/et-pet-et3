@@ -95,4 +95,8 @@ Rails.application.configure do
   Raven.configure do |config|
     config.dsn = ENV.fetch('RAVEN_DSN', '')
   end
+
+  # The google tag manager account - fetched from environment variable, defaulting to false.  An empty string in the env
+  # var can also be used to disable.
+  config.google_tag_manager_account = ENV.fetch('GTM_ACCOUNT', false)
 end

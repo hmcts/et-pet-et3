@@ -4,11 +4,10 @@ RSpec.feature "Fill in whole form", js: true do
   before do
     stub_et_api
     stub_presigned_url_api_for_s3
-    # TODO: RST-960 Stub the AJAX request which enables the file to be uploaded and a response returned
-    # stub_s3_submission
   end
 
   scenario "correctly will flow without error" do
+    include ET3::Test::S3Helpers
 
     given_i_am(:company01)
 
@@ -118,12 +117,12 @@ RSpec.feature "Fill in whole form", js: true do
     expect(confirmation_of_supplied_details_page).to have_confirmation_of_additional_information_answers
 
     additional_information_table = confirmation_of_supplied_details_page.confirmation_of_additional_information_answers
-    # TODO: RST-960 When a file is uploaded then this page should have the file name.
-    # expect(additional_information_table.upload_additional_information_row.upload_additional_information_answer).to have_text(user.upload_additional_information) if user.upload_additional_information
+    expect(additional_information_table.upload_additional_information_row.upload_additional_information_answer).to have_text(user.upload_additional_information) if user.upload_additional_information
 
     confirmation_of_supplied_details_page.submit_form
     expect(form_submission_page).to be_displayed
     aggregate_failures "testing request" do
+      file_upload_keys = keys_in_bucket
       expect(a_request(:post, "http://api.et.127.0.0.1.nip.io:3100/api/v2/respondents/build_response").
         with { |request|
           request_body = JSON.parse(request.body)
@@ -157,7 +156,7 @@ RSpec.feature "Fill in whole form", js: true do
           expect(request_body["data"][0]["data"]["defend_claim_facts"]).to eql user_data.defend_claim_facts
           expect(request_body["data"][0]["data"]["make_employer_contract_claim"]).to eql(user_data.make_employer_contract_claim == 'Yes')
           expect(request_body["data"][0]["data"]["claim_information"]).to eql user_data.claim_information
-          # upload information goes here
+          expect(file_upload_keys).to include request_body["data"][0]["data"]["additional_information_key"]
           expect(request_body["data"][0]["data"]["email_receipt"]).to eql user_data.email_receipt
           expect(request_body["data"][0]["uuid"]).to be_an_instance_of(String)
           expect(request_body["data"][1]["command"]).to eql "BuildRespondent"
@@ -234,6 +233,20 @@ RSpec.feature "Fill in whole form", js: true do
     expect(respondents_details_page.organisation_employ_gb_question.field.value).to eql ""
     expect(respondents_details_page.organisation_more_than_one_site_question.get).to be nil
     expect(respondents_details_page.organisation_more_than_one_site_question.employment_at_site_number.root_element.value).to eql ""
+  end
 
+  scenario "correctly followed by removing the uploaded file will not submit it to the API" do
+    given_i_am(:company01)
+
+    answer_all_questions
+
+    confirmation_of_supplied_details_page.confirmation_of_additional_information_answers.upload_additional_information_row.remove_file_link.click
+    confirmation_of_supplied_details_page.submit_form
+
+    expect(a_request(:post, "http://api.et.127.0.0.1.nip.io:3100/api/v2/respondents/build_response").
+        with { |request|
+          request_body = JSON.parse(request.body)
+          expect(request_body["data"][0]["data"]["additional_information_key"]).to be nil
+        }).to have_been_made.once
   end
 end

@@ -43,4 +43,7 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # The google tag manager account - set to false if you do not want google tag manager in this environment
+  config.google_tag_manager_account = false
 end

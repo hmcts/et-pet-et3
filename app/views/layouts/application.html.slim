@@ -2,7 +2,10 @@
   = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
   = javascript_include_tag 'application'
   = csrf_meta_tags
+  = render "shared/google_tag_manager_head", account: Rails.application.config.google_tag_manager_account
   = yield(:page_head)
+- content_for :body_start do
+  = render "shared/google_tag_manager_body", account: Rails.application.config.google_tag_manager_account
 - content_for :body_end
   javascript:
     var showHideContent = new GOVUK.ShowHideContent();

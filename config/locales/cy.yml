@@ -1,0 +1,298 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+cy:
+  hello: "Hello world"
+  helpers:
+    fieldset:
+      respondents_detail:
+        contact_preference: WELSH - How would you prefer us to contact you? (optional)
+        organisation_more_than_one_site: WELSH - Does this organisation have more than one site in Great Britain?
+      claimants_detail:
+        agree_with_early_conciliation_details: WELSH - Do you agree with the details given by the claimant about Early Conciliation with Acas? (optional)
+        agree_with_employment_dates: WELSH - Are the dates of employment given by the claimant correct?
+        continued_employment: WELSH - Is their employment continuing? (optional)
+        agree_with_claimants_description_of_job_or_title: WELSH - Is the claimant's description of their job or job title correct? (optional)
+      earnings_and_benefits:
+        agree_with_claimants_hours: WELSH - Are the claimant's hours of work correct? (optional)
+        agree_with_earnings_details: WELSH - Are the earnings details given by the claimant correct? (optional)
+        queried_pay_before_tax_period: WELSH - Pay before tax period (optional)
+        queried_take_home_pay_period: WELSH - Normal take-home pay period (optional)
+        agree_with_claimant_notice: WELSH - Is the information given by the claimant correct about being paid for, or working a period of notice? (optional)
+        agree_with_claimant_pension_benefits: WELSH - Are the details about pension and other benefits given by the claimant correct? (optional)
+      response:
+        defend_claim: WELSH - Do you defend the claim?
+      your_representative:
+        have_representative: WELSH - Do you have a representative? (optional)
+      your_representatives_details:
+        type_of_representative: WELSH - Type of Representative
+        representative_contact_preference: WELSH - How would you prefer us to contact your representative? (optional)
+      disability:
+        disability: WELSH - Do you have a disability? (optional)
+      employers_contract_claim:
+        make_employer_contract_claim: WELSH - Do you wish to make an Employer Contract Claim? (optional)
+    label:
+      respondents_detail:
+        case_number: WELSH - Case number
+        name: WELSH - Name of individual, company or organisation
+        contact: WELSH - Name of contact (optional)
+        building_name: WELSH - Building name or number
+        street_name: WELSH - Street
+        town: WELSH - Town/City
+        county: WELSH - County (optional)
+        postcode: WELSH - Postcode
+        dx_number: WELSH - Document exchange (DX) number (optional)
+        contact_number: WELSH - Contact number (optional)
+        mobile_number: WELSH - Mobile number (optional)
+        contact_preference:
+          choices:
+            email: WELSH - Email
+            post: WELSH - Post
+            fax: WELSH - Fax
+        email_address: WELSH - Email address
+        fax_number: WELSH - Fax number
+        organisation_employ_gb: WELSH - How many people does this organisation employ in Great Britain? (optional)
+        organisation_more_than_one_site:
+          choices:
+            'yes': 'WELSH - Yes'
+            'no': 'WELSH - No'
+        employment_at_site_number: WELSH - How many people are employed at the place where the claimant worked?
+      claimants_detail:
+        claimants_name: WELSH - Claimant's name (optional)
+        agree_with_early_conciliation_details:
+          choices:
+            'yes': 'WELSH - Yes'
+            'no': 'WELSH - No'
+        disagree_conciliation_reason: WELSH - Why do you disagree with the claimant? (optional)
+        agree_with_employment_dates:
+          choices:
+            'yes': 'WELSH - Yes'
+            'no': 'WELSH - No'
+        employment_start: WELSH - When their employment started
+        employment_end: WELSH - When their employment ended or will end
+        disagree_employment: WELSH - Why do you disagree with the dates given by the claimant
+        continued_employment:
+          choices:
+            'yes': 'WELSH - Yes'
+            'no': 'WELSH - No'
+        agree_with_claimants_description_of_job_or_title:
+          choices:
+            'yes': 'WELSH - Yes'
+            'no': 'WELSH - No'
+        disagree_claimants_job_or_title: WELSH - Please give the details you believe to be correct (optional)
+      earnings_and_benefits:
+        agree_with_claimants_hours:
+          choices:
+            'yes': 'WELSH - Yes'
+            'no': 'WELSH - No'
+        queried_hours: WELSH - Please enter the details you believe to be correct (optional)
+        agree_with_earnings_details:
+          choices:
+            'yes': 'WELSH - Yes'
+            'no': 'WELSH - No'
+        queried_pay_before_tax: WELSH - Pay before tax (optional)
+        queried_pay_before_tax_period:
+          choices:
+            monthly: WELSH - Monthly
+            weekly: WELSH - Weekly
+        queried_take_home_pay: WELSH - Normal take-home pay (optional)
+        queried_take_home_pay_period:
+          choices:
+            monthly: WELSH - Monthly
+            weekly: WELSH - Weekly
+        agree_with_claimant_notice:
+          choices:
+            'yes': 'WELSH - Yes'
+            'no': 'WELSH - No'
+        disagree_claimant_notice_reason: |
+          WELSH - Please give the details you believe to be correct below. If you didn't give notice or pay them instead of letting them work their notice please explain what happened and why (optional)
+        agree_with_claimant_pension_benefits:
+          choices:
+            'yes': 'WELSH - Yes'
+            'no': 'WELSH - No'
+        disagree_claimant_pension_benefits_reason:
+          WELSH - Please give the details you believe to be correct. (optional)
+      response:
+        defend_claim:
+          choices:
+            'yes': 'WELSH - Yes'
+            'no': 'WELSH - No'
+        defend_claim_facts: WELSH - Please set out the facts which you rely on to defend the claim (optional)
+      your_representative:
+        have_representative:
+          choices:
+            'yes': 'WELSH - Yes'
+            'no': 'WELSH - No'
+      your_representatives_details:
+        type_of_representative:
+          choices:
+            citizens_advice_bureau: WELSH - Citizen's advice bureau
+            free_representation_unit: WELSH - Free representation unit
+            law_centre: WELSH - Law centre
+            union: WELSH - Union
+            solicitor: WELSH - Solicitor
+            private_individual: WELSH - Private individual
+            trade_association: WELSH - Trade association
+            other: WELSH - Other
+        representative_org_name: WELSH - Name of the representative's organisation (optional)
+        representative_name: WELSH - Representative's name
+        representative_building: WELSH - Building name or number
+        representative_street: WELSH - Street
+        representative_town: WELSH - Town/City
+        representative_county: WELSH - County (optional)
+        representative_postcode: WELSH - Postcode
+        representative_phone: WELSH - Phone number (optional)
+        representative_mobile: WELSH - Mobile number (optional)
+        representative_dx_number: WELSH - Document exchange (DX) number (optional)
+        representative_reference: WELSH - Reference (optional)
+        representative_contact_preference:
+          choices:
+            email: WELSH - Email
+            post: WELSH - Post
+            fax: WELSH - Fax
+        representative_email: WELSH - Email address
+        representative_fax: WELSH - Fax number
+      disability:
+        disability:
+          choices:
+            'yes': 'WELSH - Yes'
+            'no': 'WELSH - No'
+        disability_information: WELSH - It would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises
+      employers_contract_claim:
+        make_employer_contract_claim:
+          choices:
+            'yes': 'WELSH - Yes'
+            'no': 'WELSH - No'
+        claim_information: WELSH - Please set out the background and details of your claim below, which should include all important dates (optional)
+      additional_information:
+        upload_additional_information: WELSH - Please upload a file to provide any important additional information about your response which you have not been able to include so far (optional)
+        upload_button: WELSH - Click here to upload rtf file
+      confirmation_of_supplied_details:
+        email_receipt: WELSH - Email Address (optional)
+    hint:
+      respondents_detail:
+        contact: WELSH - For example, John Smith
+        mobile_number: WELSH - If different to your primary contact number
+        employment_at_site_number: WELSH - For example, 10
+        organisation_employ_gb: WELSH - For example, 10
+      claimants_detail:
+        employment_start: WELSH - For example, 31 03 2010
+        employment_end: WELSH - For example, 01 12 2017
+      earnings_and_benefits:
+        queried_hours: WELSH - In hours per week. For example, 39
+        agree_with_earnings_details: WELSH - If No, please give the details you believe to be correct
+        queried_pay_before_tax: WELSH - Including overtime, commission, bonuses, etc. For example, 28000
+        queried_take_home_pay: WELSH - Including overtime, commission, bonuses, etc. For example, 20000
+        disagree_claimant_notice_reason: |
+          WELSH - PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 400 characters) if you would like to include more please
+          use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
+        agree_with_claimant_pension_benefits: WELSH - For example, company car, medical insurance, etc.
+        disagree_claimant_pension_benefits_reason: |
+          WELSH - PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 350 characters) if you would like to include more please
+          use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
+      response:
+        defend_claim_facts: |
+          WELSH - PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 2500 characters) if you would like to include more please
+          use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
+          If you exceed 25 lines you will not receive full details of your response in the PDF returned to you on submission of the form.
+      disability:
+        disability_information: |
+          WELSH - PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 350 characters) if you would like to include more please
+          use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
+      employers_contract_claim:
+        claim_information: |
+          WELSH - See guidance for more information on what details should be included.
+          PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 4500 characters) if you would like to include more please
+          use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
+          If you exceed 50 lines you will not receive full details of your claim in the PDF returned to you on submission of the form.
+      additional_information:
+        upload_additional_information: "WELSH - Supported file type: .rtf"
+      confirmation_of_supplied_details:
+        email_receipt: WELSH - For example, name@address.com
+  errors:
+    format: "%{message}"
+    messages:
+      contains_no_spaces: "WELSH - %{attribute} must contain spaces"
+      contains_numbers: "WELSH - %{attribute} must not contain numbers"
+      blank: "WELSH - %{attribute} can't be blank"
+      invalid: "WELSH - %{attribute} is invalid"
+      invalid_email: WELSH - This is not a valid email address
+      invalid_name: WELSH - Please enter your full name
+      invalid_postcode: WELSH - This is not a valid UK postcode
+      invalid_phone_number: WELSH - This is not a valid phone number
+      inclusion: WELSH - Please select an option
+      not_a_number: "WELSH - %{attribute} is not a number"
+    attributes:
+      contact:
+        contains_numbers: WELSH - Name of contact must not contain numbers
+      employment_at_site_number:
+        not_a_number: WELSH - Please enter how many people are employed at the place where the claimant worked as a number
+      organisation_more_than_one_site:
+        inclusion: WELSH - Please indicate whether the organisation has more than one site in Great Britain
+      organisation_employ_gb:
+        not_a_number: WELSH - Please enter how many people the organisation employs in Great Britain as a number
+      claimants_name:
+        contains_numbers: WELSH - Claimant's name must not contain numbers
+      agree_with_employment_dates:
+        inclusion: WELSH - Please indicate whether you agree with the dates of employment provided by the claimant
+      queried_hours:
+        not_a_number: WELSH - Please enter the number of hours you believe to be correct as a number
+      queried_pay_before_tax:
+        not_a_number: WELSH - Please enter the pay before tax as a number
+      queried_take_home_pay:
+        not_a_number: WELSH - Please enter the normal take-home pay as a number
+      type_of_representative:
+        inclusion: WELSH - Please select the type of your representative
+  components:
+    single_choice_option_section:
+      'yes': "WELSH - Yes"
+      'no': "WELSH - No"
+    session_expiry:
+      header: WELSH - Session Expired
+      content: |
+        WELSH - Your session has expired due to inactivity. The information you have provided has not been saved. We apologise for the inconvenience and request that you fill in the form again.
+      homepage_link: WELSH - Return to Employment Tribunal Response
+    sidebar:
+      header: WELSH - Other Relevant Links
+      claim_link: WELSH - How to make a claim
+      claim_href: WELSH - https://www.gov.uk/employment-tribunals
+      response_link: WELSH - How to make a response
+      response_href: WELSH - https://www.gov.uk/being-taken-to-employment-tribunal-by-employee
+      contact_link: WELSH - How to contact us
+      contact_href: WELSH - https://www.gov.uk/guidance/employment-tribunal-offices-and-venues
+      download_link: WELSH - Download a blank copy of this form
+      download_href: WELSH - https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/719457/et3-eng.pdf
+      more_category_link: WELSH - More from the Working, jobs and pensions category
+      more_category_href: WELSH - http://gov.uk/browse/working
+    confirmation_of_supplied_details:
+      remove_file_link: WELSH - Remove file
+    form_submission:
+      header: WELSH - Response complete

@@ -1,0 +1,302 @@
+cy:
+  questions:
+    # Respondent's Details Page
+    case_number:
+      label: WELSH - Case number
+    name:
+      label: WELSH - Name of individual, company or organisation
+    contact:
+      label: WELSH - Name of contact (optional)
+    building_name:
+      label: WELSH - Building name or number
+    street:
+      label: WELSH - Street
+    town:
+      label: WELSH - Town/City
+    county:
+      label: WELSH - County (optional)
+    postcode:
+      label: WELSH - Postcode
+    dx_number:
+      label: WELSH - Document exchange (DX) number (optional)
+    contact_number:
+      label: WELSH - Contact number (optional)
+    contact_mobile_number:
+      label: WELSH - Mobile number (optional)
+    contact_preference:
+      label: WELSH - How would you prefer us to contact you? (optional)
+      email:
+        label: WELSH - Email
+        input_label: WELSH - Email address
+      post:
+        label: WELSH - Post
+      fax:
+        label: WELSH - Fax
+        input_label: WELSH - Fax number
+    organisation_employ_gb:
+      label: WELSH - How many people does this organisation employ in Great Britain? (optional)
+    organisation_more_than_one_site:
+      label: WELSH - Does this organisation have more than one site in Great Britain?
+      'yes':
+        label: WELSH - 'Yes'
+      'no':
+        label: WELSH - 'No'
+      employment_at_site_number:
+        label: WELSH - How many people are employed at the place where the claimant worked?
+    # Claimant's Details Page
+    claimants_name:
+      label: WELSH - Claimant's name (optional)
+    agree_with_early_conciliation_details:
+      label: WELSH - Do you agree with the details given by the claimant about Early Conciliation with Acas? (optional)
+      'yes':
+        label: WELSH - 'Yes'
+      'no':
+        label: WELSH - 'No'
+      disagree_conciliation_reason:
+        label: WELSH - Why do you disagree with the claimant? (optional)
+    agree_with_employment_dates:
+      label: WELSH - Are the dates of employment given by the claimant correct?
+      'yes':
+        label: WELSH - 'Yes'
+      'no':
+        label: WELSH - 'No'
+      employment_start:
+        label: WELSH - When their employment started
+        day:
+          label: WELSH - Day
+        month:
+          label: WELSH - Month
+        year:
+          label: WELSH - Year
+      employment_end:
+        label: WELSH - When their employment ended or will end
+        day:
+          label: WELSH - Day
+        month:
+          label: WELSH - Month
+        year:
+          label: WELSH - Year
+      disagree_employment:
+        label: WELSH - Why do you disagree with the dates given by the claimant
+    continued_employment:
+      label: WELSH - Is their employment continuing? (optional)
+      'yes':
+        label: WELSH - 'Yes'
+      'no':
+        label: WELSH - 'No'
+    agree_with_claimants_description_of_job_or_title:
+      label: WELSH - Is the claimant's description of their job or job title correct? (optional)
+      'yes':
+        label: WELSH - 'Yes'
+      'no':
+        label: WELSH - 'No'
+      disagree_claimants_job_or_title:
+        label: WELSH - Please give the details you believe to be correct (optional)
+    # Earnings and Benefits Page
+    agree_with_claimants_hours:
+      label: WELSH - Are the claimant's hours of work correct? (optional)
+      'yes':
+        label: WELSH - 'Yes'
+      'no':
+        label: WELSH - 'No'
+      queried_hours:
+        label: WELSH - Please enter the details you believe to be correct (optional)
+    agree_with_earnings_details:
+      label: WELSH - Are the earnings details given by the claimant correct? (optional)
+      'yes':
+        label: WELSH - 'Yes'
+      'no':
+        label: WELSH - 'No'
+      queried_pay_before_tax:
+        label: WELSH - Pay before tax (optional)
+      queried_pay_before_tax_period:
+        label: WELSH - Pay before tax period (optional)
+        monthly:
+          label: WELSH - Monthly
+        weekly:
+          label: WELSH - Weekly
+      queried_take_home_pay:
+        label: WELSH - Normal take-home pay (optional)
+      queried_take_home_pay_period:
+        label: WELSH - Normal take-home pay period (optional)
+        monthly:
+          label: WELSH - Monthly
+        weekly:
+          label: WELSH - Weekly
+    agree_with_claimant_notice:
+      label: WELSH - Is the information given by the claimant correct about being paid for, or working a period of notice? (optional)
+      'yes':
+        label: WELSH - 'Yes'
+      'no':
+        label: WELSH - 'No'
+      disagree_claimant_notice_reason:
+        label: WELSH - Please give the details you believe to be correct below. If you didn't give notice or pay them instead of letting them work their notice please explain what happened and why (optional)
+    agree_with_claimant_pension_benefits:
+      label: WELSH - Are the details about pension and other benefits given by the claimant correct? (optional)
+      'yes':
+        label: WELSH - 'Yes'
+      'no':
+        label: WELSH - 'No'
+      disagree_claimant_pension_benefits_reason:
+        label: WELSH - Please give the details you believe to be correct. (optional)
+    # Response Page
+    defend_claim:
+      label: WELSH - Do you defend the claim?
+      'yes':
+        label: WELSH - 'Yes'
+      'no':
+        label: WELSH - 'No'
+      defend_claim_facts:
+        label: WELSH - Please set out the facts which you rely on to defend the claim (optional)
+    # Your Representatives Page
+    have_representative:
+      label: WELSH - Do you have a representative? (optional)
+      'yes':
+        label: WELSH - 'Yes'
+      'no':
+        label: WELSH - 'No'
+    # Your Representatives Details Page
+    type_of_representative:
+      label: WELSH - Type of Representative
+      citizens_advice_bureau:
+        label: WELSH - Citizen's advice bureau
+      free_representation_unit:
+        label: WELSH - Free representation unit
+      law_centre:
+        label: WELSH - Law centre
+      union:
+        label: WELSH - Union
+      solicitor:
+        label: WELSH - Solicitor
+      private_individual:
+        label: WELSH - Private individual
+      trade_association:
+        label: WELSH - Trade association
+      other:
+        label: WELSH - Other
+    representative_org_name:
+      label: WELSH - Name of the representative's organisation (optional)
+    representative_name:
+      label: WELSH - Representative's name
+    representative_building:
+      label: WELSH - Building name or number
+    representative_street:
+      label: WELSH - Street
+    representative_town:
+      label: WELSH - Town/City
+    representative_county:
+      label: WELSH - County (optional)
+    representative_postcode:
+      label: WELSH - Postcode
+    representative_phone:
+      label: WELSH - Phone number (optional)
+    representative_mobile:
+      label: WELSH - Mobile number (optional)
+    representative_dx_number:
+      label: WELSH - Document exchange (DX) number (optional)
+    representative_reference:
+      label: WELSH - Reference (optional)
+    representative_contact_preference:
+      label: WELSH - How would you prefer us to contact your representative? (optional)
+      email:
+        label: Welsh - email
+        input_label: WELSH - Email address
+      fax:
+        label: Welsh - fax
+        input_label: WELSH - Fax number
+    # Disability Page
+    disability:
+      label: WELSH - Do you have a disability? (optional)
+      'yes':
+        label: WELSH - 'Yes'
+      'no':
+        label: WELSH - 'No'
+      disability_information:
+        label: WELSH - It would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises
+    # Employers Contract Claim Page
+    make_employer_contract_claim:
+      label: WELSH - Do you wish to make an Employer Contract Claim? (optional)
+      'yes':
+        label: WELSH - 'Yes'
+      'no':
+        label: WELSH - 'No'
+      claim_information:
+        label: WELSH - 'Please set out the background and details of your claim below, which should include all important dates (optional)'
+    # Additional Informatation Page
+    upload_additional_information:
+      label: WELSH - Please upload a file to provide any important additional information about your response which you have not been able to include so far (optional)
+      button: WELSH - Click here to upload a file
+    # Confirmation of Supplied Details Page
+    email_receipt:
+      label: WELSH - Email Address (optional)
+    # Captions for Tables on CoSD Page
+    confirmation_of_respondents_details_answers:
+      caption: WELSH - Respondent's Details
+    confirmation_of_claimants_details_answers:
+      caption: WELSH - Claimant's Details
+    confirmation_of_earnings_and_benefits_answers:
+      caption: WELSH - Earnings and Benefits
+    confirmation_of_response_answers:
+      caption: WELSH - Response
+    confirmation_of_your_representative_answers:
+      caption: WELSH - Your Representative
+    confirmation_of_your_representatives_details_answers:
+      caption: WELSH - Your Representative's Details
+    confirmation_of_disability_answers:
+      caption: WELSH - Disability
+    confirmation_of_employer_contract_claim_answers:
+      caption: WELSH - Employer Contract Claim
+    confirmation_of_additional_information_answers:
+      caption: WELSH - Additional Information
+  errors:
+    header: WELSH - 'Please review the following'
+    messages:
+      blank: WELSH - can't be blank
+      contains_no_spaces: WELSH - must contain at least one space
+      contains_numbers: WELSH - must not contain numbers
+      invalid: WELSH - is invalid
+      invalid_email: WELSH - This is not a valid email address
+      invalid_name: WELSH - Please enter your full name
+      invalid_postcode: WELSH - This is not a valid UK postcode
+      invalid_phone_number: WELSH - This is not a valid phone number
+      not_a_number: WELSH - is not a number
+      too_long: WELSH - characters is the maximum allowed
+      inclusion: WELSH - Please select an option
+    custom:
+      organisation_employ_gb:
+        not_a_number: WELSH - Please enter how many people the organisation employs in Great Britain as a number
+      organisation_more_than_one_site:
+        not_a_number: WELSH - Please enter how many people are employed at the place where the claimant worked as a number
+        inclusion: WELSH - Please indicate whether the organisation has more than one site in Great Britain
+      queried_hours:
+        not_a_number: WELSH - Please enter the number of hours you believe to be correct as a number
+      queried_pay_before_tax:
+        not_a_number: WELSH - Please enter the pay before tax as a number
+      queried_take_home_pay:
+        not_a_number: WELSH - Please enter the normal take-home pay as a number
+      type_of_representative:
+        inclusion: WELSH - Please select the type of your representative
+  links:
+    confirmation_of_supplied_details:
+      edit_page: WELSH - Edit answers on this page
+    form_submission:
+      invalid_pdf_download: WELSH - Not quite ready yet - a PDF version of your completed form will be available for download shortly
+      valid_pdf_download: WELSH - A PDF version of your completed form is now available for download
+  components:
+    single_choice_option_section:
+      'yes': WELSH - "Yes"
+      'no': WELSH - "No"
+    sidebar:
+      header: WELSH - Other Relevant Links
+      claim_link: WELSH - How to make a claim
+      claim_href: WELSH - https://www.gov.uk/employment-tribunals
+      response_link: WELSH - How to make a response
+      response_href: WELSH - https://www.gov.uk/being-taken-to-employment-tribunal-by-employee
+      contact_link: WELSH - How to contact us
+      contact_href: WELSH - https://www.gov.uk/guidance/employment-tribunal-offices-and-venues
+      download_link: WELSH - Download a blank copy of this form
+      download_href: WELSH - https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/719457/et3-eng.pdf
+      more_category_link: WELSH - More from the Working, jobs and pensions category
+      more_category_href: WELSH - http://gov.uk/browse/working
+    confirmation_of_supplied_details:
+      remove_file_link: WELSH - Remove file

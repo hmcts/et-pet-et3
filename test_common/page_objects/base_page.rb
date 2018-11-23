@@ -4,7 +4,7 @@ module ET3
   module Test
     class BasePage < ::SitePrism::Page
       def self.set_url(url)
-        super "#{ENV['ET3_URL']}#{url}"
+        super "#{ENV['ET3_URL']}{/locale}#{url}"
       end
 
       element :google_tag_manager_head_script, :xpath, XPath.generate {|x| x.css('head script')[x.string.n.contains("googletagmanager")]}, visible: false

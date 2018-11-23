@@ -3,7 +3,7 @@ RSpec.feature "Fill in Your Representatives Details Page", js: true do
   let(:disability_page) { ET3::Test::DisabilityPage.new }
 
   scenario "correctly will enable user to continue to next page" do
-    your_representatives_details_page.load
+    your_representatives_details_page.load(locale: current_locale_parameter)
 
     given_i_am(:company01)
 
@@ -11,7 +11,7 @@ RSpec.feature "Fill in Your Representatives Details Page", js: true do
     answer_representative_org_name_question
     answer_representative_name_question
     answer_representative_building_question
-    answer_representative_street_question
+    answer_representative_street_questioni dunno
     answer_representative_town_question
     answer_representative_county_question
     answer_representative_postcode_question
@@ -27,7 +27,7 @@ RSpec.feature "Fill in Your Representatives Details Page", js: true do
   end
 
   scenario "incorrectly will provide errors" do
-    your_representatives_details_page.load
+    your_representatives_details_page.load(locale: current_locale_parameter)
 
     given_i_am(:erroneously_entering_data)
 
@@ -60,7 +60,7 @@ RSpec.feature "Fill in Your Representatives Details Page", js: true do
   end
 
   scenario "correctly will enable user to check answers and return to edit them" do
-    your_representatives_details_page.load
+    your_representatives_details_page.load(locale: current_locale_parameter)
 
     given_i_am(:company01)
 
@@ -79,7 +79,7 @@ RSpec.feature "Fill in Your Representatives Details Page", js: true do
     answer_representative_contact_preference_question
 
     your_representatives_details_page.next
-    visit confirmation_of_supplied_details_path
+    confirmation_of_supplied_details_page.load(locale: current_locale_parameter)
     confirmation_of_supplied_details_page.confirmation_of_your_representatives_details_answers.edit_page_link.click
 
     expect(your_representatives_details_page).to be_displayed

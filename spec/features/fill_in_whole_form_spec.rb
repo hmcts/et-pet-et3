@@ -212,7 +212,7 @@ RSpec.feature "Fill in whole form", js: true do
 
     answer_all_questions
     confirmation_of_supplied_details_page.submit_form
-    respondents_details_page.load
+    respondents_details_page.load(locale: current_locale_parameter)
 
     expect(respondents_details_page.case_number_question.field.value).to eql ""
     expect(respondents_details_page.name_question.field.value).to eql ""

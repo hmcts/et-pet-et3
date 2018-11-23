@@ -63,19 +63,19 @@ cy:
       employment_start:
         label: WELSH - When their employment started
         day:
-          label: WELSH - Day
+          label: Day
         month:
-          label: WELSH - Month
+          label: Month
         year:
-          label: WELSH - Year
+          label: Year
       employment_end:
         label: WELSH - When their employment ended or will end
         day:
-          label: WELSH - Day
+          label: Day
         month:
-          label: WELSH - Month
+          label: Month
         year:
-          label: WELSH - Year
+          label: Year
       disagree_employment:
         label: WELSH - Why do you disagree with the dates given by the claimant
     continued_employment:
@@ -199,10 +199,10 @@ cy:
     representative_contact_preference:
       label: WELSH - How would you prefer us to contact your representative? (optional)
       email:
-        label: Welsh - email
+        label: WELSH - Email
         input_label: WELSH - Email address
       fax:
-        label: Welsh - fax
+        label: WELSH - Fax
         input_label: WELSH - Fax number
     # Disability Page
     disability:
@@ -221,7 +221,7 @@ cy:
       'no':
         label: WELSH - 'No'
       claim_information:
-        label: WELSH - 'Please set out the background and details of your claim below, which should include all important dates (optional)'
+        label: WELSH - Please set out the background and details of your claim below, which should include all important dates (optional)
     # Additional Informatation Page
     upload_additional_information:
       label: WELSH - Please upload a file to provide any important additional information about your response which you have not been able to include so far (optional)
@@ -284,8 +284,8 @@ cy:
       valid_pdf_download: WELSH - A PDF version of your completed form is now available for download
   components:
     single_choice_option_section:
-      'yes': WELSH - "Yes"
-      'no': WELSH - "No"
+      'yes': WELSH - Yes
+      'no': WELSH - No
     sidebar:
       header: WELSH - Other Relevant Links
       claim_link: WELSH - How to make a claim

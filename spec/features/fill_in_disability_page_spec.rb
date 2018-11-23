@@ -3,7 +3,7 @@ RSpec.feature "Fill in Disability Page", js: true do
   let(:employers_contract_claim_page) { ET3::Test::EmployersContractClaimPage.new }
 
   scenario "correctly will enable user to continue to employer's contract claim page" do
-    disability_page.load
+    disability_page.load(locale: current_locale_parameter)
 
     given_i_am(:company01)
 
@@ -15,7 +15,7 @@ RSpec.feature "Fill in Disability Page", js: true do
   end
 
   scenario "incorrectly will provide errors" do
-    disability_page.load
+    disability_page.load(locale: current_locale_parameter)
 
     given_i_am(:erroneously_entering_data)
 
@@ -28,7 +28,7 @@ RSpec.feature "Fill in Disability Page", js: true do
   end
 
   scenario "correctly will enable user to check answers and return to edit them" do
-    disability_page.load
+    disability_page.load(locale: current_locale_parameter)
 
     given_i_am(:company01)
 

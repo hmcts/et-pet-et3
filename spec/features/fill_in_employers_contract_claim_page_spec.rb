@@ -3,7 +3,7 @@ RSpec.feature "Fill in Employers Contract Claim Page", js: true do
   let(:additional_information_page) { ET3::Test::AdditionalInformationPage.new }
 
   scenario "correctly will enable user to continue to next page" do
-    employers_contract_claim_page.load
+    employers_contract_claim_page.load(locale: current_locale_parameter)
     given_i_am(:company01)
 
     answer_make_employer_contract_claim_question
@@ -13,7 +13,7 @@ RSpec.feature "Fill in Employers Contract Claim Page", js: true do
   end
 
   scenario "incorrectly will provide errors" do
-    employers_contract_claim_page.load
+    employers_contract_claim_page.load(locale: current_locale_parameter)
     given_i_am(:erroneously_entering_data)
     answer_make_employer_contract_claim_question
     employers_contract_claim_page.next
@@ -23,7 +23,7 @@ RSpec.feature "Fill in Employers Contract Claim Page", js: true do
   end
 
   scenario "correctly will enable user to check answers and return to edit them" do
-    employers_contract_claim_page.load
+    employers_contract_claim_page.load(locale: current_locale_parameter)
 
     given_i_am(:company01)
 

@@ -1,7 +1,7 @@
 module ET3
   module Test
     class PersonasRepository
-      PERSONAS_FILE = File.absolute_path('../fixtures/personas.yml', __FILE__)
+
       def initialize
         self.registry = {}
       end
@@ -16,6 +16,11 @@ module ET3
 
       private
 
+      def personas_file
+        language_suffix = ::ET3::Test::Messaging.instance.current_locale == :cy ? :cy : :en
+        File.absolute_path("../fixtures/personas_#{language_suffix}.yml", __FILE__)
+      end
+
       def ensure_loaded
         load unless loaded?
       end
@@ -25,7 +30,7 @@ module ET3
       end
 
       def load
-        self.registry = YAML.safe_load(ERB.new(File.read(PERSONAS_FILE)).result).symbolize_keys
+        self.registry = YAML.safe_load(ERB.new(File.read(personas_file)).result).symbolize_keys
         self.loaded = true
       end
 

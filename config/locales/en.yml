@@ -293,6 +293,28 @@ en:
       more_category_link: More from the Working, jobs and pensions category
       more_category_href: http://gov.uk/browse/working
     confirmation_of_supplied_details:
+      edit_page: Edit answers on this page
       remove_file_link: Remove file
+      confirmation_of_respondents_details_answers:
+        caption: "Respondent's Details"
+      confirmation_of_claimants_details_answers:
+        caption: "Claimant's Details"
+      confirmation_of_earnings_and_benefits_answers:
+        caption: "Earnings and Benefits"
+      confirmation_of_response_answers:
+        caption: "Response"
+      confirmation_of_your_representative_answers:
+        caption: "Your Representative"
+      confirmation_of_your_representatives_details_answers:
+        caption: "Your Representative's Details"
+      confirmation_of_disability_answers:
+        caption: "Disability"
+      confirmation_of_employers_contract_claim_answers:
+        caption: "Employer Contract Claim"
+      confirmation_of_additional_information_answers:
+        caption: "Additional Information"
     form_submission:
-      header: Response complete
+      header: WELSH - Response complete
+      valid_pdf_download: A PDF version of your completed form is now available for download
+      invalid_pdf_download: Not quite ready yet - a PDF version of your completed form will be available for download shortly
+

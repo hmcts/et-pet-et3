@@ -293,6 +293,27 @@ cy:
       more_category_link: WELSH - More from the Working, jobs and pensions category
       more_category_href: WELSH - http://gov.uk/browse/working
     confirmation_of_supplied_details:
+      edit_page: WELSH - Edit answers on this page
       remove_file_link: WELSH - Remove file
+      confirmation_of_respondents_details_answers:
+        caption: "WELSH - Respondent's Details"
+      confirmation_of_claimants_details_answers:
+        caption: "WELSH - Claimant's Details"
+      confirmation_of_earnings_and_benefits_answers:
+        caption: "WELSH - Earnings and Benefits"
+      confirmation_of_response_answers:
+        caption: "WELSH - Response"
+      confirmation_of_your_representative_answers:
+        caption: "WELSH - Your Representative"
+      confirmation_of_your_representatives_details_answers:
+        caption: "WELSH - Your Representative's Details"
+      confirmation_of_disability_answers:
+        caption: "WELSH - Disability"
+      confirmation_of_employers_contract_claim_answers:
+        caption: "WELSH - Employer Contract Claim"
+      confirmation_of_additional_information_answers:
+        caption: "WELSH - Additional Information"
     form_submission:
       header: WELSH - Response complete
+      valid_pdf_download: WELSH - A PDF version of your completed form is now available for download
+      invalid_pdf_download: WELSH - Not quite ready yet - a PDF version of your completed form will be available for download shortly

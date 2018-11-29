@@ -18,7 +18,7 @@
   
     h2.heading-medium Confirmation of Supplied Details
     table
-      caption.heading-small Respondent's Details
+      caption.heading-small = t('components.confirmation_of_supplied_details.confirmation_of_respondents_details_answers.caption')
       thead
         tr
           th Question
@@ -77,11 +77,11 @@
           td = @hash_store.dig(:respondents_detail_answers, :employment_at_site_number)
         tr
           td
-            = link_to("Edit answers on this page", edit_respondents_details_path)
+            = link_to(t('components.confirmation_of_supplied_details.edit_page'), edit_respondents_details_path)
           td
             = link_to "Back to the top", "#content"
     table
-      caption.heading-small Claimant's Details
+      caption.heading-small = t('components.confirmation_of_supplied_details.confirmation_of_claimants_details_answers.caption')
       thead
         tr
           th Question
@@ -119,11 +119,11 @@
           td = @hash_store.dig(:claimants_detail_answers, :disagree_claimants_job_or_title)
         tr
           td
-            = link_to("Edit answers on this page", edit_claimants_details_path)
+            = link_to(t('components.confirmation_of_supplied_details.edit_page'), edit_claimants_details_path)
           td
             = link_to "Back to the top", "#content"
     table
-      caption.heading-small Earnings and Benefits
+      caption.heading-small  = t('components.confirmation_of_supplied_details.confirmation_of_earnings_and_benefits_answers.caption')
       thead
         tr
           th Question
@@ -164,11 +164,11 @@
           td = @hash_store.dig(:earnings_and_benefits_answers, :disagree_claimant_pension_benefits_reason)
         tr
           td
-            = link_to("Edit answers on this page", edit_earnings_and_benefits_path)
+            = link_to(t('components.confirmation_of_supplied_details.edit_page'), edit_earnings_and_benefits_path)
           td
             = link_to "Back to the top", "#content"
     table
-      caption.heading-small Response
+      caption.heading-small  = t('components.confirmation_of_supplied_details.confirmation_of_response_answers.caption')
       thead
         tr
           th Question
@@ -182,11 +182,11 @@
           td = @hash_store.dig(:response_answers, :defend_claim_facts)
         tr
           td
-            = link_to("Edit answers on this page", edit_response_path)
+            = link_to(t('components.confirmation_of_supplied_details.edit_page'), edit_response_path)
           td
             = link_to "Back to the top", "#content"
     table
-      caption.heading-small Your Representative
+      caption.heading-small  = t('components.confirmation_of_supplied_details.confirmation_of_your_representative_answers.caption')
       thead
         tr
           th Question
@@ -197,11 +197,11 @@
           td = @hash_store.dig(:your_representative_answers, :have_representative)
         tr
           td
-            = link_to("Edit answers on this page", edit_your_representative_path)
+            = link_to(t('components.confirmation_of_supplied_details.edit_page'), edit_your_representative_path)
           td
             = link_to "Back to the top", "#content"
     table
-      caption.heading-small Your Representative's Details
+      caption.heading-small  = t('components.confirmation_of_supplied_details.confirmation_of_your_representatives_details_answers.caption')
       thead
         tr
           th Question
@@ -253,11 +253,11 @@
           td = @hash_store.dig(:your_representatives_details_answers, :representative_fax)
         tr
           td
-            = link_to("Edit answers on this page", edit_your_representatives_details_path)
+            = link_to(t('components.confirmation_of_supplied_details.edit_page'), edit_your_representatives_details_path)
           td
             = link_to "Back to the top", "#content"
     table
-      caption.heading-small Disability
+      caption.heading-small  = t('components.confirmation_of_supplied_details.confirmation_of_disability_answers.caption')
       thead
         tr
           th Question
@@ -271,11 +271,11 @@
           td = @hash_store.dig(:disability_answers, :disability_information)
         tr
           td
-            = link_to("Edit answers on this page", edit_disability_path)
+            = link_to(t('components.confirmation_of_supplied_details.edit_page'), edit_disability_path)
           td
             = link_to "Back to the top", "#content"
     table
-      caption.heading-small Employer Contract Claim
+      caption.heading-small  = t('components.confirmation_of_supplied_details.confirmation_of_employers_contract_claim_answers.caption')
       thead
         tr
           th Question
@@ -288,11 +288,11 @@
           td = @hash_store.dig(:employer_contract_claim_answers, :claim_information)
         tr
           td
-            = link_to("Edit answers on this page", edit_employers_contract_claim_path)
+            = link_to(t('components.confirmation_of_supplied_details.edit_page'), edit_employers_contract_claim_path)
           td
             = link_to "Back to the top", "#content"
     table
-      caption.heading-small Additional Information
+      caption.heading-small  = t('components.confirmation_of_supplied_details.confirmation_of_additional_information_answers.caption')
       thead
         tr
           th Question
@@ -306,7 +306,7 @@
               = link_to t('components.confirmation_of_supplied_details.remove_file_link'), remove_rtf_path, method: :delete
         tr
           td
-            = link_to("Edit answers on this page", edit_additional_information_path)
+            = link_to(t('components.confirmation_of_supplied_details.edit_page'), edit_additional_information_path)
           td
             = link_to "Back to the top", "#content"
     br

@@ -16,7 +16,8 @@
     span.submission-date = @submission_date
     br
     br
-    = link_to 'A PDF version of your completed form is now available for download', @pdf_url, class: 'download-pdf'
+    = link_to t('components.form_submission.valid_pdf_download'), @pdf_url, class: 'pdf-success'
+    = link_to t('components.form_submission.invalid_pdf_download'), nil, class: 'pdf-failure hidden'
   p
     ' PDF (Portable Document Format) files can be read using applications such as:
     a href="http://www.adobe.com/" Adobe's Acrobat Reader

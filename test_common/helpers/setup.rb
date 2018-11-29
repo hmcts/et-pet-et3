@@ -188,7 +188,7 @@ module ET3
 
       # Entire Form
       def answer_all_questions # rubocop:disable Metrics/MethodLength
-        start_page.load
+        start_page.load(locale: current_locale_parameter)
         start_page.next
 
         answer_case_number_question

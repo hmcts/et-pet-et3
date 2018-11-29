@@ -11,7 +11,7 @@ RSpec.feature "Fill in Your Representatives Details Page", js: true do
     answer_representative_org_name_question
     answer_representative_name_question
     answer_representative_building_question
-    answer_representative_street_questioni dunno
+    answer_representative_street_question
     answer_representative_town_question
     answer_representative_county_question
     answer_representative_postcode_question

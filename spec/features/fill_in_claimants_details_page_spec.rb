@@ -50,7 +50,7 @@ RSpec.feature "Fill in Claimants Details Page", js: true do
     answer_agree_with_claimants_description_of_job_or_title_question
 
     claimants_details_page.next
-    visit confirmation_of_supplied_details_path
+    confirmation_of_supplied_details_path.load(locale: current_locale_parameter)
     confirmation_of_supplied_details_page.confirmation_of_claimants_details_answers.edit_page_link.click
 
     expect(claimants_details_page).to be_displayed

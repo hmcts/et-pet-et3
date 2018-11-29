@@ -43,7 +43,7 @@ RSpec.feature "Fill in Your Representative Page", js: true do
     answer_have_representative_question
 
     your_representative_page.next
-    visit confirmation_of_supplied_details_path
+    confirmation_of_supplied_details_page.load(locale: current_locale_parameter)
     confirmation_of_supplied_details_page.confirmation_of_your_representative_answers.edit_page_link.click
 
     expect(your_representative_page).to be_displayed

@@ -35,7 +35,7 @@ RSpec.feature "Fill in Respondents Details Page", js: true do
     answer_defend_claim_question
 
     response_page.next
-    visit confirmation_of_supplied_details_path
+    confirmation_of_supplied_details_path.load(locale: current_locale_parameter)
     confirmation_of_supplied_details_page.confirmation_of_response_answers.edit_page_link.click
 
     expect(response_page).to be_displayed

@@ -6,7 +6,7 @@
 
     = f.radio_button_fieldset :have_representative do |b|
       = content_tag :div, {class: 'multiple-choice'} do
-        = b.radio_button(:have_representative, true) + label(:defend_claim_true, t('helpers.label.response.defend_claim.choices.yes'), value: :yes)
+        = b.radio_button(:have_representative, true) + b.label(:have_representative, t('helpers.label.your_representative.have_representative.choices.yes'), value: true)
       = content_tag :div, {class: 'multiple-choice'} do
-        = b.radio_button(:have_representative, false) + label(:defend_claim_false, t('helpers.label.response.defend_claim.choices.no'), value: :no)
+        = b.radio_button(:have_representative, false) + b.label(:have_representative, t('helpers.label.your_representative.have_representative.choices.no'), value: false)
     = f.submit("Save and continue", class: 'button')

@@ -8,11 +8,7 @@ module ET3
         include SingleChoiceOptionSection
 
         def set_for(user_persona)
-          if user_persona.have_representative == 'Yes'
-            yes.set(true)
-          else
-            no.set(true)
-          end
+          choose(user_persona.have_representative)
         end
       end
 

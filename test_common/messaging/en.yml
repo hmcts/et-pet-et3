@@ -249,7 +249,8 @@ en:
     confirmation_of_additional_information_answers:
       caption: Additional Information
   errors:
-    header: 'Please review the following'
+    header: Please review the following
+    description: Clicking on an error will navigate you directly to the question. Please correct these errors before continuing.
     messages:
       blank: can't be blank
       contains_no_spaces: must contain at least one space

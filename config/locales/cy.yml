@@ -238,6 +238,8 @@ cy:
       confirmation_of_supplied_details:
         email_receipt: WELSH - For example, name@address.com
   errors:
+    header: WELSH - Please review the following
+    description: WELSH - Clicking on an error will navigate you directly to the question. Please correct these errors before continuing.
     format: "%{message}"
     messages:
       contains_no_spaces: "WELSH - %{attribute} must contain spaces"
@@ -250,6 +252,8 @@ cy:
       invalid_phone_number: WELSH - This is not a valid phone number
       inclusion: WELSH - Please select an option
       not_a_number: "WELSH - %{attribute} is not a number"
+      too_long:
+        other: "%{count} WELSH - characters is the maximum allowed"
     attributes:
       contact:
         contains_numbers: WELSH - Name of contact must not contain numbers

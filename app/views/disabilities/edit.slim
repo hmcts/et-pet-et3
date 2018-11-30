@@ -6,8 +6,8 @@
 
     div data-turbolinks="false"
       = GovukElementsErrorsHelper.error_summary @disability,
-              "Please review the following",
-              "Clicking on an error will navigate you directly to the question. Please correct these errors before continuing."
+              t('errors.header'),
+              t('errors.description')
 
     = f.radio_button_fieldset :disability do |b|
       = content_tag :div, {class: 'multiple-choice', data: { target: :disability_further_info }} do

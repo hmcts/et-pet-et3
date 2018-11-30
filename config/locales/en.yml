@@ -238,6 +238,8 @@ en:
       confirmation_of_supplied_details:
         email_receipt: For example, name@address.com
   errors:
+    header: Please review the following
+    description: Clicking on an error will navigate you directly to the question. Please correct these errors before continuing.
     format: "%{message}"
     messages:
       contains_no_spaces: "%{attribute} must contain spaces"
@@ -250,6 +252,8 @@ en:
       invalid_phone_number: This is not a valid phone number
       inclusion: Please select an option
       not_a_number: "%{attribute} is not a number"
+      too_long:
+        other: "%{count} WELSH - characters is the maximum allowed"
     attributes:
       contact:
         contains_numbers: Name of contact must not contain numbers
@@ -272,6 +276,9 @@ en:
       type_of_representative:
         inclusion: Please select the type of your representative
   components:
+    common:
+      error_header: Please review the following
+      error_description: Clicking on an error will navigate you directly to the question. Please correct these errors before continuing.
     single_choice_option_section:
       'yes': "Yes"
       'no': "No"

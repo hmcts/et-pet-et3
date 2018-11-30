@@ -16,12 +16,8 @@ module ET3
         element :error_too_long, :exact_error_text, 'errors.messages.too_long', exact: false
 
         def set_for(user_persona)
-          if user_persona.disability == "Yes"
-            yes.set(true)
-            disability_information.set(user_persona.disability_information)
-          else
-            no.set(true)
-          end
+          choose(user_persona.disability)
+          disability_information.set(user_persona.disability_information) if yes.has_checked_field?
         end
       end
 

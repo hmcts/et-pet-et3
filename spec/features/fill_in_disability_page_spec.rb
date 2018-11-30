@@ -40,6 +40,8 @@ RSpec.feature "Fill in Disability Page", js: true do
 
     expect(disability_page).to be_displayed
     expect(disability_page.disability_question.get).to eql user.disability
-    expect(disability_page.disability_question.disability_information.root_element.value).to eql user.disability_information if user.disability == 'Yes'
+    if user.disability == t('questions.disability.yes.label')
+      expect(disability_page.disability_question.disability_information.root_element.value).to eql user.disability_information
+    end
   end
 end

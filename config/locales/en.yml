@@ -253,7 +253,7 @@ en:
       inclusion: Please select an option
       not_a_number: "%{attribute} is not a number"
       too_long:
-        other: "%{count} WELSH - characters is the maximum allowed"
+        other: "%{count} characters is the maximum allowed"
     attributes:
       contact:
         contains_numbers: Name of contact must not contain numbers

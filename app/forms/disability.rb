@@ -14,8 +14,7 @@ class Disability < BaseForm
 
   validates :disability_information,
     length: {
-        maximum: 350,
-        too_long: "%{count} characters is the maximum allowed" # rubocop:disable Style/FormatStringToken
+      maximum: 350
     },
     presence: true,
     if: :disabled?

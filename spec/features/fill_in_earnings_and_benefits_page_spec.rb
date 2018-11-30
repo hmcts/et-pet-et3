@@ -48,7 +48,7 @@ RSpec.feature "Fill in Earnings and Benefits Page", js: true do
     answer_agree_with_claimant_pension_benefits_question
 
     earnings_and_benefits_page.next
-    confirmation_of_supplied_details_path.load(locale: current_locale_parameter)
+    confirmation_of_supplied_details_page.load(locale: current_locale_parameter)
     confirmation_of_supplied_details_page.confirmation_of_earnings_and_benefits_answers.edit_page_link.click
 
     expect(earnings_and_benefits_page).to be_displayed

@@ -78,7 +78,7 @@ RSpec.feature "Fill in Respondents Details Page", js: true do
     answer_organisation_more_than_one_site_question
 
     respondents_details_page.next
-    confirmation_of_supplied_details_path.load(locale: current_locale_parameter)
+    confirmation_of_supplied_details_page.load(locale: current_locale_parameter)
     confirmation_of_supplied_details_page.confirmation_of_respondents_details_answers.edit_page_link.click
 
     expect(respondents_details_page).to be_displayed

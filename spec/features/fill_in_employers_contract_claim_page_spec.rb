@@ -30,7 +30,7 @@ RSpec.feature "Fill in Employers Contract Claim Page", js: true do
     answer_make_employer_contract_claim_question
 
     employers_contract_claim_page.next
-    confirmation_of_supplied_details_path.load(locale: current_locale_parameter)
+    confirmation_of_supplied_details_page.load(locale: current_locale_parameter)
     confirmation_of_supplied_details_page.confirmation_of_employer_contract_claim_answers.edit_page_link.click
 
     expect(employers_contract_claim_page).to be_displayed

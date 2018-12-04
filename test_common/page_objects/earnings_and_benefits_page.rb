@@ -18,12 +18,8 @@ module ET3
         element :error_not_a_number, :exact_error_text, 'errors.custom.queried_hours.not_a_number', exact: false
 
         def set_for(user_persona)
-          if user_persona.agree_with_claimants_hours == 'No'
-            no.set(true)
-            queried_hours.set(user_persona.queried_hours)
-          else
-            yes.set(true)
-          end
+          choose(user_persona.agree_with_claimants_hours)
+          queried_hours.set(user_persona.queried_hours) if no.has_checked_field?
         end
       end
 
@@ -78,22 +74,12 @@ module ET3
         end
         
         def set_for(user_persona)
-          if user_persona.agree_with_earnings_details == 'No'
-            no.set(true)
+          choose(user_persona.agree_with_earnings_details)
+          if no.has_checked_field?
             queried_pay_before_tax.set(user_persona.queried_pay_before_tax)
-            if user_persona.queried_pay_before_tax_period == 'Monthly'
-              queried_pay_before_tax.monthly.set(true)
-            elsif user_persona.queried_pay_before_tax_period == 'Weekly'
-              queried_pay_before_tax.weekly.set(true)
-            end
+            queried_pay_before_tax.choose(user_persona.queried_pay_before_tax_period)
             queried_take_home_pay.set(user_persona.queried_take_home_pay)
-            if user_persona.queried_take_home_pay_period == 'Monthly'
-              queried_take_home_pay.monthly.set(true)
-            elsif user_persona.queried_take_home_pay_period == 'Weekly'
-              queried_take_home_pay.weekly.set(true)
-            end
-          else
-            yes.set(true)
+            queried_take_home_pay.choose(user_persona.queried_take_home_pay_period)
           end
         end
       end
@@ -109,12 +95,8 @@ module ET3
         element :error_too_long, :exact_error_text, 'errors.messages.too_long', exact: false
 
         def set_for(user_persona)
-          if user_persona.agree_with_claimant_notice == 'No'
-            no.set(true)
-            disagree_claimant_notice_reason.set(user_persona.disagree_claimant_notice_reason)
-          else
-            yes.set(true)
-          end
+          choose(user_persona.agree_with_claimant_notice)
+          disagree_claimant_notice_reason.set(user_persona.disagree_claimant_notice_reason) if no.has_checked_field?
         end
       end
 
@@ -129,12 +111,8 @@ module ET3
         element :error_too_long, :exact_error_text, 'errors.messages.too_long', exact: false
 
         def set_for(user_persona)
-          if user_persona.agree_with_claimant_pension_benefits == 'No'
-            no.set(true)
-            disagree_claimant_pension_benefits_reason.set(user_persona.disagree_claimant_pension_benefits_reason)
-          else
-            yes.set(true)
-          end
+          choose(user_persona.agree_with_claimant_pension_benefits)
+          disagree_claimant_pension_benefits_reason.set(user_persona.disagree_claimant_pension_benefits_reason) if no.has_checked_field?
         end
 
       end

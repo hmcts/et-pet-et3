@@ -40,7 +40,7 @@ cy:
       'yes':
         label: WELSH - Yes
       'no':
-        label: WELSH - 'No'
+        label: WELSH - No
       employment_at_site_number:
         label: WELSH - How many people are employed at the place where the claimant worked?
     # Claimant's Details Page
@@ -51,7 +51,7 @@ cy:
       'yes':
         label: WELSH - Yes
       'no':
-        label: WELSH - 'No'
+        label: WELSH - No
       disagree_conciliation_reason:
         label: WELSH - Why do you disagree with the claimant? (optional)
     agree_with_employment_dates:
@@ -59,7 +59,7 @@ cy:
       'yes':
         label: WELSH - Yes
       'no':
-        label: WELSH - 'No'
+        label: WELSH - No
       employment_start:
         label: WELSH - When their employment started
         day:
@@ -83,13 +83,13 @@ cy:
       'yes':
         label: WELSH - Yes
       'no':
-        label: WELSH - 'No'
+        label: WELSH - No
     agree_with_claimants_description_of_job_or_title:
       label: WELSH - Is the claimant's description of their job or job title correct? (optional)
       'yes':
         label: WELSH - Yes
       'no':
-        label: WELSH - 'No'
+        label: WELSH - No
       disagree_claimants_job_or_title:
         label: WELSH - Please give the details you believe to be correct (optional)
     # Earnings and Benefits Page
@@ -98,7 +98,7 @@ cy:
       'yes':
         label: WELSH - Yes
       'no':
-        label: WELSH - 'No'
+        label: WELSH - No
       queried_hours:
         label: WELSH - Please enter the details you believe to be correct (optional)
     agree_with_earnings_details:
@@ -106,7 +106,7 @@ cy:
       'yes':
         label: WELSH - Yes
       'no':
-        label: WELSH - 'No'
+        label: WELSH - No
       queried_pay_before_tax:
         label: WELSH - Pay before tax (optional)
       queried_pay_before_tax_period:
@@ -128,7 +128,7 @@ cy:
       'yes':
         label: WELSH - Yes
       'no':
-        label: WELSH - 'No'
+        label: WELSH - No
       disagree_claimant_notice_reason:
         label: WELSH - Please give the details you believe to be correct below. If you didn't give notice or pay them instead of letting them work their notice please explain what happened and why (optional)
     agree_with_claimant_pension_benefits:
@@ -136,7 +136,7 @@ cy:
       'yes':
         label: WELSH - Yes
       'no':
-        label: WELSH - 'No'
+        label: WELSH - No
       disagree_claimant_pension_benefits_reason:
         label: WELSH - Please give the details you believe to be correct. (optional)
     # Response Page
@@ -145,7 +145,7 @@ cy:
       'yes':
         label: WELSH - Yes
       'no':
-        label: WELSH - 'No'
+        label: WELSH - No
       defend_claim_facts:
         label: WELSH - Please set out the facts which you rely on to defend the claim (optional)
     # Your Representatives Page
@@ -154,7 +154,7 @@ cy:
       'yes':
         label: WELSH - Yes
       'no':
-        label: WELSH - 'No'
+        label: WELSH - No
     # Your Representatives Details Page
     type_of_representative:
       label: WELSH - Type of Representative
@@ -210,7 +210,7 @@ cy:
       'yes':
         label: WELSH - Yes
       'no':
-        label: WELSH - 'No'
+        label: WELSH - No
       disability_information:
         label: WELSH - It would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises
     # Employers Contract Claim Page
@@ -219,7 +219,7 @@ cy:
       'yes':
         label: WELSH - Yes
       'no':
-        label: WELSH - 'No'
+        label: WELSH - No
       claim_information:
         label: WELSH - Please set out the background and details of your claim below, which should include all important dates (optional)
     # Additional Informatation Page

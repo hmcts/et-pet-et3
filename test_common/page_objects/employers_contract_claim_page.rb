@@ -16,12 +16,8 @@ module ET3
         element :error_too_long, :exact_error_text, 'errors.messages.too_long', exact: false
 
         def set_for(user_persona)
-          if user_persona.make_employer_contract_claim == "Yes"
-            yes.set(true)
-            claim_information.set(user_persona.claim_information)
-          else
-            no.set(true)
-          end
+          choose(user_persona.make_employer_contract_claim)
+          claim_information.set(user_persona.claim_information) if yes.has_checked_field?
         end
       end
 

@@ -22,12 +22,8 @@ module ET3
         end
 
         def set_for(user_persona)
-          if user_persona.agree_with_early_conciliation_details == 'No'
-            no.set(true)
-            disagree_conciliation_reason.set(user_persona.disagree_conciliation_reason)
-          else
-            yes.set(true)
-          end
+          choose(user_persona.agree_with_early_conciliation_details)
+          disagree_conciliation_reason.set(user_persona.disagree_conciliation_reason) if no.has_checked_field?
         end
       end
 
@@ -107,8 +103,8 @@ module ET3
         element :error_blank, :exact_error_text, 'errors.messages.blank', exact: false
 
         def set_for(user_persona)
-          if user_persona.agree_with_employment_dates == 'No'
-            no.set(true)
+          choose(user_persona.agree_with_employment_dates)
+          if no.has_checked_field?
             if user_persona.employment_start != nil
               day, month, year = user_persona.employment_start.split('/')
               employment_start.day.set(day)
@@ -122,8 +118,6 @@ module ET3
               employment_end.year.set(year)
             end
             disagree_employment.set(user_persona.disagree_employment) unless user_persona.disagree_employment == nil
-          else
-            yes.set(true)
           end
         end
       end
@@ -132,8 +126,7 @@ module ET3
         include SingleChoiceOptionSection
 
         def set_for(user_persona)
-          yes.set(true) if user_persona.continued_employment == 'Yes'
-          no.set(true) if user_persona.continued_employment == 'No'
+          choose(user_persona.continued_employment)
         end
       end
 
@@ -145,12 +138,8 @@ module ET3
         end
 
         def set_for(user_persona)
-          if user_persona.agree_with_claimants_description_of_job_or_title == 'No'
-            no.set(true)
-            disagree_claimants_job_or_title.set(user_persona.disagree_claimants_job_or_title)
-          else 
-            yes.set(true)
-          end
+          choose(user_persona.agree_with_claimants_description_of_job_or_title)
+          disagree_claimants_job_or_title.set(user_persona.disagree_claimants_job_or_title) if no.has_checked_field?
         end
 
       end

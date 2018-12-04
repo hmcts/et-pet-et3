@@ -132,29 +132,29 @@ RSpec.feature "Fill in whole form", js: true do
           expect(request_body["data"][0]["command"]).to eql "BuildResponse"
           expect(request_body["data"][0]["data"]["case_number"]).to eql user_data.case_number
           expect(request_body["data"][0]["data"]["claimants_name"]).to eql user_data.claimants_name
-          expect(request_body["data"][0]["data"]["agree_with_early_conciliation_details"]).to eql(user_data.agree_with_early_conciliation_details == 'Yes')
+          expect(request_body["data"][0]["data"]["agree_with_early_conciliation_details"]).to eql(user_data.agree_with_early_conciliation_details == t('components.single_choice_option_section.yes'))
           expect(request_body["data"][0]["data"]["disagree_conciliation_reason"]).to eql user_data.disagree_conciliation_reason
-          expect(request_body["data"][0]["data"]["agree_with_employment_dates"]).to eql(user_data.agree_with_employment_dates == 'Yes')
+          expect(request_body["data"][0]["data"]["agree_with_employment_dates"]).to eql(user_data.agree_with_employment_dates == t('components.single_choice_option_section.yes'))
           expect(Date.parse(request_body["data"][0]["data"]["employment_start"]).strftime('%d/%m/%Y')).to eql user_data.employment_start
           expect(Date.parse(request_body["data"][0]["data"]["employment_end"]).strftime('%d/%m/%Y')).to eql user_data.employment_end
           expect(request_body["data"][0]["data"]["disagree_employment"]).to eql user_data.disagree_employment
-          expect(request_body["data"][0]["data"]["continued_employment"]).to eql(user_data.continued_employment == 'Yes')
-          expect(request_body["data"][0]["data"]["agree_with_claimants_description_of_job_or_title"]).to eql(user_data.agree_with_claimants_description_of_job_or_title == 'Yes')
+          expect(request_body["data"][0]["data"]["continued_employment"]).to eql(user_data.continued_employment == t('components.single_choice_option_section.yes'))
+          expect(request_body["data"][0]["data"]["agree_with_claimants_description_of_job_or_title"]).to eql(user_data.agree_with_claimants_description_of_job_or_title == t('components.single_choice_option_section.yes'))
           expect(request_body["data"][0]["data"]["disagree_claimants_job_or_title"]).to eql user_data.disagree_claimants_job_or_title
-          expect(request_body["data"][0]["data"]["agree_with_claimants_hours"]).to eql(user_data.agree_with_claimants_hours == 'Yes')
+          expect(request_body["data"][0]["data"]["agree_with_claimants_hours"]).to eql(user_data.agree_with_claimants_hours == t('components.single_choice_option_section.yes'))
           expect(request_body["data"][0]["data"]["queried_hours"]).to eql user_data.queried_hours.to_f
-          expect(request_body["data"][0]["data"]["agree_with_earnings_details"]).to eql(user_data.agree_with_earnings_details == 'Yes')
+          expect(request_body["data"][0]["data"]["agree_with_earnings_details"]).to eql(user_data.agree_with_earnings_details == t('components.single_choice_option_section.yes'))
           expect(request_body["data"][0]["data"]["queried_pay_before_tax"]).to eql user_data.queried_pay_before_tax.to_f
           expect(request_body["data"][0]["data"]["queried_pay_before_tax_period"]).to eql user_data.queried_pay_before_tax_period
           expect(request_body["data"][0]["data"]["queried_take_home_pay"]).to eql user_data.queried_take_home_pay.to_f
           expect(request_body["data"][0]["data"]["queried_take_home_pay_period"]).to eql user_data.queried_take_home_pay_period
-          expect(request_body["data"][0]["data"]["agree_with_claimant_notice"]).to eql(user_data.agree_with_claimant_notice == 'Yes')
+          expect(request_body["data"][0]["data"]["agree_with_claimant_notice"]).to eql(user_data.agree_with_claimant_notice == t('components.single_choice_option_section.yes'))
           expect(request_body["data"][0]["data"]["disagree_claimant_notice_reason"]).to eql user_data.disagree_claimant_notice_reason
-          expect(request_body["data"][0]["data"]["agree_with_claimant_pension_benefits"]).to eql(user_data.agree_with_claimant_pension_benefits == 'Yes')
+          expect(request_body["data"][0]["data"]["agree_with_claimant_pension_benefits"]).to eql(user_data.agree_with_claimant_pension_benefits == t('components.single_choice_option_section.yes'))
           expect(request_body["data"][0]["data"]["disagree_claimant_pension_benefits_reason"]).to eql user_data.disagree_claimant_pension_benefits_reason
-          expect(request_body["data"][0]["data"]["defend_claim"]).to eql(user_data.defend_claim == 'Yes')
+          expect(request_body["data"][0]["data"]["defend_claim"]).to eql(user_data.defend_claim == t('components.single_choice_option_section.yes'))
           expect(request_body["data"][0]["data"]["defend_claim_facts"]).to eql user_data.defend_claim_facts
-          expect(request_body["data"][0]["data"]["make_employer_contract_claim"]).to eql(user_data.make_employer_contract_claim == 'Yes')
+          expect(request_body["data"][0]["data"]["make_employer_contract_claim"]).to eql(user_data.make_employer_contract_claim == t('components.single_choice_option_section.yes'))
           expect(request_body["data"][0]["data"]["claim_information"]).to eql user_data.claim_information
           expect(file_upload_keys).to include request_body["data"][0]["data"]["additional_information_key"]
           expect(request_body["data"][0]["data"]["email_receipt"]).to eql user_data.email_receipt
@@ -174,9 +174,9 @@ RSpec.feature "Fill in whole form", js: true do
           expect(request_body["data"][1]["data"]["email_address"]).to eql user_data.email_address if user_data.contact_preference == 'email'
           expect(request_body["data"][1]["data"]["fax_number"]).to eql user_data.fax_number if user_data.contact_preference == 'fax'
           expect(request_body["data"][1]["data"]["organisation_employ_gb"]).to eql user_data.organisation_employ_gb
-          expect(request_body["data"][1]["data"]["organisation_more_than_one_site"]).to eql(user_data.organisation_more_than_one_site == 'Yes')
+          expect(request_body["data"][1]["data"]["organisation_more_than_one_site"]).to eql(user_data.organisation_more_than_one_site == t('components.single_choice_option_section.yes'))
           expect(request_body["data"][1]["data"]["employment_at_site_number"]).to eql user_data.employment_at_site_number
-          expect(request_body["data"][1]["data"]["disability"]).to eql(user_data.disability == 'Yes')
+          expect(request_body["data"][1]["data"]["disability"]).to eql(user_data.disability == t('components.single_choice_option_section.yes'))
           expect(request_body["data"][1]["data"]["disability_information"]).to eql user_data.disability_information
           expect(request_body["data"][1]["uuid"]).to be_an_instance_of(String)
           expect(request_body["data"][2]["command"]).to eql "BuildRepresentative"

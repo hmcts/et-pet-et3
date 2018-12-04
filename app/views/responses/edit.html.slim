@@ -11,9 +11,9 @@
 
     = f.radio_button_fieldset :defend_claim do |b|
       = content_tag :div, {class: 'multiple-choice', data: { target: :defend_claim_facts }} do
-        = b.radio_button(:defend_claim, true) + label(:defend_claim_true, t('helpers.label.response.defend_claim.choices.yes'), value: :yes)
+        = b.radio_button(:defend_claim, true) + b.label(:defend_claim, t('helpers.label.response.defend_claim.choices.yes'), value: true)
       = content_tag :div, {class: 'multiple-choice'} do
-        = b.radio_button(:defend_claim, false) + label(:defend_claim_false, t('helpers.label.response.defend_claim.choices.no'), value: :no)
+        = b.radio_button(:defend_claim, false) + b.label(:defend_claim, t('helpers.label.response.defend_claim.choices.no'), value: false)
       #defend_claim_facts.panel.panel-border-narrow.js-hidden
         = f.text_area :defend_claim_facts, size: "70x30"
     = f.submit("Save and continue", class: 'button')

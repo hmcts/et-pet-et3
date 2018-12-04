@@ -7,7 +7,7 @@ company01:
   street_name: WELSH - downing_street
   town: WELSH - westminster
   county: WELSH - london
-  postcode: WELSH - wc1 1aa
+  postcode: wc1 1aa
   dx_number: 724060 Derby 21
   contact_number: 02081234567
   contact_mobile_number: 07123456789
@@ -51,7 +51,7 @@ company01:
   representative_street: 'WELSH - Rep Street'
   representative_town: 'WELSH - Rep Town'
   representative_county: 'WELSH - Rep County'
-  representative_postcode: 'WELSH - WC2 2BB'
+  representative_postcode: 'WC2 2BB'
   representative_phone: '0207 987 6543'
   representative_mobile: '07987654321'
   representative_dx_number: 'dx address'
@@ -143,7 +143,7 @@ erroneously_entering_data_on_confirmation_of_supplied_details_page:
   street_name: WELSH - downing_street
   town: WELSH - westminster
   county: WELSH - london
-  postcode: WELSH - wc1 1aa
+  postcode: wc1 1aa
   dx_number: 724060 Derby 21
   contact_number: 02081234567
   contact_mobile_number: 07123456789
@@ -187,7 +187,7 @@ erroneously_entering_data_on_confirmation_of_supplied_details_page:
   representative_street: 'WELSH - Rep Street'
   representative_town: 'WELSH - Rep Town'
   representative_county: 'WELSH - Rep County'
-  representative_postcode: 'WELSH - WC2 2BB'
+  representative_postcode: 'WC2 2BB'
   representative_phone: '0207 987 6543'
   representative_mobile: '07987654321'
   representative_dx_number: 'dx address'

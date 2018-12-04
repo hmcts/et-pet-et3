@@ -242,21 +242,21 @@ cy:
     description: WELSH - Clicking on an error will navigate you directly to the question. Please correct these errors before continuing.
     format: "%{message}"
     messages:
-      contains_no_spaces: "WELSH - %{attribute} must contain spaces"
-      contains_numbers: "WELSH - %{attribute} must not contain numbers"
-      blank: "WELSH - %{attribute} can't be blank"
-      invalid: "WELSH - %{attribute} is invalid"
+      contains_no_spaces: "%{attribute} WELSH - must contain spaces"
+      contains_numbers: "%{attribute} WELSH - must not contain numbers"
+      blank: "%{attribute} WELSH - can't be blank"
+      invalid: "%{attribute} WELSH - is invalid"
       invalid_email: WELSH - This is not a valid email address
       invalid_name: WELSH - Please enter your full name
       invalid_postcode: WELSH - This is not a valid UK postcode
       invalid_phone_number: WELSH - This is not a valid phone number
       inclusion: WELSH - Please select an option
-      not_a_number: "WELSH - %{attribute} is not a number"
+      not_a_number: "%{attribute} WELSH - is not a number"
       too_long:
         other: "%{count} WELSH - characters is the maximum allowed"
     attributes:
       contact:
-        contains_numbers: WELSH - Name of contact must not contain numbers
+        contains_numbers: Name of contact must not contain numbers - WELSH
       employment_at_site_number:
         not_a_number: WELSH - Please enter how many people are employed at the place where the claimant worked as a number
       organisation_more_than_one_site:

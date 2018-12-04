@@ -254,7 +254,7 @@ cy:
     messages:
       blank: WELSH - can't be blank
       contains_no_spaces: WELSH - must contain at least one space
-      contains_numbers: WELSH - must not contain numbers
+      contains_numbers: must not contain numbers - WELSH
       invalid: WELSH - is invalid
       invalid_email: WELSH - This is not a valid email address
       invalid_name: WELSH - Please enter your full name

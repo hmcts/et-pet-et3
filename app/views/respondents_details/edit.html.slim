@@ -6,8 +6,8 @@
 
     div data-turbolinks="false"
       = GovukElementsErrorsHelper.error_summary @respondents_detail,
-        "Please review the following",
-        "Clicking on an error will navigate you directly to the question. Please correct these errors before continuing."
+        t('errors.header'),
+        t('errors.description')
 
     = f.text_field :case_number
     = f.text_field :name
@@ -34,9 +34,9 @@
     = f.text_field :organisation_employ_gb
     = f.radio_button_fieldset :organisation_more_than_one_site do |b|
         = content_tag :div, {class: 'multiple-choice', data: { target: :respondent_employment_at_site_number }} do
-          = b.radio_button(:organisation_more_than_one_site, true) + b.label(:organisation_more_than_one_site, t('helpers.label.respondents_detail.organisation_more_than_one_site.choices.yes'), value: :yes)
+          = b.radio_button(:organisation_more_than_one_site, true) + b.label(:organisation_more_than_one_site, t('helpers.label.respondents_detail.organisation_more_than_one_site.choices.yes'), value: true)
         #respondent_employment_at_site_number.panel.panel-border-narrow.js-hidden
           = f.text_field :employment_at_site_number
         = content_tag :div, {class: 'multiple-choice'} do
-          = b.radio_button(:organisation_more_than_one_site, false) + b.label(:organisation_more_than_one_site, t('helpers.label.respondents_detail.organisation_more_than_one_site.choices.no'), value: :no)
+          = b.radio_button(:organisation_more_than_one_site, false) + b.label(:organisation_more_than_one_site, t('helpers.label.respondents_detail.organisation_more_than_one_site.choices.no'), value: false)
     = f.submit("Save and continue", class: 'button')

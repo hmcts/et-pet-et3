@@ -14,8 +14,7 @@ class EmployersContractClaim < BaseForm
 
   validates :claim_information,
     length: {
-      maximum: 4500,
-      too_long: "%{count} characters is the maximum allowed" # rubocop:disable Style/FormatStringToken
+      maximum: 4500
     },
     if: :make_claim?
 

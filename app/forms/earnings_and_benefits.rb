@@ -42,14 +42,12 @@ class EarningsAndBenefits < BaseForm
     if: :disagree_earnings_details?
   validates :disagree_claimant_notice_reason,
     length: {
-      maximum: 400,
-      too_long: "%{count} characters is the maximum allowed" # rubocop:disable Style/FormatStringToken
+      maximum: 400
     },
     if: :disagree_claimants_notice?
   validates :disagree_claimant_pension_benefits_reason,
     length: {
-      maximum: 350,
-      too_long: "%{count} characters is the maximum allowed" # rubocop:disable Style/FormatStringToken
+      maximum: 350
     },
     if: :disagree_claimants_pension_benefits?
 

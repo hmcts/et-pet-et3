@@ -243,7 +243,7 @@ cy:
     format: "%{message}"
     messages:
       contains_no_spaces: "%{attribute} WELSH - must contain spaces"
-      contains_numbers: "%{attribute} WELSH - must not contain numbers"
+      contains_numbers: "%{attribute} must not contain numbers -  WELSH"
       blank: "%{attribute} WELSH - can't be blank"
       invalid: "%{attribute} WELSH - is invalid"
       invalid_email: WELSH - This is not a valid email address
@@ -264,7 +264,7 @@ cy:
       organisation_employ_gb:
         not_a_number: WELSH - Please enter how many people the organisation employs in Great Britain as a number
       claimants_name:
-        contains_numbers: WELSH - Claimant's name must not contain numbers
+        contains_numbers: Claimant's name must not contain numbers - WELSH
       agree_with_employment_dates:
         inclusion: WELSH - Please indicate whether you agree with the dates of employment provided by the claimant
       queried_hours:

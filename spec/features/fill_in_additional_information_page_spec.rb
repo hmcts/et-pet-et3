@@ -10,7 +10,7 @@ RSpec.feature "Fill in Additional Information Page", js: true do
   scenario "correctly will enable user to continue to next page" do
     additional_information_page.load
 
-    given_i_am(:company01)
+    given_i_am
 
     answer_upload_additional_information_question
 
@@ -29,7 +29,7 @@ RSpec.feature "Fill in Additional Information Page", js: true do
   scenario "correctly will leave a file in the s3 bucket" do
     additional_information_page.load
 
-    given_i_am(:company01)
+    given_i_am
 
     answer_upload_additional_information_question
     additional_information_page.next

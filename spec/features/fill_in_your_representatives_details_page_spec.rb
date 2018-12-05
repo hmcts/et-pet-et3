@@ -5,7 +5,7 @@ RSpec.feature "Fill in Your Representatives Details Page", js: true do
   scenario "correctly will enable user to continue to next page" do
     your_representatives_details_page.load(locale: current_locale_parameter)
 
-    given_i_am(:company01)
+    given_i_am
 
     answer_type_of_representative_question
     answer_representative_org_name_question
@@ -29,7 +29,7 @@ RSpec.feature "Fill in Your Representatives Details Page", js: true do
   scenario "incorrectly will provide errors" do
     your_representatives_details_page.load(locale: current_locale_parameter)
 
-    given_i_am(:erroneously_entering_data)
+    given_invalid_data
 
     answer_type_of_representative_question
     answer_representative_org_name_question
@@ -62,7 +62,7 @@ RSpec.feature "Fill in Your Representatives Details Page", js: true do
   scenario "correctly will enable user to check answers and return to edit them" do
     your_representatives_details_page.load(locale: current_locale_parameter)
 
-    given_i_am(:company01)
+    given_i_am
 
     answer_type_of_representative_question
     answer_representative_org_name_question

@@ -59,22 +59,22 @@ module ET3
         element :error_inclusion, :exact_error_text, 'errors.custom.type_of_representative.inclusion', exact: false
 
         def set_for(user_persona)
-          case user_persona.type_of_representative
-            when t('questions.type_of_representative.citizens_advice_bureau.label')
+          case user_persona.type
+            when 'Citizens advice bureau'
               citizens_advice_bureau.set(true)
-            when t('questions.type_of_representative.free_representation_unit.label')
+            when 'Free representation unit'
               free_representation_unit.set(true)
-            when t('questions.type_of_representative.law_centre.label')
+            when 'Law centre'
               law_centre.set(true)
-            when t('questions.type_of_representative.union.label')
+            when 'Union'
               union.set(true)
-            when t('questions.type_of_representative.solicitor.label')
+            when 'Solicitor'
               solicitor.set(true)
-            when t('questions.type_of_representative.private_individual.label')
+            when 'Private individual'
               private_individual.set(true)
-            when t('questions.type_of_representative.trade_association.label')
+            when 'Trade association'
               trade_association.set(true)
-            when t('questions.type_of_representative.other.label')
+            when 'Other'
               other.set(true)
           end
         end

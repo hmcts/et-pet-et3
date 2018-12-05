@@ -6,7 +6,7 @@ RSpec.feature "Fill in Your Representative Page", js: true do
   scenario "correctly will enable user to continue to representative details page" do
     your_representative_page.load(locale: current_locale_parameter)
 
-    given_i_am(:company01)
+    given_i_am
 
     answer_have_representative_question
 
@@ -38,7 +38,7 @@ RSpec.feature "Fill in Your Representative Page", js: true do
   scenario "correctly will enable user to check answers and return to edit them" do
     your_representative_page.load(locale: current_locale_parameter)
 
-    given_i_am(:company01)
+    given_i_am
 
     answer_have_representative_question
 

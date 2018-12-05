@@ -9,7 +9,7 @@ RSpec.feature "Fill in whole form", js: true do
   scenario "correctly will flow without error" do
     include ET3::Test::S3Helpers
 
-    given_i_am(:company01)
+    given_i_am
 
     answer_all_questions
 
@@ -126,75 +126,74 @@ RSpec.feature "Fill in whole form", js: true do
       expect(a_request(:post, "http://api.et.127.0.0.1.nip.io:3100/api/v2/respondents/build_response").
         with { |request|
           request_body = JSON.parse(request.body)
-          user_data = personas.fetch(:company01)
           expect(request_body["uuid"]).to be_an_instance_of(String)
           expect(request_body["command"]).to eql "SerialSequence"
           expect(request_body["data"][0]["command"]).to eql "BuildResponse"
-          expect(request_body["data"][0]["data"]["case_number"]).to eql user_data.case_number
-          expect(request_body["data"][0]["data"]["claimants_name"]).to eql user_data.claimants_name
-          expect(request_body["data"][0]["data"]["agree_with_early_conciliation_details"]).to eql(user_data.agree_with_early_conciliation_details == t('components.single_choice_option_section.yes'))
-          expect(request_body["data"][0]["data"]["disagree_conciliation_reason"]).to eql user_data.disagree_conciliation_reason
-          expect(request_body["data"][0]["data"]["agree_with_employment_dates"]).to eql(user_data.agree_with_employment_dates == t('components.single_choice_option_section.yes'))
-          expect(Date.parse(request_body["data"][0]["data"]["employment_start"]).strftime('%d/%m/%Y')).to eql user_data.employment_start
-          expect(Date.parse(request_body["data"][0]["data"]["employment_end"]).strftime('%d/%m/%Y')).to eql user_data.employment_end
-          expect(request_body["data"][0]["data"]["disagree_employment"]).to eql user_data.disagree_employment
-          expect(request_body["data"][0]["data"]["continued_employment"]).to eql(user_data.continued_employment == t('components.single_choice_option_section.yes'))
-          expect(request_body["data"][0]["data"]["agree_with_claimants_description_of_job_or_title"]).to eql(user_data.agree_with_claimants_description_of_job_or_title == t('components.single_choice_option_section.yes'))
-          expect(request_body["data"][0]["data"]["disagree_claimants_job_or_title"]).to eql user_data.disagree_claimants_job_or_title
-          expect(request_body["data"][0]["data"]["agree_with_claimants_hours"]).to eql(user_data.agree_with_claimants_hours == t('components.single_choice_option_section.yes'))
-          expect(request_body["data"][0]["data"]["queried_hours"]).to eql user_data.queried_hours.to_f
-          expect(request_body["data"][0]["data"]["agree_with_earnings_details"]).to eql(user_data.agree_with_earnings_details == t('components.single_choice_option_section.yes'))
-          expect(request_body["data"][0]["data"]["queried_pay_before_tax"]).to eql user_data.queried_pay_before_tax.to_f
-          expect(request_body["data"][0]["data"]["queried_pay_before_tax_period"]).to eql user_data.queried_pay_before_tax_period
-          expect(request_body["data"][0]["data"]["queried_take_home_pay"]).to eql user_data.queried_take_home_pay.to_f
-          expect(request_body["data"][0]["data"]["queried_take_home_pay_period"]).to eql user_data.queried_take_home_pay_period
-          expect(request_body["data"][0]["data"]["agree_with_claimant_notice"]).to eql(user_data.agree_with_claimant_notice == t('components.single_choice_option_section.yes'))
-          expect(request_body["data"][0]["data"]["disagree_claimant_notice_reason"]).to eql user_data.disagree_claimant_notice_reason
-          expect(request_body["data"][0]["data"]["agree_with_claimant_pension_benefits"]).to eql(user_data.agree_with_claimant_pension_benefits == t('components.single_choice_option_section.yes'))
-          expect(request_body["data"][0]["data"]["disagree_claimant_pension_benefits_reason"]).to eql user_data.disagree_claimant_pension_benefits_reason
-          expect(request_body["data"][0]["data"]["defend_claim"]).to eql(user_data.defend_claim == t('components.single_choice_option_section.yes'))
-          expect(request_body["data"][0]["data"]["defend_claim_facts"]).to eql user_data.defend_claim_facts
-          expect(request_body["data"][0]["data"]["make_employer_contract_claim"]).to eql(user_data.make_employer_contract_claim == t('components.single_choice_option_section.yes'))
-          expect(request_body["data"][0]["data"]["claim_information"]).to eql user_data.claim_information
+          expect(request_body["data"][0]["data"]["case_number"]).to eql respondent.case_number
+          expect(request_body["data"][0]["data"]["claimants_name"]).to eql claimant.claimants_name
+          expect(request_body["data"][0]["data"]["agree_with_early_conciliation_details"]).to eql claimant.agree_with_early_conciliation_details
+          expect(request_body["data"][0]["data"]["disagree_conciliation_reason"]).to eql claimant.disagree_conciliation_reason
+          expect(request_body["data"][0]["data"]["agree_with_employment_dates"]).to eql claimant.agree_with_employment_dates
+          expect(Date.parse(request_body["data"][0]["data"]["employment_start"]).strftime('%d/%m/%Y')).to eql claimant.employment_start
+          expect(Date.parse(request_body["data"][0]["data"]["employment_end"]).strftime('%d/%m/%Y')).to eql claimant.employment_end
+          expect(request_body["data"][0]["data"]["disagree_employment"]).to eql claimant.disagree_employment
+          expect(request_body["data"][0]["data"]["continued_employment"]).to eql claimant.continued_employment
+          expect(request_body["data"][0]["data"]["agree_with_claimants_description_of_job_or_title"]).to eql claimant.agree_with_claimants_description_of_job_or_title
+          expect(request_body["data"][0]["data"]["disagree_claimants_job_or_title"]).to eql claimant.disagree_claimants_job_or_title
+          expect(request_body["data"][0]["data"]["agree_with_claimants_hours"]).to eql claimant.agree_with_claimants_hours
+          expect(request_body["data"][0]["data"]["queried_hours"]).to eql claimant.queried_hours
+          expect(request_body["data"][0]["data"]["agree_with_earnings_details"]).to eql claimant.agree_with_earnings_details
+          expect(request_body["data"][0]["data"]["queried_pay_before_tax"]).to eql claimant.queried_pay_before_tax
+          expect(request_body["data"][0]["data"]["queried_pay_before_tax_period"]).to eql claimant.queried_pay_before_tax_period
+          expect(request_body["data"][0]["data"]["queried_take_home_pay"]).to eql claimant.queried_take_home_pay
+          expect(request_body["data"][0]["data"]["queried_take_home_pay_period"]).to eql claimant.queried_take_home_pay_period
+          expect(request_body["data"][0]["data"]["agree_with_claimant_notice"]).to eql claimant.agree_with_claimant_notice
+          expect(request_body["data"][0]["data"]["disagree_claimant_notice_reason"]).to eql claimant.disagree_claimant_notice_reason
+          expect(request_body["data"][0]["data"]["agree_with_claimant_pension_benefits"]).to claimant.agree_with_claimant_pension_benefits
+          expect(request_body["data"][0]["data"]["disagree_claimant_pension_benefits_reason"]).to eql claimant.disagree_claimant_pension_benefits_reason
+          expect(request_body["data"][0]["data"]["defend_claim"]).to eql claimant.defend_claim
+          expect(request_body["data"][0]["data"]["defend_claim_facts"]).to eql claimant.defend_claim_facts
+          expect(request_body["data"][0]["data"]["make_employer_contract_claim"]).to respondent.make_employer_contract_claim
+          expect(request_body["data"][0]["data"]["claim_information"]).to eql respondent.claim_information
           expect(file_upload_keys).to include request_body["data"][0]["data"]["additional_information_key"]
-          expect(request_body["data"][0]["data"]["email_receipt"]).to eql user_data.email_receipt
+          expect(request_body["data"][0]["data"]["email_receipt"]).to eql respondent.email_receipt
           expect(request_body["data"][0]["uuid"]).to be_an_instance_of(String)
           expect(request_body["data"][1]["command"]).to eql "BuildRespondent"
-          expect(request_body["data"][1]["data"]["name"]).to eql user_data.name
-          expect(request_body["data"][1]["data"]["contact"]).to eql user_data.contact
-          expect(request_body["data"][1]["data"]["address_attributes"]["building"]).to eql user_data.building_name
-          expect(request_body["data"][1]["data"]["address_attributes"]["street"]).to eql user_data.street_name
-          expect(request_body["data"][1]["data"]["address_attributes"]["locality"]).to eql user_data.town
-          expect(request_body["data"][1]["data"]["address_attributes"]["county"]).to eql user_data.county
-          expect(request_body["data"][1]["data"]["address_attributes"]["post_code"]).to eql user_data.postcode
-          expect(request_body["data"][1]["data"]["dx_number"]).to eql user_data.dx_number
-          expect(request_body["data"][1]["data"]["address_telephone_number"]).to eql user_data.contact_number
-          expect(request_body["data"][1]["data"]["alt_phone_number"]).to eql user_data.contact_mobile_number
-          expect(request_body["data"][1]["data"]["contact_preference"]).to eql user_data.contact_preference
-          expect(request_body["data"][1]["data"]["email_address"]).to eql user_data.email_address if user_data.contact_preference == 'email'
-          expect(request_body["data"][1]["data"]["fax_number"]).to eql user_data.fax_number if user_data.contact_preference == 'fax'
-          expect(request_body["data"][1]["data"]["organisation_employ_gb"]).to eql user_data.organisation_employ_gb
-          expect(request_body["data"][1]["data"]["organisation_more_than_one_site"]).to eql(user_data.organisation_more_than_one_site == t('components.single_choice_option_section.yes'))
-          expect(request_body["data"][1]["data"]["employment_at_site_number"]).to eql user_data.employment_at_site_number
-          expect(request_body["data"][1]["data"]["disability"]).to eql(user_data.disability == t('components.single_choice_option_section.yes'))
-          expect(request_body["data"][1]["data"]["disability_information"]).to eql user_data.disability_information
+          expect(request_body["data"][1]["data"]["name"]).to eql respondent.name
+          expect(request_body["data"][1]["data"]["contact"]).to eql respondent.contact
+          expect(request_body["data"][1]["data"]["address_attributes"]["building"]).to eql respondent.building_name
+          expect(request_body["data"][1]["data"]["address_attributes"]["street"]).to eql respondent.street_name
+          expect(request_body["data"][1]["data"]["address_attributes"]["locality"]).to eql respondent.town
+          expect(request_body["data"][1]["data"]["address_attributes"]["county"]).to eql respondent.county
+          expect(request_body["data"][1]["data"]["address_attributes"]["post_code"]).to eql respondent.postcode
+          expect(request_body["data"][1]["data"]["dx_number"]).to eql respondent.dx_number
+          expect(request_body["data"][1]["data"]["address_telephone_number"]).to eql respondent.contact_number
+          expect(request_body["data"][1]["data"]["alt_phone_number"]).to eql respondent.contact_mobile_number
+          expect(request_body["data"][1]["data"]["contact_preference"]).to eql respondent.contact_preference
+          expect(request_body["data"][1]["data"]["email_address"]).to eql respondent.email_address if respondent.contact_preference == 'email'
+          expect(request_body["data"][1]["data"]["fax_number"]).to eql respondent.fax_number if respondent.contact_preference == 'fax'
+          expect(request_body["data"][1]["data"]["organisation_employ_gb"]).to eql respondent.organisation_employ_gb
+          expect(request_body["data"][1]["data"]["organisation_more_than_one_site"]).to eql respondent.organisation_more_than_one_site
+          expect(request_body["data"][1]["data"]["employment_at_site_number"]).to eql respondent.employment_at_site_number
+          expect(request_body["data"][1]["data"]["disability"]).to eql respondent.disability
+          expect(request_body["data"][1]["data"]["disability_information"]).to eql respondent.disability_information
           expect(request_body["data"][1]["uuid"]).to be_an_instance_of(String)
           expect(request_body["data"][2]["command"]).to eql "BuildRepresentative"
           expect(request_body["data"][2]["data"]["name"]).to eql user_data.representative_name
-          expect(request_body["data"][2]["data"]["organisation_name"]).to eql user_data.representative_org_name
-          expect(request_body["data"][2]["data"]["address_attributes"]["building"]).to eql user_data.representative_building
-          expect(request_body["data"][2]["data"]["address_attributes"]["street"]).to eql user_data.representative_street
-          expect(request_body["data"][2]["data"]["address_attributes"]["locality"]).to eql user_data.representative_town
-          expect(request_body["data"][2]["data"]["address_attributes"]["county"]).to eql user_data.representative_county
-          expect(request_body["data"][2]["data"]["address_attributes"]["post_code"]).to eql user_data.representative_postcode
-          expect(request_body["data"][2]["data"]["address_telephone_number"]).to eql user_data.representative_phone
-          expect(request_body["data"][2]["data"]["mobile_number"]).to eql user_data.representative_mobile
-          expect(request_body["data"][2]["data"]["representative_type"].capitalize).to eql user_data.type_of_representative
-          expect(request_body["data"][2]["data"]["dx_number"]).to eql user_data.representative_dx_number
-          expect(request_body["data"][2]["data"]["reference"]).to eql user_data.representative_reference
-          expect(request_body["data"][2]["data"]["contact_preference"].capitalize).to eql user_data.representative_contact_preference
-          expect(request_body["data"][2]["data"]["email_address"]).to eql user_data.representative_email if user_data.representative_contact_preference == "email"
-          expect(request_body["data"][2]["data"]["fax_number"]).to eql user_data.representative_fax if user_data.representative_contact_preference == "fax"
+          expect(request_body["data"][2]["data"]["organisation_name"]).to eql representative.organisation_name
+          expect(request_body["data"][2]["data"]["address_attributes"]["building"]).to eql representative.building
+          expect(request_body["data"][2]["data"]["address_attributes"]["street"]).to eql representative.street
+          expect(request_body["data"][2]["data"]["address_attributes"]["locality"]).to eql representative.town
+          expect(request_body["data"][2]["data"]["address_attributes"]["county"]).to eql representative.county
+          expect(request_body["data"][2]["data"]["address_attributes"]["post_code"]).to eql representative.postcode
+          expect(request_body["data"][2]["data"]["address_telephone_number"]).to eql representative.telephone_number
+          expect(request_body["data"][2]["data"]["mobile_number"]).to eql representative.representative_mobile
+          expect(request_body["data"][2]["data"]["representative_type"].capitalize).to eql representative.type
+          expect(request_body["data"][2]["data"]["dx_number"]).to eql representative.dx_number
+          expect(request_body["data"][2]["data"]["reference"]).to eql representative.representative_reference
+          expect(request_body["data"][2]["data"]["contact_preference"].capitalize).to eql representative.representative_contact_preference
+          expect(request_body["data"][2]["data"]["email_address"]).to eql representative.representative_contact_preference
+          expect(request_body["data"][2]["data"]["fax_number"]).to eql representative.representative_contact_preference
           expect(request_body["data"][2]["uuid"]).to be_an_instance_of(String)
           expect(request.headers).to include("Content-Type" => "application/json", "Accept" => "application/json")
         }).to have_been_made.once
@@ -208,7 +207,7 @@ RSpec.feature "Fill in whole form", js: true do
   end
 
   scenario "correctly will delete hash_store and prevent the next user seeing answers on the respondents details page" do
-    given_i_am(:company01)
+    given_i_am
 
     answer_all_questions
     confirmation_of_supplied_details_page.submit_form
@@ -236,7 +235,7 @@ RSpec.feature "Fill in whole form", js: true do
   end
 
   scenario "correctly followed by removing the uploaded file will not submit it to the API" do
-    given_i_am(:company01)
+    given_i_am
 
     answer_all_questions
 

@@ -5,7 +5,7 @@ RSpec.feature "Fill in Earnings and Benefits Page", js: true do
   scenario "correctly will enable user to continue to next page" do
     earnings_and_benefits_page.load(locale: current_locale_parameter)
 
-    given_i_am(:company01)
+    given_i_am
 
     answer_agree_with_claimants_hours_question
     answer_agree_with_earnings_details_question
@@ -20,7 +20,7 @@ RSpec.feature "Fill in Earnings and Benefits Page", js: true do
   scenario "incorrectly will provide many errors" do
     earnings_and_benefits_page.load(locale: current_locale_parameter)
 
-    given_i_am(:erroneously_entering_data)
+    given_invalid_data
 
     answer_agree_with_claimants_hours_question
     answer_agree_with_earnings_details_question
@@ -40,7 +40,7 @@ RSpec.feature "Fill in Earnings and Benefits Page", js: true do
   scenario "correctly will enable user to check answers and return to edit them" do
     earnings_and_benefits_page.load(locale: current_locale_parameter)
 
-    given_i_am(:company01)
+    given_i_am
 
     answer_agree_with_claimants_hours_question
     answer_agree_with_earnings_details_question

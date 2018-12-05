@@ -119,7 +119,7 @@ RSpec.feature "View Sidebar", js: true do
   end
 
   scenario "form submission page" do
-    given_i_am(:company01)
+    given_i_am
     answer_all_questions
     confirmation_of_supplied_details_page.submit_form
 

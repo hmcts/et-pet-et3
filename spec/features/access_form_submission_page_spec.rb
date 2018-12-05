@@ -8,7 +8,7 @@ RSpec.feature "Access Form Submission Page", js: true do
   end
 
   scenario "user will be able to read text" do
-    given_i_am(:company01)
+    given_i_am
     answer_all_questions
     confirmation_of_supplied_details_page.submit_form
 
@@ -20,7 +20,7 @@ RSpec.feature "Access Form Submission Page", js: true do
   end
 
   scenario "user can navigate to the gov.uk homepage" do
-    given_i_am(:company01)
+    given_i_am
     answer_all_questions
     confirmation_of_supplied_details_page.submit_form
 

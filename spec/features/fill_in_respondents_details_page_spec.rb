@@ -5,7 +5,7 @@ RSpec.feature "Fill in Respondents Details Page", js: true do
   scenario "correctly will enable user to continue to next page" do
     respondents_details_page.load(locale: current_locale_parameter)
 
-    given_i_am(:company01)
+    given_i_am
 
     answer_case_number_question
     answer_name_question
@@ -25,7 +25,7 @@ RSpec.feature "Fill in Respondents Details Page", js: true do
   scenario "incorrectly will provide many errors" do
     respondents_details_page.load(locale: current_locale_parameter)
 
-    given_i_am(:erroneously_entering_data)
+    given_invalid_data
 
     answer_case_number_question
     answer_name_question
@@ -60,7 +60,7 @@ RSpec.feature "Fill in Respondents Details Page", js: true do
   scenario "correctly will enable user to check answers and return to edit them" do
     respondents_details_page.load(locale: current_locale_parameter)
 
-    given_i_am(:company01)
+    given_i_am
 
     answer_case_number_question
     answer_name_question

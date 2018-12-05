@@ -8,7 +8,7 @@ RSpec.feature "Fill in Confirmation of Supplied Details Page", js: true do
   end
 
   scenario "correctly will enable user to continue to next page" do
-    given_i_am(:company01)
+    given_i_am
     answer_all_questions
 
     confirmation_of_supplied_details_page.submit_form

@@ -4,7 +4,7 @@ RSpec.feature "Fill in Employers Contract Claim Page", js: true do
 
   scenario "correctly will enable user to continue to next page" do
     employers_contract_claim_page.load(locale: current_locale_parameter)
-    given_i_am(:company01)
+    given_i_am
 
     answer_make_employer_contract_claim_question
     employers_contract_claim_page.next
@@ -14,7 +14,7 @@ RSpec.feature "Fill in Employers Contract Claim Page", js: true do
 
   scenario "incorrectly will provide errors" do
     employers_contract_claim_page.load(locale: current_locale_parameter)
-    given_i_am(:erroneously_entering_data)
+    given_invalid_data
     answer_make_employer_contract_claim_question
     employers_contract_claim_page.next
 
@@ -25,7 +25,7 @@ RSpec.feature "Fill in Employers Contract Claim Page", js: true do
   scenario "correctly will enable user to check answers and return to edit them" do
     employers_contract_claim_page.load(locale: current_locale_parameter)
 
-    given_i_am(:company01)
+    given_i_am
 
     answer_make_employer_contract_claim_question
 

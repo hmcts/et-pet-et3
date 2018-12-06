@@ -1,4 +1,4 @@
-- content_for :form_page_title, "Disability"
+- content_for :form_page_title, t('components.disability.header')
 - content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
 .content-body.disability
 
@@ -16,4 +16,4 @@
         = f.text_area :disability_information, size: "70x20"
       = content_tag :div, {class: 'multiple-choice'} do
         = b.radio_button(:disability, false) + b.label(:disability, t('helpers.label.disability.disability.choices.no'), value: false)
-    = f.submit("Save and continue", class: 'button')
+    = f.submit(t('components.common.save_and_continue_button'), class: 'button')

@@ -346,3 +346,5 @@ cy:
     your_representatives_details:
       header: "WELSH - Your Representative's Details"
       description: WELSH - Fill in this section if someone has agreed to represent you. If you do fill this in we will in future only contact your representative and not you
+    disability:
+      header: "WELSH - Disability"

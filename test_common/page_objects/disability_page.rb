@@ -3,6 +3,8 @@ module ET3
     class DisabilityPage < BasePage
       set_url '/respond/disability'
 
+      element :header, :content_header, 'disability.header'
+
       element :error_header, :error_titled, 'errors.header', exact: true
 
       section :disability_question, :single_choice_option, 'questions.disability.label', exact: false do

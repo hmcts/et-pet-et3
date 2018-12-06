@@ -331,3 +331,5 @@ cy:
     header: "WELSH - Your Representative"
   your_representatives_details:
     header: "WELSH - Your Representative's Details"
+  disability:
+    header: "WELSH - Disability"

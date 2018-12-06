@@ -331,3 +331,5 @@ en:
     header: "Your Representative"
   your_representatives_details:
     header: "Your Representative's Details"
+  disability:
+    header: "Disability"

@@ -23,6 +23,7 @@ RSpec.feature "Fill in Disability Page", js: true do
 
     disability_page.next
 
+    expect(disability_page).to have_header
     expect(disability_page).to have_error_header
     expect(disability_page.disability_question).to have_error_too_long
   end
@@ -39,6 +40,7 @@ RSpec.feature "Fill in Disability Page", js: true do
     confirmation_of_supplied_details_page.confirmation_of_disability_answers.edit_page_link.click
 
     expect(disability_page).to be_displayed
+    expect(disability_page).to have_header
     expect(disability_page.disability_question.get).to eql user.disability
     if user.disability == t('questions.disability.yes.label')
       expect(disability_page.disability_question.disability_information.root_element.value).to eql user.disability_information

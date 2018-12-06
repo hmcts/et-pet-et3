@@ -147,12 +147,8 @@ module ET3
         element :error_not_a_number, :exact_error_text, 'errors.custom.organisation_more_than_one_site.not_a_number', exact: false
 
         def set_for(user_persona)
-          if user_persona.organisation_more_than_one_site == 'Yes'
-            yes.set(true)
-            employment_at_site_number.set(user_persona.employment_at_site_number)
-          else
-            no.set(true)
-          end
+          choose(user_persona.organisation_more_than_one_site)
+          employment_at_site_number.set(user_persona.employment_at_site_number) if yes.has_checked_field?
         end
       end
       element :continue_button, :button, "Save and continue"

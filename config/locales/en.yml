@@ -344,3 +344,5 @@ en:
       start_now: Start now
     respondents_details:
       header: "Respondent's Details"
+    claimants_details:
+      header: "Claimant's Details"

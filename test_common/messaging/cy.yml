@@ -321,3 +321,5 @@ cy:
     start_now: WELSH - Start now
   respondents_details:
     header: "WELSH - Respondent's Details"
+  claimants_details:
+    header: "WELSH - Claimant's Details"

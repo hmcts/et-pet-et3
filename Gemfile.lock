@@ -134,6 +134,8 @@ GEM
       rails (> 3.1)
     erubi (1.7.1)
     execjs (2.7.0)
+    factory_bot (4.11.1)
+      activesupport (>= 3.0.0)
     faker (1.8.7)
       i18n (>= 0.7)
     faraday (0.15.2)
@@ -374,6 +376,7 @@ DEPENDENCIES
   debase (~> 0.2.2)
   dotenv-rails (~> 2.5)
   dropzonejs-rails (~> 0.8)
+  factory_bot
   faker (~> 1.8)
   geckodriver-helper (~> 0.0)
   gov_uk_date_fields (~> 2.1)

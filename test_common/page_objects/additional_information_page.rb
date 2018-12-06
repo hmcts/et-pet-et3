@@ -18,7 +18,7 @@ module ET3
         delegate :set, to: :upload_select
       end
 
-      element :continue_button, :button, "Save and continue"
+      element :continue_button, :submit_text, 'components.save_and_continue_button'
       def next
         continue_button.click
       end

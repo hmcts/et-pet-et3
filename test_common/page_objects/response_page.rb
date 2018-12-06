@@ -3,6 +3,8 @@ module ET3
     class ResponsePage < BasePage
       set_url '/respond/response'
 
+      element :header, :content_header, 'response.header'
+
       element :error_header, :error_titled, 'errors.header', exact: true
 
       section :defend_claim_question, :single_choice_option, 'questions.defend_claim.label', exact: false do

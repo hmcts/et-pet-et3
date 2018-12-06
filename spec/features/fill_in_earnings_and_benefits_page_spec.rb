@@ -29,6 +29,7 @@ RSpec.feature "Fill in Earnings and Benefits Page", js: true do
 
     earnings_and_benefits_page.next
 
+    expect(earnings_and_benefits_page).to have_header
     expect(earnings_and_benefits_page).to have_error_header
     expect(earnings_and_benefits_page.agree_with_claimants_hours_question).to have_error_not_a_number
     expect(earnings_and_benefits_page.agree_with_earnings_details_question.queried_pay_before_tax).to have_error_not_a_number
@@ -52,6 +53,7 @@ RSpec.feature "Fill in Earnings and Benefits Page", js: true do
     confirmation_of_supplied_details_page.confirmation_of_earnings_and_benefits_answers.edit_page_link.click
 
     expect(earnings_and_benefits_page).to be_displayed
+    expect(earnings_and_benefits_page).to have_header
     expect(earnings_and_benefits_page.agree_with_claimants_hours_question.get).to eql user.agree_with_claimants_hours
     expect(earnings_and_benefits_page.agree_with_claimants_hours_question.queried_hours.field.value.to_f).to eql user.queried_hours.to_f if user.agree_with_claimants_hours == "No"
     expect(earnings_and_benefits_page.agree_with_earnings_details_question.get).to eql user.agree_with_earnings_details

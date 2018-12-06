@@ -3,6 +3,8 @@ module ET3
     class EarningsAndBenefitsPage < BasePage
       set_url '/respond/earnings_and_benefits'
 
+      element :header, :content_header, 'earnings_and_benefits.header'
+
       element :error_header, :error_titled, 'errors.header', exact: true
 
       section :agree_with_claimants_hours_question, :single_choice_option, 'questions.agree_with_claimants_hours.label', exact: false do

@@ -337,3 +337,7 @@ cy:
       header: "WELSH - Respondent's Details"
     claimants_details:
       header: "WELSH - Claimant's Details"
+    earnings_and_benefits:
+      header: "WELSH - Earnings and Benefits"
+    response:
+      header: "WELSH - Response"

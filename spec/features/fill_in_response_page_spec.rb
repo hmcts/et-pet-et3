@@ -23,6 +23,7 @@ RSpec.feature "Fill in Response Page", js: true do
 
     response_page.next
 
+    expect(response_page).to have_header
     expect(response_page).to have_error_header
     expect(response_page.defend_claim_question).to have_error_too_long
   end
@@ -39,6 +40,7 @@ RSpec.feature "Fill in Response Page", js: true do
     confirmation_of_supplied_details_page.confirmation_of_response_answers.edit_page_link.click
 
     expect(response_page).to be_displayed
+    expect(response_page).to have_header
     expect(response_page.defend_claim_question.get).to eql user.defend_claim
     expect(response_page.defend_claim_question.defend_claim_facts.root_element.value).to eql user.defend_claim_facts if user.defend_claim == "Yes"
   end

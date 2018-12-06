@@ -1,4 +1,4 @@
-- content_for :form_page_title, "Earnings and Benefits"
+- content_for :form_page_title, t('components.earnings_and_benefits.header')
 - content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
 .content-body.earnings-and-benefits
 
@@ -50,4 +50,4 @@
         = b.radio_button(:agree_with_claimant_pension_benefits, false) + b.label(:agree_with_claimant_pension_benefits, t('helpers.label.earnings_and_benefits.agree_with_claimant_pension_benefits.choices.no'), value: false)
       #disagree_claimant_pension_benefits.panel.panel-border-narrow.js-hidden
         = f.text_area :disagree_claimant_pension_benefits_reason
-    = f.submit("Save and continue", class: 'button')
+    = f.submit(t('components.common.save_and_continue_button'), class: 'button')

@@ -323,3 +323,7 @@ en:
     header: "Respondent's Details"
   claimants_details:
     header: "Claimant's Details"
+  earnings_and_benefits:
+    header: "Earnings and Benefits"
+  response:
+    header: "Response"

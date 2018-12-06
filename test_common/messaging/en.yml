@@ -284,6 +284,7 @@ en:
       invalid_pdf_download: Not quite ready yet - a PDF version of your completed form will be available for download shortly
       valid_pdf_download: A PDF version of your completed form is now available for download
   components:
+    save_and_continue_button: Save and continue
     single_choice_option_section:
       'yes': "Yes"
       'no': "No"
@@ -318,3 +319,5 @@ en:
     data_title: Data Protection Act 1998
     data_content: We will send a copy of this form to the claimant and the Advisory, Conciliation and Arbitration Service (ACAS). We will put the information you give us on this form onto a computer. This helps us to monitor progress and produce statistics. Information provided on this form is passed to the Department for Business, Innovation and Skills to assist research into the use and effectiveness of employment tribunals.
     start_now: Start now
+  respondents_details:
+    header: "Respondent's Details"

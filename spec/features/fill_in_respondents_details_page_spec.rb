@@ -44,6 +44,7 @@ RSpec.feature "Fill in Respondents Details Page", js: true do
 
     respondents_details_page.next
 
+    expect(respondents_details_page).to have_header
     expect(respondents_details_page).to have_error_header
     expect(respondents_details_page.case_number_question).to have_error_invalid
     expect(respondents_details_page.name_question).to have_error_blank
@@ -82,6 +83,7 @@ RSpec.feature "Fill in Respondents Details Page", js: true do
     confirmation_of_supplied_details_page.confirmation_of_respondents_details_answers.edit_page_link.click
 
     expect(respondents_details_page).to be_displayed
+    expect(respondents_details_page).to have_header
     expect(respondents_details_page.case_number_question.field.value).to eql user.case_number
     expect(respondents_details_page.name_question.field.value).to eql user.name
     expect(respondents_details_page.contact_question.field.value).to eql user.contact

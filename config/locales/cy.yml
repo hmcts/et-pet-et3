@@ -30,7 +30,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 cy:
-  hello: "Helo"
   helpers:
     fieldset:
       respondents_detail:
@@ -271,6 +270,7 @@ cy:
     common:
       error_header: "Adolygwch y canlynol "
       error_description: "Bydd clicio ar wall yn mynd â chi'n syth at y cwestiwn. \nCywirwch y gwallau hyn cyn parhau."
+      save_and_continue_button: WELSH - Save and continue
     single_choice_option_section:
       'yes': "Ia"
       'no': "Na"
@@ -333,3 +333,5 @@ cy:
       data_title: WELSH - Data Protection Act 1998
       data_content: WELSH - We will send a copy of this form to the claimant and the Advisory, Conciliation and Arbitration Service (ACAS). We will put the information you give us on this form onto a computer. This helps us to monitor progress and produce statistics. Information provided on this form is passed to the Department for Business, Innovation and Skills to assist research into the use and effectiveness of employment tribunals.
       start_now: WELSH - Start now
+    respondents_details:
+      header: "WELSH - Respondent's Details"

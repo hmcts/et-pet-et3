@@ -3,6 +3,8 @@ module ET3
     class RespondentsDetailsPage < BasePage
       set_url '/respond/respondents_details'
 
+      element :header, :content_header, 'respondents_details.header'
+
       element :error_header, :error_titled, 'errors.header', exact: true
 
       section :case_number_question, :question_labelled, 'questions.case_number.label', exact: false do
@@ -151,7 +153,7 @@ module ET3
           employment_at_site_number.set(user_persona.employment_at_site_number) if yes.has_checked_field?
         end
       end
-      element :continue_button, :button, "Save and continue"
+      element :continue_button, :submit_text, 'components.save_and_continue_button'
       def next
         continue_button.click
       end

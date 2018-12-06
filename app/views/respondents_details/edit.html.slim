@@ -1,4 +1,4 @@
-- content_for :form_page_title, "Respondent's Details"
+- content_for :form_page_title, t('components.respondents_details.header')
 - content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
 .content-body.respondents-details
 
@@ -39,4 +39,4 @@
           = f.text_field :employment_at_site_number
         = content_tag :div, {class: 'multiple-choice'} do
           = b.radio_button(:organisation_more_than_one_site, false) + b.label(:organisation_more_than_one_site, t('helpers.label.respondents_detail.organisation_more_than_one_site.choices.no'), value: false)
-    = f.submit("Save and continue", class: 'button')
+    = f.submit(t('components.common.save_and_continue_button'), class: 'button')

@@ -284,6 +284,7 @@ cy:
       invalid_pdf_download: WELSH - Not quite ready yet - a PDF version of your completed form will be available for download shortly
       valid_pdf_download: WELSH - A PDF version of your completed form is now available for download
   components:
+    save_and_continue_button: WELSH - Save and continue
     single_choice_option_section:
       'yes': WELSH - Yes
       'no': WELSH - No
@@ -318,3 +319,5 @@ cy:
     data_title: WELSH - Data Protection Act 1998
     data_content: WELSH - We will send a copy of this form to the claimant and the Advisory, Conciliation and Arbitration Service (ACAS). We will put the information you give us on this form onto a computer. This helps us to monitor progress and produce statistics. Information provided on this form is passed to the Department for Business, Innovation and Skills to assist research into the use and effectiveness of employment tribunals.
     start_now: WELSH - Start now
+  respondents_details:
+    header: "WELSH - Respondent's Details"

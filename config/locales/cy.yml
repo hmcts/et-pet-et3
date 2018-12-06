@@ -316,4 +316,20 @@ cy:
       header: "CYMRAEG - Ymateb wedi'i gwblhau "
       valid_pdf_download: Mae fersiwn PDF o'ch ffurflen ar gael i'w lawrlwytho
       invalid_pdf_download: Ddim yn barod at hyn o bryd - bydd fersiwn PDF o'ch ffurflen at gael i'w lawrlwytho maes o law
-
+    introduction:
+      header: WELSH - Introduction
+      description: WELSH - Complete and submit an ET3 response form when someone makes an employment tribunal claim against you.
+      what_title: WELSH - What you need for this form
+      what_content_1: "WELSH - your case number (on the letter we sent you)"
+      what_content_2: "WELSH - claimant's employment start and end dates, hours of work and period of notice"
+      what_content_3: "WELSH - details of claimant's pay and benefits, before and after tax"
+      what_content_4: WELSH - any Acas Early Conciliation details you may have, such as the certificate number
+      what_content_5: WELSH - a description of your response to the claim, including dates and the people involved
+      what_content_6: "WELSH - details of your representative, like a solicitor, if you have one"
+      how_title: WELSH - How to fill in the form
+      how_content_1: WELSH - your information will not be saved if you spend longer than 1 hour on a single page
+      how_content_2: WELSH - you can review and edit your answers before you submit the form
+      how_content_3: WELSH - you can save a PDF of your form after you submit it
+      data_title: WELSH - Data Protection Act 1998
+      data_content: WELSH - We will send a copy of this form to the claimant and the Advisory, Conciliation and Arbitration Service (ACAS). We will put the information you give us on this form onto a computer. This helps us to monitor progress and produce statistics. Information provided on this form is passed to the Department for Business, Innovation and Skills to assist research into the use and effectiveness of employment tribunals.
+      start_now: WELSH - Start now

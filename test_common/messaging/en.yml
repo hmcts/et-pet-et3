@@ -327,3 +327,7 @@ en:
     header: "Earnings and Benefits"
   response:
     header: "Response"
+  your_representative:
+    header: "Your Representative"
+  your_representatives_details:
+    header: "Your Representative's Details"

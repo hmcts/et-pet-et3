@@ -3,6 +3,8 @@ module ET3
     class YourRepresentativesDetailsPage < BasePage
       set_url '/respond/your_representatives_details'
 
+      element :header, :content_header, 'your_representatives_details.header'
+
       element :error_header, :error_titled, 'errors.header', exact: true
 
       section :type_of_representative_question, :single_choice_option, 'questions.type_of_representative.label', exact: false do

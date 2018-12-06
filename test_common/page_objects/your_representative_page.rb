@@ -3,6 +3,8 @@ module ET3
     class YourRepresentativePage < BasePage
       set_url '/respond/your_representative'
 
+      element :header, :content_header, 'your_representative.header'
+
       section :have_representative_question, :single_choice_option, 'questions.have_representative.label', exact: true do
         
         include SingleChoiceOptionSection

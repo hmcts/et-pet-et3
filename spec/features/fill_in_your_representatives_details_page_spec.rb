@@ -47,6 +47,7 @@ RSpec.feature "Fill in Your Representatives Details Page", js: true do
 
     your_representatives_details_page.next
 
+    expect(your_representatives_details_page).to have_header
     expect(your_representatives_details_page).to have_error_header
     expect(your_representatives_details_page.type_of_representative_question).to have_error_inclusion
     expect(your_representatives_details_page.representative_name_question).to have_error_contains_numbers
@@ -83,6 +84,7 @@ RSpec.feature "Fill in Your Representatives Details Page", js: true do
     confirmation_of_supplied_details_page.confirmation_of_your_representatives_details_answers.edit_page_link.click
 
     expect(your_representatives_details_page).to be_displayed
+    expect(your_representatives_details_page).to have_header
     case user.type_of_representative
     when "Citizen's advice bureau"
       expect(your_representatives_details_page.type_of_representative_question.citizens_advice_bureau.has_checked_field?).to be true

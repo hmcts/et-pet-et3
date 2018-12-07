@@ -324,4 +324,20 @@ en:
       header: WELSH - Response complete
       valid_pdf_download: A PDF version of your completed form is now available for download
       invalid_pdf_download: Not quite ready yet - a PDF version of your completed form will be available for download shortly
-
+    introduction:
+      header: Introduction
+      description: Complete and submit an ET3 response form when someone makes an employment tribunal claim against you.
+      what_title: What you need for this form
+      what_content_1: your case number (on the letter we sent you)
+      what_content_2: "claimant's employment start and end dates, hours of work and period of notice"
+      what_content_3: "details of claimant's pay and benefits, before and after tax"
+      what_content_4: any Acas Early Conciliation details you may have, such as the certificate number
+      what_content_5: a description of your response to the claim, including dates and the people involved
+      what_content_6: "details of your representative, like a solicitor, if you have one"
+      how_title: How to fill in the form
+      how_content_1: your information will not be saved if you spend longer than 1 hour on a single page
+      how_content_2: you can review and edit your answers before you submit the form
+      how_content_3: you can save a PDF of your form after you submit it
+      data_title: Data Protection Act 1998
+      data_content: We will send a copy of this form to the claimant and the Advisory, Conciliation and Arbitration Service (ACAS). We will put the information you give us on this form onto a computer. This helps us to monitor progress and produce statistics. Information provided on this form is passed to the Department for Business, Innovation and Skills to assist research into the use and effectiveness of employment tribunals.
+      start_now: Start now

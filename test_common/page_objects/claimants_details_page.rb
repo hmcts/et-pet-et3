@@ -122,7 +122,6 @@ module ET3
             employment_end.day.set(day)
             employment_end.month.set(month)
             employment_end.year.set(year)
-            binding.pry
             disagree_employment.set(user_persona.disagree_employment)
           end
         end

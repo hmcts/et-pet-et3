@@ -37,22 +37,22 @@ FactoryBot.define do
     continued_employment {:"questions.continued_employment.no.label"}
     agree_with_claimants_description_of_job_or_title {:"questions.agree_with_claimants_description_of_job_or_title.yes.label"}
     disagree_claimants_job_or_title {nil}
-    agree_with_claimants_hours {"No"}
+    agree_with_claimants_hours {:"questions.agree_with_claimants_hours.no.label"}
     queried_hours {"string"}
-    agree_with_earnings_details {"No"}
+    agree_with_earnings_details {:"questions.agree_with_earnings_details.no.label"}
     queried_pay_before_tax {"string"}
     queried_pay_before_tax_period {"Weekly"}
     queried_take_home_pay {"string"}
     queried_take_home_pay_period {"Weekly"}
     agree_with_claimant_notice {nil}
     disagree_claimant_notice_reason { Faker::Lorem.characters(451) }
-    agree_with_claimant_pension_benefits {"No"}
+    agree_with_claimant_pension_benefits {:"questions.agree_with_claimant_pension_benefits.no.label"}
     disagree_claimant_pension_benefits_reason { Faker::Lorem.characters(351)}
-    defend_claim {"Yes"}
+    defend_claim {:"questions.defend_claim.yes.label"}
     defend_claim_facts { Faker::Lorem.characters(2501) }
-    agree_with_employment_dates {"No"}
-    employment_start {nil}
-    employment_end {nil}
+    agree_with_employment_dates {:"questions.agree_with_employment_dates.no.label"}
+    employment_start {"0/0/0"}
+    employment_end {"0/0/0"}
     disagree_employment {nil}
   end
 end

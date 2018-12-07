@@ -52,7 +52,6 @@ module ET3
         claimants_details_page.agree_with_employment_dates_question.set_for(user)
         claimants_details_page.continued_employment_question.set_for(user.continued_employment)
         claimants_details_page.agree_with_claimants_description_of_job_or_title_question.set_for(user)
-        binding.pry
         claimants_details_page.next
       end
 

@@ -56,18 +56,8 @@ module ET3
       end
 
       # Earnings and Benefits Page
-      def answer_required_claimants_details
-        claimants_details_page.agree_with_employment_dates_question.set_for(user)
-
-        claimants_details_page.next
-      end
-
-      def answer_agree_with_earnings_details_question
-        earnings_and_benefits_page.agree_with_earnings_details_question.set_for(@claimant)
-      end
-
       def answer_earnings_and_benefits
-        user = @claimant[0]
+        user = @claimant
         earnings_and_benefits_page.agree_with_claimants_hours_question.set_for(user)
         earnings_and_benefits_page.agree_with_earnings_details_question.set_for(user)
         earnings_and_benefits_page.agree_with_claimant_notice_question.set_for(user)
@@ -78,7 +68,7 @@ module ET3
 
       # Response Page
       def answer_defend_claim_question
-        user = @claimant[0]
+        user = @claimant
         response_page.defend_claim_question.set_for(user)
 
         response_page.next

@@ -9,7 +9,18 @@ RSpec.feature "Access Form Submission Page", js: true do
 
   scenario "user will be able to read text" do
     given_i_am
-    answer_all_questions
+    start_a_new_et3_response
+    answer_respondents_details
+    answer_claimants_details
+    answer_earnings_and_benefits
+    answer_defend_claim_question
+    answer_representative
+    answer_disability_question
+    answer_employers_contract_claim
+    answer_no_to_employers_contract_claim
+    answer_additional_information
+    confirmation_of_supplied_details
+
     confirmation_of_supplied_details_page.submit_form
 
     expect(form_submission_page).to be_displayed

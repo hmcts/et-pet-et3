@@ -78,18 +78,18 @@ module ET3
         section :preference_fax, :inputtext_labelled, 'questions.contact_preference.fax.input_label' do
           delegate :set, to: :root_element
         end
-        element :error_invalid_email, :exact_error_text, 'errors.messages.invalid_email', exact: false
-        element :error_invalid_fax, :exact_error_text, 'errors.messages.invalid_phone_number', exact: false
+        element :error_invalid_email, :exact_error_text, 'errors.messages.invalid_email'
+        element :error_invalid_fax, :exact_error_text, 'errors.messages.invalid_phone_number'
 
         def set_for(user_persona)
           choose(factory_translate(user_persona.contact_preference), name: 'respondents_detail[contact_preference]')
-          if t(user_persona.contact_preference) == 'Email'
+          if t(user_persona.contact_preference) == t('questions.contact_preference.email.label')
             preference_email.set(user_persona.email_address)
           end
-          if t(user_persona.contact_preference) == 'Post'
+          if t(user_persona.contact_preference) == t('questions.contact_preference.post.label')
             preference_email.set(user_persona.post)
           end
-          if t(user_persona.contact_preference) == 'Fax'
+          if t(user_persona.contact_preference) == t('questions.contact_preference.fax.label')
             preference_fax.set(user_persona.fax_number)
           end
         end

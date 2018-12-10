@@ -21,10 +21,10 @@ FactoryBot.define do
     contact_preference {"email"}
     email_address {"sivvoy.taing@hmcts.net"}
     organisation_employ_gb {"100"}
-    make_employer_contract_claim {"Yes"}
+    make_employer_contract_claim {:"questions.make_employer_contract_claim.yes.label"}
     claim_information {"lorem ipsum info"}
     email_receipt {"sivvoy.taing@hmcts.net"}
-    disability {"Yes"}
+    disability {:"questions.disability.yes.label"}
     disability_information {"Lorem ipsum disability"}
   end
 
@@ -41,10 +41,10 @@ FactoryBot.define do
     contact_preference {"fax"}
     fax_number {"string"}
     organisation_employ_gb {"string"}
-    make_employer_contract_claim {"Yes"}
+    make_employer_contract_claim {:"questions.make_employer_contract_claim.yes.label"}
     claim_information {Faker::Lorem.characters(4501)}
     email_receipt {""}
-    disability {"Yes"}
+    disability {:"questions.disability.yes.label"}
     disability_information {"Faker::Lorem.characters(351)"}
   end
 end

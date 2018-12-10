@@ -35,11 +35,11 @@ FactoryBot.define do
     alternative_telephone_number {"string"}
     email_address  {"Email"}
     dx_number {"724060 Derby 21 (no validation)"}
-    have_representative {"No"}
+    have_representative {:"questions.have_representative.no.label"}
     representative_mobile {"string"}
     representative_reference {""}
     representative_contact_preference {"Email"}
     representative_fax {"string"}
-    employer_contract_claim {"Yes"}
+    employer_contract_claim {:"questions.employer_contract_claim.yes.label"}
   end
 end

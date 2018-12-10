@@ -4,14 +4,19 @@ module ET3
       set_url '/respond/your_representative'
 
       section :have_representative_question, :single_choice_option, 'questions.have_representative.label', exact: true do
-        
-        include SingleChoiceOptionSection
-
+        include ET3::Test::I18n
+        element :yes, :gds_multiple_choice_option, 'questions.have_representative.yes.label' do
+          element :selector, :css, 'input[type="radio"]'
+          def set(*args); selector.set(*args); end
+        end
+        element :no, :gds_multiple_choice_option, 'questions.have_representative.no.label' do
+          element :selector, :css, 'input[type="radio"]'
+          def set(*args); selector.set(*args); end
+        end
         def set_for(user_persona)
-          choose(user_persona.have_representative)
+          choose(factory_translate(user_persona.have_representative), name: 'your_representative[have_representative]')
         end
       end
-
       element :continue_button, :button, "Save and continue"
       def next
         continue_button.click

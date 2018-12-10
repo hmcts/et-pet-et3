@@ -115,12 +115,6 @@ module ET3
         employers_contract_claim_page.next
       end
 
-      def answer_no_to_employers_contract_claim
-        employers_contract_claim_page.make_employer_contract_claim_question.no.selector.click
-
-        employers_contract_claim_page.next
-      end
-
       def displays_edited_answer
         make_employer_contract_claim_row.make_employer_contract_claim_answer.text
       end
@@ -136,9 +130,9 @@ module ET3
 
       # Confirmation of Supplied Details Page
       def confirmation_of_supplied_details
-        user = @respondent[0]
+        user = @respondent
         confirmation_of_supplied_details_page.email_receipt_question.set(user.email_receipt)
-        confirmation_of_supplied_details_page.next
+        confirmation_of_supplied_details_page.submit_form
       end
 
       def email_receipt_question

@@ -5,6 +5,9 @@ module ET3
       include ET3::Test::UploadHelper
       set_url '/respond/additional_information'
 
+      element :header, :content_header, 'additional_information.header'
+      element :description, :element_with_text, 'additional_information.description'
+
       element :error_header, :error_titled, 'errors.header', exact: true
 
       section :upload_additional_information_question, :css, 'form.dropzone' do

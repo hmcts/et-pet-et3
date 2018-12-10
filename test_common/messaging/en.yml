@@ -230,6 +230,8 @@ en:
     email_receipt:
       label: Email Address (optional)
     # Captions for Tables on CoSD Page
+    table:
+      caption: Confirmation of Supplied Details
     confirmation_of_respondents_details_answers:
       caption: Respondent's Details
     confirmation_of_claimants_details_answers:
@@ -333,3 +335,16 @@ en:
     header: "Your Representative's Details"
   disability:
     header: "Disability"
+  employer_contract_claim:
+    header: "Employer Contract Claim"
+    description: "Only available in limited circumstances where the Claimant has made a contract claim (see guidance)"
+  additional_information:
+    header: "Additional Information"
+    drag_text: "Drag and drop .rtf files here"
+    or_text: "or"
+  confirmation:
+    header: Confirmation of Supplied Details
+    receipt_header: Email Receipt
+    receipt_description: Please enter your email address so that we can provide you with a receipt of your transaction.
+    submit_guidance: 'Pressing "Submit Form" at the foot of the page will send the details confirmed below for processing.'
+    submit: Submit Form

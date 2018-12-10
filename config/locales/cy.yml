@@ -193,7 +193,6 @@ cy:
         claim_information: "Rhowch gefndir a manylion eich hawliad isod. Dylech gynnwys pob dyddiad pwysig (dewisol) "
       additional_information:
         upload_additional_information: "Llwythwch ffeil i fyny i roi unrhyw wybodaeth ychwanegol bwysig mewn perthynas â’ch ymateb nad ydych wedi’i chynnwys hyd yma (dewisol) "
-        upload_button: Cliciwch yma i lanlwytho ffeil rtf
       confirmation_of_supplied_details:
         email_receipt: "Cyfeiriad E-bost (dewisol) "
     hint:
@@ -292,7 +291,15 @@ cy:
       more_category_link: "Mwy o'r categori gweithio, swyddi a phensiynau "
       more_category_href: "http://gov.uk/browse/working"
     confirmation_of_supplied_details:
+      header: WELSH - Confirmation of Supplied Details
+      receipt_header: WELSH - Email Receipt
+      receipt_description: WELSH - Please enter your email address so that we can provide you with a receipt of your transaction.
+      submit_guidance: 'WELSH - Pressing "Submit Form" at the foot of the page will send the details confirmed below for processing.'
+      table_header: WELSH - Confirmation of Supplied Details
+      question_header: WELSH - Question
+      answer_header: WELSH - Answer
       edit_page: "Golygu atebion at y dudalen hon "
+      back_to_top: WELSH - Back to the top
       remove_file_link: "Symud ffeil "
       confirmation_of_respondents_details_answers:
         caption: "Manylion yr Atebydd "
@@ -312,6 +319,7 @@ cy:
         caption: "Hawliad Contract y Cyflogwr"
       confirmation_of_additional_information_answers:
         caption: "Gwybodaeth Ychwanegol "
+      submit: "WELSH - Submit Form"
     form_submission:
       header: "CYMRAEG - Ymateb wedi'i gwblhau "
       valid_pdf_download: Mae fersiwn PDF o'ch ffurflen ar gael i'w lawrlwytho
@@ -348,3 +356,11 @@ cy:
       description: WELSH - Fill in this section if someone has agreed to represent you. If you do fill this in we will in future only contact your representative and not you
     disability:
       header: "WELSH - Disability"
+    employers_contract_claim:
+      header: "WELSH - Employer Contract Claim"
+      description: "WELSH - Only available in limited circumstances where the Claimant has made a contract claim (see guidance)"
+    additional_information:
+      header: "WELSH - Additional Information"
+      drag_text: "WELSH - Drag and drop .rtf files here"
+      or_text: "WELSH - or"
+      upload_button: "Cliciwch yma i lanlwytho ffeil rtf"

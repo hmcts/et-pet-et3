@@ -230,6 +230,8 @@ cy:
     email_receipt:
       label: WELSH - Email Address (optional)
     # Captions for Tables on CoSD Page
+    table:
+      caption: WELSH - Confirmation of Supplied Details
     confirmation_of_respondents_details_answers:
       caption: WELSH - Respondent's Details
     confirmation_of_claimants_details_answers:
@@ -333,3 +335,16 @@ cy:
     header: "WELSH - Your Representative's Details"
   disability:
     header: "WELSH - Disability"
+  employer_contract_claim:
+    header: "WELSH - Employer Contract Claim"
+    description: "WELSH - Only available in limited circumstances where the Claimant has made a contract claim (see guidance)"
+  additional_information:
+    header: "WELSH - Additional Information"
+    drag_text: "WELSH - Drag and drop .rtf files here"
+    or_text: "WELSH - or"
+  confirmation:
+    header: WELSH - Confirmation of Supplied Details
+    receipt_header: WELSH - Email Receipt
+    receipt_description: WELSH - Please enter your email address so that we can provide you with a receipt of your transaction.
+    submit_guidance: 'WELSH - Pressing "Submit Form" at the foot of the page will send the details confirmed below for processing.'
+    submit: WELSH - Submit Form

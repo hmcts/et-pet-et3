@@ -30,7 +30,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
   helpers:
     fieldset:
       respondents_detail:
@@ -194,7 +193,6 @@ en:
         claim_information: Please set out the background and details of your claim below, which should include all important dates (optional)
       additional_information:
         upload_additional_information: Please upload a file to provide any important additional information about your response which you have not been able to include so far (optional)
-        upload_button: Click here to upload rtf file
       confirmation_of_supplied_details:
         email_receipt: Email Address (optional)
     hint:
@@ -301,7 +299,15 @@ en:
       more_category_link: More from the Working, jobs and pensions category
       more_category_href: http://gov.uk/browse/working
     confirmation_of_supplied_details:
+      header: Confirmation of Supplied Details
+      receipt_header: Email Receipt
+      receipt_description: Please enter your email address so that we can provide you with a receipt of your transaction.
+      submit_guidance: 'Pressing "Submit Form" at the foot of the page will send the details confirmed below for processing.'
+      table_header: Confirmation of Supplied Details
+      question_header: Question
+      answer_header: Answer
       edit_page: Edit answers on this page
+      back_to_top: Back to the top
       remove_file_link: Remove file
       confirmation_of_respondents_details_answers:
         caption: "Respondent's Details"
@@ -321,6 +327,7 @@ en:
         caption: "Employer Contract Claim"
       confirmation_of_additional_information_answers:
         caption: "Additional Information"
+      submit: "Submit Form"
     form_submission:
       header: WELSH - Response complete
       valid_pdf_download: A PDF version of your completed form is now available for download
@@ -357,3 +364,11 @@ en:
       description: Fill in this section if someone has agreed to represent you. If you do fill this in we will in future only contact your representative and not you
     disability:
       header: "Disability"
+    employers_contract_claim:
+      header: "Employer Contract Claim"
+      description: "Only available in limited circumstances where the Claimant has made a contract claim (see guidance)"
+    additional_information:
+      header: "Additional Information"
+      drag_text: "Drag and drop .rtf files here"
+      or_text: "or"
+      upload_button: "Click here to upload rtf file"

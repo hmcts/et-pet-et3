@@ -3,6 +3,9 @@ module ET3
     class EmployersContractClaimPage < BasePage
       set_url '/respond/employers_contract_claim'
 
+      element :header, :content_header, 'employer_contract_claim.header'
+      element :description, :element_with_text, 'employer_contract_claim.description'
+
       element :error_header, :error_titled, 'errors.header', exact: true
 
       section :make_employer_contract_claim_question, :single_choice_option, 'questions.make_employer_contract_claim.label', exact: true do

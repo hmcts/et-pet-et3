@@ -2,7 +2,12 @@ module ET3
   module Test
     class ConfirmationOfSuppliedDetailsPage < BasePage
       set_url '/respond/confirmation_of_supplied_details'
-      
+
+      element :header, :content_header, 'confirmation.header'
+
+      element :receipt_header, :element_with_text, 'confirmation.receipt_header'
+      element :receipt_description, :element_with_text, 'confirmation.receipt_description'
+
       element :error_header, :error_titled, 'errors.header', exact: true
 
       section :email_receipt_question, :question_labelled, 'questions.email_receipt.label', exact: false do
@@ -11,6 +16,8 @@ module ET3
 
         delegate :set, to: :field
       end
+
+      element :submit_guidance, :content_header, 'confirmation.submit_guidance'
 
       section :confirmation_of_respondents_details_answers, :table_captioned, 'questions.confirmation_of_respondents_details_answers.caption', exact: true do
         
@@ -312,7 +319,7 @@ module ET3
         
       end
       
-      element :continue_button, :button, "Submit Form"
+      element :continue_button, :submit_text, 'confirmation.submit'
       def submit_form
         continue_button.click
       end

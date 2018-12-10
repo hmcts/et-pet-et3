@@ -51,15 +51,14 @@ module ET3
           end
           section :monthly, :gds_multiple_choice_option, 'questions.agree_with_earnings_details.queried_pay_before_tax_period.monthly.label', exact: true do
             element :selector, :css, 'input'
-            delegate :set, to: :selector
+            def set(*args); selector.set(*args); end
           end
           section :weekly, :gds_multiple_choice_option, 'questions.agree_with_earnings_details.queried_pay_before_tax_period.weekly.label', exact: true do
             element :selector, :css, 'input'
-            delegate :set, to: :selector
+            def set(*args); selector.set(*args); end
           end
           element :error_not_a_number, :exact_error_text, 'errors.custom.queried_pay_before_tax.not_a_number', exact: false
           delegate :set, to: :field
-
         end
 
         section :queried_take_home_pay, :embedded_single_choice_option, 'questions.agree_with_earnings_details.queried_take_home_pay_period.label', exact: false do
@@ -68,11 +67,11 @@ module ET3
           end
           section :monthly, :gds_multiple_choice_option, 'questions.agree_with_earnings_details.queried_take_home_pay_period.monthly.label', exact: true do
             element :selector, :css, 'input'
-            delegate :set, to: :selector
+            def set(*args); selector.set(*args); end
           end
           section :weekly, :gds_multiple_choice_option, 'questions.agree_with_earnings_details.queried_take_home_pay_period.weekly.label', exact: true do
             element :selector, :css, 'input'
-            delegate :set, to: :selector
+            def set(*args); selector.set(*args); end
           end
           element :error_not_a_number, :exact_error_text, 'errors.custom.queried_take_home_pay.not_a_number', exact: false
           delegate :set, to: :field
@@ -80,7 +79,7 @@ module ET3
         
         def set_for(user_persona)
           choose(factory_translate(user_persona.agree_with_earnings_details), name: 'earnings_and_benefits[agree_with_earnings_details]')
-          if t(user_persona.agree_with_earnings_details) == 'No'
+          if t(user_persona.agree_with_earnings_details) == t('questions.agree_with_earnings_details.no.label')
             queried_pay_before_tax.set(user_persona.queried_pay_before_tax)
             queried_pay_before_tax.monthly.set(user_persona.queried_pay_before_tax_period)
             queried_take_home_pay.set(user_persona.queried_take_home_pay)
@@ -105,7 +104,7 @@ module ET3
         element :error_too_long, :exact_error_text, 'errors.messages.too_long', exact: false
         def set_for(user_persona)
           choose(factory_translate(user_persona.agree_with_claimant_notice), name: 'earnings_and_benefits[agree_with_claimant_notice]')
-          if t(user_persona.agree_with_claimant_notice) == 'No'
+          if t(user_persona.agree_with_claimant_notice) == t('questions.agree_with_claimant_notice.no.label')
             disagree_claimant_notice_reason.set(user_persona.disagree_claimant_notice_reason)
           end
         end
@@ -127,7 +126,7 @@ module ET3
         element :error_too_long, :exact_error_text, 'errors.messages.too_long', exact: false
           def set_for(user_persona)
             choose(factory_translate(user_persona.agree_with_claimant_pension_benefits), name: 'earnings_and_benefits[agree_with_claimant_pension_benefits]')
-            if t(user_persona.agree_with_claimant_pension_benefits) == 'No'
+            if t(user_persona.agree_with_claimant_pension_benefits) == t('questions.agree_with_claimant_pension_benefits.no.label')
               disagree_claimant_pension_benefits_reason.set(user_persona.disagree_claimant_pension_benefits_reason)
             end
           end

@@ -20,7 +20,7 @@ module ET3
         element :error_inclusion, :exact_error_text, 'errors.messages.inclusion', exact: false
         def set_for(user_persona)
           choose(factory_translate(user_persona.defend_claim), name: 'response[defend_claim]')
-          if t(user_persona.defend_claim) == 'Yes'
+          if t(user_persona.defend_claim) == t('questions.defend_claim.yes.label')
             defend_claim_facts.set(user_persona.defend_claim_facts)
           end
         end

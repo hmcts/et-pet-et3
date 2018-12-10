@@ -119,7 +119,7 @@ module ET3
         element :error_not_a_number, :exact_error_text, 'errors.custom.organisation_more_than_one_site.not_a_number', exact: false
         def set_for(user_persona)
           choose(factory_translate(user_persona.organisation_more_than_one_site), name: 'respondents_detail[organisation_more_than_one_site]')
-          if t(user_persona.organisation_more_than_one_site) == 'yes'
+          if t(user_persona.organisation_more_than_one_site) == t('questions.organisation_more_than_one_site.yes.label')
             employment_at_site_number.set(user_persona.employment_at_site_number)
           end
         end

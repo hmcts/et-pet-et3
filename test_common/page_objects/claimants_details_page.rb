@@ -172,7 +172,7 @@ module ET3
         end
         def set_for(user_persona)
           choose(factory_translate(user_persona.agree_with_claimants_description_of_job_or_title), name: 'claimants_detail[agree_with_claimants_description_of_job_or_title]')
-          if (t(user_persona.agree_with_claimants_description_of_job_or_title) == 'No')
+          if (t(user_persona.agree_with_claimants_description_of_job_or_title) == t('questions.agree_with_claimants_description_of_job_or_title.no.label'))
             disagree_claimants_job_or_title.set(user_persona.disagree_claimants_job_or_title)
           end
         end

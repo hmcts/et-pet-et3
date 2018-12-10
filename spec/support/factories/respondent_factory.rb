@@ -45,6 +45,6 @@ FactoryBot.define do
     claim_information {Faker::Lorem.characters(4501)}
     email_receipt {""}
     disability {:"questions.disability.yes.label"}
-    disability_information {"Faker::Lorem.characters(351)"}
+    disability_information { Faker::Lorem.characters(351) }
   end
 end

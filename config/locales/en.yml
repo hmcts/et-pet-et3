@@ -329,9 +329,24 @@ en:
         caption: "Additional Information"
       submit: "Submit Form"
     form_submission:
-      header: WELSH - Response complete
+      page_title: Application Complete
+      header: Response complete
+      confirmation: Response Complete
+      reference_text: Your reference number, which should be quoted on all correspondence, is
+      thank_you: Thank you for your submission. It has been forwarded to the following office which will contact you in due course.
+      submission_date: "Submission Date: "
       valid_pdf_download: A PDF version of your completed form is now available for download
       invalid_pdf_download: Not quite ready yet - a PDF version of your completed form will be available for download shortly
+      pdf_help: "PDF (Portable Document Format) files can be read using applications such as: "
+      adobe_link: "Adobe's Acrobat Reader"
+      adobe_href: http://www.adobe.com/
+      contact_on: "Our national enquiry line can be contacted on:"
+      contact_engcy: "England and Wales: 0300 123 1024"
+      contact_sco: "Scotland: 0141 354 8574"
+      contact_minitext: "Minicom/Textphone: 01509 221564"
+      contact_general: They can also provide general procedural information about the employment tribunals.
+      return_link: Return to GOV.UK
+      return_href: https://gov.uk
     introduction:
       header: Introduction
       description: Complete and submit an ET3 response form when someone makes an employment tribunal claim against you.

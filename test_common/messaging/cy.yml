@@ -2,66 +2,66 @@ cy:
   questions:
     # Respondent's Details Page
     case_number:
-      label: WELSH - Case number
+      label: Rhif yr Achos
     name:
-      label: WELSH - Name of individual, company or organisation
+      label: Enw'r unigolyn, cwmni neu sefydliad
     contact:
-      label: WELSH - Name of contact (optional)
+      label: Enw’r sawl i gysylltu â hwy (dewisol)
     building_name:
-      label: WELSH - Building name or number
+      label: Enw neu rif yr adeilad
     street:
-      label: WELSH - Street
+      label: Stryd
     town:
-      label: WELSH - Town/City
+      label: Tref/Dinas
     county:
-      label: WELSH - County (optional)
+      label: Sir (dewisol)
     postcode:
-      label: WELSH - Postcode
+      label: Cod Post
     dx_number:
-      label: WELSH - Document exchange (DX) number (optional)
+      label: Rhif Cyfnewid Dogfennau (DX) (dewisol)
     contact_number:
-      label: WELSH - Contact number (optional)
+      label: Rhif cyswllt (dewisol)
     contact_mobile_number:
-      label: WELSH - Mobile number (optional)
+      label: Rhif ffôn symudol (dewisol)
     contact_preference:
-      label: WELSH - How would you prefer us to contact you? (optional)
+      label: Sut hoffech i ni gysylltu â chi? (dewisol)
       email:
-        label: WELSH - Email
-        input_label: WELSH - Email address
+        label: E-bost
+        input_label: Cyfeiriad e-bost
       post:
-        label: WELSH - Post
+        label: Post
       fax:
-        label: WELSH - Fax
-        input_label: WELSH - Fax number
+        label: Ffacs
+        input_label: Rhif ffacs
     organisation_employ_gb:
-      label: WELSH - How many people does this organisation employ in Great Britain? (optional)
+      label: Faint o bobl sy’n gyflogedig gan y sefydliad hwn ym Mhrydain Fawr? (dewisol)
     organisation_more_than_one_site:
-      label: WELSH - Does this organisation have more than one site in Great Britain?
+      label: A oes gan y sefydliad hwn fwy nag un safle ym Mhrydian Fawr?
       'yes':
-        label: WELSH - Yes
+        label: Oes
       'no':
-        label: WELSH - No
+        label: Nac oes
       employment_at_site_number:
-        label: WELSH - How many people are employed at the place where the claimant worked?
+        label: Faint o bobl sy’n gyflogedig ar y safle ble'r oedd yr hawlydd yn gweithio?
     # Claimant's Details Page
     claimants_name:
-      label: WELSH - Claimant's name (optional)
+      label: Enw'r hawlydd (dewisol)
     agree_with_early_conciliation_details:
-      label: WELSH - Do you agree with the details given by the claimant about Early Conciliation with Acas? (optional)
+      label: A ydych yn cytuno gyda'r manylion a roddwyd gan yr hawlydd ynghylch Cymodi Cynnar gydag Acas? (dewisol)
       'yes':
-        label: WELSH - Yes
+        label: Ia
       'no':
-        label: WELSH - No
+        label: Na
       disagree_conciliation_reason:
-        label: WELSH - Why do you disagree with the claimant? (optional)
+        label: Pam eich bod yn anghytuno â’r hawlydd? (dewisol)
     agree_with_employment_dates:
-      label: WELSH - Are the dates of employment given by the claimant correct?
+      label: A yw'r dyddiadau cyflogaeth a roddwyd gan yr hawlydd yn gywir?
       'yes':
-        label: WELSH - Yes
+        label: Ydw
       'no':
-        label: WELSH - No
+        label: Nac ydw
       employment_start:
-        label: WELSH - When their employment started
+        label: Pa bryd ddechreuodd eu cyflogaeth
         day:
           label: Day
         month:
@@ -69,7 +69,7 @@ cy:
         year:
           label: Year
       employment_end:
-        label: WELSH - When their employment ended or will end
+        label: Pa bryd ddaeth eu cyflogaeth i ben, neu y bydd yn dod i ben
         day:
           label: Day
         month:
@@ -77,231 +77,232 @@ cy:
         year:
           label: Year
       disagree_employment:
-        label: WELSH - Why do you disagree with the dates given by the claimant
+        label: Pam eich bod yn anghytuno â’r dyddiadau a roddwyd gan yr hawlydd
     continued_employment:
-      label: WELSH - Is their employment continuing? (optional)
+      label: A ydynt yn parhau mewn swydd? (dewisol)
       'yes':
-        label: WELSH - Yes
+        label: Ydw
       'no':
-        label: WELSH - No
+        label: Nac ydw
     agree_with_claimants_description_of_job_or_title:
-      label: WELSH - Is the claimant's description of their job or job title correct? (optional)
+      label: A yw disgrifiad yr hawlydd o’i swydd neu deitl ei swydd yn gywir? (dewisol)
       'yes':
-        label: WELSH - Yes
+        label: Ia
       'no':
-        label: WELSH - No
+        label: Na
       disagree_claimants_job_or_title:
-        label: WELSH - Please give the details you believe to be correct (optional)
+        label: Rhowch y manylion sy’n gywir yn eich barn chi (dewisol)
     # Earnings and Benefits Page
     agree_with_claimants_hours:
-      label: WELSH - Are the claimant's hours of work correct? (optional)
+      label: A yw oriau gwaith yr hawlydd yn gywir? (dewisol)
       'yes':
-        label: WELSH - Yes
+        label: Ia
       'no':
-        label: WELSH - No
+        label: Na
       queried_hours:
-        label: WELSH - Please enter the details you believe to be correct (optional)
+        label: Rhowch y manylion sy’n gywir yn eich barn chi (dewisol)
     agree_with_earnings_details:
-      label: WELSH - Are the earnings details given by the claimant correct? (optional)
+      label: A yw manylion yr enillion a roddwyd yr hawlydd yn gywir? (dewisol)
       'yes':
-        label: WELSH - Yes
+        label: Ia
       'no':
-        label: WELSH - No
+        label: Na
       queried_pay_before_tax:
-        label: WELSH - Pay before tax (optional)
+        label: Cyflog cyn treth (dewisol)
       queried_pay_before_tax_period:
-        label: WELSH - Pay before tax period (optional)
+        label: Cyflog cyn y cyfnod treth (dewisol)
         monthly:
-          label: WELSH - Monthly
+          label: Misol
         weekly:
-          label: WELSH - Weekly
+          label: Wythnosol
       queried_take_home_pay:
-        label: WELSH - Normal take-home pay (optional)
+        label: Tâl terfynol arferol (dewisol)
       queried_take_home_pay_period:
-        label: WELSH - Normal take-home pay period (optional)
+        label: Tâl terfynol arferol (dewisol)
         monthly:
-          label: WELSH - Monthly
+          label: Misol
         weekly:
-          label: WELSH - Weekly
+          label: Wythnosol
     agree_with_claimant_notice:
-      label: WELSH - Is the information given by the claimant correct about being paid for, or working a period of notice? (optional)
+      label: A yw’r wybodaeth a roddwyd gan yr hawlydd am gael tâl, neu weithio cyfnod o rybudd yn gywir? (dewisol)
       'yes':
-        label: WELSH - Yes
+        label: Oes
       'no':
-        label: WELSH - No
+        label: Nac oes
       disagree_claimant_notice_reason:
-        label: WELSH - Please give the details you believe to be correct below. If you didn't give notice or pay them instead of letting them work their notice please explain what happened and why (optional)
+        label: Rhowch y manylion sy’n gywir yn eich barn chi isod. Os na wnaethoch roi rhybudd iddo neu os na wnaethoch eu talu yn lle gadael iddo weithio eu cyfnod o rybudd, eglurwch beth ddigwyddodd a pham (dewisol)
     agree_with_claimant_pension_benefits:
-      label: WELSH - Are the details about pension and other benefits given by the claimant correct? (optional)
+      label: A yw’r manylion am bensiwn a buddion eraill a roddwyd gan yr hawlydd yn gywir? (dewisol)
       'yes':
-        label: WELSH - Yes
+        label: Ydw
       'no':
-        label: WELSH - No
+        label: Nac ydw
       disagree_claimant_pension_benefits_reason:
-        label: WELSH - Please give the details you believe to be correct. (optional)
+        label: Rhowch y manylion sy’n gywir yn eich barn chi isod. (dewisol)
     # Response Page
     defend_claim:
-      label: WELSH - Do you defend the claim?
+      label: A ydych yn gwrthwynebu'r hawliad?
       'yes':
-        label: WELSH - Yes
+        label: Ia
       'no':
-        label: WELSH - No
+        label: Na
       defend_claim_facts:
-        label: WELSH - Please set out the facts which you rely on to defend the claim (optional)
+        label: Rhowch y ffeithiau yr ydych yn dibynnu arnynt i amddiffyn yr hawliad hwn (dewisol)
     # Your Representatives Page
     have_representative:
-      label: WELSH - Do you have a representative? (optional)
+      label: A oes gennych gynrychiolydd? (dewisol)
       'yes':
-        label: WELSH - Yes
+        label: Oes
       'no':
-        label: WELSH - No
+        label: Nac oes
     # Your Representatives Details Page
     type_of_representative:
-      label: WELSH - Type of Representative
+      label: Math o Gynrychiolydd
       citizens_advice_bureau:
-        label: WELSH - Citizen's advice bureau
+        label: Canolfan Cyngor ar Bopeth
       free_representation_unit:
-        label: WELSH - Free representation unit
+        label: Uned Cynrychiolaeth am Ddim
       law_centre:
-        label: WELSH - Law centre
+        label: Canolfan y Gyfraith
       union:
-        label: WELSH - Union
+        label: Uned
       solicitor:
-        label: WELSH - Solicitor
+        label: Cyfreithiwr
       private_individual:
-        label: WELSH - Private individual
+        label: Unigolyn preifat
       trade_association:
-        label: WELSH - Trade association
+        label: Cymdeithasau Masnach
       other:
-        label: WELSH - Other
+        label: Arall
     representative_org_name:
-      label: WELSH - Name of the representative's organisation (optional)
+      label: Enw sefydliad y cynrychiolydd (dewisol)
     representative_name:
-      label: WELSH - Representative's name
+      label: Enw'r cynrychiolydd
     representative_building:
-      label: WELSH - Building name or number
+      label: Enw neu rif yr adeilad
     representative_street:
-      label: WELSH - Street
+      label: Stryd
     representative_town:
-      label: WELSH - Town/City
+      label: Tref/Dinas
     representative_county:
-      label: WELSH - County (optional)
+      label: Sir (dewisol)
     representative_postcode:
-      label: WELSH - Postcode
+      label: Cod Post
     representative_phone:
-      label: WELSH - Phone number (optional)
+      label: Rhif ffôn (dewisol)
     representative_mobile:
-      label: WELSH - Mobile number (optional)
+      label: Rhif ffôn symudol (dewisol)
     representative_dx_number:
-      label: WELSH - Document exchange (DX) number (optional)
+      label: Rhif Cyfnewid Dogfennau (DX) (dewisol)
     representative_reference:
-      label: WELSH - Reference (optional)
+      label: Cyfeirnod (dewisol)
     representative_contact_preference:
-      label: WELSH - How would you prefer us to contact your representative? (optional)
+      label: Sut hoffech i ni gysylltu â'ch cynrychiolydd? (dewisol)
       email:
-        label: WELSH - Email
-        input_label: WELSH - Email address
+        label: E-bost
+        input_label: Cyfeiriad e-bost
+      post:
+        label: Post
       fax:
-        label: WELSH - Fax
-        input_label: WELSH - Fax number
+        label: Ffacs
+        input_label: Rhif ffacs
     # Disability Page
     disability:
-      label: WELSH - Do you have a disability? (optional)
+      label: A oes gennych chi anabledd? (dewisol)
       'yes':
-        label: WELSH - Yes
+        label: Ydy
       'no':
-        label: WELSH - No
+        label: Nac ydy
       disability_information:
-        label: WELSH - It would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises
+        label: Byddai o gymorth i ni pe baech yn nodi beth yw'ch anabledd, a dweud pa gymorth, os o gwbl, fydd arnoch ei angen wrth i'ch hawliad fynd trwy'r system, gan gynnwys ar gyfer unrhyw wrandawiadau a gynhelir mewn adeilad y tribiwnlys
     # Employers Contract Claim Page
     make_employer_contract_claim:
-      label: WELSH - Do you wish to make an Employer Contract Claim? (optional)
+      label: Ydych chi eisiau gwneud Hawliad Contract y Cyflogwr? (dewisol)
       'yes':
-        label: WELSH - Yes
+        label: Oes
       'no':
-        label: WELSH - No
+        label: Nac oes
       claim_information:
-        label: WELSH - Please set out the background and details of your claim below, which should include all important dates (optional)
+        label: Rhowch gefndir a manylion eich hawliad isod. Dylech gynnwys pob dyddiad pwysig (dewisol)
     # Additional Informatation Page
     upload_additional_information:
-      label: WELSH - Please upload a file to provide any important additional information about your response which you have not been able to include so far (optional)
-      button: WELSH - Click here to upload a file
+      label: Llwythwch ffeil i fyny i roi unrhyw wybodaeth ychwanegol bwysig mewn perthynas â’ch ymateb nad ydych wedi’i chynnwys hyd yma (dewisol)
+      button: Cliciwch yma i lanlwytho ffeil rtf
     # Confirmation of Supplied Details Page
     email_receipt:
-      label: WELSH - Email Address (optional)
+      label: Cyfeiriad E-bost (dewisol)
     # Captions for Tables on CoSD Page
     table:
       caption: WELSH - Confirmation of Supplied Details
     confirmation_of_respondents_details_answers:
-      caption: WELSH - Respondent's Details
+      caption: Manylion yr Atebydd
     confirmation_of_claimants_details_answers:
-      caption: WELSH - Claimant's Details
+      caption: Manylion yr Hawlydd
     confirmation_of_earnings_and_benefits_answers:
-      caption: WELSH - Earnings and Benefits
+      caption: Enillion a Buddion
     confirmation_of_response_answers:
-      caption: WELSH - Response
+      caption: Ymateb
     confirmation_of_your_representative_answers:
-      caption: WELSH - Your Representative
+      caption: Eich Cynrychiolydd
     confirmation_of_your_representatives_details_answers:
-      caption: WELSH - Your Representative's Details
+      caption: Manylion eich Cynrychiolydd
     confirmation_of_disability_answers:
-      caption: WELSH - Disability
+      caption: Anabledd
     confirmation_of_employer_contract_claim_answers:
-      caption: WELSH - Employer Contract Claim
+      caption: Hawliad Contract y Cyflogwr
     confirmation_of_additional_information_answers:
-      caption: WELSH - Additional Information
+      caption: Gwybodaeth Ychwanegol
   errors:
-    header: WELSH - Please review the following
-    description: WELSH - Clicking on an error will navigate you directly to the question. Please correct these errors before continuing.
+    header: Adolygwch y canlynol
+    description: Bydd clicio ar gwall yn mynd â chi'n syth at y cwestiwn. \nCywirwch y gwallau hyn cyn parhau.
     messages:
-      blank: WELSH - can't be blank
-      contains_no_spaces: WELSH - must contain at least one space
-      contains_numbers: must not contain numbers - WELSH
-      invalid: WELSH - is invalid
-      invalid_email: WELSH - This is not a valid email address
-      invalid_name: WELSH - Please enter your full name
-      invalid_postcode: WELSH - This is not a valid UK postcode
-      invalid_phone_number: WELSH - This is not a valid phone number
-      not_a_number: WELSH - is not a number
-      too_long: WELSH - characters is the maximum allowed
-      inclusion: WELSH - Please select an option
+      blank: "Ni ddylai %{attribute} fod yn wag"
+      contains_no_spaces: "Rhaid i %{attribute} gynnwys blychau"
+      contains_numbers: "Ni ddylai %{attribute} gynnwys rhifau "
+      invalid: "Mae %{attribute} yn annilys "
+      invalid_email: "Nid yw'r cyfeiriad e-bost hwn yn ddilys "
+      invalid_name: "Nodwch eich enw llawn "
+      invalid_postcode: Nid yw hwn yn god post dilys yn y DU
+      invalid_phone_number: Nid yw hwn yn rhif ffôn dilys
+      not_a_number: "Nid yw %{attribute} yn rif "
+      too_long: "%{count} o nodau yw'r uchafswm a ganiateir "
+      inclusion: "Dewiswch opsiwn "
     custom:
       organisation_employ_gb:
-        not_a_number: WELSH - Please enter how many people the organisation employs in Great Britain as a number
+        not_a_number: Nodwch faint o bobl sy’n gyflogedig gan y sefydliad hwn ym Mhrydain Fawr fel rhif
       organisation_more_than_one_site:
-        not_a_number: WELSH - Please enter how many people are employed at the place where the claimant worked as a number
-        inclusion: WELSH - Please indicate whether the organisation has more than one site in Great Britain
+        inclusion: "A oes gan y sefydliad hwn fwy nag un safle ym Mhrydian Fawr? "
       queried_hours:
-        not_a_number: WELSH - Please enter the number of hours you believe to be correct as a number
+        not_a_number: Rhowch nifer yr oriau sy’n gywir yn eich barn chi fel rhif
       queried_pay_before_tax:
-        not_a_number: WELSH - Please enter the pay before tax as a number
+        not_a_number: "Nodwch eich cyflog cyn treth fel rhif "
       queried_take_home_pay:
-        not_a_number: WELSH - Please enter the normal take-home pay as a number
+        not_a_number: "Nodwch eich cyflog clir arferol fel rhif "
       type_of_representative:
-        inclusion: WELSH - Please select the type of your representative
+        inclusion: "Dewiswch sut fath o gynrychiolydd sydd gennych "
   links:
     confirmation_of_supplied_details:
       edit_page: WELSH - Edit answers on this page
     form_submission:
-      invalid_pdf_download: WELSH - Not quite ready yet - a PDF version of your completed form will be available for download shortly
-      valid_pdf_download: WELSH - A PDF version of your completed form is now available for download
+      invalid_pdf_download: Ddim yn barod at hyn o bryd - bydd fersiwn PDF o'ch ffurflen at gael i'w lawrlwytho maes o law
+      valid_pdf_download: Mae fersiwn PDF o'ch ffurflen ar gael i'w lawrlwytho
   components:
     save_and_continue_button: WELSH - Save and continue
     single_choice_option_section:
       'yes': WELSH - Yes
       'no': WELSH - No
     sidebar:
-      header: WELSH - Other Relevant Links
-      claim_link: WELSH - How to make a claim
-      claim_href: WELSH - https://www.gov.uk/employment-tribunals
-      response_link: WELSH - How to make a response
-      response_href: WELSH - https://www.gov.uk/being-taken-to-employment-tribunal-by-employee
-      contact_link: WELSH - How to contact us
-      contact_href: WELSH - https://www.gov.uk/guidance/employment-tribunal-offices-and-venues
-      download_link: WELSH - Download a blank copy of this form
-      download_href: WELSH - https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/719457/et3-eng.pdf
-      more_category_link: WELSH - More from the Working, jobs and pensions category
-      more_category_href: WELSH - http://gov.uk/browse/working
+      header: "Dolenni perthnasol eraill "
+      claim_link: "Sut i wneud hawliad "
+      claim_href: "https://www.gov.uk/employment-tribunals"
+      response_link: Sut i ymateb
+      response_href: "https://www.gov.uk/being-taken-to-employment-tribunal-by-employee"
+      contact_link: "Sut i gysylltu â ni "
+      contact_href: "https://www.gov.uk/guidance/employment-tribunal-offices-and-venues"
+      download_link: "Lawrlwytho copi gwag o'r ffurflen hon "
+      download_href: "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/719457/et3-eng.pdf"
+      more_category_link: "Mwy o'r categori gweithio, swyddi a phensiynau "
+      more_category_href: "http://gov.uk/browse/working"
     confirmation_of_supplied_details:
       remove_file_link: WELSH - Remove file
   introduction:
@@ -348,3 +349,11 @@ cy:
     receipt_description: WELSH - Please enter your email address so that we can provide you with a receipt of your transaction.
     submit_guidance: 'WELSH - Pressing "Submit Form" at the foot of the page will send the details confirmed below for processing.'
     submit: WELSH - Submit Form
+  submission:
+    confirmation: WELSH - Response complete
+    reference: 142000000100
+    thank_you: WELSH - Thank you for your submission. It has been forwarded to the following office which will contact you in due course.
+    office_contact: "Alexandra House, 14-22 The Parsonage, Manchester, M3 2JA"
+    date: "Submission Date:"
+    return_link: WELSH - Return to GOV.UK
+    return_href: https://gov.uk

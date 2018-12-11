@@ -321,9 +321,24 @@ cy:
         caption: "Gwybodaeth Ychwanegol "
       submit: "WELSH - Submit Form"
     form_submission:
-      header: "CYMRAEG - Ymateb wedi'i gwblhau "
+      page_title: WELSH - Application Complete
+      header: "Ymateb wedi'i gwblhau"
+      confirmation: WELSH - Response Complete
+      reference_text: WELSH - Your reference number, which should be quoted on all correspondence, is
+      thank_you: WELSH - Thank you for your submission. It has been forwarded to the following office which will contact you in due course.
+      submission_date: "WELSH - Submission Date: "
       valid_pdf_download: Mae fersiwn PDF o'ch ffurflen ar gael i'w lawrlwytho
       invalid_pdf_download: Ddim yn barod at hyn o bryd - bydd fersiwn PDF o'ch ffurflen at gael i'w lawrlwytho maes o law
+      pdf_help: "WELSH - PDF (Portable Document Format) files can be read using applications such as: "
+      adobe_link: "WELSH - Adobe's Acrobat Reader"
+      adobe_href: http://www.adobe.com/
+      contact_on: "WELSH - Our national enquiry line can be contacted on:"
+      contact_engcy: "WELSH - England and Wales: 0300 123 1024"
+      contact_sco: "WELSH - Scotland: 0141 354 8574"
+      contact_minitext: "WELSH - Minicom/Textphone: 01509 221564"
+      contact_general: WELSH - They can also provide general procedural information about the employment tribunals.
+      return_link: WELSH - Return to GOV.UK
+      return_href: https://gov.uk
     introduction:
       header: WELSH - Introduction
       description: WELSH - Complete and submit an ET3 response form when someone makes an employment tribunal claim against you.

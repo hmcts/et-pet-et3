@@ -348,3 +348,11 @@ en:
     receipt_description: Please enter your email address so that we can provide you with a receipt of your transaction.
     submit_guidance: 'Pressing "Submit Form" at the foot of the page will send the details confirmed below for processing.'
     submit: Submit Form
+  submission:
+    confirmation: Response complete
+    reference: 142000000100
+    thank_you: Thank you for your submission. It has been forwarded to the following office which will contact you in due course.
+    office_contact: "Alexandra House, 14-22 The Parsonage, Manchester, M3 2JA"
+    date: "Submission Date:"
+    return_link: Return to GOV.UK
+    return_href: https://gov.uk

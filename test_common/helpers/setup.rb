@@ -77,7 +77,7 @@ module ET3
       # Your Representative Page
       def answer_representative
         user = @representative
-        if user.have_representative == 'Yes'
+        if t(user.have_representative) == t('questions.have_representative.yes.label')
           your_representative_page.have_representative_question.set_for(user)
           your_representative_page.next
           your_representatives_details_page.type_of_representative_question.set_for(user)

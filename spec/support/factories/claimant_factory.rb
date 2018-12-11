@@ -22,7 +22,7 @@ FactoryBot.define do
     disagree_claimant_notice_reason {"lorem ipsum notice reason"}
     agree_with_claimant_pension_benefits {:"questions.agree_with_claimant_pension_benefits.no.label"}
     disagree_claimant_pension_benefits_reason {"lorem ipsum claimant pension"}
-    defend_claim {:"questions.defend_claim.no.label"}
+    defend_claim {:"questions.defend_claim.yes.label"}
     defend_claim_facts {"lorem ipsum defence"}
     agree_with_employment_dates {:"questions.agree_with_employment_dates.no.label"}
     employment_start {"01/01/2017"}

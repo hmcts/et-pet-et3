@@ -15,7 +15,7 @@ FactoryBot.define do
     alternative_telephone_number {"02222 654321"}
     email_address  {"sivvoy.taing@hmcts.net"}
     dx_number  {"dx1234567890"}
-    have_representative {"Yes"}
+    have_representative {:"questions.have_representative.yes.label"}
     representative_mobile {"07987654321"}
     representative_reference {"Rep Ref"}
     representative_contact_preference {"Fax"}

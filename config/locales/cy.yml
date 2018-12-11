@@ -270,6 +270,8 @@ cy:
       error_header: "Adolygwch y canlynol "
       error_description: "Bydd clicio ar wall yn mynd â chi'n syth at y cwestiwn. \nCywirwch y gwallau hyn cyn parhau."
       save_and_continue_button: WELSH - Save and continue
+      language: English
+      locale: ""
     single_choice_option_section:
       'yes': "Ia"
       'no': "Na"

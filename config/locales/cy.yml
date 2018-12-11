@@ -272,7 +272,7 @@ cy:
       error_description: Bydd clicio ar wall yn mynd â chi'n syth at y cwestiwn. Cywirwch y gwallau hyn cyn parhau.
       save_and_continue_button: Cadw a pharhau
       language: Cymraeg
-      locale: cy
+      locale: ""
     single_choice_option_section:
       'yes': "Ia"
       'no': "Na"

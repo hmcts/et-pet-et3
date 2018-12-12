@@ -18,14 +18,14 @@ FactoryBot.define do
     have_representative {:"questions.have_representative.yes.label"}
     representative_mobile {"07987654321"}
     representative_reference {"Rep Ref"}
-    representative_contact_preference {"Fax"}
+    representative_contact_preference {:"questions.representative_contact_preference.fax.label"}
     representative_fax {"0207 345 6789"}
   end
 
   trait :representative_invalid do
     type {nil}
     organisation_name {"J4ne D0e"}
-    name {nil}
+    name {'J4ne D0e'}
     building {nil}
     street {nil}
     locality {nil}
@@ -38,7 +38,7 @@ FactoryBot.define do
     have_representative {:"questions.have_representative.no.label"}
     representative_mobile {"string"}
     representative_reference {""}
-    representative_contact_preference {"Email"}
+    representative_contact_preference {:"questions.representative_contact_preference.email.label"}
     representative_fax {"string"}
     employer_contract_claim {:"questions.employer_contract_claim.yes.label"}
   end

@@ -2,6 +2,7 @@ module ET3
   module Test
     class RespondentsDetailsPage < BasePage
       set_url '/respond/respondents_details'
+      element :header, :content_header, 'respondents_details.header'
       element :error_header, :error_titled, 'errors.header', exact: true
       section :case_number_question, :question_labelled, 'questions.case_number.label', exact: false do
         element :field, :css, "input"
@@ -124,7 +125,7 @@ module ET3
           end
         end
       end
-      element :continue_button, :button, "Save and continue"
+      element :continue_button, :submit_text, 'components.save_and_continue_button'
       def next
         continue_button.click
       end

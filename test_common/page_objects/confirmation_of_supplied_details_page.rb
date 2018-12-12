@@ -8,7 +8,7 @@ module ET3
         element :error_invalid_email, :exact_error_text, 'errors.messages.invalid_email', exact: false
         delegate :set, to: :field
       end
-      
+      element :submit_guidance, :content_header, 'confirmation.submit_guidance'
       section :confirmation_of_respondents_details_answers, :table_captioned, 'questions.confirmation_of_respondents_details_answers.caption', exact: true do
         section :case_number_row, :table_row_with_td_labelled, 'questions.case_number.label', exact: true do
           element :case_number_answer, :return_answer
@@ -231,7 +231,7 @@ module ET3
         element :edit_page_link, :link_named, 'links.confirmation_of_supplied_details.edit_page', exact: true
       end
       
-      element :continue_button, :button, "Submit Form"
+      element :continue_button, :submit_text, 'confirmation.submit'
       def submit_form
         continue_button.click
       end

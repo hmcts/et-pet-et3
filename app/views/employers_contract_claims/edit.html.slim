@@ -1,8 +1,8 @@
-- content_for :form_page_title, "Employer Contract Claim"
+- content_for :form_page_title, t('components.employers_contract_claim.header')
 - content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
 .content-body.employers-contract-claim
 
-  p Only available in limited circumstances where the Claimant has made a contract claim (see guidance) 
+  p = t('components.employers_contract_claim.description')
 
   = form_for @employers_contract_claim, url: employers_contract_claim_path, method: :patch  do |f|
 
@@ -18,4 +18,4 @@
         = b.radio_button(:make_employer_contract_claim, true) + b.label(:make_employer_contract_claim, t('helpers.label.employers_contract_claim.make_employer_contract_claim.choices.yes'), value: true)
       #make_claim_info.panel.panel-border-narrow.js-hidden
         = f.text_area :claim_information, size: "70x30"    
-    = f.submit("Save and continue", class: 'button')
+    = f.submit(t('components.common.save_and_continue_button'), class: 'button')

@@ -3,6 +3,8 @@ module ET3
     class ClaimantsDetailsPage < BasePage
       set_url '/respond/claimants_details'
 
+      element :header, :content_header, 'claimants_details.header'
+
       element :error_header, :error_titled, 'errors.header', exact: true
       # TODO - Claimant's Details
       # Claimant's name (optional)
@@ -177,7 +179,7 @@ module ET3
           end
         end
       end
-      element :continue_button, :button, "Save and continue"
+      element :continue_button, :submit_text, 'components.save_and_continue_button'
       def next
         continue_button.click
       end

@@ -2,6 +2,7 @@ module ET3
   module Test
     class DisabilityPage < BasePage
       set_url '/respond/disability'
+      element :header, :content_header, 'disability.header'
       element :error_header, :error_titled, 'errors.header', exact: true
       section :disability_question, :single_choice_option, 'questions.disability.label', exact: false do
         include ET3::Test::I18n
@@ -24,7 +25,7 @@ module ET3
           end
         end
       end
-      element :continue_button, :button, "Save and continue"
+      element :continue_button, :submit_text, 'components.save_and_continue_button'
       def next
         continue_button.click
       end

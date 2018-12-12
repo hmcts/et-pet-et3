@@ -2,9 +2,8 @@ module ET3
   module Test
     class EarningsAndBenefitsPage < BasePage
       set_url '/respond/earnings_and_benefits'
-
+      element :header, :content_header, 'earnings_and_benefits.header'
       element :error_header, :error_titled, 'errors.header', exact: true
-
       # TODO - Earnings and Benefits
       # Are the claimant's hours of work correct? (optional)
       section :agree_with_claimants_hours_question, :single_choice_option, 'questions.agree_with_claimants_hours.label', exact: false do
@@ -131,7 +130,7 @@ module ET3
             end
           end
       end
-      element :continue_button, :button, "Save and continue"
+      element :continue_button, :submit_text, 'components.save_and_continue_button'
       def next
         continue_button.click
       end

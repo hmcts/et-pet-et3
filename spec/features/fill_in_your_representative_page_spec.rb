@@ -34,7 +34,8 @@ RSpec.feature "Fill in Your Representative Page", js: true do
     confirmation_of_supplied_details_page.load(locale: current_locale_parameter)
     confirmation_of_supplied_details_page.confirmation_of_your_representative_answers.edit_page_link.click
 
-    expect(your_representative_page).to be_displayed
+    expect(your_representative_page).to have_header
     # expect(your_representative_page.have_representative_question.get).to eql @representative.have_representative
+
   end
 end

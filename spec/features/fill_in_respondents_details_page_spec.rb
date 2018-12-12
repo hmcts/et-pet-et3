@@ -23,6 +23,7 @@ RSpec.feature "Fill in Respondents Details Page", js: true do
     respondents_details_page.organisation_employ_gb_question.set(user.organisation_employ_gb)
     respondents_details_page.next
 
+    expect(respondents_details_page).to have_header
     expect(respondents_details_page).to have_error_header
     expect(respondents_details_page.case_number_question).to have_error_invalid
     expect(respondents_details_page.name_question).to have_error_blank
@@ -45,6 +46,7 @@ RSpec.feature "Fill in Respondents Details Page", js: true do
     user = @respondent
 
     expect(respondents_details_page).to be_displayed
+    expect(respondents_details_page).to have_header
     expect(respondents_details_page.case_number_question.field.value).to eql user.case_number
     expect(respondents_details_page.name_question.field.value).to eql user.name
     expect(respondents_details_page.contact_question.field.value).to eql user.contact

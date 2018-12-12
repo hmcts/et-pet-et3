@@ -14,6 +14,7 @@ RSpec.feature "Fill in Earnings and Benefits Page", js: true do
     given_invalid_data
     answer_earnings_and_benefits
 
+    expect(earnings_and_benefits_page).to have_header
     expect(earnings_and_benefits_page).to have_error_header
     expect(earnings_and_benefits_page.agree_with_claimants_hours_question).to have_error_not_a_number
     expect(earnings_and_benefits_page.agree_with_earnings_details_question.queried_pay_before_tax).to have_error_not_a_number

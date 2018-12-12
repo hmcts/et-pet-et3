@@ -13,6 +13,7 @@ RSpec.feature "Fill in Employers Contract Claim Page", js: true do
     employers_contract_claim_page.load(locale: current_locale_parameter)
     given_invalid_data
     answer_employers_contract_claim
+
     expect(employers_contract_claim_page).to have_error_header
     expect(employers_contract_claim_page.make_employer_contract_claim_question).to have_error_too_long
   end

@@ -2,6 +2,7 @@ module ET3
   module Test
     class ResponsePage < BasePage
       set_url '/respond/response'
+      element :header, :content_header, 'response.header'
       element :error_header, :error_titled, 'errors.header', exact: true
       section :defend_claim_question, :single_choice_option, 'questions.defend_claim.label', exact: false do
         include ET3::Test::I18n
@@ -25,7 +26,7 @@ module ET3
           end
         end
       end
-      element :continue_button, :button, "Save and continue"
+      element :continue_button, :submit_text, 'components.save_and_continue_button'
       def next
         continue_button.click
       end

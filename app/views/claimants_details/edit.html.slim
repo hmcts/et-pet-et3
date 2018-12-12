@@ -1,4 +1,4 @@
-- content_for :form_page_title, "Claimant's Details"
+- content_for :form_page_title, t('components.claimants_details.header')
 - content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
 .content-body.claimants-details
 
@@ -42,4 +42,4 @@
       #disagree_claimants_job_or_title.panel.panel-border-narrow.js-hidden
         = f.text_area :disagree_claimants_job_or_title
 
-    = f.submit("Save and continue", class: 'button')
+    = f.submit(t('components.common.save_and_continue_button'), class: 'button')

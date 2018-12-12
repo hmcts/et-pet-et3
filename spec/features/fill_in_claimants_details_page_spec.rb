@@ -15,6 +15,7 @@ RSpec.feature "Fill in Claimants Details Page", js: true do
     answer_claimants_details
     claimants_details_page.next
 
+    expect(claimants_details_page).to have_header
     expect(claimants_details_page).to have_error_header
     expect(claimants_details_page.claimants_name_question).to have_error_contains_numbers
     expect(claimants_details_page.agree_with_employment_dates_question.employment_start).to have_error_blank
@@ -41,6 +42,7 @@ RSpec.feature "Fill in Claimants Details Page", js: true do
     # expect(claimants_details_page.continued_employment_question.get).to eql @claimant.continued_employment
     # expect(claimants_details_page.agree_with_claimants_description_of_job_or_title_question.get).to eql @claimant.agree_with_claimants_description_of_job_or_title
     expect(claimants_details_page.agree_with_claimants_description_of_job_or_title_question.disagree_claimants_job_or_title.text).to eql @claimant.disagree_claimants_job_or_title
+
   end
 end
 

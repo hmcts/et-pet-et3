@@ -12,7 +12,7 @@ module ET3
       def given_invalid_data
         @claimant = FactoryBot.create(:claimant, :claimant_invalid)
         @respondent = FactoryBot.create(:respondent, :respondent_invalid, case_number: '9954321xxx')
-        @representative = FactoryBot.create(:representative, :representative_valid) 
+        @representative = FactoryBot.create(:representative, :representative_invalid) 
       end
 
       def start_a_new_et3_response

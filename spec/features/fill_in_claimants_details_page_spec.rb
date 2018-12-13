@@ -3,14 +3,14 @@ RSpec.feature "Fill in Claimants Details Page", js: true do
   let(:earnings_and_benefits_page) { ET3::Test::EarningsAndBenefitsPage.new }
 
   scenario "correctly will enable user to continue to next page" do
-    claimants_details_page.load
+    claimants_details_page.load(locale: current_locale_parameter)
     given_i_am
     answer_claimants_details
     expect(earnings_and_benefits_page).to be_displayed
   end
 
   scenario "incorrectly will provide many errors" do
-    claimants_details_page.load
+    claimants_details_page.load(locale: current_locale_parameter)
     given_invalid_data
     answer_claimants_details
     claimants_details_page.next
@@ -24,11 +24,11 @@ RSpec.feature "Fill in Claimants Details Page", js: true do
   end
 
   scenario "correctly will enable user to check answers and return to edit them" do
-    claimants_details_page.load
+    claimants_details_page.load(locale: current_locale_parameter)
     given_i_am
     answer_claimants_details
     claimants_details_page.next
-    confirmation_of_supplied_details_page.load
+    confirmation_of_supplied_details_page.load(locale: current_locale_parameter)
     confirmation_of_supplied_details_page.confirmation_of_claimants_details_answers.edit_page_link.click
 
     expect(claimants_details_page).to be_displayed

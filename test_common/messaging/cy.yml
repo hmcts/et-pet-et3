@@ -5,11 +5,11 @@ cy:
   questions:
     # Respondent's Details Page
     case_number:
-      label: Rhif yr Achos
+      label: "Rhif yr Achos"
     name:
       label: Enw'r unigolyn, cwmni neu sefydliad
     contact:
-      label: Enw’r sawl i gysylltu â hwy (dewisol)
+      label: Enw’r cyswllt (dewisol)
     building_name:
       label: Enw neu rif yr adeilad
     street:
@@ -19,7 +19,7 @@ cy:
     county:
       label: Sir (dewisol)
     postcode:
-      label: Cod Post
+      label: Cod post
     dx_number:
       label: Rhif Cyfnewid Dogfennau (DX) (dewisol)
     contact_number:
@@ -37,34 +37,34 @@ cy:
         label: Ffacs
         input_label: Rhif ffacs
     organisation_employ_gb:
-      label: Faint o bobl sy’n gyflogedig gan y sefydliad hwn ym Mhrydain Fawr? (dewisol)
+      label: "Faint o bobl sy’n gyflogedig gan y sefydliad hwn ym Mhrydain Fawr? (dewisol)"
     organisation_more_than_one_site:
-      label: A oes gan y sefydliad hwn fwy nag un safle ym Mhrydian Fawr?
+      label: "A oes gan y sefydliad hwn fwy nag un safle ym Mhrydain Fawr?"
       'yes':
         label: Oes
       'no':
         label: Nac oes
       employment_at_site_number:
-        label: Faint o bobl sy’n gyflogedig ar y safle ble'r oedd yr hawlydd yn gweithio?
+        label: "Faint o bobl sy’n gyflogedig ar y safle ble'r oedd yr hawlydd yn gweithio?"
     # Claimant's Details Page
     claimants_name:
       label: Enw'r hawlydd (dewisol)
     agree_with_early_conciliation_details:
-      label: A ydych yn cytuno gyda'r manylion a roddwyd gan yr hawlydd ynghylch Cymodi Cynnar gydag Acas? (dewisol)
+      label: "A ydych chi'n cytuno gyda'r manylion a roddodd yr hawlydd ynghylch Cymodi Cynnar gydag Acas? (dewisol)"
       'yes':
         label: Ia
       'no':
         label: Na
       disagree_conciliation_reason:
-        label: Pam eich bod yn anghytuno â’r hawlydd? (dewisol)
+        label: "Pam yr ydych yn anghytuno â’r hawlydd? (dewisol)"
     agree_with_employment_dates:
-      label: A yw'r dyddiadau cyflogaeth a roddwyd gan yr hawlydd yn gywir?
+      label: "A yw'r dyddiadau cyflogaeth a roddwyd gan yr hawlydd yn gywir?"
       'yes':
         label: Ydw
       'no':
         label: Nac ydw
       employment_start:
-        label: Pa bryd ddechreuodd eu cyflogaeth
+        label: Pa bryd ddechreuodd ei gyflogaeth
         day:
           label: Day
         month:
@@ -72,7 +72,7 @@ cy:
         year:
           label: Year
       employment_end:
-        label: Pa bryd ddaeth eu cyflogaeth i ben, neu y bydd yn dod i ben
+        label: "Pa bryd ddaeth ei gyflogaeth i ben, neu y bydd yn dod i ben"
         day:
           label: Day
         month:
@@ -82,19 +82,19 @@ cy:
       disagree_employment:
         label: Pam eich bod yn anghytuno â’r dyddiadau a roddwyd gan yr hawlydd
     continued_employment:
-      label: A ydynt yn parhau mewn swydd? (dewisol)
+      label: "A yw'n parhau i fod mewn swydd? (dewisol)"
       'yes':
         label: Ydw
       'no':
         label: Nac ydw
     agree_with_claimants_description_of_job_or_title:
-      label: A yw disgrifiad yr hawlydd o’i swydd neu deitl ei swydd yn gywir? (dewisol)
+      label: "A yw disgrifiad yr hawlydd o’i swydd neu deitl ei swydd yn gywir? (dewisol)"
       'yes':
         label: Ia
       'no':
         label: Na
       disagree_claimants_job_or_title:
-        label: Rhowch y manylion sy’n gywir yn eich barn chi (dewisol)
+        label: "Rhowch y manylion sy’n gywir yn eich barn chi (dewisol)"
     # Earnings and Benefits Page
     agree_with_claimants_hours:
       label: A yw oriau gwaith yr hawlydd yn gywir? (dewisol)
@@ -290,10 +290,10 @@ cy:
       invalid_pdf_download: Ddim yn barod at hyn o bryd - bydd fersiwn PDF o'ch ffurflen at gael i'w lawrlwytho maes o law
       valid_pdf_download: Mae fersiwn PDF o'ch ffurflen ar gael i'w lawrlwytho
   components:
-    save_and_continue_button: WELSH - Save and continue
+    save_and_continue_button: "Cadw a pharhau"
     single_choice_option_section:
-      'yes': WELSH - Yes
-      'no': WELSH - No
+      'yes': Oes
+      'no': Nac oes
     sidebar:
       header: "Dolenni perthnasol eraill "
       claim_link: "Sut i wneud hawliad "

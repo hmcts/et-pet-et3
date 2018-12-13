@@ -36,7 +36,7 @@ module ET3
       #
       # @return [Symbol] The current locale
       def current_locale
-        ENV.fetch('TEST_LOCALE', 'en').to_sym
+        Thread.current[:et3_test_current_locale] ||= ENV.fetch('TEST_LOCALE', 'en').to_sym
       end
 
       alias t translate
@@ -57,6 +57,14 @@ module ET3
 
       def t(*args)
         ::ET3::Test::Messaging.instance.t(*args)
+      end
+
+      def current_locale
+        ::ET3::Test::Messaging.instance.current_locale
+      end
+
+      def current_locale_parameter
+        ::ET3::Test::Messaging.instance.current_locale == :cy ? :cy : nil
       end
 
       def factory_translate(value, *args)

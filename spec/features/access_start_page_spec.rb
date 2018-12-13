@@ -4,7 +4,7 @@ RSpec.feature "Access Start Page", js: true do
   let(:respondents_details_page) { ET3::Test::RespondentsDetailsPage.new }
 
   scenario "user will be able to read text" do
-    start_page.load(locale: current_locale_parameter)
+    load_landing_page
 
     expect(start_page).to have_header
     expect(start_page).to have_description
@@ -29,7 +29,7 @@ RSpec.feature "Access Start Page", js: true do
   end
 
   scenario "user will be able to start form" do
-    start_page.load(locale: current_locale_parameter)
+    start_page.load
 
     start_page.next
 

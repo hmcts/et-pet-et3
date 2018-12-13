@@ -2,6 +2,12 @@ module ET3
   module Test
     class StartPage < BasePage
       set_url '/'
+      section :switch_language, '.switch-language' do
+        include ::ET3::Test::I18n
+        element :language, :link_named, 'switch.language'
+        element :welsh_link, :link_or_button, t('switch.language', locale: :en)
+        element :english_link, :link_or_button, t('switch.language', locale: :cy)
+      end
       element :header, :content_header, "introduction.header"
       element :description, :element_with_text, "introduction.description"
       section :what_you_need, :wrapper_headered, "introduction.what_title" do
@@ -26,6 +32,14 @@ module ET3
       element :start_button, :css, ".button.button-start"
       def next
         start_button.click
+      end
+
+      def switch_to_welsh
+        switch_language.welsh_link.click
+      end
+
+      def switch_to_english
+        switch_language.english_link.click
       end
     end
   end

@@ -15,8 +15,17 @@ module ET3
         @representative = FactoryBot.create(:representative, :representative_invalid) 
       end
 
+      def load_landing_page(in_language: ::ET3::Test::Messaging.instance.current_locale)
+        start_page.load
+        case in_language
+          when :cy then start_page.switch_to_welsh
+          when :en then nil
+          else raise "We only support languages en and cy - #{in_language} is not supported"
+        end
+      end
+
       def start_a_new_et3_response
-        start_page.load(locale: current_locale_parameter)
+        load_landing_page
         start_page.next
       end
 

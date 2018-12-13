@@ -1,4 +1,7 @@
 cy:
+  switch:
+    language: English
+    locale: en
   questions:
     # Respondent's Details Page
     case_number:

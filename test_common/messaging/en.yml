@@ -1,4 +1,7 @@
 en:
+  switch:
+    language: Cymraeg
+    locale: cy
   questions:
     # Respondent's Details Page
     case_number:

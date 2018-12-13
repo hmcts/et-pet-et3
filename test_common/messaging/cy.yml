@@ -97,51 +97,51 @@ cy:
         label: "Rhowch y manylion sy’n gywir yn eich barn chi (dewisol)"
     # Earnings and Benefits Page
     agree_with_claimants_hours:
-      label: A yw oriau gwaith yr hawlydd yn gywir? (dewisol)
+      label: "A yw oriau gwaith yr hawlydd yn gywir? (dewisol)"
       'yes':
         label: Ia
       'no':
         label: Na
       queried_hours:
-        label: Rhowch y manylion sy’n gywir yn eich barn chi (dewisol)
+        label: "Nodwch y manylion sy’n gywir yn eich barn chi (dewisol)"
     agree_with_earnings_details:
-      label: A yw manylion yr enillion a roddwyd yr hawlydd yn gywir? (dewisol)
+      label: "A yw manylion yr enillion a roddwyd gan yr hawlydd yn gywir? (dewisol)"
       'yes':
         label: Ia
       'no':
         label: Na
       queried_pay_before_tax:
-        label: Cyflog cyn treth (dewisol)
+        label: "Tâl cyn treth (dewisol)"
       queried_pay_before_tax_period:
-        label: Cyflog cyn y cyfnod treth (dewisol)
+        label: "Tâl cyn cyfnod treth (dewisol)"
         monthly:
           label: Misol
         weekly:
           label: Wythnosol
       queried_take_home_pay:
-        label: Tâl terfynol arferol (dewisol)
+        label: "Tâl terfynol arferol (dewisol)"
       queried_take_home_pay_period:
-        label: Tâl terfynol arferol (dewisol)
+        label: "Cyfnod tâl terfynol arferol (dewisol)"
         monthly:
           label: Misol
         weekly:
           label: Wythnosol
     agree_with_claimant_notice:
-      label: A yw’r wybodaeth a roddwyd gan yr hawlydd am gael tâl, neu weithio cyfnod o rybudd yn gywir? (dewisol)
+      label: "A yw’r wybodaeth a roddwyd gan yr hawlydd am gael tâl, neu weithio cyfnod o rybudd yn gywir? (dewisol)"
       'yes':
         label: Oes
       'no':
         label: Nac oes
       disagree_claimant_notice_reason:
-        label: Rhowch y manylion sy’n gywir yn eich barn chi isod. Os na wnaethoch roi rhybudd iddo neu os na wnaethoch eu talu yn lle gadael iddo weithio eu cyfnod o rybudd, eglurwch beth ddigwyddodd a pham (dewisol)
+        label: "Rhowch y manylion sy’n gywir yn eich barn chi isod. Os na wnaethoch roi rhybudd iddo neu os na wnaethoch dalu iddo yn hytrach na gadael iddo weithio ei gyfnod o rybudd, eglurwch beth ddigwyddodd a pham (dewisol)"
     agree_with_claimant_pension_benefits:
-      label: A yw’r manylion am bensiwn a buddion eraill a roddwyd gan yr hawlydd yn gywir? (dewisol)
+      label: "A yw’r manylion am bensiwn a buddion eraill a roddwyd gan yr hawlydd yn gywir? (dewisol)"
       'yes':
         label: Ydw
       'no':
         label: Nac ydw
       disagree_claimant_pension_benefits_reason:
-        label: Rhowch y manylion sy’n gywir yn eich barn chi isod. (dewisol)
+        label: "Rhowch y manylion sy’n gywir yn eich barn chi. (dewisol)"
     # Response Page
     defend_claim:
       label: A ydych yn gwrthwynebu'r hawliad?

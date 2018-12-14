@@ -258,13 +258,6 @@ en:
     header: Please review the following
     description: Clicking on an error will navigate you directly to the question. Please correct these errors before continuing.
     messages:
-      claimants_details:
-        header_start_date_error: When their employment started can't be blank
-        header_end_date_error: When their employment ended or will end can't be blank
-        contains_numbers: Claimant's name must not contain numbers
-        employment_start_date_blank: Employment start can't be blank
-        employment_end_blank: Employment end can't be blank
-        disagree_dates: Why do you disagree with the dates given by the claimant can't be blank
       blank: can't be blank
       contains_no_spaces: must contain at least one space
       contains_numbers: must not contain numbers

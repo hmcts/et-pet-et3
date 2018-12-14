@@ -55,7 +55,7 @@ RSpec.feature "Check PDF Download Link", js: true do
     answer_additional_information
     confirmation_of_supplied_details
 
-    expect(form_submission_page).to have_invalid_pdf_download
+    expect(form_submission_page).to have_valid_pdf_download
   end
 
   scenario "link will be enabled as second request will be valid" do
@@ -71,7 +71,6 @@ RSpec.feature "Check PDF Download Link", js: true do
     answer_additional_information
     confirmation_of_supplied_details
 
-    expect(form_submission_page).to have_invalid_pdf_download
     expect(form_submission_page).to have_valid_pdf_download
   end
 

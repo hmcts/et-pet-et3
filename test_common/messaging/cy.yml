@@ -260,9 +260,16 @@ cy:
     header: Adolygwch y canlynol
     description: Bydd clicio ar gwall yn mynd â chi'n syth at y cwestiwn. \nCywirwch y gwallau hyn cyn parhau.
     messages:
+      claimants_details:
+        header_start_date_error: Ni all Pa bryd ddechreuodd ei gyflogaeth fod yn wag
+        header_end_date_error: Ni all Pa bryd ddaeth ei gyflogaeth i ben, neu y bydd yn dod i ben fod yn wag
+        contains_numbers: "Enw'r hawlydd (dewisol) Ni ddylai enw'r hawlydd gynnwys rhifau"
+        start_date_blank: Ni all Employment start fod yn wag
+        end_date_blank: Ni all Employment end fod yn wag
+        disagree_dates: Ni all Pam yr ydych yn anghytuno â’r dyddiadau a roddwyd gan yr hawlydd fod yn wag
       blank: "Ni ddylai %{attribute} fod yn wag"
       contains_no_spaces: "Rhaid i %{attribute} gynnwys blychau"
-      contains_numbers: "Ni ddylai %{attribute} gynnwys rhifau "
+      contains_numbers: "Enw'r hawlydd (dewisol) Ni ddylai enw'r hawlydd gynnwys rhifau"
       invalid: "Mae %{attribute} yn annilys "
       invalid_email: "Nid yw'r cyfeiriad e-bost hwn yn ddilys "
       invalid_name: "Nodwch eich enw llawn "
@@ -286,7 +293,7 @@ cy:
         inclusion: "Dewiswch sut fath o gynrychiolydd sydd gennych "
   links:
     confirmation_of_supplied_details:
-      edit_page: WELSH - Edit answers on this page
+      edit_page: "Golygu atebion at y dudalen hon"
     form_submission:
       invalid_pdf_download: Ddim yn barod at hyn o bryd - bydd fersiwn PDF o'ch ffurflen at gael i'w lawrlwytho maes o law
       valid_pdf_download: "Mae fersiwn PDF o'ch ffurflen wedi'i llenwi nawr ar gael i'w lawrlwytho"

@@ -3,7 +3,7 @@ FactoryBot.define do
   end
 
   trait :representative_valid do
-    type {"Solicitor"}
+    type {:"questions.type_of_representative.solicitor.label"}
     organisation_name { Faker::Company.bs }
     name { Faker::Name.name }
     building {"106"}

@@ -127,7 +127,7 @@ module ET3
         element :error_blank, :exact_error_text, 'errors.messages.blank', exact: false
         def set_for(user_persona)
           choose(factory_translate(user_persona.agree_with_employment_dates), name: 'claimants_detail[agree_with_employment_dates]')
-          if (t(user_persona.agree_with_employment_dates) == 'No')
+          if (t(user_persona.agree_with_employment_dates) == t('questions.agree_with_employment_dates.no.label'))
             # Employment started
             day, month, year = user_persona.employment_start.split('/')
             employment_start.day.set(day)

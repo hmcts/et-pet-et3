@@ -216,6 +216,7 @@ en:
         label: 'No'
       disability_information:
         label: It would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises
+        content: PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 350 characters) if you would like to include more please use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
     # Employers Contract Claim Page
     make_employer_contract_claim:
       label: Do you wish to make an Employer Contract Claim? (optional)
@@ -378,6 +379,7 @@ en:
     header: "Your Representative"
   your_representatives_details:
     header: "Your Representative's Details"
+    content: "Fill in this section if someone has agreed to represent you. If you do fill this in we will in future only contact your representative and not you"
   disability:
     header: "Disability"
   employer_contract_claim:

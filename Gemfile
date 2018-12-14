@@ -81,7 +81,7 @@ group :test do
   gem 'chromedriver-helper', '~> 1.1'
   gem 'geckodriver-helper', '~> 0.0'
   gem 'database_cleaner', '~> 1.5'
-  gem 'webmock', '~> 3.3'
+  gem 'webmock', '~> 3.4'
   gem 'faker', '~> 1.8'
   gem 'aws-sdk-s3', '~> 1.21'
 end

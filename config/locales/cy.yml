@@ -284,9 +284,9 @@ cy:
     sidebar:
       header: "Dolenni perthnasol eraill "
       claim_link: "Sut i wneud hawliad "
-      claim_href: "https://www.gov.uk/employment-tribunals"
+      claim_href: "https://www.gov.uk/cyflwyno-hawliad-i-dribiwnlys-cyflogaeth"
       response_link: Sut i ymateb
-      response_href: "https://www.gov.uk/being-taken-to-employment-tribunal-by-employee"
+      response_href: "https://www.gov.uk/rhywun-yn-mynd-a-chi-i-dribiwnlys-cyflogaeth"
       contact_link: "Sut i gysylltu â ni "
       contact_href: "https://www.gov.uk/guidance/employment-tribunal-offices-and-venues"
       download_link: "Lawrlwytho copi gwag o'r ffurflen hon "

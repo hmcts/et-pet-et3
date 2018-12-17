@@ -295,10 +295,10 @@ cy:
       more_category_href: "http://gov.uk/browse/working"
     confirmation_of_supplied_details:
       header: "Cadarnhau'r manylion a roddwyd "
-      receipt_header: "Nodyn yn cadarnhau bod y neges e-bost wedi cyrraedd "
-      receipt_description: "Nodwch eich cyfeiriad e-bost fel y gallwn roi derbynneb o'ch taliad ichi. "
-      submit_guidance: 'Bydd clicio ar "Cyflwyno Ffurflen " ar waelod y dudalen yn anfon y manylion a gadarnheir isod i''w prosesu.'
-      table_header: "Cadarnhau'r manylion a roddwyd          "
+      receipt_header: E-bost yn cadarnhau bod y manylion wedi'u hanfon
+      receipt_description: "Nodwch eich cyfeiriad e-bost fel y gallwn anfon derbynneb am eich taliad atoch. "
+      submit_guidance: 'Bydd clicio ar "Cyflwyno Ffurflen " ar waelod y dudalen yn anfon y manylion a gadarnhawyd isod i''w prosesu.'
+      table_header: "Cadarnhau'r manylion a roddwyd "
       question_header: "Cwestiwn "
       answer_header: Ateb
       edit_page: "Golygu atebion at y dudalen hon "
@@ -328,7 +328,7 @@ cy:
       header: "Ymateb wedi'i gwblhau "
       confirmation: "Ymateb wedi'i gwblhau "
       reference_text: "Eich cyfeirnod, y dylid ei ddyfynnu ar bob gohebiaeth, yw "
-      thank_you: "Diolch am gyflwyno eich cais. Mae wedi cael ei anfon ymlaen i'r swyddfa ganlynol a fydd yn cysylltu â chi maes o law. "
+      thank_you: "Diolch am gyflwyno eich ffurflen. Mae wedi cael ei hanfon ymlaen i'r swyddfa ganlynol a fydd yn cysylltu â chi maes o law. "
       submission_date: "Dyddiad Cyflwyno: "
       valid_pdf_download: Mae fersiwn PDF o'ch ffurflen wedi'i llenwi nawr ar gael i'w lawrlwytho
       invalid_pdf_download: Ddim yn barod eto - bydd fersiwn PDF o'ch ffurflen wedi'i llenwi ar gael i'w lawrlwytho maes o law
@@ -344,20 +344,20 @@ cy:
       return_href: "https://gov.uk"
     introduction:
       header: "Cyflwyniad "
-      description: Cwblhewch a chyflwynwch ffurflen ymateb ET3 pan fydd rhywun yn gwneud hawliad tribiwnlys cyflogaeth yn eich erbyn.
-      what_title: Beth sydd eu hangen arnoch ar gyfer llenwi'r ffurflen hon
-      what_content_1: "Rhif eich achos (ar y llythyr a anfonwyd atoch) "
-      what_content_2: "dyddiadau dechrau a gorffen cyflogaeth yr hawlydd, oriau gweithio a chyfnod rhybudd"
-      what_content_3: "manylion tâl a buddiannau'r hawlydd, cyn ac ar ôl treth "
+      description: Llenwch a chyflwynwch ffurflen ymateb ET3 pan fydd rhywun yn gwneud hawliad tribiwnlys cyflogaeth yn eich erbyn.
+      what_title: Beth sydd ei angen arnoch ar gyfer llenwi'r ffurflen hon
+      what_content_1: "rhif eich achos (sydd ar y llythyr a anfonwyd atoch) "
+      what_content_2: "dyddiadau dechrau a gorffen cyflogaeth yr hawlydd, oriau gwaith a chyfnod rhybudd"
+      what_content_3: "manylion tâl a buddion yr hawlydd, cyn ac ar ôl treth "
       what_content_4: "unrhyw fanylion cymodi cynnar Acas sydd gennych, megis rhif y dystysgrif "
-      what_content_5: "disgrifiad o'ch ymateb i'r hawliad, gan gynnwys dyddiadau a'r bobl sydd yn rhan ohono. "
+      what_content_5: "disgrifiad o'ch ymateb i'r hawliad, gan gynnwys dyddiadau a'r bobl sydd yn rhan ohono"
       what_content_6: "manylion eich cynrychiolydd, fel cyfreithiwr, os oes gennych un"
-      how_title: "Sut i lewni'r ffurflen "
+      how_title: "Sut i lenwi'r ffurflen "
       how_content_1: ni fydd eich gwybodaeth yn cael ei harbed os byddwch yn treulio mwy nag 1 awr ar un dudalen
-      how_content_2: gallwch adolygu a golygu eich atebion cyn i chi gyflwyno'r ffurflen
+      how_content_2: gallwch adolygu a golygu eich atebion cyn ichi gyflwyno'r ffurflen
       how_content_3: "gallwch arbed copi PDF o'ch ffurflen ar ôl ichi ei chyflwyno "
       data_title: "Deddf Diogelu Data 1998 "
-      data_content: "Byddwn yn anfon copi o'r ffurflen hon at yr hawlydd a'r Gwasanaeth Cynghori, Cymodi a Chyflafareddu (ACAS). Byddwn yn rhoi'r wybodaeth yr ydych yn ei rhoi inni ar y ffurflen hon ar gyfrifiadur. Mae hyn yn ein helpu i fonitro cynnydd a chynhyrchu ystadegau. Trosglwyddir yr wybodaeth a ddarperir ar y ffurflen hon i'r Adran Busnes, Arloesedd a Sgiliau i gynorthwyo ymchwil i'r defnydd o dribiwnlysoedd cyflogaeth ac effeithiolrwydd y tribiwnlysoedd hynny."
+      data_content: "Byddwn yn anfon copi o'r ffurflen hon at yr hawlydd a'r Gwasanaeth Cynghori, Cymodi a Chyflafareddu (ACAS). Byddwn yn rhoi'r wybodaeth yr ydych yn ei rhoi inni ar y ffurflen hon ar gyfrifiadur. Mae hyn yn ein helpu i fonitro cynnydd a chynhyrchu ystadegau. Trosglwyddir yr wybodaeth a ddarperir ar y ffurflen hon i'r Adran Busnes, Arloesedd a Sgiliau i gynorthwyo ymchwil i'r defnydd a wneir o dribiwnlysoedd cyflogaeth ac effeithiolrwydd y tribiwnlysoedd hynny."
       start_now: Dechrau nawr
     respondents_details:
       header: "Manylion yr Atebydd "
@@ -371,14 +371,14 @@ cy:
       header: "Eich Cynrychiolydd"
     your_representatives_details:
       header: "Manylion eich Cynrychiolydd "
-      description: "Llenwch yr adran hon os oes rhywun wedi cytuno i'ch cynrychioli. Os ydych yn llenwi'r adran hon yn y dyfodol, dim ond gyda'ch cynrychiolydd y byddwn yn cysylltu"
+      description: "Llenwch yr adran hon os oes rhywun wedi cytuno i'ch cynrychioli. Os ydych yn llenwi'r adran hon, dim ond gyda'ch cynrychiolydd y byddwn yn cysylltu yn y dyfodol"
     disability:
       header: "Anabledd"
     employers_contract_claim:
       header: "Hawliad Contract y Cyflogwr"
-      description: "Dim ond ar gael mewn amgylchiadau cyfyngedig lle mae'r Hawlydd wedi gwneud contract cyflogwr (gweler y canllawiau) "
+      description: "Dim ond ar gael mewn amgylchiadau cyfyngedig lle mae'r Hawlydd wedi gwneud hawliad contract (gweler y canllawiau) "
     additional_information:
       header: "Gwybodaeth Ychwanegol "
-      drag_text: "Llusgwch y ffeiliau rtf a'u rhoi yma "
+      drag_text: "Llusgwch ffeiliau rtf a'u rhoi yma "
       or_text: "neu"
       upload_button: "Cliciwch yma i lwytho ffeil rtf"

@@ -318,20 +318,20 @@ cy:
       remove_file_link: WELSH - Remove file
   introduction:
     header: Cyflwyniad
-    description: Cwblhewch a chyflwynwch ffurflen ymateb ET3 pan fydd rhywun yn gwneud hawliad tribiwnlys cyflogaeth yn eich erbyn.
-    what_title: Beth sydd eu hangen arnoch ar gyfer llenwi'r ffurflen hon
-    what_content_1: "Rhif eich achos (ar y llythyr a anfonwyd atoch)"
-    what_content_2: "dyddiadau dechrau a gorffen cyflogaeth yr hawlydd, oriau gweithio a chyfnod rhybudd"
-    what_content_3: "manylion tâl a buddiannau'r hawlydd, cyn ac ar ôl treth"
+    description: Llenwch a chyflwynwch ffurflen ymateb ET3 pan fydd rhywun yn gwneud hawliad tribiwnlys cyflogaeth yn eich erbyn.
+    what_title: Beth sydd ei angen arnoch ar gyfer llenwi'r ffurflen hon
+    what_content_1: "rhif eich achos (sydd ar y llythyr a anfonwyd atoch)"
+    what_content_2: "dyddiadau dechrau a gorffen cyflogaeth yr hawlydd, oriau gwaith a chyfnod rhybudd"
+    what_content_3: "manylion tâl a buddion yr hawlydd, cyn ac ar ôl treth"
     what_content_4: "unrhyw fanylion cymodi cynnar Acas sydd gennych, megis rhif y dystysgrif"
-    what_content_5: "disgrifiad o'ch ymateb i'r hawliad, gan gynnwys dyddiadau a'r bobl sydd yn rhan ohono."
+    what_content_5: "disgrifiad o'ch ymateb i'r hawliad, gan gynnwys dyddiadau a'r bobl sydd yn rhan ohono"
     what_content_6: "manylion eich cynrychiolydd, fel cyfreithiwr, os oes gennych un"
-    how_title: Sut i lewni'r ffurflen
+    how_title: "Sut i lenwi'r ffurflen"
     how_content_1: ni fydd eich gwybodaeth yn cael ei harbed os byddwch yn treulio mwy nag 1 awr ar un dudalen
-    how_content_2: "gallwch adolygu a golygu eich atebion cyn i chi gyflwyno'r ffurflen"
+    how_content_2: "gallwch adolygu a golygu eich atebion cyn ichi gyflwyno'r ffurflen"
     how_content_3: "gallwch arbed copi PDF o'ch ffurflen ar ôl ichi ei chyflwyno"
     data_title: Deddf Diogelu Data 1998
-    data_content: "Byddwn yn anfon copi o'r ffurflen hon at yr hawlydd a'r Gwasanaeth Cynghori, Cymodi a Chyflafareddu (ACAS). Byddwn yn rhoi'r wybodaeth yr ydych yn ei rhoi inni ar y ffurflen hon ar gyfrifiadur. Mae hyn yn ein helpu i fonitro cynnydd a chynhyrchu ystadegau. Trosglwyddir yr wybodaeth a ddarperir ar y ffurflen hon i'r Adran Busnes, Arloesedd a Sgiliau i gynorthwyo ymchwil i'r defnydd o dribiwnlysoedd cyflogaeth ac effeithiolrwydd y tribiwnlysoedd hynny."
+    data_content: "Byddwn yn anfon copi o'r ffurflen hon at yr hawlydd a'r Gwasanaeth Cynghori, Cymodi a Chyflafareddu (ACAS). Byddwn yn rhoi'r wybodaeth yr ydych yn ei rhoi inni ar y ffurflen hon ar gyfrifiadur. Mae hyn yn ein helpu i fonitro cynnydd a chynhyrchu ystadegau. Trosglwyddir yr wybodaeth a ddarperir ar y ffurflen hon i'r Adran Busnes, Arloesedd a Sgiliau i gynorthwyo ymchwil i'r defnydd a wneir o dribiwnlysoedd cyflogaeth ac effeithiolrwydd y tribiwnlysoedd hynny."
     start_now: Dechrau nawr
   respondents_details:
     header: "Manylion yr Atebydd"

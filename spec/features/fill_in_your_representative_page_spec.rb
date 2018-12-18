@@ -5,7 +5,7 @@ RSpec.feature "Fill in Your Representative Page", js: true do
 
   scenario "correctly will enable user to continue to representative details page" do
     your_representative_page.load(locale: current_locale_parameter)
-    given_i_am
+    given_valid_data
     your_representative_page.have_representative_question.set_for(@representative)
     your_representative_page.next
 
@@ -29,7 +29,7 @@ RSpec.feature "Fill in Your Representative Page", js: true do
 
   scenario "correctly will enable user to check answers and return to edit them" do
     your_representative_page.load(locale: current_locale_parameter)
-    given_i_am
+    given_valid_data
     answer_representative
     confirmation_of_supplied_details_page.load(locale: current_locale_parameter)
     confirmation_of_supplied_details_page.confirmation_of_your_representative_answers.edit_page_link.click

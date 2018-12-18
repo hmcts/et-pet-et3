@@ -4,7 +4,7 @@ RSpec.feature "Fill in Response Page", js: true do
 
   scenario "correctly will enable user to continue to next page" do
     response_page.load(locale: current_locale_parameter)
-    given_i_am
+    given_valid_data
     answer_defend_claim_question
 
     expect(your_representative_page).to be_displayed
@@ -21,7 +21,7 @@ RSpec.feature "Fill in Response Page", js: true do
 
   scenario "correctly will enable user to check answers and return to edit them" do
     response_page.load(locale: current_locale_parameter)
-    given_i_am
+    given_valid_data
     answer_defend_claim_question
 
     confirmation_of_supplied_details_page.load(locale: current_locale_parameter)

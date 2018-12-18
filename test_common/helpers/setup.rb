@@ -3,7 +3,7 @@ module ET3
     module Setup
       attr_accessor :user
 
-      def given_i_am
+      def given_valid_data
         @claimant = FactoryBot.create(:claimant, :claimant_valid)
         @respondent = FactoryBot.create(:respondent, :respondent_valid, :upload_additional_information)
         @representative = FactoryBot.create(:representative, :representative_valid) 

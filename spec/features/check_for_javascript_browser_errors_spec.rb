@@ -70,7 +70,7 @@ RSpec.feature "Check for Javascript Browser Errors", js: true, driver: :chromedr
   end
 
   scenario "form submission page" do
-    given_i_am
+    given_valid_data
     start_a_new_et3_response
     answer_respondents_details
     answer_claimants_details

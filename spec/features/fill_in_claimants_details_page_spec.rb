@@ -4,7 +4,7 @@ RSpec.feature "Fill in Claimants Details Page", js: true do
 
   scenario "correctly will enable user to continue to next page" do
     claimants_details_page.load(locale: current_locale_parameter)
-    given_i_am
+    given_valid_data
     answer_claimants_details
     expect(earnings_and_benefits_page).to be_displayed
   end
@@ -25,7 +25,7 @@ RSpec.feature "Fill in Claimants Details Page", js: true do
 
   scenario "correctly will enable user to check answers and return to edit them" do
     claimants_details_page.load(locale: current_locale_parameter)
-    given_i_am
+    given_valid_data
     answer_claimants_details
     claimants_details_page.next
     confirmation_of_supplied_details_page.load(locale: current_locale_parameter)

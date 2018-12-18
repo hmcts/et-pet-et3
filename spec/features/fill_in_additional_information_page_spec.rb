@@ -9,7 +9,7 @@ RSpec.feature "Fill in Additional Information Page", js: true do
 
   scenario "correctly will enable user to continue to next page" do
     additional_information_page.load(locale: current_locale_parameter)
-    given_i_am
+    given_valid_data
     answer_additional_information
     expect(confirmation_of_supplied_details_page).to be_displayed
   end
@@ -22,7 +22,7 @@ RSpec.feature "Fill in Additional Information Page", js: true do
 
   scenario "correctly will leave a file in the s3 bucket" do
     additional_information_page.load(locale: current_locale_parameter)
-    given_i_am
+    given_valid_data
     answer_additional_information
 
     expect(keys_in_bucket).to include Store.last.hash_store[:additional_information_answers][:upload_additional_information]

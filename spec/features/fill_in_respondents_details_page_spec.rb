@@ -4,7 +4,7 @@ RSpec.feature "Fill in Respondents Details Page", js: true do
 
   scenario "correctly will enable user to continue to next page" do
     respondents_details_page.load(locale: current_locale_parameter)
-    given_i_am
+    given_valid_data
     answer_respondents_details
 
     expect(claimants_details_page).to be_displayed
@@ -39,7 +39,7 @@ RSpec.feature "Fill in Respondents Details Page", js: true do
 
   scenario "correctly will enable user to check answers and return to edit them" do
     respondents_details_page.load(locale: current_locale_parameter)
-    given_i_am
+    given_valid_data
     answer_respondents_details
     confirmation_of_supplied_details_page.load(locale: current_locale_parameter)
     confirmation_of_supplied_details_page.confirmation_of_respondents_details_answers.edit_page_link.click

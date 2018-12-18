@@ -4,7 +4,7 @@ RSpec.feature "Fill in Employers Contract Claim Page", js: true do
 
   scenario "correctly will enable user to continue to next page" do
     employers_contract_claim_page.load(locale: current_locale_parameter)
-    given_i_am
+    given_valid_data
     answer_employers_contract_claim
     expect(additional_information_page).to be_displayed
   end
@@ -20,7 +20,7 @@ RSpec.feature "Fill in Employers Contract Claim Page", js: true do
 
   scenario "correctly will enable user to check answers and return to edit them" do
     employers_contract_claim_page.load(locale: current_locale_parameter)
-    given_i_am
+    given_valid_data
     answer_employers_contract_claim
     confirmation_of_supplied_details_page.load(locale: current_locale_parameter)
     confirmation_of_supplied_details_page.confirmation_of_employer_contract_claim_answers.edit_page_link.click

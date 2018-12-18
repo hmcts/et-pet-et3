@@ -119,7 +119,7 @@ RSpec.feature "View Sidebar", js: true do
   end
 
   scenario "form submission page" do
-    given_i_am
+    given_valid_data
     start_a_new_et3_response
     answer_respondents_details
     answer_claimants_details

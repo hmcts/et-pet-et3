@@ -8,7 +8,7 @@ RSpec.feature "Access Form Submission Page", js: true do
   end
 
   scenario "user will be able to read text" do
-    given_i_am
+    given_valid_data
     start_a_new_et3_response
     answer_respondents_details
     answer_claimants_details
@@ -30,7 +30,7 @@ RSpec.feature "Access Form Submission Page", js: true do
   end
 
   scenario "user can navigate to the gov.uk homepage" do
-    given_i_am
+    given_valid_data
     start_a_new_et3_response
     answer_respondents_details
     answer_claimants_details

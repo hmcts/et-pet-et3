@@ -8,7 +8,7 @@ RSpec.feature "Fill in whole form", js: true do
 
   scenario "correctly will flow without error" do
     include ET3::Test::S3Helpers
-    given_i_am
+    given_valid_data
     start_a_new_et3_response
     answer_respondents_details
     answer_claimants_details
@@ -213,7 +213,7 @@ RSpec.feature "Fill in whole form", js: true do
   end
 
   scenario "correctly will delete hash_store and prevent the next user seeing answers on the respondents details page" do
-    given_i_am
+    given_valid_data
 
     start_a_new_et3_response
     answer_respondents_details
@@ -250,7 +250,7 @@ RSpec.feature "Fill in whole form", js: true do
   end
 
   scenario "correctly followed by removing the uploaded file will not submit it to the API" do
-    given_i_am
+    given_valid_data
     
     start_a_new_et3_response
     answer_respondents_details

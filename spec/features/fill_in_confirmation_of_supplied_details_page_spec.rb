@@ -8,7 +8,7 @@ RSpec.feature "Fill in Confirmation of Supplied Details Page", js: true do
   end
 
   scenario "correctly will enable user to continue to next page" do
-    given_i_am
+    given_valid_data
     start_a_new_et3_response
     answer_respondents_details
     answer_claimants_details

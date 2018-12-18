@@ -7,11 +7,11 @@ module ET3
       element :error_header, :error_titled, 'errors.header', exact: true
       section :make_employer_contract_claim_question, :single_choice_option, 'questions.make_employer_contract_claim.label', exact: true do
         include ET3::Test::I18n
-        element :yes, :gds_multiple_choice_option, 'questions.disability.yes.label' do
+        element :yes, :gds_multiple_choice_option, 'questions.make_employer_contract_claim.yes.label' do
           element :selector, :css, 'input[type="radio"]'
           def set(*args); selector.set(*args); end
         end
-        element :no, :gds_multiple_choice_option, 'questions.disability.no.label' do
+        element :no, :gds_multiple_choice_option, 'questions.make_employer_contract_claim.yes.label' do
           element :selector, :css, 'input[type="radio"]'
           def set(*args); selector.set(*args); end
         end
@@ -21,7 +21,7 @@ module ET3
         element :error_too_long, :exact_error_text, 'errors.messages.too_long', exact: false
         def set_for(user_persona)
           choose(factory_translate(user_persona.make_employer_contract_claim), name: 'employers_contract_claim[make_employer_contract_claim]')
-          if t(user_persona.make_employer_contract_claim) == t('questions.disability.yes.label')
+          if t(user_persona.make_employer_contract_claim) == t('questions.make_employer_contract_claim.yes.label')
             claim_information.set(user_persona.claim_information)
           end
         end

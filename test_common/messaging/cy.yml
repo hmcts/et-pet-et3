@@ -276,7 +276,7 @@ cy:
       invalid_postcode: Nid yw hwn yn god post dilys yn y DU
       invalid_phone_number: Nid yw hwn yn rhif ffôn dilys
       not_a_number: "Nid yw %{attribute} yn rif "
-      too_long: "%{count} o nodau yw'r uchafswm a ganiateir "
+      too_long: "o nodau yw'r uchafswm a ganiateir"
       inclusion: "Dewiswch opsiwn "
     custom:
       organisation_employ_gb:

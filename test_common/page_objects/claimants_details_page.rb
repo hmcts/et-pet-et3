@@ -10,7 +10,7 @@ module ET3
       # Claimant's name (optional)
       section :claimants_name_question, :question_labelled, 'questions.claimants_name.label', exact: false do
         element :field, :css, "input"
-        element :error_contains_numbers, :exact_error_text, 'errors.messages.contains_numbers', exact: false
+        element :error_contains_numbers, :exact_error_text, 'errors.custom.claimants_name.not_a_number', exact: false
         element :error_invalid_name, :exact_error_text, 'errors.messages.invalid_name', exact: false
          def set(*args); field.set(*args); end
       end

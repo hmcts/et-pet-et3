@@ -32,6 +32,7 @@ RSpec.feature "Fill in Claimants Details Page", js: true do
     confirmation_of_supplied_details_page.confirmation_of_claimants_details_answers.edit_page_link.click
 
     expect(claimants_details_page).to be_displayed
+    expect(claimants_details_page).to have_header
     expect(claimants_details_page.claimants_name_question.field.value).to eql @claimant.claimants_name
     # expect(claimants_details_page.agree_with_early_conciliation_details_question.get).to eql @claimant.agree_with_early_conciliation_details
     expect(claimants_details_page.disagree_conciliation_reason.text).to eql @claimant.disagree_conciliation_reason

@@ -275,6 +275,8 @@ en:
       organisation_more_than_one_site:
         not_a_number: Please enter how many people are employed at the place where the claimant worked as a number
         inclusion: Please indicate whether the organisation has more than one site in Great Britain
+      claimants_name:
+        not_a_number: Claimant's name must not contain numbers
       queried_hours:
         not_a_number: Please enter the number of hours you believe to be correct as a number
       queried_pay_before_tax:

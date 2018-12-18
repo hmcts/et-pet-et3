@@ -267,7 +267,7 @@ cy:
         start_date_blank: Ni all Employment start fod yn wag
         end_date_blank: Ni all Employment end fod yn wag
         disagree_dates: Ni all Pam yr ydych yn anghytuno â’r dyddiadau a roddwyd gan yr hawlydd fod yn wag
-      blank: "Ni ddylai %{attribute} fod yn wag"
+      blank: "fod yn wag"
       contains_no_spaces: "Rhaid i %{attribute} gynnwys blychau"
       contains_numbers: "Enw'r hawlydd (dewisol) Ni ddylai enw'r hawlydd gynnwys rhifau"
       invalid: "Mae %{attribute} yn annilys "
@@ -283,6 +283,8 @@ cy:
         not_a_number: Nodwch faint o bobl sy’n gyflogedig gan y sefydliad hwn ym Mhrydain Fawr fel rhif
       organisation_more_than_one_site:
         inclusion: "A oes gan y sefydliad hwn fwy nag un safle ym Mhrydian Fawr? "
+      claimants_name:
+        not_a_number: "Ni ddylai enw'r hawlydd gynnwys rhifau"
       queried_hours:
         not_a_number: Rhowch nifer yr oriau sy’n gywir yn eich barn chi fel rhif
       queried_pay_before_tax:

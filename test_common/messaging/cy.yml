@@ -303,16 +303,16 @@ cy:
       'yes': Oes
       'no': Nac oes
     sidebar:
-      header: "Dolenni perthnasol eraill "
-      claim_link: "Sut i wneud hawliad "
-      claim_href: "https://www.gov.uk/employment-tribunals"
+      header: "Dolenni perthnasol eraill"
+      claim_link: "Sut i wneud hawliad"
+      claim_href: "https://www.gov.uk/cyflwyno-hawliad-i-dribiwnlys-cyflogaeth"
       response_link: Sut i ymateb
-      response_href: "https://www.gov.uk/being-taken-to-employment-tribunal-by-employee"
-      contact_link: "Sut i gysylltu â ni "
+      response_href: "https://www.gov.uk/rhywun-yn-mynd-a-chi-i-dribiwnlys-cyflogaeth"
+      contact_link: "Sut i gysylltu â ni"
       contact_href: "https://www.gov.uk/guidance/employment-tribunal-offices-and-venues"
-      download_link: "Lawrlwytho copi gwag o'r ffurflen hon "
-      download_href: "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/719457/et3-eng.pdf"
-      more_category_link: "Mwy o'r categori gweithio, swyddi a phensiynau "
+      download_link: "Lawrlwytho copi gwag o'r ffurflen hon"
+      download_href: "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/763312/et3-cym.pdf"
+      more_category_link: "Mwy o'r categori gweithio, swyddi a phensiynau"
       more_category_href: "http://gov.uk/browse/working"
     confirmation_of_supplied_details:
       remove_file_link: WELSH - Remove file

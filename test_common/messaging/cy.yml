@@ -271,7 +271,7 @@ cy:
       contains_no_spaces: "Rhaid i %{attribute} gynnwys blychau"
       contains_numbers: "Enw'r hawlydd (dewisol) Ni ddylai enw'r hawlydd gynnwys rhifau"
       invalid: "Mae %{attribute} yn annilys "
-      invalid_email: "Nid yw'r cyfeiriad e-bost hwn yn ddilys "
+      invalid_email: "Nid yw'r cyfeiriad e-bost hwn yn ddilys"
       invalid_name: "Nodwch eich enw llawn "
       invalid_postcode: Nid yw hwn yn god post dilys yn y DU
       invalid_phone_number: Nid yw hwn yn rhif ffôn dilys

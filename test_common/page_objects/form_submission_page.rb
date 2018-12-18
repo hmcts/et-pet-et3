@@ -1,4 +1,3 @@
-# TODO: Refactor so as not to use CSS selectors
 module ET3
   module Test
     class FormSubmissionPage < BasePage

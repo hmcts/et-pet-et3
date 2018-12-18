@@ -194,7 +194,7 @@ RSpec.feature "Fill in whole form", js: true do
           expect(request_body["data"][2]["data"]["address_attributes"]["post_code"]).to eql @representative.post_code
           expect(request_body["data"][2]["data"]["address_telephone_number"]).to eql @representative.telephone_number
           expect(request_body["data"][2]["data"]["mobile_number"]).to eql @representative.representative_mobile
-          expect(request_body["data"][2]["data"]["representative_type"].capitalize).to eql @representative.type
+          expect(request_body["data"][2]["data"]["representative_type"].capitalize).to eql t(@representative.type)
           expect(request_body["data"][2]["data"]["dx_number"]).to eql @representative.dx_number
           expect(request_body["data"][2]["data"]["reference"]).to eql @representative.representative_reference
           expect(request_body["data"][2]["data"]["contact_preference"].capitalize).to eql t(@representative.representative_contact_preference)

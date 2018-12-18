@@ -54,7 +54,7 @@ group :development, :test do
   gem 'rubocop', '~> 0.61.1'
   gem 'rubocop-rspec', '~> 1.22'
   gem 'simplecov', '~> 0.15'
-  gem 'pry', '~> 0.11'
+  gem 'pry', '~> 0.12'
   #VSCode debugger
   gem 'ruby-debug-ide', '~> 0.6.1'
   gem 'debase', '~> 0.2.2'

@@ -269,8 +269,8 @@ cy:
         disagree_dates: Ni all Pam yr ydych yn anghytuno â’r dyddiadau a roddwyd gan yr hawlydd fod yn wag
       blank: "fod yn wag"
       contains_no_spaces: "Rhaid i %{attribute} gynnwys blychau"
-      contains_numbers: "Enw'r hawlydd (dewisol) Ni ddylai enw'r hawlydd gynnwys rhifau"
-      invalid: "Mae %{attribute} yn annilys "
+      contains_numbers: "gynnwys rhifau"
+      invalid: "yn annilys"
       invalid_email: "Nid yw'r cyfeiriad e-bost hwn yn ddilys"
       invalid_name: "Nodwch eich enw llawn "
       invalid_postcode: Nid yw hwn yn god post dilys yn y DU
@@ -292,7 +292,7 @@ cy:
       queried_take_home_pay:
         not_a_number: "Nodwch y tâl terfynol arferol fel rhif"
       type_of_representative:
-        inclusion: "Dewiswch sut fath o gynrychiolydd sydd gennych "
+        inclusion: "Dewiswch sut fath o gynrychiolydd sydd gennych"
   links:
     confirmation_of_supplied_details:
       edit_page: "Golygu atebion at y dudalen hon"

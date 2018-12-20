@@ -317,7 +317,7 @@ cy:
       more_category_link: "Mwy o'r categori gweithio, swyddi a phensiynau"
       more_category_href: "http://gov.uk/browse/working"
     confirmation_of_supplied_details:
-      remove_file_link: WELSH - Remove file
+      remove_file_link: "Dileu ffeil"
   introduction:
     header: Cyflwyniad
     description: Llenwch a chyflwynwch ffurflen ymateb ET3 pan fydd rhywun yn gwneud hawliad tribiwnlys cyflogaeth yn eich erbyn.

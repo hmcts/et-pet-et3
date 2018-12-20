@@ -297,7 +297,7 @@ cy:
     confirmation_of_supplied_details:
       edit_page: "Golygu atebion at y dudalen hon"
     form_submission:
-      invalid_pdf_download: Ddim yn barod at hyn o bryd - bydd fersiwn PDF o'ch ffurflen at gael i'w lawrlwytho maes o law
+      invalid_pdf_download: "Ddim yn barod eto - bydd fersiwn PDF o'ch ffurflen wedi'i llenwi ar gael i'w lawrlwytho maes o law"
       valid_pdf_download: "Mae fersiwn PDF o'ch ffurflen wedi'i llenwi nawr ar gael i'w lawrlwytho"
   components:
     save_and_continue_button: "Cadw a pharhau"

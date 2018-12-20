@@ -2,27 +2,30 @@ module ET3
   module Test
     class ResponsePage < BasePage
       set_url '/respond/response'
-
       element :header, :content_header, 'response.header'
-
       element :error_header, :error_titled, 'errors.header', exact: true
-
       section :defend_claim_question, :single_choice_option, 'questions.defend_claim.label', exact: false do
-        include SingleChoiceOptionSection
-
-        section :defend_claim_facts, :textarea_labelled, 'questions.defend_claim.defend_claim_facts.label', exact: false do
-          delegate :set, to: :root_element
+        include ET3::Test::I18n
+        element :yes, :gds_multiple_choice_option, 'questions.defend_claim.yes.label' do
+          element :selector, :css, 'input[type="radio"]'
+          def set(*args); selector.set(*args); end
         end
-
+        element :no, :gds_multiple_choice_option, 'questions.defend_claim.no.label' do
+          element :selector, :css, 'input[type="radio"]'
+          def set(*args); selector.set(*args); end
+        end
+        section :defend_claim_facts, :textarea_labelled, 'questions.defend_claim.defend_claim_facts.label', exact: false do
+          def set(*args); root_element.set(*args); end
+        end
         element :error_too_long, :exact_error_text, 'errors.messages.too_long', exact: false
         element :error_inclusion, :exact_error_text, 'errors.messages.inclusion', exact: false
-
         def set_for(user_persona)
-          choose(user_persona.defend_claim)
-          defend_claim_facts.set(user_persona.defend_claim_facts) if yes.has_checked_field?
+          choose(factory_translate(user_persona.defend_claim), name: 'response[defend_claim]')
+          if t(user_persona.defend_claim) == t('questions.defend_claim.yes.label')
+            defend_claim_facts.set(user_persona.defend_claim_facts)
+          end
         end
       end
-
       element :continue_button, :submit_text, 'components.save_and_continue_button'
       def next
         continue_button.click

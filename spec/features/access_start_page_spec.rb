@@ -30,7 +30,6 @@ RSpec.feature "Access Start Page", js: true do
 
   scenario "user will be able to start form" do
     start_page.load(locale: current_locale_parameter)
-
     start_page.next
 
     expect(respondents_details_page).to be_displayed

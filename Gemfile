@@ -84,6 +84,7 @@ group :test do
   gem 'webmock', '~> 3.4'
   gem 'faker', '~> 1.8'
   gem 'aws-sdk-s3', '~> 1.21'
+  gem 'factory_bot'
 end
 
 group :production do

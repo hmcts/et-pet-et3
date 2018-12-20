@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.0'
+gem 'rails', '~> 5.2.2'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 gem 'unicorn'
@@ -51,15 +51,15 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver', '~> 3.10'
-  gem 'rubocop', '~> 0.52.1'
+  gem 'rubocop', '~> 0.61.1'
   gem 'rubocop-rspec', '~> 1.22'
   gem 'simplecov', '~> 0.15'
-  gem 'pry', '~> 0.11'
+  gem 'pry', '~> 0.12'
   #VSCode debugger
   gem 'ruby-debug-ide', '~> 0.6.1'
   gem 'debase', '~> 0.2.2'
   # Run Rspec tests in parallel to speed the test suite up
-  gem 'parallel_tests', '~> 2.22'
+  gem 'parallel_tests', '~> 2.27'
   # Add .env file to store environment variables
   gem 'dotenv-rails', '~> 2.5'
 end
@@ -81,7 +81,7 @@ group :test do
   gem 'chromedriver-helper', '~> 1.1'
   gem 'geckodriver-helper', '~> 0.0'
   gem 'database_cleaner', '~> 1.5'
-  gem 'webmock', '~> 3.3'
+  gem 'webmock', '~> 3.4'
   gem 'faker', '~> 1.8'
   gem 'aws-sdk-s3', '~> 1.21'
 end

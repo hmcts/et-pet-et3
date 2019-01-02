@@ -80,7 +80,7 @@ RSpec.feature "Check for Javascript Browser Errors", js: true, driver: :chromedr
     answer_disability_question
     answer_employers_contract_claim
     answer_additional_information
-    confirmation_of_supplied_details
+    answer_confirmation_of_supplied_details
 
     expect(form_submission_page.js_severe_errors).to be_empty
   end

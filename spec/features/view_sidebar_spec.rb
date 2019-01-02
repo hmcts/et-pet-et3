@@ -129,7 +129,7 @@ RSpec.feature "View Sidebar", js: true do
     answer_disability_question
     answer_employers_contract_claim
     answer_additional_information
-    confirmation_of_supplied_details
+    answer_confirmation_of_supplied_details
 
     expect(form_submission_page.sidebar).to have_link(t('components.sidebar.claim_link'), href: t('components.sidebar.claim_href'))
     expect(form_submission_page.sidebar).to have_link(t('components.sidebar.response_link'), href: t('components.sidebar.response_href'))

@@ -53,7 +53,7 @@ RSpec.feature "Check PDF Download Link", js: true do
     answer_disability_question
     answer_employers_contract_claim
     answer_additional_information
-    confirmation_of_supplied_details
+    answer_confirmation_of_supplied_details
 
     expect(form_submission_page).to have_invalid_pdf_download
   end
@@ -69,7 +69,7 @@ RSpec.feature "Check PDF Download Link", js: true do
     answer_disability_question
     answer_employers_contract_claim
     answer_additional_information
-    confirmation_of_supplied_details
+    answer_confirmation_of_supplied_details
 
     expect(form_submission_page).to have_invalid_pdf_download
     expect(form_submission_page).to have_valid_pdf_download

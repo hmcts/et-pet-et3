@@ -129,7 +129,7 @@ module ET3
       end
 
       # Confirmation of Supplied Details Page
-      def confirmation_of_supplied_details
+      def answer_confirmation_of_supplied_details
         user = @respondent
         confirmation_of_supplied_details_page.email_receipt_question.set(user.email_receipt)
         confirmation_of_supplied_details_page.submit_form

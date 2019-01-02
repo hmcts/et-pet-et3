@@ -226,7 +226,7 @@ RSpec.feature "Fill in whole form", js: true do
     answer_disability_question
     answer_employers_contract_claim
     answer_additional_information
-    confirmation_of_supplied_details
+    answer_confirmation_of_supplied_details
 
     respondents_details_page.load(locale: current_locale_parameter)
 

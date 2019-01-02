@@ -18,7 +18,7 @@ RSpec.feature "Fill in Confirmation of Supplied Details Page", js: true do
     answer_disability_question
     answer_employers_contract_claim
     answer_additional_information
-    confirmation_of_supplied_details
+    answer_confirmation_of_supplied_details
 
     expect(form_submission_page).to be_displayed
   end
@@ -37,7 +37,7 @@ RSpec.feature "Fill in Confirmation of Supplied Details Page", js: true do
     answer_disability_question
     answer_employers_contract_claim
     answer_additional_information
-    confirmation_of_supplied_details
+    answer_confirmation_of_supplied_details
 
     expect(confirmation_of_supplied_details_page).to have_error_header
     expect(confirmation_of_supplied_details_page.email_receipt_question).to have_error_invalid_email

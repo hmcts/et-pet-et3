@@ -18,7 +18,7 @@ RSpec.feature "Access Form Submission Page", js: true do
     answer_disability_question
     answer_employers_contract_claim
     answer_additional_information
-    confirmation_of_supplied_details
+    answer_confirmation_of_supplied_details
 
     expect(form_submission_page).to be_displayed
     expect(form_submission_page).to have_submission_confirmation
@@ -40,7 +40,7 @@ RSpec.feature "Access Form Submission Page", js: true do
     answer_disability_question
     answer_employers_contract_claim
     answer_additional_information
-    confirmation_of_supplied_details
+    answer_confirmation_of_supplied_details
 
     form_submission_page.return
 

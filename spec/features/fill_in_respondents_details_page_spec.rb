@@ -13,14 +13,15 @@ RSpec.feature "Fill in Respondents Details Page", js: true do
   scenario "incorrectly will provide many errors" do
     respondents_details_page.load(locale: current_locale_parameter)
     given_invalid_data
-    
-    user = FactoryBot.create(:respondent, :respondent_invalid, case_number: '7@54321/2017', name: '', postcode: 'sfsdf', organisation_more_than_one_site: :"questions.organisation_more_than_one_site.no.label")
+
+    user = FactoryBot.create(:respondent, :respondent_invalid, case_number: '7@54321/2017', name: '', postcode: 'sfsdf', organisation_more_than_one_site: :"questions.organisation_more_than_one_site.yes.label")
     respondents_details_page.case_number_question.set(user.case_number)
     respondents_details_page.contact_question.set(user.contact)
     respondents_details_page.postcode_question.set(user.postcode)
     respondents_details_page.contact_number_question.set(user.contact_number)
-    respondents_details_page.organisation_more_than_one_site_question.set_for(user)
+    respondents_details_page.contact_preference_question.set_for(user)
     respondents_details_page.organisation_employ_gb_question.set(user.organisation_employ_gb)
+    respondents_details_page.organisation_more_than_one_site_question.set_for(user)
     respondents_details_page.next
 
     expect(respondents_details_page).to have_header
@@ -32,9 +33,9 @@ RSpec.feature "Fill in Respondents Details Page", js: true do
     expect(respondents_details_page.street_question).to have_error_blank
     expect(respondents_details_page.town_question).to have_error_blank
     expect(respondents_details_page.postcode_question).to have_error_invalid_postcode
-    # expect(respondents_details_page.contact_preference_question).to have_error_invalid_fax
-    # expect(respondents_details_page.organisation_employ_gb_question).to have_error_not_a_number
-    # expect(respondents_details_page.organisation_more_than_one_site_question).to have_error_not_a_number
+    expect(respondents_details_page.contact_preference_question).to have_error_invalid_fax
+    expect(respondents_details_page.organisation_employ_gb_question).to have_error_not_a_number
+    expect(respondents_details_page.organisation_more_than_one_site_question).to have_error_not_a_number
   end
 
   scenario "correctly will enable user to check answers and return to edit them" do
@@ -58,13 +59,8 @@ RSpec.feature "Fill in Respondents Details Page", js: true do
     expect(respondents_details_page.dx_number_question.field.value).to eql user.dx_number
     expect(respondents_details_page.contact_number_question.field.value).to eql user.contact_number
     expect(respondents_details_page.contact_mobile_number_question.field.value).to eql user.contact_mobile_number
-    expect(respondents_details_page.contact_preference_question.select_email.has_checked_field?).to be true if user.contact_preference == "Email"
-    expect(respondents_details_page.contact_preference_question.preference_email.value).to eql user.email_address if user.contact_preference == "Email"
-    expect(respondents_details_page.contact_preference_question.select_post.has_checked_field?).to be true if user.contact_preference == "Post"
-    expect(respondents_details_page.contact_preference_question.select_fax.has_checked_field?).to be true if user.contact_preference == "Fax"
-    expect(respondents_details_page.contact_preference_question.preference_fax.value).to eql user.fax_number if user.contact_preference == "Fax"
+    respondents_details_page.contact_preference_question.assert_answer_for(user)
     expect(respondents_details_page.organisation_employ_gb_question.field.value).to eql user.organisation_employ_gb
-    # expect(respondents_details_page.organisation_more_than_one_site_question.get).to eql user.organisation_more_than_one_site
-    expect(respondents_details_page.organisation_more_than_one_site_question.employment_at_site_number.value).to eql user.employment_at_site_number if user.organisation_more_than_one_site == "Yes"
+    respondents_details_page.organisation_more_than_one_site_question.assert_answer_for(user)
   end
 end

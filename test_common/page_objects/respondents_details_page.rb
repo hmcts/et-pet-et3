@@ -61,24 +61,13 @@ module ET3
       end
       section :contact_preference_question, :single_choice_option, 'questions.contact_preference.label', exact: false do
         include ET3::Test::I18n
-        element :email, :gds_multiple_choice_option, 'questions.contact_preference.email.label' do
-          element :selector, :css, 'input[type="radio"]'
-          def set(*args); selector.set(*args); end
-        end
-        element :post, :gds_multiple_choice_option, 'questions.contact_preference.post.label' do
-          element :selector, :css, 'input[type="radio"]'
-          def set(*args); selector.set(*args); end
-        end
-        element :fax, :gds_multiple_choice_option, 'questions.contact_preference.fax.label' do
-          element :selector, :css, 'input[type="radio"]'
-          def set(*args); selector.set(*args); end
-        end
-        section :preference_email, :inputtext_labelled, 'questions.contact_preference.email.input_label' do
-          delegate :set, to: :root_element
-        end
-        section :preference_fax, :inputtext_labelled, 'questions.contact_preference.fax.input_label' do
-          delegate :set, to: :root_element
-        end
+        element :email, :gds_multiple_choice_option, 'questions.contact_preference.email.label'
+        element :post, :gds_multiple_choice_option, 'questions.contact_preference.post.label'
+        element :fax, :gds_multiple_choice_option, 'questions.contact_preference.fax.label'
+
+        element :preference_email, :inputtext_labelled, 'questions.contact_preference.email.input_label'
+        element :preference_fax, :inputtext_labelled, 'questions.contact_preference.fax.input_label'
+
         element :error_invalid_email, :exact_error_text, 'errors.messages.invalid_email'
         element :error_invalid_fax, :exact_error_text, 'errors.messages.invalid_phone_number'
 
@@ -87,11 +76,18 @@ module ET3
           if t(user_persona.contact_preference) == t('questions.contact_preference.email.label')
             preference_email.set(user_persona.email_address)
           end
-          if t(user_persona.contact_preference) == t('questions.contact_preference.post.label')
-            preference_email.set(user_persona.post)
-          end
           if t(user_persona.contact_preference) == t('questions.contact_preference.fax.label')
             preference_fax.set(user_persona.fax_number)
+          end
+        end
+
+        def assert_answer_for(user_persona)
+          find(:gds_multiple_choice_option, user_persona.contact_preference).assert_selector(:field, nil, checked: true)
+          case t(user_persona.contact_preference)
+          when t('questions.contact_preference.email.label')
+            root_element.assert_selector(:field, t('questions.contact_preference.email.input_label'), with: user_persona.email_address)
+          when t('questions.contact_preference.fax.label')
+            root_element.assert_selector(:field, t('questions.contact_preference.fax.input_label'), with: user_persona.fax_number)
           end
         end
       end
@@ -103,28 +99,36 @@ module ET3
         delegate :set, to: :field
       end
 
-      section :organisation_more_than_one_site_question, :single_choice_option, 'questions.organisation_more_than_one_site.label', exact: false do |q|
+      section :organisation_more_than_one_site_question, :single_choice_option, 'questions.organisation_more_than_one_site.label', exact: false do
         include ET3::Test::I18n
-        element :yes, :gds_multiple_choice_option, 'questions.organisation_more_than_one_site.yes.label' do
-          element :selector, :css, 'input[type="radio"]'
-          def set(*args); selector.set(*args); end
-        end
-        element :no, :gds_multiple_choice_option, 'questions.organisation_more_than_one_site.no.label' do
-          element :selector, :css, 'input[type="radio"]'
-          def set(*args); selector.set(*args); end
-        end
-        section :employment_at_site_number, :inputtext_labelled, 'questions.organisation_more_than_one_site.employment_at_site_number.label', exact: false do
-          delegate :set, to: :root_element
-        end
+        element :yes, :gds_multiple_choice_option, 'questions.organisation_more_than_one_site.yes.label'
+        element :no, :gds_multiple_choice_option, 'questions.organisation_more_than_one_site.no.label'
+
+        element :employment_at_site_number, :inputtext_labelled, 'questions.organisation_more_than_one_site.employment_at_site_number.label', exact: false
+
         element :error_inclusion, :exact_error_text, 'errors.custom.organisation_more_than_one_site.inclusion', exact: false
         element :error_not_a_number, :exact_error_text, 'errors.custom.organisation_more_than_one_site.not_a_number', exact: false
+
         def set_for(user_persona)
           choose(factory_translate(user_persona.organisation_more_than_one_site), name: 'respondents_detail[organisation_more_than_one_site]')
           if t(user_persona.organisation_more_than_one_site) == t('questions.organisation_more_than_one_site.yes.label')
             employment_at_site_number.set(user_persona.employment_at_site_number)
           end
         end
+        
+        def assert_answer_for(user_persona)
+          find(:gds_multiple_choice_option, user_persona.organisation_more_than_one_site).assert_selector(:field, nil, checked: true)
+          if t(user_persona.organisation_more_than_one_site) == t('questions.organisation_more_than_one_site.yes.label')
+            root_element.
+                assert_selector(
+                    :field,
+                    t('questions.organisation_more_than_one_site.employment_at_site_number.label'),
+                    with: user_persona.employment_at_site_number
+                )           
+          end
+        end
       end
+
       element :continue_button, :submit_text, 'components.save_and_continue_button'
       def next
         continue_button.click

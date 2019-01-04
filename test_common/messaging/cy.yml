@@ -280,9 +280,9 @@ cy:
       inclusion: "Dewiswch opsiwn "
     custom:
       organisation_employ_gb:
-        not_a_number: Nodwch faint o bobl sy’n gyflogedig gan y sefydliad hwn ym Mhrydain Fawr fel rhif
+        not_a_number: "Nodwch faint o bobl sy’n gyflogedig gan y sefydliad hwn ym Mhrydain Fawr fel rhif"
       organisation_more_than_one_site:
-        inclusion: "A oes gan y sefydliad hwn fwy nag un safle ym Mhrydian Fawr? "
+        not_a_number: "Nodwch faint o bobl sy’n gyflogedig ar y safle ble'r oedd yr hawlydd yn gweithio fel rhif"
       claimants_name:
         not_a_number: "Ni ddylai enw'r hawlydd gynnwys rhifau"
       queried_hours:

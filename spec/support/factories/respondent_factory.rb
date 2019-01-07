@@ -40,6 +40,7 @@ FactoryBot.define do
     contact_mobile_number {"string"}
     contact_preference {:"questions.contact_preference.fax.label"}
     fax_number {"string"}
+    employment_at_site_number {"string"}
     organisation_employ_gb {"string"}
     make_employer_contract_claim {:"questions.make_employer_contract_claim.yes.label"}
     claim_information {Faker::Lorem.characters(4501)}

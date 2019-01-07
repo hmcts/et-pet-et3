@@ -28,7 +28,6 @@ RSpec.feature "Fill in Response Page", js: true do
     confirmation_of_supplied_details_page.confirmation_of_response_answers.edit_page_link.click
 
     expect(response_page).to be_displayed
-    # expect(response_page.defend_claim_question.get).to eql user.defend_claim
-    expect(response_page.defend_claim_question.defend_claim_facts.root_element.value).to eql @claimant.defend_claim_facts
+    response_page.defend_claim_question.assert_answers_for(@claimant)
   end
 end

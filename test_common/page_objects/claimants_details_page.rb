@@ -154,15 +154,10 @@ module ET3
 
       section :continued_employment_question, :single_choice_option, 'questions.continued_employment.label', exact: false do
         include ET3::Test::I18n
-        element :yes, :gds_multiple_choice_option, 'questions.continued_employment.yes.label' do
-          element :selector, :css, 'input[type="radio"]'
-          def set(*args); selector.set(*args); end
-        end
-        element :no, :gds_multiple_choice_option, 'questions.continued_employment.no.label' do
-          element :selector, :css, 'input[type="radio"]'
-          def set(*args); selector.set(*args); end
-        end
-        def set_for(value)
+        element :yes, :gds_multiple_choice_option, 'questions.continued_employment.yes.label'
+        element :no, :gds_multiple_choice_option, 'questions.continued_employment.no.label'
+
+          def set_for(value)
           choose(factory_translate(value), name: 'claimants_detail[continued_employment]')
         end
         def assert_answer(untranslated_symbol)

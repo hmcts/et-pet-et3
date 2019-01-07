@@ -15,9 +15,9 @@ FactoryBot.define do
     queried_hours {32.0}
     agree_with_earnings_details {:"questions.agree_with_earnings_details.no.label"}
     queried_pay_before_tax {1000.0}
-    queried_pay_before_tax_period {"Monthly"}
+    queried_pay_before_tax_period {:"questions.agree_with_earnings_details.queried_pay_before_tax_period.monthly.label"}
     queried_take_home_pay {900.0}
-    queried_take_home_pay_period {"Monthly"}
+    queried_take_home_pay_period {:"questions.agree_with_earnings_details.queried_take_home_pay_period.monthly.label"}
     agree_with_claimant_notice {:"questions.agree_with_claimant_notice.no.label"}
     disagree_claimant_notice_reason {"lorem ipsum notice reason"}
     agree_with_claimant_pension_benefits {:"questions.agree_with_claimant_pension_benefits.no.label"}
@@ -41,9 +41,9 @@ FactoryBot.define do
     queried_hours {"string"}
     agree_with_earnings_details {:"questions.agree_with_earnings_details.no.label"}
     queried_pay_before_tax {"string"}
-    queried_pay_before_tax_period {"Weekly"}
+    queried_pay_before_tax_period {:"questions.agree_with_earnings_details.queried_pay_before_tax_period.weekly.label"}
     queried_take_home_pay {"string"}
-    queried_take_home_pay_period {"Weekly"}
+    queried_take_home_pay_period {:"questions.agree_with_earnings_details.queried_take_home_pay_period.weekly.label"}
     agree_with_claimant_notice {:"questions.agree_with_claimant_notice.no.label"}
     disagree_claimant_notice_reason { Faker::Lorem.characters(451) }
     agree_with_claimant_pension_benefits {:"questions.agree_with_claimant_pension_benefits.no.label"}

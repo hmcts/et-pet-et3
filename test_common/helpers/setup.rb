@@ -45,10 +45,7 @@ module ET3
       def answer_claimants_details
         user = @claimant
         claimants_details_page.claimants_name_question.set(user.claimants_name)
-        claimants_details_page.agree_with_early_conciliation_details_question.set_for(user.agree_with_early_conciliation_details)
-        if user.disagree_conciliation_reason
-          claimants_details_page.disagree_conciliation_reason.set(user.disagree_conciliation_reason)
-        end
+        claimants_details_page.agree_with_early_conciliation_details_question.set_for(user)
         claimants_details_page.agree_with_employment_dates_question.set_for(user)
         claimants_details_page.continued_employment_question.set_for(user.continued_employment)
         claimants_details_page.agree_with_claimants_description_of_job_or_title_question.set_for(user)

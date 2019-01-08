@@ -6,6 +6,7 @@ RSpec.feature "Fill in Disability Page", js: true do
     disability_page.load(locale: current_locale_parameter)
     given_valid_data
     answer_disability_question
+
     expect(employers_contract_claim_page).to be_displayed
   end
 
@@ -22,12 +23,11 @@ RSpec.feature "Fill in Disability Page", js: true do
     disability_page.load(locale: current_locale_parameter)
     given_valid_data
     answer_disability_question
+
     confirmation_of_supplied_details_page.load(locale: current_locale_parameter)
     confirmation_of_supplied_details_page.confirmation_of_disability_answers.edit_page_link.click
+
     expect(disability_page).to be_displayed
-    # expect(disability_page.disability_question.get).to eql user.disability
-    if t(@respondent.disability) == t('questions.disability.yes.label')
-      expect(disability_page.disability_question.disability_information.root_element.value).to eql @respondent.disability_information
-    end
+    disability_page.disability_question.assert_answers_for(@respondent)
   end
 end

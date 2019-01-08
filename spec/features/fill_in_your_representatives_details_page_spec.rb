@@ -7,7 +7,7 @@ RSpec.feature "Fill in Your Representatives Details Page", js: true do
     given_valid_data
 
     user = @representative
-    
+
     your_representatives_details_page.type_of_representative_question.set_for(user)
     your_representatives_details_page.representative_org_name_question.set(user.organisation_name)
     your_representatives_details_page.representative_name_question.set(user.name)
@@ -77,25 +77,7 @@ RSpec.feature "Fill in Your Representatives Details Page", js: true do
     confirmation_of_supplied_details_page.confirmation_of_your_representatives_details_answers.edit_page_link.click
 
     expect(your_representatives_details_page).to be_displayed
-    case user.type
-    when "Citizen's advice bureau"
-      expect(your_representatives_details_page.type_of_representative_question.citizens_advice_bureau.has_checked_field?).to be true
-    when "Free representation unit"
-      expect(your_representatives_details_page.type_of_representative_question.free_representative_unit.has_checked_field?).to be true
-    when "Law centre"
-      expect(your_representatives_details_page.type_of_representative_question.law_centre.has_checked_field?).to be true
-    when "Union"
-      expect(your_representatives_details_page.type_of_representative_question.union.has_checked_field?).to be true
-    when "Solicitor"
-      expect(your_representatives_details_page.type_of_representative_question.solicitor.has_checked_field?).to be true
-    when "Private individual"
-      expect(your_representatives_details_page.type_of_representative_question.private_individual.has_checked_field?).to be true
-    when "Trade association"
-      expect(your_representatives_details_page.type_of_representative_question.trade_association.has_checked_field?).to be true
-    when "Other"
-      expect(your_representatives_details_page.type_of_representative_question.other.has_checked_field?).to be true
-    end
-
+    your_representatives_details_page.type_of_representative_question.assert_answer(user.type)
     expect(your_representatives_details_page.representative_org_name_question.field.value).to eql user.organisation_name
     expect(your_representatives_details_page.representative_name_question.field.value).to eql user.name
     expect(your_representatives_details_page.representative_building_question.field.value).to eql user.building
@@ -107,10 +89,6 @@ RSpec.feature "Fill in Your Representatives Details Page", js: true do
     expect(your_representatives_details_page.representative_mobile_question.field.value).to eql user.representative_mobile
     expect(your_representatives_details_page.representative_dx_number_question.field.value).to eql user.dx_number
     expect(your_representatives_details_page.representative_reference_question.field.value).to eql user.representative_reference
-    expect(your_representatives_details_page.representative_contact_preference_question.select_email.has_checked_field?).to be true if user.representative_contact_preference == t(:"questions.representative_contact_preference.fax.label")
-    expect(your_representatives_details_page.representative_contact_preference_question.preference_email.root_element.value).to eql user.representative_email if user.representative_contact_preference == 'Email'
-    expect(your_representatives_details_page.representative_contact_preference_question.select_post.has_checked_field?).to be true if user.representative_contact_preference == 'Post'
-    expect(your_representatives_details_page.representative_contact_preference_question.select_fax.has_checked_field?).to be true if user.representative_contact_preference == 'Fax'
-    expect(your_representatives_details_page.representative_contact_preference_question.preference_fax.root_element.value).to eql user.representative_fax if user.representative_contact_preference == 'Fax'
+    your_representatives_details_page.representative_contact_preference_question.assert_answers_for(user)
   end
 end

@@ -6,6 +6,7 @@ RSpec.feature "Fill in Employers Contract Claim Page", js: true do
     employers_contract_claim_page.load(locale: current_locale_parameter)
     given_valid_data
     answer_employers_contract_claim
+
     expect(additional_information_page).to be_displayed
   end
 
@@ -22,12 +23,11 @@ RSpec.feature "Fill in Employers Contract Claim Page", js: true do
     employers_contract_claim_page.load(locale: current_locale_parameter)
     given_valid_data
     answer_employers_contract_claim
+
     confirmation_of_supplied_details_page.load(locale: current_locale_parameter)
     confirmation_of_supplied_details_page.confirmation_of_employer_contract_claim_answers.edit_page_link.click
 
     expect(employers_contract_claim_page).to be_displayed
-    user = @respondent
-    # expect(employers_contract_claim_page.make_employer_contract_claim_question.get).to eql user.make_employer_contract_claim
-    expect(employers_contract_claim_page.make_employer_contract_claim_question.claim_information.root_element.value).to eql user.claim_information
+    employers_contract_claim_page.make_employer_contract_claim_question.assert_answers_for(@respondent)
   end
 end

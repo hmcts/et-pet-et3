@@ -59,7 +59,7 @@ RSpec.feature "Fill in Respondents Details Page", js: true do
     expect(respondents_details_page.dx_number_question.field.value).to eql user.dx_number
     expect(respondents_details_page.contact_number_question.field.value).to eql user.contact_number
     expect(respondents_details_page.contact_mobile_number_question.field.value).to eql user.contact_mobile_number
-    respondents_details_page.contact_preference_question.assert_answer_for(user)
+    respondents_details_page.contact_preference_question.assert_answers_for(user)
     expect(respondents_details_page.organisation_employ_gb_question.field.value).to eql user.organisation_employ_gb
     respondents_details_page.organisation_more_than_one_site_question.assert_answer_for(user)
   end

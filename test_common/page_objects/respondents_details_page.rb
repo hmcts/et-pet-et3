@@ -81,7 +81,7 @@ module ET3
           end
         end
 
-        def assert_answer_for(user_persona)
+        def assert_answers_for(user_persona)
           find(:gds_multiple_choice_option, user_persona.contact_preference).assert_selector(:field, nil, checked: true)
           case t(user_persona.contact_preference)
           when t('questions.contact_preference.email.label')

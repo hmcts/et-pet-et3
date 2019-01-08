@@ -16,7 +16,7 @@ RSpec.feature "Fill in Your Representative Page", js: true do
     your_representative_page.load(locale: current_locale_parameter)
     @representative = FactoryBot.create(:representative, :representative_valid, have_representative: :"questions.have_representative.yes.label")
     answer_representative
-    
+
     expect(disability_page).to be_displayed
   end
 
@@ -35,7 +35,6 @@ RSpec.feature "Fill in Your Representative Page", js: true do
     confirmation_of_supplied_details_page.confirmation_of_your_representative_answers.edit_page_link.click
 
     expect(your_representative_page).to have_header
-    # expect(your_representative_page.have_representative_question.get).to eql @representative.have_representative
-
+    your_representative_page.have_representative_question.assert_answer(@representative.have_representative)
   end
 end

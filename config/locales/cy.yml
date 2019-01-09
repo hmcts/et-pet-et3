@@ -88,35 +88,35 @@ cy:
         claimants_name: "Enw'r hawlydd (dewisol) "
         agree_with_early_conciliation_details:
           choices:
-            'yes': 'Ia'
-            'no': 'Na'
+            'yes': 'Ydy'
+            'no': 'Nac ydy'
         disagree_conciliation_reason: "Pam yr ydych yn anghytuno â’r hawlydd? (dewisol) "
         agree_with_employment_dates:
           choices:
-            'yes': 'Ydw'
-            'no': 'Nac ydw'
+            'yes': 'Ydy'
+            'no': 'Nac ydy'
         employment_start: Pa bryd ddechreuodd ei gyflogaeth
         employment_end: "Pa bryd ddaeth ei gyflogaeth i ben, neu y bydd yn dod i ben"
         disagree_employment: Pam yr ydych yn anghytuno â’r dyddiadau a roddwyd gan yr hawlydd
         continued_employment:
           choices:
-            'yes': 'Ydw'
-            'no': 'Nac ydw'
+            'yes': 'Ydy'
+            'no': 'Nac ydy'
         agree_with_claimants_description_of_job_or_title:
           choices:
-            'yes': 'Ia'
-            'no': 'Na'
+            'yes': 'Ydy'
+            'no': 'Nac ydy'
         disagree_claimants_job_or_title: "Rhowch y manylion sy’n gywir yn eich barn chi (dewisol) "
       earnings_and_benefits:
         agree_with_claimants_hours:
           choices:
-            'yes': 'Ia'
-            'no': 'Na'
+            'yes': 'Ydy'
+            'no': 'Nac ydy'
         queried_hours: "Nodwch y manylion sy’n gywir yn eich barn chi (dewisol) "
         agree_with_earnings_details:
           choices:
-            'yes': 'Ia'
-            'no': 'Na'
+            'yes': 'Ydy'
+            'no': 'Nac ydy'
         queried_pay_before_tax: "Tâl cyn treth (dewisol) "
         queried_pay_before_tax_period:
           choices:
@@ -129,21 +129,21 @@ cy:
             weekly: "Wythnosol "
         agree_with_claimant_notice:
           choices:
-            'yes': 'Oes'
-            'no': 'Nac oes'
+            'yes': 'Ydy'
+            'no': 'Nac ydy'
         disagree_claimant_notice_reason: |
           Rhowch y manylion sy’n gywir yn eich barn chi isod. Os na wnaethoch roi rhybudd iddo neu os na wnaethoch dalu iddo yn hytrach na gadael iddo weithio ei gyfnod o rybudd, eglurwch beth ddigwyddodd a pham (dewisol) 
         agree_with_claimant_pension_benefits:
           choices:
-            'yes': 'Ydw'
-            'no': 'Nac ydw'
+            'yes': 'Ydy'
+            'no': 'Nac ydy'
         disagree_claimant_pension_benefits_reason:
           "Rhowch y manylion sy’n gywir yn eich barn chi. (dewisol) "
       response:
         defend_claim:
           choices:
-            'yes': 'Ia'
-            'no': 'Na'
+            'yes': 'Ydw'
+            'no': 'Nac ydw'
         defend_claim_facts: "Rhowch y ffeithiau yr ydych yn dibynnu arnynt i amddiffyn yr hawliad hwn (dewisol) "
       your_representative:
         have_representative:
@@ -182,8 +182,8 @@ cy:
       disability:
         disability:
           choices:
-            'yes': 'Ydy'
-            'no': 'Nac ydy'
+            'yes': 'Oes'
+            'no': 'Nac oes'
         disability_information: "Byddai o gymorth i ni pe baech yn nodi beth yw'ch anabledd, a dweud pa gymorth, os o gwbl, fydd arnoch ei angen wrth i'ch hawliad fynd drwy'r system, gan gynnwys ar gyfer unrhyw wrandawiadau a gynhelir mewn adeilad tribiwnlys"
       employers_contract_claim:
         make_employer_contract_claim:
@@ -296,12 +296,12 @@ cy:
     confirmation_of_supplied_details:
       header: "Cadarnhau'r manylion a roddwyd "
       receipt_header: E-bost yn cadarnhau bod y manylion wedi'u hanfon
-      receipt_description: "Nodwch eich cyfeiriad e-bost fel y gallwn anfon derbynneb am eich taliad atoch. "
+      receipt_description: "Nodwch eich cyfeiriad e-bost fel y gallwn anfon cadarnhad atoch"
       submit_guidance: 'Bydd clicio ar "Cyflwyno Ffurflen " ar waelod y dudalen yn anfon y manylion a gadarnhawyd isod i''w prosesu.'
       table_header: "Cadarnhau'r manylion a roddwyd "
       question_header: "Cwestiwn "
       answer_header: Ateb
-      edit_page: "Golygu atebion at y dudalen hon "
+      edit_page: "Golygu atebion ar y dudalen hon "
       back_to_top: "Yn ôl i frig y dudalen "
       remove_file_link: "Dileu ffeil "
       confirmation_of_respondents_details_answers:
@@ -345,7 +345,7 @@ cy:
     introduction:
       header: "Cyflwyniad "
       description: Llenwch a chyflwynwch ffurflen ymateb ET3 pan fydd rhywun yn gwneud hawliad tribiwnlys cyflogaeth yn eich erbyn.
-      what_title: Beth sydd ei angen arnoch ar gyfer llenwi'r ffurflen hon
+      what_title: Beth sydd ei angen arnoch ar gyfer llenwi'r ffurflen hon
       what_content_1: "rhif eich achos (sydd ar y llythyr a anfonwyd atoch) "
       what_content_2: "dyddiadau dechrau a gorffen cyflogaeth yr hawlydd, oriau gwaith a chyfnod rhybudd"
       what_content_3: "manylion tâl a buddion yr hawlydd, cyn ac ar ôl treth "
@@ -376,7 +376,7 @@ cy:
       header: "Anabledd"
     employers_contract_claim:
       header: "Hawliad Contract y Cyflogwr"
-      description: "Dim ond ar gael mewn amgylchiadau cyfyngedig lle mae'r Hawlydd wedi gwneud hawliad contract (gweler y canllawiau) "
+      description: "Dim ond ar gael mewn amgylchiadau cyfyngedig lle mae'r Hawlydd wedi gwneud Hawliad Contract y Cyflogwr"
     additional_information:
       header: "Gwybodaeth Ychwanegol "
       drag_text: "Llusgwch ffeiliau rtf a'u rhoi yma "

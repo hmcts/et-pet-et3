@@ -52,17 +52,17 @@ cy:
     agree_with_early_conciliation_details:
       label: "A ydych chi'n cytuno gyda'r manylion a roddodd yr hawlydd ynghylch Cymodi Cynnar gydag Acas? (dewisol)"
       'yes':
-        label: Ia
+        label: Ydy
       'no':
-        label: Na
+        label: Nac ydy
       disagree_conciliation_reason:
         label: "Pam yr ydych yn anghytuno â’r hawlydd? (dewisol)"
     agree_with_employment_dates:
       label: "A yw'r dyddiadau cyflogaeth a roddwyd gan yr hawlydd yn gywir?"
       'yes':
-        label: Ydw
+        label: Ydy
       'no':
-        label: Nac ydw
+        label: Nac ydy
       employment_start:
         label: "Pa bryd ddechreuodd ei gyflogaeth"
         day:
@@ -84,32 +84,32 @@ cy:
     continued_employment:
       label: "A yw'n parhau i fod mewn swydd? (dewisol)"
       'yes':
-        label: Ydw
+        label: Ydy
       'no':
-        label: Nac ydw
+        label: Nac ydy
     agree_with_claimants_description_of_job_or_title:
       label: "A yw disgrifiad yr hawlydd o’i swydd neu deitl ei swydd yn gywir? (dewisol)"
       'yes':
-        label: Ia
+        label: Ydy
       'no':
-        label: Na
+        label: Nac ydy
       disagree_claimants_job_or_title:
         label: "Rhowch y manylion sy’n gywir yn eich barn chi (dewisol)"
     # Earnings and Benefits Page
     agree_with_claimants_hours:
       label: "A yw oriau gwaith yr hawlydd yn gywir? (dewisol)"
       'yes':
-        label: Ia
+        label: Ydy
       'no':
-        label: Na
+        label: Nac ydy
       queried_hours:
         label: "Nodwch y manylion sy’n gywir yn eich barn chi (dewisol)"
     agree_with_earnings_details:
       label: "A yw manylion yr enillion a roddwyd gan yr hawlydd yn gywir? (dewisol)"
       'yes':
-        label: Ia
+        label: Ydy
       'no':
-        label: Na
+        label: Nac ydy
       queried_pay_before_tax:
         label: "Tâl cyn treth (dewisol)"
       queried_pay_before_tax_period:
@@ -129,26 +129,26 @@ cy:
     agree_with_claimant_notice:
       label: "A yw’r wybodaeth a roddwyd gan yr hawlydd am gael tâl, neu weithio cyfnod o rybudd yn gywir? (dewisol)"
       'yes':
-        label: Oes
+        label: Ydy
       'no':
-        label: Nac oes
+        label: Nac ydy
       disagree_claimant_notice_reason:
         label: "Rhowch y manylion sy’n gywir yn eich barn chi isod. Os na wnaethoch roi rhybudd iddo neu os na wnaethoch dalu iddo yn hytrach na gadael iddo weithio ei gyfnod o rybudd, eglurwch beth ddigwyddodd a pham (dewisol)"
     agree_with_claimant_pension_benefits:
       label: "A yw’r manylion am bensiwn a buddion eraill a roddwyd gan yr hawlydd yn gywir? (dewisol)"
       'yes':
-        label: Ydw
+        label: Ydy
       'no':
-        label: Nac ydw
+        label: Nac ydy
       disagree_claimant_pension_benefits_reason:
         label: "Rhowch y manylion sy’n gywir yn eich barn chi. (dewisol)"
     # Response Page
     defend_claim:
       label: "A ydych yn amddiffyn yr hawliad?"
       'yes':
-        label: Ia
+        label: Ydw
       'no':
-        label: Na
+        label: Nac ydw
       defend_claim_facts:
         label: "Rhowch y ffeithiau yr ydych yn dibynnu arnynt i amddiffyn yr hawliad hwn (dewisol)"
     # Your Representatives Page
@@ -213,9 +213,9 @@ cy:
     disability:
       label: A oes gennych chi anabledd? (dewisol)
       'yes':
-        label: Ydy
+        label: Oes
       'no':
-        label: Nac ydy
+        label: Nac oes
       disability_information:
         label: "Byddai o gymorth i ni pe baech yn nodi beth yw'ch anabledd, a dweud pa gymorth, os o gwbl, fydd arnoch ei angen wrth i'ch hawliad fynd drwy'r system, gan gynnwys ar gyfer unrhyw wrandawiadau a gynhelir mewn adeilad tribiwnlys"
         content: "NODER - Dim ond gwybodaeth gyfyngedig y gallwch roi yma (hyd at 350 o nodau). Os hoffech gynnwys rhagor o wybodaeth, defnyddiwch y cyfleuster sydd ar ddiwedd y ffurflen hon i lwytho ffeil Rich Text Format (.rtf)."
@@ -295,7 +295,7 @@ cy:
         inclusion: "Dewiswch sut fath o gynrychiolydd sydd gennych"
   links:
     confirmation_of_supplied_details:
-      edit_page: "Golygu atebion at y dudalen hon"
+      edit_page: "Golygu atebion ar y dudalen hon"
     form_submission:
       invalid_pdf_download: "Ddim yn barod eto - bydd fersiwn PDF o'ch ffurflen wedi'i llenwi ar gael i'w lawrlwytho maes o law"
       valid_pdf_download: "Mae fersiwn PDF o'ch ffurflen wedi'i llenwi nawr ar gael i'w lawrlwytho"
@@ -321,7 +321,7 @@ cy:
   introduction:
     header: Cyflwyniad
     description: Llenwch a chyflwynwch ffurflen ymateb ET3 pan fydd rhywun yn gwneud hawliad tribiwnlys cyflogaeth yn eich erbyn.
-    what_title: Beth sydd ei angen arnoch ar gyfer llenwi'r ffurflen hon
+    what_title: Beth sydd ei angen arnoch ar gyfer llenwi'r ffurflen hon
     what_content_1: "rhif eich achos (sydd ar y llythyr a anfonwyd atoch)"
     what_content_2: "dyddiadau dechrau a gorffen cyflogaeth yr hawlydd, oriau gwaith a chyfnod rhybudd"
     what_content_3: "manylion tâl a buddion yr hawlydd, cyn ac ar ôl treth"
@@ -361,7 +361,7 @@ cy:
   confirmation:
     header: "Cadarnhau'r manylion a roddwyd"
     receipt_header: "Nodyn yn cadarnhau bod y neges e-bost wedi cyrraedd"
-    receipt_description: "Nodwch eich cyfeiriad e-bost fel y gallwn roi derbynneb o'ch taliad ichi."
+    receipt_description: "Nodwch eich cyfeiriad e-bost fel y gallwn anfon cadarnhad atoch."
     submit_guidance: Bydd clicio ar "Cyflwyno Ffurflen " ar waelod y dudalen yn anfon y manylion a gadarnheir isod i'w prosesu.
     submit: Cyflwyno Ffurflen
   submission:

@@ -59,7 +59,7 @@
           td = @hash_store.dig(:respondents_detail_answers, :mobile_number)
         tr
           td = t('helpers.fieldset.respondents_detail.contact_preference')
-          td = @hash_store.dig(:respondents_detail_answers, :contact_preference)
+          td = translate_contact_preference(@hash_store.dig(:respondents_detail_answers, :contact_preference))
         tr
           td = t('helpers.label.respondents_detail.email_address')
           td = @hash_store.dig(:respondents_detail_answers, :email_address)
@@ -219,7 +219,7 @@
           th = t('components.confirmation_of_supplied_details.answer_header')
         tr
           td = t('helpers.fieldset.your_representatives_details.type_of_representative')
-          td = @hash_store.dig(:your_representatives_details_answers, :type_of_representative)
+          td = translate_representative(@hash_store.dig(:your_representatives_details_answers, :type_of_representative))
         tr
           td = t('helpers.label.your_representatives_details.representative_org_name')
           td = @hash_store.dig(:your_representatives_details_answers, :representative_org_name)
@@ -255,7 +255,7 @@
           td = @hash_store.dig(:your_representatives_details_answers, :representative_reference)
         tr
           td = t('helpers.fieldset.your_representatives_details.representative_contact_preference')
-          td = @hash_store.dig(:your_representatives_details_answers, :representative_contact_preference)
+          td = translate_contact_preference(@hash_store.dig(:your_representatives_details_answers, :representative_contact_preference))
         tr
           td = t('helpers.label.your_representatives_details.representative_email')
           td = @hash_store.dig(:your_representatives_details_answers, :representative_email)

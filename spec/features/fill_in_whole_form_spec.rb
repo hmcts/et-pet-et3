@@ -33,7 +33,7 @@ RSpec.feature "Fill in whole form", js: true do
     expect(respondents_details_table.dx_number_row.dx_number_answer).to have_text @respondent.dx_number
     expect(respondents_details_table.contact_number_row.contact_number_answer).to have_text @respondent.contact_number
     expect(respondents_details_table.mobile_number_row.mobile_number_answer).to have_text @respondent.contact_mobile_number
-    expect(respondents_details_table.contact_preference_row.contact_preference_answer).to have_text t(@respondent.contact_preference).downcase
+    expect(respondents_details_table.contact_preference_row.contact_preference_answer).to have_text t(@respondent.contact_preference)
     expect(respondents_details_table.email_address_row.email_address_answer).to have_text @respondent.email_address
     expect(respondents_details_table.fax_number_row.fax_number_answer).to have_text nil
     expect(respondents_details_table.organisation_employ_gb_row.organisation_employ_gb_answer).to have_text @respondent.organisation_employ_gb
@@ -96,7 +96,7 @@ RSpec.feature "Fill in whole form", js: true do
     expect(your_rep_details_table.representative_dx_number_row.representative_dx_number_answer).to have_text @representative.dx_number
     expect(your_rep_details_table.representative_reference_row.representative_reference_answer).to have_text @representative.representative_reference
     expect(your_rep_details_table.representative_contact_preference_row.representative_contact_preference_answer).to have_text @representative.representative_contact_preference.downcase
-    # TODO: write a conditional here expect(your_rep_details_table.email_row.email_answer).to have_text @representative.email_address
+    expect(your_rep_details_table.email_row.email_answer).to have_text nil
     expect(your_rep_details_table.fax_row.fax_answer).to have_text @representative.representative_fax
 
     expect(confirmation_of_supplied_details_page).to have_confirmation_of_disability_answers
@@ -141,9 +141,9 @@ RSpec.feature "Fill in whole form", js: true do
           expect(request_body["data"][0]["data"]["queried_hours"]).to eql @claimant.queried_hours
           expect(request_body["data"][0]["data"]["agree_with_earnings_details"]).to eql false
           expect(request_body["data"][0]["data"]["queried_pay_before_tax"]).to eql @claimant.queried_pay_before_tax
-          expect(request_body["data"][0]["data"]["queried_pay_before_tax_period"]).to eql t(@claimant.queried_pay_before_tax_period)
+          expect(request_body["data"][0]["data"]["queried_pay_before_tax_period"]).to eql @claimant.queried_pay_before_tax_period.to_s.split('.')[-2].titleize
           expect(request_body["data"][0]["data"]["queried_take_home_pay"]).to eql @claimant.queried_take_home_pay
-          expect(request_body["data"][0]["data"]["queried_take_home_pay_period"]).to eql t(@claimant.queried_take_home_pay_period)
+          expect(request_body["data"][0]["data"]["queried_take_home_pay_period"]).to eql @claimant.queried_take_home_pay_period.to_s.split('.')[-2].titleize
           expect(request_body["data"][0]["data"]["agree_with_claimant_notice"]).to eql false
           expect(request_body["data"][0]["data"]["disagree_claimant_notice_reason"]).to eql @claimant.disagree_claimant_notice_reason
           expect(request_body["data"][0]["data"]["agree_with_claimant_pension_benefits"]).to eql false
@@ -168,7 +168,7 @@ RSpec.feature "Fill in whole form", js: true do
           expect(request_body["data"][1]["data"]["dx_number"]).to eql @respondent.dx_number
           expect(request_body["data"][1]["data"]["address_telephone_number"]).to eql @respondent.contact_number
           expect(request_body["data"][1]["data"]["alt_phone_number"]).to eql @respondent.contact_mobile_number
-          expect(request_body["data"][1]["data"]["contact_preference"].camelcase).to eql t(@respondent.contact_preference)
+          expect(request_body["data"][1]["data"]["contact_preference"]).to eql @respondent.contact_preference.to_s.split('.')[-2]
           expect(request_body["data"][1]["data"]["email_address"]).to eql @respondent.email_address if @respondent.contact_preference == 'email'
           expect(request_body["data"][1]["data"]["fax_number"]).to eql @respondent.fax_number if @respondent.contact_preference == 'fax'
           expect(request_body["data"][1]["data"]["organisation_employ_gb"].to_s).to eql @respondent.organisation_employ_gb
@@ -187,10 +187,10 @@ RSpec.feature "Fill in whole form", js: true do
           expect(request_body["data"][2]["data"]["address_attributes"]["post_code"]).to eql @representative.post_code
           expect(request_body["data"][2]["data"]["address_telephone_number"]).to eql @representative.telephone_number
           expect(request_body["data"][2]["data"]["mobile_number"]).to eql @representative.representative_mobile
-          expect(request_body["data"][2]["data"]["representative_type"].capitalize).to eql t(@representative.type)
+          expect(request_body["data"][2]["data"]["representative_type"]).to eql @representative.type.to_s.split('.')[-2].capitalize
           expect(request_body["data"][2]["data"]["dx_number"]).to eql @representative.dx_number
           expect(request_body["data"][2]["data"]["reference"]).to eql @representative.representative_reference
-          expect(request_body["data"][2]["data"]["contact_preference"].capitalize).to eql t(@representative.representative_contact_preference)
+          expect(request_body["data"][2]["data"]["contact_preference"]).to eql @representative.representative_contact_preference.to_s.split('.')[-2]
           expect(request_body["data"][2]["data"]["email_address"]).to eql nil
           expect(request_body["data"][2]["data"]["fax_number"]).to eql @representative.representative_fax
           expect(request_body["data"][2]["uuid"]).to be_an_instance_of(String)

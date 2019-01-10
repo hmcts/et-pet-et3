@@ -27,7 +27,7 @@ module ET3
 
         def assert_answers_for(user_persona)
           find(:gds_multiple_choice_option,
-               user_persona.defend_claim).assert_selector(:field, nil, checked: true)
+               user_persona.defend_claim).assert_selector(:field, nil, checked: true) &&
 
           if t(user_persona.defend_claim) == t('questions.defend_claim.yes.label')
             root_element.

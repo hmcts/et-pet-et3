@@ -33,9 +33,9 @@ RSpec.feature "Fill in Earnings and Benefits Page", js: true do
     expect(earnings_and_benefits_page).to be_displayed
     user = @claimant
 
-    earnings_and_benefits_page.agree_with_claimants_hours_question.assert_answer_for(user)
-    earnings_and_benefits_page.agree_with_earnings_details_question.assert_answer_for(user)
-    earnings_and_benefits_page.agree_with_claimant_notice_question.assert_answer_for(user)
-    earnings_and_benefits_page.agree_with_claimant_pension_benefits_question.assert_answer_for(user)
+    earnings_and_benefits_page.agree_with_claimants_hours_question.assert_answers_for(user)
+    earnings_and_benefits_page.agree_with_earnings_details_question.assert_answers_for(user)
+    earnings_and_benefits_page.agree_with_claimant_notice_question.assert_answers_for(user)
+    earnings_and_benefits_page.agree_with_claimant_pension_benefits_question.assert_answers_for(user)
   end
 end

@@ -82,7 +82,7 @@ module ET3
         end
 
         def assert_answers_for(user_persona)
-          find(:gds_multiple_choice_option, user_persona.contact_preference).assert_selector(:field, nil, checked: true)
+          find(:gds_multiple_choice_option, user_persona.contact_preference).assert_selector(:field, nil, checked: true) &&
           case t(user_persona.contact_preference)
           when t('questions.contact_preference.email.label')
             root_element.assert_selector(:field, t('questions.contact_preference.email.input_label'), with: user_persona.email_address)
@@ -116,8 +116,9 @@ module ET3
           end
         end
         
-        def assert_answer_for(user_persona)
-          find(:gds_multiple_choice_option, user_persona.organisation_more_than_one_site).assert_selector(:field, nil, checked: true)
+        def assert_answers_for(user_persona)
+          find(:gds_multiple_choice_option,
+               user_persona.organisation_more_than_one_site).assert_selector(:field, nil, checked: true) &&
           if t(user_persona.organisation_more_than_one_site) == t('questions.organisation_more_than_one_site.yes.label')
             root_element.
                 assert_selector(

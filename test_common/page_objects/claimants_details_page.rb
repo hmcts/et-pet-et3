@@ -30,7 +30,7 @@ module ET3
 
         def assert_answers_for(user_persona)
           find(:gds_multiple_choice_option,
-               user_persona.agree_with_early_conciliation_details).assert_selector(:field, nil, checked: true)
+               user_persona.agree_with_early_conciliation_details).assert_selector(:field, nil, checked: true) &&
 
           if t(user_persona.agree_with_early_conciliation_details) == t('questions.agree_with_early_conciliation_details.no.label')
             root_element.
@@ -137,7 +137,7 @@ module ET3
 
         def assert_answers_for(user_persona)
           find(:gds_multiple_choice_option,
-               user_persona.agree_with_employment_dates).assert_selector(:field, nil, checked: true)
+               user_persona.agree_with_employment_dates).assert_selector(:field, nil, checked: true) &&
 
           if t(user_persona.agree_with_employment_dates) == t('questions.agree_with_employment_dates.no.label')
             employment_start.assert_date(user_persona.employment_start) &&
@@ -183,7 +183,7 @@ module ET3
 
         def assert_answers_for(user_persona)
           find(:gds_multiple_choice_option,
-               user_persona.agree_with_claimants_description_of_job_or_title).assert_selector(:field, nil, checked: true)
+               user_persona.agree_with_claimants_description_of_job_or_title).assert_selector(:field, nil, checked: true) &&
 
           if t(user_persona.agree_with_claimants_description_of_job_or_title) == t('questions.agree_with_claimants_description_of_job_or_title.no.label')
             root_element.

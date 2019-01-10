@@ -167,7 +167,8 @@ module ET3
         end
 
         def assert_answers_for(user_persona)
-          find(:gds_multiple_choice_option, user_persona.representative_contact_preference).assert_selector(:field, nil, checked: true) &&
+          find(:gds_multiple_choice_option,
+               user_persona.representative_contact_preference).assert_selector(:field, nil, checked: true) &&
           case t(user_persona.representative_contact_preference)
           when t('questions.representative_contact_preference.email.label')
             root_element.assert_selector(:field, t('questions.representative_contact_preference.email.input_label'), with: user_persona.representative_email)

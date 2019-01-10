@@ -25,9 +25,9 @@ module ET3
           end
         end
 
-        def assert_answer_for(user_persona)
+        def assert_answers_for(user_persona)
           find(:gds_multiple_choice_option,
-               user_persona.agree_with_claimants_hours).assert_selector(:field, nil, checked: true)
+               user_persona.agree_with_claimants_hours).assert_selector(:field, nil, checked: true) &&
 
           if t(user_persona.agree_with_claimants_hours) == t('questions.agree_with_claimants_hours.no.label')
             root_element.
@@ -82,9 +82,9 @@ module ET3
           end
         end
 
-        def assert_answer_for(user_persona)
+        def assert_answers_for(user_persona)
           find(:gds_multiple_choice_option,
-               user_persona.agree_with_earnings_details).assert_selector(:field, nil, checked: true)
+               user_persona.agree_with_earnings_details).assert_selector(:field, nil, checked: true) &&
 
           if t(user_persona.agree_with_claimants_description_of_job_or_title) == t('questions.agree_with_claimants_description_of_job_or_title.no.label')
             root_element.
@@ -127,9 +127,9 @@ module ET3
           end
         end
 
-        def assert_answer_for(user_persona)
+        def assert_answers_for(user_persona)
           find(:gds_multiple_choice_option,
-               user_persona.agree_with_claimant_notice).assert_selector(:field, nil, checked: true)
+               user_persona.agree_with_claimant_notice).assert_selector(:field, nil, checked: true) &&
 
           if t(user_persona.agree_with_claimant_notice) == t('questions.agree_with_claimant_notice.no.label')
             root_element.
@@ -161,9 +161,9 @@ module ET3
           end
         end
 
-        def assert_answer_for(user_persona)
+        def assert_answers_for(user_persona)
           find(:gds_multiple_choice_option,
-               user_persona.agree_with_claimant_pension_benefits).assert_selector(:field, nil, checked: true)
+               user_persona.agree_with_claimant_pension_benefits).assert_selector(:field, nil, checked: true) &&
 
           if t(user_persona.agree_with_claimant_pension_benefits) == t('questions.agree_with_claimant_pension_benefits.no.label')
             root_element.

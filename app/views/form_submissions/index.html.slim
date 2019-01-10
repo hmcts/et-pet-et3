@@ -13,8 +13,7 @@
   p
     = t('components.form_submission.submission_date')
     span.submission-date = @submission_date
-    br
-    br
+  p
     = link_to t('components.form_submission.valid_pdf_download'), @pdf_url, class: 'pdf-success'
     = link_to t('components.form_submission.invalid_pdf_download'), nil, class: 'pdf-failure hidden'
   p

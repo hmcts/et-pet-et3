@@ -382,3 +382,68 @@ cy:
       drag_text: "Llusgwch ffeiliau rtf a'u rhoi yma "
       or_text: "neu"
       upload_button: "Cliciwch yma i lwytho ffeil rtf"
+  attributes:
+    case_number: rhif yr Achos
+    name: enw'r unigolyn, cwmni neu sefydliad
+    contact: enw’r cyswllt
+    building_name: enw neu rif yr adeilad
+    street_name: stryd
+    town: tref/dinas
+    county: sir
+    postcode: cod post
+    dx_number: rhif cyfnewid dogfennau (DX)
+    contact_number: rhif cyswllt
+    mobile_number: rhif ffôn symudol
+    contact_preference: sut hoffech i ni gysylltu â chi?
+    email_address: cyfeiriad e-bost
+    fax_number: rhif ffacs
+    organisation_employ_gb: faint o bobl sy’n gyflogedig gan y sefydliad hwn ym Mhrydain Fawr?
+    organisation_more_than_one_site: a oes gan y sefydliad hwn fwy nag un safle ym Mhrydain Fawr?
+    employment_at_site_number: faint o bobl sy’n gyflogedig ar y safle ble'r oedd yr hawlydd yn gweithio?
+    claimants_name: enw'r hawlydd
+    agree_with_early_conciliation_details: a ydych chi'n cytuno gyda'r manylion a roddodd yr hawlydd ynghylch Cymodi Cynnar gydag Acas?
+    disagree_conciliation_reason: pam yr ydych yn anghytuno â’r hawlydd?
+    agree_with_employment_dates: a yw'r dyddiadau cyflogaeth a roddwyd gan yr hawlydd yn gywir?
+    employment_start: pa bryd ddechreuodd ei gyflogaeth
+    employment_end: pa bryd ddaeth ei gyflogaeth i ben, neu y bydd yn dod i ben
+    disagree_employment: pam yr ydych yn anghytuno â’r dyddiadau a roddwyd gan yr hawlydd
+    continued_employment: a yw'n parhau i fod mewn swydd?
+    agree_with_claimants_description_of_job_or_title: a yw disgrifiad yr hawlydd o’i swydd neu deitl ei swydd yn gywir?
+    disagree_claimants_job_or_title: rhowch y manylion sy’n gywir yn eich barn chi
+    agree_with_claimants_hours: a yw oriau gwaith yr hawlydd yn gywir?
+    queried_hours: nodwch y manylion sy’n gywir yn eich barn chi
+    agree_with_earnings_details: a yw manylion yr enillion a roddwyd gan yr hawlydd yn gywir?
+    queried_pay_before_tax: tâl cyn treth
+    queried_pay_before_tax_period: tâl cyn cyfnod treth
+    queried_take_home_pay: tâl terfynol arferol
+    queried_take_home_pay_period: cyfnod tâl terfynol arferol
+    agree_with_claimant_notice: a yw’r wybodaeth a roddwyd gan yr hawlydd am gael tâl, neu weithio cyfnod o rybudd yn gywir?
+    disagree_claimant_notice_reason: |
+      rhowch y manylion sy’n gywir yn eich barn chi isod. Os na wnaethoch roi rhybudd iddo neu os na wnaethoch dalu iddo yn hytrach na gadael iddo weithio ei gyfnod o rybudd, eglurwch beth ddigwyddodd a pham
+    agree_with_claimant_pension_benefits: a yw’r manylion am bensiwn a buddion eraill a roddwyd gan yr hawlydd yn gywir?
+    disagree_claimant_pension_benefits_reason: rhowch y manylion sy’n gywir yn eich barn chi.
+    defend_claim: a ydych yn amddiffyn yr hawliad
+    defend_claim_facts: rhowch y ffeithiau yr ydych yn dibynnu arnynt i amddiffyn yr hawliad hwn
+    have_representative: a oes gennych chi gynrychiolydd?
+    type_of_representative: math o gynrychiolydd
+    representative_org_name: enw sefydliad y cynrychiolydd
+    representative_name: enw'r cynrychiolydd
+    representative_building: enw neu rif yr adeilad
+    representative_street: stryd
+    representative_town: tref/dinas
+    representative_county: sir
+    representative_postcode: cod post
+    representative_phone: rhif ffôn
+    representative_mobile: rhif ffôn symudol
+    representative_dx_number: rhif cyfnewid dogfennau (DX)
+    representative_reference: cyfeirnod
+    representative_contact_preference: sut hoffech i ni gysylltu â'ch cynrychiolydd?
+    representative_email: cyfeiriad e-bost
+    representative_fax: rhif ffacs
+    disability: a oes gennych chi anabledd?
+    disability_information: byddai o gymorth i ni pe baech yn nodi beth yw'ch anabledd, a dweud pa gymorth, os o gwbl, fydd arnoch ei angen wrth i'ch hawliad fynd drwy'r system, gan gynnwys ar gyfer unrhyw wrandawiadau a gynhelir mewn adeilad tribiwnlys
+    make_employer_contract_claim: ydych chi eisiau gwneud Hawliad Contract y Cyflogwr?
+    claim_information: rhowch gefndir a manylion eich hawliad isod. Dylech gynnwys pob dyddiad pwysig
+    upload_additional_information: llwythwch ffeil i ddarparu unrhyw wybodaeth ychwanegol bwysig am eich ymateb nad ydych wedi’i chynnwys hyd yma
+    email_receipt: cyfeiriad E-bost
+

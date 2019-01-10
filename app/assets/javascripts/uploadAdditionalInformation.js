@@ -63,7 +63,7 @@ $(document).ready(function(){
         function localisedRemoveFileString() {
             let currentLocale = $('html').attr('lang');
             if (currentLocale === 'cy') {
-                return "WELSH - Remove file";
+                return "Dileu ffeil";
             } else {
                 return "Remove file";
             }

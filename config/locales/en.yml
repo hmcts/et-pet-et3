@@ -63,7 +63,7 @@ en:
       respondents_detail:
         case_number: Case number
         name: Name of individual, company or organisation
-        contact: Name of contact (optional)
+        contact: Full name of contact (optional)
         building_name: Building name or number
         street_name: Street
         town: Town/City

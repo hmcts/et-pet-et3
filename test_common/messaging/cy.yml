@@ -321,7 +321,7 @@ cy:
   introduction:
     header: Cyflwyniad
     description: Llenwch a chyflwynwch ffurflen ymateb ET3 pan fydd rhywun yn gwneud hawliad tribiwnlys cyflogaeth yn eich erbyn.
-    what_title: Beth sydd ei angen arnoch ar gyfer llenwi'r ffurflen hon
+    what_title: Beth sydd ei angen arnoch ar gyfer llenwi'r ffurflen hon
     what_content_1: "rhif eich achos (sydd ar y llythyr a anfonwyd atoch)"
     what_content_2: "dyddiadau dechrau a gorffen cyflogaeth yr hawlydd, oriau gwaith a chyfnod rhybudd"
     what_content_3: "manylion tâl a buddion yr hawlydd, cyn ac ar ôl treth"

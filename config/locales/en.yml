@@ -62,7 +62,7 @@ en:
       respondents_detail:
         case_number: Case number
         name: Name of individual, company or organisation
-        contact: Name of contact (optional)
+        contact: Full name of contact (optional)
         building_name: Building name or number
         street_name: Street
         town: Town/City
@@ -162,7 +162,7 @@ en:
             trade_association: Trade association
             other: Other
         representative_org_name: Name of the representative's organisation (optional)
-        representative_name: Representative's name
+        representative_name: Representative's full name
         representative_building: Building name or number
         representative_street: Street
         representative_town: Town/City

@@ -62,7 +62,7 @@ cy:
       respondents_detail:
         case_number: Rhif yr Achos
         name: "Enw'r unigolyn, cwmni neu sefydliad "
-        contact: "Enw’r cyswllt (dewisol) "
+        contact: Enw llawn y cyswllt (dewisol)
         building_name: "Enw neu rif yr adeilad "
         street_name: "Stryd "
         town: Tref/Dinas
@@ -162,7 +162,7 @@ cy:
             trade_association: "Cymdeithas Masnach "
             other: Arall
         representative_org_name: "Enw sefydliad y cynrychiolydd (dewisol) "
-        representative_name: "Enw'r cynrychiolydd "
+        representative_name: Enw llawn y cynrychiolydd
         representative_building: "Enw neu rif yr adeilad "
         representative_street: "Stryd "
         representative_town: "Tref/Dinas "
@@ -385,7 +385,7 @@ cy:
   attributes:
     case_number: rhif yr Achos
     name: enw'r unigolyn, cwmni neu sefydliad
-    contact: enw’r cyswllt
+    contact: enw llawn y cyswllt
     building_name: enw neu rif yr adeilad
     street_name: stryd
     town: tref/dinas

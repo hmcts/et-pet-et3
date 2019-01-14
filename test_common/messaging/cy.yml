@@ -9,7 +9,7 @@ cy:
     name:
       label: Enw'r unigolyn, cwmni neu sefydliad
     contact:
-      label: Enw’r cyswllt (dewisol)
+      label: Enw llawn y cyswllt (dewisol)
     building_name:
       label: Enw neu rif yr adeilad
     street:
@@ -180,7 +180,7 @@ cy:
     representative_org_name:
       label: "Enw sefydliad y cynrychiolydd (dewisol)"
     representative_name:
-      label: "Enw'r cynrychiolydd"
+      label: Enw llawn y cynrychiolydd
     representative_building:
       label: "Enw neu rif yr adeilad"
     representative_street:

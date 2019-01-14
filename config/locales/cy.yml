@@ -88,8 +88,8 @@ cy:
         claimants_name: "Enw'r hawlydd (dewisol) "
         agree_with_early_conciliation_details:
           choices:
-            'yes': 'Ydy'
-            'no': 'Nac ydy'
+            'yes': 'Ydw'
+            'no': 'Nac ydw'
         disagree_conciliation_reason: "Pam yr ydych yn anghytuno â’r hawlydd? (dewisol) "
         agree_with_employment_dates:
           choices:

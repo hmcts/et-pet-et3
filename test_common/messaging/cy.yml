@@ -52,9 +52,9 @@ cy:
     agree_with_early_conciliation_details:
       label: "A ydych chi'n cytuno gyda'r manylion a roddodd yr hawlydd ynghylch Cymodi Cynnar gydag Acas? (dewisol)"
       'yes':
-        label: Ydy
+        label: Ydw
       'no':
-        label: Nac ydy
+        label: Nac ydw
       disagree_conciliation_reason:
         label: "Pam yr ydych yn anghytuno â’r hawlydd? (dewisol)"
     agree_with_employment_dates:

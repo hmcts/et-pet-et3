@@ -76,7 +76,7 @@ group :test do
   gem 'rspec-rails', '~> 3.7'
   gem 'site_prism', '~> 2.9'
   gem 'chromedriver-helper', '~> 2.1'
-  gem 'geckodriver-helper', '~> 0.0'
+  gem 'geckodriver-helper', '~> 0.23'
   gem 'database_cleaner', '~> 1.5'
   gem 'webmock', '~> 3.4'
   gem 'faker', '~> 1.8'

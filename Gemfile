@@ -10,9 +10,6 @@ end
 gem 'rails', '~> 5.2.2'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
-gem 'unicorn'
-# Use Puma as the app server
-gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -79,7 +76,7 @@ group :test do
   gem 'rspec-rails', '~> 3.7'
   gem 'site_prism', '~> 2.9'
   gem 'chromedriver-helper', '~> 2.1'
-  gem 'geckodriver-helper', '~> 0.0'
+  gem 'geckodriver-helper', '~> 0.23'
   gem 'database_cleaner', '~> 1.5'
   gem 'webmock', '~> 3.4'
   gem 'faker', '~> 1.8'
@@ -90,6 +87,7 @@ end
 group :production do
   # Add bootsnap for 5.2
   gem 'bootsnap', '~> 1.3'
+  gem 'unicorn', '~> 5.4'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

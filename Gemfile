@@ -10,9 +10,6 @@ end
 gem 'rails', '~> 5.2.2'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
-gem 'unicorn'
-# Use Puma as the app server
-gem 'puma', '~> 3.12'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -89,6 +86,7 @@ end
 group :production do
   # Add bootsnap for 5.2
   gem 'bootsnap', '~> 1.3'
+  gem 'unicorn'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -6,7 +6,7 @@ en:
     name:
       label: Name of individual, company or organisation
     contact:
-      label: Name of contact (optional)
+      label: Full name of contact (optional)
     building_name:
       label: Building name or number
     street:
@@ -177,7 +177,7 @@ en:
     representative_org_name:
       label: Name of the representative's organisation (optional)
     representative_name:
-      label: Representative's name
+      label: Representative's full name
     representative_building:
       label: Building name or number
     representative_street:

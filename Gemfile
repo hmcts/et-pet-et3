@@ -58,7 +58,7 @@ group :development, :test do
   # Run Rspec tests in parallel to speed the test suite up
   gem 'parallel_tests', '~> 2.27'
   # Add .env file to store environment variables
-  gem 'dotenv-rails', '~> 2.5'
+  gem 'dotenv-rails', '~> 2.6'
 end
 
 group :development do
@@ -78,8 +78,8 @@ group :test do
   gem 'chromedriver-helper', '~> 2.1'
   gem 'geckodriver-helper', '~> 0.23'
   gem 'database_cleaner', '~> 1.5'
-  gem 'webmock', '~> 3.4'
-  gem 'faker', '~> 1.8'
+  gem 'webmock', '~> 3.5'
+  gem 'faker', '~> 1.9'
   gem 'aws-sdk-s3', '~> 1.21'
   gem 'factory_bot'
 end

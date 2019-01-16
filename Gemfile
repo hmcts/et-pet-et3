@@ -79,7 +79,7 @@ group :test do
   gem 'geckodriver-helper', '~> 0.23'
   gem 'database_cleaner', '~> 1.5'
   gem 'webmock', '~> 3.4'
-  gem 'faker', '~> 1.8'
+  gem 'faker', '~> 1.9'
   gem 'aws-sdk-s3', '~> 1.21'
 end
 

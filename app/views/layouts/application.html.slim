@@ -21,7 +21,7 @@
   .direction-ltr#content
     main role="main"
       .grid-row
-        - if ENV['ENABLE_WELSH']
+        - unless ENV['DISABLE_WELSH']
           .column-full
             .switch-language
               = link_to t('components.common.language'), locale: t('components.common.locale')

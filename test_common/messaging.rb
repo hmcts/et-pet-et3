@@ -59,9 +59,26 @@ module ET3
         ::ET3::Test::Messaging.instance.t(*args)
       end
 
+      def current_locale
+        ::ET3::Test::Messaging.instance.current_locale
+      end
+
+      def current_locale_parameter
+        ::ET3::Test::Messaging.instance.current_locale == :cy ? :cy : nil
+      end
+
+      def factory_translate(value, *args)
+        return value unless value.is_a?(Symbol)
+        t(value, *args)
+      end
+
       class_methods do
         def t(*args)
           ::ET3::Test::Messaging.instance.t(*args)
+        end
+
+        def factory_translate(*args)
+          ::ET3::Test::Messaging.instance.factory_translate(*args)
         end
       end
     end

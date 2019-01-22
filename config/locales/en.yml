@@ -30,7 +30,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
   helpers:
     fieldset:
       respondents_detail:
@@ -194,7 +193,6 @@ en:
         claim_information: Please set out the background and details of your claim below, which should include all important dates (optional)
       additional_information:
         upload_additional_information: Please upload a file to provide any important additional information about your response which you have not been able to include so far (optional)
-        upload_button: Click here to upload rtf file
       confirmation_of_supplied_details:
         email_receipt: Email Address (optional)
     hint:
@@ -238,6 +236,8 @@ en:
       confirmation_of_supplied_details:
         email_receipt: For example, name@address.com
   errors:
+    header: Please review the following
+    description: Clicking on an error will navigate you directly to the question. Please correct these errors before continuing.
     format: "%{message}"
     messages:
       contains_no_spaces: "%{attribute} must contain spaces"
@@ -250,6 +250,8 @@ en:
       invalid_phone_number: This is not a valid phone number
       inclusion: Please select an option
       not_a_number: "%{attribute} is not a number"
+      too_long:
+        other: "%{count} characters is the maximum allowed"
     attributes:
       contact:
         contains_numbers: Name of contact must not contain numbers
@@ -272,6 +274,12 @@ en:
       type_of_representative:
         inclusion: Please select the type of your representative
   components:
+    common:
+      error_header: Please review the following
+      error_description: Clicking on an error will navigate you directly to the question. Please correct these errors before continuing.
+      save_and_continue_button: Save and continue
+      language: Cymraeg
+      locale: cy
     single_choice_option_section:
       'yes': "Yes"
       'no': "No"
@@ -293,6 +301,91 @@ en:
       more_category_link: More from the Working, jobs and pensions category
       more_category_href: http://gov.uk/browse/working
     confirmation_of_supplied_details:
+      header: Confirmation of Supplied Details
+      receipt_header: Email Receipt
+      receipt_description: Please enter your email address so that we can provide you with a receipt of your transaction.
+      submit_guidance: 'Pressing "Submit Form" at the foot of the page will send the details confirmed below for processing.'
+      table_header: Confirmation of Supplied Details
+      question_header: Question
+      answer_header: Answer
+      edit_page: Edit answers on this page
+      back_to_top: Back to the top
       remove_file_link: Remove file
+      confirmation_of_respondents_details_answers:
+        caption: "Respondent's Details"
+      confirmation_of_claimants_details_answers:
+        caption: "Claimant's Details"
+      confirmation_of_earnings_and_benefits_answers:
+        caption: "Earnings and Benefits"
+      confirmation_of_response_answers:
+        caption: "Response"
+      confirmation_of_your_representative_answers:
+        caption: "Your Representative"
+      confirmation_of_your_representatives_details_answers:
+        caption: "Your Representative's Details"
+      confirmation_of_disability_answers:
+        caption: "Disability"
+      confirmation_of_employers_contract_claim_answers:
+        caption: "Employer Contract Claim"
+      confirmation_of_additional_information_answers:
+        caption: "Additional Information"
+      submit: "Submit Form"
     form_submission:
+      page_title: Application Complete
       header: Response complete
+      confirmation: Response Complete
+      reference_text: Your reference number, which should be quoted on all correspondence, is
+      thank_you: Thank you for your submission. It has been forwarded to the following office which will contact you in due course.
+      submission_date: "Submission Date: "
+      valid_pdf_download: A PDF version of your completed form is now available for download
+      invalid_pdf_download: Not quite ready yet - a PDF version of your completed form will be available for download shortly
+      pdf_help: "PDF (Portable Document Format) files can be read using applications such as: "
+      adobe_link: "Adobe's Acrobat Reader"
+      adobe_href: http://www.adobe.com/
+      contact_on: "Our national enquiry line can be contacted on:"
+      contact_engcy: "England and Wales: 0300 123 1024"
+      contact_sco: "Scotland: 0141 354 8574"
+      contact_minitext: "Minicom/Textphone: 01509 221564"
+      contact_general: They can also provide general procedural information about the employment tribunals.
+      return_link: Return to GOV.UK
+      return_href: https://gov.uk
+    introduction:
+      header: Introduction
+      description: Complete and submit an ET3 response form when someone makes an employment tribunal claim against you.
+      what_title: What you need for this form
+      what_content_1: your case number (on the letter we sent you)
+      what_content_2: "claimant's employment start and end dates, hours of work and period of notice"
+      what_content_3: "details of claimant's pay and benefits, before and after tax"
+      what_content_4: any Acas Early Conciliation details you may have, such as the certificate number
+      what_content_5: a description of your response to the claim, including dates and the people involved
+      what_content_6: "details of your representative, like a solicitor, if you have one"
+      how_title: How to fill in the form
+      how_content_1: your information will not be saved if you spend longer than 1 hour on a single page
+      how_content_2: you can review and edit your answers before you submit the form
+      how_content_3: you can save a PDF of your form after you submit it
+      data_title: Data Protection Act 1998
+      data_content: We will send a copy of this form to the claimant and the Advisory, Conciliation and Arbitration Service (ACAS). We will put the information you give us on this form onto a computer. This helps us to monitor progress and produce statistics. Information provided on this form is passed to the Department for Business, Innovation and Skills to assist research into the use and effectiveness of employment tribunals.
+      start_now: Start now
+    respondents_details:
+      header: "Respondent's Details"
+    claimants_details:
+      header: "Claimant's Details"
+    earnings_and_benefits:
+      header: "Earnings and Benefits"
+    response:
+      header: "Response"
+    your_representative:
+      header: "Your Representative"
+    your_representatives_details:
+      header: "Your Representative's Details"
+      description: Fill in this section if someone has agreed to represent you. If you do fill this in we will in future only contact your representative and not you
+    disability:
+      header: "Disability"
+    employers_contract_claim:
+      header: "Employer Contract Claim"
+      description: "Only available in limited circumstances where the Claimant has made a contract claim (see guidance)"
+    additional_information:
+      header: "Additional Information"
+      drag_text: "Drag and drop .rtf files here"
+      or_text: "or"
+      upload_button: "Click here to upload rtf file"

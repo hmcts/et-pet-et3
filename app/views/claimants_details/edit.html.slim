@@ -1,4 +1,4 @@
-- content_for :form_page_title, "Claimant's Details"
+- content_for :form_page_title, t('components.claimants_details.header')
 - content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
 .content-body.claimants-details
 
@@ -6,22 +6,22 @@
 
     div data-turbolinks="false"
       = GovukElementsErrorsHelper.error_summary @claimants_detail,
-        "Please review the following",
-        "Clicking on an error will navigate you directly to the question. Please correct these errors before continuing."
+        t('errors.header'),
+        t('errors.description')
 
     = f.text_field :claimants_name
     = f.radio_button_fieldset :agree_with_early_conciliation_details do |b|
       = content_tag :div, {class: 'multiple-choice'} do
-        = b.radio_button(:agree_with_early_conciliation_details, true) + label(:agree_with_early_conciliation_details_true, t('helpers.label.claimants_detail.agree_with_early_conciliation_details.choices.yes'), value: :yes)
+        = b.radio_button(:agree_with_early_conciliation_details, true) + b.label(:agree_with_early_conciliation_details, t('helpers.label.claimants_detail.agree_with_early_conciliation_details.choices.yes'), value: true)
       = content_tag :div, {class: 'multiple-choice', data: { target: :disagree_conciliation_reason }} do
-        = b.radio_button(:agree_with_early_conciliation_details, false) + label(:agree_with_early_conciliation_details_false, t('helpers.label.claimants_detail.agree_with_early_conciliation_details.choices.no'), value: :no)
+        = b.radio_button(:agree_with_early_conciliation_details, false) + b.label(:agree_with_early_conciliation_details, t('helpers.label.claimants_detail.agree_with_early_conciliation_details.choices.no'), value: false)
       #disagree_conciliation_reason.panel.panel-border-narrow.js-hidden
         = f.text_area :disagree_conciliation_reason
     = f.radio_button_fieldset :agree_with_employment_dates do |b|
       = content_tag :div, {class: 'multiple-choice'} do
-        = b.radio_button(:agree_with_employment_dates, true) + label(:agree_with_employment_dates_true, t('helpers.label.claimants_detail.agree_with_employment_dates.choices.yes'), value: :yes)
+        = b.radio_button(:agree_with_employment_dates, true) + b.label(:agree_with_employment_dates, t('helpers.label.claimants_detail.agree_with_employment_dates.choices.yes'), value: true)
       = content_tag :div, {class: 'multiple-choice', data: { target: :disagree_employment_dates }} do
-        = b.radio_button(:agree_with_employment_dates, false) + label(:agree_with_employment_dates_false, t('helpers.label.claimants_detail.agree_with_employment_dates.choices.no'), value: :no)
+        = b.radio_button(:agree_with_employment_dates, false) + b.label(:agree_with_employment_dates, t('helpers.label.claimants_detail.agree_with_employment_dates.choices.no'), value: false)
       #disagree_employment_dates.panel.panel-border-narrow.js-hidden
         .form-group
           = f.gov_uk_date_field :employment_start, legend_text: t('helpers.label.claimants_detail.employment_start'), form_hint_text: t('helpers.hint.claimants_detail.employment_start')
@@ -31,15 +31,15 @@
           = f.text_area :disagree_employment
     = f.radio_button_fieldset :continued_employment do |b|
       = content_tag :div, {class: 'multiple-choice'} do
-        = b.radio_button(:continued_employment, true) + label(:continued_employment, t('helpers.label.claimants_detail.continued_employment.choices.yes'), value: :yes)
+        = b.radio_button(:continued_employment, true) + b.label(:continued_employment, t('helpers.label.claimants_detail.continued_employment.choices.yes'), value: true)
       = content_tag :div, {class: 'multiple-choice'} do
-        = b.radio_button(:continued_employment, false) + label(:continued_employment, t('helpers.label.claimants_detail.continued_employment.choices.no'), value: :no)
+        = b.radio_button(:continued_employment, false) + b.label(:continued_employment, t('helpers.label.claimants_detail.continued_employment.choices.no'), value: false)
     = f.radio_button_fieldset :agree_with_claimants_description_of_job_or_title do |b|
       = content_tag :div, {class: 'multiple-choice'} do
-        = b.radio_button(:agree_with_claimants_description_of_job_or_title, true) + label(:agree_with_claimants_description_of_job_or_title_true, t('helpers.label.claimants_detail.agree_with_claimants_description_of_job_or_title.choices.yes'), value: :yes)
+        = b.radio_button(:agree_with_claimants_description_of_job_or_title, true) + b.label(:agree_with_claimants_description_of_job_or_title, t('helpers.label.claimants_detail.agree_with_claimants_description_of_job_or_title.choices.yes'), value: true)
       = content_tag :div, {class: 'multiple-choice', data: { target: :disagree_claimants_job_or_title }} do
-        = b.radio_button(:agree_with_claimants_description_of_job_or_title, false) + label(:agree_with_claimants_description_of_job_or_title, t('helpers.label.claimants_detail.agree_with_claimants_description_of_job_or_title.choices.no'), value: :no)
+        = b.radio_button(:agree_with_claimants_description_of_job_or_title, false) + b.label(:agree_with_claimants_description_of_job_or_title, t('helpers.label.claimants_detail.agree_with_claimants_description_of_job_or_title.choices.no'), value: false)
       #disagree_claimants_job_or_title.panel.panel-border-narrow.js-hidden
         = f.text_area :disagree_claimants_job_or_title
 
-    = f.submit("Save and continue", class: 'button')
+    = f.submit(t('components.common.save_and_continue_button'), class: 'button')

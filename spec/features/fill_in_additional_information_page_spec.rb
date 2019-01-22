@@ -8,31 +8,22 @@ RSpec.feature "Fill in Additional Information Page", js: true do
   end
 
   scenario "correctly will enable user to continue to next page" do
-    additional_information_page.load
-
-    given_i_am(:company01)
-
-    answer_upload_additional_information_question
-
-    additional_information_page.next
-
+    additional_information_page.load(locale: current_locale_parameter)
+    given_valid_data
+    answer_additional_information
     expect(confirmation_of_supplied_details_page).to be_displayed
   end
 
   scenario "without uploading a file will not display 'Remove file' link on CoSD page" do
-    additional_information_page.load
+    additional_information_page.load(locale: current_locale_parameter)
     additional_information_page.next
-
     expect(confirmation_of_supplied_details_page.confirmation_of_additional_information_answers).not_to have_link(t('components.confirmation_of_supplied_details.remove_file_link'), href: remove_rtf_path)
   end
 
   scenario "correctly will leave a file in the s3 bucket" do
-    additional_information_page.load
-
-    given_i_am(:company01)
-
-    answer_upload_additional_information_question
-    additional_information_page.next
+    additional_information_page.load(locale: current_locale_parameter)
+    given_valid_data
+    answer_additional_information
 
     expect(keys_in_bucket).to include Store.last.hash_store[:additional_information_answers][:upload_additional_information]
   end

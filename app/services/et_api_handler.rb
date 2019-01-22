@@ -51,7 +51,9 @@ class EtApiHandler
         "make_employer_contract_claim": full_hash[:employer_contract_claim_answers][:make_employer_contract_claim],
         "claim_information": full_hash[:employer_contract_claim_answers][:claim_information],
         "additional_information_key": (full_hash[:additional_information_answers][:upload_additional_information] == "" ? nil : full_hash[:additional_information_answers][:upload_additional_information]),
-        "email_receipt": full_hash[:confirmation_of_supplied_details_answers][:email_receipt]
+        "email_receipt": full_hash[:confirmation_of_supplied_details_answers][:email_receipt],
+        "pdf_template_reference": "et3-v1-#{I18n.locale}",
+        "email_template_reference": "et3-v1-#{I18n.locale}"
       },
       "uuid": SecureRandom.uuid
     }

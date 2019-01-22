@@ -1,33 +1,33 @@
-- content_for :form_page_title, "Your Representative's Details"
+- content_for :form_page_title, t('components.your_representatives_details.header')
 - content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
 .content-body.your-representatives-details
   
-  p Fill in this section if someone has agreed to represent you. If you do fill this in we will in future only contact your representative and not you
+  p = t('components.your_representatives_details.description')
 
   = form_for @your_representatives_details, url: your_representatives_details_path, method: :patch  do |f|
 
     div data-turbolinks="false"
       = GovukElementsErrorsHelper.error_summary @your_representatives_details,
-        "Please review the following",
-        "Clicking on an error will navigate you directly to the question. Please correct these errors before continuing."
+        t('errors.header'),
+        t('errors.description')
 
     = f.radio_button_fieldset :type_of_representative do |b|
       = content_tag :div, {class: 'multiple-choice'} do
-        = b.radio_button(:type_of_representative, 'Citizens Advice Bureau') + label(:type_of_representative, t('helpers.label.your_representatives_details.type_of_representative.choices.citizens_advice_bureau'), value: :citizens_advice_bureau)
+        = b.radio_button(:type_of_representative, 'Citizens Advice Bureau') + b.label(:type_of_representative, t('helpers.label.your_representatives_details.type_of_representative.choices.citizens_advice_bureau'), value: :citizens_advice_bureau)
       = content_tag :div, {class: 'multiple-choice'} do
-        = b.radio_button(:type_of_representative, 'Free Representation Unit') + label(:type_of_representative, t('helpers.label.your_representatives_details.type_of_representative.choices.free_representation_unit'), value: :free_representation_unit)
+        = b.radio_button(:type_of_representative, 'Free Representation Unit') + b.label(:type_of_representative, t('helpers.label.your_representatives_details.type_of_representative.choices.free_representation_unit'), value: :free_representation_unit)
       = content_tag :div, {class: 'multiple-choice'} do
-        = b.radio_button(:type_of_representative, 'Law Centre') + label(:type_of_representative, t('helpers.label.your_representatives_details.type_of_representative.choices.law_centre'), value: :law_centre)
+        = b.radio_button(:type_of_representative, 'Law Centre') + b.label(:type_of_representative, t('helpers.label.your_representatives_details.type_of_representative.choices.law_centre'), value: :law_centre)
       = content_tag :div, {class: 'multiple-choice'} do
-        = b.radio_button(:type_of_representative, 'Union') + label(:type_of_representative, t('helpers.label.your_representatives_details.type_of_representative.choices.union'), value: :union)
+        = b.radio_button(:type_of_representative, 'Union') + b.label(:type_of_representative, t('helpers.label.your_representatives_details.type_of_representative.choices.union'), value: :union)
       = content_tag :div, {class: 'multiple-choice'} do
-        = b.radio_button(:type_of_representative, 'Solicitor') + label(:type_of_representative, t('helpers.label.your_representatives_details.type_of_representative.choices.solicitor'), value: :solicitor)
+        = b.radio_button(:type_of_representative, 'Solicitor') + b.label(:type_of_representative, t('helpers.label.your_representatives_details.type_of_representative.choices.solicitor'), value: :solicitor)
       = content_tag :div, {class: 'multiple-choice'} do
-        = b.radio_button(:type_of_representative, 'Private Individual') + label(:type_of_representative, t('helpers.label.your_representatives_details.type_of_representative.choices.private_individual'), value: :private_individual)
+        = b.radio_button(:type_of_representative, 'Private Individual') + b.label(:type_of_representative, t('helpers.label.your_representatives_details.type_of_representative.choices.private_individual'), value: :private_individual)
       = content_tag :div, {class: 'multiple-choice'} do
-        = b.radio_button(:type_of_representative, 'Trade Association') + label(:type_of_representative, t('helpers.label.your_representatives_details.type_of_representative.choices.trade_association'), value: :trade_association)
+        = b.radio_button(:type_of_representative, 'Trade Association') + b.label(:type_of_representative, t('helpers.label.your_representatives_details.type_of_representative.choices.trade_association'), value: :trade_association)
       = content_tag :div, {class: 'multiple-choice'} do
-        = b.radio_button(:type_of_representative, 'Other') + label(:type_of_representative, t('helpers.label.your_representatives_details.type_of_representative.choices.other'), value: :other)
+        = b.radio_button(:type_of_representative, 'Other') + b.label(:type_of_representative, t('helpers.label.your_representatives_details.type_of_representative.choices.other'), value: :other)
     = f.text_field :representative_org_name
     = f.text_field :representative_name
     = f.text_field :representative_building
@@ -41,13 +41,13 @@
     = f.text_field :representative_reference
     = f.radio_button_fieldset :representative_contact_preference do |b|
       = content_tag :div, {class: 'multiple-choice', data: { target: :representative_contact_email }} do
-        = b.radio_button(:representative_contact_preference, :email) + label(:representative_contact_preference, t('helpers.label.your_representatives_details.representative_contact_preference.choices.email'), value: :email)
+        = b.radio_button(:representative_contact_preference, :email) + b.label(:representative_contact_preference, t('helpers.label.your_representatives_details.representative_contact_preference.choices.email'), value: :email)
       #representative_contact_email.panel.panel-border-narrow.js-hidden
         = f.text_field :representative_email
       = content_tag :div, {class: 'multiple-choice'} do
-        = b.radio_button(:representative_contact_preference, :post) + label(:representative_contact_preference, t('helpers.label.your_representatives_details.representative_contact_preference.choices.post'), value: :post)
+        = b.radio_button(:representative_contact_preference, :post) + b.label(:representative_contact_preference, t('helpers.label.your_representatives_details.representative_contact_preference.choices.post'), value: :post)
       = content_tag :div, {class: 'multiple-choice', data: { target: :representative_contact_fax }} do
-        = b.radio_button(:representative_contact_preference, :fax) + label(:representative_contact_preference, t('helpers.label.your_representatives_details.representative_contact_preference.choices.fax'), value: :fax)
+        = b.radio_button(:representative_contact_preference, :fax) + b.label(:representative_contact_preference, t('helpers.label.your_representatives_details.representative_contact_preference.choices.fax'), value: :fax)
       #representative_contact_fax.panel.panel-border-narrow.js-hidden
         = f.text_field :representative_fax
-    = f.submit("Save and continue", class: 'button')
+    = f.submit(t('components.common.save_and_continue_button'), class: 'button')

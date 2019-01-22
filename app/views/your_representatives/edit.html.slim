@@ -1,4 +1,4 @@
-- content_for :form_page_title, "Your Representative"
+- content_for :form_page_title, t('components.your_representative.header')
 - content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
 .content-body.your-representative
 
@@ -6,7 +6,7 @@
 
     = f.radio_button_fieldset :have_representative do |b|
       = content_tag :div, {class: 'multiple-choice'} do
-        = b.radio_button(:have_representative, true) + label(:defend_claim_true, t('helpers.label.response.defend_claim.choices.yes'), value: :yes)
+        = b.radio_button(:have_representative, true) + b.label(:have_representative, t('helpers.label.your_representative.have_representative.choices.yes'), value: true)
       = content_tag :div, {class: 'multiple-choice'} do
-        = b.radio_button(:have_representative, false) + label(:defend_claim_false, t('helpers.label.response.defend_claim.choices.no'), value: :no)
-    = f.submit("Save and continue", class: 'button')
+        = b.radio_button(:have_representative, false) + b.label(:have_representative, t('helpers.label.your_representative.have_representative.choices.no'), value: false)
+    = f.submit(t('components.common.save_and_continue_button'), class: 'button')

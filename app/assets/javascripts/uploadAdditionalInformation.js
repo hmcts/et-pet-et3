@@ -60,10 +60,21 @@ $(document).ready(function(){
             $(".dz-default.dz-message.grid-row .column-one-half").append(button);
         }
 
+        function localisedRemoveFileString() {
+            let currentLocale = $('html').attr('lang');
+            if (currentLocale === 'cy') {
+                return "Dileu ffeil";
+            } else {
+                return "Remove file";
+            }
+        }
+
         var removedButton;
 
         let uploadAdditionalInfoDropzone = new Dropzone("#upload-additional-file",
             {
+                // Set "Remove File" string by locale
+                dictRemoveFile: localisedRemoveFileString(),
                 // Only one file goes to the bucket via the URL
                 parallelUploads: 1,
                 uploadMultiple: false,

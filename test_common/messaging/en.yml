@@ -1,4 +1,7 @@
 en:
+  switch:
+    language: Cymraeg
+    locale: cy
   questions:
     # Respondent's Details Page
     case_number:
@@ -213,6 +216,7 @@ en:
         label: 'No'
       disability_information:
         label: It would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises
+        content: PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 350 characters) if you would like to include more please use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
     # Employers Contract Claim Page
     make_employer_contract_claim:
       label: Do you wish to make an Employer Contract Claim? (optional)
@@ -230,6 +234,8 @@ en:
     email_receipt:
       label: Email Address (optional)
     # Captions for Tables on CoSD Page
+    table:
+      caption: Confirmation of Supplied Details
     confirmation_of_respondents_details_answers:
       caption: Respondent's Details
     confirmation_of_claimants_details_answers:
@@ -249,7 +255,8 @@ en:
     confirmation_of_additional_information_answers:
       caption: Additional Information
   errors:
-    header: 'Please review the following'
+    header: Please review the following
+    description: Clicking on an error will navigate you directly to the question. Please correct these errors before continuing.
     messages:
       blank: can't be blank
       contains_no_spaces: must contain at least one space
@@ -268,6 +275,8 @@ en:
       organisation_more_than_one_site:
         not_a_number: Please enter how many people are employed at the place where the claimant worked as a number
         inclusion: Please indicate whether the organisation has more than one site in Great Britain
+      claimants_name:
+        not_a_number: Claimant's name must not contain numbers
       queried_hours:
         not_a_number: Please enter the number of hours you believe to be correct as a number
       queried_pay_before_tax:
@@ -283,6 +292,7 @@ en:
       invalid_pdf_download: Not quite ready yet - a PDF version of your completed form will be available for download shortly
       valid_pdf_download: A PDF version of your completed form is now available for download
   components:
+    save_and_continue_button: Save and continue
     single_choice_option_section:
       'yes': "Yes"
       'no': "No"
@@ -300,3 +310,98 @@ en:
       more_category_href: http://gov.uk/browse/working
     confirmation_of_supplied_details:
       remove_file_link: Remove file
+  introduction:
+    header: Introduction
+    description: Complete and submit an ET3 response form when someone makes an employment tribunal claim against you.
+    what_title: What you need for this form
+    what_content_1: your case number (on the letter we sent you)
+    what_content_2: "claimant's employment start and end dates, hours of work and period of notice"
+    what_content_3: "details of claimant's pay and benefits, before and after tax"
+    what_content_4: any Acas Early Conciliation details you may have, such as the certificate number
+    what_content_5: a description of your response to the claim, including dates and the people involved
+    what_content_6: "details of your representative, like a solicitor, if you have one"
+    how_title: How to fill in the form
+    how_content_1: your information will not be saved if you spend longer than 1 hour on a single page
+    how_content_2: you can review and edit your answers before you submit the form
+    how_content_3: you can save a PDF of your form after you submit it
+    data_title: Data Protection Act 1998
+    data_content: We will send a copy of this form to the claimant and the Advisory, Conciliation and Arbitration Service (ACAS). We will put the information you give us on this form onto a computer. This helps us to monitor progress and produce statistics. Information provided on this form is passed to the Department for Business, Innovation and Skills to assist research into the use and effectiveness of employment tribunals.
+    start_now: Start now
+    
+  hint:
+    respondents_detail:
+      contact: For example, John Smith
+      mobile_number: If different to your primary contact number
+      employment_at_site_number: For example, 10
+      organisation_employ_gb: For example, 10
+    claimants_detail:
+      employment_start: For example, 31 03 2010
+      employment_end: For example, 01 12 2017
+    earnings_and_benefits:
+      queried_hours: In hours per week. For example, 39
+      agree_with_earnings_details: If No, please give the details you believe to be correct
+      queried_pay_before_tax: Including overtime, commission, bonuses, etc. For example, 28000
+      queried_take_home_pay: Including overtime, commission, bonuses, etc. For example, 20000
+      disagree_claimant_notice_reason: |
+        PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 400 characters) if you would like to include more please
+        use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
+      agree_with_claimant_pension_benefits: For example, company car, medical insurance, etc.
+      disagree_claimant_pension_benefits_reason: |
+        PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 350 characters) if you would like to include more please
+        use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
+    response:
+      defend_claim_facts: |
+        PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 2500 characters) if you would like to include more please
+        use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
+        If you exceed 25 lines you will not receive full details of your response in the PDF returned to you on submission of the form.
+    disability:
+      disability_information: |
+        PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 350 characters) if you would like to include more please
+        use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
+    employers_contract_claim:
+      claim_information: |
+        See guidance for more information on what details should be included.
+        PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 4500 characters) if you would like to include more please
+        use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
+        If you exceed 50 lines you will not receive full details of your claim in the PDF returned to you on submission of the form.
+    additional_information:
+      upload_additional_information: "Supported file type: .rtf"
+    confirmation_of_supplied_details:
+      email_receipt: For example, name@address.com
+
+  respondents_details:
+    header: "Respondent's Details"
+  claimants_details:
+    header: "Claimant's Details"
+  earnings_and_benefits:
+    header: "Earnings and Benefits"
+  response:
+    header: "Response"
+  your_representative:
+    header: "Your Representative"
+  your_representatives_details:
+    header: "Your Representative's Details"
+    content: "Fill in this section if someone has agreed to represent you. If you do fill this in we will in future only contact your representative and not you"
+  disability:
+    header: "Disability"
+  employer_contract_claim:
+    header: "Employer Contract Claim"
+    description: "Only available in limited circumstances where the Claimant has made a contract claim (see guidance)"
+  additional_information:
+    header: "Additional Information"
+    drag_text: "Drag and drop .rtf files here"
+    or_text: "or"
+  confirmation:
+    header: Confirmation of Supplied Details
+    receipt_header: Email Receipt
+    receipt_description: Please enter your email address so that we can provide you with a receipt of your transaction.
+    submit_guidance: 'Pressing "Submit Form" at the foot of the page will send the details confirmed below for processing.'
+    submit: Submit Form
+  submission:
+    confirmation: Response complete
+    reference: 142000000100
+    thank_you: Thank you for your submission. It has been forwarded to the following office which will contact you in due course.
+    office_contact: "Alexandra House, 14-22 The Parsonage, Manchester, M3 2JA"
+    date: "Submission Date:"
+    return_link: Return to GOV.UK
+    return_href: https://gov.uk

@@ -1,4 +1,4 @@
-- content_for :form_page_title, "Earnings and Benefits"
+- content_for :form_page_title, t('components.earnings_and_benefits.header')
 - content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
 .content-body.earnings-and-benefits
 
@@ -6,48 +6,48 @@
 
     div data-turbolinks="false"
       = GovukElementsErrorsHelper.error_summary @earnings_and_benefits,
-        "Please review the following",
-        "Clicking on an error will navigate you directly to the question. Please correct these errors before continuing."
+        t('errors.header'),
+        t('errors.description')
 
     = f.radio_button_fieldset :agree_with_claimants_hours do |b|
       = content_tag :div, {class: 'multiple-choice'} do
-        = b.radio_button(:agree_with_claimants_hours, true) + label(:agree_with_claimants_hours_true, t('helpers.label.earnings_and_benefits.agree_with_claimants_hours.choices.yes'), value: :yes)
+        = b.radio_button(:agree_with_claimants_hours, true) + b.label(:agree_with_claimants_hours, t('helpers.label.earnings_and_benefits.agree_with_claimants_hours.choices.yes'), value: true)
       = content_tag :div, {class: 'multiple-choice', data: { target: :disagree_claimants_hours }} do
-        = b.radio_button(:agree_with_claimants_hours, false) + label(:agree_with_claimants_hours_false, t('helpers.label.earnings_and_benefits.agree_with_claimants_hours.choices.no'), value: :no)
+        = b.radio_button(:agree_with_claimants_hours, false) + b.label(:agree_with_claimants_hours, t('helpers.label.earnings_and_benefits.agree_with_claimants_hours.choices.no'), value: false)
       #disagree_claimants_hours.panel.panel-border-narrow.js-hidden
         = f.text_field :queried_hours
     = f.radio_button_fieldset :agree_with_earnings_details do |b|
       = content_tag :div, {class: 'multiple-choice'} do
-        = b.radio_button(:agree_with_earnings_details, true) + label(:agree_with_earnings_details_true, t('helpers.label.earnings_and_benefits.agree_with_earnings_details.choices.yes'), value: :yes)
+        = b.radio_button(:agree_with_earnings_details, true) + b.label(:agree_with_earnings_details, t('helpers.label.earnings_and_benefits.agree_with_earnings_details.choices.yes'), value: true)
       = content_tag :div, {class: 'multiple-choice', data: {target: :disagree_earnings_details }} do
-        = b.radio_button(:agree_with_earnings_details, false) + label(:agree_with_earnings_details_false, t('helpers.label.earnings_and_benefits.agree_with_earnings_details.choices.no'), value: :no)
+        = b.radio_button(:agree_with_earnings_details, false) + b.label(:agree_with_earnings_details, t('helpers.label.earnings_and_benefits.agree_with_earnings_details.choices.no'), value: false)
       #disagree_earnings_details.panel.panel-border-narrow.js-hidden
         = content_tag :div, {class: 'pay-before-tax'} do
           = f.text_field :queried_pay_before_tax
           = f.radio_button_fieldset :queried_pay_before_tax_period do |c|
             = content_tag :div, {class: 'multiple-choice'} do
-              = c.radio_button(:queried_pay_before_tax_period, 'Monthly') + label(:queried_pay_before_tax_period_monthly, t('helpers.label.earnings_and_benefits.queried_pay_before_tax_period.choices.monthly'), value: :monthly)
+              = c.radio_button(:queried_pay_before_tax_period, 'Monthly') + b.label(:queried_pay_before_tax_period, t('helpers.label.earnings_and_benefits.queried_pay_before_tax_period.choices.monthly'), value: :monthly)
             = content_tag :div, {class: 'multiple-choice'} do
-              = c.radio_button(:queried_pay_before_tax_period, 'Weekly') + label(:queried_pay_before_tax_period_weekly, t('helpers.label.earnings_and_benefits.queried_pay_before_tax_period.choices.weekly'), value: :weekly)
+              = c.radio_button(:queried_pay_before_tax_period, 'Weekly') + b.label(:queried_pay_before_tax_period, t('helpers.label.earnings_and_benefits.queried_pay_before_tax_period.choices.weekly'), value: :weekly)
         = content_tag :div, {class: 'normal-take-home-pay'} do
           = f.text_field :queried_take_home_pay
           = f.radio_button_fieldset :queried_take_home_pay_period do |c|
             = content_tag :div, {class: 'multiple-choice'} do
-              = c.radio_button(:queried_take_home_pay_period, 'Monthly') + label(:queried_take_home_pay_period_monthly, t('helpers.label.earnings_and_benefits.queried_take_home_pay_period.choices.monthly'), value: :monthly)
+              = c.radio_button(:queried_take_home_pay_period, 'Monthly') + b.label(:queried_take_home_pay_period, t('helpers.label.earnings_and_benefits.queried_take_home_pay_period.choices.monthly'), value: :monthly)
             = content_tag :div, {class: 'multiple-choice'} do
-              = c.radio_button(:queried_take_home_pay_period, 'Weekly') + label(:queried_take_home_pay_period_weekly, t('helpers.label.earnings_and_benefits.queried_take_home_pay_period.choices.weekly'), value: :weekly)
+              = c.radio_button(:queried_take_home_pay_period, 'Weekly') + b.label(:queried_take_home_pay_period, t('helpers.label.earnings_and_benefits.queried_take_home_pay_period.choices.weekly'), value: :weekly)
     = f.radio_button_fieldset :agree_with_claimant_notice do |b|
       = content_tag :div, {class: 'multiple-choice'} do
-        = b.radio_button(:agree_with_claimant_notice, true) + label(:agree_with_claimant_notice_true, t('helpers.label.earnings_and_benefits.agree_with_claimant_notice.choices.yes'), value: :yes)
+        = b.radio_button(:agree_with_claimant_notice, true) + b.label(:agree_with_claimant_notice, t('helpers.label.earnings_and_benefits.agree_with_claimant_notice.choices.yes'), value: true)
       = content_tag :div, {class: 'multiple-choice', data: {target: :disagree_claimant_notice }} do
-        = b.radio_button(:agree_with_claimant_notice, false) + label(:agree_with_claimant_notice_false, t('helpers.label.earnings_and_benefits.agree_with_claimant_notice.choices.no'), value: :no)
+        = b.radio_button(:agree_with_claimant_notice, false) + b.label(:agree_with_claimant_notice, t('helpers.label.earnings_and_benefits.agree_with_claimant_notice.choices.no'), value: false)
       #disagree_claimant_notice.panel.panel-border-narrow.js-hidden
         = f.text_area :disagree_claimant_notice_reason
     = f.radio_button_fieldset :agree_with_claimant_pension_benefits do |b|
       = content_tag :div, {class: 'multiple-choice'} do
-        = b.radio_button(:agree_with_claimant_pension_benefits, true) + label(:agree_with_claimant_pension_benefits_true, t('helpers.label.earnings_and_benefits.agree_with_claimant_pension_benefits.choices.yes'), value: :yes)
+        = b.radio_button(:agree_with_claimant_pension_benefits, true) + b.label(:agree_with_claimant_pension_benefits, t('helpers.label.earnings_and_benefits.agree_with_claimant_pension_benefits.choices.yes'), value: true)
       = content_tag :div, {class: 'multiple-choice', data: {target: :disagree_claimant_pension_benefits }} do
-        = b.radio_button(:agree_with_claimant_pension_benefits, false) + label(:agree_with_claimant_pension_benefits_false, t('helpers.label.earnings_and_benefits.agree_with_claimant_pension_benefits.choices.no'), value: :no)
+        = b.radio_button(:agree_with_claimant_pension_benefits, false) + b.label(:agree_with_claimant_pension_benefits, t('helpers.label.earnings_and_benefits.agree_with_claimant_pension_benefits.choices.no'), value: false)
       #disagree_claimant_pension_benefits.panel.panel-border-narrow.js-hidden
         = f.text_area :disagree_claimant_pension_benefits_reason
-    = f.submit("Save and continue", class: 'button')
+    = f.submit(t('components.common.save_and_continue_button'), class: 'button')

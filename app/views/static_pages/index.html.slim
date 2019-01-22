@@ -1,28 +1,28 @@
-- content_for :form_page_title, "Introduction"
+- content_for :form_page_title, t('components.introduction.header')
 - content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
 .content-body.introduction
 
-  p Complete and submit an ET3 response form when someone makes an employment tribunal claim against you.
+  p = t('components.introduction.description')
 
-  h4.heading-small What you need for this form
+  .what-you-need
+    h4.heading-small = t('components.introduction.what_title')
+    ul.list.list-bullet
+      li = t('components.introduction.what_content_1')
+      li = t('components.introduction.what_content_2')
+      li = t('components.introduction.what_content_3')
+      li = t('components.introduction.what_content_4')
+      li = t('components.introduction.what_content_5')
+      li = t('components.introduction.what_content_6')
 
-  ul.list.list-bullet
-    li your case number (on the letter we sent you)
-    li claimant's employment start and end dates, hours of work and period of notice
-    li details of claimant's pay and benefits, before and after tax
-    li any Acas Early Conciliation details you may have, such as the certificate number
-    li a description of your response to the claim, including dates and the people involved
-    li details of your representative, like a solicitor, if you have one
-  
-  h4.heading-small How to fill in the form
+  .how-to-fill
+    h4.heading-small = t('components.introduction.how_title')
+    ul.list.list-bullet
+      li = t('components.introduction.how_content_1')
+      li = t('components.introduction.how_content_2')
+      li = t('components.introduction.how_content_3')
 
-  ul.list.list-bullet
-    li your information will not be saved if you spend longer than 1 hour on a single page
-    li you can review and edit your answers before you submit the form
-    li you can save a PDF of your form after you submit it
+  .data
+    h4.heading-small = t('components.introduction.data_title')
+    p = t('components.introduction.data_content')
 
-  h4.heading-small Data Protection Act 1998
-
-  p We will send a copy of this form to the claimant and the Advisory, Conciliation and Arbitration Service (ACAS). We will put the information you give us on this form onto a computer. This helps us to monitor progress and produce statistics. Information provided on this form is passed to the Department for Business, Innovation and Skills to assist research into the use and effectiveness of employment tribunals.
-
-  = link_to "Start now", edit_respondents_details_path, class: 'button button-start'
+  = link_to t('components.introduction.start_now'), edit_respondents_details_path, class: 'button button-start'

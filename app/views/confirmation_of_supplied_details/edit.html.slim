@@ -1,28 +1,28 @@
-- content_for :form_page_title, "Confirmation of Supplied Details"
+- content_for :form_page_title, t('components.confirmation_of_supplied_details.header')
 - content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
 .content-body.confirmation-of-supplied-details
 
-  h2.heading-medium Email Receipt
-  p Please enter your email address so that we can provide you with a receipt of your transaction.
+  h2.heading-medium = t('components.confirmation_of_supplied_details.receipt_header')
+  p = t('components.confirmation_of_supplied_details.receipt_description')
 
   = form_for @confirmation_of_supplied_details, url: confirmation_of_supplied_details_path, method: :patch  do |f|
 
     div data-turbolinks="false"
       = GovukElementsErrorsHelper.error_summary @confirmation_of_supplied_details,
-        "Please review the following",
-        "Clicking on an error will navigate you directly to the question. Please correct these errors before continuing."
+        t('errors.header'),
+        t('errors.description')
 
     = f.text_field :email_receipt
 
-    p Pressing "Submit Form" at the foot of the page will send the details confirmed below for processing.
+    p = t('components.confirmation_of_supplied_details.submit_guidance')
   
-    h2.heading-medium Confirmation of Supplied Details
+    h2.heading-medium = t('components.confirmation_of_supplied_details.table_header')
     table
-      caption.heading-small Respondent's Details
+      caption.heading-small = t('components.confirmation_of_supplied_details.confirmation_of_respondents_details_answers.caption')
       thead
         tr
-          th Question
-          th Answer
+          th = t('components.confirmation_of_supplied_details.question_header')
+          th = t('components.confirmation_of_supplied_details.answer_header')
       tbody
         tr
           td = t('helpers.label.respondents_detail.case_number')
@@ -59,7 +59,7 @@
           td = @hash_store.dig(:respondents_detail_answers, :mobile_number)
         tr
           td = t('helpers.fieldset.respondents_detail.contact_preference')
-          td = @hash_store.dig(:respondents_detail_answers, :contact_preference)
+          td = translate_contact_preference(@hash_store.dig(:respondents_detail_answers, :contact_preference))
         tr
           td = t('helpers.label.respondents_detail.email_address')
           td = @hash_store.dig(:respondents_detail_answers, :email_address)
@@ -71,34 +71,37 @@
           td = @hash_store.dig(:respondents_detail_answers, :organisation_employ_gb)
         tr
           td = t('helpers.fieldset.respondents_detail.organisation_more_than_one_site')
-          td = @hash_store.dig(:respondents_detail_answers, :organisation_more_than_one_site)
+          td = translate_stored_value(@hash_store.dig(:respondents_detail_answers, :organisation_more_than_one_site),
+                    'respondents_detail.organisation_more_than_one_site')
         tr
           td = t('helpers.label.respondents_detail.employment_at_site_number')
           td = @hash_store.dig(:respondents_detail_answers, :employment_at_site_number)
         tr
           td
-            = link_to("Edit answers on this page", edit_respondents_details_path)
+            = link_to(t('components.confirmation_of_supplied_details.edit_page'), edit_respondents_details_path)
           td
-            = link_to "Back to the top", "#content"
+            = link_to t('components.confirmation_of_supplied_details.back_to_top'), "#content"
     table
-      caption.heading-small Claimant's Details
+      caption.heading-small = t('components.confirmation_of_supplied_details.confirmation_of_claimants_details_answers.caption')
       thead
         tr
-          th Question
-          th Answer
+          th = t('components.confirmation_of_supplied_details.question_header')
+          th = t('components.confirmation_of_supplied_details.answer_header')
       tbody
         tr
           td = t('helpers.label.claimants_detail.claimants_name')
           td = @hash_store.dig(:claimants_detail_answers, :claimants_name)
         tr
           td = t('helpers.fieldset.claimants_detail.agree_with_early_conciliation_details')
-          td = @hash_store.dig(:claimants_detail_answers, :agree_with_early_conciliation_details)
+          td = translate_stored_value(@hash_store.dig(:claimants_detail_answers, :agree_with_early_conciliation_details),
+                      'claimants_detail.agree_with_early_conciliation_details')
         tr
           td = t('helpers.label.claimants_detail.disagree_conciliation_reason')
           td = @hash_store.dig(:claimants_detail_answers, :disagree_conciliation_reason)
         tr
           td = t('helpers.fieldset.claimants_detail.agree_with_employment_dates')
-          td = @hash_store.dig(:claimants_detail_answers, :agree_with_employment_dates)
+          td = translate_stored_value(@hash_store.dig(:claimants_detail_answers, :agree_with_employment_dates),
+                      'claimants_detail.agree_with_employment_dates')
         tr
           td = t('helpers.label.claimants_detail.employment_start')
           td = @hash_store.dig(:claimants_detail_answers, :employment_start)
@@ -110,34 +113,38 @@
           td = @hash_store.dig(:claimants_detail_answers, :disagree_employment)
         tr
           td = t('helpers.fieldset.claimants_detail.continued_employment')
-          td = @hash_store.dig(:claimants_detail_answers, :continued_employment)
+          td = translate_stored_value(@hash_store.dig(:claimants_detail_answers, :continued_employment),
+                  'claimants_detail.continued_employment')
         tr
           td = t('helpers.fieldset.claimants_detail.agree_with_claimants_description_of_job_or_title')
-          td = @hash_store.dig(:claimants_detail_answers, :agree_with_claimants_description_of_job_or_title)
+          td = translate_stored_value(@hash_store.dig(:claimants_detail_answers, :agree_with_claimants_description_of_job_or_title),
+                  'claimants_detail.agree_with_claimants_description_of_job_or_title')
         tr
           td = t('helpers.label.claimants_detail.disagree_claimants_job_or_title')
           td = @hash_store.dig(:claimants_detail_answers, :disagree_claimants_job_or_title)
         tr
           td
-            = link_to("Edit answers on this page", edit_claimants_details_path)
+            = link_to(t('components.confirmation_of_supplied_details.edit_page'), edit_claimants_details_path)
           td
-            = link_to "Back to the top", "#content"
+            = link_to t('components.confirmation_of_supplied_details.back_to_top'), "#content"
     table
-      caption.heading-small Earnings and Benefits
+      caption.heading-small  = t('components.confirmation_of_supplied_details.confirmation_of_earnings_and_benefits_answers.caption')
       thead
         tr
-          th Question
-          th Answer
+          th = t('components.confirmation_of_supplied_details.question_header')
+          th = t('components.confirmation_of_supplied_details.answer_header')
       tbody
         tr
           td = t('helpers.fieldset.earnings_and_benefits.agree_with_claimants_hours')
-          td = @hash_store.dig(:earnings_and_benefits_answers, :agree_with_claimants_hours)
+          td = translate_stored_value(@hash_store.dig(:earnings_and_benefits_answers, :agree_with_claimants_hours),
+                  'earnings_and_benefits.agree_with_claimants_hours')
         tr
           td = t('helpers.label.earnings_and_benefits.queried_hours')
           td = @hash_store.dig(:earnings_and_benefits_answers, :queried_hours)
         tr
           td = t('helpers.fieldset.earnings_and_benefits.agree_with_earnings_details')
-          td = @hash_store.dig(:earnings_and_benefits_answers, :agree_with_earnings_details)
+          td = translate_stored_value(@hash_store.dig(:earnings_and_benefits_answers, :agree_with_earnings_details),
+                  'earnings_and_benefits.agree_with_earnings_details')
         tr
           td = t('helpers.label.earnings_and_benefits.queried_pay_before_tax')
           td = number_to_currency(@hash_store.dig(:earnings_and_benefits_answers, :queried_pay_before_tax), unit: '&pound;'.html_safe)
@@ -152,63 +159,67 @@
           td = @hash_store.dig(:earnings_and_benefits_answers, :queried_take_home_pay_period)
         tr
           td = t('helpers.fieldset.earnings_and_benefits.agree_with_claimant_notice')
-          td = @hash_store.dig(:earnings_and_benefits_answers, :agree_with_claimant_notice)
+          td = translate_stored_value(@hash_store.dig(:earnings_and_benefits_answers, :agree_with_claimant_notice),
+                  'earnings_and_benefits.agree_with_claimant_notice')
         tr
           td = t('helpers.label.earnings_and_benefits.disagree_claimant_notice_reason')
           td = @hash_store.dig(:earnings_and_benefits_answers, :disagree_claimant_notice_reason)
         tr
           td = t('helpers.fieldset.earnings_and_benefits.agree_with_claimant_pension_benefits')
-          td = @hash_store.dig(:earnings_and_benefits_answers, :agree_with_claimant_pension_benefits)
+          td = translate_stored_value(@hash_store.dig(:earnings_and_benefits_answers, :agree_with_claimant_pension_benefits),
+                  'earnings_and_benefits.agree_with_claimant_pension_benefits')
         tr
           td = t('helpers.label.earnings_and_benefits.disagree_claimant_pension_benefits_reason')
           td = @hash_store.dig(:earnings_and_benefits_answers, :disagree_claimant_pension_benefits_reason)
         tr
           td
-            = link_to("Edit answers on this page", edit_earnings_and_benefits_path)
+            = link_to(t('components.confirmation_of_supplied_details.edit_page'), edit_earnings_and_benefits_path)
           td
-            = link_to "Back to the top", "#content"
+            = link_to t('components.confirmation_of_supplied_details.back_to_top'), "#content"
     table
-      caption.heading-small Response
+      caption.heading-small  = t('components.confirmation_of_supplied_details.confirmation_of_response_answers.caption')
       thead
         tr
-          th Question
-          th Answer
+          th = t('components.confirmation_of_supplied_details.question_header')
+          th = t('components.confirmation_of_supplied_details.answer_header')
       tbody
         tr
           td = t('helpers.fieldset.response.defend_claim')
-          td = @hash_store.dig(:response_answers, :defend_claim)
+          td = translate_stored_value(@hash_store.dig(:response_answers, :defend_claim),
+                  'response.defend_claim')
         tr
           td = t('helpers.label.response.defend_claim_facts')
           td = @hash_store.dig(:response_answers, :defend_claim_facts)
         tr
           td
-            = link_to("Edit answers on this page", edit_response_path)
+            = link_to(t('components.confirmation_of_supplied_details.edit_page'), edit_response_path)
           td
-            = link_to "Back to the top", "#content"
+            = link_to t('components.confirmation_of_supplied_details.back_to_top'), "#content"
     table
-      caption.heading-small Your Representative
+      caption.heading-small  = t('components.confirmation_of_supplied_details.confirmation_of_your_representative_answers.caption')
       thead
         tr
-          th Question
-          th Answer
+          th = t('components.confirmation_of_supplied_details.question_header')
+          th = t('components.confirmation_of_supplied_details.answer_header')
       tbody
         tr
           td = t('helpers.fieldset.your_representative.have_representative')
-          td = @hash_store.dig(:your_representative_answers, :have_representative)
+          td = translate_stored_value(@hash_store.dig(:your_representative_answers, :have_representative),
+                  'your_representative.have_representative')
         tr
           td
-            = link_to("Edit answers on this page", edit_your_representative_path)
+            = link_to(t('components.confirmation_of_supplied_details.edit_page'), edit_your_representative_path)
           td
-            = link_to "Back to the top", "#content"
+            = link_to t('components.confirmation_of_supplied_details.back_to_top'), "#content"
     table
-      caption.heading-small Your Representative's Details
+      caption.heading-small  = t('components.confirmation_of_supplied_details.confirmation_of_your_representatives_details_answers.caption')
       thead
         tr
-          th Question
-          th Answer
+          th = t('components.confirmation_of_supplied_details.question_header')
+          th = t('components.confirmation_of_supplied_details.answer_header')
         tr
           td = t('helpers.fieldset.your_representatives_details.type_of_representative')
-          td = @hash_store.dig(:your_representatives_details_answers, :type_of_representative)
+          td = translate_representative(@hash_store.dig(:your_representatives_details_answers, :type_of_representative))
         tr
           td = t('helpers.label.your_representatives_details.representative_org_name')
           td = @hash_store.dig(:your_representatives_details_answers, :representative_org_name)
@@ -244,7 +255,7 @@
           td = @hash_store.dig(:your_representatives_details_answers, :representative_reference)
         tr
           td = t('helpers.fieldset.your_representatives_details.representative_contact_preference')
-          td = @hash_store.dig(:your_representatives_details_answers, :representative_contact_preference)
+          td = translate_contact_preference(@hash_store.dig(:your_representatives_details_answers, :representative_contact_preference))
         tr
           td = t('helpers.label.your_representatives_details.representative_email')
           td = @hash_store.dig(:your_representatives_details_answers, :representative_email)
@@ -253,50 +264,52 @@
           td = @hash_store.dig(:your_representatives_details_answers, :representative_fax)
         tr
           td
-            = link_to("Edit answers on this page", edit_your_representatives_details_path)
+            = link_to(t('components.confirmation_of_supplied_details.edit_page'), edit_your_representatives_details_path)
           td
-            = link_to "Back to the top", "#content"
+            = link_to t('components.confirmation_of_supplied_details.back_to_top'), "#content"
     table
-      caption.heading-small Disability
+      caption.heading-small  = t('components.confirmation_of_supplied_details.confirmation_of_disability_answers.caption')
       thead
         tr
-          th Question
-          th Answer
+          th = t('components.confirmation_of_supplied_details.question_header')
+          th = t('components.confirmation_of_supplied_details.answer_header')
       tbody
         tr
           td = t('helpers.fieldset.disability.disability')
-          td = @hash_store.dig(:disability_answers, :disability)
+          td = translate_stored_value(@hash_store.dig(:disability_answers, :disability),
+                  'disability.disability')
         tr
           td = t('helpers.label.disability.disability_information')
           td = @hash_store.dig(:disability_answers, :disability_information)
         tr
           td
-            = link_to("Edit answers on this page", edit_disability_path)
+            = link_to(t('components.confirmation_of_supplied_details.edit_page'), edit_disability_path)
           td
-            = link_to "Back to the top", "#content"
+            = link_to t('components.confirmation_of_supplied_details.back_to_top'), "#content"
     table
-      caption.heading-small Employer Contract Claim
+      caption.heading-small  = t('components.confirmation_of_supplied_details.confirmation_of_employers_contract_claim_answers.caption')
       thead
         tr
-          th Question
-          th Answer
+          th = t('components.confirmation_of_supplied_details.question_header')
+          th = t('components.confirmation_of_supplied_details.answer_header')
         tr
           td = t('helpers.fieldset.employers_contract_claim.make_employer_contract_claim')
-          td = @hash_store.dig(:employer_contract_claim_answers, :make_employer_contract_claim)
+          td = translate_stored_value(@hash_store.dig(:employer_contract_claim_answers, :make_employer_contract_claim),
+                  'employers_contract_claim.make_employer_contract_claim')
         tr
           td = t('helpers.label.employers_contract_claim.claim_information')
           td = @hash_store.dig(:employer_contract_claim_answers, :claim_information)
         tr
           td
-            = link_to("Edit answers on this page", edit_employers_contract_claim_path)
+            = link_to(t('components.confirmation_of_supplied_details.edit_page'), edit_employers_contract_claim_path)
           td
-            = link_to "Back to the top", "#content"
+            = link_to t('components.confirmation_of_supplied_details.back_to_top'), "#content"
     table
-      caption.heading-small Additional Information
+      caption.heading-small  = t('components.confirmation_of_supplied_details.confirmation_of_additional_information_answers.caption')
       thead
         tr
-          th Question
-          th Answer
+          th = t('components.confirmation_of_supplied_details.question_header')
+          th = t('components.confirmation_of_supplied_details.answer_header')
         tr
           td = t('helpers.label.additional_information.upload_additional_information')
           td
@@ -306,8 +319,8 @@
               = link_to t('components.confirmation_of_supplied_details.remove_file_link'), remove_rtf_path, method: :delete
         tr
           td
-            = link_to("Edit answers on this page", edit_additional_information_path)
+            = link_to(t('components.confirmation_of_supplied_details.edit_page'), edit_additional_information_path)
           td
-            = link_to "Back to the top", "#content"
+            = link_to t('components.confirmation_of_supplied_details.back_to_top'), "#content"
     br
-    = f.submit("Submit Form", class: 'button')
+    = f.submit(t('components.confirmation_of_supplied_details.submit'), class: 'button')

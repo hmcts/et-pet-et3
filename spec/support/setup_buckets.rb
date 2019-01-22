@@ -1,4 +1,5 @@
 require 'aws-sdk-s3'
+require_relative './test_common'
 include ET3::Test::S3Helpers
 
 RSpec.configure do |c|

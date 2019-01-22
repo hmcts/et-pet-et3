@@ -16,8 +16,7 @@ class Response < BaseForm
     inclusion: { in: [true, false] }
   validates :defend_claim_facts,
     length: {
-      maximum: 2500,
-      too_long: "%{count} characters is the maximum allowed" # rubocop:disable Style/FormatStringToken
+      maximum: 2500
     },
     if: :defend_claim?
 

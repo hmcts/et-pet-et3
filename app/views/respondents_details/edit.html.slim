@@ -1,4 +1,4 @@
-- content_for :form_page_title, "Respondent's Details"
+- content_for :form_page_title, t('components.respondents_details.header')
 - content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
 .content-body.respondents-details
 
@@ -6,8 +6,8 @@
 
     div data-turbolinks="false"
       = GovukElementsErrorsHelper.error_summary @respondents_detail,
-        "Please review the following",
-        "Clicking on an error will navigate you directly to the question. Please correct these errors before continuing."
+        t('errors.header'),
+        t('errors.description')
 
     = f.text_field :case_number
     = f.text_field :name
@@ -22,21 +22,21 @@
     = f.telephone_field :mobile_number
     = f.radio_button_fieldset :contact_preference do |b|
       = content_tag :div, {class: 'multiple-choice', data: { target: :respondent_contact_email }} do
-        = b.radio_button(:contact_preference, :email) + label(:contact_preference, t('helpers.label.respondents_detail.contact_preference.choices.email'), value: :email)
+        = b.radio_button(:contact_preference, :email) + b.label(:contact_preference, t('helpers.label.respondents_detail.contact_preference.choices.email'), value: :email)
       #respondent_contact_email.panel.panel-border-narrow.js-hidden
         = f.text_field :email_address
       = content_tag :div, {class: 'multiple-choice'} do
-        = b.radio_button(:contact_preference, :post) + label(:contact_preference, t('helpers.label.respondents_detail.contact_preference.choices.post'), value: :post)
+        = b.radio_button(:contact_preference, :post) + b.label(:contact_preference, t('helpers.label.respondents_detail.contact_preference.choices.post'), value: :post)
       = content_tag :div, {class: 'multiple-choice', data: { target: :respondent_contact_fax }} do
-        = b.radio_button(:contact_preference, :fax) + label(:contact_preference, t('helpers.label.respondents_detail.contact_preference.choices.fax'), value: :fax)
+        = b.radio_button(:contact_preference, :fax) + b.label(:contact_preference, t('helpers.label.respondents_detail.contact_preference.choices.fax'), value: :fax)
       #respondent_contact_fax.panel.panel-border-narrow.js-hidden
         = f.text_field :fax_number
     = f.text_field :organisation_employ_gb
     = f.radio_button_fieldset :organisation_more_than_one_site do |b|
         = content_tag :div, {class: 'multiple-choice', data: { target: :respondent_employment_at_site_number }} do
-          = b.radio_button(:organisation_more_than_one_site, true) + label(:organisation_more_than_one_site, t('helpers.label.respondents_detail.organisation_more_than_one_site.choices.yes'), value: :yes)
+          = b.radio_button(:organisation_more_than_one_site, true) + b.label(:organisation_more_than_one_site, t('helpers.label.respondents_detail.organisation_more_than_one_site.choices.yes'), value: true)
         #respondent_employment_at_site_number.panel.panel-border-narrow.js-hidden
           = f.text_field :employment_at_site_number
         = content_tag :div, {class: 'multiple-choice'} do
-          = b.radio_button(:organisation_more_than_one_site, false) + label(:organisation_more_than_one_site, t('helpers.label.respondents_detail.organisation_more_than_one_site.choices.no'), value: :no)
-    = f.submit("Save and continue", class: 'button')
+          = b.radio_button(:organisation_more_than_one_site, false) + b.label(:organisation_more_than_one_site, t('helpers.label.respondents_detail.organisation_more_than_one_site.choices.no'), value: false)
+    = f.submit(t('components.common.save_and_continue_button'), class: 'button')

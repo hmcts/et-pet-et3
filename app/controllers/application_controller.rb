@@ -3,7 +3,7 @@ require 'securerandom'
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  before_action :check_session_expiry, :set_session_expiry
+  before_action :check_session_expiry, :set_session_expiry, :set_locale
   after_action :save_current_store
 
   # @return [Store] The store instance
@@ -19,6 +19,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def default_url_options(*)
+    { locale: I18n.locale == I18n.default_locale ? nil : I18n.locale }
+  end
+
   private
 
   def save_current_store
@@ -29,7 +33,9 @@ class ApplicationController < ActionController::Base
     session[:store_uuid] = current_store.uuid
   end
 
-  private
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
+  end
 
   def set_session_expiry
     session[:expires_at] = 1.hour.from_now

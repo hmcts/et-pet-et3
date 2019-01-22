@@ -1,28 +1,28 @@
-- content_for :page_title, "Application Complete | Response to Claim"
+- content_for :page_title, "#{t('components.form_submission.page_title')} | Response to Claim"
 .content-body.form-submission
   .govuk-box-highlight.submission-confirmation
     h1.heading-xlarge = t 'components.form_submission.header'
-    p.font-large
-      ' Your reference number, which should be quoted on all correspondence, is
+    p.font-large = t('components.form_submission.reference_text')
     p.font-large
       strong.bold.reference-number = @reference_number
-  p Thank you for your submission. It has been forwarded to the following office which will contact you in due course.
+  p = t('components.form_submission.thank_you')
   p
     strong.bold.office-address = @office_address
     br
     strong.bold.office-phone = @office_phone_number
-  p 
-    | Submission Date:&nbsp;
-    span.submission-date = @submission_date
-    br
-    br
-    = link_to 'A PDF version of your completed form is now available for download', @pdf_url, class: 'download-pdf'
   p
-    ' PDF (Portable Document Format) files can be read using applications such as:
-    a href="http://www.adobe.com/" Adobe's Acrobat Reader
-  p Our national enquiry line can be contacted on:
-  p England and Wales: 0300 123 1024
-  p Scotland: 0141 354 8574
-  p Minicom/Textphone: 01509 221564
-  p They can also provide general procedural information about the employment tribunals.
-  a.button.button-start href="https://gov.uk" Return to GOV.UK
+    = t('components.form_submission.submission_date')
+    span.submission-date = @submission_date
+  p
+    = link_to t('components.form_submission.valid_pdf_download'), @pdf_url, class: 'pdf-success'
+    = link_to t('components.form_submission.invalid_pdf_download'), nil, class: 'pdf-failure hidden'
+  p
+    = t('components.form_submission.pdf_help')
+    = link_to(t('components.form_submission.adobe_link'),t('components.form_submission.adobe_href'))
+
+  p = t('components.form_submission.contact_on')
+  p = t('components.form_submission.contact_engcy')
+  p = t('components.form_submission.contact_sco')
+  p = t('components.form_submission.contact_minitext')
+  p = t('components.form_submission.contact_general')
+  = link_to t('components.form_submission.return_link'), t('components.form_submission.return_href'), class: 'button button-start'

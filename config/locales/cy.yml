@@ -60,7 +60,7 @@ cy:
         make_employer_contract_claim: "Ydych chi eisiau gwneud Hawliad Contract y Cyflogwr? (dewisol) "
     label:
       respondents_detail:
-        case_number: Rhif yr Achos
+        case_number: Rhif yr achos
         name: "Enw'r unigolyn, cwmni neu sefydliad "
         contact: Enw llawn y cyswllt (dewisol)
         building_name: "Enw neu rif yr adeilad "
@@ -386,7 +386,7 @@ cy:
       or_text: "neu"
       upload_button: "Cliciwch yma i lwytho ffeil rtf"
   attributes:
-    case_number: rhif yr Achos
+    case_number: rhif yr achos
     name: enw'r unigolyn, cwmni neu sefydliad
     contact: enw llawn y cyswllt
     building_name: enw neu rif yr adeilad

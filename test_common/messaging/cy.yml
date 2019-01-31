@@ -5,7 +5,7 @@ cy:
   questions:
     # Respondent's Details Page
     case_number:
-      label: "Rhif yr Achos"
+      label: "Rhif yr achos"
     name:
       label: Enw'r unigolyn, cwmni neu sefydliad
     contact:

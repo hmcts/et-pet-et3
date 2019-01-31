@@ -18,7 +18,7 @@ module ET3
         element :error_too_long, :exact_error_text, 'errors.messages.too_long', exact: false
         element :error_inclusion, :exact_error_text, 'errors.messages.inclusion', exact: false
 
-        delegate :set, to: :upload_select
+        def set(*args); upload_select.set(*args); end
       end
 
       element :continue_button, :submit_text, 'components.save_and_continue_button'

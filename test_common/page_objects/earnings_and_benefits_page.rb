@@ -13,7 +13,7 @@ module ET3
 
         section :queried_hours, :question_labelled, 'questions.agree_with_claimants_hours.queried_hours.label', exact: false do
           element :field, :css, 'input'
-          delegate :set, to: :field
+          def set(*args); field.set(*args); end
         end
 
         element :error_not_a_number, :exact_error_text, 'errors.custom.queried_hours.not_a_number', exact: false
@@ -57,7 +57,7 @@ module ET3
 
           element :error_not_a_number, :exact_error_text, 'errors.custom.queried_pay_before_tax.not_a_number', exact: false
 
-          delegate :set, to: :field
+          def set(*args); field.set(*args); end
         end
 
         section :queried_take_home_pay, :embedded_single_choice_option, 'questions.agree_with_earnings_details.queried_take_home_pay_period.label', exact: false do
@@ -69,7 +69,7 @@ module ET3
 
           element :error_not_a_number, :exact_error_text, 'errors.custom.queried_take_home_pay.not_a_number', exact: false
 
-          delegate :set, to: :field
+          def set(*args); field.set(*args); end
         end
         
         def set_for(user_persona)

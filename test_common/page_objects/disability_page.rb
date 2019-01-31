@@ -12,7 +12,7 @@ module ET3
         element :no, :gds_multiple_choice_option, 'questions.disability.no.label'
 
         section :disability_information, :textarea_labelled, 'questions.disability.disability_information.label', exact: :false do
-          delegate :set, to: :root_element
+          def set(*args); root_element.set(*args); end
         end
 
         element :error_too_long, :exact_error_text, 'errors.messages.too_long', exact: false

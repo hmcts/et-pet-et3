@@ -6,7 +6,7 @@ module ET3
       section :email_receipt_question, :question_labelled, 'questions.email_receipt.label', exact: false do
         element :field, :css, 'input'
         element :error_invalid_email, :exact_error_text, 'errors.messages.invalid_email', exact: false
-        delegate :set, to: :field
+        def set(*args); field.set(*args); end
       end
       element :submit_guidance, :content_header, 'confirmation.submit_guidance'
       section :confirmation_of_respondents_details_answers, :table_captioned, 'questions.confirmation_of_respondents_details_answers.caption', exact: true do

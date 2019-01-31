@@ -293,6 +293,9 @@ cy:
         not_a_number: "Nodwch y tâl terfynol arferol fel rhif"
       type_of_representative:
         inclusion: "Dewiswch sut fath o gynrychiolydd sydd gennych"
+      disability_information:
+        blank: |
+          Byddai o gymorth i ni pe baech yn nodi beth yw'ch anabledd, a dweud pa gymorth, os o gwbl, fydd arnoch ei angen wrth i'ch hawliad fynd drwy'r system, gan gynnwys ar gyfer unrhyw wrandawiadau a gynhelir mewn adeilad tribiwnlys fod yn wag
   links:
     confirmation_of_supplied_details:
       edit_page: "Golygu atebion ar y dudalen hon"

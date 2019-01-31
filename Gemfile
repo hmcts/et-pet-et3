@@ -74,7 +74,7 @@ group :test do
   gem 'cucumber-rails', '~> 1.5', :require => false
   gem 'capybara-screenshot', '~> 1.0'
   gem 'rspec-rails', '~> 3.7'
-  gem 'site_prism', '~> 2.9'
+  gem 'site_prism', '~> 3.0'
   gem 'chromedriver-helper', '~> 2.1'
   gem 'geckodriver-helper', '~> 0.23'
   gem 'database_cleaner', '~> 1.5'

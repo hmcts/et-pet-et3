@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/ruby
 
 trigger:
-- master
+- develop
 
 pool:
   vmImage: 'Ubuntu-16.04'
@@ -15,9 +15,15 @@ steps:
     versionSpec: '>= 2.5'
 
 - script: |
-    gem install bundler
-    bundle install --retry=3 --jobs=4
-  displayName: 'bundle install'
+    chmod +x ./bin/wait-for-it.sh
+    curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+    ./cc-test-reporter before-build
+  displayName: 'before_install'
 
-- script: bundle exec rake
-  displayName: 'bundle exec rake'
+# - script: |
+#     gem install bundler
+#     bundle install --retry=3 --jobs=4
+#   displayName: 'bundle install'
+
+# - script: bundle exec rake
+#   displayName: 'bundle exec rake'

@@ -34,12 +34,10 @@ steps:
     gem install bundler -v 1.16.4
     bundle install --retry=3 --jobs=4
     RAILS_ENV=development bundle exec rake parallel:create parallel:migrate
-    RAILS_ENV=test bundle exec rake parallel:spec
   displayName: 'before script'
 
 - script: |
     RAILS_ENV=development bundle exec rake parallel:spec
-    RAILS_ENV=test bundle exec rake parallel:spec
     TEST_LOCALE=cy bundle exec rake parallel:spec
   displayName: 'script'
 

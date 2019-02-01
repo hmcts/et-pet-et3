@@ -159,6 +159,28 @@ module ET3
           )
       end
 
+      # Stub submission call to API with invalid office code
+      def stub_submission_invalid_office
+        stub_request(:post, "#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api')}/v2/validate_response").
+          with(headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }).
+          to_return(
+            headers: { 'Content-Type': 'application/json' },
+            body:
+              {
+                "status": "not_accepted",
+                "errors": [
+                  {
+                    "status": 422,
+                    "code": "invalid_office_code",
+                    "title": "Invalid case number",
+                    "detail": "Invalid case number - invalid office code",
+                    "source": "/data/case_number"
+                  }
+                ]
+              }.to_json
+          )
+      end
+
       # Stub Submission Calls to API using Rack mounted PDF Download URL
       def stub_submission_with_custom_pdf_download_link # rubocop:disable Metrics/MethodLength
         stub_request(:post, "#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api')}/v2/respondents/build_response").

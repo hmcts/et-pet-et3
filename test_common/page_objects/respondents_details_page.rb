@@ -7,6 +7,7 @@ module ET3
       section :case_number_question, :question_labelled, 'questions.case_number.label', exact: false do
         element :field, :css, "input"
         element :error_invalid, :exact_error_text, 'errors.messages.invalid', exact: false
+        element :error_office_invalid, :exact_error_text, 'errors.custom.case_number.invalid_office', exact: false
         def set(*args); field.set(*args); end
       end
       section :name_question, :question_labelled, 'questions.name.label', exact: false do

@@ -270,6 +270,8 @@ en:
       too_long: characters is the maximum allowed
       inclusion: Please select an option
     custom:
+      case_number:
+        invalid_office: Case number is invalid. Check the first two digits.
       organisation_employ_gb:
         not_a_number: Please enter how many people the organisation employs in Great Britain as a number
       organisation_more_than_one_site:

@@ -33,6 +33,7 @@ steps:
     ./bin/wait-for-it.sh localhost:9000
     gem install bundler -v 1.16.4
     bundle install --retry=3 --jobs=4
+    bundle exec rspec:install
     RAILS_ENV=development bundle exec rake parallel:create parallel:migrate
     RAILS_ENV=test bundle exec rake parallel:create parallel:migrate
   displayName: 'before script'

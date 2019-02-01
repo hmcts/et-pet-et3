@@ -27,9 +27,9 @@ steps:
     chmod +x ./cc-test-reporter
     ./cc-test-reporter before-build
     ./bin/dev/docker-support-services up -d
-    ./bin/wait-for-it.sh localhost:5432
+    ./bin/wait-for-it.sh localhost:5433
     sleep 5
-    ./bin/wait-for-it.sh localhost:5432
+    ./bin/wait-for-it.sh localhost:5433
     ./bin/wait-for-it.sh localhost:9000
     gem install bundler -v 1.16.4
     bundle install --retry=3 --jobs=4

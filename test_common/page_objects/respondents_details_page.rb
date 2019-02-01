@@ -7,57 +7,57 @@ module ET3
       section :case_number_question, :question_labelled, 'questions.case_number.label', exact: false do
         element :field, :css, "input"
         element :error_invalid, :exact_error_text, 'errors.messages.invalid', exact: false
-        delegate :set, to: :field
+        def set(*args); field.set(*args); end
       end
       section :name_question, :question_labelled, 'questions.name.label', exact: false do
         element :field, :css, "input"
         element :error_blank, :exact_error_text, 'errors.messages.blank', exact: false
-        delegate :set, to: :field
+        def set(*args); field.set(*args); end
       end
       section :contact_question, :question_labelled, 'questions.contact.label', exact: false do
         element :field, :css, "input"
         element :error_contains_numbers, :exact_error_text, 'errors.messages.contains_numbers', exact: false
         element :error_contains_invalid_name, :exact_error_text, 'errors.messages.invalid_name', exact: false
-        delegate :set, to: :field
+        def set(*args); field.set(*args); end
       end
       section :building_name_question, :question_labelled, 'questions.building_name.label', exact: false do
         element :field, :css, "input"
         element :error_blank, :exact_error_text, 'errors.messages.blank', exact: false
-        delegate :set, to: :field
+        def set(*args); field.set(*args); end
       end
       section :street_question, :question_labelled, 'questions.street.label', exact: false do
         element :field, :css, "input"
         element :error_blank, :exact_error_text, 'errors.messages.blank', exact: false
-        delegate :set, to: :field
+        def set(*args); field.set(*args); end
       end
       section :town_question, :question_labelled, 'questions.town.label', exact: false do
         element :field, :css, "input"
         element :error_blank, :exact_error_text, 'errors.messages.blank', exact: false
-        delegate :set, to: :field
+        def set(*args); field.set(*args); end
       end
       section :county_question, :question_labelled, 'questions.county.label', exact: false do
         element :field, :css, "input"
-        delegate :set, to: :field
+        def set(*args); field.set(*args); end
       end
       section :postcode_question, :question_labelled, 'questions.postcode.label', exact: false do
         element :field, :css, "input"
         element :error_blank, :exact_error_text, 'errors.messages.blank', exact: false
         element :error_invalid_postcode, :exact_error_text, 'errors.messages.invalid_postcode', exact: false
-        delegate :set, to: :field
+        def set(*args); field.set(*args); end
       end
       section :dx_number_question, :question_labelled, 'questions.dx_number.label', exact: false do
         element :field, :css, "input"
-        delegate :set, to: :field
+        def set(*args); field.set(*args); end
       end
       section :contact_number_question, :question_labelled, 'questions.contact_number.label', exact: false do
         element :field, :css, "input"
         element :error_invalid_phone_number, :exact_error_text, 'errors.messages.invalid_phone_number', exact: false
-        delegate :set, to: :field
+        def set(*args); field.set(*args); end
       end
       section :contact_mobile_number_question, :question_labelled, 'questions.contact_mobile_number.label', exact: false do
         element :field, :css, "input"
         element :error_invalid_phone_number, :exact_error_text, 'errors.messages.invalid_phone_number', exact: false
-        delegate :set, to: :field
+        def set(*args); field.set(*args); end
       end
       section :contact_preference_question, :single_choice_option, 'questions.contact_preference.label', exact: false do
         include ET3::Test::I18n
@@ -96,7 +96,7 @@ module ET3
         element :field, :css, "input"
         element :error_blank, :exact_error_text, 'errors.messages.blank', exact: false
         element :error_not_a_number, :exact_error_text, 'errors.custom.organisation_employ_gb.not_a_number', exact: false
-        delegate :set, to: :field
+        def set(*args); field.set(*args); end
       end
 
       section :organisation_more_than_one_site_question, :single_choice_option, 'questions.organisation_more_than_one_site.label', exact: false do

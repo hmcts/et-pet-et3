@@ -15,11 +15,14 @@ steps:
     versionSpec: '>= 2.5'
 
 - script: |
+    sudo apt-get install libpq-dev
+    chmod +x ./bin/wait-for-it.sh
+  displayName: 'before install'
+
+- script: |
     export DB_PORT=5433
     export S3_PORT=9000
     export CC_TEST_REPORTER_ID=adf7487514f01c0e5d3274c0f0351f946b792aadc1978f99ec099fd9a3a01b0d
-    sudo apt-get install libpq-dev
-    chmod +x ./bin/wait-for-it.sh
     curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
     chmod +x ./cc-test-reporter
     ./cc-test-reporter before-build
@@ -31,12 +34,12 @@ steps:
     gem install bundler -v 1.16.4
     bundle install --retry=3 --jobs=4
     bundle exec rake parallel:create parallel:migrate
-  displayName: 'before_install'
+  displayName: 'before script'
 
-# - script: |
-#     gem install bundler -v 1.16.4
-#     bundle install --retry=3 --jobs=4
-#   displayName: 'bundle install'
+- script: |
+    bundle exec rake parallel:spec
+    TEST_LOCALE=cy bundle exec rake parallel:spec
+  displayName: 'script'
 
 # - script: bundle exec rake parallel:create parallel:migrate
 #   displayName: 'bundle exec rake'

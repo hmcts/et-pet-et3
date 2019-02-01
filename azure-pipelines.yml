@@ -25,15 +25,15 @@ steps:
     sleep 5
     ./bin/wait-for-it.sh localhost:5432
     ./bin/wait-for-it.sh localhost:9000
-    # gem install bundler -v 1.16.4
-    # gem install rake
-    # bundle exec rake parallel:create parallel:migrate
-  displayName: 'before_install'
-
-- script: |
     gem install bundler -v 1.16.4
     bundle install --retry=3 --jobs=4
-  displayName: 'bundle install'
+    bundle exec rake parallel:create parallel:migrate
+  displayName: 'before_install'
 
-- script: bundle exec rake
-  displayName: 'bundle exec rake'
+# - script: |
+#     gem install bundler -v 1.16.4
+#     bundle install --retry=3 --jobs=4
+#   displayName: 'bundle install'
+
+# - script: bundle exec rake parallel:create parallel:migrate
+#   displayName: 'bundle exec rake'

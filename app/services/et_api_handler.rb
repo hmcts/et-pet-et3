@@ -18,6 +18,17 @@ class EtApiHandler
     { data: http_response.parsed_response, status: http_response.code }
   end
 
+  def self.validate_response(attribute, value)
+    response = HTTParty.
+               post("#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api')}/v2/validate_response",
+                 body: {
+                   "#{attribute}": value
+                 }.to_json,
+                 headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' })
+
+    parse_validator_response(response)
+  end
+
   private
 
   def self.build_response_data(full_hash)
@@ -120,5 +131,9 @@ class EtApiHandler
       "disability": full_hash[:disability_answers][:disability],
       "disability_information": full_hash[:disability_answers][:disability_information]
     }
+  end
+
+  def self.parse_validator_response(response)
+    response["status"] == "not_accepted" ? response["errors"].first["code"] : true
   end
 end

@@ -42,7 +42,7 @@ class RespondentsDetail < BaseForm
     respondents_detail_hash
   end
 
-  validates :case_number, case_number: true
+  validates :case_number, case_number: true, remotely_validate_office_code: true
   validates :name, presence: true
   validates :contact,
     persons_name: true,

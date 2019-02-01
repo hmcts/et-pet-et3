@@ -253,6 +253,8 @@ en:
       too_long:
         other: "%{count} characters is the maximum allowed"
     attributes:
+      case_number:
+        invalid_office: Case number is invalid. Check the first two digits.
       contact:
         contains_numbers: Name of contact must not contain numbers
       employment_at_site_number:

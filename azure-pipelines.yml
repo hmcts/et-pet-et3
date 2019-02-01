@@ -37,6 +37,9 @@ steps:
   displayName: 'before script'
 
 - script: |
+    export DB_PORT=5433
+    export S3_PORT=9000
+    export CC_TEST_REPORTER_ID=adf7487514f01c0e5d3274c0f0351f946b792aadc1978f99ec099fd9a3a01b0d
     bundle exec rake parallel:spec
     TEST_LOCALE=cy bundle exec rake parallel:spec
   displayName: 'script'

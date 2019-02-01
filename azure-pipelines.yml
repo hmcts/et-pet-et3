@@ -20,9 +20,9 @@ steps:
     chmod +x ./cc-test-reporter
     ./cc-test-reporter before-build
     ./bin/dev/docker-support-services up -d
-    ./bin/wait-for-it.sh localhost:5433
+    ./bin/wait-for-it.sh localhost:5432
     sleep 5
-    ./bin/wait-for-it.sh localhost:5433
+    ./bin/wait-for-it.sh localhost:5432
     ./bin/wait-for-it.sh localhost:9000
     bundle exec rake parallel:create parallel:migrate
   displayName: 'before_install'

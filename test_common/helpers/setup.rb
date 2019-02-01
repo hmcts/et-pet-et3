@@ -162,7 +162,10 @@ module ET3
       # Stub submission call to API with invalid office code
       def stub_submission_invalid_office
         stub_request(:post, "#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api')}/v2/validate_response").
-          with(headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }).
+          with(headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+               body: {
+                 "case_number": "0254321/2018"
+               }).
           to_return(
             headers: { 'Content-Type': 'application/json' },
             body:

@@ -247,7 +247,7 @@ cy:
         other: "%{count} o nodau yw'r uchafswm a ganiateir "
     attributes:
       case_number:
-        invalid_office: Case number is invalid. Check the first two digits.
+        invalid_office: Mae rhif yr achos yn annilys. Gwiriwch y ddau nodyn cyntaf.
       contact:
         contains_numbers: "Ni ddylai enw'r cyswllt gynnwys rhifau "
       employment_at_site_number:

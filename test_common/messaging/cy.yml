@@ -280,7 +280,7 @@ cy:
       inclusion: "Dewiswch opsiwn "
     custom:
       case_number:
-        invalid_office: WELSH - Case number is invalid. Check the first two digits.
+        invalid_office: Mae rhif yr achos yn annilys. Gwiriwch y ddau nodyn cyntaf.
       organisation_employ_gb:
         not_a_number: "Nodwch faint o bobl sy’n gyflogedig gan y sefydliad hwn ym Mhrydain Fawr fel rhif"
       organisation_more_than_one_site:

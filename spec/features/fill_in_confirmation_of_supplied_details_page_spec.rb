@@ -5,6 +5,7 @@ RSpec.feature "Fill in Confirmation of Supplied Details Page", js: true do
   before do
     stub_et_api
     stub_presigned_url_api_for_s3
+    stub_valid_office_code
   end
 
   scenario "correctly will enable user to continue to next page" do

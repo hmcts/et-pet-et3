@@ -40,6 +40,7 @@ RSpec.feature "Check PDF Download Link", js: true do
   before do
     stub_submission_with_custom_pdf_download_link
     stub_presigned_url_api_for_s3
+    stub_valid_office_code
   end
 
   scenario "link will be disabled as first request will not be valid" do

@@ -3,6 +3,10 @@ require 'rails_helper'
 RSpec.feature "Check for Javascript Browser Errors", js: true, driver: :chromedriver do
   include ET3::Test::I18n
 
+  before do
+    stub_valid_office_code
+  end
+
   scenario "on start page" do
     start_page.load
 

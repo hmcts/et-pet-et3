@@ -2,7 +2,7 @@ require 'rails_helper'
 RSpec.feature "Submit invalid office code", js: true do
 
   before do
-    stub_submission_invalid_office
+    stub_invalid_office_code
   end
 
   scenario "shows the user an error page" do

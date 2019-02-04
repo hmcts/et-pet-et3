@@ -2,6 +2,10 @@ require 'rails_helper'
 RSpec.feature "Fill in Respondents Details Page", js: true do
   let(:claimants_details_page) { ET3::Test::ClaimantsDetailsPage.new }
 
+  before do
+    stub_valid_office_code
+  end
+
   scenario "correctly will enable user to continue to next page" do
     respondents_details_page.load(locale: current_locale_parameter)
     given_valid_data

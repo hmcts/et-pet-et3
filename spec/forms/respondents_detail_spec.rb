@@ -505,5 +505,38 @@ RSpec.describe RespondentsDetail, type: :model do
     end
   end
 
+  context "with a malicious user the remote validator" do
+    it "will not validate the use of a single quote at the start of the string" do
+      populated_respondent_detail.case_number = "'7654321/2017"
 
+      populated_respondent_detail.valid?
+
+      expect(populated_respondent_detail.errors.details[:case_number]).to include a_hash_including(error: :invalid)
+    end
+
+    it "will not validate the use of a single quote at the end of the string" do
+      populated_respondent_detail.case_number = "7654321/2017'"
+
+      populated_respondent_detail.valid?
+
+      expect(populated_respondent_detail.errors.details[:case_number]).to include a_hash_including(error: :invalid)
+    end
+
+    it "will not validate the use of an object closing bracket at the start of the string" do
+      populated_respondent_detail.case_number = "}7654321/2017"
+
+      populated_respondent_detail.valid?
+
+      expect(populated_respondent_detail.errors.details[:case_number]).to include a_hash_including(error: :invalid)
+    end
+
+    it "will not validate the use of an object closing bracket at the end of the string" do
+      populated_respondent_detail.case_number = "7654321/2017}"
+
+      populated_respondent_detail.valid?
+
+      expect(populated_respondent_detail.errors.details[:case_number]).to include a_hash_including(error: :invalid)
+    end
   end
+
+end

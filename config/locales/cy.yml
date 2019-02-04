@@ -246,6 +246,8 @@ cy:
       too_long:
         other: "%{count} o nodau yw'r uchafswm a ganiateir "
     attributes:
+      case_number:
+        invalid_office: Case number is invalid. Check the first two digits.
       contact:
         contains_numbers: "Ni ddylai enw'r cyswllt gynnwys rhifau "
       employment_at_site_number:

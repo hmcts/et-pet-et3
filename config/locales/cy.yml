@@ -85,7 +85,7 @@ cy:
             'no': 'Nac oes'
         employment_at_site_number: "Faint o bobl sy’n gyflogedig ar y safle ble'r oedd yr hawlydd yn gweithio?"
       claimants_detail:
-        claimants_name: "Enw'r hawlydd (dewisol) "
+        claimants_name: Enw llawn yr hawlydd (dewisol)
         agree_with_early_conciliation_details:
           choices:
             'yes': 'Ydw'
@@ -365,7 +365,7 @@ cy:
     respondents_details:
       header: "Manylion yr Atebydd "
     claimants_details:
-      header: "Manylion yr Hawlydd "
+      header: Manylion yr hawlydd
     earnings_and_benefits:
       header: "Enillion a Buddion "
     response:
@@ -403,7 +403,7 @@ cy:
     organisation_employ_gb: faint o bobl sy’n gyflogedig gan y sefydliad hwn ym Mhrydain Fawr?
     organisation_more_than_one_site: a oes gan y sefydliad hwn fwy nag un safle ym Mhrydain Fawr?
     employment_at_site_number: faint o bobl sy’n gyflogedig ar y safle ble'r oedd yr hawlydd yn gweithio?
-    claimants_name: enw'r hawlydd
+    claimants_name: enw llawn yr hawlydd
     agree_with_early_conciliation_details: a ydych chi'n cytuno gyda'r manylion a roddodd yr hawlydd ynghylch Cymodi Cynnar gydag Acas?
     disagree_conciliation_reason: pam yr ydych yn anghytuno â’r hawlydd?
     agree_with_employment_dates: a yw'r dyddiadau cyflogaeth a roddwyd gan yr hawlydd yn gywir?

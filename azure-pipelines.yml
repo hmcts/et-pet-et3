@@ -42,6 +42,8 @@ steps:
     export S3_PORT=9000
     RAILS_ENV=test bundle exec rake parallel:spec
     RAILS_ENV=test TEST_LOCALE=cy bundle exec rake parallel:spec
+    curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+    chmod +x ./cc-test-reporter
     ./cc-test-reporter after-build
   displayName: 'script'
 

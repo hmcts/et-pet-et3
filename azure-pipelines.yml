@@ -44,5 +44,9 @@ steps:
     RAILS_ENV=test TEST_LOCALE=cy bundle exec rake parallel:spec
   displayName: 'script'
 
+- script: |
+    ./cc-test-reporter after-build
+  displayName: 'after script'
+
 # - script: bundle exec rake parallel:create parallel:migrate
 #   displayName: 'bundle exec rake'

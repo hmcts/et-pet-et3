@@ -19,6 +19,8 @@ module ET3
         element :more_category_link, :link_named, 'components.sidebar.more_category_link'
       end
 
+      element :terms, :link_named, 'components.footer.terms'
+
       def js_severe_errors
         return [] unless page.driver.try(:browser).try(:browser) == :chromedriver
         errors = page.driver.browser.manage.logs.get(:browser).select { |error| error.level == "SEVERE" }

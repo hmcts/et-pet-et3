@@ -25,103 +25,63 @@ RSpec.feature "Access Footer", js: true do
     expect(terms_and_conditions_page).to have_introduction
 
     expect(terms_and_conditions_page.general_terms).to have_header
-    expect(terms_and_conditions_page.general_terms).to have_content
+    terms_and_conditions_page.general_terms.assert_content
 
     expect(terms_and_conditions_page.applicable_law).to have_header
-    expect(terms_and_conditions_page.applicable_law).to have_content
-    expect(terms_and_conditions_page.applicable_law).to have_bullets
+    terms_and_conditions_page.applicable_law.assert_content
 
     expect(terms_and_conditions_page.responsible_use).to have_header
-    expect(terms_and_conditions_page.responsible_use).to have_content
+    terms_and_conditions_page.responsible_use.assert_content
 
     expect(terms_and_conditions_page.gdpr).to have_header
-    expect(terms_and_conditions_page.gdpr).to have_content
+    terms_and_conditions_page.gdpr.assert_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_header
 
     expect(terms_and_conditions_page.hmcts_notice).to have_purpose_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_judiciary_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_judiciary_href
+    terms_and_conditions_page.hmcts_notice.assert_purpose_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_about_personal_data_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_about_personal_data_content
+    terms_and_conditions_page.hmcts_notice.assert_about_personal_data_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_intro
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_three
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_provide_data
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_have_rep
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_four
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_five
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_representative
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_six
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_seven
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_collect_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_use_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_use_content
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_use_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_intro
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_three
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_helps
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_four
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_five
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_six
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_identify
+    terms_and_conditions_page.hmcts_notice.assert_non_personal_use_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_aws_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_aws_href
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_sendgrid_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_sendgrid_href
-
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_stored_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_ga_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_ga_href
-
+    terms_and_conditions_page.hmcts_notice.assert_non_personal_data_stored_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_data_secure_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_data_secure_content
-
+    terms_and_conditions_page.hmcts_notice.assert_data_secure_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_disclosing_data_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_disclosing_data_content
+    terms_and_conditions_page.hmcts_notice.assert_disclosing_data_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_manage_sessions_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_manage_sessions_content
+    terms_and_conditions_page.hmcts_notice.assert_manage_sessions_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_email_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_email_href
+    terms_and_conditions_page.hmcts_notice.assert_access_personal_info_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_more_details_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_introduction
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_three
+    terms_and_conditions_page.hmcts_notice.assert_more_details_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_email_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_email_href
+    terms_and_conditions_page.hmcts_notice.assert_make_complaint_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_complaints_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_introduction
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_address
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_website_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_website_href
+    terms_and_conditions_page.hmcts_notice.assert_complaints_content
 
     expect(terms_and_conditions_page.disclaimer).to have_header
-    expect(terms_and_conditions_page.disclaimer).to have_content
+    terms_and_conditions_page.disclaimer.assert_content
   end
 
   scenario "from respondent's details page" do
@@ -141,103 +101,63 @@ RSpec.feature "Access Footer", js: true do
     expect(terms_and_conditions_page).to have_introduction
 
     expect(terms_and_conditions_page.general_terms).to have_header
-    expect(terms_and_conditions_page.general_terms).to have_content
+    terms_and_conditions_page.general_terms.assert_content
 
     expect(terms_and_conditions_page.applicable_law).to have_header
-    expect(terms_and_conditions_page.applicable_law).to have_content
-    expect(terms_and_conditions_page.applicable_law).to have_bullets
+    terms_and_conditions_page.applicable_law.assert_content
 
     expect(terms_and_conditions_page.responsible_use).to have_header
-    expect(terms_and_conditions_page.responsible_use).to have_content
+    terms_and_conditions_page.responsible_use.assert_content
 
     expect(terms_and_conditions_page.gdpr).to have_header
-    expect(terms_and_conditions_page.gdpr).to have_content
+    terms_and_conditions_page.gdpr.assert_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_header
 
     expect(terms_and_conditions_page.hmcts_notice).to have_purpose_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_judiciary_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_judiciary_href
+    terms_and_conditions_page.hmcts_notice.assert_purpose_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_about_personal_data_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_about_personal_data_content
+    terms_and_conditions_page.hmcts_notice.assert_about_personal_data_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_intro
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_three
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_provide_data
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_have_rep
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_four
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_five
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_representative
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_six
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_seven
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_collect_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_use_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_use_content
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_use_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_intro
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_three
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_helps
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_four
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_five
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_six
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_identify
+    terms_and_conditions_page.hmcts_notice.assert_non_personal_use_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_aws_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_aws_href
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_sendgrid_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_sendgrid_href
-
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_stored_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_ga_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_ga_href
-
+    terms_and_conditions_page.hmcts_notice.assert_non_personal_data_stored_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_data_secure_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_data_secure_content
-
+    terms_and_conditions_page.hmcts_notice.assert_data_secure_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_disclosing_data_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_disclosing_data_content
+    terms_and_conditions_page.hmcts_notice.assert_disclosing_data_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_manage_sessions_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_manage_sessions_content
+    terms_and_conditions_page.hmcts_notice.assert_manage_sessions_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_email_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_email_href
+    terms_and_conditions_page.hmcts_notice.assert_access_personal_info_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_more_details_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_introduction
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_three
+    terms_and_conditions_page.hmcts_notice.assert_more_details_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_email_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_email_href
+    terms_and_conditions_page.hmcts_notice.assert_make_complaint_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_complaints_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_introduction
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_address
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_website_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_website_href
+    terms_and_conditions_page.hmcts_notice.assert_complaints_content
 
     expect(terms_and_conditions_page.disclaimer).to have_header
-    expect(terms_and_conditions_page.disclaimer).to have_content
+    terms_and_conditions_page.disclaimer.assert_content
   end
 
   scenario "from claimant's details page" do
@@ -257,103 +177,63 @@ RSpec.feature "Access Footer", js: true do
     expect(terms_and_conditions_page).to have_introduction
 
     expect(terms_and_conditions_page.general_terms).to have_header
-    expect(terms_and_conditions_page.general_terms).to have_content
+    terms_and_conditions_page.general_terms.assert_content
 
     expect(terms_and_conditions_page.applicable_law).to have_header
-    expect(terms_and_conditions_page.applicable_law).to have_content
-    expect(terms_and_conditions_page.applicable_law).to have_bullets
+    terms_and_conditions_page.applicable_law.assert_content
 
     expect(terms_and_conditions_page.responsible_use).to have_header
-    expect(terms_and_conditions_page.responsible_use).to have_content
+    terms_and_conditions_page.responsible_use.assert_content
 
     expect(terms_and_conditions_page.gdpr).to have_header
-    expect(terms_and_conditions_page.gdpr).to have_content
+    terms_and_conditions_page.gdpr.assert_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_header
 
     expect(terms_and_conditions_page.hmcts_notice).to have_purpose_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_judiciary_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_judiciary_href
+    terms_and_conditions_page.hmcts_notice.assert_purpose_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_about_personal_data_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_about_personal_data_content
+    terms_and_conditions_page.hmcts_notice.assert_about_personal_data_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_intro
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_three
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_provide_data
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_have_rep
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_four
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_five
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_representative
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_six
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_seven
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_collect_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_use_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_use_content
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_use_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_intro
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_three
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_helps
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_four
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_five
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_six
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_identify
+    terms_and_conditions_page.hmcts_notice.assert_non_personal_use_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_aws_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_aws_href
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_sendgrid_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_sendgrid_href
-
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_stored_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_ga_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_ga_href
-
+    terms_and_conditions_page.hmcts_notice.assert_non_personal_data_stored_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_data_secure_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_data_secure_content
-
+    terms_and_conditions_page.hmcts_notice.assert_data_secure_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_disclosing_data_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_disclosing_data_content
+    terms_and_conditions_page.hmcts_notice.assert_disclosing_data_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_manage_sessions_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_manage_sessions_content
+    terms_and_conditions_page.hmcts_notice.assert_manage_sessions_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_email_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_email_href
+    terms_and_conditions_page.hmcts_notice.assert_access_personal_info_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_more_details_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_introduction
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_three
+    terms_and_conditions_page.hmcts_notice.assert_more_details_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_email_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_email_href
+    terms_and_conditions_page.hmcts_notice.assert_make_complaint_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_complaints_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_introduction
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_address
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_website_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_website_href
+    terms_and_conditions_page.hmcts_notice.assert_complaints_content
 
     expect(terms_and_conditions_page.disclaimer).to have_header
-    expect(terms_and_conditions_page.disclaimer).to have_content
+    terms_and_conditions_page.disclaimer.assert_content
   end
 
   scenario "from earnings and benefits page" do
@@ -373,103 +253,63 @@ RSpec.feature "Access Footer", js: true do
     expect(terms_and_conditions_page).to have_introduction
 
     expect(terms_and_conditions_page.general_terms).to have_header
-    expect(terms_and_conditions_page.general_terms).to have_content
+    terms_and_conditions_page.general_terms.assert_content
 
     expect(terms_and_conditions_page.applicable_law).to have_header
-    expect(terms_and_conditions_page.applicable_law).to have_content
-    expect(terms_and_conditions_page.applicable_law).to have_bullets
+    terms_and_conditions_page.applicable_law.assert_content
 
     expect(terms_and_conditions_page.responsible_use).to have_header
-    expect(terms_and_conditions_page.responsible_use).to have_content
+    terms_and_conditions_page.responsible_use.assert_content
 
     expect(terms_and_conditions_page.gdpr).to have_header
-    expect(terms_and_conditions_page.gdpr).to have_content
+    terms_and_conditions_page.gdpr.assert_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_header
 
     expect(terms_and_conditions_page.hmcts_notice).to have_purpose_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_judiciary_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_judiciary_href
+    terms_and_conditions_page.hmcts_notice.assert_purpose_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_about_personal_data_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_about_personal_data_content
+    terms_and_conditions_page.hmcts_notice.assert_about_personal_data_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_intro
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_three
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_provide_data
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_have_rep
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_four
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_five
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_representative
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_six
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_seven
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_collect_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_use_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_use_content
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_use_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_intro
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_three
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_helps
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_four
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_five
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_six
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_identify
+    terms_and_conditions_page.hmcts_notice.assert_non_personal_use_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_aws_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_aws_href
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_sendgrid_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_sendgrid_href
-
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_stored_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_ga_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_ga_href
-
+    terms_and_conditions_page.hmcts_notice.assert_non_personal_data_stored_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_data_secure_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_data_secure_content
-
+    terms_and_conditions_page.hmcts_notice.assert_data_secure_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_disclosing_data_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_disclosing_data_content
+    terms_and_conditions_page.hmcts_notice.assert_disclosing_data_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_manage_sessions_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_manage_sessions_content
+    terms_and_conditions_page.hmcts_notice.assert_manage_sessions_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_email_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_email_href
+    terms_and_conditions_page.hmcts_notice.assert_access_personal_info_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_more_details_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_introduction
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_three
+    terms_and_conditions_page.hmcts_notice.assert_more_details_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_email_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_email_href
+    terms_and_conditions_page.hmcts_notice.assert_make_complaint_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_complaints_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_introduction
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_address
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_website_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_website_href
+    terms_and_conditions_page.hmcts_notice.assert_complaints_content
 
     expect(terms_and_conditions_page.disclaimer).to have_header
-    expect(terms_and_conditions_page.disclaimer).to have_content
+    terms_and_conditions_page.disclaimer.assert_content
   end
 
   scenario "from response page" do
@@ -489,103 +329,63 @@ RSpec.feature "Access Footer", js: true do
     expect(terms_and_conditions_page).to have_introduction
 
     expect(terms_and_conditions_page.general_terms).to have_header
-    expect(terms_and_conditions_page.general_terms).to have_content
+    terms_and_conditions_page.general_terms.assert_content
 
     expect(terms_and_conditions_page.applicable_law).to have_header
-    expect(terms_and_conditions_page.applicable_law).to have_content
-    expect(terms_and_conditions_page.applicable_law).to have_bullets
+    terms_and_conditions_page.applicable_law.assert_content
 
     expect(terms_and_conditions_page.responsible_use).to have_header
-    expect(terms_and_conditions_page.responsible_use).to have_content
+    terms_and_conditions_page.responsible_use.assert_content
 
     expect(terms_and_conditions_page.gdpr).to have_header
-    expect(terms_and_conditions_page.gdpr).to have_content
+    terms_and_conditions_page.gdpr.assert_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_header
 
     expect(terms_and_conditions_page.hmcts_notice).to have_purpose_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_judiciary_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_judiciary_href
+    terms_and_conditions_page.hmcts_notice.assert_purpose_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_about_personal_data_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_about_personal_data_content
+    terms_and_conditions_page.hmcts_notice.assert_about_personal_data_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_intro
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_three
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_provide_data
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_have_rep
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_four
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_five
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_representative
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_six
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_seven
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_collect_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_use_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_use_content
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_use_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_intro
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_three
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_helps
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_four
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_five
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_six
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_identify
+    terms_and_conditions_page.hmcts_notice.assert_non_personal_use_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_aws_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_aws_href
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_sendgrid_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_sendgrid_href
-
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_stored_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_ga_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_ga_href
-
+    terms_and_conditions_page.hmcts_notice.assert_non_personal_data_stored_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_data_secure_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_data_secure_content
-
+    terms_and_conditions_page.hmcts_notice.assert_data_secure_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_disclosing_data_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_disclosing_data_content
+    terms_and_conditions_page.hmcts_notice.assert_disclosing_data_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_manage_sessions_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_manage_sessions_content
+    terms_and_conditions_page.hmcts_notice.assert_manage_sessions_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_email_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_email_href
+    terms_and_conditions_page.hmcts_notice.assert_access_personal_info_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_more_details_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_introduction
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_three
+    terms_and_conditions_page.hmcts_notice.assert_more_details_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_email_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_email_href
+    terms_and_conditions_page.hmcts_notice.assert_make_complaint_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_complaints_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_introduction
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_address
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_website_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_website_href
+    terms_and_conditions_page.hmcts_notice.assert_complaints_content
 
     expect(terms_and_conditions_page.disclaimer).to have_header
-    expect(terms_and_conditions_page.disclaimer).to have_content
+    terms_and_conditions_page.disclaimer.assert_content
   end
 
   scenario "from your representative page" do
@@ -605,103 +405,63 @@ RSpec.feature "Access Footer", js: true do
     expect(terms_and_conditions_page).to have_introduction
 
     expect(terms_and_conditions_page.general_terms).to have_header
-    expect(terms_and_conditions_page.general_terms).to have_content
+    terms_and_conditions_page.general_terms.assert_content
 
     expect(terms_and_conditions_page.applicable_law).to have_header
-    expect(terms_and_conditions_page.applicable_law).to have_content
-    expect(terms_and_conditions_page.applicable_law).to have_bullets
+    terms_and_conditions_page.applicable_law.assert_content
 
     expect(terms_and_conditions_page.responsible_use).to have_header
-    expect(terms_and_conditions_page.responsible_use).to have_content
+    terms_and_conditions_page.responsible_use.assert_content
 
     expect(terms_and_conditions_page.gdpr).to have_header
-    expect(terms_and_conditions_page.gdpr).to have_content
+    terms_and_conditions_page.gdpr.assert_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_header
 
     expect(terms_and_conditions_page.hmcts_notice).to have_purpose_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_judiciary_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_judiciary_href
+    terms_and_conditions_page.hmcts_notice.assert_purpose_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_about_personal_data_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_about_personal_data_content
+    terms_and_conditions_page.hmcts_notice.assert_about_personal_data_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_intro
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_three
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_provide_data
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_have_rep
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_four
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_five
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_representative
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_six
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_seven
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_collect_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_use_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_use_content
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_use_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_intro
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_three
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_helps
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_four
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_five
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_six
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_identify
+    terms_and_conditions_page.hmcts_notice.assert_non_personal_use_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_aws_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_aws_href
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_sendgrid_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_sendgrid_href
-
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_stored_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_ga_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_ga_href
-
+    terms_and_conditions_page.hmcts_notice.assert_non_personal_data_stored_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_data_secure_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_data_secure_content
-
+    terms_and_conditions_page.hmcts_notice.assert_data_secure_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_disclosing_data_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_disclosing_data_content
+    terms_and_conditions_page.hmcts_notice.assert_disclosing_data_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_manage_sessions_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_manage_sessions_content
+    terms_and_conditions_page.hmcts_notice.assert_manage_sessions_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_email_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_email_href
+    terms_and_conditions_page.hmcts_notice.assert_access_personal_info_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_more_details_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_introduction
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_three
+    terms_and_conditions_page.hmcts_notice.assert_more_details_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_email_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_email_href
+    terms_and_conditions_page.hmcts_notice.assert_make_complaint_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_complaints_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_introduction
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_address
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_website_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_website_href
+    terms_and_conditions_page.hmcts_notice.assert_complaints_content
 
     expect(terms_and_conditions_page.disclaimer).to have_header
-    expect(terms_and_conditions_page.disclaimer).to have_content
+    terms_and_conditions_page.disclaimer.assert_content
   end
 
   scenario "from your representative's details page" do
@@ -721,103 +481,63 @@ RSpec.feature "Access Footer", js: true do
     expect(terms_and_conditions_page).to have_introduction
 
     expect(terms_and_conditions_page.general_terms).to have_header
-    expect(terms_and_conditions_page.general_terms).to have_content
+    terms_and_conditions_page.general_terms.assert_content
 
     expect(terms_and_conditions_page.applicable_law).to have_header
-    expect(terms_and_conditions_page.applicable_law).to have_content
-    expect(terms_and_conditions_page.applicable_law).to have_bullets
+    terms_and_conditions_page.applicable_law.assert_content
 
     expect(terms_and_conditions_page.responsible_use).to have_header
-    expect(terms_and_conditions_page.responsible_use).to have_content
+    terms_and_conditions_page.responsible_use.assert_content
 
     expect(terms_and_conditions_page.gdpr).to have_header
-    expect(terms_and_conditions_page.gdpr).to have_content
+    terms_and_conditions_page.gdpr.assert_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_header
 
     expect(terms_and_conditions_page.hmcts_notice).to have_purpose_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_judiciary_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_judiciary_href
+    terms_and_conditions_page.hmcts_notice.assert_purpose_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_about_personal_data_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_about_personal_data_content
+    terms_and_conditions_page.hmcts_notice.assert_about_personal_data_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_intro
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_three
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_provide_data
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_have_rep
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_four
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_five
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_representative
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_six
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_seven
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_collect_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_use_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_use_content
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_use_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_intro
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_three
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_helps
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_four
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_five
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_six
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_identify
+    terms_and_conditions_page.hmcts_notice.assert_non_personal_use_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_aws_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_aws_href
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_sendgrid_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_sendgrid_href
-
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_stored_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_ga_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_ga_href
-
+    terms_and_conditions_page.hmcts_notice.assert_non_personal_data_stored_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_data_secure_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_data_secure_content
-
+    terms_and_conditions_page.hmcts_notice.assert_data_secure_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_disclosing_data_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_disclosing_data_content
+    terms_and_conditions_page.hmcts_notice.assert_disclosing_data_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_manage_sessions_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_manage_sessions_content
+    terms_and_conditions_page.hmcts_notice.assert_manage_sessions_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_email_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_email_href
+    terms_and_conditions_page.hmcts_notice.assert_access_personal_info_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_more_details_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_introduction
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_three
+    terms_and_conditions_page.hmcts_notice.assert_more_details_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_email_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_email_href
+    terms_and_conditions_page.hmcts_notice.assert_make_complaint_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_complaints_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_introduction
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_address
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_website_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_website_href
+    terms_and_conditions_page.hmcts_notice.assert_complaints_content
 
     expect(terms_and_conditions_page.disclaimer).to have_header
-    expect(terms_and_conditions_page.disclaimer).to have_content
+    terms_and_conditions_page.disclaimer.assert_content
   end
 
   scenario "from disability page" do
@@ -837,103 +557,63 @@ RSpec.feature "Access Footer", js: true do
     expect(terms_and_conditions_page).to have_introduction
 
     expect(terms_and_conditions_page.general_terms).to have_header
-    expect(terms_and_conditions_page.general_terms).to have_content
+    terms_and_conditions_page.general_terms.assert_content
 
     expect(terms_and_conditions_page.applicable_law).to have_header
-    expect(terms_and_conditions_page.applicable_law).to have_content
-    expect(terms_and_conditions_page.applicable_law).to have_bullets
+    terms_and_conditions_page.applicable_law.assert_content
 
     expect(terms_and_conditions_page.responsible_use).to have_header
-    expect(terms_and_conditions_page.responsible_use).to have_content
+    terms_and_conditions_page.responsible_use.assert_content
 
     expect(terms_and_conditions_page.gdpr).to have_header
-    expect(terms_and_conditions_page.gdpr).to have_content
+    terms_and_conditions_page.gdpr.assert_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_header
 
     expect(terms_and_conditions_page.hmcts_notice).to have_purpose_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_judiciary_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_judiciary_href
+    terms_and_conditions_page.hmcts_notice.assert_purpose_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_about_personal_data_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_about_personal_data_content
+    terms_and_conditions_page.hmcts_notice.assert_about_personal_data_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_intro
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_three
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_provide_data
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_have_rep
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_four
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_five
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_representative
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_six
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_seven
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_collect_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_use_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_use_content
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_use_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_intro
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_three
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_helps
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_four
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_five
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_six
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_identify
+    terms_and_conditions_page.hmcts_notice.assert_non_personal_use_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_aws_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_aws_href
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_sendgrid_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_sendgrid_href
-
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_stored_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_ga_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_ga_href
-
+    terms_and_conditions_page.hmcts_notice.assert_non_personal_data_stored_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_data_secure_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_data_secure_content
-
+    terms_and_conditions_page.hmcts_notice.assert_data_secure_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_disclosing_data_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_disclosing_data_content
+    terms_and_conditions_page.hmcts_notice.assert_disclosing_data_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_manage_sessions_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_manage_sessions_content
+    terms_and_conditions_page.hmcts_notice.assert_manage_sessions_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_email_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_email_href
+    terms_and_conditions_page.hmcts_notice.assert_access_personal_info_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_more_details_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_introduction
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_three
+    terms_and_conditions_page.hmcts_notice.assert_more_details_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_email_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_email_href
+    terms_and_conditions_page.hmcts_notice.assert_make_complaint_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_complaints_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_introduction
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_address
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_website_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_website_href
+    terms_and_conditions_page.hmcts_notice.assert_complaints_content
 
     expect(terms_and_conditions_page.disclaimer).to have_header
-    expect(terms_and_conditions_page.disclaimer).to have_content
+    terms_and_conditions_page.disclaimer.assert_content
   end
 
   scenario "from employer contract claim page" do
@@ -953,103 +633,63 @@ RSpec.feature "Access Footer", js: true do
     expect(terms_and_conditions_page).to have_introduction
 
     expect(terms_and_conditions_page.general_terms).to have_header
-    expect(terms_and_conditions_page.general_terms).to have_content
+    terms_and_conditions_page.general_terms.assert_content
 
     expect(terms_and_conditions_page.applicable_law).to have_header
-    expect(terms_and_conditions_page.applicable_law).to have_content
-    expect(terms_and_conditions_page.applicable_law).to have_bullets
+    terms_and_conditions_page.applicable_law.assert_content
 
     expect(terms_and_conditions_page.responsible_use).to have_header
-    expect(terms_and_conditions_page.responsible_use).to have_content
+    terms_and_conditions_page.responsible_use.assert_content
 
     expect(terms_and_conditions_page.gdpr).to have_header
-    expect(terms_and_conditions_page.gdpr).to have_content
+    terms_and_conditions_page.gdpr.assert_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_header
 
     expect(terms_and_conditions_page.hmcts_notice).to have_purpose_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_judiciary_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_judiciary_href
+    terms_and_conditions_page.hmcts_notice.assert_purpose_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_about_personal_data_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_about_personal_data_content
+    terms_and_conditions_page.hmcts_notice.assert_about_personal_data_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_intro
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_three
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_provide_data
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_have_rep
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_four
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_five
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_representative
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_six
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_seven
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_collect_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_use_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_use_content
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_use_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_intro
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_three
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_helps
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_four
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_five
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_six
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_identify
+    terms_and_conditions_page.hmcts_notice.assert_non_personal_use_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_aws_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_aws_href
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_sendgrid_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_sendgrid_href
-
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_stored_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_ga_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_ga_href
-
+    terms_and_conditions_page.hmcts_notice.assert_non_personal_data_stored_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_data_secure_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_data_secure_content
-
+    terms_and_conditions_page.hmcts_notice.assert_data_secure_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_disclosing_data_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_disclosing_data_content
+    terms_and_conditions_page.hmcts_notice.assert_disclosing_data_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_manage_sessions_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_manage_sessions_content
+    terms_and_conditions_page.hmcts_notice.assert_manage_sessions_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_email_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_email_href
+    terms_and_conditions_page.hmcts_notice.assert_access_personal_info_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_more_details_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_introduction
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_three
+    terms_and_conditions_page.hmcts_notice.assert_more_details_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_email_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_email_href
+    terms_and_conditions_page.hmcts_notice.assert_make_complaint_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_complaints_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_introduction
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_address
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_website_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_website_href
+    terms_and_conditions_page.hmcts_notice.assert_complaints_content
 
     expect(terms_and_conditions_page.disclaimer).to have_header
-    expect(terms_and_conditions_page.disclaimer).to have_content
+    terms_and_conditions_page.disclaimer.assert_content
   end
 
   scenario "from additional information page" do
@@ -1069,103 +709,63 @@ RSpec.feature "Access Footer", js: true do
     expect(terms_and_conditions_page).to have_introduction
 
     expect(terms_and_conditions_page.general_terms).to have_header
-    expect(terms_and_conditions_page.general_terms).to have_content
+    terms_and_conditions_page.general_terms.assert_content
 
     expect(terms_and_conditions_page.applicable_law).to have_header
-    expect(terms_and_conditions_page.applicable_law).to have_content
-    expect(terms_and_conditions_page.applicable_law).to have_bullets
+    terms_and_conditions_page.applicable_law.assert_content
 
     expect(terms_and_conditions_page.responsible_use).to have_header
-    expect(terms_and_conditions_page.responsible_use).to have_content
+    terms_and_conditions_page.responsible_use.assert_content
 
     expect(terms_and_conditions_page.gdpr).to have_header
-    expect(terms_and_conditions_page.gdpr).to have_content
+    terms_and_conditions_page.gdpr.assert_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_header
 
     expect(terms_and_conditions_page.hmcts_notice).to have_purpose_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_judiciary_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_judiciary_href
+    terms_and_conditions_page.hmcts_notice.assert_purpose_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_about_personal_data_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_about_personal_data_content
+    terms_and_conditions_page.hmcts_notice.assert_about_personal_data_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_intro
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_three
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_provide_data
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_have_rep
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_four
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_five
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_representative
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_six
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_seven
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_collect_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_use_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_use_content
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_use_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_intro
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_three
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_helps
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_four
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_five
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_six
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_identify
+    terms_and_conditions_page.hmcts_notice.assert_non_personal_use_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_aws_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_aws_href
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_sendgrid_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_sendgrid_href
-
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_stored_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_ga_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_ga_href
-
+    terms_and_conditions_page.hmcts_notice.assert_non_personal_data_stored_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_data_secure_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_data_secure_content
-
+    terms_and_conditions_page.hmcts_notice.assert_data_secure_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_disclosing_data_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_disclosing_data_content
+    terms_and_conditions_page.hmcts_notice.assert_disclosing_data_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_manage_sessions_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_manage_sessions_content
+    terms_and_conditions_page.hmcts_notice.assert_manage_sessions_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_email_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_email_href
+    terms_and_conditions_page.hmcts_notice.assert_access_personal_info_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_more_details_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_introduction
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_three
+    terms_and_conditions_page.hmcts_notice.assert_more_details_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_email_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_email_href
+    terms_and_conditions_page.hmcts_notice.assert_make_complaint_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_complaints_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_introduction
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_address
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_website_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_website_href
+    terms_and_conditions_page.hmcts_notice.assert_complaints_content
 
     expect(terms_and_conditions_page.disclaimer).to have_header
-    expect(terms_and_conditions_page.disclaimer).to have_content
+    terms_and_conditions_page.disclaimer.assert_content
   end
 
   scenario "from confirmation of supplied details page" do
@@ -1185,103 +785,63 @@ RSpec.feature "Access Footer", js: true do
     expect(terms_and_conditions_page).to have_introduction
 
     expect(terms_and_conditions_page.general_terms).to have_header
-    expect(terms_and_conditions_page.general_terms).to have_content
+    terms_and_conditions_page.general_terms.assert_content
 
     expect(terms_and_conditions_page.applicable_law).to have_header
-    expect(terms_and_conditions_page.applicable_law).to have_content
-    expect(terms_and_conditions_page.applicable_law).to have_bullets
+    terms_and_conditions_page.applicable_law.assert_content
 
     expect(terms_and_conditions_page.responsible_use).to have_header
-    expect(terms_and_conditions_page.responsible_use).to have_content
+    terms_and_conditions_page.responsible_use.assert_content
 
     expect(terms_and_conditions_page.gdpr).to have_header
-    expect(terms_and_conditions_page.gdpr).to have_content
+    terms_and_conditions_page.gdpr.assert_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_header
 
     expect(terms_and_conditions_page.hmcts_notice).to have_purpose_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_judiciary_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_judiciary_href
+    terms_and_conditions_page.hmcts_notice.assert_purpose_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_about_personal_data_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_about_personal_data_content
+    terms_and_conditions_page.hmcts_notice.assert_about_personal_data_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_intro
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_three
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_provide_data
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_have_rep
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_four
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_five
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_representative
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_six
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_seven
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_collect_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_use_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_use_content
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_use_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_intro
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_three
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_helps
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_four
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_five
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_six
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_identify
+    terms_and_conditions_page.hmcts_notice.assert_non_personal_use_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_aws_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_aws_href
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_sendgrid_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_sendgrid_href
-
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_stored_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_ga_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_ga_href
-
+    terms_and_conditions_page.hmcts_notice.assert_non_personal_data_stored_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_data_secure_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_data_secure_content
-
+    terms_and_conditions_page.hmcts_notice.assert_data_secure_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_disclosing_data_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_disclosing_data_content
+    terms_and_conditions_page.hmcts_notice.assert_disclosing_data_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_manage_sessions_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_manage_sessions_content
+    terms_and_conditions_page.hmcts_notice.assert_manage_sessions_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_email_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_email_href
+    terms_and_conditions_page.hmcts_notice.assert_access_personal_info_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_more_details_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_introduction
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_three
+    terms_and_conditions_page.hmcts_notice.assert_more_details_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_email_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_email_href
+    terms_and_conditions_page.hmcts_notice.assert_make_complaint_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_complaints_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_introduction
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_address
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_website_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_website_href
+    terms_and_conditions_page.hmcts_notice.assert_complaints_content
 
     expect(terms_and_conditions_page.disclaimer).to have_header
-    expect(terms_and_conditions_page.disclaimer).to have_content
+    terms_and_conditions_page.disclaimer.assert_content
   end
 
   scenario "from form submission page" do
@@ -1311,103 +871,63 @@ RSpec.feature "Access Footer", js: true do
     expect(terms_and_conditions_page).to have_introduction
 
     expect(terms_and_conditions_page.general_terms).to have_header
-    expect(terms_and_conditions_page.general_terms).to have_content
+    terms_and_conditions_page.general_terms.assert_content
 
     expect(terms_and_conditions_page.applicable_law).to have_header
-    expect(terms_and_conditions_page.applicable_law).to have_content
-    expect(terms_and_conditions_page.applicable_law).to have_bullets
+    terms_and_conditions_page.applicable_law.assert_content
 
     expect(terms_and_conditions_page.responsible_use).to have_header
-    expect(terms_and_conditions_page.responsible_use).to have_content
+    terms_and_conditions_page.responsible_use.assert_content
 
     expect(terms_and_conditions_page.gdpr).to have_header
-    expect(terms_and_conditions_page.gdpr).to have_content
+    terms_and_conditions_page.gdpr.assert_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_header
 
     expect(terms_and_conditions_page.hmcts_notice).to have_purpose_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_judiciary_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_purpose_judiciary_href
+    terms_and_conditions_page.hmcts_notice.assert_purpose_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_about_personal_data_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_about_personal_data_content
+    terms_and_conditions_page.hmcts_notice.assert_about_personal_data_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_intro
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_three
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_provide_data
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_have_rep
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_four
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_five
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_representative
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_six
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_collect_bullet_seven
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_collect_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_use_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_use_content
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_use_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_intro
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_three
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_helps
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_four
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_five
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_bullet_six
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_use_identify
+    terms_and_conditions_page.hmcts_notice.assert_non_personal_use_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_aws_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_aws_href
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_sendgrid_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_personal_data_stored_sendgrid_href
-
+    terms_and_conditions_page.hmcts_notice.assert_personal_data_stored_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_ga_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_non_personal_data_stored_ga_href
-
+    terms_and_conditions_page.hmcts_notice.assert_non_personal_data_stored_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_data_secure_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_data_secure_content
-
+    terms_and_conditions_page.hmcts_notice.assert_data_secure_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_disclosing_data_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_disclosing_data_content
+    terms_and_conditions_page.hmcts_notice.assert_disclosing_data_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_manage_sessions_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_manage_sessions_content
+    terms_and_conditions_page.hmcts_notice.assert_manage_sessions_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_email_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_access_personal_info_email_href
+    terms_and_conditions_page.hmcts_notice.assert_access_personal_info_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_more_details_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_introduction
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_one
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_two
-    expect(terms_and_conditions_page.hmcts_notice).to have_more_details_bullet_three
+    terms_and_conditions_page.hmcts_notice.assert_more_details_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_content
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_email_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_make_complaint_email_href
+    terms_and_conditions_page.hmcts_notice.assert_make_complaint_content
 
     expect(terms_and_conditions_page.hmcts_notice).to have_complaints_header
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_introduction
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_address
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_website_link
-    expect(terms_and_conditions_page.hmcts_notice).to have_complaints_website_href
+    terms_and_conditions_page.hmcts_notice.assert_complaints_content
 
     expect(terms_and_conditions_page.disclaimer).to have_header
-    expect(terms_and_conditions_page.disclaimer).to have_content
+    terms_and_conditions_page.disclaimer.assert_content
   end
 
 end

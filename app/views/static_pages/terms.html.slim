@@ -20,15 +20,7 @@
   #applicable-law
     h4.heading-small = t('components.terms_and_conditions.applicable_law.header')
 
-    - t('components.terms_and_conditions.applicable_law.content').each do |element|
-      / TODO: Extract this logic to a helper
-      - case element
-        - when String
-          p = element
-        - when Hash
-          ul.list.list-bullet
-            - element.values.flatten.each do |bullet_point|
-              li = bullet_point
+    = render 'static_pages/terms_elements', translated_content_array: t('components.terms_and_conditions.applicable_law.content')
 
   #responsible-use
     h4.heading-small = t('components.terms_and_conditions.responsible_use.header')
@@ -59,16 +51,7 @@
 
     p.bold-small = t('components.terms_and_conditions.hmcts_notice.personal_data_collect_header')
 
-    - t('components.terms_and_conditions.hmcts_notice.personal_data_collect_content').each do |element|
-
-      / TODO: Extract this logic to a helper
-      - case element
-        - when String
-          p = element
-        - when Hash
-          ul.list.list-bullet
-            - element.values.flatten.each do |bullet_point|
-              li = bullet_point
+    = render 'static_pages/terms_elements', translated_content_array: t('components.terms_and_conditions.hmcts_notice.personal_data_collect_content')
 
     p.bold-small = t('components.terms_and_conditions.hmcts_notice.personal_data_use_header')
 
@@ -77,14 +60,7 @@
 
     p.bold-small = t('components.terms_and_conditions.hmcts_notice.non_personal_use_header')
 
-    - t('components.terms_and_conditions.hmcts_notice.non_personal_use_content').each do |element|
-      - case element
-        - when String
-          p = element
-        - when Hash
-          ul.list.list-bullet
-            - element.values.flatten.each do |bullet_point|
-              li = bullet_point
+    = render 'static_pages/terms_elements', translated_content_array: t('components.terms_and_conditions.hmcts_notice.non_personal_use_content')
 
     p.bold-small = t('components.terms_and_conditions.hmcts_notice.personal_data_stored_header')
 
@@ -117,21 +93,12 @@
 
     p.bold-small = t('components.terms_and_conditions.hmcts_notice.access_personal_info_header')
 
-    / TODO: Do I need to duplicate the email here?
     p = t('components.terms_and_conditions.hmcts_notice.access_personal_info_content',
-            data_access_email: mail_to(t('components.terms_and_conditions.hmcts_notice.data_access_email'),
-                    t('components.terms_and_conditions.hmcts_notice.data_access_email'))).html_safe
+            data_access_email: mail_to(t('components.terms_and_conditions.hmcts_notice.data_access_email'))).html_safe
 
     p.bold-small = t('components.terms_and_conditions.hmcts_notice.more_details_header')
 
-    - t('components.terms_and_conditions.hmcts_notice.more_details_content').each do |element|
-      - case element
-      - when String
-        p = element
-      - when Hash
-        ul.list.list-bullet
-          - element.values.flatten.each do |bullet_point|
-            li = bullet_point
+    = render 'static_pages/terms_elements', translated_content_array: t('components.terms_and_conditions.hmcts_notice.more_details_content')
 
     p.bold-small = t('components.terms_and_conditions.hmcts_notice.make_complaint_header')
 

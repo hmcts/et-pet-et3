@@ -40,5 +40,6 @@
               p = link_to(t('components.sidebar.download_link'), t('components.sidebar.download_href'), target: :_blank)
               hr
               p = link_to(t('components.sidebar.more_category_link'), t('components.sidebar.more_category_href'), target: :_blank)
-
+- content_for :footer_top
+  = render 'shared/footer_links'
 = render template: "layouts/govuk_template"

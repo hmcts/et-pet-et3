@@ -300,6 +300,8 @@ en:
       download_href: https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/719457/et3-eng.pdf
       more_category_link: More from the Working, jobs and pensions category
       more_category_href: http://gov.uk/browse/working
+    footer:
+      terms: Terms and conditions
     confirmation_of_supplied_details:
       header: Confirmation of Supplied Details
       receipt_header: Email Receipt

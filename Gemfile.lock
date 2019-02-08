@@ -146,7 +146,7 @@ GEM
     gherkin (5.0.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    gov_uk_date_fields (2.1.1)
+    gov_uk_date_fields (3.1.0)
       rails (>= 5.0)
     govuk_elements_form_builder (1.2.0)
       govuk_elements_rails (>= 3.0.0)
@@ -381,7 +381,7 @@ DEPENDENCIES
   factory_bot
   faker (~> 1.9)
   geckodriver-helper (~> 0.23)
-  gov_uk_date_fields (~> 2.1)
+  gov_uk_date_fields (~> 3.1)
   govuk_elements_form_builder (~> 1.2)
   govuk_elements_rails (~> 3.1)
   govuk_template (~> 0.23.0)

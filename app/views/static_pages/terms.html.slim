@@ -1,0 +1,156 @@
+- content_for :form_page_title, t('components.terms_and_conditions.header')
+- content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
+.content-body.terms-conditions
+
+  ul.list.list-contents
+    li = link_to(t('components.terms_and_conditions.general_terms_link'), '#general-terms-conditions')
+    li = link_to(t('components.terms_and_conditions.applicable_law_link'), '#applicable-law')
+    li = link_to(t('components.terms_and_conditions.responsible_use_link'), '#responsible-use')
+    li = link_to(t('components.terms_and_conditions.gdpr_link'), '#gdpr')
+    li = link_to(t('components.terms_and_conditions.hmcts_notice_link'), '#hmcts-privacy-notice')
+    li = link_to(t('components.terms_and_conditions.disclaimer_link'), '#disclaimer')
+
+  p = t('components.terms_and_conditions.introduction')
+
+  #general-terms-conditions
+    h4.heading-small = t('components.terms_and_conditions.general_terms.header')
+    - t('components.terms_and_conditions.general_terms.content').each do |paragraph|
+      p = paragraph
+
+  #applicable-law
+    h4.heading-small = t('components.terms_and_conditions.applicable_law.header')
+
+    - t('components.terms_and_conditions.applicable_law.content').each do |element|
+      / TODO: Extract this logic to a helper
+      - case element
+        - when String
+          p = element
+        - when Hash
+          ul.list.list-bullet
+            - element.values.flatten.each do |bullet_point|
+              li = bullet_point
+
+  #responsible-use
+    h4.heading-small = t('components.terms_and_conditions.responsible_use.header')
+
+    - t('components.terms_and_conditions.responsible_use.content').each do |paragraph|
+      p = paragraph
+
+  #gdpr
+    h4.heading-small = t('components.terms_and_conditions.gdpr.header')
+    - t('components.terms_and_conditions.gdpr.content').each do |paragraph|
+      p = paragraph
+
+
+  #hmcts-privacy-notice
+    h4.heading-small = t('components.terms_and_conditions.hmcts_notice.header')
+
+    p.bold-small = t('components.terms_and_conditions.hmcts_notice.purpose_header')
+
+    - t('components.terms_and_conditions.hmcts_notice.purpose_content_html',
+            purpose_content_href: link_to(t('components.terms_and_conditions.hmcts_notice.purpose_content_href'),
+                    "https://#{t('components.terms_and_conditions.hmcts_notice.purpose_content_href')}")).each do |paragraph|
+      p = paragraph.html_safe
+
+    p.bold-small = t('components.terms_and_conditions.hmcts_notice.about_personal_data_header')
+
+    - t('components.terms_and_conditions.hmcts_notice.about_personal_data_content').each do |paragraph|
+      p = paragraph
+
+    p.bold-small = t('components.terms_and_conditions.hmcts_notice.personal_data_collect_header')
+
+    - t('components.terms_and_conditions.hmcts_notice.personal_data_collect_content').each do |element|
+
+      / TODO: Extract this logic to a helper
+      - case element
+        - when String
+          p = element
+        - when Hash
+          ul.list.list-bullet
+            - element.values.flatten.each do |bullet_point|
+              li = bullet_point
+
+    p.bold-small = t('components.terms_and_conditions.hmcts_notice.personal_data_use_header')
+
+    - t('components.terms_and_conditions.hmcts_notice.personal_data_use_content').each do |paragraph|
+      p = paragraph
+
+    p.bold-small = t('components.terms_and_conditions.hmcts_notice.non_personal_use_header')
+
+    - t('components.terms_and_conditions.hmcts_notice.non_personal_use_content').each do |element|
+      - case element
+        - when String
+          p = element
+        - when Hash
+          ul.list.list-bullet
+            - element.values.flatten.each do |bullet_point|
+              li = bullet_point
+
+    p.bold-small = t('components.terms_and_conditions.hmcts_notice.personal_data_stored_header')
+
+    - t('components.terms_and_conditions.hmcts_notice.personal_data_stored_content',
+            aws_href: link_to(t('components.terms_and_conditions.hmcts_notice.aws_href'),
+                    'https://aws.amazon.com/service-terms/'),
+            sendgrid_href: link_to(t('components.terms_and_conditions.hmcts_notice.sendgrid_href'),
+                    'https://sendgrid.com/policies/tos/')).each do |paragraph|
+
+      p = paragraph.html_safe
+
+    p.bold-small = t('components.terms_and_conditions.hmcts_notice.non_personal_data_stored_header')
+
+    p = t('components.terms_and_conditions.hmcts_notice.non_personal_data_stored_content',
+            ga_href: link_to(t('components.terms_and_conditions.hmcts_notice.ga_href'),
+                    'https://support.google.com/analytics/answer/7124332?hl=en')).html_safe
+
+    p.bold-small = t('components.terms_and_conditions.hmcts_notice.data_secure_header')
+
+    p = t('components.terms_and_conditions.hmcts_notice.data_secure_content')
+
+    p.bold-small = t('components.terms_and_conditions.hmcts_notice.disclosing_data_header')
+
+    p = t('components.terms_and_conditions.hmcts_notice.disclosing_data_content')
+
+    p.bold-small = t('components.terms_and_conditions.hmcts_notice.manage_sessions_header')
+
+    - t('components.terms_and_conditions.hmcts_notice.manage_sessions_content').each do |paragraph|
+      p = paragraph
+
+    p.bold-small = t('components.terms_and_conditions.hmcts_notice.access_personal_info_header')
+
+    / TODO: Do I need to duplicate the email here?
+    p = t('components.terms_and_conditions.hmcts_notice.access_personal_info_content',
+            data_access_email: mail_to(t('components.terms_and_conditions.hmcts_notice.data_access_email'),
+                    t('components.terms_and_conditions.hmcts_notice.data_access_email'))).html_safe
+
+    p.bold-small = t('components.terms_and_conditions.hmcts_notice.more_details_header')
+
+    - t('components.terms_and_conditions.hmcts_notice.more_details_content').each do |element|
+      - case element
+      - when String
+        p = element
+      - when Hash
+        ul.list.list-bullet
+          - element.values.flatten.each do |bullet_point|
+            li = bullet_point
+
+    p.bold-small = t('components.terms_and_conditions.hmcts_notice.make_complaint_header')
+
+    p = t('components.terms_and_conditions.hmcts_notice.make_complaint_content',
+            data_compliance_email: mail_to(t('components.terms_and_conditions.hmcts_notice.data_compliance_email'),
+                    t('components.terms_and_conditions.hmcts_notice.data_compliance_email'))).html_safe
+
+    p.bold-small = t('components.terms_and_conditions.hmcts_notice.complaints_header')
+
+    p = t('components.terms_and_conditions.hmcts_notice.complaints_text')
+
+    em
+      - t('components.terms_and_conditions.hmcts_notice.complaints_address',
+              ico_href: link_to(t('components.terms_and_conditions.hmcts_notice.ico_href'),
+                      "https://#{t('components.terms_and_conditions.hmcts_notice.ico_href')}")).each do |address_line|
+        = address_line.html_safe
+        br
+
+  #disclaimer
+    h4.heading-small = t('components.terms_and_conditions.disclaimer.header')
+    - t('components.terms_and_conditions.disclaimer.content').each do |paragraph|
+      p = paragraph

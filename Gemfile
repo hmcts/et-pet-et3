@@ -86,7 +86,7 @@ end
 
 group :production do
   # Add bootsnap for 5.2
-  gem 'bootsnap', '~> 1.3'
+  gem 'bootsnap', '~> 1.4'
   gem 'unicorn', '~> 5.4'
 end
 

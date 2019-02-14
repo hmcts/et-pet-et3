@@ -59,6 +59,7 @@ group :development, :test do
   gem 'parallel_tests', '~> 2.28'
   # Add .env file to store environment variables
   gem 'dotenv-rails', '~> 2.6'
+  gem 'webmock', '~> 3.5'
 end
 
 group :development do
@@ -78,7 +79,6 @@ group :test do
   gem 'chromedriver-helper', '~> 2.1'
   gem 'geckodriver-helper', '~> 0.23'
   gem 'database_cleaner', '~> 1.5'
-  gem 'webmock', '~> 3.5'
   gem 'faker', '~> 1.9'
   gem 'aws-sdk-s3', '~> 1.21'
   gem 'factory_bot'

@@ -54,3 +54,11 @@ This app is essentially a frontend microservice and should not be deployed by it
 To test ET3 in full, including RTF upload and form submission, use the [ET Full System](https://github.com/ministryofjustice/et-full-system).
 Before running the full system ensure ET3 is set to the branch or commit you wish to test.
 Please see the README for further details.
+
+## Environment Variables
+
+### DISABLE_LOCAL_STUBBING
+
+Unless set to `true`, ET3 will stub the following external calls while in the `development` environment.
+
+- Remote office code validator (calls API to check the office code is valid)

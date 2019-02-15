@@ -3,7 +3,7 @@
 case ${DOCKER_STATE} in
 migrate)
     echo "Running migrate"
-    bundle exec rake db:migrate
+    bundle exec rake db:migrate assets:precompile
     ;;
 create)
     echo "Running create"
@@ -13,10 +13,10 @@ create)
     ;;
 esac
 
-./expand_variables.sh
-python ./awslogs-agent-setup.py -n -r eu-west-1 -c ./awslogs.conf
-ps -eaf | grep awslogs | grep -v grep | awk -F' ' '{print $2'} | xargs kill -9
-supervisord -c /etc/supervisor.conf &
+# ./expand_variables.sh
+# python ./awslogs-agent-setup.py -n -r eu-west-1 -c ./awslogs.conf
+# ps -eaf | grep awslogs | grep -v grep | awk -F' ' '{print $2'} | xargs kill -9
+# supervisord -c /etc/supervisor.conf &
 
 echo "Running app"
 

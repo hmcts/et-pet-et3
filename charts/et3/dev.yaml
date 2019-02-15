@@ -1,0 +1,20 @@
+image:
+  tag: develop
+
+ingress:
+  hosts:
+    - 'et3-dev-azure.et.dsd.io'
+
+env:
+  DB_HOST: et3-dev-etazure3.postgres.database.azure.com
+  DB_PORT: 5432
+  DB_USERNAME: pet@et3-dev-etazure3
+  DB_NAME: et3
+  ABSOLUTE_HOST: http://et3-dev-azure.et.dsd.io
+  ASSET_HOST: et3-dev-azure.et.dsd.io/assets/
+  RAILS_ENV: production
+  RACK_ENV: production
+  WEB_CONCURRENCY: 3
+  DISABLE_WELSH: false
+  ET_API_URL: http://et-api.employmenttribunal:8080/api
+  DOCKER_STATE: migrate

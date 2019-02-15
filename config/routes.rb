@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     end
     root 'static_pages#index'
     delete "/respond/confirmation_of_supplied_details/remove_rtf" => 'confirmation_of_supplied_details#destroy_rtf', as: :remove_rtf
-    mount ApiProxy.new(backend: "#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api')}/v2/s3/create_signed_url", streaming: false), at: "/api/s3/create_signed_url"
+    mount ApiProxy.new(backend: "#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api')}/v2/build_blob", streaming: false), at: "/api/v2/build_blob"
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   end
   get "/session_expired" => 'static_pages#expired'

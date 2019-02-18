@@ -13,8 +13,10 @@ $(document).ready(function () {
     // 7. Get Azure working in development environments
     // 8. Implement gem into ET1
 
+    const uploadAdditionalFileForm = $("#upload-additional-file");
+
     const checkIfUploadPage = () => {
-        return $("#upload-additional-file").length;
+        return uploadAdditionalFileForm.length;
     };
 
     if (checkIfUploadPage()) {
@@ -31,26 +33,18 @@ $(document).ready(function () {
             uploadAdditionalInfoDropzone.options.url = url;
         }
 
-        function prepareAwsHiddenInputs(fullResponseData) {
+        function prepareAwsHiddenInputs(formContainer, fullResponseData) {
             const responseData = fullResponseData.data;
 
-            $("#aws_key").attr("name", "key").val(responseData.fields["key"]);
-            $("#aws_policy").attr("name", "policy").val(responseData.fields["policy"]);
-            $("#aws_x-amz-algorithm").attr("name", "x-amz-algorithm").val(responseData.fields["x-amz-algorithm"]);
-            $("#aws_x-amz-credential").attr("name", "x-amz-credential").val(responseData.fields["x-amz-credential"]);
-            $("#aws_x-amz-date").attr("name", "x-amz-date").val(responseData.fields["x-amz-date"]);
-            $("#aws_x-amz-signature").attr("name", "x-amz-signature").val(responseData.fields["x-amz-signature"]);
-            $("#aws_success_action_status").attr("name", "success_action_status").val(responseData.fields["success_action_status"]);
-        }
-
-        function removeAwsHiddenInputs() {
-            $("#aws_key").attr("name", "key").remove();
-            $("#aws_policy").attr("name", "policy").remove();
-            $("#aws_x-amz-algorithm").attr("name", "x-amz-algorithm").remove();
-            $("#aws_x-amz-credential").attr("name", "x-amz-credential").remove();
-            $("#aws_x-amz-date").attr("name", "x-amz-date").remove();
-            $("#aws_x-amz-signature").attr("name", "x-amz-signature").remove();
-            $("#aws_success_action_status").attr("name", "success_action_status").remove();
+            formContainer.append(
+                `<input type='hidden' name='key' id='aws_key' value='${responseData.fields["key"]}'>`,
+                `<input type='hidden' name='policy' id='aws_policy' value='${responseData.fields["policy"]}'>`,
+                `<input type='hidden' name='x-amz-algorithm' id='aws_x-amz-algorithm' value='${responseData.fields["x-amz-algorithm"]}'>`,
+                `<input type='hidden' name='x-amz-credential' id='aws_x-amz-credential' value='${responseData.fields["x-amz-credential"]}'>`,
+                `<input type='hidden' name='x-amz-date' id='aws_x-amz-date' value='${responseData.fields["x-amz-date"]}'>`,
+                `<input type='hidden' name='x-amz-signature' id='aws_x-amz-signature' value='${responseData.fields["x-amz-signature"]}'>`,
+                `<input type='hidden' name='success_action_status' id='success_action_status' value='${responseData.fields["success_action_status"]}'>`
+            );
         }
 
         function buildUpload(cb) {
@@ -67,7 +61,7 @@ $(document).ready(function () {
                 },
                 error: onGetPresignedError,
                 method: "post",
-                success: function (data, status, xhr) {
+                success: function (data) {
                     cb.apply(this, [data]);
                 }
             });
@@ -98,7 +92,7 @@ $(document).ready(function () {
             }
         }
 
-        var removedButton;
+        let removedButton, uploadKey;
 
         const DROPZONE_OPTIONS = {
             init: function () {
@@ -121,47 +115,36 @@ $(document).ready(function () {
             acceptedFiles: ".rtf",
             // If file passes the accept check, call the API and use the returned values for the upload process
             accept: function (file, done) {
-
                 // check cloud provider in this section
                 buildUpload(function (presignedData) {
-                    if (presignedData.meta.cloud_provider == 'amazon') {
-                        prepareAwsHiddenInputs(presignedData);
-                        setUploadUrl(presignedData.data.url);
-                        removedButton = removeButtonElement($("#upload-button"));
-                        done();
-                    } else if (presignedData.meta.cloud_provider == 'azure') {
-                        // TODO: Can this just be ...options.method = 'put'?
-                        Object.defineProperties(uploadAdditionalInfoDropzone.options, {
-                            method: {
-                                value: 'put'
-                            },
-                            headers: {
-                                value: {"x-ms-blob-type": "BlockBlob"}
-                            }
-                        });
-                        removeAwsHiddenInputs();
-                        setUploadUrl(presignedData.data.url);
-                        removedButton = removeButtonElement($("#upload-button"));
-                        done();
+                    console.log(presignedData);
+                    if (presignedData.meta.cloud_provider == 'azure') {
+                        uploadAdditionalInfoDropzone.options.method = 'put';
+                        uploadAdditionalInfoDropzone.options.headers = {"x-ms-blob-type": "BlockBlob"};
+                    } else {
+                        console.log("Not azure");
+                        prepareAwsHiddenInputs(uploadAdditionalFileForm, presignedData);
                     }
+                    uploadKey = presignedData.data.fields.key;
+                    setUploadUrl(presignedData.data.url);
+                    removedButton = removeButtonElement($("#upload-button"));
+                    done();
                 });
             },
             // Use POST
             method: "post",
             // Add a link to remove files that were erroneously uploaded
             addRemoveLinks: true,
-            success: function (file, response) {
-                console.log("Success", file, response);
+            success: function (file) {
                 appendButtonElement(removedButton);
                 // Take upload URL and pass it into the second form
-                // $("#additional_information_upload_additional_information").val($.parseXML(response).getElementsByTagName("Key")[0].childNodes[0].nodeValue);
-                // $("#additional_information_upload_file_name").val(file.name);
+                $("#additional_information_upload_additional_information").val(uploadKey);
+                $("#additional_information_upload_file_name").val(file.name);
             }
         };
 
-
+        // TODO: Can I do this with jquery programmatically?
         let uploadAdditionalInfoDropzone = new Dropzone("#upload-additional-file", DROPZONE_OPTIONS);
-
     }
 
 });

@@ -185,7 +185,7 @@ module ET3
       def stub_presigned_url_api_for_s3
         aws_response = Aws::S3::Bucket.new(client: configured_test_client, name: ENV.fetch('S3_DIRECT_UPLOAD_BUCKET', 'et3directbuckettest')).
                        presigned_post(key: "direct_uploads/#{SecureRandom.uuid}", success_action_status: '201')
-        stub_request(:post, "#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api')}/v2/s3/create_signed_url").
+        stub_request(:post, "#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api')}/v2/build_blob").
           to_return(
             headers: { 'Content-Type': 'application/json' },
             body:
@@ -194,6 +194,7 @@ module ET3
                   "fields": aws_response.fields,
                   "url": aws_response.url
                 },
+                "meta": "amazon",
                 "status": "accepted",
                 "uuid": SecureRandom.uuid
               }.to_json

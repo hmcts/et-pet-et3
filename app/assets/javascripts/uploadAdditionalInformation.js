@@ -1,17 +1,5 @@
-// Turbolinks ready?
 $(document).ready(function () {
-    // Is this config and can I get rid?
     Dropzone.autoDiscover = false;
-
-    // 1. Extract below function into another file
-    // 2. Use if statement below to call config with either aws or azure (from env var)
-    // 3. Have separate config function for aws and azure
-    //   a) Azure config function can be empty
-    // 4. Ensure AWS is working once refactored
-    // 5. Once all working, package into a gem
-    // 6. Prepare for Azure to work
-    // 7. Get Azure working in development environments
-    // 8. Implement gem into ET1
 
     const uploadAdditionalFileForm = $("#upload-additional-file");
 
@@ -99,7 +87,7 @@ $(document).ready(function () {
                 this.on("maxfilesexceeded", function (file) {
                     // TODO: RST-1220 - Error Handling:
                     // Build a proper warning system for "too many files" warning.
-                    alert("too many files");
+                    alert("Too many files");
                 });
                 this.on("removedfile", function () {
                     $("#additional_information_upload_file_name").val(null);
@@ -122,7 +110,6 @@ $(document).ready(function () {
                         uploadAdditionalInfoDropzone.options.method = 'put';
                         uploadAdditionalInfoDropzone.options.headers = {"x-ms-blob-type": "BlockBlob"};
                     } else {
-                        console.log("Not azure");
                         prepareAwsHiddenInputs(uploadAdditionalFileForm, presignedData);
                     }
                     uploadKey = presignedData.data.fields.key;
@@ -131,7 +118,7 @@ $(document).ready(function () {
                     done();
                 });
             },
-            // Use POST
+            // Use POST by default for AWS
             method: "post",
             // Add a link to remove files that were erroneously uploaded
             addRemoveLinks: true,
@@ -143,7 +130,6 @@ $(document).ready(function () {
             }
         };
 
-        // TODO: Can I do this with jquery programmatically?
         let uploadAdditionalInfoDropzone = new Dropzone("#upload-additional-file", DROPZONE_OPTIONS);
     }
 

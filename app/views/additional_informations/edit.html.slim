@@ -16,14 +16,6 @@
         .bold-normal = t('components.additional_information.or_text');
         button.button.button-secondary#upload-button type="button" = t('components.additional_information.upload_button')
 
-    = hidden_field :aws, :key
-    = hidden_field :aws, :policy
-    = hidden_field :aws, 'x-amz-algorithm'
-    = hidden_field :aws, 'x-amz-credential'
-    = hidden_field :aws, 'x-amz-date'
-    = hidden_field :aws, 'x-amz-signature'
-    = hidden_field :aws, :success_action_status
-
   = form_for @additional_information, url: additional_information_path, method: :patch do |f|
 
     div data-turbolinks="false"

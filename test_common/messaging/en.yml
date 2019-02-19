@@ -335,7 +335,7 @@ en:
       cookie_policy_href: cookie policy
       contact_href: Contact us
     header: Terms and conditions
-    introduction: By using this service you’re agreeing to these terms of use. This includes the %{privacy_policy_href}.
+    introduction: By using this service you’re agreeing to these terms of use. This includes the privacy policy.
     who_we_are:
       header: Who we are
       content:

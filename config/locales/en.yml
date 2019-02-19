@@ -366,138 +366,97 @@ en:
       data_content: We will send a copy of this form to the claimant and the Advisory, Conciliation and Arbitration Service (ACAS). We will put the information you give us on this form onto a computer. This helps us to monitor progress and produce statistics. Information provided on this form is passed to the Department for Business, Innovation and Skills to assist research into the use and effectiveness of employment tribunals.
       start_now: Start now
     terms_and_conditions:
+      common:
+        privacy_policy_href: privacy policy
+        cookie_policy_href: cookie policy
+        contact_href: Contact us
       header: Terms and conditions
-      general_terms_link: General terms and conditions
-      applicable_law_link: Applicable law
-      responsible_use_link: Responsible use of this service
-      gdpr_link: General Data Protection Regulations (GDPR)
-      hmcts_notice_link: HMCTS privacy notice
-      disclaimer_link: Disclaimer
-      introduction: |
-        By using this ‘respond to a claim’ service you agree to our privacy policy and to these terms and conditions. Read them carefully.
-      general_terms:
-        header: General terms and conditions
+      introduction: By using this service you’re agreeing to these terms of use. This includes the %{privacy_policy_href}.
+      who_we_are:
+        header: Who we are
         content:
-          - These terms and conditions affect your rights and liabilities under the law. They govern your use of, and relationship with, this ‘respond to a claim’ service. They do not apply to other Ministry of Justice (HM Courts and Tribunals Service) services, or to any department or service that is linked to  this service.
-          - If you do not agree to the terms and conditions and privacy notice set out in this document, do not use this service.
-      applicable_law:
-        header: Applicable law
+          - This service is managed by Her Majesty’s Courts and Tribunals Service (referred to as ‘us’ and ‘we’ from now on).
+          - You should check these terms and conditions regularly. We may update them at any time without notice. If you continue to use this service after the terms and conditions have changed, you are deemed to have agreed to the changes.
+      info_provided:
+        header: Information provided by this service
+        content:
+          - This service provides information to support your claim or application. We cannot give legal advice on individual cases.
+          - You should answer the questions in the service based on your circumstances and seek legal advice if you need it.
+      sharing_storing_data:
+        header: Sharing and storing data
+        content: Our %{privacy_policy_href} explains where your data is stored, and who it is shared with. Our %{cookie_policy_href} explains how this service uses and stores cookies.
+      laws_applied:
+        header: Laws applying to this service
         content:
           - "Your use of this service and any dispute arising from its use will be governed by and construed in accordance with the laws of England and Wales, including but not limited to the:"
           - law_bullets:
-            - Computer Misuse Act 1990
-            - Mental Capacity Act 2005
-            - General Data Protection Regulations
-      responsible_use:
-        header: Responsible use of this service
+              - Computer Misuse Act 1990
+              - Mental Capacity Act 2005
+              - General Data Protection Regulations
+      how_to_use:
+        header: How to use this service responsibly
         content:
-          - The service is intended for use by respondents, or by others on their behalf, and only with their consent.
-          - There are risks in using a shared computer (for example in an internet café), to access this service. It is your responsibility to be aware of these risks and to avoid using any computer which may leave your personal information accessible to others. You’re responsible if you choose to leave a computer unprotected while using this service. We make every effort to check and test this service whenever we amend or update it. However, you must take your own precautions to ensure that the way you access this service does not expose you to the risk of viruses, malicious computer code or other forms of interference which may damage your computer system.
-          - You must not misuse this service by knowingly introducing viruses, trojans, worms, logic bombs or other material which is malicious or technologically harmful. You must not attempt to gain unauthorised access to this service, the system on which it is stored or any server, computer or database connected to it. You must not attack our site via a denial-of-service attack or a distributed denial-of-service attack.
-      gdpr:
-        header: General Data Protection Regulations (GDPR)
+          - There are risks in using a shared computer (for example, in a library) to access this service. It’s your responsibility to be aware of these risks and to avoid using any computer which may leave your personal information accessible to others. You’re responsible if you choose to leave a computer unprotected while using this service.
+          - "You must take your own precautions to ensure that the way you access this service does not expose you to the risk of:"
+          - risk_bullets:
+              - viruses
+              - malicious computer code
+              - other forms of interference which may damage your computer system
+          - You must not misuse this service by knowingly introducing viruses, trojans, worms, logic bombs or other material which is malicious or technologically harmful.
+          - You must not attempt to gain unauthorised access to this service, the system on which it is stored, or any server, computer or database connected to it. You must not attack this site using a denial-of-service attack or a distributed denial-of-service attack.
+      entering_sensitive_info:
+        header: Entering personally sensitive information
         content:
-          - This service complies with all principles of the GDPR. MoJ is the 'data controller' for the purposes of the Act.
-          - You have the right, as the user of this service, to delete any or all personal data and information at any point.
-          - After submitting your claim, you will not be able to see it anymore or amend it online. Anyone who believes their personal data is kept within the service has the right to submit a subject access request to the MoJ, who will give details of the information stored on the server. If a subject access request shows that the information is inaccurate, the MoJ will amend or delete the information in the database as requested within 5 days. In these circumstances, we will warn the registered user first by email.
-          - Our hosting provider, and HMCTS staff responsible for supporting the service, will have access to the server in which all personal information entered into the site is stored.
-      hmcts_notice:
-        header: HMCTS privacy notice
-        purpose_header: Purpose
-        purpose_content_html:
-          - This privacy notice sets out the standards that you can expect from the MoJ and HMCTS when we process personal information (‘personal data’) about you in the context of employment tribunal proceedings; how you can get access to a copy of your personal data; and what you can do if you think the standards are not being met.
-          - HMCTS is an Executive Agency of the MoJ. MoJ is the data controller for the personal data held, although it may act jointly with HMCTS. HMCTS also collects and processes personal data for the exercise of its own and associated public functions and legal obligations.
-          - This privacy notice does not apply to the processing of personal data which is collected and controlled by the tribunal and its judges when they are acting in their judicial capacity. The judiciary are independent from MoJ and HMCTS and data protection law applies differently to them as a result. For more information, see %{purpose_content_href}
-        purpose_content_href: www.judiciary.gov.uk
-        about_personal_data_header: About personal data
-        about_personal_data_content:
-          - Personal data is information that relates to a living individual who can be identified from the data.
-          - It does not include information relating to dead people, groups or communities of people, organisations or businesses. It can be your name, address or telephone number. It can also include information about your gender, your financial circumstances, your cultural background or your social status.
-          - We know how important it is to protect the privacy of all individuals involved in tribunal proceedings and to comply with data protection laws. We will safeguard your personal data and will only disclose it where it is lawful to do so, or with your consent.
-        personal_data_collect_header: Personal data that we collect
-        personal_data_collect_content:
-          - "We collect the following data when you use this service:"
-          - data_bullets:
-              - your name and address
-              - your email address and phone number (optional)
-              - any other personal information you provide as part of your response, such as any documentation you upload
-          - You provide this data when you submit your response; after which you can no longer access your data online and all further business must be carried out directly with the tribunal.
-          - "If you have a representative, we will ask for:"
-          - representative_bullets:
-              - their name and address
-              - their email address and phone number (optional)
-          - "If you are a representative acting on behalf of the respondent, you will need to provide information about the person who you are responding on behalf of, including:"
-          - rep_behalf_bullets:
-              - their name and address
-              - their email address and phone number (optional)
-        personal_data_use_header: How we use your personal data
-        personal_data_use_content:
-          - We use your personal data to complete a response to a claim made to an employment tribunal. Any email address you supply to us will be used by HMCTS to contact you with regards to your response. We may also use your details to contact you for research purposes.
-          - This online service contains several free-text fields in which you’re invited to enter certain types of information. You should not enter sensitive data into these free-text fields or upload documents containing sensitive data unless necessary to your response or specifically requested. Sensitive data may include, but is not limited to, details of religious beliefs and financial data. Entering or uploading sensitive data is done so at your own risk.
-        non_personal_use_header: How we use non-personal data
-        non_personal_use_content:
-          - Separately from the data entered by those using this service, we also collect site-usage data from this service, which allows us to see how the service is being used in order to allow us to improve it. This data does not contain any personal data.
-          - We’ll only ever collect data that will help us make the site work better for you; data that will let us contact you if you’ve asked us to, let us give you accurate data if you need it, and give us a sense of how people are using this service, so we can keep improving it.
-          - "It includes:"
-          - includes_bullets:
-            - questions, queries or feedback you leave, including your email address if you send a message via feedback
-            - your truncated IP address (with the trailing octet removed), and details of which version of web browser you used
-            - data on how you use the site, using cookies and page tagging techniques to help us improve the website
-          - "This helps us to:"
-          - helps_bullets:
-            - improve the site by monitoring how you use it
-            - respond to any feedback you send us, if you’ve asked us to
-            - provide you with information about local services if you want it
-          - We cannot identify you personally using your site usage data.
-        personal_data_stored_header: How your personal data is stored
-        personal_data_stored_content:
-          - MoJ takes data security very seriously and we take every step to ensure that your data remains private and secure. All data collected by this service and stored in our secure database is kept entirely within the European Economic Area (EEA).
-          - MOJ use the Amazon Web Services (AWS) to store your data. By submitting your data, you consent to the %{aws_href}.
-          - This service uses Sendgrid to route emails. Because of the global nature of internet infrastructure, we can't guarantee that information contained in emails sent from this service will be routed within the EEA. By submitting your information, you consent to the %{sendgrid_href}.
-          - We’ll never share your data with other organisations for their marketing, market research or commercial purposes, and we don’t pass on your personal data to any other websites.
-        aws_href: AWS Terms and Conditions
-        sendgrid_href: Sendgrid terms and conditions
-        non_personal_data_stored_header: How non-personal data is stored
-        non_personal_data_stored_content: Non-personal session information as described in the above section is stored on our secure servers within the EEA. It is also stored in the USA. By using this service, you consent to the %{ga_href}.
-        ga_href: Google Analytics terms and conditions
-        data_secure_header: Keeping your data secure
-        data_secure_content: Transmitting information over the internet is generally not completely secure, and we cannot guarantee the security of your data. We do however use SSL to encrypt all data transferred to and received from our server. We take data security very seriously and we take every step to ensure that your data remains private and secure. We have procedures and security features to try and keep your data secure once we receive it.
-        disclosing_data_header: Disclosing your data
-        disclosing_data_content: Information you provide is passed on to the Department for Business, Energy & Industrial Strategy to research the use and effectiveness of employment tribunals. We may pass your personal data on to others if we have a legal obligation to do so.
-        manage_sessions_header: How we manage sessions
-        manage_sessions_content:
-          - This service can be used to respond to a claim made to an employment tribunal. When you use this service, personal information about you may be visible to anyone with access to your computer. Your session will expire after 60 minutes of inactivity in order to keep the service secure. If you close the window or navigate away from the service without signing out, your session will remain active.
-          - We do not store any personal data in cookies. However, your browser may store cookies while you're using the service. You can manage cookie settings on your computer. See our cookies policy for further information.
-        access_personal_info_header: Access to personal information
-        access_personal_info_content: "You can find out if we hold any personal data about you by making a ‘subject access request’. You can make a subject access request by emailing: %{data_access_email}."
-        data_access_email: data.access@justice.gsi.gov.uk
-        more_details_header: "You can get more details on:"
-        more_details_content:
-          - Agreements we have with other organisations for sharing personal data, including;
-          - details_bullets:
-              - circumstances where we can pass on personal data without telling you, for example, to help with the prevention or detection of crime or to produce anonymised statistics
-              - our instructions to staff on how to collect, use or delete your personal data
-              - how we check that the personal data we hold is accurate and up-to-date
-        make_complaint_header: How to make a complaint.
-        make_complaint_content: "For more information about the above issues or for any other queries, please contact our Data Protection Officer by email: %{data_compliance_email}"
-        data_compliance_email: data.compliance@justice.gov.uk
-        complaints_header: Complaints
-        complaints_text: "When we ask you for information, we will keep to the law. If you consider that your information has been handled incorrectly by MoJ or HMCTS, you can contact the Information Commissioner for independent advice about data protection. You can contact the Information Commissioner here:"
-        complaints_address:
-          - Information Commissioner's Office
-          - Wycliffe House
-          - Water Lane
-          - Wilmslow
-          - Cheshire
-          - SK9 5AF
-          - "Tel: 0303 123 1113"
-          - "%{ico_href}"
-        ico_href: www.ico.org.uk
+          - This online service contains several free-text fields in which you will need to enter information that is personally sensitive.
+          - "If you enter information about your:"
+          - information_bullets:
+              - religious beliefs
+              - sexual orientation or sex life
+              - racial or ethnic origins
+              - political opinions
+              - religious or philosophical beliefs
+              - trade union membership
+              - generic data or biometric data
+              - health data
+          - You give us your consent to processing this information for the purpose of dealing with your application
+          - For more information about how we collect and store your personal data, see the %{privacy_policy_href}.
       disclaimer:
         header: Disclaimer
         content:
-          - We do not accept liability for loss or damage incurred by users of this service, whether direct, indirect or consequential, whether caused by tort, breach of contract or otherwise. This includes loss of income or revenue, business, profits or contracts, anticipated savings, data, goodwill, tangible property or wasted time in connection with this service or any websites linked to it and any materials posted on it. This condition shall not prevent claims for loss of or damage to your tangible property or any other claims for direct financial loss that are not excluded by any of the categories set out above.
-          - This does not affect our liability for death or personal injury arising from our negligence, nor our liability for fraudulent misrepresentation or misrepresentation as to a fundamental matter, nor any other liability which cannot be excluded or limited under applicable law.
+          - "While we make every effort to keep information up to date, we don’t provide any guarantees, conditions or warranties that it will be:"
+          - effort_bullets:
+              - current
+              - secure
+              - accurate
+              - complete
+              - free from bugs or viruses
+          - We don’t publish advice. You should get professional or specialist advice before doing anything on the basis of the information in the service.
+          - "We’re not liable for any loss or damage that may come from using this service. This includes:"
+          - not_liable_bullets:
+              - any direct, indirect or consequential losses
+              - any loss or damage caused by civil wrongs (‘tort’, including negligence), breach of contract or otherwise
+              - the use of this service, GOV.UK and any websites that are linked to or from it
+              - the inability to use this service, GOV.UK and any websites that are linked to or from it
+          - This applies if the loss or damage was foreseeable, arose in the normal course of things or you advised us that it might happen.
+          - "This includes (but isn’t limited to) the loss of your:"
+          - loss_bullets:
+              - income or revenue
+              - salary, benefits or other payments
+              - business
+              - profits or contracts
+              - opportunity
+              - anticipated savings
+              - data
+              - goodwill or reputation
+              - tangible property
+              - intangible property, including loss, corruption or damage to data or any computer system
+              - wasted management or office time
+          - "We may still be liable for:"
+          - liable_bullets:
+              - death or personal injury arising from our negligence
+              - fraudulent misrepresentation
+              - any other liability which cannot be excluded or limited under applicable law
+          - "%{contact_href} for further information"
     respondents_details:
       header: "Respondent's Details"
     claimants_details:

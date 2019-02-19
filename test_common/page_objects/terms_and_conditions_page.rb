@@ -37,12 +37,10 @@ module ET3
         include ET3::Test::I18n
         element :header, :element_with_text, 'terms_and_conditions.sharing_storing_data.header'
         def assert_content
-          t('terms_and_conditions.sharing_storing_data.content',
-            privacy_policy_href: t('terms_and_conditions.common.privacy_policy_href'),
-            cookie_policy_href: t('terms_and_conditions.common.cookie_policy_href')
-          ).each do |translated_paragraph|
-            root_element.assert_selector('p', text: translated_paragraph)
-          end
+          root_element.assert_selector('p', text: t('terms_and_conditions.sharing_storing_data.content',
+                                                    privacy_policy_href: t('terms_and_conditions.common.privacy_policy_href'),
+                                                    cookie_policy_href: t('terms_and_conditions.common.cookie_policy_href')
+          ))
         end
       end
 

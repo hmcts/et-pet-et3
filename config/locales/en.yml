@@ -391,8 +391,8 @@ en:
           - "Your use of this service and any dispute arising from its use will be governed by and construed in accordance with the laws of England and Wales, including but not limited to the:"
           - law_bullets:
               - Computer Misuse Act 1990
-              - Mental Capacity Act 2005
               - General Data Protection Regulations
+              - Mental Capacity Act 2005
       how_to_use:
         header: How to use this service responsibly
         content:

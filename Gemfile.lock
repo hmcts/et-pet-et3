@@ -1,3 +1,10 @@
+PATH
+  remote: vendor/gems/EtDropzoneUploader
+  specs:
+    et_dropzone_uploader (0.1.0)
+      dropzonejs-rails (~> 0.8)
+      rails (~> 5.2.2)
+
 GIT
   remote: https://github.com/ministryofjustice/azure_env_secrets.git
   revision: b72195789c350839d8a7f492eb2938c5101d5400
@@ -386,6 +393,7 @@ DEPENDENCIES
   cucumber-rails (~> 1.5)
   database_cleaner (~> 1.5)
   debase (~> 0.2.2)
+  et_dropzone_uploader!
   dotenv-rails (~> 2.7)
   dropzonejs-rails (~> 0.8)
   factory_bot

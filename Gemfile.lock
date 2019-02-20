@@ -4,6 +4,12 @@ GIT
   tag: v0.1.3
   specs:
     azure_env_secrets (0.1.3)
+PATH
+  remote: vendor/gems/EtDropzoneUploader
+  specs:
+    et_dropzone_uploader (0.1.0)
+      dropzonejs-rails (~> 0.8)
+      rails (~> 5.2.2)
 
 GEM
   remote: https://rubygems.org/
@@ -386,8 +392,13 @@ DEPENDENCIES
   cucumber-rails (~> 1.5)
   database_cleaner (~> 1.5)
   debase (~> 0.2.2)
+<<<<<<< HEAD
   dotenv-rails (~> 2.7)
   dropzonejs-rails (~> 0.8)
+=======
+  dotenv-rails (~> 2.6)
+  et_dropzone_uploader!
+>>>>>>> Extract all JS assets into gem
   factory_bot
   faker (~> 1.9)
   geckodriver-helper (~> 0.23)

@@ -29,7 +29,6 @@ Rails.application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
   config.asset_host = ENV['ASSET_HOST'] if ENV['ASSET_HOST'].present?
-  config.assets.prefix = ENV['ASSET_PREFIX'] if ENV['ASSET_PREFIX'].present?
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 

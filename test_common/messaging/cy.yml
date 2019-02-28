@@ -48,7 +48,7 @@ cy:
         label: "Faint o bobl sy’n gyflogedig ar y safle ble'r oedd yr hawlydd yn gweithio?"
     # Claimant's Details Page
     claimants_name:
-      label: Enw'r hawlydd (dewisol)
+      label: Enw llawn yr hawlydd (dewisol)
     agree_with_early_conciliation_details:
       label: "A ydych chi'n cytuno gyda'r manylion a roddodd yr hawlydd ynghylch Cymodi Cynnar gydag Acas? (dewisol)"
       'yes':
@@ -341,7 +341,7 @@ cy:
   respondents_details:
     header: "Manylion yr Atebydd"
   claimants_details:
-    header: "Manylion yr Hawlydd"
+    header: "Manylion yr hawlydd"
   earnings_and_benefits:
     header: "Enillion a Buddion"
   response:

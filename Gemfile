@@ -90,7 +90,7 @@ end
 group :production do
   # Add bootsnap for 5.2
   gem 'bootsnap', '~> 1.4'
-  gem 'unicorn', '~> 5.4'
+  gem 'unicorn', '~> 5.5'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

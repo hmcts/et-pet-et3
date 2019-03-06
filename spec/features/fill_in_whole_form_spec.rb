@@ -3,7 +3,7 @@ RSpec.feature "Fill in whole form", js: true do
 
   before do
     stub_et_api
-    stub_presigned_url_api_for_s3
+    stub_build_blob_to_s3
   end
 
   shared_examples "with upload flows" do

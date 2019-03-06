@@ -1,7 +1,7 @@
 module ET3
   module Test
     module S3Helpers
-      def configured_test_client
+      def self.configured_test_client
         s3_config = {
             region: ENV.fetch('AWS_REGION', 'us-east-1'),
             access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID', 'accessKey1'),
@@ -12,8 +12,8 @@ module ET3
         Aws::S3::Client.new(s3_config)
       end
 
-      def keys_in_bucket
-        bucket_objects = configured_test_client.
+      def self.keys_in_bucket
+        bucket_objects = self.configured_test_client.
                           list_objects(bucket: ENV.fetch('S3_DIRECT_UPLOAD_BUCKET', 'et3directbuckettest')).to_h
 
         bucket_objects[:contents].map do |bucket|

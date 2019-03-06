@@ -182,8 +182,8 @@ module ET3
       end
 
       # Stub Calls to API for S3 URLs
-      def stub_presigned_url_api_for_s3
-        aws_response = Aws::S3::Bucket.new(client: configured_test_client, name: ENV.fetch('S3_DIRECT_UPLOAD_BUCKET', 'et3directbuckettest')).
+      def stub_build_blob_to_s3
+        aws_response = Aws::S3::Bucket.new(client: ET3::Test::S3Helpers.configured_test_client, name: ENV.fetch('S3_DIRECT_UPLOAD_BUCKET', 'et3directbuckettest')).
                        presigned_post(key: "direct_uploads/#{SecureRandom.uuid}", success_action_status: '201')
         stub_request(:post, "#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api')}/v2/build_blob").
           to_return(
@@ -194,13 +194,47 @@ module ET3
                   "fields": aws_response.fields,
                   "url": aws_response.url
                 },
-                "meta": "amazon",
+                "meta": {
+                  "cloud_provider": "amazon"
+                },
                 "status": "accepted",
                 "uuid": SecureRandom.uuid
               }.to_json
           )
       end
 
+      # Stub Calls to API for Azure Blob Storage URLs
+      def stub_build_blob_to_azure
+        # TODO: Add variables in here and loosen the coupling
+        azure_response = ET3::Test::AzureHelpers.url_for_direct_upload("direct_uploads/0ffdabef-c6f7-4ec9-8b5f-9ccea95428ee", expires_in: 1.hour)
+
+        queries = Rack::Utils.parse_nested_query(URI.parse(azure_response).query)
+
+        stub_request(:post, "#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api')}/v2/build_blob").
+          to_return(
+            headers: { 'Content-Type': 'application/json' },
+            body:
+              {
+                "data": {
+                  "fields": {
+                    "key": "direct_uploads/0ffdabef-c6f7-4ec9-8b5f-9ccea95428ee",
+                    "permissions": queries['sp'],
+                    "version": queries['sv'],
+                    "expiry": queries['se'],
+                    "resource": queries['sr'],
+                    "signature": queries['sig']
+                  },
+                  "url": azure_response,
+                  "unsigned_url": ET3::Test::AzureHelpers.configured_test_client.blob_client.generate_uri("et3-direct-bucket-test/direct_uploads/0ffdabef-c6f7-4ec9-8b5f-9ccea95428ee")
+                },
+                "meta": {
+                  "cloud_provider": "azure"
+                },
+                "status": "accepted",
+                "uuid": SecureRandom.uuid
+              }.to_json
+          )
+      end
     end
   end
 end

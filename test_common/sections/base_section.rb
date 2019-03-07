@@ -1,6 +1,6 @@
 module ET3
   module Test
-    module BaseSection
+    class BaseSection < SitePrism::Section
       # populate
     end
   end

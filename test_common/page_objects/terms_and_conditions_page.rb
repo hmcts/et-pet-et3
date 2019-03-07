@@ -2,12 +2,7 @@ module ET3
   module Test
     class TermsAndConditionsPage < BasePage
       set_url '/terms'
-      section :switch_language, '.switch-language' do
-        include ::ET3::Test::I18n
-        element :language, :link_named, 'switch.language'
-        element :welsh_link, :link_or_button, t('switch.language', locale: :en)
-        element :english_link, :link_or_button, t('switch.language', locale: :cy)
-      end
+      section :switch_language, LanguageSwitcherSection, '.switch-language'
 
       element :header, :content_header, 'terms_and_conditions.header'
 

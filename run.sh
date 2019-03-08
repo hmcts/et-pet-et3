@@ -3,7 +3,7 @@
 case ${DOCKER_STATE} in
 migrate)
     echo "Running migrate"
-    bundle exec rake db:migrate assets:precompile
+    bundle exec rake db:migrate
     ;;
 create)
     echo "Running create"

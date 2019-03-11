@@ -83,7 +83,7 @@ group :test do
   gem 'database_cleaner', '~> 1.5'
   gem 'webmock', '~> 3.5'
   gem 'faker', '~> 1.9'
-  gem 'aws-sdk-s3', '~> 1.21'
+  gem 'aws-sdk-s3', '~> 1.31'
   gem 'factory_bot'
 end
 

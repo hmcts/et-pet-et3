@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.8'
 # gem 'capistrano-rails', group: :development
 
 gem 'slim-rails', '~> 3.2'
-gem 'govuk_template', '~> 0.25.0'
+gem 'govuk_template', '~> 0.26.0'
 gem 'govuk_elements_rails', '~> 3.1'
 gem 'govuk_elements_form_builder',  '~>1.3'
 gem 'gov_uk_date_fields', '~> 2.1'

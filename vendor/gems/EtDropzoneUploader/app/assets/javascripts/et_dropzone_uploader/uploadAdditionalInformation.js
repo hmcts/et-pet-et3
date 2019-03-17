@@ -3,6 +3,7 @@ window.EtDropzoneUploader.init = (formId, uploadKeyId, fileNameId) => {
     Dropzone.autoDiscover = false;
 
     const uploadForm = $(formId);
+    let provider;
 
     // Source:
     // stackoverflow.com/questions/105034/create-guid-uuid-in-javascript#answer-2117523
@@ -76,6 +77,40 @@ window.EtDropzoneUploader.init = (formId, uploadKeyId, fileNameId) => {
         }
     }
 
+    function getFileHash(file, headerCallback) {
+        let blobSlice = File.prototype.slice || File.prototype.mozSlice || File.prototype.webkitSlice,
+            chunkSize = 2097152,                             // Read in chunks of 2MB
+            chunks = Math.ceil(file.size / chunkSize),
+            currentChunk = 0,
+            spark = new SparkMD5.ArrayBuffer(),
+            fileReader = new FileReader();
+
+        fileReader.onload = function (e) {
+            spark.append(e.target.result);                   // Append array buffer
+            currentChunk++;
+
+            if (currentChunk < chunks) {
+                loadNext();
+            } else {
+                const hash = btoa(spark.end(true));
+                headerCallback(hash);
+            }
+        };
+
+        fileReader.onerror = function () {
+            console.warn('oops, something went wrong.');
+        };
+
+        function loadNext() {
+            let start = currentChunk * chunkSize,
+                end = ((start + chunkSize) >= file.size) ? file.size : start + chunkSize;
+
+            fileReader.readAsArrayBuffer(blobSlice.call(file, start, end));
+        }
+
+        loadNext();
+    }
+
     let removedButton, uploadKey;
 
     const DROPZONE_OPTIONS = {
@@ -101,17 +136,25 @@ window.EtDropzoneUploader.init = (formId, uploadKeyId, fileNameId) => {
         accept: function (file, done) {
             // check cloud provider in this section
             buildUpload(function (presignedData) {
+                provider = presignedData.meta.cloud_provider;
                 if (presignedData.meta.cloud_provider == 'azure') {
                     dropzoneUploadForm.options.method = 'put';
                     dropzoneUploadForm.options.headers = {"x-ms-blob-type": "BlockBlob"};
+                    getFileHash(file, function(hash) {
+                        dropzoneUploadForm.options.headers["Content-MD5"] = hash;
+                        uploadKey = presignedData.data.fields.key;
+                        setUploadUrl(presignedData.data.url);
+                        removedButton = removeButtonElement($("#upload-button"));
+                        done();
+                    })
                 } else {
                     // TODO: RST-1676 Remove the 'else' statement
                     prepareAwsHiddenInputs(uploadForm, presignedData);
+                    uploadKey = presignedData.data.fields.key;
+                    setUploadUrl(presignedData.data.url);
+                    removedButton = removeButtonElement($("#upload-button"));
+                    done();
                 }
-                uploadKey = presignedData.data.fields.key;
-                setUploadUrl(presignedData.data.url);
-                removedButton = removeButtonElement($("#upload-button"));
-                done();
             });
         },
         // Use POST by default for AWS
@@ -124,6 +167,16 @@ window.EtDropzoneUploader.init = (formId, uploadKeyId, fileNameId) => {
             // Take upload URL and pass it into the second form
             $(uploadKeyId).val(uploadKey);
             $(fileNameId).val(file.name);
+        },
+        sending: function(file, xhr) {
+            // Source: https://github.com/enyo/dropzone/issues/590#issuecomment-51498225
+            if (provider == 'azure') {
+                const send = xhr.send;
+                xhr.send = function() {
+                    send.call(xhr, file);
+                    xhr.send = send;
+                };
+            }
         }
     };
     

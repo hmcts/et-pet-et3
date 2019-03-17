@@ -12,3 +12,5 @@
 //
 //= require dropzone
 //= require et_dropzone_uploader/uploadAdditionalInformation
+//= require spark-md5
+

@@ -10,19 +10,19 @@ module ET3
         options[:storage_blob_host] = ENV['AZURE_STORAGE_BLOB_HOST'] if ENV.key?('AZURE_STORAGE_BLOB_HOST')
         options[:use_path_style_uri] = ENV['AZURE_STORAGE_BLOB_FORCE_PATH_STYLE'] == 'true' if ENV.key?('AZURE_STORAGE_BLOB_FORCE_PATH_STYLE')
 
-        direct_upload_client = Azure::Storage.client options
+        @configured_test_client ||= Azure::Storage.client options
+      end
 
+      def self.configure_test_container
         direct_container_name = ENV.fetch('AZURE_STORAGE_DIRECT_UPLOAD_CONTAINER', 'et3-direct-bucket-test')
 
-        direct_upload_containers = direct_upload_client.blob_client.list_containers
+        direct_upload_containers = configured_test_client.blob_client.list_containers
         if direct_upload_containers.map(&:name).include?(direct_container_name)
           puts "Azure already has container #{direct_container_name}"
         else
-          direct_upload_client.blob_client.create_container(direct_container_name)
+          configured_test_client.blob_client.create_container(direct_container_name)
           puts "Container #{direct_container_name} added to azure"
         end
-
-        direct_upload_client
       end
 
       def self.configured_signer
@@ -40,13 +40,7 @@ module ET3
       end
 
       def self.configure_cors
-        options = {
-          storage_account_name: 'devstoreaccount1',
-          storage_access_key: 'Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==',
-          storage_blob_host: 'http://localhost:10000',
-          use_path_style_uri: true
-        }
-        direct_upload_client = Azure::Storage.client options
+        direct_upload_client = configured_test_client
         service_properties = direct_upload_client.blob_client.get_service_properties
         if service_properties.cors.cors_rules.empty?
           cors_rule = Azure::Storage::Service::CorsRule.new
@@ -64,7 +58,8 @@ module ET3
       end
 
       def self.keys_in_container
-        stored_items = self.configured_test_client.blob_client.list_blobs(self.configured_test_client.blob_client.list_containers.first.name)
+
+        stored_items = configured_test_client.blob_client.list_blobs(ENV.fetch('AZURE_STORAGE_DIRECT_UPLOAD_CONTAINER', 'et3-direct-bucket-test'))
 
         stored_items.map(&:name)
       end

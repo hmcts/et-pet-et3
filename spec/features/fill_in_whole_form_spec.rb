@@ -3,7 +3,6 @@ RSpec.feature "Fill in whole form", js: true do
 
   before do
     stub_et_api
-    stub_build_blob_to_s3
   end
 
   shared_examples "with upload flows" do
@@ -119,6 +118,8 @@ RSpec.feature "Fill in whole form", js: true do
       confirmation_of_supplied_details_page.submit_form
       expect(form_submission_page).to be_displayed
       aggregate_failures "testing request" do
+        # TODO: Potentially move this into another spec and simply check the submission is a string in the request below
+        file_upload_keys = stored_keys
         expect(a_request(:post, "http://api.et.127.0.0.1.nip.io:3100/api/v2/respondents/build_response").
           with { |request|
             request_body = JSON.parse(request.body)
@@ -151,7 +152,7 @@ RSpec.feature "Fill in whole form", js: true do
             expect(request_body["data"][0]["data"]["defend_claim_facts"]).to eql @claimant.defend_claim_facts
             expect(request_body["data"][0]["data"]["make_employer_contract_claim"]).to eql true
             expect(request_body["data"][0]["data"]["claim_information"]).to eql @respondent.claim_information
-            expect(stored_keys).to include request_body["data"][0]["data"]["additional_information_key"]
+            expect(file_upload_keys).to include request_body["data"][0]["data"]["additional_information_key"]
             expect(request_body["data"][0]["data"]["email_receipt"]).to eql ""
             expect(request_body["data"][0]["data"]["pdf_template_reference"]).to eql "et3-v1-#{::ET3::Test::Messaging.instance.current_locale}"
             expect(request_body["data"][0]["data"]["email_template_reference"]).to eql "et3-v1-#{::ET3::Test::Messaging.instance.current_locale}"
@@ -205,64 +206,73 @@ RSpec.feature "Fill in whole form", js: true do
     end
   end
 
-  scenario "correctly will delete hash_store and prevent the next user seeing answers on the respondents details page" do
-    given_valid_data
+  context "without testing azure mode" do
 
-    start_a_new_et3_response
-    answer_respondents_details
-    answer_claimants_details
-    answer_earnings_and_benefits
-    answer_defend_claim_question
-    answer_representative
-    answer_disability_question
-    answer_employers_contract_claim
-    answer_additional_information
-    answer_confirmation_of_supplied_details
+    before do
+      stub_et_api
+      stub_build_blob_to_s3
+    end
 
-    respondents_details_page.load(locale: current_locale_parameter)
+    scenario "correctly will delete hash_store and prevent the next user seeing answers on the respondents details page" do
+      given_valid_data
 
-    expect(respondents_details_page.case_number_question.field.value).to eql ""
-    expect(respondents_details_page.name_question.field.value).to eql ""
-    expect(respondents_details_page.contact_question.field.value).to eql ""
-    expect(respondents_details_page.building_name_question.field.value).to eql ""
-    expect(respondents_details_page.street_question.field.value).to eql ""
-    expect(respondents_details_page.town_question.field.value).to eql ""
-    expect(respondents_details_page.county_question.field.value).to eql ""
-    expect(respondents_details_page.postcode_question.field.value).to eql ""
-    expect(respondents_details_page.dx_number_question.field.value).to eql ""
-    expect(respondents_details_page.contact_number_question.field.value).to eql ""
-    expect(respondents_details_page.contact_mobile_number_question.field.value).to eql ""
-    respondents_details_page.contact_preference_question.email.assert_selector(:field, nil, checked: false)
-    expect(respondents_details_page.contact_preference_question.preference_email.value).to eql ""
-    expect(respondents_details_page.contact_preference_question.post.has_checked_field?).to be false
-    expect(respondents_details_page.contact_preference_question.fax.has_checked_field?).to be false
-    expect(respondents_details_page.contact_preference_question.preference_fax.value).to eql ""
-    expect(respondents_details_page.organisation_employ_gb_question.field.value).to eql ""
-    respondents_details_page.organisation_more_than_one_site_question.assert_selector(:field, nil, checked: false)
-    expect(respondents_details_page.organisation_more_than_one_site_question.employment_at_site_number.value).to eql ""
-  end
+      start_a_new_et3_response
+      answer_respondents_details
+      answer_claimants_details
+      answer_earnings_and_benefits
+      answer_defend_claim_question
+      answer_representative
+      answer_disability_question
+      answer_employers_contract_claim
+      answer_additional_information
+      answer_confirmation_of_supplied_details
 
-  scenario "correctly followed by removing the uploaded file will not submit it to the API" do
-    given_valid_data
+      respondents_details_page.load(locale: current_locale_parameter)
 
-    start_a_new_et3_response
-    answer_respondents_details
-    answer_claimants_details
-    answer_earnings_and_benefits
-    answer_defend_claim_question
-    answer_representative
-    answer_disability_question
-    answer_employers_contract_claim
-    answer_additional_information
+      expect(respondents_details_page.case_number_question.field.value).to eql ""
+      expect(respondents_details_page.name_question.field.value).to eql ""
+      expect(respondents_details_page.contact_question.field.value).to eql ""
+      expect(respondents_details_page.building_name_question.field.value).to eql ""
+      expect(respondents_details_page.street_question.field.value).to eql ""
+      expect(respondents_details_page.town_question.field.value).to eql ""
+      expect(respondents_details_page.county_question.field.value).to eql ""
+      expect(respondents_details_page.postcode_question.field.value).to eql ""
+      expect(respondents_details_page.dx_number_question.field.value).to eql ""
+      expect(respondents_details_page.contact_number_question.field.value).to eql ""
+      expect(respondents_details_page.contact_mobile_number_question.field.value).to eql ""
+      respondents_details_page.contact_preference_question.email.assert_selector(:field, nil, checked: false)
+      expect(respondents_details_page.contact_preference_question.preference_email.value).to eql ""
+      expect(respondents_details_page.contact_preference_question.post.has_checked_field?).to be false
+      expect(respondents_details_page.contact_preference_question.fax.has_checked_field?).to be false
+      expect(respondents_details_page.contact_preference_question.preference_fax.value).to eql ""
+      expect(respondents_details_page.organisation_employ_gb_question.field.value).to eql ""
+      respondents_details_page.organisation_more_than_one_site_question.assert_selector(:field, nil, checked: false)
+      expect(respondents_details_page.organisation_more_than_one_site_question.employment_at_site_number.value).to eql ""
+    end
 
-    confirmation_of_supplied_details_page.confirmation_of_additional_information_answers.upload_additional_information_row.remove_file_link.click
-    confirmation_of_supplied_details_page.submit_form
+    scenario "correctly followed by removing the uploaded file will not submit it to the API" do
+      given_valid_data
 
-    expect(a_request(:post, "http://api.et.127.0.0.1.nip.io:3100/api/v2/respondents/build_response").
-        with { |request|
-          request_body = JSON.parse(request.body)
-          expect(request_body["data"][0]["data"]["additional_information_key"]).to be nil
-        }).to have_been_made.once
+      start_a_new_et3_response
+      answer_respondents_details
+      answer_claimants_details
+      answer_earnings_and_benefits
+      answer_defend_claim_question
+      answer_representative
+      answer_disability_question
+      answer_employers_contract_claim
+      answer_additional_information
+
+      confirmation_of_supplied_details_page.confirmation_of_additional_information_answers.upload_additional_information_row.remove_file_link.click
+      confirmation_of_supplied_details_page.submit_form
+
+      expect(a_request(:post, "http://api.et.127.0.0.1.nip.io:3100/api/v2/respondents/build_response").
+          with { |request|
+            request_body = JSON.parse(request.body)
+            expect(request_body["data"][0]["data"]["additional_information_key"]).to be nil
+          }).to have_been_made.once
+    end
+
   end
 
   context "when uploading to azure" do
@@ -276,6 +286,10 @@ RSpec.feature "Fill in whole form", js: true do
   end
 
   context "when uploading to aws" do
+    before do
+      stub_build_blob_to_s3
+    end
+
     let(:stored_keys) { ET3::Test::S3Helpers.keys_in_bucket }
 
     include_examples "with upload flows"

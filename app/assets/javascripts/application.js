@@ -1,4 +1,4 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
+// This is a manifest file that'll be compiled into et_dropzone_uploader.js, which will include all the files
 // listed below.
 //
 // Any JavaScript/Coffee file within this directory, lib/assets/javascripts, or any plugin's
@@ -14,5 +14,5 @@
 //= require govuk/show-hide-content
 //= require rails-ujs
 //= require turbolinks
-//= require dropzone
+//= require et_dropzone_uploader
 //= require_tree .

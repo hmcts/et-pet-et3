@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ET3
   module Test
     module AzureHelpers
@@ -39,13 +41,7 @@ module ET3
         direct_upload_client = configured_test_client
         service_properties = direct_upload_client.blob_client.get_service_properties
         if service_properties.cors.cors_rules.empty?
-          cors_rule = Azure::Storage::Service::CorsRule.new
-          cors_rule.allowed_origins = ['*']
-          cors_rule.allowed_methods = %w(POST GET PUT HEAD)
-          cors_rule.allowed_headers = ['*']
-          cors_rule.exposed_headers = ['*']
-          cors_rule.max_age_in_seconds = 3600
-          service_properties.cors.cors_rules = [cors_rule]
+          service_properties.cors.cors_rules = [create_cors_rules]
           direct_upload_client.blob_client.set_service_properties(service_properties)
           puts "Direct upload storage account now has cors configured"
         else
@@ -54,13 +50,20 @@ module ET3
       end
 
       def self.keys_in_container
-
         stored_items = configured_test_client.blob_client.list_blobs(BUCKET_NAME)
 
         stored_items.map(&:name)
       end
 
-      private
+      def self.create_cors_rules
+        cors_rule = Azure::Storage::Service::CorsRule.new
+        cors_rule.allowed_origins = ['*']
+        cors_rule.allowed_methods = ['POST', 'GET', 'PUT', 'HEAD']
+        cors_rule.allowed_headers = ['*']
+        cors_rule.exposed_headers = ['*']
+        cors_rule.max_age_in_seconds = 3600
+        cors_rule
+      end
 
       def self.options
         options_hash = {
@@ -73,6 +76,8 @@ module ET3
 
         options_hash
       end
+
+      private_class_method :create_cors_rules, :options
     end
   end
 end

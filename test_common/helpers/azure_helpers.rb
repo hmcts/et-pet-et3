@@ -6,14 +6,14 @@ module ET3
 
       ACCOUNT_NAME = 'devstoreaccount1'
       ACCESS_KEY = 'Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw=='
-      BUCKET_NAME = 'et3-direct-bucket-test'
+      CONTAINER_NAME = 'et3-direct-bucket-test'
 
       def self.configured_test_client
         @configured_test_client ||= Azure::Storage.client options
       end
 
       def self.configure_test_container
-        direct_container_name = BUCKET_NAME
+        direct_container_name = CONTAINER_NAME
 
         direct_upload_containers = configured_test_client.blob_client.list_containers
         if direct_upload_containers.map(&:name).include?(direct_container_name)
@@ -30,7 +30,7 @@ module ET3
 
       def self.url_for_direct_upload(key, expires_in:)
         configured_signer.signed_uri(
-          configured_test_client.blob_client.generate_uri("#{BUCKET_NAME}/#{key}"), false,
+          configured_test_client.blob_client.generate_uri("#{CONTAINER_NAME}/#{key}"), false,
           service: "b",
           permissions: "rw",
           expiry: expires_in ? Time.now.utc.advance(seconds: expires_in).iso8601 : nil
@@ -50,7 +50,7 @@ module ET3
       end
 
       def self.keys_in_container
-        stored_items = configured_test_client.blob_client.list_blobs(BUCKET_NAME)
+        stored_items = configured_test_client.blob_client.list_blobs(CONTAINER_NAME)
 
         stored_items.map(&:name)
       end

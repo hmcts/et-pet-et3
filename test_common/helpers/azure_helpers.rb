@@ -17,10 +17,10 @@ module ET3
 
         direct_upload_containers = configured_test_client.blob_client.list_containers
         if direct_upload_containers.map(&:name).include?(direct_container_name)
-          puts "Azure already has container #{direct_container_name}"
+          logger.info "Azure already has container #{direct_container_name}"
         else
           configured_test_client.blob_client.create_container(direct_container_name)
-          puts "Container #{direct_container_name} added to azure"
+          logger.info "Container #{direct_container_name} added to azure"
         end
       end
 
@@ -43,9 +43,9 @@ module ET3
         if service_properties.cors.cors_rules.empty?
           service_properties.cors.cors_rules = [create_cors_rules]
           direct_upload_client.blob_client.set_service_properties(service_properties)
-          puts "Direct upload storage account now has cors configured"
+          logger.info "Direct upload storage account now has cors configured"
         else
-          puts "Direct upload storage account has existing cors config - cowardly refusing to touch it"
+          logger.info "Direct upload storage account has existing cors config - cowardly refusing to touch it"
         end
       end
 

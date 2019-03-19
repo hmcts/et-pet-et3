@@ -1,20 +1,17 @@
 module ET3
   module Test
     module AzureHelpers
-      # TODO: Put the env vars into constants
-      # TODO: DRY up the options
+
+      ACCOUNT_NAME = 'devstoreaccount1'
+      ACCESS_KEY = 'Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw=='
+      BUCKET_NAME = 'et3-direct-bucket-test'
 
       def self.configured_test_client
-        options = default_options
-
-        options[:storage_blob_host] = ENV['AZURE_STORAGE_BLOB_HOST'] if ENV.key?('AZURE_STORAGE_BLOB_HOST')
-        options[:use_path_style_uri] = ENV['AZURE_STORAGE_BLOB_FORCE_PATH_STYLE'] == 'true' if ENV.key?('AZURE_STORAGE_BLOB_FORCE_PATH_STYLE')
-
         @configured_test_client ||= Azure::Storage.client options
       end
 
       def self.configure_test_container
-        direct_container_name = ENV.fetch('AZURE_STORAGE_DIRECT_UPLOAD_CONTAINER', 'et3-direct-bucket-test')
+        direct_container_name = BUCKET_NAME
 
         direct_upload_containers = configured_test_client.blob_client.list_containers
         if direct_upload_containers.map(&:name).include?(direct_container_name)
@@ -26,13 +23,12 @@ module ET3
       end
 
       def self.configured_signer
-        Azure::Storage::Core::Auth::SharedAccessSignature.new(ENV.fetch('AZURE_STORAGE_DIRECT_UPLOAD_ACCOUNT', 'devstoreaccount1'),
-                                                              ENV.fetch('AZURE_STORAGE_DIRECT_UPLOAD_ACCESS_KEY', 'Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw=='))
+        Azure::Storage::Core::Auth::SharedAccessSignature.new(ACCOUNT_NAME, ACCESS_KEY)
       end
 
       def self.url_for_direct_upload(key, expires_in:)
         configured_signer.signed_uri(
-          configured_test_client.blob_client.generate_uri("et3-direct-bucket-test/#{key}"), false,
+          configured_test_client.blob_client.generate_uri("#{BUCKET_NAME}/#{key}"), false,
           service: "b",
           permissions: "rw",
           expiry: expires_in ? Time.now.utc.advance(seconds: expires_in).iso8601 : nil
@@ -59,18 +55,23 @@ module ET3
 
       def self.keys_in_container
 
-        stored_items = configured_test_client.blob_client.list_blobs(ENV.fetch('AZURE_STORAGE_DIRECT_UPLOAD_CONTAINER', 'et3-direct-bucket-test'))
+        stored_items = configured_test_client.blob_client.list_blobs(BUCKET_NAME)
 
         stored_items.map(&:name)
       end
 
       private
 
-      def self.default_options
-        {
-          storage_account_name: ENV.fetch('AZURE_STORAGE_DIRECT_UPLOAD_ACCOUNT', 'devstoreaccount1'),
-          storage_access_key: ENV.fetch('AZURE_STORAGE_DIRECT_UPLOAD_ACCESS_KEY', 'Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==')
+      def self.options
+        options_hash = {
+          storage_account_name: ACCOUNT_NAME,
+          storage_access_key: ACCESS_KEY
         }
+
+        options_hash[:storage_blob_host] = ENV['AZURE_STORAGE_BLOB_HOST'] if ENV.key?('AZURE_STORAGE_BLOB_HOST')
+        options_hash[:use_path_style_uri] = ENV['AZURE_STORAGE_BLOB_FORCE_PATH_STYLE'] == 'true' if ENV.key?('AZURE_STORAGE_BLOB_FORCE_PATH_STYLE')
+
+        options_hash
       end
     end
   end

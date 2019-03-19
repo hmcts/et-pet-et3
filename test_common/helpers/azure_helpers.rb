@@ -17,10 +17,14 @@ module ET3
 
         direct_upload_containers = configured_test_client.blob_client.list_containers
         if direct_upload_containers.map(&:name).include?(direct_container_name)
-          logger.info "Azure already has container #{direct_container_name}"
+          Rails.logger.info "Azure already has container #{direct_container_name}"
         else
-          configured_test_client.blob_client.create_container(direct_container_name)
-          logger.info "Container #{direct_container_name} added to azure"
+          begin
+            configured_test_client.blob_client.create_container(direct_container_name)
+          rescue Azure::Core::Http::HTTPError
+            puts "Potential race condition, attempted to create container despite flagging it as non-existent"
+          end
+          Rails.logger.info "Container #{direct_container_name} added to azure"
         end
       end
 
@@ -43,9 +47,9 @@ module ET3
         if service_properties.cors.cors_rules.empty?
           service_properties.cors.cors_rules = [create_cors_rules]
           direct_upload_client.blob_client.set_service_properties(service_properties)
-          logger.info "Direct upload storage account now has cors configured"
+          Rails.logger.info "Direct upload storage account now has cors configured"
         else
-          logger.info "Direct upload storage account has existing cors config - cowardly refusing to touch it"
+          Rails.logger.info "Direct upload storage account has existing cors config - cowardly refusing to touch it"
         end
       end
 

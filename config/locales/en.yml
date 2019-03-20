@@ -302,6 +302,7 @@ en:
       more_category_href: http://gov.uk/browse/working
     footer:
       terms: Terms and conditions
+      privacy: Privacy policy
     confirmation_of_supplied_details:
       header: Confirmation of Supplied Details
       receipt_header: Email Receipt

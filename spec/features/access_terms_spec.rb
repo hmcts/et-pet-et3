@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Access Footer", js: true do
+RSpec.feature "Access Terms", js: true do
   include ET3::Test::I18n
 
   before do

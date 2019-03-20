@@ -1,0 +1,16 @@
+= form_tag(nil, method: "post", class: "dropzone", id: form_id, authenticity_token: false, enforce_utf8: false)
+
+  .dz-default.dz-message.grid-row
+    .column-one-third.arrow-icon
+      p
+    .column-one-half
+      span.normal = t('components.additional_information.drag_text')
+      .bold-normal = t('components.additional_information.or_text');
+      button.button.button-secondary#upload-button type="button" = t('components.additional_information.upload_button')
+
+
+- content_for :body_end
+  javascript:
+    $( document ).ready( function () {
+        EtDropzoneUploader.init("##{form_id}", "##{upload_key_id}", "##{file_name_id}");
+    });

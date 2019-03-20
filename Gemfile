@@ -43,7 +43,6 @@ gem 'jquery-rails', '~> 4.3'
 gem 'activerecord-nulldb-adapter', '~> 0.3'
 gem 'httparty', '~> 0.16'
 gem 'uk_postcode', '~> 2.1'
-gem 'dropzonejs-rails', '~> 0.8'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -84,6 +83,7 @@ group :test do
   gem 'webmock', '~> 3.5'
   gem 'faker', '~> 1.9'
   gem 'aws-sdk-s3', '~> 1.21'
+  gem 'azure-storage', '~> 0.15.0.preview'
   gem 'factory_bot'
 end
 
@@ -97,3 +97,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'sentry-raven', '~> 2.9'
+
+gem 'et_dropzone_uploader', path: 'vendor/gems/et_dropzone_uploader'

@@ -5,7 +5,7 @@ RSpec.feature "View Sidebar", js: true do
 
   before do
     stub_et_api
-    stub_presigned_url_api_for_s3
+    stub_build_blob_to_s3
   end
 
   scenario "on start page" do

@@ -14,5 +14,5 @@
 //= require govuk/show-hide-content
 //= require rails-ujs
 //= require turbolinks
-//= require dropzone
+//= require et_dropzone_uploader
 //= require_tree .

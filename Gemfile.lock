@@ -6,7 +6,7 @@ GIT
     azure_env_secrets (0.1.3)
 
 PATH
-  remote: vendor/gems/EtDropzoneUploader
+  remote: vendor/gems/et_dropzone_uploader
   specs:
     et_dropzone_uploader (0.1.0)
       dropzonejs-rails (~> 0.8)

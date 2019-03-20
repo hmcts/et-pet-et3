@@ -72,12 +72,11 @@ module ET3
       def self.options
         options_hash = {
           storage_account_name: ACCOUNT_NAME,
-          storage_access_key: ACCESS_KEY
+          storage_access_key: ACCESS_KEY,
+          use_path_style_uri: true
         }
 
         options_hash[:storage_blob_host] = ENV['AZURE_STORAGE_BLOB_HOST'] if ENV.key?('AZURE_STORAGE_BLOB_HOST')
-        options_hash[:use_path_style_uri] = ENV['AZURE_STORAGE_BLOB_FORCE_PATH_STYLE'] == 'true' if ENV.key?('AZURE_STORAGE_BLOB_FORCE_PATH_STYLE')
-
         options_hash
       end
 

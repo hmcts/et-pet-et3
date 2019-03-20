@@ -118,25 +118,3 @@ For example, used in conjunction with Zalenium to take a video of tests being ru
 Used as the Azure endpoint, often taking in the `AZURE_STORAGE_BLOB_PORT` as a parameter.
 
 For example, used to configure the container setup in azurite.
-
-### AZURE_STORAGE_BLOB_FORCE_PATH_STYLE
-
-Used as a boolean for the `use_path_style_uri` option (but named similarly to the AWS env var).
-
-For example and further info, see [Azure Docs](https://azure.github.io/azure-storage-ruby/Azure/Storage/Blob/BlobService.html).
-
-### AZURE_STORAGE_DIRECT_UPLOAD_ACCOUNT
-
-Used as an identifier for the Azurite account name.
-
-For example, used in URI paths.
-
-### AZURE_STORAGE_DIRECT_UPLOAD_ACCESS_KEY
-
-Used to validate actions performed on the `AZURE_STORAGE_DIRECT_UPLOAD_ACCOUNT`.
-
-### AZURE_STORAGE_CONTAINER
-
-Used to specify the container name for azurite.
-
-For example, used to configure the container setup in azurite.

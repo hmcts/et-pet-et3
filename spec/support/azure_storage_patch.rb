@@ -1,3 +1,5 @@
+# TODO: Remove this patch once azure-storage has been patched (RST-1797)
+
 # We all hate patches - I know !!
 #
 # But, at the moment, active storage can only work with azure-storage gem 0.15.0.preview (it has been in this state for over a year !!)

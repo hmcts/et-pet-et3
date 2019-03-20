@@ -22,7 +22,7 @@ module ET3
           begin
             configured_test_client.blob_client.create_container(direct_container_name)
           rescue Azure::Core::Http::HTTPError
-            puts "Potential race condition, attempted to create container despite flagging it as non-existent"
+            Rails.logger.warn "AZURE: Potential race condition, attempted to create container despite detecting it as non-existent"
           end
           Rails.logger.info "Container #{direct_container_name} added to azure"
         end

@@ -8,7 +8,7 @@ RSpec.configure do |c|
       begin
         bucket.create unless bucket.exists?
       rescue Aws::S3::Error::BucketAlreadyOwnedByYou
-        puts "Potential race condition, bucket already created despite being flagged as non-existent"
+        Rails.logger.warn "AWS: Potential race condition, attempted to create bucket despite detecting it as non-existent"
       end
       bucket.objects.each(&:delete)
     end

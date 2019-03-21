@@ -302,6 +302,12 @@ cy:
     form_submission:
       invalid_pdf_download: "Ddim yn barod eto - bydd fersiwn PDF o'ch ffurflen wedi'i llenwi ar gael i'w lawrlwytho maes o law"
       valid_pdf_download: "Mae fersiwn PDF o'ch ffurflen wedi'i llenwi nawr ar gael i'w lawrlwytho"
+    footer:
+      terms_and_conditions_href: telerau ac amodau
+      ico_href: Swyddfa'r Comisiynydd Gwybodaeth
+      personal_info_charter_href: siarter gwybodaeth bersonol
+      using_cookies_href: ddefnyddio cwcis
+      contact_us_href: Cysylltwch â ni
   components:
     save_and_continue_button: "Cadw a pharhau"
     single_choice_option_section:
@@ -321,6 +327,7 @@ cy:
       more_category_href: "http://gov.uk/browse/working"
     footer:
       terms: Telerau ac amodau
+      privacy: Polisi preifatrwydd
     confirmation_of_supplied_details:
       remove_file_link: "Dileu ffeil"
   introduction:
@@ -432,6 +439,55 @@ cy:
             - camliwio twyllodrus
             - unrhyw atebolrwydd arall na ellir ei eithrio neu ei gyfyngu dan y gyfraith berthnasol
         - "%{contact_href} i gael rhagor o wybodaeth."
+  privacy_notice:
+    header: Polisi preifatrwydd
+    introduction: Mae'r polisi preifatrwydd hwn yn egluro pam ein bod yn casglu eich data personol, yr hyn a wnawn ag ef, a'ch hawliau. Mae mwy o wybodaeth am ddefnyddio'r gwasanaeth hwn yn y telerau ac amodau.
+    who_manages:
+      header: Pwy sy'n rheoli'r gwasanaeth hwn
+      content:
+        - Mae'r gwasanaeth hwn yn cael ei reoli gan Wasanaeth Llysoedd a Thribiwnlysoedd ei Mawrhydi (GLlTEM) ac rydym yn gyfrifol am ddiogelu'r data personol a ddarperir gennych.
+        - Mae GLlTEM yn asiantaeth weithredol o'r Weinyddiaeth Cyfiawnder (MoJ). MoJ yw'r rheolydd data ac mae ei %{personal_info_charter_href} yn esbonio mwy am sut maent yn prosesu data personol.
+        - Pan fyddwch yn defnyddio'r gwasanaeth hwn byddwn ni (GLlTEM) yn gofyn ichi ddarparu rhywfaint o ddata personol.
+    personal_data:
+      header: Beth yw'r data personol a gasglwn
+      content:
+        - "Mae'r data personol a gasglwn yn cynnwys:"
+        - - eich enw, cyfeiriad a'ch manylion cyswllt
+          - enw, cyfeiriad a manylion cyswllt eich cynrychiolydd - os oes gennych un
+          - gwybodaeth sy'n dweud wrthym os ydych chi'n agor neges e-bost gennym ni, neu os byddwch yn clicio ar ddolen mewn e-bost
+          - gwybodaeth am sut rydych yn defnyddio'r gwasanaeth hwn, fel eich cyfeiriad IP a'r porwr gwe rydych yn ei ddefnyddio. Rydym yn gwneud hyn drwy %{using_cookies_href}.
+    what_we_do_data:
+      header: Beth rydym yn ei wneud gyda'ch data
+      content:
+        - "Rydym yn casglu eich data personol i:"
+        - - brosesu eich ymateb
+          - bodloni gofynion cyfreithiol
+          - gwneud gwelliannau i'r gwasanaeth hwn
+        - Caiff eich data personol ei brosesu gan ein staff yn y Deyrnas Unedig a chaiff y data ei storio yn y Deyrnas Unedig.
+        - Byddwn yn anfon copi o'ch ymateb at yr hawlydd ac Acas. Byddwn yn rhannu gwybodaeth ar y ffurflen hon â'r Adran Busnes, Ynni a Strategaeth Ddiwydiannol (BEIS) i helpu gyda'u gwaith ymchwil ar dribiwnlysoedd cyflogaeth.
+        - Rydym yn defnyddio Sendgrid i anfon negeseuon e-bost gan ddefnyddio seilwaith rhyngrwyd byd-eang. Ni allwn warantu y bydd negeseuon e-bost yn cael eu cadw yn yr Ardal Economaidd Ewropeaidd (EEA).
+    your_rights:
+      header: Eich hawliau
+      content:
+        - "Gallwch ofyn:"
+        - - i weld y data personol sydd gennym amdanoch
+          - i'r data personol gael ei gywiro
+          - i'r data personol gael ei ddileu (bydd hyn yn dibynnu ar yr amgylchiadau)
+          - bod mynediad at y data personol wedi'i gyfyngu (er enghraifft, gallwch ofyn i'ch data gael ei storio'n hirach a pheidio â chael ei ddileu'n awtomatig)
+        - Anfonwch e-bost atom os ydych eisiau gweld yr wybodaeth hon.
+    sharing_your_data:
+      header: Rhannu eich data
+      content: Rydym yn caniatáu i Google ddefnyddio neu rannu ein data ar gyfer dadansoddi ein gwefan. Cewch wybod am hyn yn ein %{terms_and_conditions_href}.
+    receiving_notifications:
+      header: Derbyn hysbysiadau
+      content:
+        - Fel rhan o'ch ymateb, mae'n bosibl y byddwn yn gofyn a ydych yn dymuno derbyn hysbysiadau gyda diweddariadau. Byddwn yn gofyn am eich enw a’r manylion cyswllt sydd orau gennych.
+        - Gallwch danysgrifio o dderbyn negeseuon testun drwy ddilyn y camau a nodir yn y neges testun. %{contact_us_href} os ydych eisiau canslo diweddariadau e-bost.
+    how_to_complain:
+      header: Sut i gwyno
+      content:
+        - Os ydych eisiau cwyno am sut rydym wedi ymdrin â'ch data personol, anfonwch e-bost atom.
+        - Gallwch gwyno i %{ico_href} os nad ydych yn fodlon â'n hymateb neu'n credu nad ydym yn prosesu eich data personol yn unol â’r gyfraith.
   respondents_details:
     header: "Manylion yr Atebydd"
   claimants_details:

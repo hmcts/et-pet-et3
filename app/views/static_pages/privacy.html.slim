@@ -26,7 +26,7 @@
 
   #sharing-your-data
     h4.heading-small = t('components.privacy_notice.sharing_your_data.header')
-    p = t('components.privacy_notice.sharing_your_data.content', terms_and_conditions_href: link_to(t('components.privacy_notice.terms_and_conditions_href'))).html_safe
+    p = t('components.privacy_notice.sharing_your_data.content', terms_and_conditions_href: link_to(t('components.privacy_notice.terms_and_conditions_href'), terms_and_conditions_path)).html_safe
 
   #receiving-notifications
     h4.heading-small = t('components.privacy_notice.receiving_notifications.header')

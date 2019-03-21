@@ -386,7 +386,7 @@ en:
       sharing_storing_data:
         header: Sharing and storing data
         content: Our %{privacy_policy_href} explains where your data is stored, and who it is shared with. Our %{cookie_policy_href} explains how this service uses and stores cookies.
-        cookie_policy_href: cookie policy
+      cookie_policy_href: cookie policy
       laws_applied:
         header: Laws applying to this service
         content:

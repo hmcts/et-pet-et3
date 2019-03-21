@@ -366,12 +366,9 @@ cy:
       data_content: "Byddwn yn anfon copi o'r ffurflen hon at yr hawlydd a'r Gwasanaeth Cynghori, Cymodi a Chyflafareddu (ACAS). Byddwn yn rhoi'r wybodaeth yr ydych yn ei rhoi inni ar y ffurflen hon ar gyfrifiadur. Mae hyn yn ein helpu i fonitro cynnydd a chynhyrchu ystadegau. Trosglwyddir yr wybodaeth a ddarperir ar y ffurflen hon i'r Adran Busnes, Arloesedd a Sgiliau i gynorthwyo ymchwil i'r defnydd a wneir o dribiwnlysoedd cyflogaeth ac effeithiolrwydd y tribiwnlysoedd hynny."
       start_now: Dechrau nawr
     terms_and_conditions:
-      common:
-        privacy_policy_href: polisi preifatrwydd
-        cookie_policy_href: polisi cwcis
-        contact_href: Cysylltwch â ni
       header: Telerau ac amodau
       introduction: Trwy ddefnyddio’r gwasanaeth hwn rydych yn cytuno i’r telerau defnydd hyn. Mae hyn yn cynnwys y %{privacy_policy_href}.
+      privacy_policy_href: polisi preifatrwydd
       who_we_are:
         header: Pwy ydym ni
         content:
@@ -385,23 +382,22 @@ cy:
       sharing_storing_data:
         header: Rhannu a chadw data
         content: Mae ein %{privacy_policy_href} yn egluro lle mae’ch data yn cael ei storio a gyda phwy mae’n cael ei rannu. Mae ein %{cookie_policy_href} yn egluro sut mae’r gwasanaeth hwn yn defnyddio ac yn storio cwcis.
+      cookie_policy_href: polisi cwcis
       laws_applied:
         header: Deddfau sy’n berthnasol i’r gwasanaeth hwn
         content:
           - "Bydd y defnydd a wnewch o’r gwasanaeth hwn ac unrhyw anghydfod sy’n codi o’i ddefnyddio yn cael eu rheoli a’u dehongli yn unol â chyfreithiau Cymru a Lloegr, gan gynnwys, ond nid yn gyfyngedig i:"
-          - law_bullets:
-              - Deddf Camddefnyddio Cyfrifiaduron 1990
-              - Rheoliadau Cyffredinol Diogelu Data
-              - Deddf Galluedd Meddyliol 2005
+          - - Deddf Camddefnyddio Cyfrifiaduron 1990
+            - Rheoliadau Cyffredinol Diogelu Data
+            - Deddf Galluedd Meddyliol 2005
       how_to_use:
         header: Sut i ddefnyddio’r gwasanaeth hwn yn gyfrifol
         content:
           - Mae peryglon yn gysylltiedig â defnyddio cyfrifiadur sy'n cael ei rannu (e.e. mewn caffi rhyngrwyd), i ddefnyddio’r gwasanaeth hwn. Eich cyfrifoldeb chi yw bod yn ymwybodol o’r peryglon hyn ac osgoi defnyddio unrhyw gyfrifiadur lle mae posibilrwydd y gall eraill weld eich gwybodaeth bersonol. Chi sy’n gyfrifol os ydych chi’n dewis gadael cyfrifiadur heb ei ddiogelu tra byddwch yn defnyddio’r gwasanaeth hwn.
           - "Mae’n rhaid i chi gymryd gofal eich hunan i sicrhau nad yw’r ffordd yr ydych yn cael mynediad at y gwasanaeth hwn yn eich gadael yn agored i’r perygl o:"
-          - risk_bullets:
-              - feirysau
-              - cod cyfrifiadur maleisus
-              - neu ymyrraeth o fath arall a allai achosi difrod i’ch system gyfrifiadurol eich hunan
+          - - feirysau
+            - cod cyfrifiadur maleisus
+            - neu ymyrraeth o fath arall a allai achosi difrod i’ch system gyfrifiadurol eich hunan
           - Ni ddylech gamddefnyddio ein gwasanaeth drwy gyflwyno’n fwriadol firysau, cnafon (trojans), mwydod (worms), bomiau rhesymeg (logic bombs) neu unrhyw ddeunydd arall maleisus neu niweidiol i dechnoleg.
           - Ni ddylech geisio cael mynediad heb awdurdod at y gwasanaeth hwn, y system lle caiff ei storio nac unrhyw weinydd, cyfrifiadur neu gronfa ddata sy’n gysylltiedig ag o. Ni ddylech ymosod ar ein gwefan drwy ymosodiad gwrthod gwasanaeth neu ymosodiad gwrthod gwasanaeth a ddosbarthwyd.
       entering_sensitive_info:
@@ -409,54 +405,50 @@ cy:
         content:
           - Mae’r gwasanaeth ar-lein hwn yn cynnwys nifer o feysydd testun rhydd lle fe’ch gwahoddir i nodi gwybodaeth bersonol sensitif.
           - "Os ydych yn rhoi gwybodaeth am eich:"
-          - information_bullets:
-              - credoau crefyddol
-              - cyfeiriadedd rhywiol neu’ch bywyd rhywiol
-              - tarddiad hiliol neu’ch tarddiad ethnig
-              - barnau gwleidyddol
-              - credoau crefyddol neu’ch credoau athronyddol
-              - aelodaeth undeb lafur
-              - data genetig neu ddata biometrig
-              - gwybodaeth am eich iechyd
+          - - credoau crefyddol
+            - cyfeiriadedd rhywiol neu’ch bywyd rhywiol
+            - tarddiad hiliol neu’ch tarddiad ethnig
+            - barnau gwleidyddol
+            - credoau crefyddol neu’ch credoau athronyddol
+            - aelodaeth undeb lafur
+            - data genetig neu ddata biometrig
+            - gwybodaeth am eich iechyd
           - Rydych yn rhoi eich caniatâd inni ddefnyddio’r wybodaeth hon i ymdrin â’ch cais
           - I gael rhagor o wybodaeth am sut rydym yn casglu a storio eich data personol, gweler y %{privacy_policy_href}.
       disclaimer:
         header: Ymwrthodiad
         content:
           - "Er ein bod yn ymdrechu i gadw gwybodaeth yn gyfredol, nid ydym yn darparu unrhyw warantau, amodau neu sicrwydd y bydd:"
-          - effort_bullets:
-              - yn gyfredol
-              - yn ddiogel
-              - yn gywir
-              - yn gyflawn
-              - yn rhydd o fygiau neu feirysau
+          - - yn gyfredol
+            - yn ddiogel
+            - yn gywir
+            - yn gyflawn
+            - yn rhydd o fygiau neu feirysau
           - Nid ydym yn cyhoeddi cyngor. Dylech gael cyngor proffesiynol neu gyngor arbenigol cyn gwneud unrhyw beth yn seiliedig ar yr wybodaeth yn y gwasanaeth.
           - "Nid ydym yn atebol am unrhyw golled neu ddifrod a all ddeillio o ddefnyddio’r gwasanaeth hwn. Mae hyn yn cynnwys:"
-          - not_liable_bullets:
-              - unrhyw golledion uniongyrchol, anuniongyrchol neu ganlyniadol
-              - unrhyw golled neu ddifrod a achoswyd gan gamweddau sifil (‘tort’, yn cynnwys esgeuluster), torri amodau contract neu fel arall
-              - defnyddio’r gwasanaeth hwn, GOV.UK ac unrhyw wefannau sydd â dolenni i neu o’r gwefan
-              - methu â defnyddio’r gwasanaeth hwn, GOV.UK ac unrhyw wefannau sydd â dolenni i neu o’r gwefan
+          - - unrhyw golledion uniongyrchol, anuniongyrchol neu ganlyniadol
+            - unrhyw golled neu ddifrod a achoswyd gan gamweddau sifil (‘tort’, yn cynnwys esgeuluster), torri amodau contract neu fel arall
+            - defnyddio’r gwasanaeth hwn, GOV.UK ac unrhyw wefannau sydd â dolenni i neu o’r gwefan
+            - methu â defnyddio’r gwasanaeth hwn, GOV.UK ac unrhyw wefannau sydd â dolenni i neu o’r gwefan
           - Mae hyn yn berthnasol os oedd y golled neu’r difrod yn rhagweladwy, wedi codi wrth i’r broses arferol fynd rhagddo, neu os oeddech wedi ein cynghori y gallai ddigwydd.
           - "Mae hyn yn cynnwys, ond nid yw’n gyfyngedig i golli eich:"
-          - loss_bullets:
-              - incwm neu refeniw
-              - cyflog, budd-daliadau neu daliadau eraill
-              - busnes
-              - elw neu gontractau
-              - cyfleoedd
-              - cynilion a ragwelwyd
-              - data
-              - ewyllys da neu’ch enw da
-              - eiddo diriaethol
-              - eiddo anniriaethol, yn cynnwys colled, llygredd neu ddifrod o ddata neu unrhyw system gyfrifiadurol
-              - gwastraff o amser rheolwyr neu amser swyddfa
+          - - incwm neu refeniw
+            - cyflog, budd-daliadau neu daliadau eraill
+            - busnes
+            - elw neu gontractau
+            - cyfleoedd
+            - cynilion a ragwelwyd
+            - data
+            - ewyllys da neu’ch enw da
+            - eiddo diriaethol
+            - eiddo anniriaethol, yn cynnwys colled, llygredd neu ddifrod o ddata neu unrhyw system gyfrifiadurol
+            - gwastraff o amser rheolwyr neu amser swyddfa
           - "Efallai y byddwn yn parhau i fod yn atebol am:"
-          - liable_bullets:
-              - farwolaeth neu anaf personol sy’n codi o’n hesgeuluster
-              - camliwio twyllodrus
-              - unrhyw atebolrwydd arall na ellir ei eithrio neu ei gyfyngu dan y gyfraith berthnasol
+          - - farwolaeth neu anaf personol sy’n codi o’n hesgeuluster
+            - camliwio twyllodrus
+            - unrhyw atebolrwydd arall na ellir ei eithrio neu ei gyfyngu dan y gyfraith berthnasol
           - "%{contact_href} i gael rhagor o wybodaeth."
+      contact_href: Cysylltwch â ni
     privacy_notice:
       header: Polisi preifatrwydd
       introduction: Mae'r polisi preifatrwydd hwn yn egluro pam ein bod yn casglu eich data personol, yr hyn a wnawn ag ef, a'ch hawliau. Mae mwy o wybodaeth am ddefnyddio'r gwasanaeth hwn yn y %{terms_and_conditions_href}.

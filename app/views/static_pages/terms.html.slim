@@ -3,7 +3,7 @@
 .content-body.terms-conditions
 
   p = t('components.terms_and_conditions.introduction',
-          privacy_policy_href: link_to(t('components.terms_and_conditions.common.privacy_policy_href'), '#')).html_safe
+          privacy_policy_href: link_to(t('components.terms_and_conditions.privacy_policy_href'), privacy_notice_path)).html_safe
 
   #who-we-are
     h4.heading-small = t('components.terms_and_conditions.who_we_are.header')
@@ -18,8 +18,8 @@
   #sharing-storing-data
     h4.heading-small = t('components.terms_and_conditions.sharing_storing_data.header')
     p = t('components.terms_and_conditions.sharing_storing_data.content',
-            privacy_policy_href: link_to(t('components.terms_and_conditions.common.privacy_policy_href'), '#'),
-            cookie_policy_href: link_to(t('components.terms_and_conditions.common.cookie_policy_href'), '#')).html_safe
+            privacy_policy_href: link_to(t('components.terms_and_conditions.privacy_policy_href'), privacy_notice_path),
+            cookie_policy_href: link_to(t('components.terms_and_conditions.cookie_policy_href'), '#')).html_safe
 
   #laws-applying-service
     h4.heading-small = t('components.terms_and_conditions.laws_applied.header')
@@ -32,9 +32,9 @@
   #entering-personally-sensitive-information
     h4.heading-small = t('components.terms_and_conditions.entering_sensitive_info.header')
     = render 'static_pages/policy_elements', translated_content_array: t('components.terms_and_conditions.entering_sensitive_info.content',
-            privacy_policy_href: link_to(t('components.terms_and_conditions.common.privacy_policy_href'), '#'))
+            privacy_policy_href: link_to(t('components.terms_and_conditions.privacy_policy_href'), privacy_notice_path))
 
   #disclaimer
     h4.heading-small = t('components.terms_and_conditions.disclaimer.header')
     = render 'static_pages/policy_elements', translated_content_array: t('components.terms_and_conditions.disclaimer.content',
-            contact_href: link_to(t('components.terms_and_conditions.common.contact_href'), '#'))
+            contact_href: link_to(t('components.terms_and_conditions.contact_href'), '#'))

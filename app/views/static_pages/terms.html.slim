@@ -23,18 +23,18 @@
 
   #laws-applying-service
     h4.heading-small = t('components.terms_and_conditions.laws_applied.header')
-    = render 'static_pages/terms_elements', translated_content_array: t('components.terms_and_conditions.laws_applied.content')
+    = render 'static_pages/policy_elements', translated_content_array: t('components.terms_and_conditions.laws_applied.content')
 
   #how-to-use-responsibly
     h4.heading-small = t('components.terms_and_conditions.how_to_use.header')
-    = render 'static_pages/terms_elements', translated_content_array: t('components.terms_and_conditions.how_to_use.content')
+    = render 'static_pages/policy_elements', translated_content_array: t('components.terms_and_conditions.how_to_use.content')
 
   #entering-personally-sensitive-information
     h4.heading-small = t('components.terms_and_conditions.entering_sensitive_info.header')
-    = render 'static_pages/terms_elements', translated_content_array: t('components.terms_and_conditions.entering_sensitive_info.content',
+    = render 'static_pages/policy_elements', translated_content_array: t('components.terms_and_conditions.entering_sensitive_info.content',
             privacy_policy_href: link_to(t('components.terms_and_conditions.common.privacy_policy_href'), '#'))
 
   #disclaimer
     h4.heading-small = t('components.terms_and_conditions.disclaimer.header')
-    = render 'static_pages/terms_elements', translated_content_array: t('components.terms_and_conditions.disclaimer.content',
+    = render 'static_pages/policy_elements', translated_content_array: t('components.terms_and_conditions.disclaimer.content',
             contact_href: link_to(t('components.terms_and_conditions.common.contact_href'), '#'))

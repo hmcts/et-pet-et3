@@ -13,16 +13,16 @@
 
   #personal-data
     h4.heading-small = t('components.privacy_notice.personal_data.header')
-    = render 'static_pages/terms_elements', translated_content_array: t('components.privacy_notice.personal_data.content',
+    = render 'static_pages/policy_elements', translated_content_array: t('components.privacy_notice.personal_data.content',
             using_cookies_href: link_to(t('components.privacy_notice.using_cookies_href'), 'http://www.aboutcookies.org.uk/managing-cookies'))
 
   #what-we-do-data
     h4.heading-small = t('components.privacy_notice.what_we_do_data.header')
-    = render 'static_pages/terms_elements', translated_content_array: t('components.privacy_notice.what_we_do_data.content')
+    = render 'static_pages/policy_elements', translated_content_array: t('components.privacy_notice.what_we_do_data.content')
 
   #your-rights
     h4.heading-small = t('components.privacy_notice.your_rights.header')
-    = render 'static_pages/terms_elements', translated_content_array: t('components.privacy_notice.your_rights.content')
+    = render 'static_pages/policy_elements', translated_content_array: t('components.privacy_notice.your_rights.content')
 
   #sharing-your-data
     h4.heading-small = t('components.privacy_notice.sharing_your_data.header')

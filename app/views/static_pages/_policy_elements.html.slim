@@ -2,7 +2,7 @@
   - case element
     - when String
       p = element.html_safe
-    - when Hash
+    - when Array
       ul.list.list-bullet
-        - element.values.flatten.each do |bullet_point|
+        - element.each do |bullet_point|
           li = bullet_point.html_safe

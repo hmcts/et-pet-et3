@@ -461,6 +461,60 @@ en:
               - fraudulent misrepresentation
               - any other liability which cannot be excluded or limited under applicable law
           - "%{contact_href} for further information"
+    privacy_notice:
+      header: Privacy policy
+      introduction: This privacy policy explains why we collect your personal data, what we do with it, and your rights. More information about using this service is in the %{terms_and_conditions_href}.
+      terms_and_conditions_href: terms and conditions
+      who_manages:
+        header: Who manages this service
+        content:
+          - This service is managed by Her Majesty’s Courts and Tribunals Service (HMCTS) and we’re responsible for protecting the personal data you provide.
+          - HMCTS is an executive agency of the Ministry of Justice (MoJ). The MoJ is the data controller and their %{personal_info_charter_href} explains more about how they process personal data.
+          - When you use this service we (HMCTS) will ask you to provide some personal data.
+      personal_info_charter_href: personal information charter
+      personal_data:
+        header: What is the personal data that we collect
+        content:
+          - "The personal data we collect includes:"
+          - - your name, address and contact details
+            - your representative’s name, address and contact details - if you have one
+            - information that tells us if you open an email from us, or click on a link in an email
+            - "information about how you use this service, like your IP address and the web browser you use. We do this by %{using_cookies_href}."
+      using_cookies_href: using cookies
+      what_we_do_data:
+        header: What we do with your data
+        content:
+          - "We collect your personal data to:"
+          - - process your response
+            - meet legal requirements
+            - make improvements to this service
+          - Your personal data is processed by our staff in the UK and the data is stored in the UK.
+          - We’ll send a copy of your response to the claimant and Acas. We’ll share information provided on this form with the Department for Business, Energy and Industrial Strategy (BEIS) to help with their research on employment tribunals.
+          - We use Sendgrid to send emails using global internet infrastructure. We can’t guarantee that emails will be routed within the European Economic Area (EEA).
+      your_rights:
+        header: Your rights
+        content:
+          - "You can ask:"
+          - - to see the personal data that we hold on you
+            - to have the personal data corrected
+            - to have the personal data removed or deleted (this will depend on the circumstances)
+            - that access to the personal data is restricted (for example, you can ask to have your data stored for longer, and not automatically deleted)
+          - Email if you want to see any of this information.
+      sharing_your_data:
+        header: Sharing your data
+        content: We allow Google to use or share our website analytics data, find out about this in our %{terms_and_conditions_href}.
+      receiving_notifications:
+        header: Receiving notifications
+        content:
+          - As part of your response, we may ask if you want to receive notifications with updates. We’ll ask for your name and preferred contact details.
+          - You can unsubscribe from receiving text messages by following the steps mentioned in the text message. %{contact_us_href} if you want to cancel email updates.
+        contact_us_href: Contact us
+      how_to_complain:
+        header: How to complain
+        content:
+          - If you want to complain about how we’ve handled your personal data, send an email.
+          - You can complain to the %{ico_href} if you are unsatisfied with our response or believe we are not legally processing your personal data.
+        ico_href: Information Commissioner's Office
     respondents_details:
       header: "Respondent's Details"
     claimants_details:

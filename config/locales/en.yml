@@ -302,6 +302,7 @@ en:
       more_category_href: http://gov.uk/browse/working
     footer:
       terms: Terms and conditions
+      privacy: Privacy policy
     confirmation_of_supplied_details:
       header: Confirmation of Supplied Details
       receipt_header: Email Receipt
@@ -369,12 +370,9 @@ en:
       data_content: We will send a copy of this form to the claimant and the Advisory, Conciliation and Arbitration Service (ACAS). We will put the information you give us on this form onto a computer. This helps us to monitor progress and produce statistics. Information provided on this form is passed to the Department for Business, Innovation and Skills to assist research into the use and effectiveness of employment tribunals.
       start_now: Start now
     terms_and_conditions:
-      common:
-        privacy_policy_href: privacy policy
-        cookie_policy_href: cookie policy
-        contact_href: Contact us
       header: Terms and conditions
       introduction: By using this service you’re agreeing to these terms of use. This includes the %{privacy_policy_href}.
+      privacy_policy_href: privacy policy
       who_we_are:
         header: Who we are
         content:
@@ -388,23 +386,22 @@ en:
       sharing_storing_data:
         header: Sharing and storing data
         content: Our %{privacy_policy_href} explains where your data is stored, and who it is shared with. Our %{cookie_policy_href} explains how this service uses and stores cookies.
+      cookie_policy_href: cookie policy
       laws_applied:
         header: Laws applying to this service
         content:
           - "Your use of this service and any dispute arising from its use will be governed by and construed in accordance with the laws of England and Wales, including but not limited to the:"
-          - law_bullets:
-              - Computer Misuse Act 1990
-              - General Data Protection Regulations
-              - Mental Capacity Act 2005
+          - - Computer Misuse Act 1990
+            - General Data Protection Regulations
+            - Mental Capacity Act 2005
       how_to_use:
         header: How to use this service responsibly
         content:
           - There are risks in using a shared computer (for example, in a library) to access this service. It’s your responsibility to be aware of these risks and to avoid using any computer which may leave your personal information accessible to others. You’re responsible if you choose to leave a computer unprotected while using this service.
           - "You must take your own precautions to ensure that the way you access this service does not expose you to the risk of:"
-          - risk_bullets:
-              - viruses
-              - malicious computer code
-              - other forms of interference which may damage your computer system
+          - - viruses
+            - malicious computer code
+            - other forms of interference which may damage your computer system
           - You must not misuse this service by knowingly introducing viruses, trojans, worms, logic bombs or other material which is malicious or technologically harmful.
           - You must not attempt to gain unauthorised access to this service, the system on which it is stored, or any server, computer or database connected to it. You must not attack this site using a denial-of-service attack or a distributed denial-of-service attack.
       entering_sensitive_info:
@@ -412,54 +409,104 @@ en:
         content:
           - This online service contains several free-text fields in which you will need to enter information that is personally sensitive.
           - "If you enter information about your:"
-          - information_bullets:
-              - religious beliefs
-              - sexual orientation or sex life
-              - racial or ethnic origins
-              - political opinions
-              - religious or philosophical beliefs
-              - trade union membership
-              - generic data or biometric data
-              - health data
+          - - religious beliefs
+            - sexual orientation or sex life
+            - racial or ethnic origins
+            - political opinions
+            - religious or philosophical beliefs
+            - trade union membership
+            - generic data or biometric data
+            - health data
           - You give us your consent to processing this information for the purpose of dealing with your application
           - For more information about how we collect and store your personal data, see the %{privacy_policy_href}.
       disclaimer:
         header: Disclaimer
         content:
           - "While we make every effort to keep information up to date, we don’t provide any guarantees, conditions or warranties that it will be:"
-          - effort_bullets:
-              - current
-              - secure
-              - accurate
-              - complete
-              - free from bugs or viruses
+          - - current
+            - secure
+            - accurate
+            - complete
+            - free from bugs or viruses
           - We don’t publish advice. You should get professional or specialist advice before doing anything on the basis of the information in the service.
           - "We’re not liable for any loss or damage that may come from using this service. This includes:"
-          - not_liable_bullets:
-              - any direct, indirect or consequential losses
-              - any loss or damage caused by civil wrongs (‘tort’, including negligence), breach of contract or otherwise
-              - use of this service, GOV.UK and any websites that are linked to or from it
-              - the inability to use this service, GOV.UK and any websites that are linked to or from it
+          - - any direct, indirect or consequential losses
+            - any loss or damage caused by civil wrongs (‘tort’, including negligence), breach of contract or otherwise
+            - use of this service, GOV.UK and any websites that are linked to or from it
+            - the inability to use this service, GOV.UK and any websites that are linked to or from it
           - This applies if the loss or damage was foreseeable, arose in the normal course of things or you advised us that it might happen.
           - "This includes (but isn’t limited to) the loss of your:"
-          - loss_bullets:
-              - income or revenue
-              - salary, benefits or other payments
-              - business
-              - profits or contracts
-              - opportunity
-              - anticipated savings
-              - data
-              - goodwill or reputation
-              - tangible property
-              - intangible property, including loss, corruption or damage to data or any computer system
-              - wasted management or office time
+          - - income or revenue
+            - salary, benefits or other payments
+            - business
+            - profits or contracts
+            - opportunity
+            - anticipated savings
+            - data
+            - goodwill or reputation
+            - tangible property
+            - intangible property, including loss, corruption or damage to data or any computer system
+            - wasted management or office time
           - "We may still be liable for:"
-          - liable_bullets:
-              - death or personal injury arising from our negligence
-              - fraudulent misrepresentation
-              - any other liability which cannot be excluded or limited under applicable law
+          - - death or personal injury arising from our negligence
+            - fraudulent misrepresentation
+            - any other liability which cannot be excluded or limited under applicable law
           - "%{contact_href} for further information"
+      contact_href: Contact us
+    privacy_notice:
+      header: Privacy policy
+      introduction: This privacy policy explains why we collect your personal data, what we do with it, and your rights. More information about using this service is in the %{terms_and_conditions_href}.
+      terms_and_conditions_href: terms and conditions
+      who_manages:
+        header: Who manages this service
+        content:
+          - This service is managed by Her Majesty’s Courts and Tribunals Service (HMCTS) and we’re responsible for protecting the personal data you provide.
+          - HMCTS is an executive agency of the Ministry of Justice (MoJ). The MoJ is the data controller and their %{personal_info_charter_href} explains more about how they process personal data.
+          - When you use this service we (HMCTS) will ask you to provide some personal data.
+      personal_info_charter_href: personal information charter
+      personal_data:
+        header: What is the personal data that we collect
+        content:
+          - "The personal data we collect includes:"
+          - - your name, address and contact details
+            - your representative’s name, address and contact details - if you have one
+            - information that tells us if you open an email from us, or click on a link in an email
+            - "information about how you use this service, like your IP address and the web browser you use. We do this by %{using_cookies_href}."
+      using_cookies_href: using cookies
+      what_we_do_data:
+        header: What we do with your data
+        content:
+          - "We collect your personal data to:"
+          - - process your response
+            - meet legal requirements
+            - make improvements to this service
+          - Your personal data is processed by our staff in the UK and the data is stored in the UK.
+          - We’ll send a copy of your response to the claimant and Acas. We’ll share information provided on this form with the Department for Business, Energy and Industrial Strategy (BEIS) to help with their research on employment tribunals.
+          - We use Sendgrid to send emails using global internet infrastructure. We can’t guarantee that emails will be routed within the European Economic Area (EEA).
+      your_rights:
+        header: Your rights
+        content:
+          - "You can ask:"
+          - - to see the personal data that we hold on you
+            - to have the personal data corrected
+            - to have the personal data removed or deleted (this will depend on the circumstances)
+            - that access to the personal data is restricted (for example, you can ask to have your data stored for longer, and not automatically deleted)
+          - Email if you want to see any of this information.
+      sharing_your_data:
+        header: Sharing your data
+        content: We allow Google to use or share our website analytics data, find out about this in our %{terms_and_conditions_href}.
+      receiving_notifications:
+        header: Receiving notifications
+        content:
+          - As part of your response, we may ask if you want to receive notifications with updates. We’ll ask for your name and preferred contact details.
+          - You can unsubscribe from receiving text messages by following the steps mentioned in the text message. %{contact_us_href} if you want to cancel email updates.
+        contact_us_href: Contact us
+      how_to_complain:
+        header: How to complain
+        content:
+          - If you want to complain about how we’ve handled your personal data, send an email.
+          - You can complain to the %{ico_href} if you are unsatisfied with our response or believe we are not legally processing your personal data.
+        ico_href: Information Commissioner's Office
     respondents_details:
       header: "Respondent's Details"
     claimants_details:

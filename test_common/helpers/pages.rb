@@ -57,6 +57,10 @@ module ET3
         ET3::Test::TermsAndConditionsPage.new
       end
 
+      def privacy_notice_page
+        ET3::Test::PrivacyNoticePage.new
+      end
+
       # Define other pages here
     end
   end

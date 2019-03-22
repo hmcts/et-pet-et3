@@ -20,6 +20,7 @@ module ET3
       end
 
       element :terms, :link_named, 'components.footer.terms'
+      element :privacy_notice, :link_named, 'components.footer.privacy'
 
       def js_severe_errors
         return [] unless page.driver.try(:browser).try(:browser) == :chromedriver

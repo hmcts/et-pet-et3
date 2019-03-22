@@ -33,8 +33,8 @@ module ET3
         element :header, :element_with_text, 'terms_and_conditions.sharing_storing_data.header'
         def assert_content
           root_element.assert_selector('p', text: t('terms_and_conditions.sharing_storing_data.content',
-                                                    privacy_policy_href: t('terms_and_conditions.common.privacy_policy_href'),
-                                                    cookie_policy_href: t('terms_and_conditions.common.cookie_policy_href')
+                                                    privacy_policy_href: t('links.footer.privacy_policy_href'),
+                                                    cookie_policy_href: t('links.footer.cookie_policy_href')
           ))
         end
       end
@@ -47,8 +47,8 @@ module ET3
             case translated_element
             when String
               root_element.assert_selector('p', text: translated_element)
-            when Hash
-              translated_element.values.flatten.each do |translated_bullet_point|
+            when Array
+              translated_element.each do |translated_bullet_point|
                 root_element.assert_selector('li', text: translated_bullet_point)
               end
             end
@@ -64,8 +64,8 @@ module ET3
             case translated_element
             when String
               root_element.assert_selector('p', text: translated_element)
-            when Hash
-              translated_element.values.flatten.each do |translated_bullet_point|
+            when Array
+              translated_element.each do |translated_bullet_point|
                 root_element.assert_selector('li', text: translated_bullet_point)
               end
             end
@@ -78,13 +78,13 @@ module ET3
         element :header, :element_with_text, 'terms_and_conditions.entering_sensitive_info.header'
         def assert_content
           t('terms_and_conditions.entering_sensitive_info.content',
-            privacy_policy_href: t('terms_and_conditions.common.privacy_policy_href')
+            privacy_policy_href: t('links.footer.privacy_policy_href')
           ).each do |translated_element|
             case translated_element
             when String
               root_element.assert_selector('p', text: translated_element)
-            when Hash
-              translated_element.values.flatten.each do |translated_bullet_point|
+            when Array
+              translated_element.each do |translated_bullet_point|
                 root_element.assert_selector('li', text: translated_bullet_point)
               end
             end
@@ -97,13 +97,13 @@ module ET3
         element :header, :element_with_text, 'terms_and_conditions.disclaimer.header'
         def assert_content
           t('terms_and_conditions.disclaimer.content',
-            contact_href: t('terms_and_conditions.common.contact_href')
+            contact_us_href: t('links.footer.contact_us_href')
           ).each do |translated_element|
             case translated_element
             when String
               root_element.assert_selector('p', text: translated_element)
-            when Hash
-              translated_element.values.flatten.each do |translated_bullet_point|
+            when Array
+              translated_element.each do |translated_bullet_point|
                 root_element.assert_selector('li', text: translated_bullet_point)
               end
             end

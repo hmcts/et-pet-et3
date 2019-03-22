@@ -98,4 +98,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'sentry-raven', '~> 2.9'
 
-gem 'et_dropzone_uploader', path: 'vendor/gems/et_dropzone_uploader'
+gem 'et_dropzone_uploader', git: 'https://github.com/hmcts/et_dropzone_uploader.git'

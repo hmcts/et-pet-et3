@@ -66,7 +66,7 @@ jobs:
   #     displayName: 'script'
 
   - job: ExtractAssets
-    dependsOn: BuildApplication
+  #  dependsOn: TestApplication
     pool:
       name: hmcts-pet  # name of the pool to run this job in
     steps:

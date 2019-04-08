@@ -19,6 +19,8 @@ pr:
       - develop
       - feature/*
 
+variables:
+  application.name: 'et3'
 
 jobs:
   - job: BuildApplication

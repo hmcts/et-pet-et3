@@ -23,7 +23,7 @@ pr:
 jobs:
   - job: BuildApplication
     pool:
-      name: hmcts-pet  # name of the pool to run this job in
+      vmImage: 'Ubuntu-16.04'
     steps:
 
     - task: UseRubyVersion@0

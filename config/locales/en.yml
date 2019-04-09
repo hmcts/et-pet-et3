@@ -301,8 +301,9 @@ en:
       more_category_link: More from the Working, jobs and pensions category
       more_category_href: http://gov.uk/browse/working
     footer:
-      terms: Terms and conditions
       privacy: Privacy policy
+      terms: Terms and conditions
+      cookies: Cookies
     confirmation_of_supplied_details:
       header: Confirmation of Supplied Details
       receipt_header: Email Receipt

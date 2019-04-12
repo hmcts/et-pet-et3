@@ -125,6 +125,14 @@ jobs:
       displayName: 'Build an image'
       inputs:
         imageName: '$(application.name):$(getDockerTag.DOCKER_TAG)'
+
+    - task: Docker@1
+      displayName: 'Tag image'
+      inputs:
+        azureSubscriptionEndpoint: 'hmcts-pet'
+        azureContainerRegistry: employmenttribunal.azurecr.io
+        command: 'Tag image'
+        imageName: '$(application.name):$(getDockerTag.DOCKER_TAG)'
     
     - task: Docker@1
       displayName: 'Push an image'

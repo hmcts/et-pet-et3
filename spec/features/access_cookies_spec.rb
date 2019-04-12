@@ -17,6 +17,7 @@ RSpec.feature "Access Cookies", js: true do
     expect(cookies_page).to have_header
 
     expect(cookies_page).to have_introduction
+    cookies_page.introduction.assert_content
 
     expect(cookies_page).to have_cookies_used_subheader
 
@@ -45,6 +46,7 @@ RSpec.feature "Access Cookies", js: true do
     expect(cookies_page).to have_header
 
     expect(cookies_page).to have_introduction
+    cookies_page.introduction.assert_content
 
     expect(cookies_page).to have_cookies_used_subheader
 
@@ -62,7 +64,6 @@ RSpec.feature "Access Cookies", js: true do
 
     expect(cookies_page.more_secure).to have_header
     cookies_page.more_secure.assert_content
-
   end
 
   scenario "from claimant's details page" do
@@ -74,6 +75,7 @@ RSpec.feature "Access Cookies", js: true do
     expect(cookies_page).to have_header
 
     expect(cookies_page).to have_introduction
+    cookies_page.introduction.assert_content
 
     expect(cookies_page).to have_cookies_used_subheader
 
@@ -91,7 +93,6 @@ RSpec.feature "Access Cookies", js: true do
 
     expect(cookies_page.more_secure).to have_header
     cookies_page.more_secure.assert_content
-
   end
 
   scenario "from earnings and benefits page" do
@@ -103,6 +104,7 @@ RSpec.feature "Access Cookies", js: true do
     expect(cookies_page).to have_header
 
     expect(cookies_page).to have_introduction
+    cookies_page.introduction.assert_content
 
     expect(cookies_page).to have_cookies_used_subheader
 
@@ -120,7 +122,6 @@ RSpec.feature "Access Cookies", js: true do
 
     expect(cookies_page.more_secure).to have_header
     cookies_page.more_secure.assert_content
-
   end
 
   scenario "from response page" do
@@ -128,11 +129,11 @@ RSpec.feature "Access Cookies", js: true do
 
     response_page.cookies.click
 
-
     expect(cookies_page).to be_displayed
     expect(cookies_page).to have_header
 
     expect(cookies_page).to have_introduction
+    cookies_page.introduction.assert_content
 
     expect(cookies_page).to have_cookies_used_subheader
 
@@ -150,7 +151,6 @@ RSpec.feature "Access Cookies", js: true do
 
     expect(cookies_page.more_secure).to have_header
     cookies_page.more_secure.assert_content
-
   end
 
   scenario "from your representative page" do
@@ -158,11 +158,11 @@ RSpec.feature "Access Cookies", js: true do
 
     your_representative_page.cookies.click
 
-
     expect(cookies_page).to be_displayed
     expect(cookies_page).to have_header
 
     expect(cookies_page).to have_introduction
+    cookies_page.introduction.assert_content
 
     expect(cookies_page).to have_cookies_used_subheader
 
@@ -180,7 +180,6 @@ RSpec.feature "Access Cookies", js: true do
 
     expect(cookies_page.more_secure).to have_header
     cookies_page.more_secure.assert_content
-
   end
 
   scenario "from your representative's details page" do
@@ -188,11 +187,11 @@ RSpec.feature "Access Cookies", js: true do
 
     your_representatives_details_page.cookies.click
 
-
     expect(cookies_page).to be_displayed
     expect(cookies_page).to have_header
 
     expect(cookies_page).to have_introduction
+    cookies_page.introduction.assert_content
 
     expect(cookies_page).to have_cookies_used_subheader
 
@@ -210,7 +209,6 @@ RSpec.feature "Access Cookies", js: true do
 
     expect(cookies_page.more_secure).to have_header
     cookies_page.more_secure.assert_content
-
   end
 
   scenario "from disability page" do
@@ -218,11 +216,11 @@ RSpec.feature "Access Cookies", js: true do
 
     disability_page.cookies.click
 
-
     expect(cookies_page).to be_displayed
     expect(cookies_page).to have_header
 
     expect(cookies_page).to have_introduction
+    cookies_page.introduction.assert_content
 
     expect(cookies_page).to have_cookies_used_subheader
 
@@ -240,7 +238,6 @@ RSpec.feature "Access Cookies", js: true do
 
     expect(cookies_page.more_secure).to have_header
     cookies_page.more_secure.assert_content
-
   end
 
   scenario "from employer contract claim page" do
@@ -248,11 +245,11 @@ RSpec.feature "Access Cookies", js: true do
 
     employers_contract_claim_page.cookies.click
 
-
     expect(cookies_page).to be_displayed
     expect(cookies_page).to have_header
 
     expect(cookies_page).to have_introduction
+    cookies_page.introduction.assert_content
 
     expect(cookies_page).to have_cookies_used_subheader
 
@@ -270,7 +267,6 @@ RSpec.feature "Access Cookies", js: true do
 
     expect(cookies_page.more_secure).to have_header
     cookies_page.more_secure.assert_content
-
   end
 
   scenario "from additional information page" do
@@ -278,11 +274,11 @@ RSpec.feature "Access Cookies", js: true do
 
     additional_information_page.cookies.click
 
-
     expect(cookies_page).to be_displayed
     expect(cookies_page).to have_header
 
     expect(cookies_page).to have_introduction
+    cookies_page.introduction.assert_content
 
     expect(cookies_page).to have_cookies_used_subheader
 
@@ -300,7 +296,6 @@ RSpec.feature "Access Cookies", js: true do
 
     expect(cookies_page.more_secure).to have_header
     cookies_page.more_secure.assert_content
-
   end
 
   scenario "from confirmation of supplied details page" do
@@ -308,11 +303,11 @@ RSpec.feature "Access Cookies", js: true do
 
     confirmation_of_supplied_details_page.cookies.click
 
-
     expect(cookies_page).to be_displayed
     expect(cookies_page).to have_header
 
     expect(cookies_page).to have_introduction
+    cookies_page.introduction.assert_content
 
     expect(cookies_page).to have_cookies_used_subheader
 
@@ -330,7 +325,6 @@ RSpec.feature "Access Cookies", js: true do
 
     expect(cookies_page.more_secure).to have_header
     cookies_page.more_secure.assert_content
-
   end
 
   scenario "from form submission page" do
@@ -348,11 +342,11 @@ RSpec.feature "Access Cookies", js: true do
 
     form_submission_page.cookies.click
 
-
     expect(cookies_page).to be_displayed
     expect(cookies_page).to have_header
 
     expect(cookies_page).to have_introduction
+    cookies_page.introduction.assert_content
 
     expect(cookies_page).to have_cookies_used_subheader
 
@@ -370,7 +364,6 @@ RSpec.feature "Access Cookies", js: true do
 
     expect(cookies_page.more_secure).to have_header
     cookies_page.more_secure.assert_content
-
   end
 
 end

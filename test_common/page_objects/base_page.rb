@@ -19,8 +19,9 @@ module ET3
         element :more_category_link, :link_named, 'components.sidebar.more_category_link'
       end
 
-      element :terms, :link_named, 'components.footer.terms'
+      element :cookies, :link_named, 'components.footer.cookies'
       element :privacy_notice, :link_named, 'components.footer.privacy'
+      element :terms, :link_named, 'components.footer.terms'
 
       def js_severe_errors
         return [] unless page.driver.try(:browser).try(:browser) == :chromedriver

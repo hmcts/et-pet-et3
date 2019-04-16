@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     end
     get "/terms" => 'static_pages#terms', as: 'terms_and_conditions'
     get "/privacy" => 'static_pages#privacy', as: 'privacy_notice'
+    get "/cookies" => 'static_pages#cookies'
     root 'static_pages#index'
     delete "/respond/confirmation_of_supplied_details/remove_rtf" => 'confirmation_of_supplied_details#destroy_rtf', as: :remove_rtf
     mount EtDropzoneUploader::Engine, at: '/api/v2/build_blob'

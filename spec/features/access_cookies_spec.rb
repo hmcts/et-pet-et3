@@ -8,323 +8,35 @@ RSpec.feature "Access Cookies", js: true do
     stub_build_blob_to_azure
   end
 
-  scenario "from start page" do
-    start_page.load(locale: current_locale_parameter)
+  shared_examples "on a per-page basis" do
+    scenario "will show page content" do
+      current_page.load(locale: current_locale_parameter)
 
-    start_page.cookies.click
+      current_page.cookies.click
 
-    expect(cookies_page).to be_displayed
-    expect(cookies_page).to have_header
+      expect(cookies_page).to be_displayed
+      expect(cookies_page).to have_header
 
-    expect(cookies_page).to have_introduction
-    cookies_page.introduction.assert_content
+      expect(cookies_page).to have_introduction
+      cookies_page.introduction.assert_content
 
-    expect(cookies_page).to have_cookies_used_subheader
+      expect(cookies_page).to have_cookies_used_subheader
 
-    expect(cookies_page.website_usage).to have_header
-    cookies_page.website_usage.assert_content
-    cookies_page.website_usage.assert_table
+      expect(cookies_page.website_usage).to have_header
+      cookies_page.website_usage.assert_content
+      cookies_page.website_usage.assert_table
 
-    expect(cookies_page.introductory_message).to have_header
-    cookies_page.introductory_message.assert_content
-    cookies_page.introductory_message.assert_table
+      expect(cookies_page.introductory_message).to have_header
+      cookies_page.introductory_message.assert_content
+      cookies_page.introductory_message.assert_table
 
-    expect(cookies_page.store_answers).to have_header
-    cookies_page.store_answers.assert_content
-    cookies_page.store_answers.assert_table
+      expect(cookies_page.store_answers).to have_header
+      cookies_page.store_answers.assert_content
+      cookies_page.store_answers.assert_table
 
-    expect(cookies_page.more_secure).to have_header
-    cookies_page.more_secure.assert_content
-  end
-
-  scenario "from respondent's details page" do
-    respondents_details_page.load(locale: current_locale_parameter)
-
-    respondents_details_page.cookies.click
-
-    expect(cookies_page).to be_displayed
-    expect(cookies_page).to have_header
-
-    expect(cookies_page).to have_introduction
-    cookies_page.introduction.assert_content
-
-    expect(cookies_page).to have_cookies_used_subheader
-
-    expect(cookies_page.website_usage).to have_header
-    cookies_page.website_usage.assert_content
-    cookies_page.website_usage.assert_table
-
-    expect(cookies_page.introductory_message).to have_header
-    cookies_page.introductory_message.assert_content
-    cookies_page.introductory_message.assert_table
-
-    expect(cookies_page.store_answers).to have_header
-    cookies_page.store_answers.assert_content
-    cookies_page.store_answers.assert_table
-
-    expect(cookies_page.more_secure).to have_header
-    cookies_page.more_secure.assert_content
-  end
-
-  scenario "from claimant's details page" do
-    claimants_details_page.load(locale: current_locale_parameter)
-
-    claimants_details_page.cookies.click
-
-    expect(cookies_page).to be_displayed
-    expect(cookies_page).to have_header
-
-    expect(cookies_page).to have_introduction
-    cookies_page.introduction.assert_content
-
-    expect(cookies_page).to have_cookies_used_subheader
-
-    expect(cookies_page.website_usage).to have_header
-    cookies_page.website_usage.assert_content
-    cookies_page.website_usage.assert_table
-
-    expect(cookies_page.introductory_message).to have_header
-    cookies_page.introductory_message.assert_content
-    cookies_page.introductory_message.assert_table
-
-    expect(cookies_page.store_answers).to have_header
-    cookies_page.store_answers.assert_content
-    cookies_page.store_answers.assert_table
-
-    expect(cookies_page.more_secure).to have_header
-    cookies_page.more_secure.assert_content
-  end
-
-  scenario "from earnings and benefits page" do
-    earnings_and_benefits_page.load(locale: current_locale_parameter)
-
-    earnings_and_benefits_page.cookies.click
-
-    expect(cookies_page).to be_displayed
-    expect(cookies_page).to have_header
-
-    expect(cookies_page).to have_introduction
-    cookies_page.introduction.assert_content
-
-    expect(cookies_page).to have_cookies_used_subheader
-
-    expect(cookies_page.website_usage).to have_header
-    cookies_page.website_usage.assert_content
-    cookies_page.website_usage.assert_table
-
-    expect(cookies_page.introductory_message).to have_header
-    cookies_page.introductory_message.assert_content
-    cookies_page.introductory_message.assert_table
-
-    expect(cookies_page.store_answers).to have_header
-    cookies_page.store_answers.assert_content
-    cookies_page.store_answers.assert_table
-
-    expect(cookies_page.more_secure).to have_header
-    cookies_page.more_secure.assert_content
-  end
-
-  scenario "from response page" do
-    response_page.load(locale: current_locale_parameter)
-
-    response_page.cookies.click
-
-    expect(cookies_page).to be_displayed
-    expect(cookies_page).to have_header
-
-    expect(cookies_page).to have_introduction
-    cookies_page.introduction.assert_content
-
-    expect(cookies_page).to have_cookies_used_subheader
-
-    expect(cookies_page.website_usage).to have_header
-    cookies_page.website_usage.assert_content
-    cookies_page.website_usage.assert_table
-
-    expect(cookies_page.introductory_message).to have_header
-    cookies_page.introductory_message.assert_content
-    cookies_page.introductory_message.assert_table
-
-    expect(cookies_page.store_answers).to have_header
-    cookies_page.store_answers.assert_content
-    cookies_page.store_answers.assert_table
-
-    expect(cookies_page.more_secure).to have_header
-    cookies_page.more_secure.assert_content
-  end
-
-  scenario "from your representative page" do
-    your_representative_page.load(locale: current_locale_parameter)
-
-    your_representative_page.cookies.click
-
-    expect(cookies_page).to be_displayed
-    expect(cookies_page).to have_header
-
-    expect(cookies_page).to have_introduction
-    cookies_page.introduction.assert_content
-
-    expect(cookies_page).to have_cookies_used_subheader
-
-    expect(cookies_page.website_usage).to have_header
-    cookies_page.website_usage.assert_content
-    cookies_page.website_usage.assert_table
-
-    expect(cookies_page.introductory_message).to have_header
-    cookies_page.introductory_message.assert_content
-    cookies_page.introductory_message.assert_table
-
-    expect(cookies_page.store_answers).to have_header
-    cookies_page.store_answers.assert_content
-    cookies_page.store_answers.assert_table
-
-    expect(cookies_page.more_secure).to have_header
-    cookies_page.more_secure.assert_content
-  end
-
-  scenario "from your representative's details page" do
-    your_representatives_details_page.load(locale: current_locale_parameter)
-
-    your_representatives_details_page.cookies.click
-
-    expect(cookies_page).to be_displayed
-    expect(cookies_page).to have_header
-
-    expect(cookies_page).to have_introduction
-    cookies_page.introduction.assert_content
-
-    expect(cookies_page).to have_cookies_used_subheader
-
-    expect(cookies_page.website_usage).to have_header
-    cookies_page.website_usage.assert_content
-    cookies_page.website_usage.assert_table
-
-    expect(cookies_page.introductory_message).to have_header
-    cookies_page.introductory_message.assert_content
-    cookies_page.introductory_message.assert_table
-
-    expect(cookies_page.store_answers).to have_header
-    cookies_page.store_answers.assert_content
-    cookies_page.store_answers.assert_table
-
-    expect(cookies_page.more_secure).to have_header
-    cookies_page.more_secure.assert_content
-  end
-
-  scenario "from disability page" do
-    disability_page.load(locale: current_locale_parameter)
-
-    disability_page.cookies.click
-
-    expect(cookies_page).to be_displayed
-    expect(cookies_page).to have_header
-
-    expect(cookies_page).to have_introduction
-    cookies_page.introduction.assert_content
-
-    expect(cookies_page).to have_cookies_used_subheader
-
-    expect(cookies_page.website_usage).to have_header
-    cookies_page.website_usage.assert_content
-    cookies_page.website_usage.assert_table
-
-    expect(cookies_page.introductory_message).to have_header
-    cookies_page.introductory_message.assert_content
-    cookies_page.introductory_message.assert_table
-
-    expect(cookies_page.store_answers).to have_header
-    cookies_page.store_answers.assert_content
-    cookies_page.store_answers.assert_table
-
-    expect(cookies_page.more_secure).to have_header
-    cookies_page.more_secure.assert_content
-  end
-
-  scenario "from employer contract claim page" do
-    employers_contract_claim_page.load(locale: current_locale_parameter)
-
-    employers_contract_claim_page.cookies.click
-
-    expect(cookies_page).to be_displayed
-    expect(cookies_page).to have_header
-
-    expect(cookies_page).to have_introduction
-    cookies_page.introduction.assert_content
-
-    expect(cookies_page).to have_cookies_used_subheader
-
-    expect(cookies_page.website_usage).to have_header
-    cookies_page.website_usage.assert_content
-    cookies_page.website_usage.assert_table
-
-    expect(cookies_page.introductory_message).to have_header
-    cookies_page.introductory_message.assert_content
-    cookies_page.introductory_message.assert_table
-
-    expect(cookies_page.store_answers).to have_header
-    cookies_page.store_answers.assert_content
-    cookies_page.store_answers.assert_table
-
-    expect(cookies_page.more_secure).to have_header
-    cookies_page.more_secure.assert_content
-  end
-
-  scenario "from additional information page" do
-    additional_information_page.load(locale: current_locale_parameter)
-
-    additional_information_page.cookies.click
-
-    expect(cookies_page).to be_displayed
-    expect(cookies_page).to have_header
-
-    expect(cookies_page).to have_introduction
-    cookies_page.introduction.assert_content
-
-    expect(cookies_page).to have_cookies_used_subheader
-
-    expect(cookies_page.website_usage).to have_header
-    cookies_page.website_usage.assert_content
-    cookies_page.website_usage.assert_table
-
-    expect(cookies_page.introductory_message).to have_header
-    cookies_page.introductory_message.assert_content
-    cookies_page.introductory_message.assert_table
-
-    expect(cookies_page.store_answers).to have_header
-    cookies_page.store_answers.assert_content
-    cookies_page.store_answers.assert_table
-
-    expect(cookies_page.more_secure).to have_header
-    cookies_page.more_secure.assert_content
-  end
-
-  scenario "from confirmation of supplied details page" do
-    confirmation_of_supplied_details_page.load(locale: current_locale_parameter)
-
-    confirmation_of_supplied_details_page.cookies.click
-
-    expect(cookies_page).to be_displayed
-    expect(cookies_page).to have_header
-
-    expect(cookies_page).to have_introduction
-    cookies_page.introduction.assert_content
-
-    expect(cookies_page).to have_cookies_used_subheader
-
-    expect(cookies_page.website_usage).to have_header
-    cookies_page.website_usage.assert_content
-    cookies_page.website_usage.assert_table
-
-    expect(cookies_page.introductory_message).to have_header
-    cookies_page.introductory_message.assert_content
-    cookies_page.introductory_message.assert_table
-
-    expect(cookies_page.store_answers).to have_header
-    cookies_page.store_answers.assert_content
-    cookies_page.store_answers.assert_table
-
-    expect(cookies_page.more_secure).to have_header
-    cookies_page.more_secure.assert_content
+      expect(cookies_page.more_secure).to have_header
+      cookies_page.more_secure.assert_content
+    end
   end
 
   scenario "from form submission page" do
@@ -364,6 +76,72 @@ RSpec.feature "Access Cookies", js: true do
 
     expect(cookies_page.more_secure).to have_header
     cookies_page.more_secure.assert_content
+  end
+
+  context "when originally on the start page" do
+    let(:current_page) { ET3::Test::StartPage.new }
+
+    include_examples "on a per-page basis"
+  end
+
+  context "when originally on the respondent's details page" do
+    let(:current_page) { ET3::Test::RespondentsDetailsPage.new }
+
+    include_examples "on a per-page basis"
+  end
+
+  context "when originally on the claimant's details page" do
+    let(:current_page) { ET3::Test::ClaimantsDetailsPage.new }
+
+    include_examples "on a per-page basis"
+  end
+
+  context "when originally on the earnings and benefits page" do
+    let(:current_page) { ET3::Test::EarningsAndBenefitsPage.new }
+
+    include_examples "on a per-page basis"
+  end
+
+  context "when originally on the response page" do
+    let(:current_page) { ET3::Test::ResponsePage.new }
+
+    include_examples "on a per-page basis"
+  end
+
+  context "when originally on the your representative page" do
+    let(:current_page) { ET3::Test::ResponsePage.new }
+
+    include_examples "on a per-page basis"
+  end
+
+  context "when originally on the your representative's details page" do
+    let(:current_page) { ET3::Test::ResponsePage.new }
+
+    include_examples "on a per-page basis"
+  end
+
+  context "when originally on the disability page" do
+    let(:current_page) { ET3::Test::DisabilityPage.new }
+
+    include_examples "on a per-page basis"
+  end
+
+  context "when originally on the employer contract claim page" do
+    let(:current_page) { ET3::Test::EmployersContractClaimPage.new }
+
+    include_examples "on a per-page basis"
+  end
+
+  context "when originally on the additional information page" do
+    let(:current_page) { ET3::Test::AdditionalInformationPage.new }
+
+    include_examples "on a per-page basis"
+  end
+
+  context "when originally on the confirmation of supplied details page" do
+    let(:current_page) { ET3::Test::ConfirmationOfSuppliedDetailsPage.new }
+
+    include_examples "on a per-page basis"
   end
 
 end

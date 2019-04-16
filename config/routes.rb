@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     mount EtDropzoneUploader::Engine, at: '/api/v2/build_blob'
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   end
+  put "/" => 'static_pages#start_new_session', as: 'start_new_session'
   get "/session_expired" => 'static_pages#expired'
   get "/ping" => "status#ping"
   get "/healthcheck" => "status#healthcheck"

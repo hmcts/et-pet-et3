@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "View Footer", js: true do
+RSpec.feature "Access Cookies", js: true do
   include ET3::Test::I18n
 
   before do
@@ -9,16 +9,37 @@ RSpec.feature "View Footer", js: true do
   end
 
   shared_examples "on a per-page basis" do
-    scenario "will show footer links" do
+    scenario "will show page content" do
       current_page.load(locale: current_locale_parameter)
 
-      expect(current_page).to have_link(t('components.footer.cookies'), href: cookies_path(locale: current_locale_parameter))
-      expect(current_page).to have_link(t('components.footer.privacy'), href: privacy_notice_path(locale: current_locale_parameter))
-      expect(current_page).to have_link(t('components.footer.terms'), href: terms_and_conditions_path(locale: current_locale_parameter))
+      current_page.cookies.click
+
+      expect(cookies_page).to be_displayed
+      expect(cookies_page).to have_header
+
+      expect(cookies_page).to have_introduction
+      cookies_page.introduction.assert_content
+
+      expect(cookies_page).to have_cookies_used_subheader
+
+      expect(cookies_page.website_usage).to have_header
+      cookies_page.website_usage.assert_content
+      cookies_page.website_usage.assert_table
+
+      expect(cookies_page.introductory_message).to have_header
+      cookies_page.introductory_message.assert_content
+      cookies_page.introductory_message.assert_table
+
+      expect(cookies_page.store_answers).to have_header
+      cookies_page.store_answers.assert_content
+      cookies_page.store_answers.assert_table
+
+      expect(cookies_page.more_secure).to have_header
+      cookies_page.more_secure.assert_content
     end
   end
 
-  scenario "on form submission page" do
+  scenario "from form submission page" do
     given_valid_data
     start_a_new_et3_response
     answer_respondents_details
@@ -31,11 +52,31 @@ RSpec.feature "View Footer", js: true do
     answer_additional_information
     answer_confirmation_of_supplied_details
 
-    expect(form_submission_page).to have_link(t('components.footer.cookies'), href: cookies_path(locale: current_locale_parameter))
-    expect(form_submission_page).to have_link(t('components.footer.privacy'), href: privacy_notice_path(locale: current_locale_parameter))
-    expect(form_submission_page).to have_link(t('components.footer.terms'), href: terms_and_conditions_path(locale: current_locale_parameter))
-  end
+    form_submission_page.cookies.click
 
+    expect(cookies_page).to be_displayed
+    expect(cookies_page).to have_header
+
+    expect(cookies_page).to have_introduction
+    cookies_page.introduction.assert_content
+
+    expect(cookies_page).to have_cookies_used_subheader
+
+    expect(cookies_page.website_usage).to have_header
+    cookies_page.website_usage.assert_content
+    cookies_page.website_usage.assert_table
+
+    expect(cookies_page.introductory_message).to have_header
+    cookies_page.introductory_message.assert_content
+    cookies_page.introductory_message.assert_table
+
+    expect(cookies_page.store_answers).to have_header
+    cookies_page.store_answers.assert_content
+    cookies_page.store_answers.assert_table
+
+    expect(cookies_page.more_secure).to have_header
+    cookies_page.more_secure.assert_content
+  end
 
   context "when originally on the start page" do
     let(:current_page) { ET3::Test::StartPage.new }

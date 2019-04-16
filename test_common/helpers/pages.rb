@@ -53,12 +53,16 @@ module ET3
         ET3::Test::FormSubmissionPage.new
       end
 
-      def terms_and_conditions_page
-        ET3::Test::TermsAndConditionsPage.new
+      def cookies_page
+        ET3::Test::CookiesPage.new
       end
 
       def privacy_notice_page
         ET3::Test::PrivacyNoticePage.new
+      end
+
+      def terms_and_conditions_page
+        ET3::Test::TermsAndConditionsPage.new
       end
 
       # Define other pages here

@@ -3,6 +3,8 @@
 # Add steps that install rails, analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/ruby
 
+name: $(SourceBranchName)-$(Build.SourceVersion)$(rev:.r)
+
 trigger:
   batch: true
   branches:

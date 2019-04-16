@@ -23,6 +23,10 @@ class ApplicationController < ActionController::Base
     { locale: I18n.locale == I18n.default_locale ? nil : I18n.locale }
   end
 
+  def clear_session_data
+    current_store.hash_store = {}
+  end
+
   private
 
   def save_current_store

@@ -194,7 +194,7 @@ cy:
       additional_information:
         upload_additional_information: "Llwythwch ffeil i ddarparu unrhyw wybodaeth ychwanegol bwysig am eich ymateb nad ydych wedi’i chynnwys hyd yma (dewisol) "
       confirmation_of_supplied_details:
-        email_receipt: "Cyfeiriad E-bost (dewisol) "
+        email_receipt: "Cyfeiriad e-bost (dewisol) "
     hint:
       respondents_detail:
         contact: "Er enghraifft, John Smith "
@@ -226,8 +226,6 @@ cy:
           NODER - Dim ond gwybodaeth gyfyngedig y gallwch roi yma (hyd at 4500 o nodau). Os hoffech gynnwys rhagor o wybodaeth, defnyddiwch y cyfleuster sydd ar ddiwedd y ffurflen hon i lwytho ffeil Rich Text Format (.rtf). Os byddwch yn ysgrifenu mwy na 50 llinell, ni fyddwch yn cael holl fanylion eich ymateb yn y PDF a fydd yn cael ei ddychwelyd atoch ar ôl ichi gyflwyno'r ffurflen.
       additional_information:
         upload_additional_information: "Math o ffeil: .rtf "
-      confirmation_of_supplied_details:
-        email_receipt: "Er enghraifft, name@address.com"
   errors:
     header: "Adolygwch y canlynol "
     description: Bydd clicio ar wall yn mynd â chi'n syth at y cwestiwn. Cywirwch y gwallau hyn cyn parhau.
@@ -297,9 +295,9 @@ cy:
       more_category_link: "Mwy o'r categori gweithio, swyddi a phensiynau "
       more_category_href: "http://gov.uk/browse/working"
     confirmation_of_supplied_details:
-      header: "Cadarnhau'r manylion a roddwyd "
+      header: Gwirio a chyflwyno eich ymateb
       receipt_header: E-bost yn cadarnhau bod y manylion wedi'u hanfon
-      receipt_description: "Nodwch eich cyfeiriad e-bost fel y gallwn anfon cadarnhad atoch"
+      receipt_description: Gallwn anfon copi o’ch derbynneb atoch drwy e-bost.
       submit_guidance: 'Bydd clicio ar "Cyflwyno Ffurflen " ar waelod y dudalen yn anfon y manylion a gadarnhawyd isod i''w prosesu.'
       table_header: "Cadarnhau'r manylion a roddwyd "
       question_header: "Cwestiwn "
@@ -325,7 +323,7 @@ cy:
         caption: "Hawliad Contract y Cyflogwr"
       confirmation_of_additional_information_answers:
         caption: "Gwybodaeth Ychwanegol "
-      submit: "Cyflwyno Ffurflen"
+      submit: Cyflwyno eich ymateb
     form_submission:
       page_title: "Cais wedi'i gwblhau "
       header: "Ymateb wedi'i gwblhau "
@@ -448,5 +446,5 @@ cy:
     make_employer_contract_claim: ydych chi eisiau gwneud Hawliad Contract y Cyflogwr?
     claim_information: rhowch gefndir a manylion eich hawliad isod. Dylech gynnwys pob dyddiad pwysig
     upload_additional_information: llwythwch ffeil i ddarparu unrhyw wybodaeth ychwanegol bwysig am eich ymateb nad ydych wedi’i chynnwys hyd yma
-    email_receipt: cyfeiriad E-bost
+    email_receipt: cyfeiriad e-bost
 

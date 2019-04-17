@@ -194,7 +194,7 @@ en:
       additional_information:
         upload_additional_information: Please upload a file to provide any important additional information about your response which you have not been able to include so far (optional)
       confirmation_of_supplied_details:
-        email_receipt: Email Address (optional)
+        email_receipt: Email address (optional)
     hint:
       respondents_detail:
         contact: For example, John Smith
@@ -233,8 +233,6 @@ en:
           If you exceed 50 lines you will not receive full details of your claim in the PDF returned to you on submission of the form.
       additional_information:
         upload_additional_information: "Supported file type: .rtf"
-      confirmation_of_supplied_details:
-        email_receipt: For example, name@address.com
   errors:
     header: Please review the following
     description: Clicking on an error will navigate you directly to the question. Please correct these errors before continuing.
@@ -301,10 +299,9 @@ en:
       more_category_link: More from the Working, jobs and pensions category
       more_category_href: http://gov.uk/browse/working
     confirmation_of_supplied_details:
-      header: Confirmation of Supplied Details
-      receipt_header: Email Receipt
-      receipt_description: Please enter your email address so that we can provide you with a receipt of your transaction.
-      submit_guidance: 'Pressing "Submit Form" at the foot of the page will send the details confirmed below for processing.'
+      header: Check and submit your response
+      receipt_header: Email receipt
+      receipt_description: We can email you a copy of your receipt.
       table_header: Confirmation of Supplied Details
       question_header: Question
       answer_header: Answer
@@ -329,7 +326,7 @@ en:
         caption: "Employer Contract Claim"
       confirmation_of_additional_information_answers:
         caption: "Additional Information"
-      submit: "Submit Form"
+      submit: "Submit your response"
     form_submission:
       page_title: Application Complete
       header: Response complete

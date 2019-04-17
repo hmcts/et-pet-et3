@@ -8,7 +8,6 @@ module ET3
         element :error_invalid_email, :exact_error_text, 'errors.messages.invalid_email', exact: false
         def set(*args); field.set(*args); end
       end
-      element :submit_guidance, :content_header, 'confirmation.submit_guidance'
       section :confirmation_of_respondents_details_answers, :table_captioned, 'questions.confirmation_of_respondents_details_answers.caption', exact: true do
         section :case_number_row, :table_row_with_td_labelled, 'questions.case_number.label', exact: true do
           element :case_number_answer, :return_answer

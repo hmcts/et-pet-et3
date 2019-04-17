@@ -2,9 +2,6 @@
 - content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
 .content-body.confirmation-of-supplied-details
 
-  h2.heading-medium = t('components.confirmation_of_supplied_details.receipt_header')
-  p = t('components.confirmation_of_supplied_details.receipt_description')
-
   = form_for @confirmation_of_supplied_details, url: confirmation_of_supplied_details_path, method: :patch  do |f|
 
     div data-turbolinks="false"
@@ -12,11 +9,6 @@
         t('errors.header'),
         t('errors.description')
 
-    = f.text_field :email_receipt
-
-    p = t('components.confirmation_of_supplied_details.submit_guidance')
-  
-    h2.heading-medium = t('components.confirmation_of_supplied_details.table_header')
     table
       caption.heading-small = t('components.confirmation_of_supplied_details.confirmation_of_respondents_details_answers.caption')
       thead
@@ -323,4 +315,7 @@
           td
             = link_to t('components.confirmation_of_supplied_details.back_to_top'), "#content"
     br
+    h2.heading-medium = t('components.confirmation_of_supplied_details.receipt_header')
+    p = t('components.confirmation_of_supplied_details.receipt_description')
+    = f.text_field :email_receipt
     = f.submit(t('components.confirmation_of_supplied_details.submit'), class: 'button')

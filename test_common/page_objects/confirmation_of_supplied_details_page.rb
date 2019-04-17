@@ -3,12 +3,7 @@ module ET3
     class ConfirmationOfSuppliedDetailsPage < BasePage
       set_url '/respond/confirmation_of_supplied_details'
       element :error_header, :error_titled, 'errors.header', exact: true
-      section :email_receipt_question, :question_labelled, 'questions.email_receipt.label', exact: false do
-        element :field, :css, 'input'
-        element :error_invalid_email, :exact_error_text, 'errors.messages.invalid_email', exact: false
-        def set(*args); field.set(*args); end
-      end
-      element :submit_guidance, :content_header, 'confirmation.submit_guidance'
+
       section :confirmation_of_respondents_details_answers, :table_captioned, 'questions.confirmation_of_respondents_details_answers.caption', exact: true do
         section :case_number_row, :table_row_with_td_labelled, 'questions.case_number.label', exact: true do
           element :case_number_answer, :return_answer
@@ -229,6 +224,12 @@ module ET3
           element :remove_file_link, :link_named, 'components.confirmation_of_supplied_details.remove_file_link'
         end
         element :edit_page_link, :link_named, 'links.confirmation_of_supplied_details.edit_page', exact: true
+      end
+
+      section :email_receipt_question, :question_labelled, 'questions.email_receipt.label', exact: false do
+        element :field, :css, 'input'
+        element :error_invalid_email, :exact_error_text, 'errors.messages.invalid_email', exact: false
+        def set(*args); field.set(*args); end
       end
       
       element :continue_button, :submit_text, 'confirmation.submit'

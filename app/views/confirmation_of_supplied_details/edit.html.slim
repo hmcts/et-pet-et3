@@ -2,9 +2,6 @@
 - content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
 .content-body.confirmation-of-supplied-details
 
-  h2.heading-medium = t('components.confirmation_of_supplied_details.receipt_header')
-  p = t('components.confirmation_of_supplied_details.receipt_description')
-
   = form_for @confirmation_of_supplied_details, url: confirmation_of_supplied_details_path, method: :patch  do |f|
 
     div data-turbolinks="false"
@@ -12,11 +9,6 @@
         t('errors.header'),
         t('errors.description')
 
-    = f.text_field :email_receipt
-
-    p = t('components.confirmation_of_supplied_details.submit_guidance')
-  
-    h2.heading-medium = t('components.confirmation_of_supplied_details.table_header')
     table
       caption.heading-small = t('components.confirmation_of_supplied_details.confirmation_of_respondents_details_answers.caption')
       thead
@@ -212,11 +204,12 @@
           td
             = link_to t('components.confirmation_of_supplied_details.back_to_top'), "#content"
     table
-      caption.heading-small  = t('components.confirmation_of_supplied_details.confirmation_of_your_representatives_details_answers.caption')
+      caption.heading-small = t('components.confirmation_of_supplied_details.confirmation_of_your_representatives_details_answers.caption')
       thead
         tr
           th = t('components.confirmation_of_supplied_details.question_header')
           th = t('components.confirmation_of_supplied_details.answer_header')
+      tbody
         tr
           td = t('helpers.fieldset.your_representatives_details.type_of_representative')
           td = translate_representative(@hash_store.dig(:your_representatives_details_answers, :type_of_representative))
@@ -292,6 +285,7 @@
         tr
           th = t('components.confirmation_of_supplied_details.question_header')
           th = t('components.confirmation_of_supplied_details.answer_header')
+      tbody
         tr
           td = t('helpers.fieldset.employers_contract_claim.make_employer_contract_claim')
           td = translate_stored_value(@hash_store.dig(:employer_contract_claim_answers, :make_employer_contract_claim),
@@ -310,6 +304,7 @@
         tr
           th = t('components.confirmation_of_supplied_details.question_header')
           th = t('components.confirmation_of_supplied_details.answer_header')
+      tbody
         tr
           td = t('helpers.label.additional_information.upload_additional_information')
           td
@@ -323,4 +318,7 @@
           td
             = link_to t('components.confirmation_of_supplied_details.back_to_top'), "#content"
     br
+    h2.heading-medium = t('components.confirmation_of_supplied_details.receipt_header')
+    p = t('components.confirmation_of_supplied_details.receipt_description')
+    = f.text_field :email_receipt
     = f.submit(t('components.confirmation_of_supplied_details.submit'), class: 'button')

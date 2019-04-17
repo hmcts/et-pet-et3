@@ -234,7 +234,7 @@ cy:
       button: "Cliciwch yma i lwytho ffeil rtf"
     # Confirmation of Supplied Details Page
     email_receipt:
-      label: Cyfeiriad E-bost (dewisol)
+      label: Cyfeiriad e-bost (dewisol)
     # Captions for Tables on CoSD Page
     table:
       caption: WELSH - Confirmation of Supplied Details
@@ -362,11 +362,10 @@ cy:
     drag_text: "Llusgwch y ffeiliau rtf a'u rhoi yma"
     or_text: "neu"
   confirmation:
-    header: "Cadarnhau'r manylion a roddwyd"
+    header: Gwirio a chyflwyno eich ymateb
     receipt_header: "Nodyn yn cadarnhau bod y neges e-bost wedi cyrraedd"
-    receipt_description: "Nodwch eich cyfeiriad e-bost fel y gallwn anfon cadarnhad atoch."
-    submit_guidance: Bydd clicio ar "Cyflwyno Ffurflen " ar waelod y dudalen yn anfon y manylion a gadarnheir isod i'w prosesu.
-    submit: Cyflwyno Ffurflen
+    receipt_description: Gallwn anfon copi o’ch derbynneb atoch drwy e-bost.
+    submit: Cyflwyno eich ymateb
   submission:
     confirmation: "Ymateb wedi'i gwblhau"
     reference: 142000000100

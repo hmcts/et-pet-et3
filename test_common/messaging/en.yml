@@ -232,7 +232,7 @@ en:
       button: Click here to upload a file
     # Confirmation of Supplied Details Page
     email_receipt:
-      label: Email Address (optional)
+      label: Email address (optional)
     # Captions for Tables on CoSD Page
     table:
       caption: Confirmation of Supplied Details
@@ -366,8 +366,6 @@ en:
         If you exceed 50 lines you will not receive full details of your claim in the PDF returned to you on submission of the form.
     additional_information:
       upload_additional_information: "Supported file type: .rtf"
-    confirmation_of_supplied_details:
-      email_receipt: For example, name@address.com
 
   respondents_details:
     header: "Respondent's Details"
@@ -392,11 +390,10 @@ en:
     drag_text: "Drag and drop .rtf files here"
     or_text: "or"
   confirmation:
-    header: Confirmation of Supplied Details
-    receipt_header: Email Receipt
-    receipt_description: Please enter your email address so that we can provide you with a receipt of your transaction.
-    submit_guidance: 'Pressing "Submit Form" at the foot of the page will send the details confirmed below for processing.'
-    submit: Submit Form
+    header: Check and submit your response
+    receipt_header: Email receipt
+    receipt_description: We can email you a copy of your receipt.
+    submit: Submit your response
   submission:
     confirmation: Response complete
     reference: 142000000100

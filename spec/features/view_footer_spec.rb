@@ -15,6 +15,7 @@ RSpec.feature "View Footer", js: true do
       expect(current_page).to have_link(t('components.footer.cookies'), href: cookies_path(locale: current_locale_parameter))
       expect(current_page).to have_link(t('components.footer.privacy'), href: privacy_notice_path(locale: current_locale_parameter))
       expect(current_page).to have_link(t('components.footer.terms'), href: terms_and_conditions_path(locale: current_locale_parameter))
+      expect(current_page).to have_link(t('components.footer.contact_link'), href: t('components.footer.contact_href'))
     end
   end
 
@@ -34,8 +35,8 @@ RSpec.feature "View Footer", js: true do
     expect(form_submission_page).to have_link(t('components.footer.cookies'), href: cookies_path(locale: current_locale_parameter))
     expect(form_submission_page).to have_link(t('components.footer.privacy'), href: privacy_notice_path(locale: current_locale_parameter))
     expect(form_submission_page).to have_link(t('components.footer.terms'), href: terms_and_conditions_path(locale: current_locale_parameter))
+    expect(form_submission_page).to have_link(t('components.footer.contact_link'), href: t('components.footer.contact_href'))
   end
-
 
   context "when originally on the start page" do
     let(:current_page) { ET3::Test::StartPage.new }

@@ -242,8 +242,8 @@ RSpec.feature "Fill in whole form", js: true do
       expect(respondents_details_page.contact_mobile_number_question.field.value).to eql ""
       respondents_details_page.contact_preference_question.email.assert_selector(:field, nil, checked: false)
       expect(respondents_details_page.contact_preference_question.preference_email.value).to eql ""
-      expect(respondents_details_page.contact_preference_question.post.has_checked_field?).to be false
-      expect(respondents_details_page.contact_preference_question.fax.has_checked_field?).to be false
+      respondents_details_page.contact_preference_question.post.assert_selector(:field, nil, checked: false)
+      respondents_details_page.contact_preference_question.fax.assert_selector(:field, nil, checked: false)
       expect(respondents_details_page.contact_preference_question.preference_fax.value).to eql ""
       expect(respondents_details_page.organisation_employ_gb_question.field.value).to eql ""
       respondents_details_page.organisation_more_than_one_site_question.assert_selector(:field, nil, checked: false)

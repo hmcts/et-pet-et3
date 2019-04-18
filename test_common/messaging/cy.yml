@@ -324,8 +324,6 @@ cy:
       claim_href: "https://www.gov.uk/cyflwyno-hawliad-i-dribiwnlys-cyflogaeth"
       response_link: Sut i ymateb
       response_href: "https://www.gov.uk/rhywun-yn-mynd-a-chi-i-dribiwnlys-cyflogaeth"
-      contact_link: "Sut i gysylltu â ni"
-      contact_href: "https://www.gov.uk/guidance/employment-tribunal-offices-and-venues"
       download_link: "Lawrlwytho copi gwag o'r ffurflen hon"
       download_href: "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/763312/et3-cym.pdf"
       more_category_link: "Mwy o'r categori gweithio, swyddi a phensiynau"
@@ -334,6 +332,8 @@ cy:
       terms: Telerau ac amodau
       privacy: Polisi preifatrwydd
       cookies: Cwcis
+      contact_link: "Sut i gysylltu â ni"
+      contact_href: "https://www.gov.uk/guidance/employment-tribunal-offices-and-venues"
     confirmation_of_supplied_details:
       remove_file_link: "Dileu ffeil"
   introduction:

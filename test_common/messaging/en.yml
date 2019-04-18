@@ -313,8 +313,6 @@ en:
       claim_href: https://www.gov.uk/employment-tribunals
       response_link: How to make a response
       response_href: https://www.gov.uk/being-taken-to-employment-tribunal-by-employee
-      contact_link: How to contact us
-      contact_href: https://www.gov.uk/guidance/employment-tribunal-offices-and-venues
       download_link: Download a blank copy of this form
       download_href: https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/719457/et3-eng.pdf
       more_category_link: More from the Working, jobs and pensions category
@@ -323,6 +321,8 @@ en:
       privacy: Privacy policy
       terms: Terms and conditions
       cookies: Cookies
+      contact_link: Contact us
+      contact_href: https://www.gov.uk/guidance/employment-tribunal-offices-and-venues
     confirmation_of_supplied_details:
       remove_file_link: Remove file
   introduction:

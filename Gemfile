@@ -72,7 +72,6 @@ group :development do
 end
 
 group :test do
-  gem 'cucumber-rails', '~> 1.7', :require => false
   gem 'capybara-screenshot', '~> 1.0'
   gem 'rspec-rails', '~> 3.8'
   gem 'site_prism', '~> 3.0'

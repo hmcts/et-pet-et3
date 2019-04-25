@@ -142,13 +142,13 @@
           td = number_to_currency(@hash_store.dig(:earnings_and_benefits_answers, :queried_pay_before_tax), unit: '&pound;'.html_safe)
         tr
           td = t('helpers.fieldset.earnings_and_benefits.queried_pay_before_tax_period')
-          td = @hash_store.dig(:earnings_and_benefits_answers, :queried_pay_before_tax_period)
+          td = translate_pay_period(@hash_store.dig(:earnings_and_benefits_answers, :queried_pay_before_tax_period))
         tr
           td = t('helpers.label.earnings_and_benefits.queried_take_home_pay')
           td = number_to_currency(@hash_store.dig(:earnings_and_benefits_answers, :queried_take_home_pay), unit: '&pound;'.html_safe)
         tr
           td = t('helpers.fieldset.earnings_and_benefits.queried_take_home_pay_period')
-          td = @hash_store.dig(:earnings_and_benefits_answers, :queried_take_home_pay_period)
+          td = translate_pay_period(@hash_store.dig(:earnings_and_benefits_answers, :queried_take_home_pay_period))
         tr
           td = t('helpers.fieldset.earnings_and_benefits.agree_with_claimant_notice')
           td = translate_stored_value(@hash_store.dig(:earnings_and_benefits_answers, :agree_with_claimant_notice),

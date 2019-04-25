@@ -63,7 +63,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
-    archive-zip (0.11.0)
+    archive-zip (0.12.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
     ast (2.4.0)
@@ -108,9 +108,6 @@ GEM
       launchy
     childprocess (1.0.1)
       rake (< 13.0)
-    chromedriver-helper (2.1.0)
-      archive-zip (~> 0.10)
-      nokogiri (~> 1.8)
     coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
@@ -354,6 +351,10 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
+    webdrivers (3.8.0)
+      nokogiri (~> 1.6)
+      rubyzip (~> 1.0)
+      selenium-webdriver (~> 3.0)
     webmock (3.5.1)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
@@ -376,7 +377,6 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   capybara-screenshot (~> 1.0)
-  chromedriver-helper (~> 2.1)
   coffee-rails (~> 4.2)
   database_cleaner (~> 1.5)
   debase (~> 0.2.2)
@@ -415,6 +415,7 @@ DEPENDENCIES
   uk_postcode (~> 2.1)
   unicorn (~> 5.5)
   web-console (>= 3.3.0)
+  webdrivers (~> 3.0)
   webmock (~> 3.5)
 
 BUNDLED WITH

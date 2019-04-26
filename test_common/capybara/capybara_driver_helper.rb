@@ -6,6 +6,7 @@ Capybara.configure do |config|
   config.exact = true
   config.ignore_hidden_elements = false
   config.visible_text_only = true
+  config.server = :webrick
 end
 
 Capybara.register_driver :firefox do |app|

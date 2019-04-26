@@ -27,7 +27,7 @@ module ET3
       end
       section :dpa, :wrapper_headered, "introduction.data_title"do
         element :header, :element_with_text, "introduction.data_title"
-        element :content, :element_with_text, "introduction.data_content"
+        element :section_content, :element_with_text, "introduction.data_content"
       end
       element :start_button, :css, ".button.button-start"
       def next

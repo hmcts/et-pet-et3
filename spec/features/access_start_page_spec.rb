@@ -23,7 +23,7 @@ RSpec.feature "Access Start Page", js: true do
     expect(start_page.how_to_fill).to have_bullet_three
 
     expect(start_page.dpa).to have_header
-    expect(start_page.dpa).to have_content
+    expect(start_page.dpa).to have_section_content
 
     expect(start_page).to have_start_button
   end

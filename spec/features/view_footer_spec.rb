@@ -1,25 +1,25 @@
 require 'rails_helper'
 
-RSpec.feature "View Sidebar", js: true do
+RSpec.feature "View Footer", js: true do
   include ET3::Test::I18n
 
   before do
     stub_et_api
-    stub_build_blob_to_s3
+    stub_build_blob_to_azure
   end
 
   shared_examples "on a per-page basis" do
-    scenario "will show links" do
+    scenario "will show footer links" do
       current_page.load(locale: current_locale_parameter)
 
-      expect(current_page.sidebar).to have_link(t('components.sidebar.claim_link'), href: t('components.sidebar.claim_href'))
-      expect(current_page.sidebar).to have_link(t('components.sidebar.response_link'), href: t('components.sidebar.response_href'))
-      expect(current_page.sidebar).to have_link(t('components.sidebar.download_link'), href: t('components.sidebar.download_href'))
-      expect(current_page.sidebar).to have_link(t('components.sidebar.more_category_link'), href: t('components.sidebar.more_category_href'))
+      expect(current_page).to have_link(t('components.footer.cookies'), href: cookies_path(locale: current_locale_parameter))
+      expect(current_page).to have_link(t('components.footer.privacy'), href: privacy_notice_path(locale: current_locale_parameter))
+      expect(current_page).to have_link(t('components.footer.terms'), href: terms_and_conditions_path(locale: current_locale_parameter))
+      expect(current_page).to have_link(t('components.footer.contact_link'), href: t('components.footer.contact_href'))
     end
   end
 
-  scenario "form submission page" do
+  scenario "on form submission page" do
     given_valid_data
     start_a_new_et3_response
     answer_respondents_details
@@ -32,10 +32,10 @@ RSpec.feature "View Sidebar", js: true do
     answer_additional_information
     answer_confirmation_of_supplied_details
 
-    expect(form_submission_page.sidebar).to have_link(t('components.sidebar.claim_link'), href: t('components.sidebar.claim_href'))
-    expect(form_submission_page.sidebar).to have_link(t('components.sidebar.response_link'), href: t('components.sidebar.response_href'))
-    expect(form_submission_page.sidebar).to have_link(t('components.sidebar.download_link'), href: t('components.sidebar.download_href'))
-    expect(form_submission_page.sidebar).to have_link(t('components.sidebar.more_category_link'), href: t('components.sidebar.more_category_href'))
+    expect(form_submission_page).to have_link(t('components.footer.cookies'), href: cookies_path(locale: current_locale_parameter))
+    expect(form_submission_page).to have_link(t('components.footer.privacy'), href: privacy_notice_path(locale: current_locale_parameter))
+    expect(form_submission_page).to have_link(t('components.footer.terms'), href: terms_and_conditions_path(locale: current_locale_parameter))
+    expect(form_submission_page).to have_link(t('components.footer.contact_link'), href: t('components.footer.contact_href'))
   end
 
   context "when originally on the start page" do

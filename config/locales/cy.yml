@@ -1,4 +1,4 @@
-# Files in the config/locales directory are used for internationalization
+  # Files in the config/locales directory are used for internationalization
 # and are automatically loaded by Rails. If you want to use locales other
 # than English, add the necessary files in this directory.
 #
@@ -288,12 +288,16 @@ cy:
       claim_href: "https://www.gov.uk/cyflwyno-hawliad-i-dribiwnlys-cyflogaeth"
       response_link: Sut i ymateb
       response_href: "https://www.gov.uk/rhywun-yn-mynd-a-chi-i-dribiwnlys-cyflogaeth"
-      contact_link: "Sut i gysylltu â ni "
-      contact_href: "https://www.gov.uk/guidance/employment-tribunal-offices-and-venues"
       download_link: "Lawrlwytho copi gwag o'r ffurflen hon "
       download_href: "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/763312/et3-cym.pdf"
       more_category_link: "Mwy o'r categori gweithio, swyddi a phensiynau "
       more_category_href: "http://gov.uk/browse/working"
+    footer:
+      terms: Telerau ac amodau
+      privacy: Polisi preifatrwydd
+      cookies: Cwcis
+      contact_link: "Sut i gysylltu â ni "
+      contact_href: "https://www.gov.uk/guidance/employment-tribunal-offices-and-venues"
     confirmation_of_supplied_details:
       header: Gwirio a chyflwyno eich ymateb
       receipt_header: E-bost yn cadarnhau bod y manylion wedi'u hanfon
@@ -360,6 +364,200 @@ cy:
       data_title: "Deddf Diogelu Data 1998 "
       data_content: "Byddwn yn anfon copi o'r ffurflen hon at yr hawlydd a'r Gwasanaeth Cynghori, Cymodi a Chyflafareddu (ACAS). Byddwn yn rhoi'r wybodaeth yr ydych yn ei rhoi inni ar y ffurflen hon ar gyfrifiadur. Mae hyn yn ein helpu i fonitro cynnydd a chynhyrchu ystadegau. Trosglwyddir yr wybodaeth a ddarperir ar y ffurflen hon i'r Adran Busnes, Arloesedd a Sgiliau i gynorthwyo ymchwil i'r defnydd a wneir o dribiwnlysoedd cyflogaeth ac effeithiolrwydd y tribiwnlysoedd hynny."
       start_now: Dechrau nawr
+    cookies:
+      header: Cwcis
+      managing_cookies_href: su i reoli cwcis
+      google_privacy_policy_href: Polisi Preifatrwydd
+      opt_out_href: optio allan o Google Analytics
+      introduction: "Darn bach o ddata sy'n cael ei storio ar eich cyfrifiadur, eich tabled neu eich ffôn pan fyddwch yn ymweld â gwefan yw Cwci. Mae angen cwcis ar y rhan fwyaf o wefannau i weithio'n iawn."
+      introduction_bullets:
+        - "Mae’r gwasanaeth hwn yn eu defnyddio i:"
+        - - fesur sut rydych yn defnyddio’r gwasanaeth hwn fel y gallwn ei wella
+          - cofio'r hysbysiadau rydych wedi'u gweld fel na fyddwch yn eu gweld eto
+          - storio’r atebion a roddwch dros dro
+        - Am ragor o wybodaeth, gweler %{managing_cookies_href}
+      subheader: Sut mae cwcis yn cael eu defnyddio yn y gwasanaeth hwn
+      website_usage:
+        header: 1. I fesur faint o bobl sy’n defnyddio ein gwefan
+        content:
+          - Rydym yn defnyddio meddalwedd Google Analytics i gasglu gwybodaeth am sut rydych yn defnyddio'r gwasanaeth hwn. Gwnawn hyn i helpu i sicrhau bod y gwasanaeth yn diwallu anghenion ei ddefnyddwyr ac i'n helpu i wneud gwelliannau, er enghraifft gwella’r cyfleuster chwilio.
+          - "Mae Google Analytics yn storio gwybodaeth am:"
+          - - y tudalennau yr ydych yn ymweld â hwy
+            - faint o amser y byddwch yn ei dreulio ar bob tudalen
+            - sut y daethoch o hyd i’r gwasanaeth
+            - yr hyn rydych chi'n clicio arno wrth ymweld â'r gwasanaeth
+          - Rydym yn caniatáu i Google ddefnyddio neu rannu ein data dadansoddi. Gallwch ddarganfod mwy am sut mae Google yn defnyddio’r wybodaeth hon yn eu %{google_privacy_policy_href}.
+          - Gallwch %{opt_out_href} os nad ydych am i Google gael mynediad at eich gwybodaeth.
+          - "Mae Google Analytics yn gosod y cwcis canlynol:"
+        table:
+          - - "_ga"
+            - Mae hyn yn ein helpu i gyfrif faint o bobl sy'n ymweld â'r gwasanaeth drwy olrhain os ydych wedi ymweld o'r blaen
+            - 2 flynedd
+          - - "_gat"
+            - Rheoli faint o bobl sy’n ymweld â’r dudalen
+            - 10 munud
+          - - "_gid"
+            - Eich cyfeirio at y gwasanaeth
+            - 24 awr
+      introductory_message:
+        header: 2. Troi ein neges gyflwyno i ffwrdd
+        content: Efallai y byddwch yn gweld neges groeso pan fyddwch yn ymweld â'r gwasanaeth am y tro cyntaf. Byddwn yn storio cwcis fel bod eich cyfrifiadur yn gwybod eich bod wedi ei gweld ac yn gwybod i beidio â'i dangos eto.
+        table:
+          name: "seen_cookie_messages"
+          purpose: "Arbed neges i roi gwybod inni eich bod wedi gweld ein neges ynglŷn â chwcis"
+          expires: 1 mis
+      store_answers:
+        header: 3. Storio’r atebion a roesoch yn ystod eich ymweliad (gelwir hyn yn ‘sesiwn’)
+        content: Caiff cwcis sesiwn eu storio ar eich cyfrifiadur wrth ichi fynd drwy wefan, ac maent yn gadael i'r wefan wybod beth rydych wedi'i weld a'i wneud hyd yn hyn. Cwcis dros dro yw'r rhain ac fe'u dilëir yn awtomatig ychydig amser ar ôl ichi adael y wefan.
+        table:
+          name: "_et3_session"
+          purpose: Cysylltu eich sesiwn â’ch atebion
+          expires: Pan fyddwch yn cau eich porwr
+      more_secure:
+        header: 4. Gwneud y gwasanaeth yn fwy diogel
+        content: Rydym yn gosod cwcis er mwyn rhwystro hacwyr rhag addasu cynnwys y cwcis eraill a osodon ni. Mae hyn yn gwneud y gwasanaeth yn fwy diogel ac yn diogelu eich gwybodaeth bersonol.
+      table_header:
+        name: Enw
+        purpose: Pwrpas
+        expires: Dod i ben
+    terms_and_conditions:
+      header: Telerau ac amodau
+      introduction: Trwy ddefnyddio’r gwasanaeth hwn rydych yn cytuno i’r telerau defnydd hyn. Mae hyn yn cynnwys y %{privacy_policy_href}.
+      privacy_policy_href: polisi preifatrwydd
+      who_we_are:
+        header: Pwy ydym ni
+        content:
+          - Mae’r gwasanaeth hwn wedi’i reoli gan Wasanaeth Llysoedd a Thribiwnlysoedd Ei Mawrhydi, (cyfeirir ato fel ‘ni’ o hyn ymlaen).
+          - Dylech wirio’r telerau ac amodau hyn yn rheolaidd. Efallai byddwn yn eu diweddaru ar unrhyw adeg heb rybudd. Os byddwch yn parhau i ddefnyddio'r gwasanaeth hwn a bod y telerau ac amodau wedi newid, ystyrir eich bod wedi cytuno i'r newidiadau hyn.
+      info_provided:
+        header: Gwybodaeth a ddarperir gan y gwasanaeth hwn
+        content:
+          - Mae’r gwasanaeth hwn yn darparu gwybodaeth i gefnogi eich hawliad neu'ch cais. Ni allwn roi cyngor cyfreithiol ar achosion unigol.
+          - Dylech ateb y cwestiynau yn y gwasanaeth yn seiliedig ar eich amgylchiadau chi a cheisio cyngor cyfreithiol os oes arnoch angen hynny.
+      sharing_storing_data:
+        header: Rhannu a chadw data
+        content: Mae ein %{privacy_policy_href} yn egluro lle mae’ch data yn cael ei storio a gyda phwy mae’n cael ei rannu. Mae ein %{cookie_policy_href} yn egluro sut mae’r gwasanaeth hwn yn defnyddio ac yn storio cwcis.
+      cookie_policy_href: polisi cwcis
+      laws_applied:
+        header: Deddfau sy’n berthnasol i’r gwasanaeth hwn
+        content:
+          - "Bydd y defnydd a wnewch o’r gwasanaeth hwn ac unrhyw anghydfod sy’n codi o’i ddefnyddio yn cael eu rheoli a’u dehongli yn unol â chyfreithiau Cymru a Lloegr, gan gynnwys, ond nid yn gyfyngedig i:"
+          - - Deddf Camddefnyddio Cyfrifiaduron 1990
+            - Rheoliadau Cyffredinol Diogelu Data
+            - Deddf Galluedd Meddyliol 2005
+      how_to_use:
+        header: Sut i ddefnyddio’r gwasanaeth hwn yn gyfrifol
+        content:
+          - Mae peryglon yn gysylltiedig â defnyddio cyfrifiadur sy'n cael ei rannu (e.e. mewn caffi rhyngrwyd), i ddefnyddio’r gwasanaeth hwn. Eich cyfrifoldeb chi yw bod yn ymwybodol o’r peryglon hyn ac osgoi defnyddio unrhyw gyfrifiadur lle mae posibilrwydd y gall eraill weld eich gwybodaeth bersonol. Chi sy’n gyfrifol os ydych chi’n dewis gadael cyfrifiadur heb ei ddiogelu tra byddwch yn defnyddio’r gwasanaeth hwn.
+          - "Mae’n rhaid i chi gymryd gofal eich hunan i sicrhau nad yw’r ffordd yr ydych yn cael mynediad at y gwasanaeth hwn yn eich gadael yn agored i’r perygl o:"
+          - - feirysau
+            - cod cyfrifiadur maleisus
+            - neu ymyrraeth o fath arall a allai achosi difrod i’ch system gyfrifiadurol eich hunan
+          - Ni ddylech gamddefnyddio ein gwasanaeth drwy gyflwyno’n fwriadol firysau, cnafon (trojans), mwydod (worms), bomiau rhesymeg (logic bombs) neu unrhyw ddeunydd arall maleisus neu niweidiol i dechnoleg.
+          - Ni ddylech geisio cael mynediad heb awdurdod at y gwasanaeth hwn, y system lle caiff ei storio nac unrhyw weinydd, cyfrifiadur neu gronfa ddata sy’n gysylltiedig ag o. Ni ddylech ymosod ar ein gwefan drwy ymosodiad gwrthod gwasanaeth neu ymosodiad gwrthod gwasanaeth a ddosbarthwyd.
+      entering_sensitive_info:
+        header: Nodi gwybodaeth bersonol sensitif
+        content:
+          - Mae’r gwasanaeth ar-lein hwn yn cynnwys nifer o feysydd testun rhydd lle fe’ch gwahoddir i nodi gwybodaeth bersonol sensitif.
+          - "Os ydych yn rhoi gwybodaeth am eich:"
+          - - credoau crefyddol
+            - cyfeiriadedd rhywiol neu’ch bywyd rhywiol
+            - tarddiad hiliol neu’ch tarddiad ethnig
+            - barnau gwleidyddol
+            - credoau crefyddol neu’ch credoau athronyddol
+            - aelodaeth undeb lafur
+            - data genetig neu ddata biometrig
+            - gwybodaeth am eich iechyd
+          - Rydych yn rhoi eich caniatâd inni ddefnyddio’r wybodaeth hon i ymdrin â’ch cais
+          - I gael rhagor o wybodaeth am sut rydym yn casglu a storio eich data personol, gweler y %{privacy_policy_href}.
+      disclaimer:
+        header: Ymwrthodiad
+        content:
+          - "Er ein bod yn ymdrechu i gadw gwybodaeth yn gyfredol, nid ydym yn darparu unrhyw warantau, amodau neu sicrwydd y bydd:"
+          - - yn gyfredol
+            - yn ddiogel
+            - yn gywir
+            - yn gyflawn
+            - yn rhydd o fygiau neu feirysau
+          - Nid ydym yn cyhoeddi cyngor. Dylech gael cyngor proffesiynol neu gyngor arbenigol cyn gwneud unrhyw beth yn seiliedig ar yr wybodaeth yn y gwasanaeth.
+          - "Nid ydym yn atebol am unrhyw golled neu ddifrod a all ddeillio o ddefnyddio’r gwasanaeth hwn. Mae hyn yn cynnwys:"
+          - - unrhyw golledion uniongyrchol, anuniongyrchol neu ganlyniadol
+            - unrhyw golled neu ddifrod a achoswyd gan gamweddau sifil (‘tort’, yn cynnwys esgeuluster), torri amodau contract neu fel arall
+            - defnyddio’r gwasanaeth hwn, GOV.UK ac unrhyw wefannau sydd â dolenni i neu o’r gwefan
+            - methu â defnyddio’r gwasanaeth hwn, GOV.UK ac unrhyw wefannau sydd â dolenni i neu o’r gwefan
+          - Mae hyn yn berthnasol os oedd y golled neu’r difrod yn rhagweladwy, wedi codi wrth i’r broses arferol fynd rhagddo, neu os oeddech wedi ein cynghori y gallai ddigwydd.
+          - "Mae hyn yn cynnwys, ond nid yw’n gyfyngedig i golli eich:"
+          - - incwm neu refeniw
+            - cyflog, budd-daliadau neu daliadau eraill
+            - busnes
+            - elw neu gontractau
+            - cyfleoedd
+            - cynilion a ragwelwyd
+            - data
+            - ewyllys da neu’ch enw da
+            - eiddo diriaethol
+            - eiddo anniriaethol, yn cynnwys colled, llygredd neu ddifrod o ddata neu unrhyw system gyfrifiadurol
+            - gwastraff o amser rheolwyr neu amser swyddfa
+          - "Efallai y byddwn yn parhau i fod yn atebol am:"
+          - - farwolaeth neu anaf personol sy’n codi o’n hesgeuluster
+            - camliwio twyllodrus
+            - unrhyw atebolrwydd arall na ellir ei eithrio neu ei gyfyngu dan y gyfraith berthnasol
+          - "%{contact_href} i gael rhagor o wybodaeth."
+      contact_href: Cysylltwch â ni
+    privacy_notice:
+      header: Polisi preifatrwydd
+      introduction: Mae'r polisi preifatrwydd hwn yn egluro pam ein bod yn casglu eich data personol, yr hyn a wnawn ag ef, a'ch hawliau. Mae mwy o wybodaeth am ddefnyddio'r gwasanaeth hwn yn y %{terms_and_conditions_href}.
+      terms_and_conditions_href: telerau ac amodau
+      who_manages:
+        header: Pwy sy'n rheoli'r gwasanaeth hwn
+        content:
+          - Mae'r gwasanaeth hwn yn cael ei reoli gan Wasanaeth Llysoedd a Thribiwnlysoedd ei Mawrhydi (GLlTEM) ac rydym yn gyfrifol am ddiogelu'r data personol a ddarperir gennych.
+          - Mae GLlTEM yn asiantaeth weithredol o'r Weinyddiaeth Cyfiawnder (MoJ). MoJ yw'r rheolydd data ac mae ei %{personal_info_charter_href} yn esbonio mwy am sut maent yn prosesu data personol.
+          - Pan fyddwch yn defnyddio'r gwasanaeth hwn byddwn ni (GLlTEM) yn gofyn ichi ddarparu rhywfaint o ddata personol.
+      personal_info_charter_href: siarter gwybodaeth bersonol
+      personal_data:
+        header: Beth yw'r data personol a gasglwn
+        content:
+          - "Mae'r data personol a gasglwn yn cynnwys:"
+          - - eich enw, cyfeiriad a'ch manylion cyswllt
+            - enw, cyfeiriad a manylion cyswllt eich cynrychiolydd - os oes gennych un
+            - gwybodaeth sy'n dweud wrthym os ydych chi'n agor neges e-bost gennym ni, neu os byddwch yn clicio ar ddolen mewn e-bost
+            - gwybodaeth am sut rydych yn defnyddio'r gwasanaeth hwn, fel eich cyfeiriad IP a'r porwr gwe rydych yn ei ddefnyddio. Rydym yn gwneud hyn drwy %{using_cookies_href}.
+      using_cookies_href: ddefnyddio cwcis
+      what_we_do_data:
+        header: Beth rydym yn ei wneud gyda'ch data
+        content:
+          - "Rydym yn casglu eich data personol i:"
+          - - brosesu eich ymateb
+            - bodloni gofynion cyfreithiol
+            - gwneud gwelliannau i'r gwasanaeth hwn
+          - Caiff eich data personol ei brosesu gan ein staff yn y Deyrnas Unedig a chaiff y data ei storio yn y Deyrnas Unedig.
+          - Byddwn yn anfon copi o'ch ymateb at yr hawlydd ac Acas. Byddwn yn rhannu gwybodaeth ar y ffurflen hon â'r Adran Busnes, Ynni a Strategaeth Ddiwydiannol (BEIS) i helpu gyda'u gwaith ymchwil ar dribiwnlysoedd cyflogaeth.
+          - Rydym yn defnyddio Sendgrid i anfon negeseuon e-bost gan ddefnyddio seilwaith rhyngrwyd byd-eang. Ni allwn warantu y bydd negeseuon e-bost yn cael eu cadw yn yr Ardal Economaidd Ewropeaidd (EEA).
+      your_rights:
+        header: Eich hawliau
+        content:
+          - "Gallwch ofyn:"
+          - - i weld y data personol sydd gennym amdanoch
+            - i'r data personol gael ei gywiro
+            - i'r data personol gael ei ddileu (bydd hyn yn dibynnu ar yr amgylchiadau)
+            - bod mynediad at y data personol wedi'i gyfyngu (er enghraifft, gallwch ofyn i'ch data gael ei storio'n hirach a pheidio â chael ei ddileu'n awtomatig)
+          - Anfonwch e-bost atom os ydych eisiau gweld yr wybodaeth hon.
+      sharing_your_data:
+        header: Rhannu eich data
+        content: Rydym yn caniatáu i Google ddefnyddio neu rannu ein data ar gyfer dadansoddi ein gwefan. Cewch wybod am hyn yn ein %{terms_and_conditions_href}.
+      receiving_notifications:
+        header: Derbyn hysbysiadau
+        content:
+          - Fel rhan o'ch ymateb, mae'n bosibl y byddwn yn gofyn a ydych yn dymuno derbyn hysbysiadau gyda diweddariadau. Byddwn yn gofyn am eich enw a’r manylion cyswllt sydd orau gennych.
+          - Gallwch danysgrifio o dderbyn negeseuon testun drwy ddilyn y camau a nodir yn y neges testun. %{contact_us_href} os ydych eisiau canslo diweddariadau e-bost.
+        contact_us_href: Cysylltwch â ni
+      how_to_complain:
+        header: Sut i gwyno
+        content:
+          - Os ydych eisiau cwyno am sut rydym wedi ymdrin â'ch data personol, anfonwch e-bost atom.
+          - Gallwch gwyno i %{ico_href} os nad ydych yn fodlon â'n hymateb neu'n credu nad ydym yn prosesu eich data personol yn unol â’r gyfraith.
+        ico_href: Swyddfa'r Comisiynydd Gwybodaeth
     respondents_details:
       header: "Manylion yr Atebydd "
     claimants_details:

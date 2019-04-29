@@ -1,0 +1,8 @@
+- translated_content_array.each do |element|
+  - case element
+    - when String
+      p = element.html_safe
+    - when Array
+      ul.list.list-bullet
+        - element.each do |bullet_point|
+          li = bullet_point.html_safe

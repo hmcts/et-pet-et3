@@ -49,7 +49,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 3.18'
   gem 'selenium-webdriver', '~> 3.142'
-  gem 'rubocop', '~> 0.67.2'
+  gem 'rubocop', '~> 0.68.1'
   gem 'rubocop-rspec', '~> 1.32'
   gem 'simplecov', '~> 0.15'
   gem 'pry', '~> 0.12'

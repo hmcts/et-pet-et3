@@ -278,7 +278,7 @@ en:
       error_header: Please review the following
       error_description: Clicking on an error will navigate you directly to the question. Please correct these errors before continuing.
       save_and_continue_button: Save and continue
-      language: Cymraeg
+      language: Bearded
       locale: cy
     single_choice_option_section:
       'yes': "Yes"

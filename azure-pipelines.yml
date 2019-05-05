@@ -67,6 +67,7 @@ jobs:
       displayName: 'script'
 
   - job: BuildAndPushImage
+    dependsOn: TestApplication
     pool:
       name: hmcts-pet  # name of the pool to run this job in
     steps:

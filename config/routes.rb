@@ -1,4 +1,3 @@
-require 'api_proxy'
 Rails.application.routes.draw do
   namespace :locale, path: '(:locale)', module: nil, as: nil, constraints: { locale: /cy/ } do
     scope :respond do
@@ -14,11 +13,15 @@ Rails.application.routes.draw do
       resource :confirmation_of_supplied_details, only: [:edit, :update], path_names: { edit: ''}
       get "form_submission", to: "form_submissions#index"
     end
+    get "/terms" => 'static_pages#terms', as: 'terms_and_conditions'
+    get "/privacy" => 'static_pages#privacy', as: 'privacy_notice'
+    get "/cookies" => 'static_pages#cookies'
     root 'static_pages#index'
     delete "/respond/confirmation_of_supplied_details/remove_rtf" => 'confirmation_of_supplied_details#destroy_rtf', as: :remove_rtf
-    mount ApiProxy.new(backend: "#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api')}/v2/build_blob", streaming: false), at: "/api/v2/build_blob"
+    mount EtDropzoneUploader::Engine, at: '/api/v2/build_blob'
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   end
+  put "/" => 'static_pages#start_new_session', as: 'start_new_session'
   get "/session_expired" => 'static_pages#expired'
   get "/ping" => "status#ping"
   get "/healthcheck" => "status#healthcheck"

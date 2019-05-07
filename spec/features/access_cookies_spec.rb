@@ -1,25 +1,45 @@
 require 'rails_helper'
 
-RSpec.feature "View Sidebar", js: true do
+RSpec.feature "Access Cookies", js: true do
   include ET3::Test::I18n
 
   before do
     stub_et_api
-    stub_build_blob_to_s3
+    stub_build_blob_to_azure
   end
 
   shared_examples "on a per-page basis" do
-    scenario "will show links" do
+    scenario "will show page content" do
       current_page.load(locale: current_locale_parameter)
 
-      expect(current_page.sidebar).to have_link(t('components.sidebar.claim_link'), href: t('components.sidebar.claim_href'))
-      expect(current_page.sidebar).to have_link(t('components.sidebar.response_link'), href: t('components.sidebar.response_href'))
-      expect(current_page.sidebar).to have_link(t('components.sidebar.download_link'), href: t('components.sidebar.download_href'))
-      expect(current_page.sidebar).to have_link(t('components.sidebar.more_category_link'), href: t('components.sidebar.more_category_href'))
+      current_page.cookies.click
+
+      expect(cookies_page).to be_displayed
+      expect(cookies_page).to have_header
+
+      expect(cookies_page).to have_introduction
+      cookies_page.introduction.assert_content
+
+      expect(cookies_page).to have_cookies_used_subheader
+
+      expect(cookies_page.website_usage).to have_header
+      cookies_page.website_usage.assert_content
+      cookies_page.website_usage.assert_table
+
+      expect(cookies_page.introductory_message).to have_header
+      cookies_page.introductory_message.assert_content
+      cookies_page.introductory_message.assert_table
+
+      expect(cookies_page.store_answers).to have_header
+      cookies_page.store_answers.assert_content
+      cookies_page.store_answers.assert_table
+
+      expect(cookies_page.more_secure).to have_header
+      cookies_page.more_secure.assert_content
     end
   end
 
-  scenario "form submission page" do
+  scenario "from form submission page" do
     given_valid_data
     start_a_new_et3_response
     answer_respondents_details
@@ -32,10 +52,30 @@ RSpec.feature "View Sidebar", js: true do
     answer_additional_information
     answer_confirmation_of_supplied_details
 
-    expect(form_submission_page.sidebar).to have_link(t('components.sidebar.claim_link'), href: t('components.sidebar.claim_href'))
-    expect(form_submission_page.sidebar).to have_link(t('components.sidebar.response_link'), href: t('components.sidebar.response_href'))
-    expect(form_submission_page.sidebar).to have_link(t('components.sidebar.download_link'), href: t('components.sidebar.download_href'))
-    expect(form_submission_page.sidebar).to have_link(t('components.sidebar.more_category_link'), href: t('components.sidebar.more_category_href'))
+    form_submission_page.cookies.click
+
+    expect(cookies_page).to be_displayed
+    expect(cookies_page).to have_header
+
+    expect(cookies_page).to have_introduction
+    cookies_page.introduction.assert_content
+
+    expect(cookies_page).to have_cookies_used_subheader
+
+    expect(cookies_page.website_usage).to have_header
+    cookies_page.website_usage.assert_content
+    cookies_page.website_usage.assert_table
+
+    expect(cookies_page.introductory_message).to have_header
+    cookies_page.introductory_message.assert_content
+    cookies_page.introductory_message.assert_table
+
+    expect(cookies_page.store_answers).to have_header
+    cookies_page.store_answers.assert_content
+    cookies_page.store_answers.assert_table
+
+    expect(cookies_page.more_secure).to have_header
+    cookies_page.more_secure.assert_content
   end
 
   context "when originally on the start page" do

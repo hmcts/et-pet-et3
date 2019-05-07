@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.2'
+gem 'rails', '~> 5.2.3'
 # Azure deployment so we need this
 gem 'azure_env_secrets', git: 'https://github.com/ministryofjustice/azure_env_secrets.git', tag: 'v0.1.3'
 
@@ -19,9 +19,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-gem 'rack-proxy', '~> 0.6.5'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
+gem 'coffee-rails', '~> 5.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -41,16 +40,16 @@ gem 'govuk_elements_form_builder',  '~>1.3'
 gem 'gov_uk_date_fields', '~> 2.1'
 gem 'jquery-rails', '~> 4.3'
 gem 'activerecord-nulldb-adapter', '~> 0.3'
-gem 'httparty', '~> 0.16'
+gem 'httparty', '~> 0.17'
 gem 'uk_postcode', '~> 2.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver', '~> 3.141'
-  gem 'rubocop', '~> 0.66.0'
+  gem 'capybara', '~> 3.18'
+  gem 'selenium-webdriver', '~> 3.142'
+  gem 'rubocop', '~> 0.68'
   gem 'rubocop-rspec', '~> 1.32'
   gem 'simplecov', '~> 0.15'
   gem 'pry', '~> 0.12'
@@ -73,11 +72,10 @@ group :development do
 end
 
 group :test do
-  gem 'cucumber-rails', '~> 1.5', :require => false
   gem 'capybara-screenshot', '~> 1.0'
   gem 'rspec-rails', '~> 3.8'
-  gem 'site_prism', '~> 3.0'
-  gem 'chromedriver-helper', '~> 2.1'
+  gem 'site_prism', '~> 3.1'
+  gem 'webdrivers', '~> 3.0'
   gem 'geckodriver-helper', '~> 0.23'
   gem 'database_cleaner', '~> 1.5'
   gem 'webmock', '~> 3.5'
@@ -98,4 +96,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'sentry-raven', '~> 2.9'
 
-gem 'et_dropzone_uploader', git: 'https://github.com/hmcts/et_dropzone_uploader.git', tag: 'v0.2.0'
+gem 'et_dropzone_uploader', git: 'https://github.com/hmcts/et_dropzone_uploader.git', tag: 'v2.1.0'

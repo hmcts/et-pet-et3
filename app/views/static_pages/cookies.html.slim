@@ -1,0 +1,65 @@
+- content_for :form_page_title, t('components.cookies.header')
+- content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
+.content-body.cookies
+
+  p = t('components.cookies.introduction')
+  = render 'static_pages/policy_elements', translated_content_array: t('components.cookies.introduction_bullets',
+          managing_cookies_href: link_to(t('components.cookies.managing_cookies_href'),
+                  'http://www.aboutcookies.org.uk/', target: :_blank))
+
+  h3.heading-small = t('components.cookies.subheader')
+
+  #website-usage
+    h4.heading-small = t('components.cookies.website_usage.header')
+    = render 'static_pages/policy_elements', translated_content_array: t('components.cookies.website_usage.content',
+            google_privacy_policy_href: link_to(t('components.cookies.google_privacy_policy_href'),
+                    'https://www.google.com/policies/privacy/partners/', target: :_blank),
+            opt_out_href: link_to(t('components.cookies.opt_out_href'),
+                    'https://tools.google.com/dlpage/gaoptout', target: :_blank))
+    table
+      thead
+        tr
+          th = t('components.cookies.table_header.name')
+          th = t('components.cookies.table_header.purpose')
+          th = t('components.cookies.table_header.expires')
+      tbody
+        - t('components.cookies.website_usage.table').each do |row|
+          tr
+            - row.each do |cell|
+              td = cell
+  br
+  #introductory-message
+    h4.heading-small = t('components.cookies.introductory_message.header')
+    p = t('components.cookies.introductory_message.content')
+
+    table
+      thead
+        tr
+          th = t('components.cookies.table_header.name')
+          th = t('components.cookies.table_header.purpose')
+          th = t('components.cookies.table_header.expires')
+      tbody
+        tr
+          td = t('components.cookies.introductory_message.table.name')
+          td = t('components.cookies.introductory_message.table.purpose')
+          td = t('components.cookies.introductory_message.table.expires')
+  br
+  #store-answers
+    h4.heading-small = t('components.cookies.store_answers.header')
+    p = t('components.cookies.store_answers.content')
+
+    table
+      thead
+        tr
+          th = t('components.cookies.table_header.name')
+          th = t('components.cookies.table_header.purpose')
+          th = t('components.cookies.table_header.expires')
+      tbody
+        tr
+          td = t('components.cookies.store_answers.table.name')
+          td = t('components.cookies.store_answers.table.purpose')
+          td = t('components.cookies.store_answers.table.expires')
+  br
+  #more-secure
+    h4.heading-small = t('components.cookies.more_secure.header')
+    p = t('components.cookies.more_secure.content')

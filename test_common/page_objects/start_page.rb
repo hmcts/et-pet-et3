@@ -2,12 +2,7 @@ module ET3
   module Test
     class StartPage < BasePage
       set_url '/'
-      section :switch_language, '.switch-language' do
-        include ::ET3::Test::I18n
-        element :language, :link_named, 'switch.language'
-        element :welsh_link, :link_or_button, t('switch.language', locale: :en)
-        element :english_link, :link_or_button, t('switch.language', locale: :cy)
-      end
+      section :switch_language, LanguageSwitcherSection, '.switch-language'
       element :header, :content_header, "introduction.header"
       element :description, :element_with_text, "introduction.description"
       section :what_you_need, :wrapper_headered, "introduction.what_title" do
@@ -27,7 +22,7 @@ module ET3
       end
       section :dpa, :wrapper_headered, "introduction.data_title"do
         element :header, :element_with_text, "introduction.data_title"
-        element :content, :element_with_text, "introduction.data_content"
+        element :section_content, :element_with_text, "introduction.data_content"
       end
       element :start_button, :css, ".button.button-start"
       def next

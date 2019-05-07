@@ -36,9 +36,9 @@
             .sidebar-content
               p = link_to(t('components.sidebar.claim_link'), t('components.sidebar.claim_href'), target: :_blank)
               p = link_to(t('components.sidebar.response_link'), t('components.sidebar.response_href'), target: :_blank)
-              p = link_to(t('components.sidebar.contact_link'), t('components.sidebar.contact_href'), target: :_blank)
               p = link_to(t('components.sidebar.download_link'), t('components.sidebar.download_href'), target: :_blank)
               hr
               p = link_to(t('components.sidebar.more_category_link'), t('components.sidebar.more_category_href'), target: :_blank)
-
+- content_for :footer_support_links
+  = render 'shared/footer_links'
 = render template: "layouts/govuk_template"

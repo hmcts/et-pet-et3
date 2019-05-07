@@ -49,7 +49,7 @@ RSpec.feature "Fill in whole form", js: true do
       expect(claimants_details_table.employment_start_row.employment_start_answer).to have_text @claimant.employment_start.to_date.strftime('%Y-%m-%d')
       expect(claimants_details_table.employment_end_row.employment_end_answer).to have_text @claimant.employment_end.to_date.strftime('%Y-%m-%d')
       expect(claimants_details_table.disagree_employment_row.disagree_employment_answer).to have_text @claimant.disagree_employment
-      expect(claimants_details_table.continued_employment_row.continued_employment_answer).to have_text @claimant.continued_employment
+      expect(claimants_details_table.continued_employment_row.continued_employment_answer).to have_text t(@claimant.continued_employment)
       expect(claimants_details_table.agree_with_claimants_description_of_job_or_title_row.agree_with_claimants_description_of_job_or_title_answer).to have_text t(@claimant.agree_with_claimants_description_of_job_or_title)
       expect(claimants_details_table.disagree_claimants_job_or_title_row.disagree_claimants_job_or_title_answer).to have_text @claimant.disagree_claimants_job_or_title
 
@@ -60,9 +60,9 @@ RSpec.feature "Fill in whole form", js: true do
       expect(earnings_and_benefits_table.queried_hours_row.queried_hours_answer).to have_text @claimant.queried_hours
       expect(earnings_and_benefits_table.agree_with_earnings_details_row.agree_with_earnings_details_answer).to have_text t(@claimant.agree_with_earnings_details)
       expect(earnings_and_benefits_table.queried_pay_before_tax_row.queried_pay_before_tax_answer).to have_text ActionController::Base.helpers.number_to_currency(@claimant.queried_pay_before_tax, unit: '£')
-      expect(earnings_and_benefits_table.queried_pay_before_tax_period_row.queried_pay_before_tax_period_answer).to have_text @claimant.queried_pay_before_tax_period
+      expect(earnings_and_benefits_table.queried_pay_before_tax_period_row.queried_pay_before_tax_period_answer).to have_text t(@claimant.queried_pay_before_tax_period)
       expect(earnings_and_benefits_table.queried_take_home_pay_row.queried_take_home_pay_answer).to have_text ActionController::Base.helpers.number_to_currency(@claimant.queried_take_home_pay, unit: '£')
-      expect(earnings_and_benefits_table.queried_take_home_pay_period_row.queried_take_home_pay_period_answer).to have_text @claimant.queried_take_home_pay_period
+      expect(earnings_and_benefits_table.queried_take_home_pay_period_row.queried_take_home_pay_period_answer).to have_text t(@claimant.queried_take_home_pay_period)
       expect(earnings_and_benefits_table.agree_with_claimant_notice_row.agree_with_claimant_notice_answer).to have_text t(@claimant.agree_with_claimant_notice)
       expect(earnings_and_benefits_table.disagree_claimant_notice_reason_row.disagree_claimant_notice_reason_answer).to have_text @claimant.disagree_claimant_notice_reason
       expect(earnings_and_benefits_table.agree_with_claimant_pension_benefits_row.agree_with_claimant_pension_benefits_answer).to have_text t(@claimant.agree_with_claimant_pension_benefits)
@@ -94,14 +94,14 @@ RSpec.feature "Fill in whole form", js: true do
       expect(your_rep_details_table.representative_mobile_row.representative_mobile_answer).to have_text @representative.representative_mobile
       expect(your_rep_details_table.representative_dx_number_row.representative_dx_number_answer).to have_text @representative.dx_number
       expect(your_rep_details_table.representative_reference_row.representative_reference_answer).to have_text @representative.representative_reference
-      expect(your_rep_details_table.representative_contact_preference_row.representative_contact_preference_answer).to have_text @representative.representative_contact_preference.downcase
+      expect(your_rep_details_table.representative_contact_preference_row.representative_contact_preference_answer).to have_text t(@representative.representative_contact_preference)
       expect(your_rep_details_table.email_row.email_answer).to have_text nil
       expect(your_rep_details_table.fax_row.fax_answer).to have_text @representative.representative_fax
 
       expect(confirmation_of_supplied_details_page).to have_confirmation_of_disability_answers
 
       disability_table = confirmation_of_supplied_details_page.confirmation_of_disability_answers
-      expect(disability_table.disability_row.disability_answer).to have_text @respondent.disability
+      expect(disability_table.disability_row.disability_answer).to have_text t(@respondent.disability)
       expect(disability_table.disability_information_row.disability_information_answer).to have_text @respondent.disability_information
 
       expect(confirmation_of_supplied_details_page).to have_confirmation_of_employer_contract_claim_answers
@@ -242,8 +242,8 @@ RSpec.feature "Fill in whole form", js: true do
       expect(respondents_details_page.contact_mobile_number_question.field.value).to eql ""
       respondents_details_page.contact_preference_question.email.assert_selector(:field, nil, checked: false)
       expect(respondents_details_page.contact_preference_question.preference_email.value).to eql ""
-      expect(respondents_details_page.contact_preference_question.post.has_checked_field?).to be false
-      expect(respondents_details_page.contact_preference_question.fax.has_checked_field?).to be false
+      respondents_details_page.contact_preference_question.post.assert_selector(:field, nil, checked: false)
+      respondents_details_page.contact_preference_question.fax.assert_selector(:field, nil, checked: false)
       expect(respondents_details_page.contact_preference_question.preference_fax.value).to eql ""
       expect(respondents_details_page.organisation_employ_gb_question.field.value).to eql ""
       respondents_details_page.organisation_more_than_one_site_question.assert_selector(:field, nil, checked: false)

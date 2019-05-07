@@ -19,6 +19,10 @@ module ET3
         element :more_category_link, :link_named, 'components.sidebar.more_category_link'
       end
 
+      element :cookies, :link_named, 'components.footer.cookies'
+      element :privacy_notice, :link_named, 'components.footer.privacy'
+      element :terms, :link_named, 'components.footer.terms'
+
       def js_severe_errors
         return [] unless page.driver.try(:browser).try(:browser) == :chromedriver
         errors = page.driver.browser.manage.logs.get(:browser).select { |error| error.level == "SEVERE" }

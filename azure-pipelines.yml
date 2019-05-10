@@ -10,12 +10,13 @@ trigger:
   branches:
     include:
       - develop
-# pr:
-#   autoCancel: true
-#   branches:
-#     include:
-#       - develop
-#       - feature/*
+
+pr:
+  autoCancel: true
+  branches:
+    include:
+      - develop
+      - feature/*
 
 variables:
   application.name: 'et3'
@@ -66,6 +67,7 @@ jobs:
 
   - job: BuildAndPushImage
     dependsOn: TestApplication
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/develop'))    
     pool:
       name: hmcts-pet  # name of the pool to run this job in
     steps:
@@ -113,6 +115,7 @@ jobs:
 
   - job: ExtractAssets
     dependsOn: BuildAndPushImage
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/develop'))
     pool:
       name: hmcts-pet
     variables:

@@ -12,3 +12,10 @@
     font-size: 0.85em;
     float: right;
 }
+
+.maintenance-notice p {
+    border: 3px solid #005ea5;
+    margin-top: 0.5em;
+    padding: 0.25em 0.5em;
+    font-size: 0.85em;
+}

@@ -25,6 +25,7 @@
           .column-full
             .switch-language
               = link_to t('components.common.language'), locale: t('components.common.locale')
+        = render "shared/maintenance_notice" if ENV['SHOW_DOWNTIME_BANNER'].present?
         .column-two-thirds
           .content-header
             h2.heading-medium data-behavior="heading" = yield(:form_page_title)

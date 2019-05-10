@@ -302,6 +302,8 @@ en:
       cookies: Cookies
       contact_link: Contact us
       contact_href: https://www.gov.uk/guidance/employment-tribunal-offices-and-venues
+    maintenance:
+      notice_string: We're planning maintenance of this service. It will be unavailable from %{start_time} to %{end_time} on %{day}.
     confirmation_of_supplied_details:
       header: Check and submit your response
       receipt_header: Email receipt

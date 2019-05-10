@@ -25,8 +25,12 @@
           .column-full
             .switch-language
               = link_to t('components.common.language'), locale: t('components.common.locale')
-        .column-full.maintenance-notice
-          p We're planning maintenance of this service. It will be unavailable from 9am to 2pm on 15 May 2019.
+        - if ENV['SHOW_DOWNTIME_BANNER'].present?
+          .column-full.maintenance-notice
+            - start_time = DateTime.parse(ENV['SHOW_DOWNTIME_BANNER'].split(',').first).strftime("%l%P").strip
+            - end_time = DateTime.parse(ENV['SHOW_DOWNTIME_BANNER'].split(',').last).strftime("%l%P").strip
+            - day = DateTime.parse(ENV['SHOW_DOWNTIME_BANNER'].split(',').last).strftime("%e %B %Y")
+            p = "We're planning maintenance of this service. It will be unavailable from #{start_time} to #{end_time} on #{day}."
         .column-two-thirds
           .content-header
             h2.heading-medium data-behavior="heading" = yield(:form_page_title)

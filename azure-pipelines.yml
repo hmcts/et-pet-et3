@@ -67,7 +67,9 @@ jobs:
         # ./cc-test-reporter after-build --exit-code 0
       displayName: 'script'
 
-
+    - script: |
+        ./bin/dev/docker-support-services down
+      displayName: 'cleanup'
 
   - job: BuildAndPushImage
     dependsOn: TestApplication

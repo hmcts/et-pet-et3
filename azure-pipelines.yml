@@ -69,6 +69,7 @@ jobs:
 
     - script: |
         ./bin/dev/docker-support-services down
+      condition: always()
       displayName: 'cleanup'
 
   - job: BuildAndPushImage

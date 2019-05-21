@@ -36,7 +36,7 @@ jobs:
     - script: |
         sudo apt-get update
         sudo apt-get install libpq-dev
-        hmod +x ./bin/wait-for-it.sh
+        chmod +x ./bin/wait-for-it.sh
         gem install bundler -v 1.16.4
       displayName: 'before install'
 
@@ -67,6 +67,7 @@ jobs:
 
     - script: |
         ./bin/dev/docker-support-services down
+      condition: always()
       displayName: 'cleanup'
 
   - job: BuildAndPushImage

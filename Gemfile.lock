@@ -81,7 +81,7 @@ GEM
       msgpack (~> 1.0)
     builder (3.2.3)
     byebug (11.0.1)
-    capybara (3.18.0)
+    capybara (3.20.2)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -238,7 +238,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
-    regexp_parser (1.4.0)
+    regexp_parser (1.5.0)
     rspec-core (3.8.0)
       rspec-support (~> 3.8.0)
     rspec-expectations (3.8.3)
@@ -358,7 +358,7 @@ DEPENDENCIES
   azure_env_secrets!
   bootsnap (~> 1.4)
   byebug
-  capybara (~> 3.18)
+  capybara (~> 3.20)
   capybara-screenshot (~> 1.0)
   coffee-rails (~> 5.0)
   database_cleaner (~> 1.5)

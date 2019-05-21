@@ -5,7 +5,7 @@ RSpec.feature "View Sidebar", js: true do
 
   before do
     stub_et_api
-    stub_build_blob_to_s3
+    stub_build_blob_to_azure
   end
 
   shared_examples "on a per-page basis" do

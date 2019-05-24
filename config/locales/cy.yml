@@ -258,7 +258,7 @@ cy:
         inclusion: Nodwch p'un a ydych yn cytuno gyda'r dyddiadau cyflogaeth a roddwyd gan yr hawlydd
       queried_hours:
         not_a_number: Nodwch nifer yr oriau sy’n gywir yn eich barn chi fel rhif
-        less_than_or_equal_to: Nodwch nifer yr oriau y credwch sy'n gywir fel rhif sy'n llai na %{count}
+        less_than_or_equal_to: Nodwch nifer yr oriau hyd at uchafswm o %{count} awr
       queried_pay_before_tax:
         not_a_number: "Nodwch y tâl cyn treth fel rhif "
       queried_take_home_pay:

@@ -25,5 +25,3 @@ public/assets/**
 
 # Ignore dotenv file
 .env
-
-awslogs.conf

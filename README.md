@@ -1,6 +1,8 @@
 # Respond to an Employment Tribunal Claim
 [![Build Status](https://travis-ci.org/ministryofjustice/et3.svg?branch=develop)](https://travis-ci.org/ministryofjustice/et3)
 
+[![Build Status](https://dev.azure.com/HMCTS-PET/pet-azure-infrastructure/_apis/build/status/et3?branchName=develop)](https://dev.azure.com/HMCTS-PET/pet-azure-infrastructure/_build/latest?definitionId=19&branchName=develop)
+
 Digital ET3 form within the in-house ET microservice architecture, replacing a third party supplier. ET3 allows respondents to make a response to an ET1 claim.
 
 ## Getting Started
@@ -63,49 +65,11 @@ Used to specify the database port.
  
 For example, used within the docker-compose configuration.
 
-### S3_PORT
-
-Used to specify the minio port.
- 
-For example, used within the docker-compose configuration.
-
 ### AZURE_STORAGE_BLOB_PORT
 
 Used to specify the azurite port.
 
 For example, used within the docker-compose configuration.
-
-### AWS_ACCESS_KEY_ID
-
-Used as an identifier to log into the minio portal.
-
-### AWS_SECRET_ACCESS_KEY
-
-Used as a password to log into the minio portal.
-
-### AWS_REGION
-
-Used to specify the AWS region for minio.
-
-For example, used to configure the bucket setup in minio.
-
-### S3_DIRECT_UPLOAD_BUCKET
-
-Used to specify the AWS bucket name for minio.
-
-For example, used to configure the bucket setup in minio.
-
-### AWS_ENDPOINT
-
-Used as the S3 endpoint, often taking in the `S3_PORT` as a parameter.
-
-For example, used to configure the bucket setup in minio.
-
-### AWS_S3_FORCE_PATH_STYLE
-
-Used as a boolean for the `force_path_style` option. 
-
-For example and further info, see [AWS Docs](https://docs.aws.amazon.com/sdkforruby/api/Aws/S3/Client.html).
 
 ### SELENIUM_PORT
 

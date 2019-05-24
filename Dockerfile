@@ -1,16 +1,16 @@
 FROM ministryofjustice/ruby:2.5.1
 
 # Adding argument support for ping.json
-# ARG APPVERSION=unknown
-# ARG APP_BUILD_DATE=unknown
-# ARG APP_GIT_COMMIT=unknown
-# ARG APP_BUILD_TAG=unknown
+ARG APPVERSION=unknown
+ARG APP_BUILD_DATE=unknown
+ARG APP_GIT_COMMIT=unknown
+ARG APP_BUILD_TAG=unknown
 
 # Setting up ping.json variables
-ENV APPVERSION ${APPVERSION:-unknown}
-ENV APP_BUILD_DATE ${APP_BUILD_DATE:-unknown}
-ENV APP_GIT_COMMIT ${APP_GIT_COMMIT:-unknown}
-ENV APP_BUILD_TAG ${APP_BUILD_TAG:-unknown}
+ENV APPVERSION ${APPVERSION}
+ENV APP_BUILD_DATE ${APP_BUILD_DATE}
+ENV APP_GIT_COMMIT ${APP_GIT_COMMIT}
+ENV APP_BUILD_TAG ${APP_BUILD_TAG}
 
 # add official nodejs repo
 RUN curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add - && \
@@ -55,16 +55,5 @@ RUN bundle exec rake non_digest_assets RAILS_ENV=production SECRET_KEY_BASE=foob
 ENV DEBIAN_FRONTEND noninteractive
 
 EXPOSE 8080
-
-RUN curl https://s3.amazonaws.com/aws-cloudwatch/downloads/latest/awslogs-agent-setup.py -O
-RUN mkdir /etc/cron.d
-RUN touch /etc/cron.d/awslogs
-
-RUN apt-get update
-RUN apt-get -y install supervisor
-RUN mkdir -p /var/log/supervisor
-RUN mkdir -p /etc/supervisor/conf.d/
-COPY supervisor_awslogs.conf /etc/supervisor/conf.d/
-COPY supervisor.conf /etc/supervisor.conf
 
 CMD ["./run.sh"]

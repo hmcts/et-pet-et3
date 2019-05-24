@@ -33,7 +33,7 @@ class EarningsAndBenefits < BaseForm
   end
 
   validates :queried_hours,
-    numericality: true,
+    numericality: { less_than_or_equal_to: 168.0, greater_than: 0 },
     allow_blank: true,
     if: :disagree_claimants_hours?
   validates :queried_pay_before_tax, :queried_take_home_pay,

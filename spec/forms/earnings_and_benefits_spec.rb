@@ -31,6 +31,14 @@ RSpec.describe EarningsAndBenefits, type: :model do
       expect(populated_earnings_and_benefits.errors.details[:queried_hours]).to include a_hash_including(error: :not_a_number)
     end
 
+    it 'will not validate queried hours with a string' do
+      populated_earnings_and_benefits.queried_hours = '168.01'
+
+      populated_earnings_and_benefits.valid?
+
+      expect(populated_earnings_and_benefits.errors.details[:queried_hours]).to include a_hash_including(error: :less_than_or_equal_to, count: 168.0)
+    end
+
     it 'will not validate queried pay before tax with a string' do
       populated_earnings_and_benefits.queried_pay_before_tax = 'string'
 

@@ -265,6 +265,7 @@ en:
         inclusion: Please indicate whether you agree with the dates of employment provided by the claimant
       queried_hours:
         not_a_number: Please enter the number of hours you believe to be correct as a number
+        less_than_or_equal_to: Please enter the number of hours you believe to be correct as a number that is less than %{count}
       queried_pay_before_tax:
         not_a_number: Please enter the pay before tax as a number
       queried_take_home_pay:

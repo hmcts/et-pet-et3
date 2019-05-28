@@ -50,7 +50,7 @@ group :development, :test do
   gem 'capybara', '~> 3.18'
   gem 'selenium-webdriver', '~> 3.142'
   gem 'rubocop', '~> 0.68'
-  gem 'rubocop-rspec', '~> 1.32'
+  gem 'rubocop-rspec', '~> 1.33'
   gem 'simplecov', '~> 0.15'
   gem 'pry', '~> 0.12'
   #VSCode debugger

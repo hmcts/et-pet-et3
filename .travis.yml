@@ -9,6 +9,8 @@ env:
     - CC_TEST_REPORTER_ID=adf7487514f01c0e5d3274c0f0351f946b792aadc1978f99ec099fd9a3a01b0d
 before_install:
   - chmod +x ./bin/wait-for-it.sh
+  - gem uninstall -v '>= 2' -i $(rvm gemdir)@global -ax bundler || true
+  - gem install bundler -v '< 2'
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter

@@ -37,7 +37,7 @@ jobs:
         sudo apt-get update
         sudo apt-get install libpq-dev
         chmod +x ./bin/wait-for-it.sh
-        gem install bundler -v 1.16.4
+        gem install bundler -v 1.17.3
       displayName: 'before install'
 
     - script: |

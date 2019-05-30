@@ -1,6 +1,6 @@
 class AdditionalInformationsController < ApplicationController
   def edit
-    @additional_information = AdditionalInformation.new
+    @additional_information ||= AdditionalInformation.new(current_store.hash_store.fetch(:additional_information_answers, {}))
   end
 
   def update

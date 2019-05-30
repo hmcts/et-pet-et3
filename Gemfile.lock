@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/hmcts/et_dropzone_uploader.git
-  revision: 5b6a0435495ace67d29a98278a900ec66cb1777e
-  tag: v2.1.0
+  revision: e8f73fa913b9d5208b054981dc087e5bbf1eae7a
+  tag: v2.2.0
   specs:
-    et_dropzone_uploader (2.1.0)
+    et_dropzone_uploader (2.2.0)
       dropzonejs-rails (~> 0.8)
       rack-proxy (~> 0.6.5)
       rails (~> 5.2.2)

@@ -81,7 +81,7 @@ GEM
       msgpack (~> 1.0)
     builder (3.2.3)
     byebug (11.0.1)
-    capybara (3.21.0)
+    capybara (3.22.0)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -356,7 +356,7 @@ DEPENDENCIES
   azure_env_secrets!
   bootsnap (~> 1.4)
   byebug
-  capybara (~> 3.21)
+  capybara (~> 3.22)
   capybara-screenshot (~> 1.0)
   coffee-rails (~> 5.0)
   database_cleaner (~> 1.5)

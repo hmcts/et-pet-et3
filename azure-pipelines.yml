@@ -62,7 +62,7 @@ jobs:
         # RAILS_ENV=test TEST_LOCALE=cy bundle exec rake parallel:spec
         curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
         chmod +x ./cc-test-reporter
-        ./cc-test-reporter after-build --exit-code $?
+        ./cc-test-reporter after-build -t simplecov --exit-code $? || echo  “Skipping Code Climate coverage upload”
       displayName: 'script'
 
     - script: |

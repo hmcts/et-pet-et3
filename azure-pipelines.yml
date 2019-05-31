@@ -3,7 +3,7 @@
 # Add steps that install rails, analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/ruby
 
-name: $(SourceBranchName)-$(Build.SourceVersion)$(rev:.r)
+name: '$(SourceBranchName)-$(Build.SourceVersion) Build-$(Build.BuildId)'
 
 trigger:
   batch: true
@@ -62,7 +62,7 @@ jobs:
         RAILS_ENV=test TEST_LOCALE=cy bundle exec rake parallel:spec
         curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
         chmod +x ./cc-test-reporter
-        # ./cc-test-reporter after-build --exit-code 0
+        ./cc-test-reporter after-build --exit-code $?
       displayName: 'script'
 
     - script: |

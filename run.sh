@@ -12,5 +12,5 @@ create)
     bundle exec rake db:seed
     ;;
 esac
-
+cd /home/app/
 bundle exec unicorn -p ${PORT:-8080} -c ./config/unicorn.rb -E ${RAILS_ENV:-production}

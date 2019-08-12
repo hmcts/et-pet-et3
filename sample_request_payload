@@ -1,0 +1,168 @@
+{
+	"uuid": "{{$guid}}",
+	"command": "SerialSequence",
+	"data": [{
+		"command": "BuildResponse",
+		"data": {
+			"case_number": "9954321/2017",
+			"claimants_name": "Dummy Test",
+			"agree_with_early_conciliation_details": false,
+			"disagree_conciliation_reason": "lorem ipsum conciliation",
+			"agree_with_employment_dates": false,
+			"employment_start": "2017-01-01",
+			"employment_end": "2017-12-31",
+			"disagree_employment": "lorem ipsum employment",
+			"continued_employment": false,
+			"agree_with_claimants_description_of_job_or_title": false,
+			"disagree_claimants_job_or_title": "lorem ipsum job title",
+			"agree_with_claimants_hours": false,
+			"queried_hours": 32.0,
+			"agree_with_earnings_details": false,
+			"queried_pay_before_tax": 1000.0,
+			"queried_pay_before_tax_period": "Monthly",
+			"queried_take_home_pay": 900.0,
+			"queried_take_home_pay_period": "Monthly",
+			"agree_with_claimant_notice": false,
+			"disagree_claimant_notice_reason": "lorem ipsum notice reason",
+			"agree_with_claimant_pension_benefits": false,
+			"disagree_claimant_pension_benefits_reason": "lorem ipsum claimant pension",
+			"defend_claim": true,
+			"defend_claim_facts": "lorem ipsum defence",
+			"make_employer_contract_claim": true,
+			"claim_information": "lorem ipsum info",
+			"email_receipt": "sivvoy.taing@hmcts.net"
+		},
+		"uuid": "{{$guid}}"
+	}, {
+		"command": "BuildRespondent",
+		"data": {
+			"name": "Dummy Test",
+			"contact": "Dummy Test",
+			"address_attributes": {
+				"building": "the_shard",
+				"street": "Morton Circle",
+				"locality": "westminster",
+				"county": "london",
+				"post_code": "wc1 1aa"
+			},
+			"dx_number": "724060 Derby 21",
+			"address_telephone_number": "02081234567",
+			"alt_phone_number": "07123456789",
+			"contact_preference": "email",
+			"email_address": "sivvoy.taing@hmcts.net",
+			"fax_number": "",
+			"organisation_employ_gb": 100,
+			"organisation_more_than_one_site": false,
+			"employment_at_site_number": ""
+		},
+		"uuid": "{{$guid}}"
+	}, {
+		"command": "BuildRepresentative",
+		"data": {
+			"name": "Dummy Test",
+			"organisation_name": "N/A",
+			"address_attributes": {
+				"building": "106",
+				"street": "Mayfair",
+				"locality": "London",
+				"county": "Greater London",
+				"post_code": "SW1H 9PP"
+			},
+			"address_telephone_number": "01111 123456",
+			"mobile_number": "07987654321",
+			"representative_type": "Solicitor",
+			"dx_number": "dx1234567890",
+			"reference": "Rep Ref",
+			"contact_preference": "fax",
+			"email_address": "",
+			"fax_number": "0207 345 6789",
+			"disability": true,
+			"disability_information": "Lorem ipsum disability"
+		},
+		"uuid": "{{$guid}}"
+	}],
+	"build_response": {
+		"uuid": "{{$guid}}",
+		"command": "SerialSequence",
+		"data": [{
+			"command": "BuildResponse",
+			"data": {
+				"case_number": "1454321/2017",
+				"claimants_name": "Jeff Gerhold",
+				"agree_with_early_conciliation_details": false,
+				"disagree_conciliation_reason": "lorem ipsum conciliation",
+				"agree_with_employment_dates": false,
+				"employment_start": "2017-01-01",
+				"employment_end": "2017-12-31",
+				"disagree_employment": "lorem ipsum employment",
+				"continued_employment": false,
+				"agree_with_claimants_description_of_job_or_title": false,
+				"disagree_claimants_job_or_title": "lorem ipsum job title",
+				"agree_with_claimants_hours": false,
+				"queried_hours": 32.0,
+				"agree_with_earnings_details": false,
+				"queried_pay_before_tax": 1000.0,
+				"queried_pay_before_tax_period": "Monthly",
+				"queried_take_home_pay": 900.0,
+				"queried_take_home_pay_period": "Monthly",
+				"agree_with_claimant_notice": false,
+				"disagree_claimant_notice_reason": "lorem ipsum notice reason",
+				"agree_with_claimant_pension_benefits": false,
+				"disagree_claimant_pension_benefits_reason": "lorem ipsum claimant pension",
+				"defend_claim": true,
+				"defend_claim_facts": "lorem ipsum defence",
+				"make_employer_contract_claim": true,
+				"claim_information": "lorem ipsum info",
+				"email_receipt": "email@recei.pt"
+			},
+			"uuid": "{{$guid}}"
+		}, {
+			"command": "BuildRespondent",
+			"data": {
+				"name": "Deckow-Bogan",
+				"contact": "Hosea Hodkiewicz",
+				"address_attributes": {
+					"building": "the_shard",
+					"street": "Morton Circle",
+					"locality": "westminster",
+					"county": "london",
+					"post_code": "wc1 1aa"
+				},
+				"dx_number": "724060 Derby 21",
+				"address_telephone_number": "02081234567",
+				"alt_phone_number": "07123456789",
+				"contact_preference": "email",
+				"email_address": "john@dodgyco.com",
+				"fax_number": "",
+				"organisation_employ_gb": 100,
+				"organisation_more_than_one_site": false,
+				"employment_at_site_number": ""
+			},
+			"uuid": "{{$guid}}"
+		}, {
+			"command": "BuildRepresentative",
+			"data": {
+				"name": "Jamil Leffler II",
+				"organisation_name": "evolve interactive ROI",
+				"address_attributes": {
+					"building": "106",
+					"street": "Mayfair",
+					"locality": "London",
+					"county": "Greater London",
+					"post_code": "SW1H 9PP"
+				},
+				"address_telephone_number": "01111 123456",
+				"mobile_number": "07987654321",
+				"representative_type": "Solicitor",
+				"dx_number": "dx1234567890",
+				"reference": "Rep Ref",
+				"contact_preference": "fax",
+				"email_address": "",
+				"fax_number": "0207 345 6789",
+				"disability": true,
+				"disability_information": "Lorem ipsum disability"
+			},
+			"uuid": "{{$guid}}"
+		}]
+	}
+}

@@ -7,14 +7,14 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.3'
+gem 'rails', '~> 6.0.0'
 # Azure deployment so we need this
 gem 'azure_env_secrets', git: 'https://github.com/ministryofjustice/azure_env_secrets.git', tag: 'v0.1.3'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', '~> 6.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -39,7 +39,7 @@ gem 'govuk_elements_rails', '~> 3.1'
 gem 'govuk_elements_form_builder',  '~>1.3'
 gem 'gov_uk_date_fields', '~> 2.1'
 gem 'jquery-rails', '~> 4.3'
-gem 'activerecord-nulldb-adapter', '~> 0.3'
+gem 'activerecord-nulldb-adapter', '~> 0.4'
 gem 'httparty', '~> 0.17'
 gem 'uk_postcode', '~> 2.1'
 
@@ -87,7 +87,7 @@ end
 group :production do
   # Add bootsnap for 5.2
   gem 'bootsnap', '~> 1.4'
-  gem 'unicorn', '~> 5.5'
+  gem 'iodine', '~> 0.7.33'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -95,4 +95,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'sentry-raven', '~> 2.9'
 
-gem 'et_dropzone_uploader', git: 'https://github.com/hmcts/et_dropzone_uploader.git', tag: 'v2.2.0'
+gem 'et_dropzone_uploader', git: 'https://github.com/hmcts/et_dropzone_uploader.git', tag: 'v2.2.1'

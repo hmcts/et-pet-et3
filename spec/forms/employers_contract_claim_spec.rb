@@ -3,7 +3,7 @@ require 'faker'
 
 RSpec.describe EmployersContractClaim, type: :model do
 
-  let(:four_thousand_five_hundred_and_one_characters) { Faker::Lorem.characters(4501) }
+  let(:four_thousand_five_hundred_and_one_characters) { Faker::Lorem.characters(number: 4501) }
 
   let(:populated_employers_contract_claim) {
     described_class.new(

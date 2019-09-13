@@ -43,9 +43,9 @@ FactoryBot.define do
     employment_at_site_number {"string"}
     organisation_employ_gb {"string"}
     make_employer_contract_claim {:"questions.make_employer_contract_claim.yes.label"}
-    claim_information {Faker::Lorem.characters(4501)}
+    claim_information {Faker::Lorem.characters(number: 4501)}
     email_receipt {""}
     disability {:"questions.disability.yes.label"}
-    disability_information { Faker::Lorem.characters(351) }
+    disability_information { Faker::Lorem.characters(number: 351) }
   end
 end

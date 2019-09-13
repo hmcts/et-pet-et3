@@ -49,13 +49,13 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 3.21'
   gem 'selenium-webdriver', '~> 3.142'
-  gem 'rubocop', '~> 0.70'
+  gem 'rubocop', '~> 0.74'
   gem 'rubocop-rspec', '~> 1.33'
   gem 'simplecov', '~> 0.15'
   gem 'pry', '~> 0.12'
   #VSCode debugger
-  gem 'ruby-debug-ide', '~> 0.6.1'
-  gem 'debase', '~> 0.2.2'
+  gem 'ruby-debug-ide', '~> 0.7'
+  gem 'debase', '~> 0.2'
   # Run Rspec tests in parallel to speed the test suite up
   gem 'parallel_tests', '~> 2.29'
   # Add .env file to store environment variables
@@ -76,10 +76,9 @@ group :test do
   gem 'rspec-rails', '~> 3.8'
   gem 'site_prism', '~> 3.2'
   gem 'webdrivers', '~> 4.0'
-  gem 'geckodriver-helper', '~> 0.23'
   gem 'database_cleaner', '~> 1.5'
   gem 'webmock', '~> 3.5'
-  gem 'faker', '~> 1.9'
+  gem 'faker', '~> 2.3'
   gem 'azure-storage', '~> 0.15.0.preview'
   gem 'factory_bot'
 end

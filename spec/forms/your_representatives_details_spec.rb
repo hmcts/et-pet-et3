@@ -13,7 +13,7 @@ RSpec.describe YourRepresentativesDetails, type: :model do
     )
   }
 
-  let(:three_hundred_fifty_one_chars) { Faker::Lorem.characters(351) }
+  let(:three_hundred_fifty_one_chars) { Faker::Lorem.characters(number: 351) }
 
   context 'with validators' do
     it 'will not validate a name with numbers in' do

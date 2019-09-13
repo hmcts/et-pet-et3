@@ -78,7 +78,7 @@ group :test do
   gem 'webdrivers', '~> 4.0'
   gem 'geckodriver-helper', '~> 0.23'
   gem 'database_cleaner', '~> 1.5'
-  gem 'webmock', '~> 3.5'
+  gem 'webmock', '~> 3.7'
   gem 'faker', '~> 1.9'
   gem 'azure-storage', '~> 0.15.0.preview'
   gem 'factory_bot'

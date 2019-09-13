@@ -45,11 +45,11 @@ FactoryBot.define do
     queried_take_home_pay {"string"}
     queried_take_home_pay_period {:"questions.agree_with_earnings_details.queried_take_home_pay_period.weekly.label"}
     agree_with_claimant_notice {:"questions.agree_with_claimant_notice.no.label"}
-    disagree_claimant_notice_reason { Faker::Lorem.characters(451) }
+    disagree_claimant_notice_reason { Faker::Lorem.characters(number: 451) }
     agree_with_claimant_pension_benefits {:"questions.agree_with_claimant_pension_benefits.no.label"}
-    disagree_claimant_pension_benefits_reason { Faker::Lorem.characters(351) }
+    disagree_claimant_pension_benefits_reason { Faker::Lorem.characters(number: 351) }
     defend_claim {:"questions.defend_claim.yes.label"}
-    defend_claim_facts { Faker::Lorem.characters(2501) }
+    defend_claim_facts { Faker::Lorem.characters(number: 2501) }
     agree_with_employment_dates {:"questions.agree_with_employment_dates.no.label"}
     employment_start {"0/0/0"}
     employment_end {"0/0/0"}

@@ -8,7 +8,7 @@ RSpec.describe Response, type: :model do
     )
   }
 
-  let(:two_thousand_five_hundred_and_one_characters) { Faker::Lorem.characters(2501) }
+  let(:two_thousand_five_hundred_and_one_characters) { Faker::Lorem.characters(number: 2501) }
 
   context 'with validators' do
 

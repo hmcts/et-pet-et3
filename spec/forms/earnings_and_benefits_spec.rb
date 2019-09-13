@@ -18,9 +18,9 @@ RSpec.describe EarningsAndBenefits, type: :model do
     )
   }
 
-  let(:four_hundred_and_one_chars) { Faker::Lorem.characters(401) }
+  let(:four_hundred_and_one_chars) { Faker::Lorem.characters(number: 401) }
 
-  let(:three_hundred_fifty_one_chars) { Faker::Lorem.characters(351) }
+  let(:three_hundred_fifty_one_chars) { Faker::Lorem.characters(number: 351) }
 
   context 'with validators' do
     it 'will not validate queried hours with a string' do

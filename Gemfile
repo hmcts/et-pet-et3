@@ -51,7 +51,7 @@ group :development, :test do
   gem 'selenium-webdriver', '~> 3.142'
   gem 'rubocop', '~> 0.74'
   gem 'rubocop-rspec', '~> 1.33'
-  gem 'simplecov', '~> 0.15'
+  gem 'simplecov', '~> 0.17'
   gem 'pry', '~> 0.12'
   #VSCode debugger
   gem 'ruby-debug-ide', '~> 0.7'

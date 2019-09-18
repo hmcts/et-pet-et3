@@ -53,9 +53,6 @@ group :development, :test do
   gem 'rubocop-rspec', '~> 1.33'
   gem 'simplecov', '~> 0.15'
   gem 'pry', '~> 0.12'
-  #VSCode debugger
-  gem 'ruby-debug-ide', '~> 0.7'
-  gem 'debase', '~> 0.2'
   # Run Rspec tests in parallel to speed the test suite up
   gem 'parallel_tests', '~> 2.29'
   # Add .env file to store environment variables

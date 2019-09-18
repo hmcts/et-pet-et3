@@ -77,7 +77,7 @@ group :test do
   gem 'site_prism', '~> 3.2'
   gem 'webdrivers', '~> 4.0'
   gem 'database_cleaner', '~> 1.5'
-  gem 'webmock', '~> 3.5'
+  gem 'webmock', '~> 3.7'
   gem 'faker', '~> 2.3'
   gem 'azure-storage', '~> 0.15.0.preview'
   gem 'factory_bot'

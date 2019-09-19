@@ -155,7 +155,7 @@ GEM
     govuk_template (0.26.0)
       rails (>= 3.1)
     hashdiff (1.0.0)
-    httparty (0.17.0)
+    httparty (0.17.1)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
     i18n (1.6.0)

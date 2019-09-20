@@ -423,6 +423,9 @@ cy:
         name: Enw
         purpose: Pwrpas
         expires: Dod i ben
+      further_information: ""
+      refer_to_govuk: ""
+      cookie_link_text: ""
     terms_and_conditions:
       header: Telerau ac amodau
       introduction: Trwy ddefnyddio’r gwasanaeth hwn rydych yn cytuno i’r telerau defnydd hyn. Mae hyn yn cynnwys y %{privacy_policy_href}.
@@ -561,6 +564,10 @@ cy:
           - Os ydych eisiau cwyno am sut rydym wedi ymdrin â'ch data personol, anfonwch e-bost atom.
           - Gallwch gwyno i %{ico_href} os nad ydych yn fodlon â'n hymateb neu'n credu nad ydym yn prosesu eich data personol yn unol â’r gyfraith.
         ico_href: Swyddfa'r Comisiynydd Gwybodaeth
+      further_info:
+        header: ""
+        refer_to_govuk: ""
+        govuk_link_text: ""
     respondents_details:
       header: "Manylion yr Atebydd "
     claimants_details:

@@ -426,6 +426,9 @@ en:
         name: Name
         purpose: Purpose
         expires: Expires
+      further_information: "Further information"
+      refer_to_govuk: "Refer here to %{link} cookie policy"
+      cookie_link_text: "Gov.uk"
     terms_and_conditions:
       header: Terms and conditions
       introduction: By using this service you’re agreeing to these terms of use. This includes the %{privacy_policy_href}.
@@ -564,6 +567,10 @@ en:
           - If you want to complain about how we’ve handled your personal data, send an email.
           - You can complain to the %{ico_href} if you are unsatisfied with our response or believe we are not legally processing your personal data.
         ico_href: Information Commissioner's Office
+      further_info:
+        header: "Further information"
+        refer_to_govuk: "Refer here to %{link} Privacy policy"
+        govuk_link_text: "Gov.uk"
     respondents_details:
       header: "Respondent's Details"
     claimants_details:

@@ -38,6 +38,9 @@ RSpec.feature "Access Privacy", js: true do
 
     expect(privacy_notice_page.how_to_complain).to have_header
     privacy_notice_page.how_to_complain.assert_content
+
+    expect(privacy_notice_page.further_info).to have_header
+    privacy_notice_page.further_info.assert_content
   end
 
   scenario "from respondent's details page" do

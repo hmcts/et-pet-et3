@@ -36,6 +36,9 @@ RSpec.feature "Access Cookies", js: true do
 
       expect(cookies_page.more_secure).to have_header
       cookies_page.more_secure.assert_content
+
+      expect(cookies_page.further_info).to have_header
+      cookies_page.further_info.assert_content
     end
   end
 

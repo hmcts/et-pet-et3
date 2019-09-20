@@ -402,6 +402,9 @@ cy:
     more_secure:
       header: 4. Gwneud y gwasanaeth yn fwy diogel
       content: Rydym yn gosod cwcis er mwyn rhwystro hacwyr rhag addasu cynnwys y cwcis eraill a osodon ni. Mae hyn yn gwneud y gwasanaeth yn fwy diogel ac yn diogelu eich gwybodaeth bersonol.
+    further_info:
+      header: ""
+      content: ""
     table_header:
       name: Enw
       purpose: Pwrpas
@@ -536,6 +539,9 @@ cy:
       content:
         - Os ydych eisiau cwyno am sut rydym wedi ymdrin â'ch data personol, anfonwch e-bost atom.
         - Gallwch gwyno i %{ico_href} os nad ydych yn fodlon â'n hymateb neu'n credu nad ydym yn prosesu eich data personol yn unol â’r gyfraith.
+    further_info:
+      header: ""
+      content: ""
   respondents_details:
     header: "Manylion yr Atebydd"
   claimants_details:

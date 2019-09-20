@@ -50,3 +50,6 @@
                     'https://ico.org.uk/global/contact-us', target: :_blank)).each do |paragraph|
       p = paragraph.html_safe
 
+  #further-information
+    h4.heading-small = t('components.privacy_notice.further_info.header')
+    p = raw t("components.privacy_notice.further_info.refer_to_govuk", link: link_to(t("components.privacy_notice.further_info.govuk_link_text"), "https://www.gov.uk/help/cookies", rel: "external", target: "_blank"))

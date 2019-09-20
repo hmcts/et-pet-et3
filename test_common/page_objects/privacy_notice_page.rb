@@ -104,6 +104,14 @@ module ET3
         end
       end
 
+      section :further_info, :wrapper_headered, 'privacy_notice.further_info.header'do
+        include ET3::Test::I18n
+        element :header, :element_with_text, 'privacy_notice.further_info.header'
+        def assert_content
+          root_element.assert_selector('p', text: t('privacy_notice.further_info.content'))
+        end
+      end
+
       def switch_to_welsh
         switch_language.welsh_link.click
       end

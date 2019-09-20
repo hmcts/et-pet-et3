@@ -63,3 +63,6 @@
   #more-secure
     h4.heading-small = t('components.cookies.more_secure.header')
     p = t('components.cookies.more_secure.content')
+
+  h3.heading-small = t('components.cookies.further_information')
+  p = raw t("components.cookies.refer_to_govuk", link: link_to(t("components.cookies.cookie_link_text"), "https://www.gov.uk/help/cookies", rel: "external", target: "_blank"))

@@ -26,3 +26,13 @@
     p = t('components.introduction.data_content')
 
   = link_to t('components.introduction.start_now'), start_new_session_path, class: 'button button-start', method: :put
+  - content_for :sidebar
+    .sidebar
+    .sidebar-header
+      h2.heading-medium =t('components.sidebar.header')
+    .sidebar-content
+      p = link_to(t('components.sidebar.claim_link'), t('components.sidebar.claim_href'), target: :_blank)
+      p = link_to(t('components.sidebar.response_link'), t('components.sidebar.response_href'), target: :_blank)
+      p = link_to(t('components.sidebar.download_link'), t('components.sidebar.download_href'), target: :_blank)
+      hr
+      p = link_to(t('components.sidebar.more_category_link'), t('components.sidebar.more_category_href'), target: :_blank)

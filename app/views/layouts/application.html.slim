@@ -31,15 +31,7 @@
             h2.heading-medium data-behavior="heading" = yield(:form_page_title)
           = yield
         .column-one-third
-          .sidebar
-            .sidebar-header
-              h2.heading-medium =t('components.sidebar.header')
-            .sidebar-content
-              p = link_to(t('components.sidebar.claim_link'), t('components.sidebar.claim_href'), target: :_blank)
-              p = link_to(t('components.sidebar.response_link'), t('components.sidebar.response_href'), target: :_blank)
-              p = link_to(t('components.sidebar.download_link'), t('components.sidebar.download_href'), target: :_blank)
-              hr
-              p = link_to(t('components.sidebar.more_category_link'), t('components.sidebar.more_category_href'), target: :_blank)
+          = yield(:sidebar)
 - content_for :footer_support_links
   = render 'shared/footer_links'
 = render template: "layouts/govuk_template"

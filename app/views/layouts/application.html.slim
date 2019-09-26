@@ -23,8 +23,7 @@
       .grid-row
         - unless ENV.fetch('DISABLE_WELSH', 'false').downcase == 'true'
           .column-full
-            .switch-language
-              = link_to t('components.common.language'), locale: t('components.common.locale')
+          = yield(:translation)
         = render "shared/maintenance_notice" if ENV['SHOW_DOWNTIME_BANNER'].present?
         .column-two-thirds
           .content-header

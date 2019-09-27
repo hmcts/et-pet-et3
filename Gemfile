@@ -71,7 +71,7 @@ end
 group :test do
   gem 'capybara-screenshot', '~> 1.0'
   gem 'rspec-rails', '~> 3.8'
-  gem 'site_prism', '~> 3.2'
+  gem 'site_prism', '~> 3.4'
   gem 'webdrivers', '~> 4.0'
   gem 'database_cleaner', '~> 1.5'
   gem 'webmock', '~> 3.5'

@@ -21,7 +21,6 @@
   .direction-ltr#content
     main role="main"
       .grid-row
-        - unless ENV.fetch('DISABLE_WELSH', 'false').downcase == 'true'
           .column-full
             - if content_for?(:translation)
               = yield(:translation)

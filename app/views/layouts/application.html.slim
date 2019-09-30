@@ -23,7 +23,10 @@
       .grid-row
         - unless ENV.fetch('DISABLE_WELSH', 'false').downcase == 'true'
           .column-full
-            = yield(:translation)
+            - if content_for?(:translation)
+              = yield(:translation)
+            - else
+              = raw "&nbsp;"
         = render "shared/maintenance_notice" if ENV['SHOW_DOWNTIME_BANNER'].present?
         .column-two-thirds
           .content-header

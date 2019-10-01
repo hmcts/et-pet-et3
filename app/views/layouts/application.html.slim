@@ -21,12 +21,12 @@
   .direction-ltr#content
     main role="main"
       .grid-row
+        = render "shared/maintenance_notice" if ENV['SHOW_DOWNTIME_BANNER'].present?
         .column-full
           - if content_for?(:translation)
             = yield(:translation)
           - else
             = raw "&nbsp;"
-              = render "shared/maintenance_notice" if ENV['SHOW_DOWNTIME_BANNER'].present?
           .column-two-thirds
             .content-header
               h2.heading-medium data-behavior="heading" = yield(:form_page_title)

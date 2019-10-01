@@ -36,3 +36,7 @@
       p = link_to(t('components.sidebar.download_link'), t('components.sidebar.download_href'), target: :_blank)
       hr
       p = link_to(t('components.sidebar.more_category_link'), t('components.sidebar.more_category_href'), target: :_blank)
+
+  -content_for :translation
+    .switch-language
+      = link_to t('components.common.language'), locale: t('components.common.locale')

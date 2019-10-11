@@ -343,7 +343,7 @@ GEM
       nokogiri (~> 1.6)
       rubyzip (~> 1.0)
       selenium-webdriver (>= 3.0, < 4.0)
-    webmock (3.7.5)
+    webmock (3.7.6)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
@@ -401,7 +401,7 @@ DEPENDENCIES
   uk_postcode (~> 2.1)
   web-console (>= 3.3.0)
   webdrivers (~> 4.0)
-  webmock (~> 3.5)
+  webmock (~> 3.7)
 
 BUNDLED WITH
    1.17.3

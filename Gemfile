@@ -90,5 +90,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'sentry-raven', '~> 2.12'
+gem 'et_azure_insights', '0.1.3', git: 'https://github.com/hmcts/et-azure-insights.git', tag: 'v0.1.3'
+#gem 'et_azure_insights', path: '../../../et_azure_insights'
+gem 'application_insights', git: 'https://github.com/microsoft/ApplicationInsights-Ruby.git', ref: '5db6b4'
 
 gem 'et_dropzone_uploader', git: 'https://github.com/hmcts/et_dropzone_uploader.git', tag: 'v2.2.3'

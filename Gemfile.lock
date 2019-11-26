@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/hmcts/et-azure-insights.git
+  revision: f1ec05865f079254559be800f4e465775ebe0f9a
+  tag: v0.1.3
+  specs:
+    et_azure_insights (0.1.3)
+      application_insights (~> 0.5.7)
+
+GIT
   remote: https://github.com/hmcts/et_dropzone_uploader.git
   revision: b07afa1e8c621345962dd80277642004e99625ef
   tag: v2.2.3
@@ -7,6 +15,13 @@ GIT
       dropzonejs-rails (~> 0.8)
       rack-proxy (~> 0.6.5)
       rails (>= 5.2.2)
+
+GIT
+  remote: https://github.com/microsoft/ApplicationInsights-Ruby.git
+  revision: 5db6b4ad65262d23f26b678143a4a1fd7939e5c2
+  ref: 5db6b4
+  specs:
+    application_insights (0.5.7)
 
 GIT
   remote: https://github.com/ministryofjustice/azure_env_secrets.git
@@ -356,6 +371,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord-nulldb-adapter (~> 0.4)
+  application_insights!
   azure-storage (~> 0.15.0.preview)
   azure_env_secrets!
   bootsnap (~> 1.4)
@@ -365,6 +381,7 @@ DEPENDENCIES
   coffee-rails (~> 5.0)
   database_cleaner (~> 1.5)
   dotenv-rails (~> 2.7)
+  et_azure_insights (= 0.1.3)!
   et_dropzone_uploader!
   factory_bot
   faker (~> 2.3)

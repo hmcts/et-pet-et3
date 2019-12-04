@@ -17,7 +17,7 @@ function checkLinkStatus() {
             } else {
                 $('.pdf-success').addClass("hidden");
                 $('.pdf-failure').removeClass("hidden").css('pointer-events', 'none');
-                console.warn(`Unable to find PDF, retrying ${url} in 10 seconds`);
+                console.warn("Unable to find PDF, retrying " + url + " in 10 seconds");
                 setTimeout(function() { checkLinkStatus() }, 10000);
             }
         }

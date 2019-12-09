@@ -574,7 +574,7 @@ cy:
     confirmation: "Ymateb wedi'i gwblhau"
     reference: 142000000100
     copy_sent: Rydym wedi anfon copi o’ch ymateb i
-    copy_sent_without_email: "Gallwch chi "
+    copy_sent_without_email: Gallwch lawrlwytho eich ymateb.
     office_contact: "Alexandra House, 14-22 The Parsonage, Manchester, M3 2JA"
     date: "Mae eich ymateb, a gyflwynwyd ar "
     return_link: Dychwelyd i GOV.UK

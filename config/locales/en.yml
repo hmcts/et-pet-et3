@@ -340,9 +340,9 @@ en:
       confirmation: Response Complete
       reference_text: Your case number
       copy_sent: We've sent a copy of your response to %{email}. You can also
-      copy_sent_without_email: "You can "
       submission_date: "Your response submitted on "
       submission_office: ", has been sent to "
+      submission_no_email: "You can "
       contact_office: "If you need to contact them, please email %{email} or call "
       include_quote_case: "You will need to include or quote your case number."
       valid_pdf_download: download your response

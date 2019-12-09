@@ -598,9 +598,10 @@ en:
     receipt_description: We can email you a copy of your receipt.
     submit: Submit your response
   submission:
-    confirmation: Response complete
+    confirmation: Response submitted
     reference: 142000000100
-    thank_you: Thank you for your submission. It has been forwarded to the following office which will contact you in due course.
+    copy_sent: We've sent a copy of your response to
+    copy_sent_without_email: You can download your response.
     office_contact: "Alexandra House, 14-22 The Parsonage, Manchester, M3 2JA"
     date: "Submission Date:"
     return_link: Return to GOV.UK

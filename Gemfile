@@ -54,7 +54,7 @@ group :development, :test do
   gem 'simplecov', '~> 0.15'
   gem 'pry', '~> 0.12'
   # Run Rspec tests in parallel to speed the test suite up
-  gem 'parallel_tests', '~> 2.29'
+  gem 'parallel_tests', '~> 2.30'
   # Add .env file to store environment variables
   gem 'dotenv-rails', '~> 2.7'
 end

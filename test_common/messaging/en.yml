@@ -290,7 +290,7 @@ en:
       edit_page: Edit answers on this page
     form_submission:
       invalid_pdf_download: Not quite ready yet - a PDF version of your completed form will be available for download shortly
-      valid_pdf_download: A PDF version of your completed form is now available for download
+      valid_pdf_download: download your response
     footer:
       terms_and_conditions_href: terms and conditions
       personal_info_charter_href: personal information charter
@@ -601,8 +601,8 @@ en:
     confirmation: Response submitted
     reference: 142000000100
     copy_sent: We've sent a copy of your response to
-    copy_sent_without_email: You can download your response.
+    copy_sent_without_email: You can
     office_contact: "Alexandra House, 14-22 The Parsonage, Manchester, M3 2JA"
-    date: "Submission Date:"
+    date: "Your response submitted on "
     return_link: Return to GOV.UK
     return_href: https://gov.uk

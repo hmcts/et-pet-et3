@@ -342,7 +342,7 @@ cy:
       submission_no_email: "Gallwch chi "
       contact_office: "Os oes arnoch angen cysylltu â nhw, anfonwch neges e-bost i %{email} neu ffoniwch "
       include_quote_case: "Bydd angen ichi gynnwys neu ddyfynnu eich rhif achos."
-      valid_pdf_download: Mae fersiwn PDF o'ch ffurflen wedi'i llenwi nawr ar gael i'w lawrlwytho
+      valid_pdf_download: lawrlwytho eich ymateb
       invalid_pdf_download: Ddim yn barod eto - bydd fersiwn PDF o'ch ffurflen wedi'i llenwi ar gael i'w lawrlwytho maes o law
       pdf_help: "Gellid darllen dogfennau PDF (Portable Document Format) drwy ddefnyddio rhaglenni fel: "
       adobe_link: "Adobe's Acrobat Reader"

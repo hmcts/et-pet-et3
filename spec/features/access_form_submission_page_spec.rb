@@ -25,6 +25,7 @@ RSpec.feature "Access Form Submission Page", js: true do
     expect(form_submission_page).to have_reference_number
     expect(form_submission_page).to have_office_contact
     expect(form_submission_page).to have_submission_date
+    expect(form_submission_page).to have_copy_sent
     expect(form_submission_page).to have_valid_pdf_download
   end
 

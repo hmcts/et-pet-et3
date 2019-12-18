@@ -5,24 +5,36 @@
     p.font-large = t('components.form_submission.reference_text')
     p.font-large
       strong.bold.reference-number = @reference_number
-  p = t('components.form_submission.thank_you')
   p
-    strong.bold.office-address = @office_address
-    br
-    strong.bold.office-phone = @office_phone_number
+    - if @respondent_email.present?
+      = t('components.form_submission.copy_sent', email: @respondent_email)
+      = ' '
+      = link_to t('components.form_submission.valid_pdf_download'), @pdf_url, class: 'pdf-success'
+      = link_to t('components.form_submission.invalid_pdf_download'), nil, class: 'pdf-failure hidden'
+      = '.'
+    - else
+      = t('components.form_submission.copy_sent_without_email')
+      = link_to t('components.form_submission.valid_pdf_download'), @pdf_url, class: 'pdf-success'
+      = link_to t('components.form_submission.invalid_pdf_download'), nil, class: 'pdf-failure hidden'
+      = '.'
+
   p
     = t('components.form_submission.submission_date')
-    span.submission-date = @submission_date
+    submission-date = @submission_date
+    = t('components.form_submission.submission_office')
+    office-address = @office_address
   p
-    = link_to t('components.form_submission.valid_pdf_download'), @pdf_url, class: 'pdf-success'
-    = link_to t('components.form_submission.invalid_pdf_download'), nil, class: 'pdf-failure hidden'
-  p
-    = t('components.form_submission.pdf_help')
-    = link_to(t('components.form_submission.adobe_link'),t('components.form_submission.adobe_href'))
+    = raw t('components.form_submission.contact_office', email: mail_to(@office_email))
+    office-phone = @office_phone_number
 
-  p = t('components.form_submission.contact_on')
-  p = t('components.form_submission.contact_engcy')
-  p = t('components.form_submission.contact_sco')
-  p = t('components.form_submission.contact_minitext')
-  p = t('components.form_submission.contact_general')
+  p.panel.panel-border-narrow
+    = t('components.form_submission.include_quote_case')
+
+  //p
+    //strong.bold = t('components.form_submission.submission_feedback')
+
+  //p
+    //= t('components.form_submission.feedback_content')
+  br
+
   = link_to t('components.form_submission.return_link'), t('components.form_submission.return_href'), class: 'button button-start'

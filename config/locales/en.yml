@@ -336,12 +336,16 @@ en:
       submit: "Submit your response"
     form_submission:
       page_title: Application Complete
-      header: Response complete
+      header: Response submitted
       confirmation: Response Complete
-      reference_text: Your reference number, which should be quoted on all correspondence, is
-      thank_you: Thank you for your submission. It has been forwarded to the following office which will contact you in due course.
-      submission_date: "Submission Date: "
-      valid_pdf_download: A PDF version of your completed form is now available for download
+      reference_text: Your case number
+      copy_sent: We've sent a copy of your response to %{email}. You can also
+      copy_sent_without_email: "You can "
+      submission_date: "Your response submitted on "
+      submission_office: ", has been sent to "
+      contact_office: "If you need to contact them, please email %{email} or call "
+      include_quote_case: "You will need to include or quote your case number."
+      valid_pdf_download: download your response
       invalid_pdf_download: Not quite ready yet - a PDF version of your completed form will be available for download shortly
       pdf_help: "PDF (Portable Document Format) files can be read using applications such as: "
       adobe_link: "Adobe's Acrobat Reader"
@@ -353,6 +357,8 @@ en:
       contact_general: They can also provide general procedural information about the employment tribunals.
       return_link: Return to GOV.UK
       return_href: https://gov.uk
+      submission_feedback: "Your feedback"
+      feedback_content: "We'd like your feedback on this service so we can improve it."
     introduction:
       header: Introduction
       description: Complete and submit an ET3 response form when someone makes an employment tribunal claim against you.

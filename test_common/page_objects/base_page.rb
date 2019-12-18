@@ -3,6 +3,7 @@ require_relative '../messaging'
 module ET3
   module Test
     class BasePage < SitePrism::Page
+      include RSpec::Matchers
       load_validation { [displayed?, "Expected #{current_url} to match #{url_matcher} but it did not."] }
       def self.set_url(url)
         super "#{ENV['ET3_URL']}{/locale}#{url}"

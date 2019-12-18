@@ -336,9 +336,13 @@ cy:
       header: "Ymateb wedi'i gwblhau "
       confirmation: "Ymateb wedi'i gwblhau "
       reference_text: "Eich cyfeirnod, y dylid ei ddyfynnu ar bob gohebiaeth, yw "
-      thank_you: "Diolch am gyflwyno eich ffurflen. Mae wedi cael ei hanfon ymlaen i'r swyddfa ganlynol a fydd yn cysylltu â chi maes o law. "
-      submission_date: "Dyddiad Cyflwyno: "
-      valid_pdf_download: Mae fersiwn PDF o'ch ffurflen wedi'i llenwi nawr ar gael i'w lawrlwytho
+      copy_sent: "Rydym wedi anfon copi o’ch ymateb i %{email}. Gallwch chi hefyd"
+      copy_sent_without_email: "Gallwch chi "
+      submission_date: "Mae eich ymateb, a gyflwynwyd ar "
+      submission_office: ", wedi cael ei anfon i "
+      contact_office: "Os oes arnoch angen cysylltu â nhw, anfonwch neges e-bost i %{email} neu ffoniwch "
+      include_quote_case: "Bydd angen ichi gynnwys neu ddyfynnu eich rhif achos."
+      valid_pdf_download: "lawrlwythwch eich ymateb"
       invalid_pdf_download: Ddim yn barod eto - bydd fersiwn PDF o'ch ffurflen wedi'i llenwi ar gael i'w lawrlwytho maes o law
       pdf_help: "Gellid darllen dogfennau PDF (Portable Document Format) drwy ddefnyddio rhaglenni fel: "
       adobe_link: "Adobe's Acrobat Reader"
@@ -350,6 +354,8 @@ cy:
       contact_general: "Gallant hefyd ddarparu gwybodaeth weithdrefnol gyffredinol am y tribiwnlysoedd cyflogaeth. "
       return_link: Dychwelyd i GOV.UK
       return_href: "https://gov.uk"
+      submission_feedback: "Eich adborth"
+      feedback_content: "Byddwn yn ddiolchgar i gael eich adborth ar y gwasanaeth hwn fel y gallwn ei wella."
     introduction:
       header: "Cyflwyniad "
       description: Llenwch a chyflwynwch ffurflen ymateb ET3 pan fydd rhywun yn gwneud hawliad tribiwnlys cyflogaeth yn eich erbyn.

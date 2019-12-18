@@ -28,6 +28,11 @@ FactoryBot.define do
     disability_information {"Lorem ipsum disability"}
   end
 
+  trait :contact_preference_post do
+    contact_preference {:"questions.contact_preference.post.label"}
+    email_address { nil }
+  end
+
   trait :upload_additional_information do
     rtf_file {"sample.rtf"}
   end

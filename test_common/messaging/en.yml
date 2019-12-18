@@ -601,7 +601,7 @@ en:
     confirmation: Response submitted
     reference: 142000000100
     copy_sent: We've sent a copy of your response to
-    copy_sent_without_email: You can
+    copy_sent_without_email: "You can "
     office_contact: "Alexandra House, 14-22 The Parsonage, Manchester, M3 2JA"
     date: "Your response submitted on "
     return_link: Return to GOV.UK

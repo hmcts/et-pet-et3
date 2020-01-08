@@ -20,12 +20,12 @@
 
   p
     = t('components.form_submission.submission_date')
-    submission-date = @submission_date
+    span.submission-date = @submission_date
     = t('components.form_submission.submission_office')
-    office-address = @office_address
+    span.office-address = @office_address
   p
     = raw t('components.form_submission.contact_office', email: mail_to(@office_email))
-    office-phone = @office_phone_number
+    span.office-phone = @office_phone_number
 
   p.panel.panel-border-narrow
     = t('components.form_submission.include_quote_case')

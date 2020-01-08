@@ -8,7 +8,6 @@ RSpec.feature "View Sidebar", js: true do
 
     expect(start_page.sidebar).to have_link(t('components.sidebar.claim_link'), href: t('components.sidebar.claim_href'))
     expect(start_page.sidebar).to have_link(t('components.sidebar.response_link'), href: t('components.sidebar.response_href'))
-    expect(start_page.sidebar).to have_link(t('components.sidebar.download_link'), href: t('components.sidebar.download_href'))
     expect(start_page.sidebar).to have_link(t('components.sidebar.more_category_link'), href: t('components.sidebar.more_category_href'))
   end
 

@@ -42,6 +42,8 @@ gem 'jquery-rails', '~> 4.3'
 gem 'activerecord-nulldb-adapter', '~> 0.4'
 gem 'httparty', '~> 0.17'
 gem 'uk_postcode', '~> 2.1'
+# Add .env file to store environment variables
+gem 'dotenv-rails', '~> 2.7'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -55,8 +57,6 @@ group :development, :test do
   gem 'pry', '~> 0.12'
   # Run Rspec tests in parallel to speed the test suite up
   gem 'parallel_tests', '~> 2.29'
-  # Add .env file to store environment variables
-  gem 'dotenv-rails', '~> 2.7'
 end
 
 group :development do

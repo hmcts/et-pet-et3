@@ -29,6 +29,42 @@ Running this app will enable development of the app itself, with its test suite 
 1) Run `bundle exec rake parallel:create parallel:migrate`
 1) Run `bundle exec rails db:create db:migrate`
 
+### Developing And Testing Using The et_full_system gem
+
+Please refer to https://github.com/hmcts/et_full_system_gem for instructions on general use and starting an environment.
+Once you have an environment running, read on below ...
+
+#### Developing Locally In Full System
+
+The easiest way to develop is to use the full system to provide everything that you need (database, API etc..)
+and use a special command to redirect the full system admin URL to your local machine.
+The command to redirect to your local machine on port 3000 is (note you can use any free port) :-
+
+```
+et_full_system docker local_et3 3000
+```
+
+Then, in this project directory run
+
+```
+et_full_system docker et3_env > .env
+```
+
+which will setup all environment variables to the correct values to work in the full system environment.
+
+then run
+
+```
+
+rails s
+
+```
+
+which will run the web server.  The url is
+
+http://et3.et.127.0.0.1.nip.io:3100
+
+
 ## Running Tests
 
 The suite for ET3 consists of unit, integration and feature tests, therefore requiring Chrome.

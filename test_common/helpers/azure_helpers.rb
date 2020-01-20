@@ -76,7 +76,7 @@ module ET3
           use_path_style_uri: true
         }
 
-        options_hash[:storage_blob_host] = ENV['AZURE_STORAGE_BLOB_HOST'] if ENV.key?('AZURE_STORAGE_BLOB_HOST')
+        options_hash[:storage_blob_host] = ENV.fetch('AZURE_STORAGE_BLOB_HOST', 'http://localhost:10000')
         options_hash
       end
 

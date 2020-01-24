@@ -100,7 +100,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (~> 1.5)
       xpath (~> 3.2)
-    capybara-screenshot (1.0.23)
+    capybara-screenshot (1.0.24)
       capybara (>= 1.0, < 4)
       launchy
     childprocess (3.0.0)
@@ -192,7 +192,7 @@ GEM
     multi_xml (0.6.0)
     multipart-post (2.1.1)
     nio4r (2.5.2)
-    nokogiri (1.10.5)
+    nokogiri (1.10.7)
       mini_portile2 (~> 2.4.0)
     parallel (1.18.0)
     parallel_tests (2.29.2)
@@ -203,8 +203,8 @@ GEM
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
-    public_suffix (4.0.1)
-    rack (2.0.7)
+    public_suffix (4.0.3)
+    rack (2.1.1)
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)

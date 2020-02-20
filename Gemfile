@@ -40,7 +40,7 @@ gem 'govuk_elements_form_builder',  '~>1.3'
 gem 'gov_uk_date_fields', '~> 2.1'
 gem 'jquery-rails', '~> 4.3'
 gem 'activerecord-nulldb-adapter', '~> 0.4'
-gem 'httparty', '~> 0.17'
+gem 'httparty', '~> 0.18'
 gem 'uk_postcode', '~> 2.1'
 # Add .env file to store environment variables
 gem 'dotenv-rails', '~> 2.7'

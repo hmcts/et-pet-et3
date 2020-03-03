@@ -195,6 +195,14 @@ en:
         upload_additional_information: Please upload a file to provide any important additional information about your response which you have not been able to include so far (optional)
       confirmation_of_supplied_details:
         email_receipt: Email address (optional)
+      feedback:
+        header: Your feedback
+        problems: Have you had any problems using this service?
+        suggestions: Do you have any other comments or suggestions?
+        email_address: Your email address
+        submit:
+          post:
+            create: Send feedback
     hint:
       respondents_detail:
         contact: For example, John Smith
@@ -600,3 +608,8 @@ en:
       drag_text: "Drag and drop .rtf files here"
       or_text: "or"
       upload_button: "Click here to upload rtf file"
+    feedback:
+      new:
+        header: Your feedback
+      create:
+        sent: Thank you for your feedback

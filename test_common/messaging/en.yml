@@ -569,6 +569,8 @@ en:
         If you exceed 50 lines you will not receive full details of your claim in the PDF returned to you on submission of the form.
     additional_information:
       upload_additional_information: "Supported file type: .rtf"
+  feedback:
+    submit_button: Send feedback
 
   respondents_details:
     header: "Respondent's Details"

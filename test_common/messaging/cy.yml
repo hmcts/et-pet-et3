@@ -542,6 +542,8 @@ cy:
     further_info:
       header: ""
       content: ""
+  feedback:
+    submit_button: Anfon adborth
   respondents_details:
     header: "Manylion yr Atebydd"
   claimants_details:

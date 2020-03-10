@@ -50,7 +50,7 @@ cy:
       response:
         defend_claim: "A ydych yn amddiffyn yr hawliad? "
       your_representative:
-        have_representative: "A oes gennych chi gynrychiolydd? (dewisol) "
+        have_representative: "Dyma rywun sydd wedi cytuno i weithredu ar eich rhan."
       your_representatives_details:
         type_of_representative: Math o Gynrychiolydd
         representative_contact_preference: "Sut hoffech i ni gysylltu â'ch cynrychiolydd? (dewisol) "
@@ -591,7 +591,7 @@ cy:
     response:
       header: "Ymateb"
     your_representative:
-      header: "Eich Cynrychiolydd"
+      header: "Oes gennych chi gynrychiolydd?"
     your_representatives_details:
       header: "Manylion eich Cynrychiolydd "
       description: "Llenwch yr adran hon os oes rhywun wedi cytuno i'ch cynrychioli. Os ydych yn llenwi'r adran hon, dim ond gyda'ch cynrychiolydd y byddwn yn cysylltu yn y dyfodol"

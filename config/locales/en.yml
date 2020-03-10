@@ -50,7 +50,7 @@ en:
       response:
         defend_claim: Do you defend the claim?
       your_representative:
-        have_representative: Do you have a representative? (optional)
+        have_representative: This is someone who has agreed to act on your behalf.
       your_representatives_details:
         type_of_representative: Type of Representative
         representative_contact_preference: How would you prefer us to contact your representative? (optional)
@@ -594,7 +594,7 @@ en:
     response:
       header: "Response"
     your_representative:
-      header: "Your Representative"
+      header: "Do you have a representative?"
     your_representatives_details:
       header: "Your Representative's Details"
       description: Fill in this section if someone has agreed to represent you. If you do fill this in we will in future only contact your representative and not you

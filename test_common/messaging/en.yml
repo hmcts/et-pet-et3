@@ -153,7 +153,7 @@ en:
         label: Please set out the facts which you rely on to defend the claim (optional)
     # Your Representatives Page
     have_representative:
-      label: Do you have a representative? (optional)
+      label: This is someone who has agreed to act on your behalf.
       'yes':
         label: 'Yes'
       'no':

@@ -254,6 +254,12 @@ en:
       caption: Employer Contract Claim
     confirmation_of_additional_information_answers:
       caption: Additional Information
+    # Feedback Page
+    feedback:
+      header: Your feedback
+      problems: Have you had any problems using this service?
+      suggestions: Do you have any other comments or suggestions?
+      email_address: Your email address
   errors:
     header: Please review the following
     description: Clicking on an error will navigate you directly to the question. Please correct these errors before continuing.

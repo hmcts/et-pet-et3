@@ -256,6 +256,12 @@ cy:
       caption: Hawliad Contract y Cyflogwr
     confirmation_of_additional_information_answers:
       caption: Gwybodaeth Ychwanegol
+    # Feedback Page
+    feedback:
+      header: Eich adborth
+      problems: Ydych chi wedi cael unrhyw broblemau wrth ddefnyddio'r gwasanaeth hwn?
+      suggestions: Oes gennych chi unrhyw sylwadau neu awgrymiadau eraill?
+      email_address: Eich cyfeiriad e-bost
   errors:
     header: Adolygwch y canlynol
     description: Bydd clicio ar gwall yn mynd â chi'n syth at y cwestiwn. \nCywirwch y gwallau hyn cyn parhau.

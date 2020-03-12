@@ -3,10 +3,25 @@ module ET3
     class FeedbackPage < BasePage
       set_url '/feedback'
 
+      section :feedback_problems_question, :question_labelled, 'questions.feedback.problems', exact: false do
+        element :field, :css, "textarea"
+        def set(*args); field.set(*args); end
+      end
+
+      section :feedback_suggestions_question,  :question_labelled, 'questions.feedback.suggestions', exact: false  do
+        element :field,  :css, "textarea"
+        def set(*args); field.set(*args); end
+      end
+
+      section :feedback_email_address_question,  :question_labelled, 'questions.feedback.email_address', exact: false  do
+        element :field,  :css, "input"
+        def set(*args); field.set(*args); end
+      end
+
       def fill_in_feedback(feedback)
-        fill_in 'Have you had any problems using this service?',  with: feedback.problems
-        fill_in 'Do you have any other comments or suggestions?', with: feedback.suggestions
-        fill_in 'Your email address',                             with: feedback.email_address
+        feedback_problems_question.set(feedback.problems)
+        feedback_suggestions_question.set(feedback.suggestions)
+        feedback_email_address_question.set(feedback.email_address)
 
       end
 

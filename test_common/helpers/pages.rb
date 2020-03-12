@@ -65,6 +65,10 @@ module ET3
         ET3::Test::TermsAndConditionsPage.new
       end
 
+      def feedback_page
+        ET3::Test::FeedbackPage.new
+      end
+
       # Define other pages here
     end
   end

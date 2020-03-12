@@ -195,6 +195,14 @@ cy:
         upload_additional_information: "Llwythwch ffeil i ddarparu unrhyw wybodaeth ychwanegol bwysig am eich ymateb nad ydych wedi’i chynnwys hyd yma (dewisol) "
       confirmation_of_supplied_details:
         email_receipt: "Cyfeiriad e-bost (dewisol) "
+      feedback:
+        header: Eich adborth
+        problems: Ydych chi wedi cael unrhyw broblemau wrth ddefnyddio'r gwasanaeth hwn?
+        suggestions: Oes gennych chi unrhyw sylwadau neu awgrymiadau eraill?
+        email_address: Eich cyfeiriad e-bost
+        submit:
+          post:
+            create: Anfon adborth
     hint:
       respondents_detail:
         contact: "Er enghraifft, John Smith "

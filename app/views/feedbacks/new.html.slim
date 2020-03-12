@@ -1,0 +1,11 @@
+- content_for(:page_title, t('helpers.label.feedback.header'))
+
+.main-header role="banner"
+  h1.heading-large= content_for(:page_title)
+
+  = form_for(@feedback, url: feedback_path) do |f|
+    .form-group
+    = f.text_area :problems
+    = f.text_area :suggestions
+    =f.text_field :email_address
+    =f.submit(t('helpers.label.feedback.submit.post.create'), class: 'button')

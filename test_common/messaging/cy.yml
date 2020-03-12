@@ -94,18 +94,18 @@ cy:
       'no':
         label: Nac ydy
       disagree_claimants_job_or_title:
-        label: "Rhowch y manylion sy’n gywir yn eich barn chi (dewisol)"
+        label: "Nodwch y manylion rydych chi’n credu sy’n gywir."
     # Earnings and Benefits Page
     agree_with_claimants_hours:
-      label: "A yw oriau gwaith yr hawlydd yn gywir? (dewisol)"
+      label: "A yw’r oriau gwaith yn gywir? (dewisol)"
       'yes':
         label: Ydy
       'no':
         label: Nac ydy
       queried_hours:
-        label: "Nodwch y manylion sy’n gywir yn eich barn chi (dewisol)"
+        label: "Dywedwch beth ydych chi’n credu yw’r oriau gwaith cywir (dewisol)"
     agree_with_earnings_details:
-      label: "A yw manylion yr enillion a roddwyd gan yr hawlydd yn gywir? (dewisol)"
+      label: "A yw’r enillion yn gywir? (dewisol)"
       'yes':
         label: Ydy
       'no':
@@ -127,15 +127,15 @@ cy:
         weekly:
           label: Wythnosol
     agree_with_claimant_notice:
-      label: "A yw’r wybodaeth a roddwyd gan yr hawlydd am gael tâl, neu weithio cyfnod o rybudd yn gywir? (dewisol)"
+      label: "A yw’r manylion am gael eich talu am neu weithio cyfnod o rybudd yn gywir? (dewisol)"
       'yes':
         label: Ydy
       'no':
         label: Nac ydy
       disagree_claimant_notice_reason:
-        label: "Rhowch y manylion sy’n gywir yn eich barn chi isod. Os na wnaethoch roi rhybudd iddo neu os na wnaethoch dalu iddo yn hytrach na gadael iddo weithio ei gyfnod o rybudd, eglurwch beth ddigwyddodd a pham (dewisol)"
+        label: "Nodwch y manylion rydych chi’n credu sy’n gywir."
     agree_with_claimant_pension_benefits:
-      label: "A yw’r manylion am bensiwn a buddion eraill a roddwyd gan yr hawlydd yn gywir? (dewisol)"
+      label: "A yw’r manylion am bensiynau a budd-daliadau eraill yn gywir? (dewisol)"
       'yes':
         label: Ydy
       'no':
@@ -555,7 +555,7 @@ cy:
   claimants_details:
     header: "Manylion yr hawlydd"
   earnings_and_benefits:
-    header: "Enillion a Buddion"
+    header: "Enillion a budd-daliadau’r Hawlydd"
   response:
     header: "Ymateb"
   your_representative:

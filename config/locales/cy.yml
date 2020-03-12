@@ -41,12 +41,12 @@ cy:
         continued_employment: "A yw'n parhau i fod mewn swydd? (dewisol) "
         agree_with_claimants_description_of_job_or_title: "A yw disgrifiad yr hawlydd o’i swydd neu deitl ei swydd yn gywir? (dewisol) "
       earnings_and_benefits:
-        agree_with_claimants_hours: "A yw oriau gwaith yr hawlydd yn gywir? (dewisol) "
-        agree_with_earnings_details: "A yw manylion yr enillion a roddwyd gan yr hawlydd yn gywir? (dewisol) "
+        agree_with_claimants_hours: "A yw’r oriau gwaith yn gywir? (dewisol)"
+        agree_with_earnings_details: "A yw’r enillion yn gywir? (dewisol)"
         queried_pay_before_tax_period: "Tâl cyn cyfnod treth (dewisol) "
         queried_take_home_pay_period: "Cyfnod tâl terfynol arferol (dewisol) "
-        agree_with_claimant_notice: "A yw’r wybodaeth a roddwyd gan yr hawlydd am gael tâl, neu weithio cyfnod o rybudd yn gywir? (dewisol)"
-        agree_with_claimant_pension_benefits: "A yw’r manylion am bensiwn a buddion eraill a roddwyd gan yr hawlydd yn gywir? (dewisol) "
+        agree_with_claimant_notice: "A yw’r manylion am gael eich talu am neu weithio cyfnod o rybudd yn gywir? (dewisol)"
+        agree_with_claimant_pension_benefits: "A yw’r manylion am bensiynau a budd-daliadau eraill yn gywir? (dewisol)"
       response:
         defend_claim: "A ydych yn amddiffyn yr hawliad? "
       your_representative:
@@ -112,7 +112,7 @@ cy:
           choices:
             'yes': 'Ydy'
             'no': 'Nac ydy'
-        queried_hours: "Nodwch y manylion sy’n gywir yn eich barn chi (dewisol) "
+        queried_hours: "Dywedwch beth ydych chi’n credu yw’r oriau gwaith cywir (dewisol) "
         agree_with_earnings_details:
           choices:
             'yes': 'Ydy'
@@ -132,13 +132,13 @@ cy:
             'yes': 'Ydy'
             'no': 'Nac ydy'
         disagree_claimant_notice_reason: |
-          Rhowch y manylion sy’n gywir yn eich barn chi isod. Os na wnaethoch roi rhybudd iddo neu os na wnaethoch dalu iddo yn hytrach na gadael iddo weithio ei gyfnod o rybudd, eglurwch beth ddigwyddodd a pham (dewisol) 
+          Nodwch y manylion rydych chi’n credu sy’n gywir.
         agree_with_claimant_pension_benefits:
           choices:
             'yes': 'Ydy'
             'no': 'Nac ydy'
         disagree_claimant_pension_benefits_reason:
-          "Rhowch y manylion sy’n gywir yn eich barn chi. (dewisol) "
+          "Nodwch y manylion rydych chi’n credu sy’n gywir."
       response:
         defend_claim:
           choices:
@@ -213,15 +213,15 @@ cy:
         employment_start: "Er enghraifft, 31 03 2010"
         employment_end: "Er enghraifft, 01 12 2017 "
       earnings_and_benefits:
-        queried_hours: "Mewn oriau yr wythnos. Er enghraifft, 39 "
-        agree_with_earnings_details: "Os nad ydynt, rhowch y manylion sy’n gywir yn eich barn chi"
+        queried_hours: "Nodwch nifer yr oriau fesul wythnos, er enghraifft, 39"
+        agree_with_earnings_details:
         queried_pay_before_tax: "Gan gynnwys goramser, comisiwn a bonwsau ayb. Er enghraifft, 28000"
         queried_take_home_pay: "Gan gynnwys goramser, comisiwn a bonwsau ayb. Er enghraifft, 20000"
         disagree_claimant_notice_reason: |
-          NODER - Dim ond gwybodaeth gyfyngedig y gallwch roi yma (hyd at 400 o nodau). Os hoffech gynnwys rhagor o wybodaeth, defnyddiwch y cyfleuster sydd ar ddiwedd y ffurflen hon i lwytho ffeil Rich Text Format (.rtf). 
-        agree_with_claimant_pension_benefits: "Er enghraifft, car cwmni, yswiriant meddygol, ayb. "
+          Esboniwch beth ddigwyddodd a pham. Gallwch ddefnyddio hyd at 400 o nodau. Gallwch uwchlwytho dogfen gyda rhagor o fanylion cyn ichi gyflwyno eich ymateb.
+        agree_with_claimant_pension_benefits: "Er enghraifft car cwmni neu yswiriant meddygol"
         disagree_claimant_pension_benefits_reason: |
-          NODER - Dim ond gwybodaeth gyfyngedig y gallwch roi yma (hyd at 350 o nodau). Os hoffech gynnwys rhagor o wybodaeth, defnyddiwch y cyfleuster sydd ar ddiwedd y ffurflen hon i lwytho ffeil Rich Text Format (.rtf). 
+          Gallwch ddefnyddio hyd at 350 o nodau. Gallwch uwchlwytho dogfen gyda rhagor o fanylion cyn ichi gyflwyno eich ymateb.
       response:
         defend_claim_facts: |
           NODER - Dim ond gwybodaeth gyfyngedig y gallwch roi yma (hyd at 2500 o nodau). Os hoffech gynnwys rhagor o wybodaeth, defnyddiwch y cyfleuster sydd ar ddiwedd y ffurflen hon i lwytho ffeil Rich Text Format (.rtf). Os byddwch yn ysgrifennu mwy na 25 llinell, ni fyddwch yn cael holl fanylion eich ymateb yn y PDF a fydd yn cael ei ddychwelyd atoch ar ôl ichi gyflwyno'r ffurflen. 
@@ -587,7 +587,8 @@ cy:
     claimants_details:
       header: Manylion yr hawlydd
     earnings_and_benefits:
-      header: "Enillion a Buddion "
+      header: "Enillion a budd-daliadau’r Hawlydd"
+      content: Rydych chi angen gwirio’r manylion a ddarparwyd gan yr hawlydd. Rydym wedi anfon y rhain atoch.
     response:
       header: "Ymateb"
     your_representative:

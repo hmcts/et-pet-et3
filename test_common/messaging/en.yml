@@ -94,18 +94,18 @@ en:
       'no':
         label: 'No'
       disagree_claimants_job_or_title:
-        label: Please give the details you believe to be correct (optional)
+        label: Tell us the details you believe to be correct. (optional)
     # Earnings and Benefits Page
     agree_with_claimants_hours:
-      label: Are the claimant's hours of work correct? (optional)
+      label: Are the hours of work correct? (optional)
       'yes':
         label: 'Yes'
       'no':
         label: 'No'
       queried_hours:
-        label: Please enter the details you believe to be correct (optional)
+        label: Tell us the details you believe to be correct.
     agree_with_earnings_details:
-      label: Are the earnings details given by the claimant correct? (optional)
+      label: Are the earnings correct? (optional)
       'yes':
         label: 'Yes'
       'no':
@@ -127,15 +127,15 @@ en:
         weekly:
           label: Weekly
     agree_with_claimant_notice:
-      label: Is the information given by the claimant correct about being paid for, or working a period of notice? (optional)
+      label: Are the details about being paid for or working a period of notice correct? (optional)
       'yes':
         label: 'Yes'
       'no':
         label: 'No'
       disagree_claimant_notice_reason:
-        label: Please give the details you believe to be correct below. If you didn't give notice or pay them instead of letting them work their notice please explain what happened and why (optional)
+        label: Tell us the details you believe to be correct.
     agree_with_claimant_pension_benefits:
-      label: Are the details about pension and other benefits given by the claimant correct? (optional)
+      label: Are the details about pensions and other benefits correct? (optional)
       'yes':
         label: 'Yes'
       'no':
@@ -547,17 +547,15 @@ en:
       employment_start: For example, 31 03 2010
       employment_end: For example, 01 12 2017
     earnings_and_benefits:
-      queried_hours: In hours per week. For example, 39
-      agree_with_earnings_details: If No, please give the details you believe to be correct
+      queried_hours: Enter hours per week, for example 39
+      agree_with_earnings_details:
       queried_pay_before_tax: Including overtime, commission, bonuses, etc. For example, 28000
       queried_take_home_pay: Including overtime, commission, bonuses, etc. For example, 20000
       disagree_claimant_notice_reason: |
-        PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 400 characters) if you would like to include more please
-        use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
-      agree_with_claimant_pension_benefits: For example, company car, medical insurance, etc.
+        Explain what happened and why. Enter up to 400 characters. You can upload a document with more details before you submit your response.
+      agree_with_claimant_pension_benefits: For example a company car or medical insurance.
       disagree_claimant_pension_benefits_reason: |
-        PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 350 characters) if you would like to include more please
-        use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
+        Enter up to 350 characters. You can upload a document with more details before you submit your response.
     response:
       defend_claim_facts: |
         PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 2500 characters) if you would like to include more please
@@ -583,7 +581,7 @@ en:
   claimants_details:
     header: "Claimant's details"
   earnings_and_benefits:
-    header: "Earnings and Benefits"
+    header: "Claimant's earnings and benefits"
   response:
     header: "Response"
   your_representative:

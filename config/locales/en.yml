@@ -287,6 +287,8 @@ en:
       save_and_continue_button: Save and continue
       language: Cymraeg
       locale: cy
+    feedback_link:
+      feedback_html: <a href="%{path}">Your feedback</a> helps us to improve this service.
     single_choice_option_section:
       'yes': "Yes"
       'no': "No"

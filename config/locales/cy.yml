@@ -283,6 +283,8 @@ cy:
       save_and_continue_button: Cadw a pharhau
       language: English
       locale: ""
+    feedback_link:
+      feedback_html: "<a href=\"%{path}\">Bydd eich adborth</a>  yn ein helpu i wella’r gwasanaeth."
     single_choice_option_section:
       'yes': "Ia"
       'no': "Na"
@@ -605,6 +607,9 @@ cy:
       drag_text: "Llusgwch ffeiliau rtf a'u rhoi yma "
       or_text: "neu"
       upload_button: "Cliciwch yma i lwytho ffeil rtf"
+    feedback:
+      create:
+        sent: "Diolch i chi am eich adborth"
   attributes:
     case_number: rhif yr achos
     name: enw'r unigolyn, cwmni neu sefydliad

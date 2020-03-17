@@ -39,3 +39,5 @@
   -content_for :translation
     .switch-language
       = link_to t('components.common.language'), locale: t('components.common.locale')
+      p
+        = t('components.feedback_link.feedback_html', path: "/feedback?locale=#{I18n.locale}")

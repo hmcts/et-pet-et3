@@ -26,11 +26,12 @@ module ET3
       end
 
       element :submit_button, :submit_text, 'feedback.submit_button'
+      element :thank_you_message,  :flash_message_with_text, 'components.feedback.create.sent'
+
 
       def submit
         submit_button.click
       end
-
     end
   end
 end

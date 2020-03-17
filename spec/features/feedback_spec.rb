@@ -13,7 +13,7 @@ RSpec.feature 'Feedback form', js: true do
     feedback_page.fill_in_feedback(feedback_factory)
     feedback_page.submit
 
-    expect(page).to have_text "Thank you for your feedback"
+    expect(feedback_page).to have_thank_you_message
 
     expect(a_request(:post, "http://api.et.127.0.0.1.nip.io:3100/api/v2/feedback/build_feedback").
         with(body: hash_including(

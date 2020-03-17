@@ -153,7 +153,7 @@ cy:
         label: "Rhowch y ffeithiau yr ydych yn dibynnu arnynt i amddiffyn yr hawliad hwn (dewisol)"
     # Your Representatives Page
     have_representative:
-      label: "A oes gennych chi gynrychiolydd? (dewisol)"
+      label: "Dyma rywun sydd wedi cytuno i weithredu ar eich rhan."
       'yes':
         label: Oes
       'no':
@@ -256,6 +256,12 @@ cy:
       caption: Hawliad Contract y Cyflogwr
     confirmation_of_additional_information_answers:
       caption: Gwybodaeth Ychwanegol
+    # Feedback Page
+    feedback:
+      header: Eich adborth
+      problems: Ydych chi wedi cael unrhyw broblemau wrth ddefnyddio'r gwasanaeth hwn?
+      suggestions: Oes gennych chi unrhyw sylwadau neu awgrymiadau eraill?
+      email_address: Eich cyfeiriad e-bost
   errors:
     header: Adolygwch y canlynol
     description: Bydd clicio ar gwall yn mynd â chi'n syth at y cwestiwn. \nCywirwch y gwallau hyn cyn parhau.
@@ -318,6 +324,9 @@ cy:
     single_choice_option_section:
       'yes': Oes
       'no': Nac oes
+    feedback:
+      create:
+        sent: "Diolch i chi am eich adborth"
     sidebar:
       header: "Dolenni perthnasol eraill"
       claim_link: "Sut i wneud hawliad"
@@ -542,6 +551,8 @@ cy:
     further_info:
       header: ""
       content: ""
+  feedback:
+    submit_button: Anfon adborth
   respondents_details:
     header: "Manylion yr Atebydd"
   claimants_details:

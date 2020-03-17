@@ -153,7 +153,7 @@ en:
         label: Please set out the facts which you rely on to defend the claim (optional)
     # Your Representatives Page
     have_representative:
-      label: Do you have a representative? (optional)
+      label: This is someone who has agreed to act on your behalf.
       'yes':
         label: 'Yes'
       'no':
@@ -254,6 +254,12 @@ en:
       caption: Employer Contract Claim
     confirmation_of_additional_information_answers:
       caption: Additional Information
+    # Feedback Page
+    feedback:
+      header: Your feedback
+      problems: Have you had any problems using this service?
+      suggestions: Do you have any other comments or suggestions?
+      email_address: Your email address
   errors:
     header: Please review the following
     description: Clicking on an error will navigate you directly to the question. Please correct these errors before continuing.
@@ -307,6 +313,9 @@ en:
     single_choice_option_section:
       'yes': "Yes"
       'no': "No"
+    feedback:
+      create:
+        sent: Thank you for your feedback
     sidebar:
       header: Other Relevant Links
       claim_link: How to make a claim
@@ -569,6 +578,8 @@ en:
         If you exceed 50 lines you will not receive full details of your claim in the PDF returned to you on submission of the form.
     additional_information:
       upload_additional_information: "Supported file type: .rtf"
+  feedback:
+    submit_button: Send feedback
 
   respondents_details:
     header: "Respondent's Details"

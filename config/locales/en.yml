@@ -50,7 +50,7 @@ en:
       response:
         defend_claim: Do you defend the claim?
       your_representative:
-        have_representative: Do you have a representative? (optional)
+        have_representative: This is someone who has agreed to act on your behalf.
       your_representatives_details:
         type_of_representative: Type of Representative
         representative_contact_preference: How would you prefer us to contact your representative? (optional)
@@ -195,6 +195,14 @@ en:
         upload_additional_information: Please upload a file to provide any important additional information about your response which you have not been able to include so far (optional)
       confirmation_of_supplied_details:
         email_receipt: Email address (optional)
+      feedback:
+        header: Your feedback
+        problems: Have you had any problems using this service?
+        suggestions: Do you have any other comments or suggestions?
+        email_address: Your email address
+        submit:
+          post:
+            create: Send feedback
     hint:
       respondents_detail:
         contact: For example, John Smith
@@ -279,6 +287,8 @@ en:
       save_and_continue_button: Save and continue
       language: Cymraeg
       locale: cy
+    feedback_link:
+      feedback_html: <a href="%{path}">Your feedback</a> helps us to improve this service.
     single_choice_option_section:
       'yes': "Yes"
       'no': "No"
@@ -586,7 +596,7 @@ en:
     response:
       header: "Response"
     your_representative:
-      header: "Your Representative"
+      header: "Do you have a representative?"
     your_representatives_details:
       header: "Your Representative's Details"
       description: Fill in this section if someone has agreed to represent you. If you do fill this in we will in future only contact your representative and not you
@@ -600,3 +610,8 @@ en:
       drag_text: "Drag and drop .rtf files here"
       or_text: "or"
       upload_button: "Click here to upload rtf file"
+    feedback:
+      new:
+        header: Your feedback
+      create:
+        sent: Thank you for your feedback

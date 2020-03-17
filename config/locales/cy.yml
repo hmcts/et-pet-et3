@@ -50,7 +50,7 @@ cy:
       response:
         defend_claim: "A ydych yn amddiffyn yr hawliad? "
       your_representative:
-        have_representative: "A oes gennych chi gynrychiolydd? (dewisol) "
+        have_representative: "Dyma rywun sydd wedi cytuno i weithredu ar eich rhan."
       your_representatives_details:
         type_of_representative: Math o Gynrychiolydd
         representative_contact_preference: "Sut hoffech i ni gysylltu â'ch cynrychiolydd? (dewisol) "
@@ -195,6 +195,14 @@ cy:
         upload_additional_information: "Llwythwch ffeil i ddarparu unrhyw wybodaeth ychwanegol bwysig am eich ymateb nad ydych wedi’i chynnwys hyd yma (dewisol) "
       confirmation_of_supplied_details:
         email_receipt: "Cyfeiriad e-bost (dewisol) "
+      feedback:
+        header: Eich adborth
+        problems: Ydych chi wedi cael unrhyw broblemau wrth ddefnyddio'r gwasanaeth hwn?
+        suggestions: Oes gennych chi unrhyw sylwadau neu awgrymiadau eraill?
+        email_address: Eich cyfeiriad e-bost
+        submit:
+          post:
+            create: Anfon adborth
     hint:
       respondents_detail:
         contact: "Er enghraifft, John Smith "
@@ -275,6 +283,8 @@ cy:
       save_and_continue_button: Cadw a pharhau
       language: English
       locale: ""
+    feedback_link:
+      feedback_html: "<a href=\"%{path}\">Bydd eich adborth</a>  yn ein helpu i wella’r gwasanaeth."
     single_choice_option_section:
       'yes': "Ia"
       'no': "Na"
@@ -583,7 +593,7 @@ cy:
     response:
       header: "Ymateb"
     your_representative:
-      header: "Eich Cynrychiolydd"
+      header: "Oes gennych chi gynrychiolydd?"
     your_representatives_details:
       header: "Manylion eich Cynrychiolydd "
       description: "Llenwch yr adran hon os oes rhywun wedi cytuno i'ch cynrychioli. Os ydych yn llenwi'r adran hon, dim ond gyda'ch cynrychiolydd y byddwn yn cysylltu yn y dyfodol"
@@ -597,6 +607,9 @@ cy:
       drag_text: "Llusgwch ffeiliau rtf a'u rhoi yma "
       or_text: "neu"
       upload_button: "Cliciwch yma i lwytho ffeil rtf"
+    feedback:
+      create:
+        sent: "Diolch i chi am eich adborth"
   attributes:
     case_number: rhif yr achos
     name: enw'r unigolyn, cwmni neu sefydliad

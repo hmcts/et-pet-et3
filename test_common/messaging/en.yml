@@ -313,6 +313,9 @@ en:
     single_choice_option_section:
       'yes': "Yes"
       'no': "No"
+    feedback:
+      create:
+        sent: Thank you for your feedback
     sidebar:
       header: Other Relevant Links
       claim_link: How to make a claim

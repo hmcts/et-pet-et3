@@ -48,7 +48,7 @@ en:
         agree_with_claimant_notice: Is the information given by the claimant correct about being paid for, or working a period of notice? (optional)
         agree_with_claimant_pension_benefits: Are the details about pension and other benefits given by the claimant correct? (optional)
       response:
-        defend_claim: Do you defend the claim?
+        defend_claim: Do you defend the claim ?
       your_representative:
         have_representative: This is someone who has agreed to act on your behalf.
       your_representatives_details:
@@ -592,7 +592,7 @@ en:
     earnings_and_benefits:
       header: "Earnings and Benefits"
     response:
-      header: "Response"
+      header: "Do you defend the claim ?"
     your_representative:
       header: "Do you have a representative?"
     your_representatives_details:

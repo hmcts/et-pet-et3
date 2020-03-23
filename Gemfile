@@ -54,7 +54,7 @@ group :development, :test do
   gem 'rubocop', '~> 0.74'
   gem 'rubocop-rspec', '~> 1.33'
   gem 'simplecov', '~> 0.15'
-  gem 'pry', '~> 0.12'
+  gem 'pry', '~> 0.13'
   # Run Rspec tests in parallel to speed the test suite up
   gem 'parallel_tests', '~> 2.29'
 end

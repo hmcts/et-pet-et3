@@ -144,7 +144,7 @@ en:
         label: Please give the details you believe to be correct. (optional)
     # Response Page
     defend_claim:
-      label: Do you defend the claim?
+      label: Do you defend the claim ?
       'yes':
         label: 'Yes'
       'no':

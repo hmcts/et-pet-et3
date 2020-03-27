@@ -346,6 +346,9 @@ cy:
       header: "Ymateb wedi'i gwblhau "
       confirmation: "Ymateb wedi'i gwblhau "
       reference_text: "Eich cyfeirnod, y dylid ei ddyfynnu ar bob gohebiaeth, yw "
+      covid_19: |
+        Yng ngoleuni’r sefyllfa bresennol gyda COVID-19, gallwch weld cyfarwyddyd diweddaraf GLlTEM yma:
+      covid_19_link: "https://www.gov.uk/guidance/coronavirus-covid-19-courts-and-tribunals-planning-and-preparation.cy"
       copy_sent: "Rydym wedi anfon copi o’ch ymateb i %{email}. Gallwch chi hefyd"
       copy_sent_without_email: "Gallwch chi "
       submission_date: "Mae eich ymateb, a gyflwynwyd ar "

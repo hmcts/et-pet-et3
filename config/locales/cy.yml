@@ -144,7 +144,7 @@ cy:
           choices:
             'yes': 'Ydw'
             'no': 'Nac ydw'
-        defend_claim_facts: "Rhowch y ffeithiau yr ydych yn dibynnu arnynt i amddiffyn yr hawliad hwn (dewisol) "
+        defend_claim_facts: "Dywedwch wrthym y ffeithiau rydych chi'n dibynnu arnyn nhw i amddiffyn yr hawliad."
       your_representative:
         have_representative:
           choices:
@@ -224,7 +224,7 @@ cy:
           NODER - Dim ond gwybodaeth gyfyngedig y gallwch roi yma (hyd at 350 o nodau). Os hoffech gynnwys rhagor o wybodaeth, defnyddiwch y cyfleuster sydd ar ddiwedd y ffurflen hon i lwytho ffeil Rich Text Format (.rtf). 
       response:
         defend_claim_facts: |
-          NODER - Dim ond gwybodaeth gyfyngedig y gallwch roi yma (hyd at 2500 o nodau). Os hoffech gynnwys rhagor o wybodaeth, defnyddiwch y cyfleuster sydd ar ddiwedd y ffurflen hon i lwytho ffeil Rich Text Format (.rtf). Os byddwch yn ysgrifennu mwy na 25 llinell, ni fyddwch yn cael holl fanylion eich ymateb yn y PDF a fydd yn cael ei ddychwelyd atoch ar ôl ichi gyflwyno'r ffurflen. 
+          Gallwch nodi hyd at 2500 nod. Gallwch uwchlwytho dogfen gyda manylion ychwanegol cyn i chi gyflwyno'ch ymateb.
       disability:
         disability_information: |
           NODER - Dim ond gwybodaeth gyfyngedig y gallwch roi yma (hyd at 350 o nodau). Os hoffech gynnwys rhagor o wybodaeth, defnyddiwch y cyfleuster sydd ar ddiwedd y ffurflen hon i lwytho ffeil Rich Text Format (.rtf). 

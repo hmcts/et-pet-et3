@@ -144,7 +144,7 @@ en:
           choices:
             'yes': 'Yes'
             'no': 'No'
-        defend_claim_facts: Please set out the facts which you rely on to defend the claim (optional)
+        defend_claim_facts: Tell us the facts that you rely on to defend the claim.
       your_representative:
         have_representative:
           choices:
@@ -226,9 +226,7 @@ en:
           use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
       response:
         defend_claim_facts: |
-          PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 2500 characters) if you would like to include more please
-          use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
-          If you exceed 25 lines you will not receive full details of your response in the PDF returned to you on submission of the form.
+          You can enter up to 2500 characters. You can upload a document with additional details before you submit your response.
       disability:
         disability_information: |
           PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 350 characters) if you would like to include more please

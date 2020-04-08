@@ -34,11 +34,11 @@
   p.panel.panel-border-narrow
     = t('components.form_submission.include_quote_case')
 
-  //p
-    //strong.bold = t('components.form_submission.submission_feedback')
+  h1.heading-medium
+    strong.bold = t('components.form_submission.submission_feedback')
 
-  //p
-    //= t('components.form_submission.feedback_content')
+  p
+    = t('components.form_submission.feedback_content')
   br
 
-  = link_to t('components.form_submission.return_link'), t('components.form_submission.return_href'), class: 'button button-start'
+  = link_to t('components.form_submission.return_link'), feedback_path, class: 'button button-start'

@@ -365,8 +365,7 @@ cy:
       contact_sco: "Yr Alban: 0141 354 8574"
       contact_minitext: "Minicom/Ffôn Testun: 01509 221564"
       contact_general: "Gallant hefyd ddarparu gwybodaeth weithdrefnol gyffredinol am y tribiwnlysoedd cyflogaeth. "
-      return_link: Dychwelyd i GOV.UK
-      return_href: "https://gov.uk"
+      return_link: Rhowch adborth
       submission_feedback: "Eich adborth"
       feedback_content: "Byddwn yn ddiolchgar i gael eich adborth ar y gwasanaeth hwn fel y gallwn ei wella."
     introduction:

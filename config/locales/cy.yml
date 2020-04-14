@@ -144,7 +144,7 @@ cy:
           choices:
             'yes': 'Ydw'
             'no': 'Nac ydw'
-        defend_claim_facts: "Rhowch y ffeithiau yr ydych yn dibynnu arnynt i amddiffyn yr hawliad hwn (dewisol) "
+        defend_claim_facts: "Dywedwch wrthym y ffeithiau rydych chi'n dibynnu arnyn nhw i amddiffyn yr hawliad."
       your_representative:
         have_representative:
           choices:
@@ -224,7 +224,7 @@ cy:
           Gallwch ddefnyddio hyd at 350 o nodau. Gallwch uwchlwytho dogfen gyda rhagor o fanylion cyn ichi gyflwyno eich ymateb.
       response:
         defend_claim_facts: |
-          NODER - Dim ond gwybodaeth gyfyngedig y gallwch roi yma (hyd at 2500 o nodau). Os hoffech gynnwys rhagor o wybodaeth, defnyddiwch y cyfleuster sydd ar ddiwedd y ffurflen hon i lwytho ffeil Rich Text Format (.rtf). Os byddwch yn ysgrifennu mwy na 25 llinell, ni fyddwch yn cael holl fanylion eich ymateb yn y PDF a fydd yn cael ei ddychwelyd atoch ar ôl ichi gyflwyno'r ffurflen. 
+          Gallwch nodi hyd at 2500 nod. Gallwch uwchlwytho dogfen gyda manylion ychwanegol cyn i chi gyflwyno'ch ymateb.
       disability:
         disability_information: |
           NODER - Dim ond gwybodaeth gyfyngedig y gallwch roi yma (hyd at 350 o nodau). Os hoffech gynnwys rhagor o wybodaeth, defnyddiwch y cyfleuster sydd ar ddiwedd y ffurflen hon i lwytho ffeil Rich Text Format (.rtf). 
@@ -283,6 +283,8 @@ cy:
       save_and_continue_button: Cadw a pharhau
       language: English
       locale: ""
+    feedback_link:
+      feedback_html: "<a href=\"%{path}\">Bydd eich adborth</a>  yn ein helpu i wella’r gwasanaeth."
     single_choice_option_section:
       'yes': "Ia"
       'no': "Na"
@@ -344,6 +346,9 @@ cy:
       header: "Ymateb wedi'i gwblhau "
       confirmation: "Ymateb wedi'i gwblhau "
       reference_text: "Eich cyfeirnod, y dylid ei ddyfynnu ar bob gohebiaeth, yw "
+      covid_19: |
+        Yng ngoleuni’r sefyllfa bresennol gyda COVID-19, gallwch weld cyfarwyddyd diweddaraf GLlTEM yma:
+      covid_19_link: "https://www.gov.uk/guidance/coronavirus-covid-19-courts-and-tribunals-planning-and-preparation.cy"
       copy_sent: "Rydym wedi anfon copi o’ch ymateb i %{email}. Gallwch chi hefyd"
       copy_sent_without_email: "Gallwch chi "
       submission_date: "Mae eich ymateb, a gyflwynwyd ar "
@@ -360,8 +365,7 @@ cy:
       contact_sco: "Yr Alban: 0141 354 8574"
       contact_minitext: "Minicom/Ffôn Testun: 01509 221564"
       contact_general: "Gallant hefyd ddarparu gwybodaeth weithdrefnol gyffredinol am y tribiwnlysoedd cyflogaeth. "
-      return_link: Dychwelyd i GOV.UK
-      return_href: "https://gov.uk"
+      return_link: Rhowch adborth
       submission_feedback: "Eich adborth"
       feedback_content: "Byddwn yn ddiolchgar i gael eich adborth ar y gwasanaeth hwn fel y gallwn ei wella."
     introduction:
@@ -606,6 +610,9 @@ cy:
       drag_text: "Llusgwch ffeiliau rtf a'u rhoi yma "
       or_text: "neu"
       upload_button: "Cliciwch yma i lwytho ffeil rtf"
+    feedback:
+      create:
+        sent: "Diolch i chi am eich adborth"
   attributes:
     case_number: rhif yr achos
     name: enw'r unigolyn, cwmni neu sefydliad

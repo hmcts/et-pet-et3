@@ -29,24 +29,6 @@ RSpec.feature "Access Form Submission Page", js: true do
     expect(form_submission_page).to have_valid_pdf_download
   end
 
-  scenario "user can navigate to the gov.uk homepage" do
-    given_valid_data
-    start_a_new_et3_response
-    answer_respondents_details
-    answer_claimants_details
-    answer_earnings_and_benefits
-    answer_defend_claim_question
-    answer_representative
-    answer_disability_question
-    answer_employers_contract_claim
-    answer_additional_information
-    answer_confirmation_of_supplied_details
-
-    form_submission_page.return
-
-    expect(current_url).to eql 'https://www.gov.uk/'
-  end
-
   scenario 'user without email address' do
     given_valid_data
     @respondent = FactoryBot.create(:respondent, :respondent_valid, :upload_additional_information, :contact_preference_post)

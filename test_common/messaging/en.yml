@@ -144,7 +144,7 @@ en:
         label: Tell us the details you believe to be correct. (optional)
     # Response Page
     defend_claim:
-      label: Do you defend the claim?
+      label: Do you defend the claim ?
       'yes':
         label: 'Yes'
       'no':
@@ -313,6 +313,9 @@ en:
     single_choice_option_section:
       'yes': "Yes"
       'no': "No"
+    feedback:
+      create:
+        sent: Thank you for your feedback
     sidebar:
       header: Other Relevant Links
       claim_link: How to make a claim
@@ -610,5 +613,4 @@ en:
     copy_sent_without_email: "You can "
     office_contact: "Alexandra House, 14-22 The Parsonage, Manchester, M3 2JA"
     date: "Your response submitted on "
-    return_link: Return to GOV.UK
-    return_href: https://gov.uk
+    return_link: Give feedback

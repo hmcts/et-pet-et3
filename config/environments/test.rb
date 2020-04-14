@@ -46,4 +46,6 @@ Rails.application.configure do
 
   # The google tag manager account - set to false if you do not want google tag manager in this environment
   config.google_tag_manager_account = false
+
+  config.azure_insights.enable = false
 end

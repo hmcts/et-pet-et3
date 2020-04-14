@@ -7,12 +7,16 @@
       strong.bold.reference-number = @reference_number
   p
     - if @respondent_email.present?
+      p = t('components.form_submission.covid_19')
+      p = link_to ('https://www.gov.uk/guidance/coronavirus-covid-19-courts-and-tribunals-planning-and-preparation'), t('components.form_submission.covid_19_link')
       = t('components.form_submission.copy_sent', email: @respondent_email)
       = ' '
       = link_to t('components.form_submission.valid_pdf_download'), @pdf_url, class: 'pdf-success'
       = link_to t('components.form_submission.invalid_pdf_download'), nil, class: 'pdf-failure hidden'
       = '.'
     - else
+      p = t('components.form_submission.covid_19')
+      p = link_to ('https://www.gov.uk/guidance/coronavirus-covid-19-courts-and-tribunals-planning-and-preparation'), t('components.form_submission.covid_19_link')
       = t('components.form_submission.copy_sent_without_email')
       = link_to t('components.form_submission.valid_pdf_download'), @pdf_url, class: 'pdf-success'
       = link_to t('components.form_submission.invalid_pdf_download'), nil, class: 'pdf-failure hidden'
@@ -30,11 +34,11 @@
   p.panel.panel-border-narrow
     = t('components.form_submission.include_quote_case')
 
-  //p
-    //strong.bold = t('components.form_submission.submission_feedback')
+  h1.heading-medium
+    strong.bold = t('components.form_submission.submission_feedback')
 
-  //p
-    //= t('components.form_submission.feedback_content')
+  p
+    = t('components.form_submission.feedback_content')
   br
 
-  = link_to t('components.form_submission.return_link'), t('components.form_submission.return_href'), class: 'button button-start'
+  = link_to t('components.form_submission.return_link'), feedback_path, class: 'button button-start'

@@ -48,7 +48,7 @@ en:
         agree_with_claimant_notice: Are the details about being paid for or working a period of notice correct? (optional)
         agree_with_claimant_pension_benefits: Are the details about pensions and other benefits correct? (optional)
       response:
-        defend_claim: Do you defend the claim?
+        defend_claim: Do you defend the claim ?
       your_representative:
         have_representative: This is someone who has agreed to act on your behalf.
       your_representatives_details:
@@ -144,7 +144,7 @@ en:
           choices:
             'yes': 'Yes'
             'no': 'No'
-        defend_claim_facts: Please set out the facts which you rely on to defend the claim (optional)
+        defend_claim_facts: Tell us the facts that you rely on to defend the claim.
       your_representative:
         have_representative:
           choices:
@@ -224,9 +224,7 @@ en:
           Enter up to 350 characters. You can upload a document with more details before you submit your response.
       response:
         defend_claim_facts: |
-          PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 2500 characters) if you would like to include more please
-          use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
-          If you exceed 25 lines you will not receive full details of your response in the PDF returned to you on submission of the form.
+          You can enter up to 2500 characters. You can upload a document with additional details before you submit your response.
       disability:
         disability_information: |
           PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 350 characters) if you would like to include more please
@@ -285,6 +283,8 @@ en:
       save_and_continue_button: Save and continue
       language: Cymraeg
       locale: cy
+    feedback_link:
+      feedback_html: <a href="%{path}">Your feedback</a> helps us to improve this service.
     single_choice_option_section:
       'yes': "Yes"
       'no': "No"
@@ -345,6 +345,9 @@ en:
       header: Response submitted
       confirmation: Response Complete
       reference_text: Your case number
+      covid_19: |
+       In view of the current situation with COVID-19, updated guidance from HMCTS is available here:
+      covid_19_link: "https://www.gov.uk/guidance/coronavirus-covid-19-courts-and-tribunals-planning-and-preparation"
       copy_sent: We've sent a copy of your response to %{email}. You can also
       copy_sent_without_email: "You can "
       submission_date: "Your response submitted on "
@@ -361,8 +364,7 @@ en:
       contact_sco: "Scotland: 0141 354 8574"
       contact_minitext: "Minicom/Textphone: 01509 221564"
       contact_general: They can also provide general procedural information about the employment tribunals.
-      return_link: Return to GOV.UK
-      return_href: https://gov.uk
+      return_link: Give feedback
       submission_feedback: "Your feedback"
       feedback_content: "We'd like your feedback on this service so we can improve it."
     introduction:
@@ -591,7 +593,7 @@ en:
       header: "Claimant's earnings and benefits"
       content: You need to check the detail's provided by the claimant. We sent these to you.
     response:
-      header: "Response"
+      header: "Do you defend the claim ?"
     your_representative:
       header: "Do you have a representative?"
     your_representatives_details:

@@ -141,7 +141,7 @@ cy:
       'no':
         label: Nac ydy
       disagree_claimant_pension_benefits_reason:
-        label: "Rhowch y manylion sy’n gywir yn eich barn chi. (dewisol)"
+        label: "Nodwch y manylion rydych chi’n credu sy’n gywir."
     # Response Page
     defend_claim:
       label: "A ydych yn amddiffyn yr hawliad?"

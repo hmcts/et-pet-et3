@@ -112,7 +112,7 @@ cy:
           choices:
             'yes': 'Ydy'
             'no': 'Nac ydy'
-        queried_hours: "Dywedwch beth ydych chi’n credu yw’r oriau gwaith cywir (dewisol) "
+        queried_hours: Nodwch nifer yr oriau fesul wythnos, er enghraifft, 39
         agree_with_earnings_details:
           choices:
             'yes': 'Ydy'
@@ -213,7 +213,6 @@ cy:
         employment_start: "Er enghraifft, 31 03 2010"
         employment_end: "Er enghraifft, 01 12 2017 "
       earnings_and_benefits:
-        queried_hours: "Nodwch nifer yr oriau fesul wythnos, er enghraifft, 39"
         agree_with_earnings_details:
         queried_pay_before_tax: "Gan gynnwys goramser, comisiwn a bonwsau ayb. Er enghraifft, 28000"
         queried_take_home_pay: "Gan gynnwys goramser, comisiwn a bonwsau ayb. Er enghraifft, 20000"

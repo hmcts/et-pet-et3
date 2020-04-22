@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/hmcts/et-azure-insights.git
-  revision: b2d677431b449062c6f7cb8a0cae6b28c6f76d65
-  tag: v0.2.12
+  revision: 3032c8d5d33ab0cb3fb48fc8560bae2334f84d8d
+  tag: v0.2.13
   specs:
-    et_azure_insights (0.2.12)
+    et_azure_insights (0.2.13)
       application_insights (~> 0.5.7)
 
 GIT
@@ -381,7 +381,7 @@ DEPENDENCIES
   coffee-rails (~> 5.0)
   database_cleaner (~> 1.5)
   dotenv-rails (~> 2.7)
-  et_azure_insights (= 0.2.12)!
+  et_azure_insights (= 0.2.13)!
   et_dropzone_uploader!
   factory_bot
   faker (~> 2.3)

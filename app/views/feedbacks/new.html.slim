@@ -11,6 +11,7 @@
 
   = form_for(@feedback, url: feedback_path) do |f|
     .form-group
+    = f.invisible_captcha :subtitle
     = f.text_area :problems
     = f.text_area :suggestions
     =f.text_field :email_address

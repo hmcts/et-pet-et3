@@ -44,6 +44,7 @@ gem 'httparty', '~> 0.17'
 gem 'uk_postcode', '~> 2.1'
 # Add .env file to store environment variables
 gem 'dotenv-rails', '~> 2.7'
+gem 'invisible_captcha'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

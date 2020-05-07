@@ -1,4 +1,5 @@
 class FeedbacksController < ApplicationController
+  invisible_captcha only: [:create], honeypot: :subtitle
 
   def new
     @feedback = Feedback.new

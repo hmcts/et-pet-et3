@@ -129,7 +129,7 @@ jobs:
   #     docker.tag: $[ dependencies.BuildAndPushImage.outputs['getDockerTag.DOCKER_TAG'] ]
   #   steps:
 
-  #     - task: Docker@1
+  #     - task: Docker@1F
   #       displayName: 'Run an image'
   #       inputs:
   #         command: 'Run an image'

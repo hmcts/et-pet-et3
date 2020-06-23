@@ -562,7 +562,7 @@ cy:
   response:
     header: "Ymateb"
   your_representative:
-    header: "Eich Cynrychiolydd"
+    header: "Oes gennych chi gynrychiolydd?"
   your_representatives_details:
     header: "Manylion eich Cynrychiolydd"
     content: "Llenwch yr adran hon os oes rhywun wedi cytuno i'ch cynrychioli. Os ydych yn llenwi'r adran hon yn y dyfodol, dim ond gyda'ch cynrychiolydd y byddwn yn cysylltu"

@@ -118,7 +118,7 @@ module ET3
         section :agree_with_claimant_notice_row, :table_row_with_td_labelled, 'questions.agree_with_claimant_notice.label', exact: true do
           element :agree_with_claimant_notice_answer, :return_answer
         end
-        section :disagree_claimant_notice_reason_row, :table_row_with_td_labelled, 'questions.agree_with_claimant_notice.disagree_claimant_notice_reason.label', exact: true do
+        section :disagree_claimant_notice_reason_row, 'tr[data-attribute=disagree_claimant_notice_reason]' do
           element :disagree_claimant_notice_reason_answer, :return_answer
         end
         section :agree_with_claimant_pension_benefits_row, :table_row_with_td_labelled, 'questions.agree_with_claimant_pension_benefits.label', exact: true do

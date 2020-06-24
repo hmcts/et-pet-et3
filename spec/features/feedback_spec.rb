@@ -11,6 +11,7 @@ RSpec.feature 'Feedback form', js: true do
     feedback_factory = FactoryBot.create(:feedback)
     expect(feedback_page).to be_displayed
     feedback_page.fill_in_feedback(feedback_factory)
+    sleep 4 # Else we will be seen as a bot for entering too quickly
     feedback_page.submit
 
     expect(feedback_page).to have_thank_you_message

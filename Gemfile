@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.2.1'
+gem 'rails', '~> 6.0.3.2'
 # Azure deployment so we need this
 gem 'azure_env_secrets', git: 'https://github.com/ministryofjustice/azure_env_secrets.git', tag: 'v0.1.3'
 
@@ -57,7 +57,7 @@ group :development, :test do
   gem 'simplecov', '~> 0.15'
   gem 'pry', '~> 0.12'
   # Run Rspec tests in parallel to speed the test suite up
-  gem 'parallel_tests', '~> 2.29'
+  gem 'parallel_tests', '~> 3.0'
 end
 
 group :development do
@@ -71,8 +71,8 @@ end
 
 group :test do
   gem 'capybara-screenshot', '~> 1.0'
-  gem 'rspec-rails', '~> 3.8'
-  gem 'site_prism', '~> 3.2'
+  gem 'rspec-rails', '~> 4.0'
+  gem 'site_prism', '~> 3.5'
   gem 'webdrivers', '~> 4.0'
   gem 'database_cleaner', '~> 1.5'
   gem 'webmock', '~> 3.5'
@@ -94,4 +94,4 @@ gem 'sentry-raven', '~> 2.12'
 gem 'et_azure_insights', '0.2.13', git: 'https://github.com/hmcts/et-azure-insights.git', tag: 'v0.2.13'
 gem 'application_insights', git: 'https://github.com/microsoft/ApplicationInsights-Ruby.git', ref: '5db6b4'
 
-gem 'et_dropzone_uploader', git: 'https://github.com/hmcts/et_dropzone_uploader.git', tag: 'v2.2.3'
+gem 'et_dropzone_uploader', git: 'https://github.com/hmcts/et_dropzone_uploader.git', tag: 'v2.2.4'

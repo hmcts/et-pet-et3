@@ -94,7 +94,7 @@ en:
       'no':
         label: 'No'
       disagree_claimants_job_or_title:
-        label: Tell us the details you believe to be correct. (optional)
+        label: Please give the details you believe to be correct (optional)
     # Earnings and Benefits Page
     agree_with_claimants_hours:
       label: Are the hours of work correct? (optional)
@@ -150,7 +150,7 @@ en:
       'no':
         label: 'No'
       defend_claim_facts:
-        label: Please set out the facts which you rely on to defend the claim (optional)
+        label: Tell us the facts that you rely on to defend the claim.
     # Your Representatives Page
     have_representative:
       label: This is someone who has agreed to act on your behalf.
@@ -588,7 +588,7 @@ en:
   response:
     header: "Response"
   your_representative:
-    header: "Your Representative"
+    header: "Do you have a representative?"
   your_representatives_details:
     header: "Your Representative's Details"
     content: "Fill in this section if someone has agreed to represent you. If you do fill this in we will in future only contact your representative and not you"

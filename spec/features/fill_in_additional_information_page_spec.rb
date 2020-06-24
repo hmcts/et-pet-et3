@@ -20,7 +20,7 @@ RSpec.feature "Fill in Additional Information Page", js: true do
     scenario "without uploading a file will not display 'Remove file' link on CoSD page" do
       additional_information_page.load(locale: current_locale_parameter)
       additional_information_page.next
-      expect(confirmation_of_supplied_details_page.confirmation_of_additional_information_answers).not_to have_link(t('components.confirmation_of_supplied_details.remove_file_link'), href: remove_rtf_path)
+      expect(confirmation_of_supplied_details_page.confirmation_of_additional_information_answers.upload_additional_information_row).to have_no_remove_file_link
     end
 
     scenario "correctly will leave a file in the storage container" do

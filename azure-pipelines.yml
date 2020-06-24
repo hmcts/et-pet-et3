@@ -52,7 +52,6 @@ jobs:
         ./bin/wait-for-it.sh localhost:5433
         ./bin/wait-for-it.sh localhost:10000
         bundle install --retry=3 --jobs=4
-        bundle exec rspec:install
         RAILS_ENV=test bundle exec rake parallel:create parallel:migrate
         RAILS_ENV=test bundle exec rake webdrivers:chromedriver:update
         RAILS_ENV=test bundle exec rake webdrivers:geckodriver:update
@@ -129,7 +128,7 @@ jobs:
   #     docker.tag: $[ dependencies.BuildAndPushImage.outputs['getDockerTag.DOCKER_TAG'] ]
   #   steps:
 
-  #     - task: Docker@1
+  #     - task: Docker@1F
   #       displayName: 'Run an image'
   #       inputs:
   #         command: 'Run an image'

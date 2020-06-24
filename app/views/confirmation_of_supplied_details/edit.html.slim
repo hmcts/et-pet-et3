@@ -130,7 +130,7 @@
           td = t('helpers.fieldset.earnings_and_benefits.agree_with_claimants_hours')
           td = translate_stored_value(@hash_store.dig(:earnings_and_benefits_answers, :agree_with_claimants_hours),
                   'earnings_and_benefits.agree_with_claimants_hours')
-        tr
+        tr data-attribute="queried_hours"
           td = t('helpers.label.earnings_and_benefits.queried_hours')
           td = @hash_store.dig(:earnings_and_benefits_answers, :queried_hours)
         tr
@@ -153,14 +153,14 @@
           td = t('helpers.fieldset.earnings_and_benefits.agree_with_claimant_notice')
           td = translate_stored_value(@hash_store.dig(:earnings_and_benefits_answers, :agree_with_claimant_notice),
                   'earnings_and_benefits.agree_with_claimant_notice')
-        tr
+        tr data-attribute="disagree_claimant_notice_reason"
           td = t('helpers.label.earnings_and_benefits.disagree_claimant_notice_reason')
           td = @hash_store.dig(:earnings_and_benefits_answers, :disagree_claimant_notice_reason)
         tr
           td = t('helpers.fieldset.earnings_and_benefits.agree_with_claimant_pension_benefits')
           td = translate_stored_value(@hash_store.dig(:earnings_and_benefits_answers, :agree_with_claimant_pension_benefits),
                   'earnings_and_benefits.agree_with_claimant_pension_benefits')
-        tr
+        tr data-attribute= "disagree_claimant_pension_benefits_reason"
           td = t('helpers.label.earnings_and_benefits.disagree_claimant_pension_benefits_reason')
           td = @hash_store.dig(:earnings_and_benefits_answers, :disagree_claimant_pension_benefits_reason)
         tr

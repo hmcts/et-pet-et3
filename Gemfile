@@ -57,7 +57,7 @@ group :development, :test do
   gem 'simplecov', '~> 0.15'
   gem 'pry', '~> 0.12'
   # Run Rspec tests in parallel to speed the test suite up
-  gem 'parallel_tests', '~> 2.29'
+  gem 'parallel_tests', '~> 3.0'
 end
 
 group :development do
@@ -71,7 +71,7 @@ end
 
 group :test do
   gem 'capybara-screenshot', '~> 1.0'
-  gem 'rspec-rails', '~> 3.8'
+  gem 'rspec-rails', '~> 4.0'
   gem 'site_prism', '~> 3.5'
   gem 'webdrivers', '~> 4.0'
   gem 'database_cleaner', '~> 1.5'

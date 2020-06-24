@@ -103,7 +103,7 @@ GEM
       faraday_middleware (~> 0.10)
       nokogiri (~> 1.6, >= 1.6.8)
     bindex (0.8.1)
-    bootsnap (1.4.5)
+    bootsnap (1.4.6)
       msgpack (~> 1.0)
     builder (3.2.4)
     byebug (11.1.3)

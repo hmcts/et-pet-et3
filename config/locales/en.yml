@@ -614,3 +614,6 @@ en:
         header: Your feedback
       create:
         sent: Thank you for your feedback
+  date:
+    formats:
+      pretty: '%e %B %Y'

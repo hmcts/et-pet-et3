@@ -678,4 +678,6 @@ cy:
     upload_additional_information: llwythwch ffeil i ddarparu unrhyw wybodaeth ychwanegol bwysig am eich ymateb nad ydych wedi’i chynnwys hyd yma
     email_receipt: cyfeiriad e-bost
   date:
+    formats:
+      pretty: '%e %B %Y'
     month_names: [~, Ionawr, Chwefror, Mawrth, Ebrill, Mai, Mehefin, Gorffennaf, Awst, Medi, Hydref, Tachwedd, Rhagfyr]

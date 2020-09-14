@@ -59,6 +59,10 @@
           td = t('helpers.label.respondents_detail.fax_number')
           td = @hash_store.dig(:respondents_detail_answers, :fax_number)
         tr
+          td = t('helpers.fieldset.respondents_detail.video_call')
+          td = translate_stored_value(@hash_store.dig(:respondents_detail_answers, :video_call),
+                    'respondents_detail.video_call')
+        tr
           td = t('helpers.label.respondents_detail.organisation_employ_gb')
           td = @hash_store.dig(:respondents_detail_answers, :organisation_employ_gb)
         tr

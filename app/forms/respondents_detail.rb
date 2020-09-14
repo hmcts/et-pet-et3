@@ -16,6 +16,7 @@ class RespondentsDetail < BaseForm
   attribute :organisation_employ_gb, :integer
   attribute :organisation_more_than_one_site, :boolean
   attribute :employment_at_site_number, :integer
+  attribute :video_call, :boolean
 
   def to_h # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
     respondents_detail_hash = {
@@ -33,6 +34,7 @@ class RespondentsDetail < BaseForm
       contact_preference: contact_preference,
       organisation_employ_gb: organisation_employ_gb,
       organisation_more_than_one_site: organisation_more_than_one_site,
+      video_call: video_call,
     }
 
     respondents_detail_hash[:email_address] = email_address if respondents_detail_hash[:contact_preference] == "email"
@@ -63,6 +65,7 @@ class RespondentsDetail < BaseForm
     allow_blank: true
   validates :organisation_more_than_one_site, inclusion: { in: [true, false] }
   validates :employment_at_site_number, numericality: true, if: :more_than_one_site?
+  validates :video_call, inclusion: { in: [true, false] }
 
   private
 

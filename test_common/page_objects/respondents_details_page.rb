@@ -99,6 +99,23 @@ module ET3
         def set(*args); field.set(*args); end
       end
 
+      section :video_call_question, :single_choice_option, 'questions.video_call.label', exact: false do
+        include ET3::Test::I18n
+        element :yes, :gds_multiple_choice_option, 'questions.video_call.yes.label'
+        element :no, :gds_multiple_choice_option, 'questions.video_call.no.label'
+
+        element :error_inclusion, :exact_error_text, 'errors.messages.inclusion', exact: false
+        def set(value)
+          return if value.nil?
+
+          if value.to_s.split(".")[-2] == 'yes'
+            yes.click
+          else
+            no.click
+          end
+        end
+      end
+
       section :organisation_more_than_one_site_question, :single_choice_option, 'questions.organisation_more_than_one_site.label', exact: false do
         include ET3::Test::I18n
         element :yes, :gds_multiple_choice_option, 'questions.organisation_more_than_one_site.yes.label'

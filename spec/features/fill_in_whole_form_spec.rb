@@ -113,6 +113,7 @@ RSpec.feature "Fill in whole form", js: true do
       expect(respondents_details_table.organisation_employ_gb_row.organisation_employ_gb_answer).to have_text @respondent.organisation_employ_gb
       expect(respondents_details_table.organisation_more_than_one_site_row.organisation_more_than_one_site_answer).to have_text t(@respondent.organisation_more_than_one_site)
       expect(respondents_details_table.employment_at_site_number_row.employment_at_site_number_answer).to have_text nil
+      expect(respondents_details_table.video_call_row.video_call_answer).to have_text t(@respondent.video_call)
 
       expect(confirmation_of_supplied_details_page).to have_confirmation_of_claimants_details_answers
 
@@ -229,7 +230,7 @@ RSpec.feature "Fill in whole form", js: true do
               expect(request_body["data"][0]["data"]["claim_information"]).to eql @respondent.claim_information
               expect(file_upload_keys).to include request_body["data"][0]["data"]["additional_information_key"]
               expect(request_body["data"][0]["data"]["email_receipt"]).to eql ""
-              expect(request_body["data"][0]["data"]["pdf_template_reference"]).to eql "et3-v1-#{::ET3::Test::Messaging.instance.current_locale}"
+              expect(request_body["data"][0]["data"]["pdf_template_reference"]).to eql "et3-v2-#{::ET3::Test::Messaging.instance.current_locale}"
               expect(request_body["data"][0]["data"]["email_template_reference"]).to eql "et3-v1-#{::ET3::Test::Messaging.instance.current_locale}"
               expect(request_body["data"][0]["uuid"]).to be_an_instance_of(String)
               expect(request_body["data"][1]["command"]).to eql "BuildRespondent"
@@ -251,6 +252,7 @@ RSpec.feature "Fill in whole form", js: true do
               expect(request_body["data"][1]["data"]["employment_at_site_number"]).to eql @respondent.employment_at_site_number
               expect(request_body["data"][1]["data"]["disability"]).to eql true
               expect(request_body["data"][1]["data"]["disability_information"]).to eql @respondent.disability_information
+              expect(request_body["data"][1]["data"]["allow_video_attendance"]).to eql false
               expect(request_body["data"][1]["uuid"]).to be_an_instance_of(String)
               expect(request_body["data"][2]["command"]).to eql "BuildRepresentative"
               expect(request_body["data"][2]["data"]["name"]).to eql @representative.name

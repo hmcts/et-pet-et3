@@ -63,7 +63,7 @@ class EtApiHandler
         "claim_information": full_hash[:employer_contract_claim_answers][:claim_information],
         "additional_information_key": (full_hash[:additional_information_answers][:upload_additional_information] == "" ? nil : full_hash[:additional_information_answers][:upload_additional_information]),
         "email_receipt": full_hash[:confirmation_of_supplied_details_answers][:email_receipt],
-        "pdf_template_reference": "et3-v1-#{I18n.locale}",
+        "pdf_template_reference": "et3-v2-#{I18n.locale}",
         "email_template_reference": "et3-v1-#{I18n.locale}"
       },
       "uuid": SecureRandom.uuid
@@ -91,7 +91,8 @@ class EtApiHandler
         "fax_number": full_hash[:respondents_detail_answers][:fax_number],
         "organisation_employ_gb": full_hash[:respondents_detail_answers][:organisation_employ_gb],
         "organisation_more_than_one_site": full_hash[:respondents_detail_answers][:organisation_more_than_one_site],
-        "employment_at_site_number": full_hash[:respondents_detail_answers][:employment_at_site_number]
+        "employment_at_site_number": full_hash[:respondents_detail_answers][:employment_at_site_number],
+        "allow_video_attendance": full_hash[:respondents_detail_answers][:video_call]
       },
       "uuid": SecureRandom.uuid
     }

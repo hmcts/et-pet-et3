@@ -46,6 +46,12 @@ cy:
         label: Nac oes
       employment_at_site_number:
         label: "Faint o bobl sy’n gyflogedig ar y safle ble'r oedd yr hawlydd yn gweithio?"
+    video_call:
+      label: A allech chi gymryd rhan mewn gwrandawiad drwy fideo? (angen mynediad i'r rhyngrwyd)
+      'yes':
+        label: Gallaf
+      'no':
+        label: Na allaf
     # Claimant's Details Page
     claimants_name:
       label: Enw llawn yr hawlydd (dewisol)
@@ -319,6 +325,8 @@ cy:
       managing_cookies_href: su i reoli cwcis
       google_privacy_policy_href: Polisi Preifatrwydd
       opt_out_href: optio allan o Google Analytics
+    respondents_details:
+      video_call_href: https://www.gov.uk/guidance/hmcts-telephone-and-video-hearings-during-coronavirus-outbreak
   components:
     save_and_continue_button: "Cadw a pharhau"
     single_choice_option_section:

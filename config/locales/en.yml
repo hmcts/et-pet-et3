@@ -35,6 +35,7 @@ en:
       respondents_detail:
         contact_preference: How would you prefer us to contact you? (optional)
         organisation_more_than_one_site: Does this organisation have more than one site in Great Britain?
+        video_call: Would you be able to take part in a hearing by video? (Requires internet access).
       claimants_detail:
         agree_with_early_conciliation_details: Do you agree with the details given by the claimant about Early Conciliation with Acas? (optional)
         agree_with_employment_dates: Are the dates of employment given by the claimant correct?
@@ -84,6 +85,10 @@ en:
             'yes': 'Yes'
             'no': 'No'
         employment_at_site_number: How many people are employed at the place where the claimant worked?
+        video_call:
+          choices:
+            'yes': 'Yes'
+            'no': 'No'
       claimants_detail:
         claimants_name: Claimant's full name (optional)
         agree_with_early_conciliation_details:
@@ -209,6 +214,7 @@ en:
         mobile_number: If different to your primary contact number
         employment_at_site_number: For example, 10
         organisation_employ_gb: For example, 10
+        video_call: Further details on video hearings can be found on the following link https://www.gov.uk/guidance/hmcts-telephone-and-videohearings-during-coronavirus-outbreak
       claimants_detail:
         employment_start: For example, 31 03 2010
         employment_end: For example, 01 12 2017

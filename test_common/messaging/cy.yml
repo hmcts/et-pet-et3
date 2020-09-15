@@ -597,3 +597,6 @@ cy:
     office_contact: "Alexandra House, 14-22 The Parsonage, Manchester, M3 2JA"
     date: "Mae eich ymateb, a gyflwynwyd ar "
     return_link: Rhowch adborth
+  hint:
+    respondents_detail:
+      video_call:

@@ -64,6 +64,6 @@ RSpec.feature "Fill in Respondents Details Page", js: true do
     respondents_details_page.contact_preference_question.assert_answers_for(user)
     expect(respondents_details_page.organisation_employ_gb_question.field.value).to eql user.organisation_employ_gb
     respondents_details_page.organisation_more_than_one_site_question.assert_answers_for(user)
-    respondents_details_page.video_call_question.set(user)
+    respondents_details_page.video_call_question.set(user.video_call)
   end
 end

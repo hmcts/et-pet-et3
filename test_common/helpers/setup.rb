@@ -37,6 +37,7 @@ module ET3
         respondents_details_page.contact_preference_question.set_for(user)
         respondents_details_page.organisation_more_than_one_site_question.set_for(user)
         respondents_details_page.organisation_employ_gb_question.set(user.organisation_employ_gb)
+        respondents_details_page.video_call_question.set(user.video_call)
 
         respondents_details_page.next
       end

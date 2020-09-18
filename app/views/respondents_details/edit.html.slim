@@ -31,6 +31,11 @@
         = b.radio_button(:contact_preference, :fax) + b.label(:contact_preference, t('helpers.label.respondents_detail.contact_preference.choices.fax'), value: :fax)
       #respondent_contact_fax.panel.panel-border-narrow.js-hidden
         = f.text_field :fax_number
+    =f.radio_button_fieldset :video_call do |b|
+      =content_tag :div, {class: 'multiple-choice', data: {target: :respondent_video_call }} do
+        =b.radio_button(:video_call, true) + b.label(:video_call, t('helpers.label.respondents_detail.video_call.choices.yes'), value: true)
+      =content_tag :div, {class: 'multiple-choice'} do
+        =b.radio_button(:video_call, false) + b.label(:video_call, t('helpers.label.respondents_detail.video_call.choices.no'), value: false)
     = f.text_field :organisation_employ_gb
     = f.radio_button_fieldset :organisation_more_than_one_site do |b|
         = content_tag :div, {class: 'multiple-choice', data: { target: :respondent_employment_at_site_number }} do

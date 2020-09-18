@@ -53,6 +53,9 @@ module ET3
         section :organisation_more_than_one_site_row, :table_row_with_td_labelled, 'questions.organisation_more_than_one_site.label', exact: true do
           element :organisation_more_than_one_site_answer, :return_answer
         end
+        section :video_call_row, :table_row_with_td_labelled, 'questions.video_call.label', exact: true do
+          element :video_call_answer, :return_answer
+        end
         section :employment_at_site_number_row, :table_row_with_td_labelled, 'questions.organisation_more_than_one_site.employment_at_site_number.label', exact: true do
           element :employment_at_site_number_answer, :return_answer
         end

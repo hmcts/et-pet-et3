@@ -22,6 +22,7 @@ RSpec.feature "Fill in Respondents Details Page", js: true do
     respondents_details_page.contact_preference_question.set_for(user)
     respondents_details_page.organisation_employ_gb_question.set(user.organisation_employ_gb)
     respondents_details_page.organisation_more_than_one_site_question.set_for(user)
+    respondents_details_page.video_call_question.set(user.video_call)
     respondents_details_page.next
 
     expect(respondents_details_page).to have_header
@@ -36,6 +37,7 @@ RSpec.feature "Fill in Respondents Details Page", js: true do
     expect(respondents_details_page.contact_preference_question).to have_error_invalid_fax
     expect(respondents_details_page.organisation_employ_gb_question).to have_error_not_a_number
     expect(respondents_details_page.organisation_more_than_one_site_question).to have_error_not_a_number
+    expect(respondents_details_page.video_call_question).to have_error_inclusion
   end
 
   scenario "correctly will enable user to check answers and return to edit them" do
@@ -62,5 +64,6 @@ RSpec.feature "Fill in Respondents Details Page", js: true do
     respondents_details_page.contact_preference_question.assert_answers_for(user)
     expect(respondents_details_page.organisation_employ_gb_question.field.value).to eql user.organisation_employ_gb
     respondents_details_page.organisation_more_than_one_site_question.assert_answers_for(user)
+    respondents_details_page.video_call_question.set(user.video_call)
   end
 end

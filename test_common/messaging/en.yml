@@ -46,6 +46,12 @@ en:
         label: 'No'
       employment_at_site_number:
         label: How many people are employed at the place where the claimant worked?
+    video_call:
+      label: Would you be able to take part in a hearing by video? (Requires internet access).
+      'yes':
+        label: 'Yes'
+      'no':
+        label: 'No'
     # Claimant's Details Page
     claimants_name:
       label: Claimant's full name (optional)
@@ -308,6 +314,8 @@ en:
       managing_cookies_href: how to manage cookies
       google_privacy_policy_href: Privacy Policy
       opt_out_href: opt out of Google Analytics
+    respondents_details:
+      video_call_href: https://www.gov.uk/guidance/hmcts-telephone-and-videohearings-during-coronavirus-outbreak
   components:
     save_and_continue_button: Save and continue
     single_choice_option_section:
@@ -546,6 +554,7 @@ en:
       mobile_number: If different to your primary contact number
       employment_at_site_number: For example, 10
       organisation_employ_gb: For example, 10
+      video_call: Further details on video hearings can be found on the following link
     claimants_detail:
       employment_start: For example, 31 03 2010
       employment_end: For example, 01 12 2017

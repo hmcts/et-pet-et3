@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   namespace :locale, path: '(:locale)', module: nil, as: nil, constraints: { locale: /cy/ } do
     scope :respond do
       resource :respondents_details, only: [:edit, :update], path_names: { edit: ''}

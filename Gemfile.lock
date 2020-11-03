@@ -102,6 +102,7 @@ GEM
       faraday (~> 0.9)
       faraday_middleware (~> 0.10)
       nokogiri (~> 1.6, >= 1.6.8)
+    base32_pure (0.1.0)
     bcrypt (3.1.16)
     bindex (0.8.1)
     bootsnap (1.4.6)
@@ -391,6 +392,7 @@ DEPENDENCIES
   application_insights!
   azure-storage (~> 0.15.0.preview)
   azure_env_secrets!
+  base32_pure (~> 0.1)
   bootsnap (~> 1.4)
   byebug
   capybara (~> 3.21)

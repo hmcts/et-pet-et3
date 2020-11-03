@@ -18,6 +18,20 @@ module Et3
     ActionView::Base.default_form_builder = GovukElementsFormBuilder::FormBuilder
 
     config.time_zone = "London"
+    if ENV.key? 'SMTP_HOSTNAME'
+      config.action_mailer.smtp_settings = {
+          address: ENV['SMTP_HOSTNAME'],
+          port: ENV['SMTP_PORT'],
+          domain: ENV['SENDING_HOST'],
+          user_name: ENV['SMTP_USERNAME'],
+          password: ENV['SMTP_PASSWORD'],
+          authentication: :login,
+          enable_starttls_auto: true
+      }
+    end
+
+    config.log_level = ENV.fetch('RAILS_LOG_LEVEL', 'info').to_sym
+
     insights_key = ENV.fetch('AZURE_APP_INSIGHTS_KEY', false)
     if insights_key
       config.azure_insights.enable = true

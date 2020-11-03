@@ -1,0 +1,20 @@
+- content_for(:page_title, t(".header"))
+.main-header role="banner"
+  h1.heading-xlarge= content_for(:page_title)
+  br
+
+.main-section
+
+  .content-section.body-text
+    = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
+      = f.hidden_field :reset_password_token
+
+      .form-fields lang= "#{I18n.locale}"
+
+        legend.bold-medium = t('.intro_text')
+        hr (style="margin-top: 2px;")
+
+        fieldset
+          = f.text_field :password
+
+          = f.submit(t('components.common.reset_memorable_word'), class: 'button')

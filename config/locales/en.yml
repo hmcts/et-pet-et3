@@ -60,6 +60,9 @@ en:
       employers_contract_claim:
         make_employer_contract_claim: Do you wish to make an Employer Contract Claim? (optional)
     label:
+      user:
+        email: Enter your email address to receive your claim number (optional)
+        password: Create your memorable word
       respondents_detail:
         case_number: Case number
         name: Name of individual, company or organisation
@@ -209,6 +212,9 @@ en:
           post:
             create: Send feedback
     hint:
+      user:
+        password: If you have entered your email address above, you will be able to reset your memorable word if you forget it
+        reference: This was emailed to you (if you entered your email address)
       respondents_detail:
         contact: For example, John Smith
         mobile_number: If different to your primary contact number
@@ -287,6 +293,8 @@ en:
       error_header: Please review the following
       error_description: Clicking on an error will navigate you directly to the question. Please correct these errors before continuing.
       save_and_continue_button: Save and continue
+      find_my_claim_button: Find my claim
+      reset_memorable_word: Reset memorable word
       language: Cymraeg
       locale: cy
     feedback_link:
@@ -309,6 +317,8 @@ en:
       download_href: https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/719457/et3-eng.pdf
       more_category_link: More from the Working, jobs and pensions category
       more_category_href: http://gov.uk/browse/working
+      save_header: Your claim
+      save_and_complete: Save and complete later
     footer:
       privacy: Privacy policy
       terms: Terms and conditions
@@ -390,6 +400,7 @@ en:
       data_title: Data Protection Act 1998
       data_content: We will send a copy of this form to the claimant and the Advisory, Conciliation and Arbitration Service (ACAS). We will put the information you give us on this form onto a computer. This helps us to monitor progress and produce statistics. Information provided on this form is passed to the Department for Business, Innovation and Skills to assist research into the use and effectiveness of employment tribunals.
       start_now: Start now
+      return_to_claim: Return to my claim
     cookies:
       header: Cookies
       managing_cookies_href: how to manage cookies
@@ -623,3 +634,29 @@ en:
   date:
     formats:
       pretty: '%e %B %Y'
+  save_and_return:
+    registrations:
+      user:
+        signed_up: ""
+      new:
+        header: Saving your claim
+        application_number: Your save and return number
+        intro_text: You can save your claim and return to it at any time. You will need your save and return number (above), and memorable word, which you create below.  If you enter your email address you will be able to reset your memorable word if you forget it.
+        print_link: Print this page
+        print_copy: to have a copy of your claim number for reference
+    sessions:
+      user:
+        signed_out: ""
+      new:
+        header: Return to your claim
+        intro_text: Enter your details below
+        forgot_password: "Forgot your memorable word? "
+        reset_password: Click here to reset
+        hint_html: Don’t have these details? <a href="%{path}">Start a new claim</a>.
+    passwords:
+      new:
+        header: Reset memorable word
+        intro_text: Enter your details below
+      edit:
+        header: Reset memorable word
+        intro_text: Enter your new details below

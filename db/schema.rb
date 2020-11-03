@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_07_105241) do
+ActiveRecord::Schema.define(version: 2020_10_27_164735) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,9 @@ ActiveRecord::Schema.define(version: 2020_10_07_105241) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "api_response"
+    t.integer "user_id"
+    t.string "last_path", default: "/respond/respondents_details", null: false
+    t.index ["user_id"], name: "index_stores_on_user_id"
     t.index ["uuid"], name: "index_stores_on_uuid", unique: true
   end
 

@@ -25,7 +25,9 @@
     h4.heading-small = t('components.introduction.data_title')
     p = t('components.introduction.data_content')
 
-  = link_to t('components.introduction.start_now'), start_new_session_path, class: 'button button-start', method: :put
+  = link_to t('components.introduction.start_now'), new_user_registration_path, class: 'button button-start'
+  = link_to t('components.introduction.return_to_claim'), new_user_session_path, {class: 'button button-start'}
+
   - content_for :sidebar
     .sidebar
     .sidebar-header

@@ -8,15 +8,9 @@ class ApplicationController < ActionController::Base
 
   # @return [Store] The store instance
   def current_store
-    @current_store ||= begin
-      if session.key?(:store_uuid)
-        # Return something that will allow saving to this row
-        store = Store.where(uuid: session[:store_uuid]).first
-        store ? store : Store.new
-      else
-        Store.new
-      end
-    end
+    return Store.new if current_user.nil?
+
+    current_user.store || current_user.build_store
   end
 
   def default_url_options(*)
@@ -30,11 +24,11 @@ class ApplicationController < ActionController::Base
   private
 
   def save_current_store
+    current_store.last_path = URI.parse(request.url).tap { |r| r.host = nil ; r.scheme = nil ; r.port = nil }.to_s
     # Check if current store needs saving
     return unless current_store.changed?
     # if it does save it and store the uuid in session[:store_uuid]
     current_store.save
-    session[:store_uuid] = current_store.uuid
   end
 
   def set_locale

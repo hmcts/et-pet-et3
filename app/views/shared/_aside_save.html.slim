@@ -1,0 +1,8 @@
+- if user_signed_in?
+  - content_for :sidebar
+  .column-one-third
+    .sidebar
+    .sidebar-header
+      h2.heading-medium =t('components.sidebar.save_header')
+    .sidebar-content
+      p = link_to(t('components.sidebar.save_and_complete'), destroy_user_session_path, method: :delete)

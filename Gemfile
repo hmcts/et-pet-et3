@@ -83,7 +83,7 @@ end
 
 group :production do
   # Add bootsnap for 5.2
-  gem 'bootsnap', '~> 1.4'
+  gem 'bootsnap', '~> 1.5'
   gem 'iodine', '~> 0.7.34'
 end
 

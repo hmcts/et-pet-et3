@@ -5,7 +5,7 @@
 .main-section
 
   .main-content
-    = form_for resource, as: resource_name, url: user_registration_path, method: :post do |f|
+    = form_for resource, as: :'save_and_return[user]', url: user_registration_path, method: :post do |f|
 
       .form-fields lang= "#{I18n.locale}"
         .panel.panel-border-narrow

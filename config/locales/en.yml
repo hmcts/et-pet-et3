@@ -60,9 +60,13 @@ en:
       employers_contract_claim:
         make_employer_contract_claim: Do you wish to make an Employer Contract Claim? (optional)
     label:
-      user:
+      save_and_return[user]:
         email: Enter your email address to receive your claim number (optional)
         password: Create your memorable word
+      user:
+        password: Memorable word
+        reference: Save and return number
+        email: Enter your email address
       respondents_detail:
         case_number: Case number
         name: Name of individual, company or organisation
@@ -212,9 +216,11 @@ en:
           post:
             create: Send feedback
     hint:
-      user:
+      save_and_return[user]:
         password: If you have entered your email address above, you will be able to reset your memorable word if you forget it
+      user:
         reference: This was emailed to you (if you entered your email address)
+        email: If you entered a valid email address when you started your claim, we will email you with instructions on how to reset your memorable word. If we cannot match your email address or you did not enter a valid email address you will need to start a new claim.
       respondents_detail:
         contact: For example, John Smith
         mobile_number: If different to your primary contact number
@@ -646,13 +652,14 @@ en:
         print_copy: to have a copy of your claim number for reference
     sessions:
       user:
-        signed_out: ""
+        signed_out: "You have been logged out"
       new:
         header: Return to your claim
         intro_text: Enter your details below
         forgot_password: "Forgot your memorable word? "
         reset_password: Click here to reset
         hint_html: Don’t have these details? <a href="%{path}">Start a new claim</a>.
+        password: Enter your memorable word
     passwords:
       new:
         header: Reset memorable word

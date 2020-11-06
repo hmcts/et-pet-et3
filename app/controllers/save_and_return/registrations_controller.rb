@@ -41,5 +41,9 @@ module SaveAndReturn
     def build_resource(*)
       super.tap(&:assign_reference)
     end
+
+    def sign_up_params
+      params.require(:save_and_return).require(:user).permit(:email, :password, :reference).to_h.with_indifferent_access
+    end
   end
 end

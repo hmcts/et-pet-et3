@@ -1,5 +1,5 @@
 class FormSubmissionsController < ApplicationController
-  before_action :exclude_save
+  before_action :disable_save_and_return
 
   def index
     @reference_number = current_store.api_response[:data]["meta"]["BuildResponse"]["reference"]
@@ -13,8 +13,8 @@ class FormSubmissionsController < ApplicationController
     clear_session_data if current_store.api_response[:status] == 202
   end
 
-  def exclude_save
-    @exclude_save = true
+  def disable_save_and_return
+    @disable_save_and_return = true
   end
 
 end

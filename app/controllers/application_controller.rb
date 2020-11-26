@@ -7,10 +7,6 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   after_action :save_current_store
 
-  def default_url_options
-    { locale: I18n.locale }
-  end
-
   # @return [Store] The store instance
   def current_store
     return Store.new if current_user.nil?

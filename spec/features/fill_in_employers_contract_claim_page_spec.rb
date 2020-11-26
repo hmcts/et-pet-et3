@@ -2,6 +2,12 @@ require 'rails_helper'
 RSpec.feature "Fill in Employers Contract Claim Page", js: true do
   let(:additional_information_page) { ET3::Test::AdditionalInformationPage.new }
 
+  before do
+    given_valid_user
+    start_a_new_et3_response
+    registration_start
+  end
+
   scenario "correctly will enable user to continue to next page" do
     employers_contract_claim_page.load(locale: current_locale_parameter)
     given_valid_data

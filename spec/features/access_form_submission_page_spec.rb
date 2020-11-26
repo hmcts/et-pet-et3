@@ -8,8 +8,10 @@ RSpec.feature "Access Form Submission Page", js: true do
   end
 
   scenario "user will be able to read text" do
+    given_valid_user
     given_valid_data
     start_a_new_et3_response
+    registration_start
     answer_respondents_details
     answer_claimants_details
     answer_earnings_and_benefits
@@ -31,9 +33,11 @@ RSpec.feature "Access Form Submission Page", js: true do
   end
 
   scenario 'user without email address' do
+    given_valid_user
     given_valid_data
     @respondent = FactoryBot.create(:respondent, :respondent_valid, :upload_additional_information, :contact_preference_post)
     start_a_new_et3_response
+    registration_start
     answer_respondents_details
     answer_claimants_details
     answer_earnings_and_benefits
@@ -48,8 +52,10 @@ RSpec.feature "Access Form Submission Page", js: true do
   end
 
   scenario 'user with email address' do
+    given_valid_user
     given_valid_data
     start_a_new_et3_response
+    registration_start
     answer_respondents_details
     answer_claimants_details
     answer_earnings_and_benefits

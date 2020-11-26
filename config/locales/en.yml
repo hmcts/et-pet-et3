@@ -653,6 +653,7 @@ en:
     sessions:
       user:
         signed_out: "You have been logged out"
+        signed_in: 'Your claim has been retrieved. You can now continue where you left off'
       new:
         header: Return to your claim
         intro_text: Enter your details below
@@ -667,3 +668,43 @@ en:
       edit:
         header: Reset memorable word
         intro_text: Enter your new details below
+      user:
+        send_instructions: "You will receive an email with instructions on how to reset your memorable word in a few minutes."
+        updated_not_active: Your memorable word has been updated. You can use it below and return to your claim.
+    mailer:
+      footer:
+        contact_us: Contact us
+      access_details_email:
+        subject: 'Employment tribunal: complete your response'
+        intro: |
+          You’ve started a response to an employment tribunal. To return to your response you’ll need your reference number (above), and memorable word.
+        about_confirmation: |
+          You'll receive a confirmation email once you've submitted your response.
+
+        line_one: "Reference number: %{reference}"
+        line_two: "You’ve started a response to an employment tribunal. To return to your response you’ll need your reference number (above), and memorable word."
+        line_three: Clicking on the links below will not work. Please copy and paste the URLs into your browser.
+        line_four: "COMPLETE RESPONSE: %{url}"
+        line_five: You'll receive a confirmation email once you've submitted your claim.
+        line_six: "Contact us: http://www.justice.gov.uk/contacts/hmcts/tribunals/employment"
+      shared:
+        button_complete_claim: 'Complete Response'
+        reference_number_light: 'Reference number'
+      reset_password_instructions:
+        someone_requested: "Someone has requested a link to reset your memorable word which you can do using the link below."
+        not_be_changed: "Your memorable word will not be changed until you reset it using the link below."
+        reset: "Reset my memorable word"
+        didnt_request: "If you didn't request this, please ignore this email"
+        paste_in_browser: "You may not be able to click on the link. If not, please copy the url and paste it into your browser."
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "Please enter your email address"
+              not_found: "Email address not found"
+            password:
+              blank: Create a memorable word so you can return to your claim
+            email_address:
+              invalid: You have entered an invalid email address

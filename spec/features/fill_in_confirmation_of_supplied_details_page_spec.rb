@@ -8,8 +8,10 @@ RSpec.feature "Fill in Confirmation of Supplied Details Page", js: true do
   end
 
   scenario "correctly will enable user to continue to next page" do
+    given_valid_user
     given_valid_data
     start_a_new_et3_response
+    registration_start
     answer_respondents_details
     answer_claimants_details
     answer_earnings_and_benefits
@@ -24,11 +26,13 @@ RSpec.feature "Fill in Confirmation of Supplied Details Page", js: true do
   end
 
   scenario "incorrectly will provide errors" do
+    given_valid_user
     @claimant = FactoryBot.create(:claimant, :claimant_valid)
     @respondent = FactoryBot.create(:respondent, :respondent_valid, :upload_additional_information, email_receipt: 'invalid.email')
     @representative = FactoryBot.create(:representative, :representative_valid)
 
     start_a_new_et3_response
+    registration_start
     answer_respondents_details
     answer_claimants_details
     answer_earnings_and_benefits

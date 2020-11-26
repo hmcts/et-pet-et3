@@ -8,6 +8,12 @@ RSpec.feature "Access Privacy", js: true do
     stub_build_blob_to_azure
   end
 
+  before do
+    given_valid_user
+    start_a_new_et3_response
+    registration_start
+  end
+
   scenario "from start page" do
     start_page.load(locale: current_locale_parameter)
 
@@ -372,7 +378,6 @@ RSpec.feature "Access Privacy", js: true do
 
   scenario "from form submission page" do
     given_valid_data
-    start_a_new_et3_response
     answer_respondents_details
     answer_claimants_details
     answer_earnings_and_benefits

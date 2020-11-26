@@ -15,9 +15,25 @@ module ET3
         @representative = FactoryBot.create(:representative, :representative_invalid)
       end
 
+      def given_valid_user
+        @user = FactoryBot.create(:user_ui, :valid)
+      end
+
       def start_a_new_et3_response
         start_page.load(locale: current_locale_parameter)
         start_page.next
+      end
+
+      def registration_start
+        answer_registration_page
+        registration_page.next
+      end
+
+      def answer_registration_page
+        registration_page.email_question.set(@user.email)
+        registration_page.memorable_word_question.set(@user.memorable_word)
+
+        registration_page.next
       end
 
       # Respondent's Details Page

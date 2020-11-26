@@ -13,9 +13,11 @@ RSpec.feature "Fill in whole form", js: true do
     end
 
     scenario "correctly will delete hash_store and prevent the next user seeing answers on the respondents details page" do
+      given_valid_user
       given_valid_data
 
       start_a_new_et3_response
+      registration_start
       answer_respondents_details
       answer_claimants_details
       answer_earnings_and_benefits
@@ -50,9 +52,11 @@ RSpec.feature "Fill in whole form", js: true do
     end
 
     scenario "correctly followed by removing the uploaded file will not submit it to the API" do
+      given_valid_user
       given_valid_data
 
       start_a_new_et3_response
+      registration_start
       answer_respondents_details
       answer_claimants_details
       answer_earnings_and_benefits
@@ -82,8 +86,10 @@ RSpec.feature "Fill in whole form", js: true do
     let(:stored_keys) { ET3::Test::AzureHelpers.keys_in_container }
 
     scenario "correctly will flow without error" do
+      given_valid_user
       given_valid_data
       start_a_new_et3_response
+      registration_start
       answer_respondents_details
       answer_claimants_details
       answer_earnings_and_benefits

@@ -1,4 +1,5 @@
 class FeedbacksController < ApplicationController
+  skip_before_action :authenticate_user!
   invisible_captcha only: [:create], honeypot: :subtitle
 
   def new

@@ -26,7 +26,7 @@
     p = t('components.introduction.data_content')
 
   = link_to t('components.introduction.start_now'), new_user_registration_path, class: 'button button-start'
-  = link_to t('components.introduction.return_to_claim'), new_user_session_path, {class: 'button button-secondary'}
+  = link_to t('components.introduction.return_to_claim'), new_user_session_path, class: 'button-return'
 
   - content_for :sidebar
     .sidebar

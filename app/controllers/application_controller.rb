@@ -3,8 +3,13 @@ require 'securerandom'
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  before_action :authenticate_user!
   before_action :set_locale
   after_action :save_current_store
+
+  def default_url_options
+    { locale: I18n.locale }
+  end
 
   # @return [Store] The store instance
   def current_store
@@ -32,6 +37,11 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    I18n.locale = params[:locale] || I18n.default_locale
+    session[:locale] = params[:locale] if params[:locale] && valid_locale?
+    I18n.locale = session[:locale] || I18n.default_locale
+  end
+
+  def valid_locale?
+    I18n.available_locales.include?(params[:locale].to_sym)
   end
 end

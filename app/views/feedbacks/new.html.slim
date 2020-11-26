@@ -2,13 +2,6 @@
 .main-header role="banner"
   h1.heading-large= content_for(:page_title)
 
-  - content_for :content
-  .direction-ltr
-    .main-header role="banner"
-    - %w<info notice alert>.each do |type|
-      - next unless flash[type].present?
-      = render partial: 'shared/flash_message', locals: {type: type}
-
   = form_for(@feedback, url: feedback_path) do |f|
     .form-group
     = f.invisible_captcha :subtitle

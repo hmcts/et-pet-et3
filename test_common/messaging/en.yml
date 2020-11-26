@@ -3,6 +3,11 @@ en:
     language: Cymraeg
     locale: cy
   questions:
+    # Registration Page
+    email:
+      label: Enter your email address to receive your claim number (optional)
+    memorable_word:
+      label: Create your memorable word
     # Respondent's Details Page
     case_number:
       label: Case number

@@ -2,6 +2,12 @@ require 'rails_helper'
 RSpec.feature "Fill in Response Page", js: true do
   let(:your_representative_page) { ET3::Test::YourRepresentativePage.new }
 
+  before do
+    given_valid_user
+    start_a_new_et3_response
+    registration_start
+  end
+
   scenario "correctly will enable user to continue to next page" do
     response_page.load(locale: current_locale_parameter)
     given_valid_data

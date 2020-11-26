@@ -2,6 +2,12 @@ require 'rails_helper'
 RSpec.feature "Fill in Your Representatives Details Page", js: true do
   let(:disability_page) { ET3::Test::DisabilityPage.new }
 
+  before do
+    given_valid_user
+    start_a_new_et3_response
+    registration_start
+  end
+
   scenario "correctly will enable user to continue to next page" do
     your_representatives_details_page.load(locale: current_locale_parameter)
     given_valid_data

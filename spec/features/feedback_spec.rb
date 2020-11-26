@@ -7,6 +7,7 @@ RSpec.feature 'Feedback form', js: true do
   end
 
   scenario 'filling in the feedback form' do
+    given_valid_user
     feedback_page.load(locale: current_locale_parameter)
     feedback_factory = FactoryBot.create(:feedback)
     expect(feedback_page).to be_displayed

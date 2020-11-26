@@ -2,11 +2,15 @@ require 'rails_helper'
 RSpec.feature "Clear existing session with new session", js: true do
 
   scenario "works when clicking the 'Start now' button" do
+    given_valid_user
     start_page.load(locale: current_locale_parameter)
     given_valid_data
     start_a_new_et3_response
+    registration_start
     answer_respondents_details
+    page.reset_session!
     start_a_new_et3_response
+    registration_start
 
     expect(respondents_details_page.case_number_question.field.value).to eql ""
     expect(respondents_details_page.name_question.field.value).to eql ""

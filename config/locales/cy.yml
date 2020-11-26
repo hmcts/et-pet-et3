@@ -60,9 +60,13 @@ cy:
       employers_contract_claim:
         make_employer_contract_claim: "Ydych chi eisiau gwneud Hawliad Contract y Cyflogwr? (dewisol) "
     label:
-      user:
+      save_and_return[user]:
         email: Nodwch eich cyfeiriad e-bost i gael eich rhif hawliad (dewisol)
         password: Crëwch eich gair cofiadwy
+      user:
+        password: Gair cofiadwy
+        reference: Rhif cadw a dychwelyd
+        email: Nodwch eich cyfeiriad e-bost
       respondents_detail:
         case_number: Rhif yr achos
         name: "Enw'r unigolyn, cwmni neu sefydliad "
@@ -212,8 +216,11 @@ cy:
           post:
             create: Anfon adborth
     hint:
-      user:
+      save_and_return[user]:
         password: Os ydych wedi nodi eich cyfeiriad e-bost uchod, byddwch yn gallu ailosod eich gair cofiadwy os byddwch yn ei anghofio
+      user:
+        reference: Cafodd hwn ei anfon atoch drwy e-bost (os wnaethoch chi nodi cyfeiriad e-bost)
+        email: Os bu ichi nodi cyfeiriad e-bost dilys pan wnaethoch ddechrau eich hawliad, byddwn yn anfon neges e-bost atoch gyda chyfarwyddiadau ar sut i ailosod eich gair cofiadwy. Os nad yw eich cyfeiriad e-bost yn cyfateb i unrhyw gais presennol, neu os nad ydych wedi nodi cyfeiriad e-bost dilys, bydd rhaid ichi ddechrau cais o’r newydd.
       respondents_detail:
         contact: "Er enghraifft, John Smith "
         mobile_number: Os yw'n wahanol i'ch prif rif ffôn
@@ -292,6 +299,8 @@ cy:
       error_header: "Adolygwch y canlynol "
       error_description: Bydd clicio ar wall yn mynd â chi'n syth at y cwestiwn. Cywirwch y gwallau hyn cyn parhau.
       save_and_continue_button: Cadw a pharhau
+      find_my_claim_button: Cael hyd i fy hawliad
+      reset_memorable_word: Ailosod y gair cofiadwy
       language: English
       locale: ""
     feedback_link:
@@ -314,6 +323,8 @@ cy:
       download_href: "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/763312/et3-cym.pdf"
       more_category_link: "Mwy o'r categori gweithio, swyddi a phensiynau "
       more_category_href: "http://gov.uk/browse/working"
+      save_header: Eich hawliad
+      save_and_complete: Cadw a chwblhau wedyn
     footer:
       terms: Telerau ac amodau
       privacy: Polisi preifatrwydd
@@ -396,6 +407,7 @@ cy:
       data_title: "Deddf Diogelu Data 1998 "
       data_content: "Byddwn yn anfon copi o'r ffurflen hon at yr hawlydd a'r Gwasanaeth Cynghori, Cymodi a Chyflafareddu (ACAS). Byddwn yn rhoi'r wybodaeth yr ydych yn ei rhoi inni ar y ffurflen hon ar gyfrifiadur. Mae hyn yn ein helpu i fonitro cynnydd a chynhyrchu ystadegau. Trosglwyddir yr wybodaeth a ddarperir ar y ffurflen hon i'r Adran Busnes, Arloesedd a Sgiliau i gynorthwyo ymchwil i'r defnydd a wneir o dribiwnlysoedd cyflogaeth ac effeithiolrwydd y tribiwnlysoedd hynny."
       start_now: Dechrau nawr
+      return_to_claim: Dychwelyd i hawliad
     cookies:
       header: Cwcis
       managing_cookies_href: su i reoli cwcis
@@ -702,3 +714,54 @@ cy:
         intro_text: 'Gallwch gadw eich hawliad a dychwelyd iddo unrhyw dro. Byddwch angen eich rhif cadw a dychwelyd (uchod), a’ch gair cofiadwy, y byddwch yn ei greu isod. Os byddwch yn nodi eich cyfeiriad e-bost, byddwch yn gallu ailosod eich gair cofiadwy os byddwch yn ei anghofio.'
         print_link: Argraffu'r dudalen hon
         print_copy: "i gael copi o'ch rhif hawliad er mwyn i chi allu cyfeirio ato"
+    sessions:
+      user:
+        signed_out: "Rydych wedi cael eich allgofnodi"
+        signed_in: 'Mae eich hawliad wedi cael ei adfer. Gallwch nawr barhau o’r pwynt wnaethoch chi ei gyrraedd y tro diwethaf.'
+      new:
+        header: Dychwelyd i'ch hawliad
+        intro_text: Rhowch eich manylion isod
+        forgot_password: "Wedi anghofio eich gair cofiadwy? "
+        reset_password: Cliciwch yma i'w ailosod
+        hint_html: "Nid yw'r manylion hyn gennych? <a href=\"%{path}\">Cychwynnwch hawliad newydd</a>."
+    passwords:
+      new:
+        header: Ailosod y gair cofiadwy
+        intro_text: Nodwch eich manylion isod
+      edit:
+        header: Ailosod y gair cofiadwy
+        intro_text: Rhowch eich manylion newydd isod
+      user:
+        send_instructions: "Byddwch yn cael neges e-bost gyda chyfarwyddiadau ar sut i ailosod eich gair cofiadwy mewn ychydig funudau."
+        updated_not_active: Mae eich gair cofiadwy wedi'i ddiweddaru. Gallwch ei ddefnyddio isod a dychwelyd i'ch cais.
+    mailer:
+      footer:
+        contact_us: Cysylltu â ni
+      access_details_email:
+        subject: "Tribiwnlys Cyflogaeth: cwblhau eich hawliad"
+        intro: |
+          Rydych wedi cychwyn gwneud hawliad i'r tribiwnlys cyflogaeth. I ddychwelyd i'ch hawliad bydd arnoch angen eich rhif hawliad (uchod), a gair cofiadwy.
+        about_confirmation: |
+          Byddwch yn cael e-bost cadarnhau unwaith y byddwch wedi cyflwyno eich ymateb.
+        line_one: "Eich rhif hawliad: %{reference}"
+        line_two: "Rydych wedi cychwyn gwneud hawliad i'r tribiwnlys cyflogaeth. I ddychwelyd i'ch hawliad bydd arnoch angen eich rhif hawliad (uchod), a gair cofiadwy."
+        line_three: Clicking on the links below will not work. Please copy and paste the URLs into your browser.
+        line_four: "COMPLETE RESPONSE: %{url}"
+        line_five: Fe gewch neges e-bost fel cadarnhad unwaith y byddwch wedi cyflwyno eich hawliad.
+        line_six: "Cysylltu â ni: http://www.justice.gov.uk/contacts/hmcts/tribunals/employment"
+      shared:
+        button_complete_claim: 'Cwblhau eich Ymateb'
+        reference_number_light: 'Eich rhif hawliad'
+      reset_password_instructions:
+        someone_requested: "Mae rhywun wedi gwneud cais am ddolen i ailosod eich gair cofiadwy. Gallwch wneud hyn drwy glicio ar y ddolen isod."
+        not_be_changed: "Ni fydd eich gair cofiadwy yn cael ei newid hyd nes y byddwch yn ei ailosod trwy glicio ar y ddolen isod."
+        reset: "Ailosod fy ngair cofiadwy"
+        didnt_request: "Os na wnaethoch ofyn am wneud hyn, anwybyddwch y neges e-bost hon"
+        paste_in_browser: "You may not be able to click on the link. If not, please copy the url and paste it into your browser."
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              blank: Dylech greu gair cofiadwy er mwyn i chi allu dychwelyd i'ch hawliad

@@ -2,20 +2,24 @@ require_relative 'boot'
 
 require 'rails/all'
 
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+require_relative '../lib/form_builder'
 
 module Et3
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
+    config.action_mailer.default_options = { from: 'no-reply@digital.justice.gov.uk' }
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    ActionView::Base.default_form_builder = GovukElementsFormBuilder::FormBuilder
+    ActionView::Base.default_form_builder = FormBuilder
 
     config.time_zone = "London"
     if ENV.key? 'SMTP_HOSTNAME'

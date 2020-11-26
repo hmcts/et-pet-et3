@@ -1,27 +1,21 @@
 module SaveAndReturn
   class RegistrationsController < ::Devise::RegistrationsController
+    skip_before_action :authenticate_user!
     before_action :configure_permitted_parameters
 
     def create
-      build_resource(sign_up_params)
+      super
+      deliver_access_details
+    end
 
-      resource.save
-      yield resource if block_given?
-      if resource.persisted?
-        if resource.active_for_authentication?
-          set_flash_message! :notice, :signed_up
-          sign_up(resource_name, resource)
-          respond_with resource, location: after_sign_up_path_for(resource)
-        else
-          set_flash_message! :notice, :"signed_up_but_#{resource.inactive_message}"
-          expire_data_after_sign_in!
-          respond_with resource, location: after_inactive_sign_up_path_for(resource)
-        end
-      else
-        clean_up_passwords resource
-        set_minimum_password_length
-        respond_with resource
-      end
+    private
+
+
+
+    def deliver_access_details
+      return unless current_store && current_store&.user&.email.present?
+
+      Mailer.with(current_user: current_user, current_store: current_store).access_details_email.deliver_now if current_store&.user&.email.present?
     end
 
     protected
@@ -36,10 +30,6 @@ module SaveAndReturn
 
     def after_sign_up_path_for(resource)
       edit_respondents_details_path
-    end
-
-    def build_resource(*)
-      super.tap(&:assign_reference)
     end
 
     def sign_up_params

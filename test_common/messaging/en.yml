@@ -8,6 +8,14 @@ en:
       label: Enter your email address to receive your claim number (optional)
     memorable_word:
       label: Create your memorable word
+    # Session Page
+    reference:
+      label: Save and return number
+    memorable_word_session:
+      label: Memorable word
+    # New Password Page
+    email_address:
+      label: Enter your email address
     # Respondent's Details Page
     case_number:
       label: Case number
@@ -323,6 +331,8 @@ en:
       video_call_href: https://www.gov.uk/guidance/hmcts-telephone-and-videohearings-during-coronavirus-outbreak
   components:
     save_and_continue_button: Save and continue
+    find_my_claim_button: Find my claim
+    reset_memorable_word_button: Reset memorable word
     single_choice_option_section:
       'yes': "Yes"
       'no': "No"

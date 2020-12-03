@@ -13,6 +13,14 @@ module ET3
         ET3::Test::RegistrationPage.new
       end
 
+      def session_page
+        ET3::Test::SessionPage.new
+      end
+
+      def password_page
+        ET3::Test::PasswordPage.new
+      end
+
       def respondents_details_page
         ET3::Test::RespondentsDetailsPage.new
       end

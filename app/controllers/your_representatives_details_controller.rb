@@ -15,6 +15,10 @@ class YourRepresentativesDetailsController < ApplicationController
 
   private
 
+  def allow_update_last_path?
+    true
+  end
+
   def your_representatives_details_params
     params.require(:your_representatives_details).permit(:have_representative, :type_of_representative,
       :representative_org_name, :representative_name, :representative_building, :representative_street,

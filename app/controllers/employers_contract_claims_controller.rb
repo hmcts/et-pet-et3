@@ -15,6 +15,10 @@ class EmployersContractClaimsController < ApplicationController
 
   private
 
+  def allow_update_last_path?
+    true
+  end
+
   def employers_contract_claim_params
     params.require(:employers_contract_claim).permit(:make_employer_contract_claim, :claim_information)
   end

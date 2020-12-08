@@ -24,8 +24,14 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def allow_update_last_path?
+    false
+  end
+
   def save_current_store
-    current_store.last_path = URI.parse(request.url).tap { |r| r.host = nil ; r.scheme = nil ; r.port = nil }.to_s
+    if allow_update_last_path?
+      current_store.last_path = URI.parse(request.url).tap { |r| r.host = nil ; r.scheme = nil ; r.port = nil }.to_s
+    end
     # Check if current store needs saving
     return unless current_store.changed?
     # if it does save it and store the uuid in session[:store_uuid]

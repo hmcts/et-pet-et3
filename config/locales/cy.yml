@@ -61,7 +61,7 @@ cy:
         make_employer_contract_claim: "Ydych chi eisiau gwneud Hawliad Contract y Cyflogwr? (dewisol) "
     label:
       save_and_return[user]:
-        email: Nodwch eich cyfeiriad e-bost i gael eich rhif hawliad (dewisol)
+        email: Nodwch eich cyfeiriad e-bost i gael eich rhif ymateb (dewisol)
         password: Crëwch eich gair cofiadwy
       user:
         password: Gair cofiadwy
@@ -220,7 +220,7 @@ cy:
         password: Os ydych wedi nodi eich cyfeiriad e-bost uchod, byddwch yn gallu ailosod eich gair cofiadwy os byddwch yn ei anghofio
       user:
         reference: Cafodd hwn ei anfon atoch drwy e-bost (os wnaethoch chi nodi cyfeiriad e-bost)
-        email: Os bu ichi nodi cyfeiriad e-bost dilys pan wnaethoch ddechrau eich hawliad, byddwn yn anfon neges e-bost atoch gyda chyfarwyddiadau ar sut i ailosod eich gair cofiadwy. Os nad yw eich cyfeiriad e-bost yn cyfateb i unrhyw gais presennol, neu os nad ydych wedi nodi cyfeiriad e-bost dilys, bydd rhaid ichi ddechrau cais o’r newydd.
+        email: Os bu ichi nodi cyfeiriad e-bost dilys pan wnaethoch ddechrau eich ymateb, byddwn yn anfon neges e-bost atoch gyda chyfarwyddiadau ar sut i ailosod eich gair cofiadwy. Os nad yw eich cyfeiriad e-bost yn cyfateb i unrhyw gais presennol, neu os nad ydych wedi nodi cyfeiriad e-bost dilys, bydd rhaid ichi ddechrau cais o’r newydd.
       respondents_detail:
         contact: "Er enghraifft, John Smith "
         mobile_number: Os yw'n wahanol i'ch prif rif ffôn
@@ -299,7 +299,7 @@ cy:
       error_header: "Adolygwch y canlynol "
       error_description: Bydd clicio ar wall yn mynd â chi'n syth at y cwestiwn. Cywirwch y gwallau hyn cyn parhau.
       save_and_continue_button: Cadw a pharhau
-      find_my_claim_button: Cael hyd i fy hawliad
+      find_my_claim_button: Cael hyd i fy ymateb
       reset_memorable_word: Ailosod y gair cofiadwy
       language: English
       locale: ""
@@ -323,7 +323,7 @@ cy:
       download_href: "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/763312/et3-cym.pdf"
       more_category_link: "Mwy o'r categori gweithio, swyddi a phensiynau "
       more_category_href: "http://gov.uk/browse/working"
-      save_header: Eich hawliad
+      save_header: Eich ymateb
       save_and_complete: Cadw a chwblhau wedyn
     footer:
       terms: Telerau ac amodau
@@ -407,7 +407,7 @@ cy:
       data_title: "Deddf Diogelu Data 1998 "
       data_content: "Byddwn yn anfon copi o'r ffurflen hon at yr hawlydd a'r Gwasanaeth Cynghori, Cymodi a Chyflafareddu (ACAS). Byddwn yn rhoi'r wybodaeth yr ydych yn ei rhoi inni ar y ffurflen hon ar gyfrifiadur. Mae hyn yn ein helpu i fonitro cynnydd a chynhyrchu ystadegau. Trosglwyddir yr wybodaeth a ddarperir ar y ffurflen hon i'r Adran Busnes, Arloesedd a Sgiliau i gynorthwyo ymchwil i'r defnydd a wneir o dribiwnlysoedd cyflogaeth ac effeithiolrwydd y tribiwnlysoedd hynny."
       start_now: Dechrau nawr
-      return_to_claim: Dychwelyd i hawliad
+      return_to_claim: Dychwelwch at fy ymateb
     cookies:
       header: Cwcis
       managing_cookies_href: su i reoli cwcis
@@ -709,21 +709,21 @@ cy:
       user:
         signed_up: ""
       new:
-        header: "Cadw eich hawliad"
+        header: "Arbedwch eich ymateb"
         application_number: Eich rhif cadw a dychwelyd
-        intro_text: 'Gallwch gadw eich hawliad a dychwelyd iddo unrhyw dro. Byddwch angen eich rhif cadw a dychwelyd (uchod), a’ch gair cofiadwy, y byddwch yn ei greu isod. Os byddwch yn nodi eich cyfeiriad e-bost, byddwch yn gallu ailosod eich gair cofiadwy os byddwch yn ei anghofio.'
+        intro_text: 'Gallwch gadw eich ymateb a dychwelyd iddo unrhyw dro. Byddwch angen eich rhif cadw a dychwelyd (uchod), a’ch gair cofiadwy, y byddwch yn ei greu isod. Os byddwch yn nodi eich cyfeiriad e-bost, byddwch yn gallu ailosod eich gair cofiadwy os byddwch yn ei anghofio.'
         print_link: Argraffu'r dudalen hon
-        print_copy: "i gael copi o'ch rhif hawliad er mwyn i chi allu cyfeirio ato"
+        print_copy: "i gael copi o'ch rhif ymateb er mwyn i chi allu cyfeirio ato"
     sessions:
       user:
         signed_out: "Rydych wedi cael eich allgofnodi"
         signed_in: 'Mae eich hawliad wedi cael ei adfer. Gallwch nawr barhau o’r pwynt wnaethoch chi ei gyrraedd y tro diwethaf.'
       new:
-        header: Dychwelyd i'ch hawliad
+        header: Dychwelyd i'ch ymateb
         intro_text: Rhowch eich manylion isod
         forgot_password: "Wedi anghofio eich gair cofiadwy? "
         reset_password: Cliciwch yma i'w ailosod
-        hint_html: "Nid yw'r manylion hyn gennych? <a href=\"%{path}\">Cychwynnwch hawliad newydd</a>."
+        hint_html: "Nid yw'r manylion hyn gennych? <a href=\"%{path}\">Cychwynnwch ymateb newydd</a>."
     passwords:
       new:
         header: Ailosod y gair cofiadwy
@@ -733,7 +733,7 @@ cy:
         intro_text: Rhowch eich manylion newydd isod
       user:
         send_instructions: "Byddwch yn cael neges e-bost gyda chyfarwyddiadau ar sut i ailosod eich gair cofiadwy mewn ychydig funudau."
-        updated_not_active: Mae eich gair cofiadwy wedi'i ddiweddaru. Gallwch ei ddefnyddio isod a dychwelyd i'ch cais.
+        updated_not_active: Mae eich gair cofiadwy wedi'i ddiweddaru. Gallwch ei ddefnyddio isod a dychwelyd i'ch ymateb.
     mailer:
       footer:
         contact_us: Cysylltu â ni

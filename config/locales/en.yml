@@ -61,7 +61,7 @@ en:
         make_employer_contract_claim: Do you wish to make an Employer Contract Claim? (optional)
     label:
       save_and_return[user]:
-        email: Enter your email address to receive your claim number (optional)
+        email: Enter your email address to receive your response number (optional)
         password: Create your memorable word
       user:
         password: Memorable word
@@ -220,7 +220,7 @@ en:
         password: If you have entered your email address above, you will be able to reset your memorable word if you forget it
       user:
         reference: This was emailed to you (if you entered your email address)
-        email: If you entered a valid email address when you started your claim, we will email you with instructions on how to reset your memorable word. If we cannot match your email address or you did not enter a valid email address you will need to start a new claim.
+        email: If you entered a valid email address when you started your response, we will email you with instructions on how to reset your memorable word. If we cannot match your email address or you did not enter a valid email address you will need to start a new claim.
       respondents_detail:
         contact: For example, John Smith
         mobile_number: If different to your primary contact number
@@ -299,7 +299,7 @@ en:
       error_header: Please review the following
       error_description: Clicking on an error will navigate you directly to the question. Please correct these errors before continuing.
       save_and_continue_button: Save and continue
-      find_my_claim_button: Find my claim
+      find_my_claim_button: Find my response
       reset_memorable_word: Reset memorable word
       language: Cymraeg
       locale: cy
@@ -323,7 +323,7 @@ en:
       download_href: https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/719457/et3-eng.pdf
       more_category_link: More from the Working, jobs and pensions category
       more_category_href: http://gov.uk/browse/working
-      save_header: Your claim
+      save_header: Your response
       save_and_complete: Save and complete later
     footer:
       privacy: Privacy policy
@@ -366,7 +366,7 @@ en:
       page_title: Application Complete
       header: Response submitted
       confirmation: Response Complete
-      reference_text: Your case number
+      reference_text: Your submission number
       covid_19: |
        In view of the current situation with COVID-19, updated guidance from HMCTS is available here:
       covid_19_link: "https://www.gov.uk/guidance/coronavirus-covid-19-courts-and-tribunals-planning-and-preparation"
@@ -406,7 +406,7 @@ en:
       data_title: Data Protection Act 1998
       data_content: We will send a copy of this form to the claimant and the Advisory, Conciliation and Arbitration Service (ACAS). We will put the information you give us on this form onto a computer. This helps us to monitor progress and produce statistics. Information provided on this form is passed to the Department for Business, Innovation and Skills to assist research into the use and effectiveness of employment tribunals.
       start_now: Start now
-      return_to_claim: Return to my claim
+      return_to_claim: Return to my response
     cookies:
       header: Cookies
       managing_cookies_href: how to manage cookies
@@ -645,21 +645,21 @@ en:
       user:
         signed_up: ""
       new:
-        header: Saving your claim
+        header: Saving your response
         application_number: Your save and return number
-        intro_text: You can save your claim and return to it at any time. You will need your save and return number (above), and memorable word, which you create below.  If you enter your email address you will be able to reset your memorable word if you forget it.
+        intro_text: You can save your response and return to it at any time. You will need your save and return number (above), and memorable word, which you create below.  If you enter your email address you will be able to reset your memorable word if you forget it.
         print_link: Print this page
-        print_copy: to have a copy of your claim number for reference
+        print_copy: to have a copy of your response number for reference
     sessions:
       user:
         signed_out: "You have been logged out"
         signed_in: 'Your claim has been retrieved. You can now continue where you left off'
       new:
-        header: Return to your claim
+        header: Return to your response
         intro_text: Enter your details below
         forgot_password: "Forgot your memorable word? "
         reset_password: Click here to reset
-        hint_html: Don’t have these details? <a href="%{path}">Start a new claim</a>.
+        hint_html: Don’t have these details? <a href="%{path}">Start a new response</a>.
         password: Enter your memorable word
     passwords:
       new:
@@ -670,7 +670,7 @@ en:
         intro_text: Enter your new details below
       user:
         send_instructions: "You will receive an email with instructions on how to reset your memorable word in a few minutes."
-        updated_not_active: Your memorable word has been updated. You can use it below and return to your claim.
+        updated_not_active: Your memorable word has been updated. You can use it below and return to your response.
     mailer:
       footer:
         contact_us: Contact us

@@ -653,7 +653,7 @@ en:
     sessions:
       user:
         signed_out: "You have been logged out"
-        signed_in: 'Your claim has been retrieved. You can now continue where you left off'
+        signed_in: 'Your response has been retrieved. You can now continue where you left off'
       new:
         header: Return to your response
         intro_text: Enter your details below

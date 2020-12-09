@@ -717,7 +717,7 @@ cy:
     sessions:
       user:
         signed_out: "Rydych wedi cael eich allgofnodi"
-        signed_in: 'Mae eich hawliad wedi cael ei adfer. Gallwch nawr barhau o’r pwynt wnaethoch chi ei gyrraedd y tro diwethaf.'
+        signed_in: 'Mae eich ymateb wedi cael ei adfer. Gallwch nawr barhau o’r pwynt wnaethoch chi ei gyrraedd y tro diwethaf.'
       new:
         header: Dychwelyd i'ch ymateb
         intro_text: Rhowch eich manylion isod

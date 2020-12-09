@@ -9,7 +9,7 @@ module SaveAndReturn
     end
 
     def after_sign_in_path_for(resource)
-      resource.store.last_path
+      respondents_details_path
     end
   end
 end

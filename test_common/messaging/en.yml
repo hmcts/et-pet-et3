@@ -5,9 +5,11 @@ en:
   questions:
     # Registration Page
     email:
-      label: Enter your email address to receive your claim number (optional)
+      label: Enter your email address to receive your save and return number (optional)
     memorable_word:
       label: Create your memorable word
+    save_and_return_number:
+      label: Your save and return number
     # Session Page
     reference:
       label: Save and return number
@@ -295,6 +297,8 @@ en:
       too_long: characters is the maximum allowed
       inclusion: Please select an option
     custom:
+      password_email_address: Please enter your email address
+      memorable_word: Create a memorable word so you can return to your response
       organisation_employ_gb:
         not_a_number: Please enter how many people the organisation employs in Great Britain as a number
       organisation_more_than_one_site:
@@ -330,9 +334,12 @@ en:
     respondents_details:
       video_call_href: https://www.gov.uk/guidance/hmcts-telephone-and-videohearings-during-coronavirus-outbreak
   components:
+    save_and_complete_later_button: Save and complete later
     save_and_continue_button: Save and continue
-    find_my_claim_button: Find my claim
+    find_my_response_button: Find my response
     reset_memorable_word_button: Reset memorable word
+    return_to_response_button: Return to my response
+    click_here_to_reset: Click here to reset
     single_choice_option_section:
       'yes': "Yes"
       'no': "No"
@@ -638,3 +645,7 @@ en:
     office_contact: "Alexandra House, 14-22 The Parsonage, Manchester, M3 2JA"
     date: "Your response submitted on "
     return_link: Give feedback
+  mailer:
+    reference_number: Reference number
+    access_details_email:
+      subject: 'Employment tribunal: complete your response'

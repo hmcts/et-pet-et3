@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users, module: 'save_and_return', only: [:password, :session, :registration]
   namespace :locale, path: '(:locale)', module: nil, as: nil, constraints: { locale: /cy/ } do
+    devise_for :users, module: 'save_and_return', only: [:password, :session, :registration]
     scope :respond do
       resource :respondents_details, only: [:edit, :update], path_names: { edit: ''}
       resource :claimants_details, only: [:edit, :update], path_names: { edit: ''}

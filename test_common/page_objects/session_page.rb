@@ -15,9 +15,14 @@ module ET3
         def set(*args); field.set(*args); end
       end
 
-      element :continue_button, :submit_text, 'components.find_my_claim_button'
+      element :continue_button, :submit_text, 'components.find_my_response_button'
+      element :click_here_to_reset, :link_named, "components.click_here_to_reset"
       def next
-        find_my_claim_button.click
+        continue_button.click
+      end
+
+      def reset_password
+        click_here_to_reset.click
       end
     end
   end

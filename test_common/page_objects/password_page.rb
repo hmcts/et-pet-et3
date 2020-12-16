@@ -6,18 +6,17 @@ module ET3
       element :error_header, :error_titled, 'errors.header', exact: true
       section :email_address_question, :question_labelled, 'questions.email_address.label', exact: false do
         element :field, :css, "input"
-        element :error_invalid, :exact_error_text, 'errors.messages.invalid', exact: false
+        element :error_password_email_address, :exact_error_text, 'errors.custom.password_email_address', exact: false
         def set(*args); field.set(*args); end
       end
       section :reference_number_question, :question_labelled, 'questions.reference.label', exact: false do
         element :field, :css, "input"
-        element :error_blank, :exact_error_text, 'errors.messages.blank', exact: false
         def set(*args); field.set(*args); end
       end
 
-      element :continue_button, :submit_text, 'components.reset_memorable_word_button'
+      element :reset_memorable_word, :submit_text, "components.reset_memorable_word_button"
       def next
-        reset_memorable_word_button.click
+        reset_memorable_word.click
       end
     end
   end

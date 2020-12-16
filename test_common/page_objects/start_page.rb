@@ -25,8 +25,13 @@ module ET3
         element :section_content, :element_with_text, "introduction.data_content"
       end
       element :start_button, :css, ".button.button-start"
+      element :return_to_my_response_button, :link_named, "components.return_to_response_button"
       def next
         start_button.click
+      end
+
+      def return_to_response
+        return_to_my_response_button.click
       end
 
       def switch_to_welsh

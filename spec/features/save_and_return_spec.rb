@@ -1,52 +1,76 @@
 require 'rails_helper'
 
-feature 'Save and Return' do
+RSpec.feature 'Save and Return', js: true do
 
-  scenario 'ending the session actually ends the session' do
-
-    end
-
-  scenario 'ending the session with email address' do
-
-    end
-
-  scenario 'ending the session when email address previously entered', js: true do
-
-    end
-
-  scenario 'ending the session when current page invalid' do
-
-    end
-
-  scenario 'returning to existing application', js: true do
-
+  let(:emails_sent) do
+    ET3::Test::EmailsSent.new
   end
 
-  scenario 'returning to an existing application after session expiration' do
+  scenario 'Correctly will enable the user to register' do
+    given_valid_user
+    start_a_new_et3_response
+    registration_start
 
-    end
-
-  context 'memorable word not set' do
-    scenario 'returning to an existing application' do
-
-    end
+    expect(respondents_details_page).to be_displayed
   end
 
-  context 'forgotten memorable word', js:true do
-    it 'recovers correctly when the email is not used at the beginning but when saved' do
+  scenario 'Incorrectly will provide error on user to sign up' do
+    start_a_new_et3_response
+    registration_page.next
 
-    end
+    expect(registration_page.memorable_word_question).to have_error_memorable_word
+  end
 
-    it 'recovers correctly when the email used at the beginning' do
+  scenario 'Correctly will log out user and have a new empty session' do
+    given_valid_user
+    start_page.load(locale: current_locale_parameter)
+    given_valid_data
+    start_a_new_et3_response
+    registration_start
+    answer_respondents_details
+    page.reset_session!
+    start_a_new_et3_response
 
-    end
+    expect(registration_page.email_question.field.value).to eql ""
+    expect(registration_page.memorable_word_question.field.value). to eql ""
+  end
 
-    it 'allows a second claim to be used against the same email' do
+  scenario 'user will receive an email once registration done' do
+    given_valid_user
+    start_a_new_et3_response
+    registration_start
 
-    end
+    expect(respondents_details_page).to be_displayed
 
-    it 'provides valid feedback if claim number not given' do
+    email_sent = emails_sent.new_reference_number_html_email_for(reference: @save_and_return_number)
+    expect(email_sent).to be_present
+  end
 
-    end
+  scenario 'Click on reset password will bring you to password page' do
+    start_page.load(locale: current_locale_parameter)
+    start_page.return_to_response
+    session_page.reset_password
+
+    expect(password_page).to be_displayed
+  end
+
+  scenario 'Incorrectly will provide error on user to reset password' do
+    start_page.load(locale: current_locale_parameter)
+    start_page.return_to_response
+    session_page.reset_password
+    password_page.next
+
+    expect(password_page.email_address_question).to have_error_password_email_address
+  end
+
+  scenario 'Will enable an existing user to sign in', js: true do
+    given_valid_user
+    start_a_new_et3_response
+    registration_start
+    respondents_details_page.save_and_complete_later
+    start_page.return_to_response
+    sign_in
+
+    expect(respondents_details_page).to be_displayed
   end
 end

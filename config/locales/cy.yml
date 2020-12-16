@@ -716,6 +716,7 @@ cy:
         print_copy: "i gael copi o'ch rhif ymateb er mwyn i chi allu cyfeirio ato"
     sessions:
       user:
+        reject_submitted: Rydych wedi cyflwyno eich ymateb yn barod, felly ni allwch ddychwelyd ato.
         signed_out: "Rydych wedi cael eich allgofnodi"
         signed_in: 'Mae eich ymateb wedi cael ei adfer. Gallwch nawr barhau o’r pwynt wnaethoch chi ei gyrraedd y tro diwethaf.'
       new:
@@ -763,5 +764,8 @@ cy:
       models:
         user:
           attributes:
+            email:
+              blank: "Rhowch eich cyfeiriad e-bost"
+              not_found: "Ni ddaethpwyd o hyd i’ch cyfeiriad e-bost."
             password:
-              blank: Dylech greu gair cofiadwy er mwyn i chi allu dychwelyd i'ch hawliad
+              blank: Dylech greu gair cofiadwy er mwyn i chi allu dychwelyd i'ch ymateb

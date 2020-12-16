@@ -27,6 +27,9 @@ RSpec.feature "Fill in whole form", js: true do
       answer_employers_contract_claim
       answer_additional_information
       answer_confirmation_of_supplied_details
+      page.reset_session!
+      start_a_new_et3_response
+      registration_start
 
       respondents_details_page.load(locale: current_locale_parameter)
 

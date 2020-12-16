@@ -29,9 +29,16 @@ module ET3
         registration_page.next
       end
 
+      def sign_in
+        session_page.memorable_word_question.set(@user.memorable_word)
+        session_page.reference_number_question.set(@save_and_return_number)
+        session_page.next
+      end
+
       def answer_registration_page
         registration_page.email_question.set(@user.email)
         registration_page.memorable_word_question.set(@user.memorable_word)
+        @save_and_return_number = registration_page.save_and_return_number.value.text
 
         registration_page.next
       end

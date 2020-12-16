@@ -1,5 +1,6 @@
 class FormSubmissionsController < ApplicationController
   before_action :disable_save_and_return
+  after_action :sign_out_after_submission
 
   def index
     @reference_number = current_store.api_response[:data]["meta"]["BuildResponse"]["reference"]
@@ -17,4 +18,9 @@ class FormSubmissionsController < ApplicationController
     @disable_save_and_return = true
   end
 
+  private
+
+  def sign_out_after_submission
+    sign_out
+  end
 end

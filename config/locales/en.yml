@@ -61,7 +61,7 @@ en:
         make_employer_contract_claim: Do you wish to make an Employer Contract Claim? (optional)
     label:
       save_and_return[user]:
-        email: Enter your email address to receive your response number (optional)
+        email: Enter your email address to receive your save and return number (optional)
         password: Create your memorable word
       user:
         password: Memorable word
@@ -220,7 +220,7 @@ en:
         password: If you have entered your email address above, you will be able to reset your memorable word if you forget it
       user:
         reference: This was emailed to you (if you entered your email address)
-        email: If you entered a valid email address when you started your response, we will email you with instructions on how to reset your memorable word. If we cannot match your email address or you did not enter a valid email address you will need to start a new claim.
+        email: If you entered a valid email address when you started your response, we will email you with instructions on how to reset your memorable word. If we cannot match your email address or you did not enter a valid email address you will need to start a new response.
       respondents_detail:
         contact: For example, John Smith
         mobile_number: If different to your primary contact number
@@ -649,9 +649,10 @@ en:
         application_number: Your save and return number
         intro_text: You can save your response and return to it at any time. You will need your save and return number (above), and memorable word, which you create below.  If you enter your email address you will be able to reset your memorable word if you forget it.
         print_link: Print this page
-        print_copy: to have a copy of your response number for reference
+        print_copy: to have a copy of your save and return number for reference
     sessions:
       user:
+        reject_submitted: "Your response has already been submitted so you are unable to return to it."
         signed_out: "You have been logged out"
         signed_in: 'Your response has been retrieved. You can now continue where you left off'
       new:
@@ -705,6 +706,6 @@ en:
               blank: "Please enter your email address"
               not_found: "Email address not found"
             password:
-              blank: Create a memorable word so you can return to your claim
+              blank: Create a memorable word so you can return to your response
             email_address:
               invalid: You have entered an invalid email address

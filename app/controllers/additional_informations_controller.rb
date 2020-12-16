@@ -15,6 +15,10 @@ class AdditionalInformationsController < ApplicationController
 
   private
 
+  def allow_update_last_path?
+    true
+  end
+
   def additional_information_params
     params.require(:additional_information).permit(:upload_additional_information, :upload_file_name)
   end

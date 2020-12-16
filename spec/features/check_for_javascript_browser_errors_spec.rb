@@ -8,6 +8,12 @@ RSpec.feature "Check for Javascript Browser Errors", js: true, driver: :chrome_l
     stub_et_api
   end
 
+  before do
+    given_valid_user
+    start_a_new_et3_response
+    registration_start
+  end
+
   scenario "on start page" do
     start_page.load
 
@@ -76,7 +82,6 @@ RSpec.feature "Check for Javascript Browser Errors", js: true, driver: :chrome_l
 
   scenario "form submission page" do
     given_valid_data
-    start_a_new_et3_response
     answer_respondents_details
     answer_claimants_details
     answer_earnings_and_benefits

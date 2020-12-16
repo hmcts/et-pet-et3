@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    meta content='text/html; charset=UTF-8' http-equiv='Content-Type'
+    meta name="viewport" content="width=device-width"
+  body
+    table width="100%" cellpadding="0" cellspacing="0"
+      tr
+        = render partial: 'save_and_return/mailer/shared/gov.uk.logo'
+
+      tr
+        td width="8%"
+          p &nbsp;
+
+        td
+
+          table style="max-width:525px;" width="100%"
+
+            = render partial: 'save_and_return/mailer/shared/reference_number_light'
+
+            tr
+              td
+                p style="font-family:arial; font-size:19px; line-height:26px;"
+                  = t('.intro')
+
+                = render partial: 'save_and_return/mailer/shared/button_complete_claim'
+
+                p style="font-family:arial; font-size:19px; line-height:26px;"
+                  = t('.about_confirmation')
+
+      tr
+        td colspan="2"
+          = render partial: 'save_and_return/mailer/shared/footer'

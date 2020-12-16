@@ -1,0 +1,26 @@
+- content_for(:page_title, t(".header"))
+.main-header role="banner"
+  h1.heading-large= content_for(:page_title)
+  br
+
+.main-section
+
+  .content-section.body-text
+    = form_for resource, as: resource_name, url: session_path(resource_name) do |f|
+
+      .form-fields lang= "#{I18n.locale}"
+
+        legend.bold-medium = t('.intro_text')
+        hr (style="margin-top: 2px;")
+
+      fieldset
+        = f.text_field :reference
+        = f.text_field :password
+
+        = f.submit(t('components.common.find_my_claim_button'), class: 'button')
+
+        p.form-hint
+          br
+          = t(".forgot_password")
+          = link_to t(".reset_password"), new_password_path(resource_name)
+          p.form-hint = t('.hint_html', path: root_path)

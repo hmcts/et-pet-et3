@@ -13,6 +13,10 @@ class YourRepresentativesController < ApplicationController
 
   private
 
+  def allow_update_last_path?
+    true
+  end
+
   def your_representative_params
     params.require(:your_representative).permit(:have_representative) if params[:your_representative]
   end

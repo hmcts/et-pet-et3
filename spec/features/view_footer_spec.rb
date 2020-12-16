@@ -8,6 +8,12 @@ RSpec.feature "View Footer", js: true do
     stub_build_blob_to_azure
   end
 
+  before do
+    given_valid_user
+    start_a_new_et3_response
+    registration_start
+  end
+
   shared_examples "on a per-page basis" do
     scenario "will show footer links" do
       current_page.load(locale: current_locale_parameter)
@@ -21,7 +27,6 @@ RSpec.feature "View Footer", js: true do
 
   scenario "on form submission page" do
     given_valid_data
-    start_a_new_et3_response
     answer_respondents_details
     answer_claimants_details
     answer_earnings_and_benefits

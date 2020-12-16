@@ -60,6 +60,13 @@ en:
       employers_contract_claim:
         make_employer_contract_claim: Do you wish to make an Employer Contract Claim? (optional)
     label:
+      save_and_return[user]:
+        email: Enter your email address to receive your save and return number (optional)
+        password: Create your memorable word
+      user:
+        password: Memorable word
+        reference: Save and return number
+        email: Enter your email address
       respondents_detail:
         case_number: Case number
         name: Name of individual, company or organisation
@@ -209,6 +216,11 @@ en:
           post:
             create: Send feedback
     hint:
+      save_and_return[user]:
+        password: If you have entered your email address above, you will be able to reset your memorable word if you forget it
+      user:
+        reference: This was emailed to you (if you entered your email address)
+        email: If you entered a valid email address when you started your response, we will email you with instructions on how to reset your memorable word. If we cannot match your email address or you did not enter a valid email address you will need to start a new response.
       respondents_detail:
         contact: For example, John Smith
         mobile_number: If different to your primary contact number
@@ -287,6 +299,8 @@ en:
       error_header: Please review the following
       error_description: Clicking on an error will navigate you directly to the question. Please correct these errors before continuing.
       save_and_continue_button: Save and continue
+      find_my_claim_button: Find my response
+      reset_memorable_word: Reset memorable word
       language: Cymraeg
       locale: cy
     feedback_link:
@@ -309,6 +323,8 @@ en:
       download_href: https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/719457/et3-eng.pdf
       more_category_link: More from the Working, jobs and pensions category
       more_category_href: http://gov.uk/browse/working
+      save_header: Your response
+      save_and_complete: Save and complete later
     footer:
       privacy: Privacy policy
       terms: Terms and conditions
@@ -350,7 +366,7 @@ en:
       page_title: Application Complete
       header: Response submitted
       confirmation: Response Complete
-      reference_text: Your case number
+      reference_text: Your submission number
       covid_19: |
        In view of the current situation with COVID-19, updated guidance from HMCTS is available here:
       covid_19_link: "https://www.gov.uk/guidance/coronavirus-covid-19-courts-and-tribunals-planning-and-preparation"
@@ -390,6 +406,7 @@ en:
       data_title: Data Protection Act 1998
       data_content: We will send a copy of this form to the claimant and the Advisory, Conciliation and Arbitration Service (ACAS). We will put the information you give us on this form onto a computer. This helps us to monitor progress and produce statistics. Information provided on this form is passed to the Department for Business, Innovation and Skills to assist research into the use and effectiveness of employment tribunals.
       start_now: Start now
+      return_to_claim: Return to my response
     cookies:
       header: Cookies
       managing_cookies_href: how to manage cookies
@@ -623,3 +640,72 @@ en:
   date:
     formats:
       pretty: '%e %B %Y'
+  save_and_return:
+    registrations:
+      user:
+        signed_up: ""
+      new:
+        header: Saving your response
+        application_number: Your save and return number
+        intro_text: You can save your response and return to it at any time. You will need your save and return number (above), and memorable word, which you create below.  If you enter your email address you will be able to reset your memorable word if you forget it.
+        print_link: Print this page
+        print_copy: to have a copy of your save and return number for reference
+    sessions:
+      user:
+        reject_submitted: "Your response has already been submitted so you are unable to return to it."
+        signed_out: "You have been logged out"
+        signed_in: 'Your response has been retrieved. You can now continue where you left off'
+      new:
+        header: Return to your response
+        intro_text: Enter your details below
+        forgot_password: "Forgot your memorable word? "
+        reset_password: Click here to reset
+        hint_html: Don’t have these details? <a href="%{path}">Start a new response</a>.
+        password: Enter your memorable word
+    passwords:
+      new:
+        header: Reset memorable word
+        intro_text: Enter your details below
+      edit:
+        header: Reset memorable word
+        intro_text: Enter your new details below
+      user:
+        send_instructions: "You will receive an email with instructions on how to reset your memorable word in a few minutes."
+        updated_not_active: Your memorable word has been updated. You can use it below and return to your response.
+    mailer:
+      footer:
+        contact_us: Contact us
+      access_details_email:
+        subject: 'Employment tribunal: complete your response'
+        intro: |
+          You’ve started a response to an employment tribunal. To return to your response you’ll need your reference number (above), and memorable word.
+        about_confirmation: |
+          You'll receive a confirmation email once you've submitted your response.
+
+        line_one: "Reference number: %{reference}"
+        line_two: "You’ve started a response to an employment tribunal. To return to your response you’ll need your reference number (above), and memorable word."
+        line_three: Clicking on the links below will not work. Please copy and paste the URLs into your browser.
+        line_four: "COMPLETE RESPONSE: %{url}"
+        line_five: You'll receive a confirmation email once you've submitted your claim.
+        line_six: "Contact us: http://www.justice.gov.uk/contacts/hmcts/tribunals/employment"
+      shared:
+        button_complete_claim: 'Complete Response'
+        reference_number_light: 'Reference number'
+      reset_password_instructions:
+        someone_requested: "Someone has requested a link to reset your memorable word which you can do using the link below."
+        not_be_changed: "Your memorable word will not be changed until you reset it using the link below."
+        reset: "Reset my memorable word"
+        didnt_request: "If you didn't request this, please ignore this email"
+        paste_in_browser: "You may not be able to click on the link. If not, please copy the url and paste it into your browser."
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "Please enter your email address"
+              not_found: "Email address not found"
+            password:
+              blank: Create a memorable word so you can return to your response
+            email_address:
+              invalid: You have entered an invalid email address

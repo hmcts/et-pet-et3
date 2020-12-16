@@ -16,6 +16,10 @@ class ResponsesController < ApplicationController
 
   private
 
+  def allow_update_last_path?
+    true
+  end
+
   def response_params
     params.require(:response).permit(:defend_claim, :defend_claim_facts)
   end

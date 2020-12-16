@@ -15,6 +15,10 @@ class RespondentsDetailsController < ApplicationController
 
   private
 
+  def allow_update_last_path?
+    true
+  end
+
   def respondents_detail_params
     params.require(:respondents_detail).permit(:case_number, :name, :contact, :building_name, :street_name, :town,
       :county, :postcode, :dx_number, :contact_number, :mobile_number, :contact_preference, :email_address,

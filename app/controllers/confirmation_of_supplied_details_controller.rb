@@ -24,6 +24,10 @@ class ConfirmationOfSuppliedDetailsController < ApplicationController
 
   private
 
+  def allow_update_last_path?
+    true
+  end
+
   def confirmation_of_supplied_details_params
     params.require(:confirmation_of_supplied_details).permit(:email_receipt)
   end

@@ -2,6 +2,12 @@ require 'rails_helper'
 RSpec.feature "Fill in Earnings and Benefits Page", js: true do
   let(:response_page) { ET3::Test::ResponsePage.new }
 
+  before do
+    given_valid_user
+    start_a_new_et3_response
+    registration_start
+  end
+
   scenario "correctly will enable user to continue to next page" do
     earnings_and_benefits_page.load(locale: current_locale_parameter)
     given_valid_data

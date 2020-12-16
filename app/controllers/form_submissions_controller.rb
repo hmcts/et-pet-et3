@@ -1,5 +1,6 @@
 class FormSubmissionsController < ApplicationController
-  skip_before_action :check_session_expiry
+  before_action :disable_save_and_return
+  after_action :sign_out_after_submission
 
   def index
     @reference_number = current_store.api_response[:data]["meta"]["BuildResponse"]["reference"]
@@ -13,4 +14,13 @@ class FormSubmissionsController < ApplicationController
     clear_session_data if current_store.api_response[:status] == 202
   end
 
+  def disable_save_and_return
+    @disable_save_and_return = true
+  end
+
+  private
+
+  def sign_out_after_submission
+    sign_out
+  end
 end

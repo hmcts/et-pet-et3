@@ -2,6 +2,8 @@ require 'faker'
 
 FactoryBot.define do
   factory :respondent, class: OpenStruct do
+      email {"test@gmail.com"}
+      memorable_word {"password"}
       case_number {"1454321/2017"}
       name { Faker::Company.name }
       building_name {"the-shard"}

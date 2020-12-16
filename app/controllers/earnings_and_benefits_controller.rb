@@ -17,6 +17,10 @@ class EarningsAndBenefitsController < ApplicationController
 
   private
 
+  def allow_update_last_path?
+    true
+  end
+
   def earnings_and_benefits_params
     params.require(:earnings_and_benefits).permit(:agree_with_claimants_hours, :queried_hours,
       :agree_with_earnings_details, :queried_pay_before_tax, :queried_pay_before_tax_period, :queried_take_home_pay,

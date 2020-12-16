@@ -148,8 +148,13 @@ module ET3
       end
 
       element :continue_button, :submit_text, 'components.save_and_continue_button'
+      element :save_and_complete_later_button, :link_named, "components.save_and_complete_later_button"
       def next
         continue_button.click
+      end
+
+      def save_and_complete_later
+        save_and_complete_later_button.click
       end
     end
   end

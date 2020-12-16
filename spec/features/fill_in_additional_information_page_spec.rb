@@ -8,6 +8,12 @@ RSpec.feature "Fill in Additional Information Page", js: true do
       stub_build_blob_to_azure
     end
 
+    before do
+      given_valid_user
+      start_a_new_et3_response
+      registration_start
+    end
+
     let(:keys_in_container) { ET3::Test::AzureHelpers.keys_in_container }
 
     scenario "correctly will enable user to continue to next page" do

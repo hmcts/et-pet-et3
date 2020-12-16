@@ -15,6 +15,10 @@ class DisabilitiesController < ApplicationController
 
   private
 
+  def allow_update_last_path?
+    true
+  end
+
   def disability_params
     params.require(:disability).permit(:disability, :disability_information)
   end

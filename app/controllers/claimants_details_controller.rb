@@ -15,6 +15,10 @@ class ClaimantsDetailsController < ApplicationController
 
   private
 
+  def allow_update_last_path?
+    true
+  end
+
   def claimants_detail_params
     params.require(:claimants_detail).permit(:claimants_name, :agree_with_early_conciliation_details,
       :disagree_conciliation_reason, :agree_with_employment_dates, :employment_start_dd, :employment_start_mm,

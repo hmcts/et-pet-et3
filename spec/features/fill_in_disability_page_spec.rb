@@ -2,6 +2,12 @@ require 'rails_helper'
 RSpec.feature "Fill in Disability Page", js: true do
   let(:employers_contract_claim_page) { ET3::Test::EmployersContractClaimPage.new }
 
+  before do
+    given_valid_user
+    start_a_new_et3_response
+    registration_start
+  end
+
   scenario "correctly will enable user to continue to employer's contract claim page" do
     disability_page.load(locale: current_locale_parameter)
     given_valid_data

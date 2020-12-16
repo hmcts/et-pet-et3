@@ -43,8 +43,10 @@ RSpec.feature "Check PDF Download Link", js: true do
   end
 
   scenario "link will be disabled as first request will not be valid" do
+    given_valid_user
     given_valid_data
     start_a_new_et3_response
+    registration_start
     answer_respondents_details
     answer_claimants_details
     answer_earnings_and_benefits
@@ -59,8 +61,10 @@ RSpec.feature "Check PDF Download Link", js: true do
   end
 
   scenario "link will be enabled as second request will be valid" do
+    given_valid_user
     given_valid_data
     start_a_new_et3_response
+    registration_start
     answer_respondents_details
     answer_claimants_details
     answer_earnings_and_benefits

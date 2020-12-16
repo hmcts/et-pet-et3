@@ -4,6 +4,7 @@ class Store < ApplicationRecord
   serialize :hash_store
   serialize :api_response
   before_validation :generate_uuid, unless: :uuid_present?
+  belongs_to :user
 
   private
 

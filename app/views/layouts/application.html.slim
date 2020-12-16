@@ -27,12 +27,18 @@
           - else
             = raw "&nbsp;"
         = render "shared/maintenance_notice" if ENV['SHOW_DOWNTIME_BANNER'].present?
+        .column-full
+          .content-header
+            - %w<info notice alert>.each do |type|
+              - next unless flash[type].present?
+              = render partial: 'shared/flash_message', locals: {type: type}
         .column-two-thirds
           .content-header
             h2.heading-medium data-behavior="heading" = yield(:form_page_title)
           = yield
         .column-one-third
           = yield(:sidebar)
+        = render "shared/aside_save" unless @disable_save_and_return
 - content_for :footer_support_links
   = render 'shared/footer_links'
 = render template: "layouts/govuk_template"

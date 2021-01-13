@@ -188,7 +188,7 @@ GEM
       multi_xml (>= 0.5.2)
     i18n (1.8.7)
       concurrent-ruby (~> 1.0)
-    invisible_captcha (1.0.1)
+    invisible_captcha (1.1.0)
       rails (>= 4.2)
     iodine (0.7.40)
     jbuilder (2.10.0)
@@ -418,7 +418,7 @@ DEPENDENCIES
   govuk_elements_rails (~> 3.1)
   govuk_template (~> 0.26.0)
   httparty (~> 0.17)
-  invisible_captcha
+  invisible_captcha (~> 1.1.0)
   iodine (~> 0.7.34)
   jbuilder (~> 2.9)
   jquery-rails (~> 4.3)

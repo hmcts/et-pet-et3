@@ -80,7 +80,7 @@ group :test do
   gem 'webmock', '~> 3.5'
   gem 'faker', '~> 2.3'
   gem 'azure-storage', '~> 0.15.0.preview'
-  gem 'factory_bot'
+  gem 'factory_bot', '~> 6.1'
 end
 
 group :production do

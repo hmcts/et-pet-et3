@@ -52,7 +52,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 3.21'
+  gem 'capybara', '~> 3.34'
   gem 'selenium-webdriver', '~> 3.142'
   gem 'rubocop', '~> 0.74'
   gem 'rubocop-rspec', '~> 1.33'
@@ -74,7 +74,7 @@ end
 group :test do
   gem 'capybara-screenshot', '~> 1.0'
   gem 'rspec-rails', '~> 4.0'
-  gem 'site_prism', '~> 3.5'
+  gem 'site_prism', '~> 3.7'
   gem 'webdrivers', '~> 4.0'
   gem 'database_cleaner', '~> 1.5'
   gem 'webmock', '~> 3.5'

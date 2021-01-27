@@ -15,6 +15,10 @@ module ET3
         @representative = FactoryBot.create(:representative, :representative_invalid)
       end
 
+      def claimants_invalid_dates
+        @claimant = FactoryBot.create(:claimant, :claimant_invalid_dates)
+      end
+
       def given_valid_user
         @user = FactoryBot.create(:user_ui, :valid)
       end

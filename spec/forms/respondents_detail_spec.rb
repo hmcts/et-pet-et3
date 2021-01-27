@@ -342,14 +342,6 @@ RSpec.describe RespondentsDetail, type: :model do
       expect(populated_respondent_detail).to be_valid
     end
 
-    it 'will raise a validation error on organisation_more_than_one_site' do
-      populated_respondent_detail.organisation_more_than_one_site = nil
-
-      populated_respondent_detail.valid?
-
-      expect(populated_respondent_detail.errors.details[:organisation_more_than_one_site]).to include a_hash_including(error: :inclusion)
-    end
-
     it 'will not raise a validation error on employment_at_site_number' do
       populated_respondent_detail.organisation_more_than_one_site = false
       populated_respondent_detail.employment_at_site_number = nil

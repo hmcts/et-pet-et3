@@ -54,7 +54,7 @@ cy:
     organisation_employ_gb:
       label: "Faint o bobl sy’n gyflogedig gan y sefydliad hwn ym Mhrydain Fawr? (dewisol)"
     organisation_more_than_one_site:
-      label: "A oes gan y sefydliad hwn fwy nag un safle ym Mhrydain Fawr?"
+      label: "A oes gan y sefydliad hwn fwy nag un safle ym Mhrydain Fawr? (dewisol)"
       'yes':
         label: Oes
       'no':
@@ -79,7 +79,7 @@ cy:
       disagree_conciliation_reason:
         label: "Pam yr ydych yn anghytuno â’r hawlydd? (dewisol)"
     agree_with_employment_dates:
-      label: "A yw'r dyddiadau cyflogaeth a roddwyd gan yr hawlydd yn gywir?"
+      label: "A yw'r dyddiadau cyflogaeth a roddwyd gan yr hawlydd yn gywir? (dewisol)"
       'yes':
         label: Ydy
       'no':
@@ -101,7 +101,7 @@ cy:
         year:
           label: Year
       disagree_employment:
-        label: "Pam yr ydych yn anghytuno â’r dyddiadau a roddwyd gan yr hawlydd"
+        label: "Pam yr ydych yn anghytuno â’r dyddiadau a roddwyd gan yr hawlydd (dewisol)"
     continued_employment:
       label: "A yw'n parhau i fod mewn swydd? (dewisol)"
       'yes':
@@ -306,6 +306,7 @@ cy:
       too_long: "o nodau yw'r uchafswm a ganiateir"
       inclusion: "Dewiswch opsiwn"
     custom:
+      employment_end_before_start: Rhaid nodi dyddiad sydd ar ôl dyddiad cychwyn y gyflogaeth
       password_email_address: Rhowch eich cyfeiriad e-bost
       memorable_word: Dylech greu gair cofiadwy er mwyn i chi allu dychwelyd i'ch ymateb
       organisation_employ_gb:

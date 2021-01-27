@@ -34,11 +34,11 @@ en:
     fieldset:
       respondents_detail:
         contact_preference: How would you prefer us to contact you? (optional)
-        organisation_more_than_one_site: Does this organisation have more than one site in Great Britain?
+        organisation_more_than_one_site: Does this organisation have more than one site in Great Britain? (optional)
         video_call: Would you be able to take part in a hearing by video? (Requires internet access).
       claimants_detail:
         agree_with_early_conciliation_details: Do you agree with the details given by the claimant about Early Conciliation with Acas? (optional)
-        agree_with_employment_dates: Are the dates of employment given by the claimant correct?
+        agree_with_employment_dates: Are the dates of employment given by the claimant correct? (optional)
         continued_employment: Is their employment continuing? (optional)
         agree_with_claimants_description_of_job_or_title: Is the claimant's description of their job or job title correct? (optional)
       earnings_and_benefits:
@@ -109,7 +109,7 @@ en:
             'no': 'No'
         employment_start: When their employment started
         employment_end: When their employment ended or will end
-        disagree_employment: Why do you disagree with the dates given by the claimant
+        disagree_employment: Why do you disagree with the dates given by the claimant (optional)
         continued_employment:
           choices:
             'yes': 'Yes'
@@ -709,3 +709,7 @@ en:
               blank: Create a memorable word so you can return to your response
             email_address:
               invalid: You have entered an invalid email address
+        claimants_detail:
+          attributes:
+            employment_end:
+              employment_end_before_start: End date must be after the employment start date

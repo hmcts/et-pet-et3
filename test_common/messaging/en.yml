@@ -54,7 +54,7 @@ en:
     organisation_employ_gb:
       label: How many people does this organisation employ in Great Britain? (optional)
     organisation_more_than_one_site:
-      label: Does this organisation have more than one site in Great Britain?
+      label: Does this organisation have more than one site in Great Britain? (optional)
       'yes':
         label: 'Yes'
       'no':
@@ -79,7 +79,7 @@ en:
       disagree_conciliation_reason:
         label: Why do you disagree with the claimant? (optional)
     agree_with_employment_dates:
-      label: Are the dates of employment given by the claimant correct?
+      label: Are the dates of employment given by the claimant correct? (optional)
       'yes':
         label: 'Yes'
       'no':
@@ -101,7 +101,7 @@ en:
         year:
           label: Year
       disagree_employment:
-        label: Why do you disagree with the dates given by the claimant
+        label: Why do you disagree with the dates given by the claimant (optional)
     continued_employment:
       label: Is their employment continuing? (optional)
       'yes':
@@ -297,6 +297,7 @@ en:
       too_long: characters is the maximum allowed
       inclusion: Please select an option
     custom:
+      employment_end_before_start: End date must be after the employment start date
       password_email_address: Please enter your email address
       memorable_word: Create a memorable word so you can return to your response
       organisation_employ_gb:

@@ -34,11 +34,11 @@ cy:
     fieldset:
       respondents_detail:
         contact_preference: "Sut hoffech i ni gysylltu â chi? (dewisol) "
-        organisation_more_than_one_site: "A oes gan y sefydliad hwn fwy nag un safle ym Mhrydain Fawr? "
+        organisation_more_than_one_site: "A oes gan y sefydliad hwn fwy nag un safle ym Mhrydain Fawr? (dewisol)"
         video_call: A allech chi gymryd rhan mewn gwrandawiad drwy fideo? (angen mynediad i'r rhyngrwyd).
       claimants_detail:
         agree_with_early_conciliation_details: "A ydych chi'n cytuno gyda'r manylion a roddodd yr hawlydd ynghylch Cymodi Cynnar gydag Acas? (dewisol) "
-        agree_with_employment_dates: "A yw'r dyddiadau cyflogaeth a roddwyd gan yr hawlydd yn gywir? "
+        agree_with_employment_dates: "A yw'r dyddiadau cyflogaeth a roddwyd gan yr hawlydd yn gywir? (dewisol)"
         continued_employment: "A yw'n parhau i fod mewn swydd? (dewisol) "
         agree_with_claimants_description_of_job_or_title: "A yw disgrifiad yr hawlydd o’i swydd neu deitl ei swydd yn gywir? (dewisol) "
       earnings_and_benefits:
@@ -109,7 +109,7 @@ cy:
             'no': 'Nac ydy'
         employment_start: Pa bryd ddechreuodd ei gyflogaeth
         employment_end: "Pa bryd ddaeth ei gyflogaeth i ben, neu y bydd yn dod i ben"
-        disagree_employment: Pam yr ydych yn anghytuno â’r dyddiadau a roddwyd gan yr hawlydd
+        disagree_employment: Pam yr ydych yn anghytuno â’r dyddiadau a roddwyd gan yr hawlydd (dewisol)
         continued_employment:
           choices:
             'yes': 'Ydy'
@@ -652,7 +652,7 @@ cy:
     email_address: cyfeiriad e-bost
     fax_number: rhif ffacs
     organisation_employ_gb: faint o bobl sy’n gyflogedig gan y sefydliad hwn ym Mhrydain Fawr?
-    organisation_more_than_one_site: a oes gan y sefydliad hwn fwy nag un safle ym Mhrydain Fawr?
+    organisation_more_than_one_site: a oes gan y sefydliad hwn fwy nag un safle ym Mhrydain Fawr? (dewisol)
     employment_at_site_number: faint o bobl sy’n gyflogedig ar y safle ble'r oedd yr hawlydd yn gweithio?
     claimants_name: enw llawn yr hawlydd
     agree_with_early_conciliation_details: a ydych chi'n cytuno gyda'r manylion a roddodd yr hawlydd ynghylch Cymodi Cynnar gydag Acas?
@@ -769,3 +769,7 @@ cy:
               not_found: "Ni ddaethpwyd o hyd i’ch cyfeiriad e-bost."
             password:
               blank: Dylech greu gair cofiadwy er mwyn i chi allu dychwelyd i'ch ymateb
+        claimants_detail:
+          attributes:
+            employment_end:
+              employment_end_before_start: Rhaid nodi dyddiad sydd ar ôl dyddiad cychwyn y gyflogaeth

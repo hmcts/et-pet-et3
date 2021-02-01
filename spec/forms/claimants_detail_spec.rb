@@ -146,14 +146,6 @@ RSpec.describe ClaimantsDetail, type: :model do
       expect(populated_claimant_detail).to be_valid
     end
 
-    it 'will raise a validation error on agree with employment dates' do
-      populated_claimant_detail.agree_with_employment_dates = nil
-
-      populated_claimant_detail.valid?
-
-      expect(populated_claimant_detail.errors.details[:agree_with_employment_dates]).to include a_hash_including(error: :inclusion)
-    end
-
     it 'will not raise a validation error on continued employment' do
       populated_claimant_detail.continued_employment = nil
 
@@ -250,15 +242,6 @@ RSpec.describe ClaimantsDetail, type: :model do
       populated_claimant_detail.valid?
 
       expect(populated_claimant_detail.errors.details[:employment_end]).to include a_hash_including(error: :blank)
-    end
-
-    it 'will raise a validation error on disagree employment' do
-      populated_claimant_detail.agree_with_employment_dates = false
-      populated_claimant_detail.disagree_employment = nil
-
-      populated_claimant_detail.valid?
-
-      expect(populated_claimant_detail.errors.details[:disagree_employment]).to include a_hash_including(error: :blank)
     end
   end
 

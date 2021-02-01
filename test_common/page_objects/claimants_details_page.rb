@@ -82,7 +82,7 @@ module ET3
         section :employment_end, :single_choice_option, 'questions.agree_with_employment_dates.employment_end.label', exact: false do
           section :day, :question_labelled, 'questions.agree_with_employment_dates.employment_end.day.label', exact: true do
             element :field, :css, 'input'
-              def set(*args); field.set(*args); end
+            def set(*args); field.set(*args); end
           end
 
           section :month, :question_labelled, 'questions.agree_with_employment_dates.employment_end.month.label', exact: true do
@@ -95,6 +95,8 @@ module ET3
               def set(*args); field.set(*args); end
           end
           element :error_blank, :exact_error_text, 'errors.messages.blank', exact: false
+          element :error_employment_end_before_start, :exact_error_text, 'errors.custom.employment_end_before_start', exact: false
+
           def set(value)
             (day_value, month_value, year_value) = value.split("/")
             day.set(day_value)
@@ -113,7 +115,7 @@ module ET3
         section :disagree_employment, :question_labelled, 'questions.agree_with_employment_dates.disagree_employment.label', exact: false do
           element :field, :css, 'textarea'
           element :error_blank, :exact_error_text, 'errors.messages.blank', exact: false
-            def set(*args); field.set(*args); end
+          def set(*args); field.set(*args); end
         end
 
         element :error_blank, :exact_error_text, 'errors.messages.blank', exact: false

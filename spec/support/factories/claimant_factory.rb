@@ -55,4 +55,10 @@ FactoryBot.define do
     employment_end {"0/0/0"}
     disagree_employment {nil}
   end
+
+  trait :claimant_invalid_dates do
+    claimant_invalid
+    employment_start {"01/01/2021"}
+    employment_end {"01/01/2020"}
+  end
 end

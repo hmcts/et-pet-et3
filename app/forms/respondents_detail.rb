@@ -63,7 +63,7 @@ class RespondentsDetail < BaseForm
   validates :organisation_employ_gb,
     numericality: true,
     allow_blank: true
-  validates :organisation_more_than_one_site, inclusion: { in: [true, false] }
+  validates :organisation_more_than_one_site, inclusion: { in: [true, false] }, allow_blank: true
   validates :employment_at_site_number, numericality: true, if: :more_than_one_site?
   validates :video_call, inclusion: { in: [true, false] }
 

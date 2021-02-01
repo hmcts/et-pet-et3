@@ -35,15 +35,24 @@ class ClaimantsDetail < BaseForm
   validates :claimants_name,
     persons_name: true,
     allow_blank: true
-  validates :agree_with_employment_dates, inclusion: { in: [true, false] }
-  validates :employment_start, :employment_end, :disagree_employment,
+  validates :agree_with_employment_dates, inclusion: { in: [true, false] }, allow_blank: true
+  validates :employment_start, :employment_end,
     presence: true,
     if: :disagree_with_employment_dates?
-
+  validate :end_date_is_after_start_date,
+           if: :disagree_with_employment_dates?
   private
 
   def disagree_with_employment_dates?
     agree_with_employment_dates == false
+  end
+
+  def end_date_is_after_start_date
+    return if employment_end.blank? || employment_start.blank?
+
+    if employment_end < employment_start
+      errors.add(:employment_end, :employment_end_before_start)
+    end
   end
 
 end

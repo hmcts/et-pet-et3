@@ -26,7 +26,6 @@ RSpec.feature "Fill in Claimants Details Page", js: true do
     expect(claimants_details_page.claimants_name_question).to have_error_contains_numbers
     expect(claimants_details_page.agree_with_employment_dates_question.employment_start).to have_error_blank
     expect(claimants_details_page.agree_with_employment_dates_question.employment_end).to have_error_blank
-    expect(claimants_details_page.agree_with_employment_dates_question.disagree_employment).to have_error_blank
   end
 
   scenario "correctly will enable user to check answers and return to edit them" do
@@ -43,6 +42,23 @@ RSpec.feature "Fill in Claimants Details Page", js: true do
     claimants_details_page.agree_with_employment_dates_question.assert_answers_for(@claimant)
     claimants_details_page.continued_employment_question.assert_answer(@claimant.continued_employment)
     claimants_details_page.agree_with_claimants_description_of_job_or_title_question.assert_answers_for(@claimant)
+  end
+
+  scenario 'Will be able to go to the next page without answering anything'do
+    claimants_details_page.load(locale: current_locale_parameter)
+    claimants_details_page.next
+
+    expect(earnings_and_benefits_page).to be_displayed
+  end
+
+  scenario 'Will give an error if the end date is before the start date' do
+    claimants_details_page.load(locale: current_locale_parameter)
+    claimants_invalid_dates
+    answer_claimants_details
+
+    expect(claimants_details_page).to have_header
+    expect(claimants_details_page).to have_error_header
+    expect(claimants_details_page.agree_with_employment_dates_question.employment_end).to have_error_employment_end_before_start
   end
 end
 

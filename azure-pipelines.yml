@@ -31,7 +31,7 @@ jobs:
 
     - task: UseRubyVersion@0
       inputs:
-        versionSpec: '2.5'
+        versionSpec: '2.7'
 
     - script: |
         sudo apt-get update

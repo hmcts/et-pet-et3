@@ -36,6 +36,7 @@ en:
         contact_preference: How would you prefer us to contact you? (optional)
         organisation_more_than_one_site: Does this organisation have more than one site in Great Britain? (optional)
         video_call: Would you be able to take part in a hearing by video? (Requires internet access).
+        cookies: Do you want to accept analytics cookies?
       claimants_detail:
         agree_with_early_conciliation_details: Do you agree with the details given by the claimant about Early Conciliation with Acas? (optional)
         agree_with_employment_dates: Are the dates of employment given by the claimant correct? (optional)
@@ -60,6 +61,10 @@ en:
       employers_contract_claim:
         make_employer_contract_claim: Do you wish to make an Employer Contract Claim? (optional)
     label:
+      cookies:
+        choices:
+          'yes': 'Yes'
+          'no': 'No'
       save_and_return[user]:
         email: Enter your email address to receive your save and return number (optional)
         password: Create your memorable word
@@ -299,6 +304,7 @@ en:
       error_header: Please review the following
       error_description: Clicking on an error will navigate you directly to the question. Please correct these errors before continuing.
       save_and_continue_button: Save and continue
+      cookies_save_button: Save cookie settings
       find_my_claim_button: Find my response
       reset_memorable_word: Reset memorable word
       language: Cymraeg
@@ -412,43 +418,59 @@ en:
       managing_cookies_href: how to manage cookies
       google_privacy_policy_href: Privacy Policy
       opt_out_href: opt out of Google Analytics
-      introduction: A cookie is a small piece of data that’s stored on your computer, tablet, or phone when you visit a website. Most websites need cookies to work properly.
+      introduction: The ‘make a claim to an employment tribunal’ website stores small files (known as cookies), on your computer. They are used to improve your experience of using the service.
       introduction_bullets:
-        - "This service uses them to:"
+        - "Cookies are used to:"
         - - measure how you use the service so it can be improved
-          - remember the notifications you’ve seen so that you’re not shown them again
-          - temporarily store the answers you give
-        - Find out more about %{managing_cookies_href}
-      subheader: How cookies are used in this service
-      website_usage:
-        header: 1. To measure website usage
-        content:
-          - We use Google Analytics software to collect information about how you use this service. We do this to help make sure the service is meeting the needs of its users and to help us make improvements, for example improving site search.
-          - "Google Analytics stores information about:"
-          - - the pages you visit
-            - how long you spend on each page
-            - how you got to the service
-            - what you click on while you're visiting the service
-          - We allow Google to use or share our analytics data. You can find out more about how Google use this information in their %{google_privacy_policy_href}.
-          - You can %{opt_out_href} if you do not want Google to have access to your information.
-          - "Google Analytics sets the following cookies:"
+          - remember the notifications you’ve seen so that you don’t see them again
+        - Cookies on this service aren’t used to identify you personally.
+        - Find out %{managing_cookies_href}
+      subheader: How cookies are used
+      cookie_usage:
+        header: Essential cookies
+        first_line: Essential cookies are needed for the service to work. We do not need to ask for permission to use them.
+        second_header: Your progress when using the service
+        second_line: When using this service, we'll set a cookie to remember your progress. This cookie doesn’t store your personal data and is deleted when your session ends.
+      cookie_message:
+        header: Cookies message
+        first_line: You may see a banner when you visit employment tribunals inviting you to accept or reject optional cookies. We'll set cookies so that your computer knows you've seen it and not to show it again, and also store your settings.
         table:
-          - - "_ga"
-            - This helps us count how many people visit the service by tracking if you’ve visited before
+          name: "cookie_setting"
+          purpose: "Saves your cookie consent settings."
+          expires: 	1 year
+      website_usage:
+        header: Analytics cookies (optional)
+        second_header: Measuring website usage (Google Analytics)
+        content:
+          - "We use Google Analytics software to collect information about how you use this service. Google Analytics stores the following information:"
+          - - the pages you visit
+            - what you click on
+            - how long you spend on each page
+            - how you got to the website, for example (from a search engine)
+          - "We don’t collect or store personal information in cookies, for example your name or address, so the information can’t be used to identify you. We don’t allow Google to use or share our analytics data. Google Analytics uses the following cookies:"
+        table:
+          - - "_utma"
+            - Determines the number of unique visitors to the website
             - 2 years
-          - - "_gat"
-            - Manages the rate page view requests are made
-            - 10 minutes
-          - - "_gid"
-            - Identifies you to the service
-            - 24 hours
+          - - "_utmb"
+            - Works with _utmc to calculate the average length of time you spend on the website
+            - 61 minutes
+          - - "_utmc"
+            - Works with _utmb to monitor when you close your browser
+            - when you close your browser
+          - - "_utmz"
+            - Provides information about how you reached the service (For example from another website or search engine)
+            - 6 months
+          - - "_ga"
+            - Manages the deployment of the cookies above
+            - 2 years
       introductory_message:
         header: 2. To turn our introductory message off
         content: You may see a pop-up welcome message when you first visit the service. We’ll store a cookie so that your computer knows you’ve seen it and knows not to show it again.
         table:
-          name: "seen_cookie_messages"
-          purpose: "Saves a message to let us know that you’ve seen our cookie message"
-          expires: 1 month
+          name: "_app_session"
+          purpose: "The information you enter is stored on the server for the length of time you stay on the page. This can be up to 60 minutes, with the option to extend for another 60 minutes. After you’ve downloaded the completed PDF, this data is deleted from our servers."
+          expires: 60 mins (or when your session expires)
       store_answers:
         header: 3. To store the answers you’ve given during your visit (known as a ‘session’)
         content: Session cookies are stored on your computer as you travel through a website, and let the website know what you’ve seen and done so far. These are temporary cookies and are automatically deleted a short while after you leave the website.
@@ -466,6 +488,8 @@ en:
       further_information: "Further information"
       refer_to_govuk: "Refer here to %{link} cookie policy"
       cookie_link_text: "Gov.uk"
+      cookie_radio_buttons:
+        header: Do you want to accept analytics cookies?
     terms_and_conditions:
       header: Terms and conditions
       introduction: By using this service you’re agreeing to these terms of use. This includes the %{privacy_policy_href}.
@@ -697,6 +721,21 @@ en:
         reset: "Reset my memorable word"
         didnt_request: "If you didn't request this, please ignore this email"
         paste_in_browser: "You may not be able to click on the link. If not, please copy the url and paste it into your browser."
+  cookie_banner:
+    confirmation_message:
+      true: You've accepted analytics cookies. You can change your <a href="%{edit_cookies_path}">cookie settings</a> at any time.
+      false: You've rejected analytics cookies. You can change your <a href="%{edit_cookies_path}">cookie settings</a> at any time.
+      hide_button: Hide this message
+      cookie_flashes: You've set your cookie preferences
+    banner:
+      cookie_aria_label: Cookies on Employment tribunals
+      title: Cookies on Employment tribunals
+      first_line: We use some essential cookies to make this service work.
+      second_line: We’d also like to use analytics cookies so we can understand how you use the service and make improvements to government services.
+      accept_analytics: Accept analytics cookies
+      reject_analytics: Reject analytics cookies
+      cookie_link: View cookies
+      hide_button: Hide this message
   activerecord:
     errors:
       models:

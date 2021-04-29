@@ -1,3 +1,4 @@
+require_relative '../../test_common'
 module ET3
   module Test
     module EmailObjects

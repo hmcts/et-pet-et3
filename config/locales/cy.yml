@@ -36,6 +36,7 @@ cy:
         contact_preference: "Sut hoffech i ni gysylltu â chi? (dewisol) "
         organisation_more_than_one_site: "A oes gan y sefydliad hwn fwy nag un safle ym Mhrydain Fawr? (dewisol)"
         video_call: A allech chi gymryd rhan mewn gwrandawiad drwy fideo? (angen mynediad i'r rhyngrwyd).
+        cookies: A ydych eisiau derbyn cwcis dadansoddol?
       claimants_detail:
         agree_with_early_conciliation_details: "A ydych chi'n cytuno gyda'r manylion a roddodd yr hawlydd ynghylch Cymodi Cynnar gydag Acas? (dewisol) "
         agree_with_employment_dates: "A yw'r dyddiadau cyflogaeth a roddwyd gan yr hawlydd yn gywir? (dewisol)"
@@ -60,6 +61,10 @@ cy:
       employers_contract_claim:
         make_employer_contract_claim: "Ydych chi eisiau gwneud Hawliad Contract y Cyflogwr? (dewisol) "
     label:
+      cookies:
+        choices:
+          'yes': 'Ydw'
+          'no': 'Nac ydw'
       save_and_return[user]:
         email: Nodwch eich cyfeiriad e-bost i gael eich rhif ymateb (dewisol)
         password: Crëwch eich gair cofiadwy
@@ -299,6 +304,7 @@ cy:
       error_header: "Adolygwch y canlynol "
       error_description: Bydd clicio ar wall yn mynd â chi'n syth at y cwestiwn. Cywirwch y gwallau hyn cyn parhau.
       save_and_continue_button: Cadw a pharhau
+      cookies_save_button: Cadw gosodiadau cwcis
       find_my_claim_button: Cael hyd i fy ymateb
       reset_memorable_word: Ailosod y gair cofiadwy
       language: English
@@ -410,46 +416,62 @@ cy:
       return_to_claim: Dychwelwch at fy ymateb
     cookies:
       header: Cwcis
-      managing_cookies_href: su i reoli cwcis
+      managing_cookies_href: sut i reoli cwcis
       google_privacy_policy_href: Polisi Preifatrwydd
       opt_out_href: optio allan o Google Analytics
-      introduction: "Darn bach o ddata sy'n cael ei storio ar eich cyfrifiadur, eich tabled neu eich ffôn pan fyddwch yn ymweld â gwefan yw Cwci. Mae angen cwcis ar y rhan fwyaf o wefannau i weithio'n iawn."
+      introduction: "Mae gwefan ‘gwneud hawliad i dribiwnlys cyflogaeth’ yn rhoi ffeiliau bach (a elwir yn cwcis), ar eich cyfrifiadur. Fe'u defnyddir i wella'r wefan."
       introduction_bullets:
-        - "Mae’r gwasanaeth hwn yn eu defnyddio i:"
-        - - fesur sut rydych yn defnyddio’r gwasanaeth hwn fel y gallwn ei wella
-          - cofio'r hysbysiadau rydych wedi'u gweld fel na fyddwch yn eu gweld eto
-          - storio’r atebion a roddwch dros dro
-        - Am ragor o wybodaeth, gweler %{managing_cookies_href}
-      subheader: Sut mae cwcis yn cael eu defnyddio yn y gwasanaeth hwn
-      website_usage:
-        header: 1. I fesur faint o bobl sy’n defnyddio ein gwefan
-        content:
-          - Rydym yn defnyddio meddalwedd Google Analytics i gasglu gwybodaeth am sut rydych yn defnyddio'r gwasanaeth hwn. Gwnawn hyn i helpu i sicrhau bod y gwasanaeth yn diwallu anghenion ei ddefnyddwyr ac i'n helpu i wneud gwelliannau, er enghraifft gwella’r cyfleuster chwilio.
-          - "Mae Google Analytics yn storio gwybodaeth am:"
-          - - y tudalennau yr ydych yn ymweld â hwy
-            - faint o amser y byddwch yn ei dreulio ar bob tudalen
-            - sut y daethoch o hyd i’r gwasanaeth
-            - yr hyn rydych chi'n clicio arno wrth ymweld â'r gwasanaeth
-          - Rydym yn caniatáu i Google ddefnyddio neu rannu ein data dadansoddi. Gallwch ddarganfod mwy am sut mae Google yn defnyddio’r wybodaeth hon yn eu %{google_privacy_policy_href}.
-          - Gallwch %{opt_out_href} os nad ydych am i Google gael mynediad at eich gwybodaeth.
-          - "Mae Google Analytics yn gosod y cwcis canlynol:"
+        - "Defnyddir cwcis i:"
+        - - fesur sut yr ydych yn defnyddio'r wefan fel y gellir ei gwella
+          - cofio'r hysbysiadau rydych wedi'u gweld fel nad ydych yn eu gweld eto
+        - Ni ddefnyddir cwcis ar y gwasanaeth ‘gwneud hawliad i dribiwnlys cyflogaeth’ i’ch adnabod chi’n bersonol.
+        - Dysgwch fwy am %{managing_cookies_href}
+      subheader: Sut mae cwcis yn cael eu defnyddio
+      cookie_usage:
+        header: Cwcis Hanfodol
+        first_line: Mae angen cwcis hanfodol er mwyn i'r gwasanaeth weithio. Nid oes angen inni ofyn am ganiatâd i'w defnyddio
+        second_header: Eich cynnydd pan fyddwch yn defnyddio'r gwasanaeth
+        second_line: Pan fyddwch yn defnyddio gwefan ‘gwneud hawliad i dribiwnlys cyflogaeth’, byddwn yn rhoi cwci ar eich cyfrifiadur i gofnodi eich cynnydd. Ni fydd y cwci hwn yn cadw eich data personol a chaiff ei ddileu pan fydd eich sesiwn yn dod i ben.
+      cookie_message:
+        header: Neges yn ymwneud â chwcis
+        first_line: Efallai y byddwch yn gweld baner pan ymwelwch â thribiwnlysoedd cyflogaeth yn eich gwahodd i dderbyn neu wrthod cwcis dewisol. Byddwn yn gosod cwcis ar eich cyfrifiadur fel ei fod yn gwybod eich bod wedi'i weld ac nad oes angen ei ddangos eto, a hefyd i storio eich gosodiadau.
         table:
-          - - "_ga"
-            - Mae hyn yn ein helpu i gyfrif faint o bobl sy'n ymweld â'r gwasanaeth drwy olrhain os ydych wedi ymweld o'r blaen
+          name: "cookie_setting"
+          purpose: "Cadw eich gosodiadau caniatau cwcis"
+          expires: 1 blwyddyn
+      website_usage:
+        header: Cwcis Dadansoddol (dewisol)
+        second_header: Mesur defnydd o’r wefan (Google Analytics)
+        content:
+          - "Rydym yn defnyddio meddalwedd Google Analytics i gasglu gwybodaeth am sut rydych yn defnyddio'r gwasanaeth 'gwneud hawliad i dribiwnlys cyflogaeth'. Mae Google Analytics yn cadw'r wybodaeth ganlynol:"
+          - - y tudalennau y byddwch yn ymweld â nhw
+            - yr hyn rydych yn clicio arno
+            - faint o amser y byddwch yn ei dreulio ar bob tudalen
+            - sut y daethoch i'r wefan (ee trwy ddefnyddio chwilotwr)
+          - "Nid ydym yn casglu nac yn cadw'ch gwybodaeth bersonol (e.e. eich enw neu'ch cyfeiriad) mewn cwcis, felly ni ellir defnyddio'r wybodaeth hon i'ch adnabod. Nid ydym yn caniatáu i Google ddefnyddio neu rannu ein data dadansoddi. Mae Google Analytics yn defnyddio'r cwcis canlynol:"
+        table:
+          - - "_utma"
+            - Faint o ymwelwyr sy'n ymweld â'r wefan
             - 2 flynedd
-          - - "_gat"
-            - Rheoli faint o bobl sy’n ymweld â’r dudalen
-            - 10 munud
-          - - "_gid"
-            - Eich cyfeirio at y gwasanaeth
-            - 24 awr
+          - - "_utmb"
+            - Mae'n gweithio gyda _ utmc i gyfrifo faint o amser rydych yn ei dreulio ar gyfartaledd ar y wefan
+            - 61 munud
+          - - "_utmc"
+            - Mae'n gweithio gyda _utmb i fonitro pryd fyddwch yn cau eich porwr
+            - pan fyddwch yn cau eich porwr
+          - - "_utmz"
+            - Mae'n darparu gwybodaeth am sut y daethoch i'r wefan (Er enghraifft o wefan arall neu drwy ddefnyddio chwilotwr)
+            - 6 mis
+          - - "_ga"
+            - Rheoli'r defnydd o'r cwcis uchod
+            - 2 flynedd
       introductory_message:
         header: 2. Troi ein neges gyflwyno i ffwrdd
         content: Efallai y byddwch yn gweld neges groeso pan fyddwch yn ymweld â'r gwasanaeth am y tro cyntaf. Byddwn yn storio cwcis fel bod eich cyfrifiadur yn gwybod eich bod wedi ei gweld ac yn gwybod i beidio â'i dangos eto.
         table:
-          name: "seen_cookie_messages"
-          purpose: "Arbed neges i roi gwybod inni eich bod wedi gweld ein neges ynglŷn â chwcis"
-          expires: 1 mis
+          name: "_app_session"
+          purpose: "Bydd y wybodaeth y byddwch yn ei rhoi yn cael ei chadw ar y gweinydd am y cyfnod y byddwch yn aros ar y dudalen. Gall hyn fod hyd at 60 munud, gyda'r opsiwn i'w ymestyn am 60 munud arall. Ar ôl i chi lawrlwytho'r PDF wedi'i gwblhau, caiff y data hwn ei ddileu o'n gweinyddion."
+          expires: 60 munud (neu pan ddaw eich sesiwn i ben)
       store_answers:
         header: 3. Storio’r atebion a roesoch yn ystod eich ymweliad (gelwir hyn yn ‘sesiwn’)
         content: Caiff cwcis sesiwn eu storio ar eich cyfrifiadur wrth ichi fynd drwy wefan, ac maent yn gadael i'r wefan wybod beth rydych wedi'i weld a'i wneud hyd yn hyn. Cwcis dros dro yw'r rhain ac fe'u dilëir yn awtomatig ychydig amser ar ôl ichi adael y wefan.
@@ -462,11 +484,13 @@ cy:
         content: Rydym yn gosod cwcis er mwyn rhwystro hacwyr rhag addasu cynnwys y cwcis eraill a osodon ni. Mae hyn yn gwneud y gwasanaeth yn fwy diogel ac yn diogelu eich gwybodaeth bersonol.
       table_header:
         name: Enw
-        purpose: Pwrpas
-        expires: Dod i ben
+        purpose: Diben
+        expires: Daw i ben
       further_information: ""
       refer_to_govuk: ""
       cookie_link_text: ""
+      cookie_radio_buttons:
+        header: A ydych eisiau derbyn cwcis dadansoddol?
     terms_and_conditions:
       header: Telerau ac amodau
       introduction: Trwy ddefnyddio’r gwasanaeth hwn rydych yn cytuno i’r telerau defnydd hyn. Mae hyn yn cynnwys y %{privacy_policy_href}.
@@ -759,6 +783,21 @@ cy:
         reset: "Ailosod fy ngair cofiadwy"
         didnt_request: "Os na wnaethoch ofyn am wneud hyn, anwybyddwch y neges e-bost hon"
         paste_in_browser: "You may not be able to click on the link. If not, please copy the url and paste it into your browser."
+  cookie_banner:
+    confirmation_message:
+      true: Rydych wedi derbyn cwcis dadansoddol. Gallwch newid eich <a href="%{edit_cookies_path}">ar unrhyw adeg</a>
+      false: Rydych chi wedi gwrthod cwcis dadansoddeg. Gallwch newid eich dewisiadau cwcis <a href="%{edit_cookies_path}">ar unrhyw adeg</a>
+      hide_button: Cuddiwch y neges hon
+      cookie_flashes: Rydych wedi cadw eich dewisiadau cwcis
+    banner:
+      cookie_aria_label: Cwcis ar gyfer Tribiwnlysoedd Cyflogaeth
+      title: Cwcis ar gyfer Tribiwnlysoedd Cyflogaeth
+      first_line: Rydym yn defnyddio cwcis hanfodol i wneud i'r wefan hon weithio.
+      second_line: Hoffem osod cwcis ychwanegol i ddeall sut rydych yn defnyddio'r wefan a gwella gwasanaethau'r llywodraeth.
+      accept_analytics: Derbyn cwcis ychwanegol
+      reject_analytics: Gwrthod cwcis ychwanegol
+      cookie_link: Bwrw golwg dros y cwis
+      hide_button: Cuddiwch y neges hon
   activerecord:
     errors:
       models:

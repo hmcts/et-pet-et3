@@ -1,0 +1,70 @@
+- content_for :form_page_title, t('components.cookies.header')
+- content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
+.content-body.cookies
+
+  p = t('components.cookies.introduction')
+  = render 'static_pages/policy_elements', translated_content_array: t('components.cookies.introduction_bullets',
+          managing_cookies_href: link_to(t('components.cookies.managing_cookies_href'),
+                  'http://www.aboutcookies.org.uk/', target: :_blank))
+
+  h2.heading-medium = t('components.cookies.subheader')
+  h2.heading-small = t('components.cookies.cookie_usage.header')
+  p= t('components.cookies.cookie_usage.first_line')
+  h2.heading-small = t('components.cookies.cookie_usage.second_header')
+  p= t('components.cookies.cookie_usage.second_line')
+
+  table
+    thead
+      tr
+        th = t('components.cookies.table_header.name')
+        th = t('components.cookies.table_header.purpose')
+        th = t('components.cookies.table_header.expires')
+    tbody
+      tr
+        td = t('components.cookies.introductory_message.table.name')
+        td = t('components.cookies.introductory_message.table.purpose')
+        td = t('components.cookies.introductory_message.table.expires')
+
+  h2.heading-small = t('components.cookies.cookie_message.header')
+  p = t('components.cookies.cookie_message.first_line')
+
+  table
+    thead
+      tr
+        th = t('components.cookies.table_header.name')
+        th = t('components.cookies.table_header.purpose')
+        th = t('components.cookies.table_header.expires')
+    tbody
+      tr
+        td = t('components.cookies.cookie_message.table.name')
+        td = t('components.cookies.cookie_message.table.purpose')
+        td = t('components.cookies.cookie_message.table.expires')
+
+  #website-usage
+    h2.heading-medium = t('components.cookies.website_usage.header')
+    h2.heading-small = t('components.cookies.website_usage.second_header')
+    = render 'static_pages/policy_elements', translated_content_array: t('components.cookies.website_usage.content',
+            google_privacy_policy_href: link_to(t('components.cookies.google_privacy_policy_href'),
+                    'https://www.google.com/policies/privacy/partners/', target: :_blank),
+            opt_out_href: link_to(t('components.cookies.opt_out_href'),
+                    'https://tools.google.com/dlpage/gaoptout', target: :_blank))
+    table
+      thead
+        tr
+          th = t('components.cookies.table_header.name')
+          th = t('components.cookies.table_header.purpose')
+          th = t('components.cookies.table_header.expires')
+      tbody
+        - t('components.cookies.website_usage.table').each do |row|
+          tr
+            - row.each do |cell|
+              td = cell
+    br
+
+  = form_for(cookie_form, as: :cookie, url: cookies_path, method: :patch) do |f|
+    = f.radio_button_fieldset :cookies, legend_options: {text: t('helpers.fieldset.respondents_detail.cookies')} do |b|
+      = content_tag :div, {class: 'multiple-choice', data: {target: :usage}} do
+        = b.radio_button(:usage, true) + b.label(:usage, t('helpers.label.cookies.choices.yes'), value: true)
+      = content_tag :div, {class: 'multiple-choice'} do
+        = b.radio_button(:usage, false) + b.label(:usage, t('helpers.label.cookies.choices.no'), value: false)
+    = f.submit(t('components.common.cookies_save_button'), class: 'button')

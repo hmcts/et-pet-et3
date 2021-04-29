@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     end
     get "/terms" => 'static_pages#terms', as: 'terms_and_conditions'
     get "/privacy" => 'static_pages#privacy', as: 'privacy_notice'
-    get "/cookies" => 'static_pages#cookies'
+    resource :cookies, only: %i<edit update create>, path_names: { edit: '/' }
     get "/session_expired" => 'static_pages#expired'
     get "/feedback" => "feedbacks#new"
     post '/feedback' => 'feedbacks#create'

@@ -5,8 +5,6 @@ class StaticPagesController < ApplicationController
 
   def expired; end
 
-  def cookies; end
-
   def privacy; end
 
   def terms; end

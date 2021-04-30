@@ -12,7 +12,7 @@ RSpec.shared_examples 'google tag manager' do |page_object_class:|
       ensure
         Rails.configuration.google_tag_manager_account = old
       end
-      # @TODO
+      # @TODO RST-3332
       xit 'has google tag manager script and noscript tags' do
         expect(page_object).to be_displayed.and have_google_tag_manager_sections_for("dummyaccount")
       end
@@ -25,7 +25,7 @@ RSpec.shared_examples 'google tag manager' do |page_object_class:|
       ensure
         Rails.configuration.google_tag_manager_account = old
       end
-      # @TODO
+      # @TODO RST-3332
       xit 'has no google tag manager script or noscript tags' do
         expect(page_object).to be_displayed.and have_no_google_tag_manager_sections
       end

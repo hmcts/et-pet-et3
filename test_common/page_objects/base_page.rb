@@ -9,6 +9,14 @@ module ET3
         super "#{ENV['ET3_URL']}{/locale}#{url}"
       end
 
+      section :cookie_banner, "#cookie-banner" do
+        element :first_line, :element_with_text, 'components.cookie_banner.first_line'
+        element :second_line, :element_with_text, 'components.cookie_banner.second_line'
+        element :accept_analytics_button, :submit_text, 'components.cookie_banner.accept_analytics_button'
+        element :reject_analytics_button, :submit_text, 'components.cookie_banner.reject_analytics_button'
+        element :view_cookie_link, :link_named, 'components.cookie_banner.view_cookie_link'
+      end
+
       element :google_tag_manager_head_script, :xpath, XPath.generate {|x| x.css('head script')[x.string.n.contains("googletagmanager")]}, visible: false
       element :google_tag_manager_body_noscript, :xpath, XPath.generate {|x| x.css('body noscript')[x.child(:iframe)[x.attr(:src).contains('googletagmanager')]]}
 

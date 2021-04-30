@@ -347,6 +347,13 @@ en:
     feedback:
       create:
         sent: Thank you for your feedback
+    cookie_banner:
+      header: Cookies on Employment tribunals
+      first_line: We use some essential cookies to make this service work.
+      second_line: We’d also like to use analytics cookies so we can understand how you use the service and make improvements to government services.
+      accept_analytics_button: Accept analytics cookies
+      reject_analytics_button: Reject analytics cookies
+      view_cookie_link: View cookies
     sidebar:
       header: Other Relevant Links
       claim_link: How to make a claim

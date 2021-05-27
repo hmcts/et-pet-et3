@@ -67,11 +67,12 @@ jobs:
         ./bin/dev/docker-support-services down
       condition: always()
       displayName: 'cleanup'
-    - download: current  # refers to artifacts published by current pipeline
-      artifact: Screenshots
-      patterns: 'tmp/capybara/**/*'
-      displayName: Download screenshots
-
+    - task: DownloadBuildArtifacts@0
+      inputs:
+        buildType: 'current'
+        downloadType: 'single'
+        artifactName: 'drop'
+        downloadPath: '$(Build.SourcesDirectory)/tmp/capybara/**/*'
   - job: BuildAndPushImage
     dependsOn: TestApplication
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/develop'))    

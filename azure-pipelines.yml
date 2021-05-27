@@ -67,6 +67,10 @@ jobs:
         ./bin/dev/docker-support-services down
       condition: always()
       displayName: 'cleanup'
+    - task: PublishBuildArtifacts@1
+      inputs:
+        pathToPublish: '$(Build.SourcesDirectory)/tmp/capybara'
+        artifactName: screenshots
     - task: DownloadBuildArtifacts@0
       inputs:
         buildType: 'current'

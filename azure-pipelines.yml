@@ -67,6 +67,10 @@ jobs:
         ./bin/dev/docker-support-services down
       condition: always()
       displayName: 'cleanup'
+    - download: current  # refers to artifacts published by current pipeline
+      artifact: Screenshots
+      patterns: 'tmp/capybara/**/*'
+      displayName: Download screenshots
 
   - job: BuildAndPushImage
     dependsOn: TestApplication

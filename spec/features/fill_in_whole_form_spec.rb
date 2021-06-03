@@ -286,7 +286,7 @@ RSpec.feature "Fill in whole form", js: true do
 
       expect(form_submission_page).to have_submission_confirmation
       expect(form_submission_page.reference_number).to have_text "142000000100"
-      expect(form_submission_page.submission_date).to have_text "13 January 2018"
+      expect(form_submission_page.submission_date).to have_text /13 (January|Ionawr) 2018/
       expect(form_submission_page).to have_valid_pdf_download
     end
   end

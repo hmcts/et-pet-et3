@@ -155,7 +155,7 @@ cy:
             'yes': 'Ydy'
             'no': 'Nac ydy'
         disagree_claimant_pension_benefits_reason:
-          "Nodwch y manylion rydych chi’n credu sy’n gywir."
+          "Nodwch y manylion rydych chi’n credu sy’n gywir. (dewisol)"
       response:
         defend_claim:
           choices:

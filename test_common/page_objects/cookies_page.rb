@@ -79,22 +79,6 @@ module ET3
         end
       end
 
-      section :more_secure, :wrapper_headered, 'cookies.more_secure.header'do
-        include ET3::Test::I18n
-        element :header, :element_with_text, 'cookies.more_secure.header'
-        def assert_content
-          root_element.assert_selector('p', text: t('cookies.more_secure.content'))
-        end
-      end
-
-      section :further_info, :wrapper_headered, 'cookies.further_info.header'do
-        include ET3::Test::I18n
-        element :header, :element_with_text, 'cookies.further_info.header'
-        def assert_content
-          root_element.assert_selector('p', text: t('cookies.further_info.content'))
-        end
-      end
-
       def switch_to_welsh
         switch_language.welsh_link.click
       end

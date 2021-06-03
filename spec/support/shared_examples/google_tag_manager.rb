@@ -4,6 +4,9 @@ RSpec.shared_examples 'google tag manager' do |page_object_class:|
   let(:page_object_class) { page_object_class }
 
   context 'google tag manager', js: false do
+    before do
+      set_seen_cookie_policy
+    end
     context 'with account' do
       around do |example|
         old = Rails.configuration.google_tag_manager_account
@@ -13,7 +16,7 @@ RSpec.shared_examples 'google tag manager' do |page_object_class:|
         Rails.configuration.google_tag_manager_account = old
       end
       # @TODO RST-3332
-      xit 'has google tag manager script and noscript tags' do
+      it 'has google tag manager script and noscript tags' do
         expect(page_object).to be_displayed.and have_google_tag_manager_sections_for("dummyaccount")
       end
     end

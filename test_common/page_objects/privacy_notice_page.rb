@@ -108,7 +108,10 @@ module ET3
         include ET3::Test::I18n
         element :header, :element_with_text, 'privacy_notice.further_info.header'
         def assert_content
-          root_element.assert_selector('p', text: t('privacy_notice.further_info.content'))
+          text = t('privacy_notice.further_info.content')
+          return if text.empty?
+
+          root_element.assert_selector('p', text: text)
         end
       end
 

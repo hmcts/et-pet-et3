@@ -10,3 +10,9 @@ end
 RSpec.configure do |c|
   c.include ET3::Test::Setup, type: :feature
 end
+
+RSpec.configure do |c|
+  c.include ET3::Test::Cookies, type: :request
+  c.include ET3::Test::Cookies, type: :feature
+end
+

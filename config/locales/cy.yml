@@ -212,14 +212,6 @@ cy:
         upload_additional_information: "Llwythwch ffeil i ddarparu unrhyw wybodaeth ychwanegol bwysig am eich ymateb nad ydych wedi’i chynnwys hyd yma (dewisol) "
       confirmation_of_supplied_details:
         email_receipt: "Cyfeiriad e-bost (dewisol) "
-      feedback:
-        header: Eich adborth
-        problems: Ydych chi wedi cael unrhyw broblemau wrth ddefnyddio'r gwasanaeth hwn?
-        suggestions: Oes gennych chi unrhyw sylwadau neu awgrymiadau eraill?
-        email_address: Eich cyfeiriad e-bost
-        submit:
-          post:
-            create: Anfon adborth
     hint:
       save_and_return[user]:
         password: Os ydych wedi nodi eich cyfeiriad e-bost uchod, byddwch yn gallu ailosod eich gair cofiadwy os byddwch yn ei anghofio
@@ -310,7 +302,8 @@ cy:
       language: English
       locale: ""
     feedback_link:
-      feedback_html: "<a href=\"%{path}\">Bydd eich adborth</a>  yn ein helpu i wella’r gwasanaeth."
+      feedback_your: Bydd eich adborth
+      feedback_helps_us: yn ein helpu i wella’r gwasanaeth.
     single_choice_option_section:
       'yes': "Ia"
       'no': "Na"
@@ -657,9 +650,6 @@ cy:
       drag_text: "Llusgwch ffeiliau rtf a'u rhoi yma "
       or_text: "neu"
       upload_button: "Cliciwch yma i lwytho ffeil rtf"
-    feedback:
-      create:
-        sent: "Diolch i chi am eich adborth"
   attributes:
     case_number: rhif yr achos
     name: enw'r unigolyn, cwmni neu sefydliad

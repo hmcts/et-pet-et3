@@ -212,14 +212,6 @@ en:
         upload_additional_information: Please upload a file to provide any important additional information about your response which you have not been able to include so far (optional)
       confirmation_of_supplied_details:
         email_receipt: Email address (optional)
-      feedback:
-        header: Your feedback
-        problems: Have you had any problems using this service?
-        suggestions: Do you have any other comments or suggestions?
-        email_address: Your email address
-        submit:
-          post:
-            create: Send feedback
     hint:
       save_and_return[user]:
         password: If you have entered your email address above, you will be able to reset your memorable word if you forget it
@@ -310,7 +302,8 @@ en:
       language: Cymraeg
       locale: cy
     feedback_link:
-      feedback_html: <a href="%{path}">Your feedback</a> helps us to improve this service.
+      feedback_your: Your feedback
+      feedback_helps_us: helps us to improve this service.
     single_choice_option_section:
       'yes': "Yes"
       'no': "No"
@@ -656,11 +649,6 @@ en:
       drag_text: "Drag and drop .rtf files here"
       or_text: "or"
       upload_button: "Click here to upload rtf file"
-    feedback:
-      new:
-        header: Your feedback
-      create:
-        sent: Thank you for your feedback
   date:
     formats:
       pretty: '%e %B %Y'

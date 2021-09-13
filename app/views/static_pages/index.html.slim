@@ -42,4 +42,6 @@
     .switch-language
       = link_to t('components.common.language'), locale: t('components.common.locale')
       p
-        = t('components.feedback_link.feedback_html', path: "/feedback?locale=#{I18n.locale}")
+        = link_to t('components.feedback_link.feedback_your'), 'https://www.smartsurvey.co.uk/s/ETFBS20/', class: 'govuk-link', target: '_blank'
+        = " "
+        = t('components.feedback_link.feedback_helps_us')

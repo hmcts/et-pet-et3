@@ -26,7 +26,7 @@ variables:
 jobs:
   - job: TestApplication
     pool:
-      vmImage: 'Ubuntu-16.04'
+      vmImage: 'ubuntu-latest'
     steps:
 
     - task: UseRubyVersion@0
@@ -82,9 +82,9 @@ jobs:
         allowPartiallySucceededBuilds: true
   - job: BuildAndPushImage
     dependsOn: TestApplication
-    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/develop'))    
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/develop'))
     pool:
-      vmImage: 'Ubuntu-16.04'
+      vmImage: 'ubuntu-latest'
     steps:
     - bash: |
         repo_sha=$(git rev-parse --verify HEAD)
@@ -113,7 +113,7 @@ jobs:
         azureContainerRegistry: $(azure.container.registry)
         command: 'Tag image'
         imageName: '$(application.name):$(getDockerTag.DOCKER_TAG)'
-      
+
     - task: Docker@1
       displayName: 'Push an image'
       inputs:
@@ -169,9 +169,9 @@ jobs:
 
   - job: ManualBuildAndPushImage
     dependsOn: TestApplication
-    condition: and(succeeded(), ne(variables['Build.SourceBranch'], 'refs/heads/develop'), eq(variables['Build.Reason'], 'Manual'))    
+    condition: and(succeeded(), ne(variables['Build.SourceBranch'], 'refs/heads/develop'), eq(variables['Build.Reason'], 'Manual'))
     pool:
-      vmImage: 'Ubuntu-16.04'
+      vmImage: 'ubuntu-latest'
     steps:
     - bash: |
         repo_sha=$(git rev-parse --verify HEAD)
@@ -200,7 +200,7 @@ jobs:
         azureContainerRegistry: $(azure.container.registry)
         command: 'Tag image'
         imageName: '$(application.name):$(getDockerTag.DOCKER_TAG)'
-      
+
     - task: Docker@1
       displayName: 'Push an image'
       inputs:

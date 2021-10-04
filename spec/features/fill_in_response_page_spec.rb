@@ -31,7 +31,7 @@ RSpec.feature "Fill in Response Page", js: true do
     answer_defend_claim_question
 
     confirmation_of_supplied_details_page.load(locale: current_locale_parameter)
-    confirmation_of_supplied_details_page.confirmation_of_response_answers.edit_page_link.click
+    confirmation_of_supplied_details_page.confirmation_of_response_answers.edit_response_page_link.click
 
     expect(response_page).to be_displayed
     response_page.defend_claim_question.assert_answers_for(@claimant)

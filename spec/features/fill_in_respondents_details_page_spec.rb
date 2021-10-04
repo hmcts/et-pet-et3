@@ -51,7 +51,7 @@ RSpec.feature "Fill in Respondents Details Page", js: true do
     given_valid_data
     answer_respondents_details
     confirmation_of_supplied_details_page.load(locale: current_locale_parameter)
-    confirmation_of_supplied_details_page.confirmation_of_respondents_details_answers.edit_page_link.click
+    confirmation_of_supplied_details_page.confirmation_of_respondents_details_answers.edit_respondent_details_page_link.click
     user = @respondent
 
     expect(respondents_details_page).to be_displayed

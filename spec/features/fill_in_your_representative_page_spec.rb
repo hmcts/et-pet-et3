@@ -38,7 +38,7 @@ RSpec.feature "Fill in Your Representative Page", js: true do
     given_valid_data
     answer_representative
     confirmation_of_supplied_details_page.load(locale: current_locale_parameter)
-    confirmation_of_supplied_details_page.confirmation_of_your_representative_answers.edit_page_link.click
+    confirmation_of_supplied_details_page.confirmation_of_your_representative_answers.edit_representative_page_link.click
 
     expect(your_representative_page).to have_header
     your_representative_page.have_representative_question.assert_answer(@representative.have_representative)

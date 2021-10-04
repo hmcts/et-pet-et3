@@ -33,7 +33,7 @@ RSpec.feature "Fill in Claimants Details Page", js: true do
     given_valid_data
     answer_claimants_details
     confirmation_of_supplied_details_page.load(locale: current_locale_parameter)
-    confirmation_of_supplied_details_page.confirmation_of_claimants_details_answers.edit_page_link.click
+    confirmation_of_supplied_details_page.confirmation_of_claimants_details_answers.edit_claimants_details_page_link.click
 
     expect(claimants_details_page).to be_displayed
     expect(claimants_details_page).to have_header

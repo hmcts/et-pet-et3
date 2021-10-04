@@ -74,7 +74,7 @@
           td = @hash_store.dig(:respondents_detail_answers, :employment_at_site_number)
         tr
           td
-            = link_to(t('components.confirmation_of_supplied_details.edit_page'), edit_respondents_details_path)
+            = link_to(t('components.confirmation_of_supplied_details.edit_respondent_details_page'), edit_respondents_details_path)
           td
             = link_to t('components.confirmation_of_supplied_details.back_to_top'), "#content"
     table
@@ -120,7 +120,7 @@
           td = @hash_store.dig(:claimants_detail_answers, :disagree_claimants_job_or_title)
         tr
           td
-            = link_to(t('components.confirmation_of_supplied_details.edit_page'), edit_claimants_details_path)
+            = link_to(t('components.confirmation_of_supplied_details.edit_claimants_details_page'), edit_claimants_details_path)
           td
             = link_to t('components.confirmation_of_supplied_details.back_to_top'), "#content"
     table
@@ -169,7 +169,7 @@
           td = @hash_store.dig(:earnings_and_benefits_answers, :disagree_claimant_pension_benefits_reason)
         tr
           td
-            = link_to(t('components.confirmation_of_supplied_details.edit_page'), edit_earnings_and_benefits_path)
+            = link_to(t('components.confirmation_of_supplied_details.edit_earnings_and_benefit_page'), edit_earnings_and_benefits_path)
           td
             = link_to t('components.confirmation_of_supplied_details.back_to_top'), "#content"
     table
@@ -188,7 +188,7 @@
           td = @hash_store.dig(:response_answers, :defend_claim_facts)
         tr
           td
-            = link_to(t('components.confirmation_of_supplied_details.edit_page'), edit_response_path)
+            = link_to(t('components.confirmation_of_supplied_details.edit_response_page'), edit_response_path)
           td
             = link_to t('components.confirmation_of_supplied_details.back_to_top'), "#content"
     table
@@ -204,7 +204,7 @@
                   'your_representative.have_representative')
         tr
           td
-            = link_to(t('components.confirmation_of_supplied_details.edit_page'), edit_your_representative_path)
+            = link_to(t('components.confirmation_of_supplied_details.edit_representative_page'), edit_your_representative_path)
           td
             = link_to t('components.confirmation_of_supplied_details.back_to_top'), "#content"
     table
@@ -261,7 +261,7 @@
           td = @hash_store.dig(:your_representatives_details_answers, :representative_fax)
         tr
           td
-            = link_to(t('components.confirmation_of_supplied_details.edit_page'), edit_your_representatives_details_path)
+            = link_to(t('components.confirmation_of_supplied_details.edit_representative_details_page'), edit_your_representatives_details_path)
           td
             = link_to t('components.confirmation_of_supplied_details.back_to_top'), "#content"
     table
@@ -280,7 +280,7 @@
           td = @hash_store.dig(:disability_answers, :disability_information)
         tr
           td
-            = link_to(t('components.confirmation_of_supplied_details.edit_page'), edit_disability_path)
+            = link_to(t('components.confirmation_of_supplied_details.edit_disability_page'), edit_disability_path)
           td
             = link_to t('components.confirmation_of_supplied_details.back_to_top'), "#content"
     table
@@ -299,7 +299,7 @@
           td = @hash_store.dig(:employer_contract_claim_answers, :claim_information)
         tr
           td
-            = link_to(t('components.confirmation_of_supplied_details.edit_page'), edit_employers_contract_claim_path)
+            = link_to(t('components.confirmation_of_supplied_details.edit_employer_contract_claim_page'), edit_employers_contract_claim_path)
           td
             = link_to t('components.confirmation_of_supplied_details.back_to_top'), "#content"
     table
@@ -318,7 +318,7 @@
               = link_to t('components.confirmation_of_supplied_details.remove_file_link'), remove_rtf_path, method: :delete
         tr
           td
-            = link_to(t('components.confirmation_of_supplied_details.edit_page'), edit_additional_information_path)
+            = link_to(t('components.confirmation_of_supplied_details.edit_additional_information_page'), edit_additional_information_path)
           td
             = link_to t('components.confirmation_of_supplied_details.back_to_top'), "#content"
     br

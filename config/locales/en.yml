@@ -340,6 +340,15 @@ en:
       question_header: Question
       answer_header: Answer
       edit_page: Edit answers on this page
+      edit_respondent_details_page: Edit Respondent's Details answers
+      edit_claimants_details_page: Edit Claimant's Details answers
+      edit_earnings_and_benefit_page: Edit Earnings and Benefits answers
+      edit_response_page: Edit Response answers
+      edit_representative_page: Edit Your Representative answers
+      edit_representative_details_page: Edit Your Representative's Details answers
+      edit_disability_page: Edit Disability answers
+      edit_employer_contract_claim_page: Edit Employer Contract Claim answers
+      edit_additional_information_page: Edit Additional Information answers
       back_to_top: Back to the top
       remove_file_link: Remove file
       confirmation_of_respondents_details_answers:

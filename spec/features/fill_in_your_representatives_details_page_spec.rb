@@ -80,7 +80,7 @@ RSpec.feature "Fill in Your Representatives Details Page", js: true do
     your_representatives_details_page.next
 
     confirmation_of_supplied_details_page.load(locale: current_locale_parameter)
-    confirmation_of_supplied_details_page.confirmation_of_your_representatives_details_answers.edit_page_link.click
+    confirmation_of_supplied_details_page.confirmation_of_your_representatives_details_answers.edit_representative_details_page_link.click
 
     expect(your_representatives_details_page).to be_displayed
     your_representatives_details_page.type_of_representative_question.assert_answer(user.type)

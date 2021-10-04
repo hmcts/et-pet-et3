@@ -341,6 +341,15 @@ cy:
       question_header: "Cwestiwn "
       answer_header: Ateb
       edit_page: "Golygu atebion ar y dudalen hon "
+      edit_respondent_details_page: "Golygu Manylion yr Atebydd atebion"
+      edit_claimants_details_page: "Golygu Manylion yr Hawlydd atebion"
+      edit_earnings_and_benefit_page: "Golygu Enillion a Buddion atebion"
+      edit_response_page: "Golygu Ymateb atebion"
+      edit_representative_page: "Golygu Eich Cynrychiolydd atebion"
+      edit_representative_details_page: "Golygu Manylion eich Cynrychiolydd atebion"
+      edit_disability_page: "Golygu Anabledd atebion"
+      edit_employer_contract_claim_page: "Golygu Hawliad Contract y Cyflogwr atebion"
+      edit_additional_information_page: "Golygu Gwybodaeth Ychwanegol atebion"
       back_to_top: "Yn ôl i frig y dudalen "
       remove_file_link: "Dileu ffeil "
       confirmation_of_respondents_details_answers:

@@ -34,7 +34,7 @@ RSpec.feature "Fill in Earnings and Benefits Page", js: true do
     given_valid_data
     answer_earnings_and_benefits
     confirmation_of_supplied_details_page.load(locale: current_locale_parameter)
-    confirmation_of_supplied_details_page.confirmation_of_earnings_and_benefits_answers.edit_page_link.click
+    confirmation_of_supplied_details_page.confirmation_of_earnings_and_benefits_answers.edit_earnings_and_benefit_page_link.click
 
     expect(earnings_and_benefits_page).to be_displayed
     user = @claimant

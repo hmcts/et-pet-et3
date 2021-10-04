@@ -31,7 +31,7 @@ RSpec.feature "Fill in Disability Page", js: true do
     answer_disability_question
 
     confirmation_of_supplied_details_page.load(locale: current_locale_parameter)
-    confirmation_of_supplied_details_page.confirmation_of_disability_answers.edit_page_link.click
+    confirmation_of_supplied_details_page.confirmation_of_disability_answers.edit_disability_page_link.click
 
     expect(disability_page).to be_displayed
     disability_page.disability_question.assert_answers_for(@respondent)

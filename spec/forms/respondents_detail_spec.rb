@@ -4,7 +4,7 @@ RSpec.describe RespondentsDetail, type: :model do
 
   let(:populated_respondent_detail) {
     described_class.new(
-      case_number: '7654321/2017', name: 'dodgy_co', contact: 'John Smith', building_name: 'the_shard', street_name: 'downing_street',
+      case_number: '2454321/2017', name: 'dodgy_co', contact: 'John Smith', building_name: 'the_shard', street_name: 'downing_street',
       town: 'westminster', county: 'greater london', postcode: 'wc1 1aa', dx_number: '724060 Derby 21', contact_number: '0207 123 4567',
       mobile_number: '07123456789', contact_preference: 'email', email_address: 'john@dodgyco.com', fax_number: '0207 123 4567',
       organisation_employ_gb: 100, organisation_more_than_one_site: true, employment_at_site_number: 20, video_call: false
@@ -93,7 +93,7 @@ RSpec.describe RespondentsDetail, type: :model do
   context 'when correctly populated' do
 
     it 'returns the correct case number' do
-      expect(populated_respondent_detail.case_number).to eql '7654321/2017'
+      expect(populated_respondent_detail.case_number).to eql '2454321/2017'
     end
 
     it 'returns the correct name' do
@@ -167,7 +167,7 @@ RSpec.describe RespondentsDetail, type: :model do
     end
 
     it 'will return the case_number key and value pair' do
-      expect(populated_respondent_detail.to_h).to include(case_number: '7654321/2017')
+      expect(populated_respondent_detail.to_h).to include(case_number: '2454321/2017')
     end
 
     it 'will return the name key and value pair' do

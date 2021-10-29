@@ -15,7 +15,7 @@ RSpec.describe CaseNumberValidator do
   end
 
   it 'will validate a string containing 7 digits followed by a slash followed by another 4 digits' do
-    model = model_class.new(case_number: "7654321/2017")
+    model = model_class.new(case_number: "2454321/2017")
 
     model.valid?
 
@@ -31,7 +31,7 @@ RSpec.describe CaseNumberValidator do
   end
 
   it 'will not validate a string with less than 7 digits before the slash' do
-    model = model_class.new(case_number: "654321/2017")
+    model = model_class.new(case_number: "244321/2017")
 
     model.valid?
 
@@ -39,7 +39,7 @@ RSpec.describe CaseNumberValidator do
   end
 
   it 'will not validate a string with less than 4 digits after the slash' do
-    model = model_class.new(case_number: "7654321/201")
+    model = model_class.new(case_number: "2454321/201")
 
     model.valid?
 
@@ -47,7 +47,7 @@ RSpec.describe CaseNumberValidator do
   end
 
   it 'will not validate a string with a slash anywhere other than the correct place' do
-    model = model_class.new(case_number: "765432/12017")
+    model = model_class.new(case_number: "245432/12017")
 
     model.valid?
 
@@ -55,8 +55,7 @@ RSpec.describe CaseNumberValidator do
   end
 
   it 'will not validate a string with a symbol in it' do
-    model = model_class.new(case_number: "76@432/12017")
-
+    model = model_class.new(case_number: "24@432/12017")
     model.valid?
 
     expect(model.errors.details[:case_number]).to include a_hash_including(error: :invalid)

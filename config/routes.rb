@@ -13,6 +13,13 @@ Rails.application.routes.draw do
       resource :additional_information, only: [:create, :edit, :update], path_names: { edit: ''}
       resource :confirmation_of_supplied_details, only: [:edit, :update], path_names: { edit: ''}
       get "form_submission", to: "form_submissions#index"
+
+      resource :timeout_session, only: %i<destroy>, path: :session do
+        member do
+          get :touch
+          get :expired
+        end
+      end
     end
     get "/terms" => 'static_pages#terms', as: 'terms_and_conditions'
     get "/privacy" => 'static_pages#privacy', as: 'privacy_notice'

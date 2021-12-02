@@ -733,6 +733,17 @@ en:
       reject_analytics: Reject analytics cookies
       cookie_link: View cookies
       hide_button: Hide this message
+  session_prompt:
+    header_html: |
+      Due to inactivity your sessions will expire in <span id="session_prompt_time_left"></span>
+    session_continue: Do you need more time to complete your claim ?
+    session_continue_button: Yes, I need more time to complete my claim
+  timeout_sessions:
+    reminder:
+      header: Response saved
+      subheader: |
+        Your response has been saved. You can return to it by entering your reference number and your memorable word.
+      sign_out_button: Sign out now
   activerecord:
     errors:
       models:

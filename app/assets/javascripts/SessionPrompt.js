@@ -14,7 +14,7 @@ const SessionPrompt = (function () {
 
         init: function (options) {
             settings = Object.assign(settings, options);
-            this.counter = settings.MINUTE;
+            this.counter = settings.FIVE_MINUTES;
             this.updateTimeLeftOnPrompt(this.counter);
             this.setPromptExtendSessionClickEvent();
             this.startSessionTimer();
@@ -23,7 +23,7 @@ const SessionPrompt = (function () {
         startSessionTimer: function () {
             setTimeout(()=> {
                 this.timeoutPrompt.apply(this)
-            }, settings.FIVE_MINUTES);
+            }, settings.FIFTY_FIVE_MINUTES);
         },
 
         setPromptExtendSessionClickEvent: function () {

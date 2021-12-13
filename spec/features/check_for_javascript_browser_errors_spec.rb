@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Check for Javascript Browser Errors", js: true, driver: :chrome_local do
+RSpec.feature "Check for Javascript Browser Errors", js: true, driver: :firefox_local do
   include ET3::Test::I18n
 
   before do

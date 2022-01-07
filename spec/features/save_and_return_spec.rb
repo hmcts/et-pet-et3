@@ -63,14 +63,13 @@ RSpec.feature 'Save and Return', js: true do
     expect(password_page.email_address_question).to have_error_password_email_address
   end
 
-  scenario 'Will enable an existing user to sign in', js: true do
+  scenario 'Will enable an existing user to sign in', js: false do
     given_valid_user
     start_a_new_et3_response
     registration_start
     respondents_details_page.save_and_complete_later
     start_page.return_to_response
     sign_in
-
-    expect(respondents_details_page).to be_displayed
+    expect(respondents_details_page).to have_header(wait: 30)
   end
 end

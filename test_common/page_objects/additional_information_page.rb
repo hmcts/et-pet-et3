@@ -12,7 +12,7 @@ module ET3
 
       section :upload_additional_information_question, :css, 'form.dropzone' do
         include ET3::Test::I18n
-        
+
         element :upload_select, :select_button, 'questions.upload_additional_information.button'
 
         element :error_too_long, :exact_error_text, 'errors.messages.too_long', exact: false
@@ -39,9 +39,8 @@ module ET3
           force_remote do
             attach_file("fakeFileInput", Rails.root.join('test_common', 'files', data[:rtf_file]))
           end
-          page.execute_script("var fileList = [fakeFileInput.get(0).files[0]]")
           page.execute_script <<-JS
-            var e = jQuery.Event('drop', { dataTransfer : { files : [fakeFileInput.get(0).files[0]] } });
+            var e = jQuery.Event('drop', { dataTransfer : { files : [fakeFileInput.files[0]] } });
             $('.dropzone')[0].dropzone.listeners[0].events.drop(e);
           JS
         end

@@ -29,12 +29,12 @@ Capybara::Screenshot.register_driver(:chrome) do |driver, path|
     driver.browser.save_screenshot(path)
   end
 end
-Capybara::Screenshot.register_driver(:chromedriver) do |driver, path|
+Capybara::Screenshot.register_driver(:chrome_local) do |driver, path|
   ::Et3::Test::FullScreenshot.with_resizing do
     driver.browser.save_screenshot(path)
   end
 end
-Capybara::Screenshot.register_driver(:firefoxdriver) do |driver, path|
+Capybara::Screenshot.register_driver(:firefox_local) do |driver, path|
   ::Et3::Test::FullScreenshot.with_resizing do
     driver.browser.save_screenshot(path)
   end

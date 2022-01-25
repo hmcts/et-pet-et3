@@ -6,7 +6,7 @@ module ET3
       def given_valid_data
         @claimant = FactoryBot.create(:claimant, :claimant_valid)
         @respondent = FactoryBot.create(:respondent, :respondent_valid, :upload_additional_information)
-        @representative = FactoryBot.create(:representative, :representative_valid) 
+        @representative = FactoryBot.create(:representative, :representative_valid)
       end
 
       def given_invalid_data
@@ -30,7 +30,6 @@ module ET3
 
       def registration_start
         answer_registration_page
-        registration_page.next
       end
 
       def sign_in

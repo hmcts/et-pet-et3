@@ -797,6 +797,17 @@ cy:
       reject_analytics: Gwrthod cwcis ychwanegol
       cookie_link: Bwrw golwg dros y cwis
       hide_button: Cuddiwch y neges hon
+  session_prompt:
+    header_html: |
+      Oherwydd anactifedd bydd eich sesiwn yn dod i ben mewn <span id="session_prompt_time_left"></span>
+    session_continue: "A oes angen rhagor o amser arnoch i gwblhau eich hawliad?"
+    session_continue_button: "Oes, mae angen rhagor o amser arnaf i gwblhau fy hawliad"
+  timeout_sessions:
+    reminder:
+      header: Ymateb wedi'i arbed
+      subheader: |
+        Mae eich ymateb wedi'i gadw. Gallwch ddychwelyd iddo drwy fewnbynnu eich rhif ymateb a'ch gair cofiadwy
+      sign_out_button: Allgofnodi nawr
   activerecord:
     errors:
       models:

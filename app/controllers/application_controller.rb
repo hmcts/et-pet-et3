@@ -1,10 +1,12 @@
 require 'securerandom'
 
 class ApplicationController < ActionController::Base
+  helper_method :start_session_timer?
   protect_from_forgery with: :exception
 
   before_action :authenticate_user!
   before_action :set_locale
+  before_action :set_start_session_timer
   after_action :save_current_store
 
   # @return [Store] The store instance
@@ -22,7 +24,15 @@ class ApplicationController < ActionController::Base
     current_store.hash_store = {}
   end
 
+  def start_session_timer?
+    @start_session_timer == true
+  end
+
   private
+
+  def set_start_session_timer
+    @start_session_timer = true
+  end
 
   def allow_update_last_path?
     false

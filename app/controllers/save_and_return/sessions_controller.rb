@@ -1,6 +1,7 @@
 module SaveAndReturn
   class SessionsController < ::Devise::SessionsController
     skip_before_action :authenticate_user!
+    skip_before_action :set_start_session_timer
 
     # POST /resource/sign_in
     def create

@@ -3,7 +3,7 @@ require 'securerandom'
 class ApplicationController < ActionController::Base
   helper_method :start_session_timer?
   protect_from_forgery with: :exception
-
+  before_action :show_maintenance_page
   before_action :authenticate_user!
   before_action :set_locale
   before_action :set_start_session_timer
@@ -50,5 +50,11 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
+  end
+
+  def show_maintenance_page(config = Rails.application.config)
+    return if !config.maintenance_enabled || config.maintenance_allowed_ips.include?(request.remote_ip)
+
+    render 'static_pages/maintenance', layout: false, status: :service_unavailable
   end
 end

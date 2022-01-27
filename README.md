@@ -93,6 +93,21 @@ To test ET3 in full, including RTF upload and form submission, use the [ET Full 
 Before running the full system ensure ET3 is set to the branch or commit you wish to test.
 Please see the README for further details.
 
+
+## Shuttering
+
+In order to stop people using the system a maintenance page has been added which is controlled using environment
+variables.
+
+These are :-
+
+MAINTENANCE_ENABLED - Set to 'true' to enable maintenance page to be enabled
+
+Any of the environment variables below can be added if you want to customize from the defaults
+
+MAINTENANCE_ALLOWED_IPS
+MAINTENANCE_END - If added you will see "You will be able to use the service from " followed by this text
+
 ## Environment Variables
 
 ### DB_PORT

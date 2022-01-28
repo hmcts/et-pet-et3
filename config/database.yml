@@ -84,4 +84,4 @@ test:
 production:
   <<: *default
   database: <%= ENV.fetch("DB_NAME", "et3_production") %>
-  password: <%= ENV.fetch('DB_PASSWORD', 'postgres') %>
+  password: "<%= ENV.fetch('DB_PASSWORD', 'postgres') %>"

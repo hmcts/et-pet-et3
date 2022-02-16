@@ -291,6 +291,8 @@ en:
         not_a_number: Please enter the normal take-home pay as a number
       type_of_representative:
         inclusion: Please select the type of your representative
+      disability_information:
+        blank: Enter disability information
   components:
     common:
       error_header: Please review the following

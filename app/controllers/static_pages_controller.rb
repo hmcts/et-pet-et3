@@ -16,6 +16,8 @@ class StaticPagesController < ApplicationController
     redirect_to edit_respondents_details_path
   end
 
+  private
+
   def sign_out_user
     sign_out
   end

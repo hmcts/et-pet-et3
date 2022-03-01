@@ -37,4 +37,18 @@ RSpec.feature "Access Start Page", js: true do
 
     expect(respondents_details_page).to be_displayed
   end
+
+  scenario "user will be able to close tab and start a new claim" do
+    given_valid_user
+    start_page.load(locale: current_locale_parameter)
+    start_page.next
+    registration_start
+
+    expect(respondents_details_page).to be_displayed
+
+    start_page.load(locale: current_locale_parameter)
+    start_page.next
+
+    expect(registration_page).to be_displayed
+  end
 end

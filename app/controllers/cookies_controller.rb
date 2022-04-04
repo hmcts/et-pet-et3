@@ -7,14 +7,20 @@ class CookiesController < ApplicationController
   def update(cookie_expiry: Rails.application.config.x.cookie_expiry)
     cookie_form.assign_attributes cookie_params.merge(seen: true)
     cookies['cookie_setting'] = { value: cookie_form.to_json, expires: cookie_expiry }
-    redirect_to cookies_path, flash: { info: t('cookie_banner.confirmation_message.cookie_flashes') }
+    redirect_to cookies_path, flash: {
+      info: t('cookie_banner.confirmation_message.cookie_flashes'),
+      skip_sign_out: true
+    }
   end
 
   def create(cookie_expiry: Rails.application.config.x.cookie_expiry)
     cookie_form.assign_attributes cookie_params.merge(seen: true)
     cookies['cookie_setting'] = { value: cookie_form.to_json, expires: cookie_expiry }
     redirect_to path_only(params.dig(:cookie, :return_path)),
-                flash: { cookie_banner_confirmation: t("cookie_banner.confirmation_message.#{cookie_form.usage}", edit_cookies_path: edit_cookies_path) }
+                flash: {
+                  cookie_banner_confirmation: t("cookie_banner.confirmation_message.#{cookie_form.usage}", edit_cookies_path: edit_cookies_path),
+                  skip_sign_out: true
+                }
   end
 
   private

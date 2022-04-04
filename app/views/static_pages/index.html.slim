@@ -5,8 +5,8 @@
   p = t('components.introduction.description')
 
   .what-you-need
-    h4.heading-small = t('components.introduction.what_title')
-    ul.list.list-bullet
+    h4.govuk-heading-s = t('components.introduction.what_title')
+    ul.govuk-list.govuk-list--bullet
       li = t('components.introduction.what_content_1')
       li = t('components.introduction.what_content_2')
       li = t('components.introduction.what_content_3')
@@ -15,33 +15,39 @@
       li = t('components.introduction.what_content_6')
 
   .how-to-fill
-    h4.heading-small = t('components.introduction.how_title')
-    ul.list.list-bullet
+    h4.govuk-heading-s = t('components.introduction.how_title')
+    ul.govuk-list.govuk-list--bullet
       li = t('components.introduction.how_content_1')
       li = t('components.introduction.how_content_2')
       li = t('components.introduction.how_content_3')
 
   .data
-    h4.heading-small = t('components.introduction.data_title')
+    h4.govuk-heading-s = t('components.introduction.data_title')
     p = t('components.introduction.data_content')
 
-  = link_to t('components.introduction.start_now'), new_user_registration_path, class: 'button button-start'
-  = link_to t('components.introduction.return_to_claim'), new_user_session_path, class: 'button-return'
+  = form_for User.new, url: new_user_registration_path, html: { class: 'inline-form', method: :get }, builder: EtGdsDesignSystem.form_builder_class do |f|
+    = f.submit t('components.introduction.start_now')
+  = form_for User.new, url: new_user_session_path, html: { class: 'inline-form', method: :get }, builder: EtGdsDesignSystem.form_builder_class do |f|
+    = f.submit t('components.introduction.return_to_claim'), secondary: true, classes: ['govuk-!-margin-left-2']
+
 
   - content_for :sidebar
     .sidebar
     .sidebar-header
-      h2.heading-medium =t('components.sidebar.header')
+      h2 class="govuk-heading-m govuk-!-margin-top-9" =t('components.sidebar.header')
     .sidebar-content
-      p = link_to(t('components.sidebar.claim_link'), t('components.sidebar.claim_href'), target: :_blank)
-      p = link_to(t('components.sidebar.response_link'), t('components.sidebar.response_href'), target: :_blank)
-      hr
-      p = link_to(t('components.sidebar.more_category_link'), t('components.sidebar.more_category_href'), target: :_blank)
+      ul.govuk-list
+        li = link_to(t('components.sidebar.claim_link'), t('components.sidebar.claim_href'), target: :_blank, class: 'govuk-link')
+        li = link_to(t('components.sidebar.response_link'), t('components.sidebar.response_href'), target: :_blank, class: 'govuk-link')
+        hr
+        li = link_to(t('components.sidebar.more_category_link'), t('components.sidebar.more_category_href'), target: :_blank, class: 'govuk-link')
 
   -content_for :translation
-    .switch-language
-      = link_to t('components.common.language'), locale: t('components.common.locale')
-      p
-        = link_to t('components.feedback_link.feedback_your'), 'https://www.smartsurvey.co.uk/s/ETFBS20/', class: 'govuk-link', target: '_blank'
+    .govuk-grid-column-two-thirds
+      = link_to t('components.feedback_link.feedback_your'), 'https://www.smartsurvey.co.uk/s/ETFBS20/', class: 'govuk-link govuk-body', target: '_blank'
+      span.govuk-body
         = " "
         = t('components.feedback_link.feedback_helps_us')
+    .govuk-grid-column-one-third
+      .language-picker
+        = link_to t('components.common.language'), { locale: t('components.common.locale') }, class: 'govuk-link'

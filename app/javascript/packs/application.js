@@ -17,4 +17,16 @@
 
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
-console.log('Hello World from Webpacker')
+import {EtGdsDesignSystem } from "et_gds_design_system"
+import "./stylesheets/application.scss"
+require("@rails/ujs").start();
+import SessionPrompt from "./components/SessionPrompt";
+EtGdsDesignSystem.initAll();
+window.Et = {
+  pages:{
+  },
+  components: {
+    SessionPrompt
+  }
+};
+

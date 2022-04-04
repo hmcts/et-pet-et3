@@ -1,4 +1,5 @@
 class ConfirmationOfSuppliedDetailsController < ApplicationController
+  layout 'old_application'
   def edit
     @confirmation_of_supplied_details = ConfirmationOfSuppliedDetails.new
     @hash_store = current_store.hash_store

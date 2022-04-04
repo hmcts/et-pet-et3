@@ -1,4 +1,5 @@
 class TimeoutSessionsController < ApplicationController
+  layout 'old_application'
 
   def touch
     head :ok

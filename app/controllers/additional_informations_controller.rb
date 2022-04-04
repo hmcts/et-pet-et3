@@ -1,4 +1,5 @@
 class AdditionalInformationsController < ApplicationController
+  layout 'old_application'
   def edit
     @additional_information ||= AdditionalInformation.new(current_store.hash_store.fetch(:additional_information_answers, {}))
   end

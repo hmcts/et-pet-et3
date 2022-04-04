@@ -1,4 +1,5 @@
 class ClaimantsDetailsController < ApplicationController
+  layout 'old_application'
   def edit
     @claimants_detail ||= ClaimantsDetail.new(current_store.hash_store.fetch(:claimants_detail_answers, {}))
   end

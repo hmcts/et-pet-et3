@@ -65,6 +65,7 @@ end
 
 group :test do
   gem 'capybara-screenshot', '~> 1.0'
+  gem 'et_test_helpers', git: 'https://github.com/hmcts/et_test_helpers.git', tag: 'v1.0.7'
   gem 'rspec-rails', '~> 4.0'
   gem 'site_prism', '~> 3.7'
   gem 'webdrivers', '~> 4.0'
@@ -100,3 +101,5 @@ gem 'et_azure_insights', '0.2.13', git: 'https://github.com/hmcts/et-azure-insig
 gem 'application_insights', git: 'https://github.com/microsoft/ApplicationInsights-Ruby.git', ref: '5db6b4'
 
 gem 'et_dropzone_uploader', git: 'https://github.com/hmcts/et_dropzone_uploader.git', tag: 'v2.2.6'
+gem "webpacker", "~> 5.4"
+gem 'et_gds_design_system', git:'https://github.com/hmcts/et_gds_design_system.git', tag: 'v3.0.6'

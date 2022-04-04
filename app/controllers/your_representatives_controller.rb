@@ -1,4 +1,5 @@
 class YourRepresentativesController < ApplicationController
+  layout 'old_application'
   def edit
     @your_representative ||= YourRepresentative.new(current_store.hash_store.fetch(:your_representative_answers, {}))
   end

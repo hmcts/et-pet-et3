@@ -2,6 +2,7 @@ class FormSubmissionsController < ApplicationController
   skip_before_action :set_start_session_timer
   before_action :disable_save_and_return
   after_action :sign_out_after_submission
+  layout 'old_application'
 
   def index
     @reference_number = current_store.api_response[:data]["meta"]["BuildResponse"]["reference"]

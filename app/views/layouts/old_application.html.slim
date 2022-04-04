@@ -1,8 +1,8 @@
 - content_for :html_lang
   = I18n.locale
 - content_for :head
-  = stylesheet_pack_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-  = javascript_pack_tag 'application'
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+  = javascript_include_tag 'application'
   = csrf_meta_tags
   = render "shared/google_tag_manager_head", account: Rails.application.config.google_tag_manager_account
   = yield(:page_head)
@@ -77,4 +77,4 @@
           form action=(request.url) method="get"
             button.govuk-button.button data-module="govuk-button"
               = t('cookie_banner.banner.hide_button')
-= render template: "layouts/govuk_template"
+= render template: "layouts/old_govuk_template"

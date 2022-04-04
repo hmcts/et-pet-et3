@@ -17,6 +17,29 @@ GIT
       rails (>= 5.2.2)
 
 GIT
+  remote: https://github.com/hmcts/et_gds_design_system.git
+  revision: c480c2701de11a730ac7a07d1131b94bda9aab99
+  tag: v3.0.6
+  specs:
+    et_gds_design_system (3.0.6)
+      govuk_design_system_formbuilder (~> 2.1)
+      rack-proxy (~> 0.6)
+      rails (>= 6.0)
+      webpacker (~> 5.0)
+
+GIT
+  remote: https://github.com/hmcts/et_test_helpers.git
+  revision: de4d0b37ba617b15f3d7084df0cd9224254bb41e
+  tag: v1.0.7
+  specs:
+    et_test_helpers (1.0.7)
+      activesupport (> 5.0)
+      capybara (~> 3)
+      i18n (~> 1.8)
+      rspec (>= 3.0)
+      site_prism (~> 3.5)
+
+GIT
   remote: https://github.com/hmcts/nulldb.git
   revision: 61af6221df8cbd20441a03425a8962993c024a53
   ref: 61af6221df8cbd20441a03425a8962993c024a53
@@ -145,6 +168,7 @@ GEM
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0.0)
     database_cleaner-core (2.0.1)
+    deep_merge (1.2.2)
     devise (4.7.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -174,6 +198,11 @@ GEM
       activesupport (>= 4.2.0)
     gov_uk_date_fields (2.1.1)
       rails (>= 5.0)
+    govuk_design_system_formbuilder (2.8.0)
+      actionview (>= 6.0)
+      activemodel (>= 6.0)
+      activesupport (>= 6.0)
+      deep_merge (~> 1.2.1)
     govuk_elements_form_builder (1.3.1)
       govuk_elements_rails (>= 3.0.0)
       govuk_frontend_toolkit (< 9.0.0)
@@ -284,6 +313,10 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.4)
+    rspec (3.10.0)
+      rspec-core (~> 3.10.0)
+      rspec-expectations (~> 3.10.0)
+      rspec-mocks (~> 3.10.0)
     rspec-core (3.10.1)
       rspec-support (~> 3.10.0)
     rspec-expectations (3.10.1)
@@ -335,6 +368,7 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    semantic_range (3.0.0)
     sentry-raven (2.13.0)
       faraday (>= 0.7.6, < 1.0)
     simplecov (0.21.2)
@@ -394,6 +428,11 @@ GEM
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
+    webpacker (5.4.3)
+      activesupport (>= 5.2)
+      rack-proxy (>= 0.6.1)
+      railties (>= 5.2)
+      semantic_range (>= 2.3.0)
     websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -420,6 +459,8 @@ DEPENDENCIES
   dotenv-rails (~> 2.7)
   et_azure_insights (= 0.2.13)!
   et_dropzone_uploader!
+  et_gds_design_system!
+  et_test_helpers!
   factory_bot (~> 6.1)
   faker (~> 2.15)
   gov_uk_date_fields (~> 2.1)
@@ -455,6 +496,7 @@ DEPENDENCIES
   web-console (~> 4.1)
   webdrivers (~> 4.0)
   webmock (~> 3.11)
+  webpacker (~> 5.4)
 
 BUNDLED WITH
    1.17.3

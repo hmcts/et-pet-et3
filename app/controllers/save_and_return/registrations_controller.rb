@@ -3,7 +3,7 @@ module SaveAndReturn
     skip_before_action :authenticate_user!
     skip_before_action :set_start_session_timer
     before_action :configure_permitted_parameters
-    layout 'old_application'
+    layout 'old_application', except: [:new]
 
     def create
       super

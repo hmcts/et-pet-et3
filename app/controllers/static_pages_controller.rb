@@ -2,7 +2,6 @@ class StaticPagesController < ApplicationController
   skip_before_action :authenticate_user!
   skip_before_action :set_start_session_timer
   before_action :sign_out_user, only: :index
-  layout 'old_application', except: :index
 
   def index; end
 

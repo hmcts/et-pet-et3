@@ -66,8 +66,6 @@ en:
           'yes': 'Yes'
           'no': 'No'
       user:
-        password: Memorable word
-        reference: Save and return number
         email: Enter your email address
       respondents_detail:
         case_number: Case number
@@ -211,7 +209,6 @@ en:
         email_receipt: Email address (optional)
     hint:
       user:
-        reference: This was emailed to you (if you entered your email address)
         email: If you entered a valid email address when you started your response, we will email you with instructions on how to reset your memorable word. If we cannot match your email address or you did not enter a valid email address you will need to start a new response.
       respondents_detail:
         contact: For example, John Smith
@@ -685,7 +682,11 @@ en:
         forgot_password: "Forgot your memorable word? "
         reset_password: Click here to reset
         hint_html: Don’t have these details? <a href="%{path}">Start a new response</a>.
-        password: Enter your memorable word
+        reference:
+          label: Save and return number
+          hint: This was emailed to you (if you entered your email address)
+        password:
+          label: Memorable word
     passwords:
       new:
         header: Reset memorable word

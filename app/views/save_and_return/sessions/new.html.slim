@@ -1,19 +1,13 @@
 - content_for(:page_title, t(".header"))
 .main-header role="banner"
-  h1.heading-large= content_for(:page_title)
+  h1.govuk-heading-l= content_for(:page_title)
   br
 
 .main-section
 
   .content-section.body-text
-    = form_for resource, as: resource_name, url: session_path(resource_name) do |f|
-
-      .form-fields lang= "#{I18n.locale}"
-
-        legend.bold-medium = t('.intro_text')
-        hr (style="margin-top: 2px;")
-
-      fieldset
+    = form_for resource, as: resource_name, url: session_path(resource_name), builder: EtGdsDesignSystem.form_builder_class do |f|
+      = f.fieldset label: t('.intro_text')
         = f.text_field :reference
         = f.text_field :password
 
@@ -22,5 +16,5 @@
         p.form-hint
           br
           = t(".forgot_password")
-          = link_to t(".reset_password"), new_password_path(resource_name)
+          = link_to t(".reset_password"), new_password_path(resource_name), class: 'govuk-link'
           p.form-hint = t('.hint_html', path: root_path)

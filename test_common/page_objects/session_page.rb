@@ -1,21 +1,14 @@
 module ET3
   module Test
     class SessionPage < BasePage
+      include EtTestHelpers::Page
       set_url '/users/sign_in'
       element :header, :content_header, 'respondents_details.header'
       element :error_header, :error_titled, 'errors.header', exact: true
-      section :reference_number_question, :question_labelled, 'questions.reference.label', exact: false do
-        element :field, :css, "input"
-        element :error_invalid, :exact_error_text, 'errors.messages.invalid', exact: false
-        def set(*args); field.set(*args); end
-      end
-      section :memorable_word_question, :question_labelled, 'questions.memorable_word_session.label', exact: false do
-        element :field, :css, "input"
-        element :error_blank, :exact_error_text, 'errors.messages.blank', exact: false
-        def set(*args); field.set(*args); end
-      end
+      gds_text_input :reference_number_question, :'questions.reference.label', exact: false
+      gds_text_input :memorable_word_question, :'questions.memorable_word_session.label', exact: false
 
-      element :continue_button, :submit_text, 'components.find_my_response_button'
+      gds_submit_button :continue_button, :'components.find_my_response_button'
       element :click_here_to_reset, :link_named, "components.click_here_to_reset"
       def next
         continue_button.click

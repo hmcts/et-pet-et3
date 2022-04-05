@@ -66,8 +66,6 @@ cy:
           'yes': 'Ydw'
           'no': 'Nac ydw'
       user:
-        password: Gair cofiadwy
-        reference: Rhif cadw a dychwelyd
         email: Nodwch eich cyfeiriad e-bost
       respondents_detail:
         case_number: Rhif yr achos
@@ -211,7 +209,6 @@ cy:
         email_receipt: "Cyfeiriad e-bost (dewisol) "
     hint:
       user:
-        reference: Cafodd hwn ei anfon atoch drwy e-bost (os wnaethoch chi nodi cyfeiriad e-bost)
         email: Os bu ichi nodi cyfeiriad e-bost dilys pan wnaethoch ddechrau eich ymateb, byddwn yn anfon neges e-bost atoch gyda chyfarwyddiadau ar sut i ailosod eich gair cofiadwy. Os nad yw eich cyfeiriad e-bost yn cyfateb i unrhyw gais presennol, neu os nad ydych wedi nodi cyfeiriad e-bost dilys, bydd rhaid ichi ddechrau cais o’r newydd.
       respondents_detail:
         contact: "Er enghraifft, John Smith "
@@ -748,6 +745,12 @@ cy:
         forgot_password: "Wedi anghofio eich gair cofiadwy? "
         reset_password: Cliciwch yma i'w ailosod
         hint_html: "Nid yw'r manylion hyn gennych? <a href=\"%{path}\">Cychwynnwch ymateb newydd</a>."
+        password:
+          label: Gair cofiadwy
+        reference:
+          label: Rhif cadw a dychwelyd
+          hint: Cafodd hwn ei anfon atoch drwy e-bost (os wnaethoch chi nodi cyfeiriad e-bost)
+
     passwords:
       new:
         header: Ailosod y gair cofiadwy

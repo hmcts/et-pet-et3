@@ -208,8 +208,6 @@ en:
       confirmation_of_supplied_details:
         email_receipt: Email address (optional)
     hint:
-      user:
-        email: If you entered a valid email address when you started your response, we will email you with instructions on how to reset your memorable word. If we cannot match your email address or you did not enter a valid email address you will need to start a new response.
       respondents_detail:
         contact: For example, John Smith
         mobile_number: If different to your primary contact number
@@ -691,6 +689,11 @@ en:
       new:
         header: Reset memorable word
         intro_text: Enter your details below
+        email:
+          label: Enter your email address
+          hint: If you entered a valid email address when you started your response, we will email you with instructions on how to reset your memorable word. If we cannot match your email address or you did not enter a valid email address you will need to start a new response.
+        reference:
+          label: Save and return number
       edit:
         header: Reset memorable word
         intro_text: Enter your new details below

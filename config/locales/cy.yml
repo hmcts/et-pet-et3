@@ -65,8 +65,6 @@ cy:
         choices:
           'yes': 'Ydw'
           'no': 'Nac ydw'
-      user:
-        email: Nodwch eich cyfeiriad e-bost
       respondents_detail:
         case_number: Rhif yr achos
         name: "Enw'r unigolyn, cwmni neu sefydliad "
@@ -208,8 +206,6 @@ cy:
       confirmation_of_supplied_details:
         email_receipt: "Cyfeiriad e-bost (dewisol) "
     hint:
-      user:
-        email: Os bu ichi nodi cyfeiriad e-bost dilys pan wnaethoch ddechrau eich ymateb, byddwn yn anfon neges e-bost atoch gyda chyfarwyddiadau ar sut i ailosod eich gair cofiadwy. Os nad yw eich cyfeiriad e-bost yn cyfateb i unrhyw gais presennol, neu os nad ydych wedi nodi cyfeiriad e-bost dilys, bydd rhaid ichi ddechrau cais o’r newydd.
       respondents_detail:
         contact: "Er enghraifft, John Smith "
         mobile_number: Os yw'n wahanol i'ch prif rif ffôn
@@ -755,6 +751,11 @@ cy:
       new:
         header: Ailosod y gair cofiadwy
         intro_text: Nodwch eich manylion isod
+        email:
+          label: Nodwch eich cyfeiriad e-bost
+          hint: Os bu ichi nodi cyfeiriad e-bost dilys pan wnaethoch ddechrau eich ymateb, byddwn yn anfon neges e-bost atoch gyda chyfarwyddiadau ar sut i ailosod eich gair cofiadwy. Os nad yw eich cyfeiriad e-bost yn cyfateb i unrhyw gais presennol, neu os nad ydych wedi nodi cyfeiriad e-bost dilys, bydd rhaid ichi ddechrau cais o’r newydd.
+        reference:
+          label: Rhif cadw a dychwelyd
       edit:
         header: Ailosod y gair cofiadwy
         intro_text: Rhowch eich manylion newydd isod

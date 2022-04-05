@@ -60,7 +60,7 @@ RSpec.feature 'Save and Return', js: true do
     session_page.reset_password
     password_page.next
 
-    expect(password_page.email_address_question).to have_error_password_email_address
+    password_page.email_address_question.assert_error_message(t('errors.custom.password_email_address'))
   end
 
   scenario 'Will enable an existing user to sign in', js: false do

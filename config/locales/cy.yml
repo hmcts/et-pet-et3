@@ -759,6 +759,8 @@ cy:
       edit:
         header: Ailosod y gair cofiadwy
         intro_text: Rhowch eich manylion newydd isod
+        password:
+          label: Gair cofiadwy
       user:
         send_instructions: "Byddwch yn cael neges e-bost gyda chyfarwyddiadau ar sut i ailosod eich gair cofiadwy mewn ychydig funudau."
         updated_not_active: Mae eich gair cofiadwy wedi'i ddiweddaru. Gallwch ei ddefnyddio isod a dychwelyd i'ch ymateb.

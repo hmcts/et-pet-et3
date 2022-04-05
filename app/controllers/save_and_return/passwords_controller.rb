@@ -2,7 +2,6 @@ module SaveAndReturn
   class PasswordsController < ::Devise::PasswordsController
     skip_before_action :authenticate_user!
     skip_before_action :set_start_session_timer
-    layout 'old_application', except: [:new]
 
     protected
 

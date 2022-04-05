@@ -33,9 +33,6 @@ cy:
   helpers:
     fieldset:
       respondents_detail:
-        contact_preference: "Sut hoffech i ni gysylltu â chi? (dewisol) "
-        organisation_more_than_one_site: "A oes gan y sefydliad hwn fwy nag un safle ym Mhrydain Fawr? (dewisol)"
-        video_call: A allech chi gymryd rhan mewn gwrandawiad drwy fideo? (angen mynediad i'r rhyngrwyd).
         cookies: A ydych eisiau derbyn cwcis dadansoddol?
       claimants_detail:
         agree_with_early_conciliation_details: "A ydych chi'n cytuno gyda'r manylion a roddodd yr hawlydd ynghylch Cymodi Cynnar gydag Acas? (dewisol) "
@@ -65,35 +62,6 @@ cy:
         choices:
           'yes': 'Ydw'
           'no': 'Nac ydw'
-      respondents_detail:
-        case_number: Rhif yr achos
-        name: "Enw'r unigolyn, cwmni neu sefydliad "
-        contact: Enw llawn y cyswllt (dewisol)
-        building_name: "Enw neu rif yr adeilad "
-        street_name: "Stryd "
-        town: Tref/Dinas
-        county: "Sir (dewisol) "
-        postcode: Cod post
-        dx_number: "Rhif Cyfnewid Dogfennau (DX) (dewisol) "
-        contact_number: "Rhif cyswllt (dewisol) "
-        mobile_number: "Rhif ffôn symudol (dewisol) "
-        contact_preference:
-          choices:
-            email: "E-bost "
-            post: Post
-            fax: "Ffacs "
-        email_address: "Cyfeiriad e-bost "
-        fax_number: "Rhif ffacs "
-        organisation_employ_gb: "Faint o bobl sy’n gyflogedig gan y sefydliad hwn ym Mhrydain Fawr? (dewisol) "
-        organisation_more_than_one_site:
-          choices:
-            'yes': 'Oes'
-            'no': 'Nac oes'
-        employment_at_site_number: "Faint o bobl sy’n gyflogedig ar y safle ble'r oedd yr hawlydd yn gweithio?"
-        video_call:
-          choices:
-            'yes': Gallaf
-            'no': Na allaf
       claimants_detail:
         claimants_name: Enw llawn yr hawlydd (dewisol)
         agree_with_early_conciliation_details:
@@ -206,12 +174,6 @@ cy:
       confirmation_of_supplied_details:
         email_receipt: "Cyfeiriad e-bost (dewisol) "
     hint:
-      respondents_detail:
-        contact: "Er enghraifft, John Smith "
-        mobile_number: Os yw'n wahanol i'ch prif rif ffôn
-        employment_at_site_number: "Er enghraifft, 10"
-        organisation_employ_gb: "Er enghraifft, 10"
-        video_call: Ceir rhagor o fanylion am wrandawiadau fideo drwy ddilyn y ddolen a ganlyn https://www.gov.uk/guidance/hmcts-telephone-and-video-hearings-during-coronavirus-outbreak
       claimants_detail:
         employment_start: "Er enghraifft, 31 03 2010"
         employment_end: "Er enghraifft, 01 12 2017 "
@@ -814,6 +776,59 @@ cy:
       subheader: |
         Mae eich ymateb wedi'i gadw. Gallwch ddychwelyd iddo drwy fewnbynnu eich rhif ymateb a'ch gair cofiadwy
       sign_out_button: Allgofnodi nawr
+  respondents_details:
+    edit:
+      case_number:
+        label: Rhif yr achos
+      name:
+        label: "Enw'r unigolyn, cwmni neu sefydliad "
+      contact:
+        label: Enw llawn y cyswllt
+        hint: "Er enghraifft, John Smith "
+      building_name:
+        label: "Enw neu rif yr adeilad "
+      street_name:
+        label: "Stryd "
+      town:
+        label: Tref/Dinas
+      county:
+        label: "Sir"
+      postcode:
+        label: Cod post
+      dx_number:
+        label: "Rhif Cyfnewid Dogfennau (DX)"
+      contact_number:
+        label: "Rhif cyswllt"
+      mobile_number:
+        label: "Rhif ffôn symudol"
+        hint: Os yw'n wahanol i'ch prif rif ffôn
+      contact_preference:
+        label: "Sut hoffech i ni gysylltu â chi?"
+        options:
+          email: "E-bost "
+          post: Post
+          fax: "Ffacs "
+      email_address:
+        label: "Cyfeiriad e-bost "
+      fax_number:
+        label: "Rhif ffacs "
+      organisation_employ_gb:
+        label: "Faint o bobl sy’n gyflogedig gan y sefydliad hwn ym Mhrydain Fawr?"
+        hint: "Er enghraifft, 10"
+      organisation_more_than_one_site:
+        label: "A oes gan y sefydliad hwn fwy nag un safle ym Mhrydain Fawr?"
+        options:
+          'true': 'Oes'
+          'false': 'Nac oes'
+      employment_at_site_number:
+        label: "Faint o bobl sy’n gyflogedig ar y safle ble'r oedd yr hawlydd yn gweithio?"
+        hint: "Er enghraifft, 10"
+      video_call:
+        label: A allech chi gymryd rhan mewn gwrandawiad drwy fideo? (angen mynediad i'r rhyngrwyd).
+        hint: Ceir rhagor o fanylion am wrandawiadau fideo drwy ddilyn y ddolen a ganlyn https://www.gov.uk/guidance/hmcts-telephone-and-video-hearings-during-coronavirus-outbreak
+        options:
+          'true': Gallaf
+          'false': Na allaf
   activerecord:
     errors:
       models:

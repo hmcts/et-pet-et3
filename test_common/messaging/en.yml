@@ -19,54 +19,53 @@ en:
     email_address:
       label: Enter your email address
     # Respondent's Details Page
-    case_number:
-      label: Case number
-    name:
-      label: Name of individual, company or organisation
-    contact:
-      label: Full name of contact (optional)
-    building_name:
-      label: Building name or number
-    street:
-      label: Street
-    town:
-      label: Town/City
-    county:
-      label: County (optional)
-    postcode:
-      label: Postcode
-    dx_number:
-      label: Document exchange (DX) number (optional)
-    contact_number:
-      label: Contact number (optional)
-    contact_mobile_number:
-      label: Mobile number (optional)
-    contact_preference:
-      label: How would you prefer us to contact you? (optional)
-      email:
-        label: Email
-        input_label: Email address
-      post:
-        label: Post
-      fax:
-        label: Fax
-        input_label: Fax number
-    organisation_employ_gb:
-      label: How many people does this organisation employ in Great Britain? (optional)
-    organisation_more_than_one_site:
-      label: Does this organisation have more than one site in Great Britain? (optional)
-      'yes':
-        label: 'Yes'
-      'no':
-        label: 'No'
+    respondents_details:
+      case_number:
+        label: Case number
+      name:
+        label: Name of individual, company or organisation
+      contact:
+        label: Full name of contact (optional)
+      building_name:
+        label: Building name or number
+      street:
+        label: Street
+      town:
+        label: Town/City
+      county:
+        label: County (optional)
+      postcode:
+        label: Postcode
+      dx_number:
+        label: Document exchange (DX) number (optional)
+      contact_number:
+        label: Contact number (optional)
+      contact_mobile_number:
+        label: Mobile number (optional)
+      contact_preference:
+        label: How would you prefer us to contact you? (optional)
+        options:
+          email: Email
+          post: Post
+          fax: Fax
+      fax_number:
+        label: Fax number
+      email_address:
+        label: Email address
+      organisation_employ_gb:
+        label: How many people does this organisation employ in Great Britain? (optional)
+      organisation_more_than_one_site:
+        label: Does this organisation have more than one site in Great Britain? (optional)
+        options:
+          'yes': 'Yes'
+          'no': 'No'
       employment_at_site_number:
         label: How many people are employed at the place where the claimant worked?
-    video_call:
-      label: Would you be able to take part in a hearing by video? (Requires internet access).
-      'yes':
-        label: 'Yes'
-      'no':
-        label: 'No'
+      video_call:
+        label: Would you be able to take part in a hearing by video? (Requires internet access).
+        options:
+          'yes': 'Yes'
+          'no': 'No'
     # Claimant's Details Page
     claimants_name:
       label: Claimant's full name (optional)
@@ -275,6 +274,26 @@ en:
       caption: Employer Contract Claim
     confirmation_of_additional_information_answers:
       caption: Additional Information
+  confirmation_of_supplied_details:
+    respondents_details:
+      case_number: Case number
+      name: Name of individual, company or organisation
+      contact: Full name of contact
+      building_name: Building name or number
+      street: Street
+      town: Town/City
+      county: County
+      postcode: Postcode
+      dx_number: Document exchange (DX) number
+      contact_number: Contact number
+      contact_mobile_number: Mobile number
+      contact_preference:  How would you prefer us to contact you?
+      fax_number: Fax number
+      email_address: Email address
+      organisation_employ_gb: How many people does this organisation employ in Great Britain?
+      organisation_more_than_one_site: Does this organisation have more than one site in Great Britain?
+      employment_at_site_number: How many people are employed at the place where the claimant worked?
+      video_call: Would you be able to take part in a hearing by video? (Requires internet access).
   errors:
     header: Please review the following
     description: Clicking on an error will navigate you directly to the question. Please correct these errors before continuing.

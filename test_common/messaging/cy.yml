@@ -19,54 +19,53 @@ cy:
     email_address:
       label: Nodwch eich cyfeiriad e-bost
     # Respondent's Details Page
-    case_number:
-      label: "Rhif yr achos"
-    name:
-      label: Enw'r unigolyn, cwmni neu sefydliad
-    contact:
-      label: Enw llawn y cyswllt (dewisol)
-    building_name:
-      label: Enw neu rif yr adeilad
-    street:
-      label: Stryd
-    town:
-      label: Tref/Dinas
-    county:
-      label: Sir (dewisol)
-    postcode:
-      label: Cod post
-    dx_number:
-      label: Rhif Cyfnewid Dogfennau (DX) (dewisol)
-    contact_number:
-      label: Rhif cyswllt (dewisol)
-    contact_mobile_number:
-      label: Rhif ffôn symudol (dewisol)
-    contact_preference:
-      label: Sut hoffech i ni gysylltu â chi? (dewisol)
-      email:
-        label: E-bost
-        input_label: Cyfeiriad e-bost
-      post:
-        label: Post
+    respondents_details:
+      case_number:
+        label: "Rhif yr achos"
+      name:
+        label: Enw'r unigolyn, cwmni neu sefydliad
+      contact:
+        label: Enw llawn y cyswllt (dewisol)
+      building_name:
+        label: Enw neu rif yr adeilad
+      street:
+        label: Stryd
+      town:
+        label: Tref/Dinas
+      county:
+        label: Sir (dewisol)
+      postcode:
+        label: Cod post
+      dx_number:
+        label: Rhif Cyfnewid Dogfennau (DX) (dewisol)
+      contact_number:
+        label: Rhif cyswllt (dewisol)
+      contact_mobile_number:
+        label: Rhif ffôn symudol (dewisol)
+      contact_preference:
+        label: Sut hoffech i ni gysylltu â chi? (dewisol)
+        options:
+          email: E-bost
+          post: Post
+          fax: Ffacs
       fax:
-        label: Ffacs
-        input_label: Rhif ffacs
-    organisation_employ_gb:
-      label: "Faint o bobl sy’n gyflogedig gan y sefydliad hwn ym Mhrydain Fawr? (dewisol)"
-    organisation_more_than_one_site:
-      label: "A oes gan y sefydliad hwn fwy nag un safle ym Mhrydain Fawr? (dewisol)"
-      'yes':
-        label: Oes
-      'no':
-        label: Nac oes
+        label: Rhif ffacs
+      email_address:
+        label: Cyfeiriad e-bost
+      organisation_employ_gb:
+        label: "Faint o bobl sy’n gyflogedig gan y sefydliad hwn ym Mhrydain Fawr? (dewisol)"
+      organisation_more_than_one_site:
+        label: "A oes gan y sefydliad hwn fwy nag un safle ym Mhrydain Fawr? (dewisol)"
+        options:
+          'yes': Oes
+          'no': Nac oes
       employment_at_site_number:
         label: "Faint o bobl sy’n gyflogedig ar y safle ble'r oedd yr hawlydd yn gweithio?"
-    video_call:
-      label: A allech chi gymryd rhan mewn gwrandawiad drwy fideo? (angen mynediad i'r rhyngrwyd).
-      'yes':
-        label: Gallaf
-      'no':
-        label: Na allaf
+      video_call:
+        label: A allech chi gymryd rhan mewn gwrandawiad drwy fideo? (angen mynediad i'r rhyngrwyd).
+        options:
+          'yes': Gallaf
+          'no': Na allaf
     # Claimant's Details Page
     claimants_name:
       label: Enw llawn yr hawlydd (dewisol)
@@ -277,6 +276,25 @@ cy:
       caption: Hawliad Contract y Cyflogwr
     confirmation_of_additional_information_answers:
       caption: Gwybodaeth Ychwanegol
+  confirmation_of_supplied_details:
+    case_number: "Rhif yr achos"
+    name: Enw'r unigolyn, cwmni neu sefydliad
+    contact: Enw llawn y cyswllt
+    building_name: Enw neu rif yr adeilad
+    street: Stryd
+    town: Tref/Dinas
+    county: Sir
+    postcode: Cod post
+    dx_number: Rhif Cyfnewid Dogfennau (DX)
+    contact_number: Rhif cyswllt
+    contact_mobile_number: Rhif ffôn symudol
+    contact_preference: Sut hoffech i ni gysylltu â chi?
+    fax: Rhif ffacs
+    email_address: Cyfeiriad e-bost
+    organisation_employ_gb: "Faint o bobl sy’n gyflogedig gan y sefydliad hwn ym Mhrydain Fawr?"
+    organisation_more_than_one_site: "A oes gan y sefydliad hwn fwy nag un safle ym Mhrydain Fawr?"
+    employment_at_site_number: "Faint o bobl sy’n gyflogedig ar y safle ble'r oedd yr hawlydd yn gweithio?"
+    video_call: A allech chi gymryd rhan mewn gwrandawiad drwy fideo? (angen mynediad i'r rhyngrwyd).
   errors:
     header: Adolygwch y canlynol
     description: Bydd clicio ar gwall yn mynd â chi'n syth at y cwestiwn. \nCywirwch y gwallau hyn cyn parhau.

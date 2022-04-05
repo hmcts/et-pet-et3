@@ -33,25 +33,23 @@ RSpec.feature "Fill in whole form", js: true do
 
       respondents_details_page.load(locale: current_locale_parameter)
 
-      expect(respondents_details_page.case_number_question.field.value).to eql ""
-      expect(respondents_details_page.name_question.field.value).to eql ""
-      expect(respondents_details_page.contact_question.field.value).to eql ""
-      expect(respondents_details_page.building_name_question.field.value).to eql ""
-      expect(respondents_details_page.street_question.field.value).to eql ""
-      expect(respondents_details_page.town_question.field.value).to eql ""
-      expect(respondents_details_page.county_question.field.value).to eql ""
-      expect(respondents_details_page.postcode_question.field.value).to eql ""
-      expect(respondents_details_page.dx_number_question.field.value).to eql ""
-      expect(respondents_details_page.contact_number_question.field.value).to eql ""
-      expect(respondents_details_page.contact_mobile_number_question.field.value).to eql ""
-      respondents_details_page.contact_preference_question.email.assert_selector(:field, nil, checked: false)
-      expect(respondents_details_page.contact_preference_question.preference_email.value).to eql ""
-      respondents_details_page.contact_preference_question.post.assert_selector(:field, nil, checked: false)
-      respondents_details_page.contact_preference_question.fax.assert_selector(:field, nil, checked: false)
-      expect(respondents_details_page.contact_preference_question.preference_fax.value).to eql ""
-      expect(respondents_details_page.organisation_employ_gb_question.field.value).to eql ""
-      respondents_details_page.organisation_more_than_one_site_question.assert_selector(:field, nil, checked: false)
-      expect(respondents_details_page.organisation_more_than_one_site_question.employment_at_site_number.value).to eql ""
+      expect(respondents_details_page.case_number_question.value).to eql ""
+      expect(respondents_details_page.name_question.value).to eql ""
+      expect(respondents_details_page.contact_question.value).to eql ""
+      expect(respondents_details_page.building_name_question.value).to eql ""
+      expect(respondents_details_page.street_question.value).to eql ""
+      expect(respondents_details_page.town_question.value).to eql ""
+      expect(respondents_details_page.county_question.value).to eql ""
+      expect(respondents_details_page.postcode_question.value).to eql ""
+      expect(respondents_details_page.dx_number_question.value).to eql ""
+      expect(respondents_details_page.contact_number_question.value).to eql ""
+      expect(respondents_details_page.contact_mobile_number_question.value).to eql ""
+      expect(respondents_details_page.contact_preference_question.value).to be_nil
+      expect(respondents_details_page.email_address_question.value).to eql ""
+      expect(respondents_details_page.fax_number_question.value).to eql ""
+      expect(respondents_details_page.organisation_employ_gb_question.value).to eql ""
+      expect(respondents_details_page.organisation_more_than_one_site_question.value).to be_nil
+      expect(respondents_details_page.employment_at_site_number_question.value).to eql ""
     end
 
     scenario "correctly followed by removing the uploaded file will not submit it to the API" do
@@ -253,7 +251,7 @@ RSpec.feature "Fill in whole form", js: true do
               expect(request_body["data"][1]["data"]["dx_number"]).to eql @respondent.dx_number
               expect(request_body["data"][1]["data"]["address_telephone_number"]).to eql @respondent.contact_number
               expect(request_body["data"][1]["data"]["alt_phone_number"]).to eql @respondent.contact_mobile_number
-              expect(request_body["data"][1]["data"]["contact_preference"]).to eql @respondent.contact_preference.to_s.split('.')[-2]
+              expect(request_body["data"][1]["data"]["contact_preference"]).to eql @respondent.contact_preference.to_s.split('.').last
               expect(request_body["data"][1]["data"]["email_address"]).to eql @respondent.email_address if @respondent.contact_preference == 'email'
               expect(request_body["data"][1]["data"]["fax_number"]).to eql @respondent.fax_number if @respondent.contact_preference == 'fax'
               expect(request_body["data"][1]["data"]["organisation_employ_gb"].to_s).to eql @respondent.organisation_employ_gb

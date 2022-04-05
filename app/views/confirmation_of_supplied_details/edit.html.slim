@@ -17,60 +17,60 @@
           th = t('components.confirmation_of_supplied_details.answer_header')
       tbody
         tr
-          td = t('helpers.label.respondents_detail.case_number')
+          td = t('respondents_details.edit.case_number.label')
           td = @hash_store.dig(:respondents_detail_answers, :case_number)
         tr
-          td = t('helpers.label.respondents_detail.name')
+          td = t('respondents_details.edit.name.label')
           td = @hash_store.dig(:respondents_detail_answers, :name)
         tr
-          td = t('helpers.label.respondents_detail.contact')
+          td = t('respondents_details.edit.contact.label')
           td = @hash_store.dig(:respondents_detail_answers, :contact)
         tr
-          td = t('helpers.label.respondents_detail.building_name')
+          td = t('respondents_details.edit.building_name.label')
           td = @hash_store.dig(:respondents_detail_answers, :building_name)
         tr
-          td = t('helpers.label.respondents_detail.street_name')
+          td = t('respondents_details.edit.street_name.label')
           td = @hash_store.dig(:respondents_detail_answers, :street_name)
         tr
-          td = t('helpers.label.respondents_detail.town')
+          td = t('respondents_details.edit.town.label')
           td = @hash_store.dig(:respondents_detail_answers, :town)
         tr
-          td = t('helpers.label.respondents_detail.county')
+          td = t('respondents_details.edit.county.label')
           td = @hash_store.dig(:respondents_detail_answers, :county)
         tr
-          td = t('helpers.label.respondents_detail.postcode')
+          td = t('respondents_details.edit.postcode.label')
           td = @hash_store.dig(:respondents_detail_answers, :postcode)
         tr
-          td = t('helpers.label.respondents_detail.dx_number')
+          td = t('respondents_details.edit.dx_number.label')
           td = @hash_store.dig(:respondents_detail_answers, :dx_number)
         tr
-          td = t('helpers.label.respondents_detail.contact_number')
+          td = t('respondents_details.edit.contact_number.label')
           td = @hash_store.dig(:respondents_detail_answers, :contact_number)
         tr
-          td = t('helpers.label.respondents_detail.mobile_number')
+          td = t('respondents_details.edit.mobile_number.label')
           td = @hash_store.dig(:respondents_detail_answers, :mobile_number)
         tr
-          td = t('helpers.fieldset.respondents_detail.contact_preference')
+          td = t('respondents_details.edit.contact_preference.label')
           td = translate_contact_preference(@hash_store.dig(:respondents_detail_answers, :contact_preference))
         tr
-          td = t('helpers.label.respondents_detail.email_address')
+          td = t('respondents_details.edit.email_address.label')
           td = @hash_store.dig(:respondents_detail_answers, :email_address)
         tr
-          td = t('helpers.label.respondents_detail.fax_number')
+          td = t('respondents_details.edit.fax_number.label')
           td = @hash_store.dig(:respondents_detail_answers, :fax_number)
         tr
-          td = t('helpers.fieldset.respondents_detail.video_call')
+          td = t('respondents_details.edit.video_call.label')
           td = translate_stored_value(@hash_store.dig(:respondents_detail_answers, :video_call),
                     'respondents_detail.video_call')
         tr
-          td = t('helpers.label.respondents_detail.organisation_employ_gb')
+          td = t('respondents_details.edit.organisation_employ_gb.label')
           td = @hash_store.dig(:respondents_detail_answers, :organisation_employ_gb)
         tr
-          td = t('helpers.fieldset.respondents_detail.organisation_more_than_one_site')
+          td = t('respondents_details.edit.organisation_more_than_one_site.label')
           td = translate_stored_value(@hash_store.dig(:respondents_detail_answers, :organisation_more_than_one_site),
                     'respondents_detail.organisation_more_than_one_site')
         tr
-          td = t('helpers.label.respondents_detail.employment_at_site_number')
+          td = t('respondents_details.edit.employment_at_site_number.label')
           td = @hash_store.dig(:respondents_detail_answers, :employment_at_site_number)
         tr
           td

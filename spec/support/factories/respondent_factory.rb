@@ -11,8 +11,8 @@ FactoryBot.define do
       town {"westminster"}
       county {"london"}
       postcode {"wc1 1aa"}
-      organisation_more_than_one_site {:"questions.organisation_more_than_one_site.no.label"}
-      video_call {:"questions.video_call.no.label"}
+      organisation_more_than_one_site {:"questions.respondents_details.organisation_more_than_one_site.options.no"}
+      video_call {:"questions.respondents_details.video_call.options.no"}
   end
 
   trait :respondent_valid do
@@ -21,7 +21,7 @@ FactoryBot.define do
     dx_number {"234242342"}
     contact_number {"02081234567"}
     contact_mobile_number {"07123456789"}
-    contact_preference {:"questions.contact_preference.email.label"}
+    contact_preference {:"questions.respondents_details.contact_preference.options.email"}
     email_address {"sivvoy.taing@hmcts.net"}
     organisation_employ_gb {"100"}
     make_employer_contract_claim {:"questions.make_employer_contract_claim.yes.label"}
@@ -29,11 +29,11 @@ FactoryBot.define do
     email_receipt {"sivvoy.taing@hmcts.net"}
     disability {:"questions.disability.yes.label"}
     disability_information {"Lorem ipsum disability"}
-    video_call {:"questions.video_call.no.label"}
+    video_call {:"questions.respondents_details.video_call.options.no"}
   end
 
   trait :contact_preference_post do
-    contact_preference {:"questions.contact_preference.post.label"}
+    contact_preference {:"questions.respondents_details.contact_preference.options.post"}
     email_address { nil }
   end
 
@@ -47,7 +47,7 @@ FactoryBot.define do
     dx_number {"724060 Derby 21 (no validation)"}
     contact_number {"string"}
     contact_mobile_number {"string"}
-    contact_preference {:"questions.contact_preference.fax.label"}
+    contact_preference {:"questions.respondents_details.contact_preference.options.fax"}
     fax_number {"string"}
     employment_at_site_number {"string"}
     organisation_employ_gb {"string"}

@@ -35,7 +35,7 @@
             = yield
           .govuk-grid-column-one-third
             = yield(:sidebar)
-        = render "shared/aside_save" unless @disable_save_and_return
+          = render "shared/aside_save" unless @disable_save_and_return
 - content_for :footer_support_links
   = render 'shared/footer_links'
 

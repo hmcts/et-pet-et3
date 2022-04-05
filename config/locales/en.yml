@@ -33,9 +33,6 @@ en:
   helpers:
     fieldset:
       respondents_detail:
-        contact_preference: How would you prefer us to contact you? (optional)
-        organisation_more_than_one_site: Does this organisation have more than one site in Great Britain? (optional)
-        video_call: Would you be able to take part in a hearing by video? (Requires internet access).
         cookies: Do you want to accept analytics cookies?
       claimants_detail:
         agree_with_early_conciliation_details: Do you agree with the details given by the claimant about Early Conciliation with Acas? (optional)
@@ -65,35 +62,6 @@ en:
         choices:
           'yes': 'Yes'
           'no': 'No'
-      respondents_detail:
-        case_number: Case number
-        name: Name of individual, company or organisation
-        contact: Full name of contact (optional)
-        building_name: Building name or number
-        street_name: Street
-        town: Town/City
-        county: County (optional)
-        postcode: Postcode
-        dx_number: Document exchange (DX) number (optional)
-        contact_number: Contact number (optional)
-        mobile_number: Mobile number (optional)
-        contact_preference:
-          choices:
-            email: Email
-            post: Post
-            fax: Fax
-        email_address: Email address
-        fax_number: Fax number
-        organisation_employ_gb: How many people does this organisation employ in Great Britain? (optional)
-        organisation_more_than_one_site:
-          choices:
-            'yes': 'Yes'
-            'no': 'No'
-        employment_at_site_number: How many people are employed at the place where the claimant worked?
-        video_call:
-          choices:
-            'yes': 'Yes'
-            'no': 'No'
       claimants_detail:
         claimants_name: Claimant's full name (optional)
         agree_with_early_conciliation_details:
@@ -207,11 +175,7 @@ en:
         email_receipt: Email address (optional)
     hint:
       respondents_detail:
-        contact: For example, John Smith
-        mobile_number: If different to your primary contact number
         employment_at_site_number: For example, 10
-        organisation_employ_gb: For example, 10
-        video_call: Further details on video hearings can be found on the following link https://www.gov.uk/guidance/hmcts-telephone-and-videohearings-during-coronavirus-outbreak
       claimants_detail:
         employment_start: For example, 31 03 2010
         employment_end: For example, 01 12 2017
@@ -751,6 +715,60 @@ en:
       subheader: |
         Your response has been saved. You can return to it by entering your reference number and your memorable word.
       sign_out_button: Sign out now
+  respondents_details:
+    edit:
+      case_number:
+        label: Case number
+      name:
+        label: Name of individual, company or organisation
+      contact:
+        label: Full name of contact
+        hint: For example, John Smith
+      building_name:
+        label: Building name or number
+      street_name:
+        label: Street
+      town:
+        label: Town/City
+      county:
+        label: County
+      postcode:
+        label: Postcode
+      dx_number:
+        label: Document exchange (DX) number
+      contact_number:
+        label: Contact number
+      mobile_number:
+        label: Mobile number
+        hint: If different to your primary contact number
+      email_address:
+        label: Email address
+      fax_number:
+        label: Fax number
+      organisation_employ_gb:
+        label: How many people does this organisation employ in Great Britain?
+        hint: For example, 10
+      employment_at_site_number:
+        label: How many people are employed at the place where the claimant worked?
+      contact_preference:
+        label: How would you prefer us to contact you?
+        options:
+          email: Email
+          post: Post
+          fax: Fax
+      video_call:
+        label: Would you be able to take part in a hearing by video? (Requires internet access).
+        hint: Further details on video hearings can be found on the following link https://www.gov.uk/guidance/hmcts-telephone-and-videohearings-during-coronavirus-outbreak
+        options:
+          'true': 'Yes'
+          'false': 'No'
+      organisation_more_than_one_site:
+        label: Does this organisation have more than one site in Great Britain?
+        options:
+          'true': 'Yes'
+          'false': 'No'
+
+
   activerecord:
     errors:
       models:

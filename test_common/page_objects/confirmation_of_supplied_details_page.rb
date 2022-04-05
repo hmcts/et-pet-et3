@@ -5,58 +5,58 @@ module ET3
       element :error_header, :error_titled, 'errors.header', exact: true
 
       section :confirmation_of_respondents_details_answers, :table_captioned, 'questions.confirmation_of_respondents_details_answers.caption', exact: true do
-        section :case_number_row, :table_row_with_td_labelled, 'questions.case_number.label', exact: true do
+        section :case_number_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.respondents_details.case_number', exact: true do
           element :case_number_answer, :return_answer
         end
-        section :name_row, :table_row_with_td_labelled, 'questions.name.label', exact: true do
+        section :name_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.respondents_details.name', exact: true do
           element :name_answer, :return_answer
         end
-        section :contact_row, :table_row_with_td_labelled, 'questions.contact.label', exact: true do
+        section :contact_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.respondents_details.contact', exact: true do
           element :contact_answer, :return_answer
         end
-        section :building_name_row, :table_row_with_td_labelled, 'questions.building_name.label', exact: true do
+        section :building_name_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.respondents_details.building_name', exact: true do
           element :building_name_answer, :return_answer
         end
-        section :street_row, :table_row_with_td_labelled, 'questions.street.label', exact: true do
+        section :street_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.respondents_details.street', exact: true do
           element :street_answer, :return_answer
         end
-        section :town_row, :table_row_with_td_labelled, 'questions.town.label', exact: true do
+        section :town_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.respondents_details.town', exact: true do
           element :town_answer, :return_answer
         end
-        section :county_row, :table_row_with_td_labelled, 'questions.county.label', exact: true do
+        section :county_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.respondents_details.county', exact: true do
           element :county_answer, :return_answer
         end
-        section :postcode_row, :table_row_with_td_labelled, 'questions.postcode.label', exact: true do
+        section :postcode_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.respondents_details.postcode', exact: true do
           element :postcode_answer, :return_answer
         end
-        section :dx_number_row, :table_row_with_td_labelled, 'questions.dx_number.label', exact: true do
+        section :dx_number_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.respondents_details.dx_number', exact: true do
           element :dx_number_answer, :return_answer
         end
-        section :contact_number_row, :table_row_with_td_labelled, 'questions.contact_number.label', exact: true do
+        section :contact_number_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.respondents_details.contact_number', exact: true do
           element :contact_number_answer, :return_answer
         end
-        section :mobile_number_row, :table_row_with_td_labelled, 'questions.contact_mobile_number.label', exact: true do
+        section :mobile_number_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.respondents_details.contact_mobile_number', exact: true do
           element :mobile_number_answer, :return_answer
         end
-        section :contact_preference_row, :table_row_with_td_labelled, 'questions.contact_preference.label', exact: true do
+        section :contact_preference_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.respondents_details.contact_preference', exact: true do
           element :contact_preference_answer, :return_answer
         end
-        section :email_address_row, :table_row_with_td_labelled, 'questions.contact_preference.email.input_label', exact: true do
+        section :email_address_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.respondents_details.email_address', exact: true do
           element :email_address_answer, :return_answer
         end
-        section :fax_number_row, :table_row_with_td_labelled, 'questions.contact_preference.fax.input_label', exact: true do
+        section :fax_number_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.respondents_details.fax_number', exact: true do
           element :fax_number_answer, :return_answer
         end
-        section :organisation_employ_gb_row, :table_row_with_td_labelled, 'questions.organisation_employ_gb.label', exact: true do
+        section :organisation_employ_gb_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.respondents_details.organisation_employ_gb', exact: true do
           element :organisation_employ_gb_answer, :return_answer
         end
-        section :organisation_more_than_one_site_row, :table_row_with_td_labelled, 'questions.organisation_more_than_one_site.label', exact: true do
+        section :organisation_more_than_one_site_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.respondents_details.organisation_more_than_one_site', exact: true do
           element :organisation_more_than_one_site_answer, :return_answer
         end
-        section :video_call_row, :table_row_with_td_labelled, 'questions.video_call.label', exact: true do
+        section :video_call_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.respondents_details.video_call', exact: true do
           element :video_call_answer, :return_answer
         end
-        section :employment_at_site_number_row, :table_row_with_td_labelled, 'questions.organisation_more_than_one_site.employment_at_site_number.label', exact: true do
+        section :employment_at_site_number_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.respondents_details.employment_at_site_number', exact: true do
           element :employment_at_site_number_answer, :return_answer
         end
         element :edit_respondent_details_page_link, :link_named, 'links.confirmation_of_supplied_details.edit_respondent_details_page', exact: true
@@ -197,7 +197,7 @@ module ET3
           element :fax_answer, :return_answer
         end
         element :edit_representative_details_page_link, :link_named, 'links.confirmation_of_supplied_details.edit_representative_details_page', exact: true
-        
+
       end
 
       section :confirmation_of_disability_answers, :table_captioned, 'questions.confirmation_of_disability_answers.caption', exact: true do
@@ -234,7 +234,7 @@ module ET3
         element :error_invalid_email, :exact_error_text, 'errors.messages.invalid_email', exact: false
         def set(*args); field.set(*args); end
       end
-      
+
       element :continue_button, :submit_text, 'confirmation.submit'
       def submit_form
         continue_button.click

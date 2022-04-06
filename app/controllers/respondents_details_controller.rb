@@ -1,5 +1,4 @@
 class RespondentsDetailsController < ApplicationController
-  layout 'old_application', except: [:edit, :update]
   def edit
     @respondents_detail ||= RespondentsDetail.new(current_store.hash_store.fetch(:respondents_detail_answers, {}))
   end

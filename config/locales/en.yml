@@ -34,11 +34,6 @@ en:
     fieldset:
       respondents_detail:
         cookies: Do you want to accept analytics cookies?
-      claimants_detail:
-        agree_with_early_conciliation_details: Do you agree with the details given by the claimant about Early Conciliation with Acas? (optional)
-        agree_with_employment_dates: Are the dates of employment given by the claimant correct? (optional)
-        continued_employment: Is their employment continuing? (optional)
-        agree_with_claimants_description_of_job_or_title: Is the claimant's description of their job or job title correct? (optional)
       earnings_and_benefits:
         agree_with_claimants_hours: Are the hours of work correct? (optional)
         agree_with_earnings_details: Are the earnings correct? (optional)
@@ -62,29 +57,6 @@ en:
         choices:
           'yes': 'Yes'
           'no': 'No'
-      claimants_detail:
-        claimants_name: Claimant's full name (optional)
-        agree_with_early_conciliation_details:
-          choices:
-            'yes': 'Yes'
-            'no': 'No'
-        disagree_conciliation_reason: Why do you disagree with the claimant? (optional)
-        agree_with_employment_dates:
-          choices:
-            'yes': 'Yes'
-            'no': 'No'
-        employment_start: When their employment started
-        employment_end: When their employment ended or will end
-        disagree_employment: Why do you disagree with the dates given by the claimant (optional)
-        continued_employment:
-          choices:
-            'yes': 'Yes'
-            'no': 'No'
-        agree_with_claimants_description_of_job_or_title:
-          choices:
-            'yes': 'Yes'
-            'no': 'No'
-        disagree_claimants_job_or_title: Please give the details you believe to be correct (optional)
       earnings_and_benefits:
         agree_with_claimants_hours:
           choices:
@@ -176,9 +148,6 @@ en:
     hint:
       respondents_detail:
         employment_at_site_number: For example, 10
-      claimants_detail:
-        employment_start: For example, 31 03 2010
-        employment_end: For example, 01 12 2017
       earnings_and_benefits:
         queried_hours: Enter hours per week, for example 39
         agree_with_earnings_details:
@@ -767,6 +736,42 @@ en:
         options:
           'true': 'Yes'
           'false': 'No'
+  claimants_details:
+    edit:
+      claimants_name:
+        label: Claimant's full name
+      agree_with_early_conciliation_details:
+        label: Do you agree with the details given by the claimant about Early Conciliation with Acas?
+        options:
+          'true': 'Yes'
+          'false': 'No'
+      disagree_conciliation_reason:
+        label: Why do you disagree with the claimant?
+      agree_with_employment_dates:
+        label: Are the dates of employment given by the claimant correct?
+        options:
+          'true': 'Yes'
+          'false': 'No'
+      employment_start:
+        label: When their employment started
+        hint: For example, 31 03 2010
+      employment_end:
+        label: When their employment ended or will end
+        hint: For example, 01 12 2017
+      disagree_employment:
+        label: Why do you disagree with the dates given by the claimant
+      continued_employment:
+        label: Is their employment continuing?
+        options:
+          'true': 'Yes'
+          'false': 'No'
+      agree_with_claimants_description_of_job_or_title:
+        label: Is the claimant's description of their job or job title correct?
+        options:
+          'true': 'Yes'
+          'false': 'No'
+      disagree_claimants_job_or_title:
+        label: Please give the details you believe to be correct
 
 
   activerecord:

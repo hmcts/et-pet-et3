@@ -67,52 +67,37 @@ en:
           'yes': 'Yes'
           'no': 'No'
     # Claimant's Details Page
-    claimants_name:
-      label: Claimant's full name (optional)
-    agree_with_early_conciliation_details:
-      label: Do you agree with the details given by the claimant about Early Conciliation with Acas? (optional)
-      'yes':
-        label: 'Yes'
-      'no':
-        label: 'No'
+    claimants_details:
+      claimants_name:
+        label: Claimant's full name (optional)
+      agree_with_early_conciliation_details:
+        label: Do you agree with the details given by the claimant about Early Conciliation with Acas? (optional)
+        options:
+          'yes': 'Yes'
+          'no': 'No'
       disagree_conciliation_reason:
         label: Why do you disagree with the claimant? (optional)
-    agree_with_employment_dates:
-      label: Are the dates of employment given by the claimant correct? (optional)
-      'yes':
-        label: 'Yes'
-      'no':
-        label: 'No'
+      agree_with_employment_dates:
+        label: Are the dates of employment given by the claimant correct? (optional)
+        options:
+          'yes': 'Yes'
+          'no': 'No'
       employment_start:
         label: When their employment started
-        day:
-          label: Day
-        month:
-          label: Month
-        year:
-          label: Year
       employment_end:
         label: When their employment ended or will end
-        day:
-          label: Day
-        month:
-          label: Month
-        year:
-          label: Year
       disagree_employment:
         label: Why do you disagree with the dates given by the claimant (optional)
-    continued_employment:
-      label: Is their employment continuing? (optional)
-      'yes':
-        label: 'Yes'
-      'no':
-        label: 'No'
-    agree_with_claimants_description_of_job_or_title:
-      label: Is the claimant's description of their job or job title correct? (optional)
-      'yes':
-        label: 'Yes'
-      'no':
-        label: 'No'
+      continued_employment:
+        label: Is their employment continuing? (optional)
+        options:
+          'yes': 'Yes'
+          'no': 'No'
+      agree_with_claimants_description_of_job_or_title:
+        label: Is the claimant's description of their job or job title correct? (optional)
+        options:
+          'yes': 'Yes'
+          'no': 'No'
       disagree_claimants_job_or_title:
         label: Please give the details you believe to be correct (optional)
     # Earnings and Benefits Page
@@ -294,6 +279,17 @@ en:
       organisation_more_than_one_site: Does this organisation have more than one site in Great Britain?
       employment_at_site_number: How many people are employed at the place where the claimant worked?
       video_call: Would you be able to take part in a hearing by video? (Requires internet access).
+    claimants_details:
+      claimants_name: Claimant's full name
+      agree_with_early_conciliation_details: Do you agree with the details given by the claimant about Early Conciliation with Acas?
+      disagree_conciliation_reason: Why do you disagree with the claimant?
+      agree_with_employment_dates: Are the dates of employment given by the claimant correct?
+      employment_start: When their employment started
+      employment_end:  When their employment ended or will end
+      disagree_employment: Why do you disagree with the dates given by the claimant
+      continued_employment: Is their employment continuing?
+      agree_with_claimants_description_of_job_or_title: Is the claimant's description of their job or job title correct?
+      disagree_claimants_job_or_title: Please give the details you believe to be correct
   errors:
     header: Please review the following
     description: Clicking on an error will navigate you directly to the question. Please correct these errors before continuing.

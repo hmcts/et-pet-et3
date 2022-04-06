@@ -75,10 +75,17 @@ module ET3
       def answer_claimants_details
         user = @claimant
         claimants_details_page.claimants_name_question.set(user.claimants_name)
-        claimants_details_page.agree_with_early_conciliation_details_question.set_for(user)
-        claimants_details_page.agree_with_employment_dates_question.set_for(user)
-        claimants_details_page.continued_employment_question.set_for(user.continued_employment)
-        claimants_details_page.agree_with_claimants_description_of_job_or_title_question.set_for(user)
+        claimants_details_page.agree_with_early_conciliation_details_question.set(user.agree_with_early_conciliation_details.to_s.split('.').last.to_sym)
+        claimants_details_page.disagree_conciliation_reason.set(user.disagree_conciliation_reason) if user.agree_with_early_conciliation_details.to_s.split('.').last == 'no'
+        claimants_details_page.agree_with_employment_dates_question.set(user.agree_with_employment_dates.to_s.split('.').last.to_sym)
+        if user.agree_with_employment_dates.to_s.split('.').last == 'no'
+          claimants_details_page.employment_start.set(user.employment_start)
+          claimants_details_page.employment_end.set(user.employment_end)
+          claimants_details_page.disagree_employment.set(user.disagree_employment)
+        end
+        claimants_details_page.continued_employment_question.set(user.continued_employment.to_s.split('.').last.to_sym)
+        claimants_details_page.agree_with_claimants_description_of_job_or_title_question.set(user.agree_with_claimants_description_of_job_or_title.to_s.split('.').last.to_sym)
+        claimants_details_page.disagree_claimants_job_or_title.set(user.disagree_claimants_job_or_title) if user.agree_with_claimants_description_of_job_or_title.to_s.split('.').last == 'no'
         claimants_details_page.next
       end
 

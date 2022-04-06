@@ -63,34 +63,34 @@ module ET3
       end
 
       section :confirmation_of_claimants_details_answers, :table_captioned, 'questions.confirmation_of_claimants_details_answers.caption', exact: true do
-        section :claimants_name_row, :table_row_with_td_labelled, 'questions.claimants_name.label', exact: true do
+        section :claimants_name_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.claimants_details.claimants_name', exact: true do
           element :claimants_name_answer, :return_answer
         end
-        section :agree_with_early_conciliation_details_row, :table_row_with_td_labelled, 'questions.agree_with_early_conciliation_details.label', exact: true do
+        section :agree_with_early_conciliation_details_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.claimants_details.agree_with_early_conciliation_details', exact: true do
           element :agree_with_early_conciliation_details_answer, :return_answer
         end
-        section :disagree_conciliation_reason_row, :table_row_with_td_labelled, 'questions.agree_with_early_conciliation_details.disagree_conciliation_reason.label', exact: true do
+        section :disagree_conciliation_reason_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.claimants_details.disagree_conciliation_reason', exact: true do
           element :disagree_conciliation_reason_answer, :return_answer
         end
-        section :agree_with_employment_dates_row, :table_row_with_td_labelled, 'questions.agree_with_employment_dates.label', exact: true do
+        section :agree_with_employment_dates_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.claimants_details.agree_with_employment_dates', exact: true do
           element :agree_with_employment_dates_answer, :return_answer
         end
-        section :employment_start_row, :table_row_with_td_labelled, 'questions.agree_with_employment_dates.employment_start.label', exact: true do
+        section :employment_start_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.claimants_details.employment_start', exact: true do
           element :employment_start_answer, :return_answer
         end
-        section :employment_end_row, :table_row_with_td_labelled, 'questions.agree_with_employment_dates.employment_end.label', exact: true do
+        section :employment_end_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.claimants_details.employment_end', exact: true do
           element :employment_end_answer, :return_answer
         end
-        section :disagree_employment_row, :table_row_with_td_labelled, 'questions.agree_with_employment_dates.disagree_employment.label', exact: true do
+        section :disagree_employment_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.claimants_details.disagree_employment', exact: true do
           element :disagree_employment_answer, :return_answer
         end
-        section :continued_employment_row, :table_row_with_td_labelled, 'questions.continued_employment.label', exact: true do
+        section :continued_employment_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.claimants_details.continued_employment', exact: true do
           element :continued_employment_answer, :return_answer
         end
-        section :agree_with_claimants_description_of_job_or_title_row, :table_row_with_td_labelled, 'questions.agree_with_claimants_description_of_job_or_title.label', exact: true do
+        section :agree_with_claimants_description_of_job_or_title_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.claimants_details.agree_with_claimants_description_of_job_or_title', exact: true do
           element :agree_with_claimants_description_of_job_or_title_answer, :return_answer
         end
-        section :disagree_claimants_job_or_title_row, :table_row_with_td_labelled, 'questions.agree_with_claimants_description_of_job_or_title.disagree_claimants_job_or_title.label', exact: true do
+        section :disagree_claimants_job_or_title_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.claimants_details.disagree_claimants_job_or_title', exact: true do
           element :disagree_claimants_job_or_title_answer, :return_answer
         end
         element :edit_claimants_details_page_link, :link_named, 'links.confirmation_of_supplied_details.edit_claimants_details_page', exact: true

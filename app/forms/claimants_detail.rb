@@ -1,12 +1,10 @@
 class ClaimantsDetail < BaseForm
-  acts_as_gov_uk_date :employment_start, :employment_end,
-    validate_if: :disagree_with_employment_dates?
   attribute :claimants_name, :string
   attribute :agree_with_early_conciliation_details, :boolean
   attribute :disagree_conciliation_reason, :text
   attribute :agree_with_employment_dates, :boolean
-  attribute :employment_start, :date
-  attribute :employment_end, :date
+  attribute :employment_start, :et_date
+  attribute :employment_end, :et_date
   attribute :disagree_employment, :text
   attribute :continued_employment, :boolean
   attribute :agree_with_claimants_description_of_job_or_title, :boolean
@@ -38,6 +36,7 @@ class ClaimantsDetail < BaseForm
   validates :agree_with_employment_dates, inclusion: { in: [true, false] }, allow_blank: true
   validates :employment_start, :employment_end,
     presence: true,
+    date: true,
     if: :disagree_with_employment_dates?
   validate :end_date_is_after_start_date,
            if: :disagree_with_employment_dates?

@@ -67,52 +67,37 @@ cy:
           'yes': Gallaf
           'no': Na allaf
     # Claimant's Details Page
-    claimants_name:
-      label: Enw llawn yr hawlydd (dewisol)
-    agree_with_early_conciliation_details:
-      label: "A ydych chi'n cytuno gyda'r manylion a roddodd yr hawlydd ynghylch Cymodi Cynnar gydag Acas? (dewisol)"
-      'yes':
-        label: Ydw
-      'no':
-        label: Nac ydw
+    claimants_details:
+      claimants_name:
+        label: Enw llawn yr hawlydd (dewisol)
+      agree_with_early_conciliation_details:
+        label: "A ydych chi'n cytuno gyda'r manylion a roddodd yr hawlydd ynghylch Cymodi Cynnar gydag Acas? (dewisol)"
+        options:
+          'yes': Ydw
+          'no': Nac ydw
       disagree_conciliation_reason:
         label: "Pam yr ydych yn anghytuno â’r hawlydd? (dewisol)"
-    agree_with_employment_dates:
-      label: "A yw'r dyddiadau cyflogaeth a roddwyd gan yr hawlydd yn gywir? (dewisol)"
-      'yes':
-        label: Ydy
-      'no':
-        label: Nac ydy
-      employment_start:
-        label: "Pa bryd ddechreuodd ei gyflogaeth"
-        day:
-          label: Day
-        month:
-          label: Month
-        year:
-          label: Year
-      employment_end:
-        label: "Pa bryd ddaeth ei gyflogaeth i ben, neu y bydd yn dod i ben"
-        day:
-          label: Day
-        month:
-          label: Month
-        year:
-          label: Year
-      disagree_employment:
-        label: "Pam yr ydych yn anghytuno â’r dyddiadau a roddwyd gan yr hawlydd (dewisol)"
-    continued_employment:
-      label: "A yw'n parhau i fod mewn swydd? (dewisol)"
-      'yes':
-        label: Ydy
-      'no':
-        label: Nac ydy
-    agree_with_claimants_description_of_job_or_title:
-      label: "A yw disgrifiad yr hawlydd o’i swydd neu deitl ei swydd yn gywir? (dewisol)"
-      'yes':
-        label: Ydy
-      'no':
-        label: Nac ydy
+      agree_with_employment_dates:
+        label: "A yw'r dyddiadau cyflogaeth a roddwyd gan yr hawlydd yn gywir? (dewisol)"
+        options:
+          'yes': Ydy
+          'no': Nac ydy
+        employment_start:
+          label: "Pa bryd ddechreuodd ei gyflogaeth"
+        employment_end:
+          label: "Pa bryd ddaeth ei gyflogaeth i ben, neu y bydd yn dod i ben"
+        disagree_employment:
+          label: "Pam yr ydych yn anghytuno â’r dyddiadau a roddwyd gan yr hawlydd (dewisol)"
+      continued_employment:
+        label: "A yw'n parhau i fod mewn swydd? (dewisol)"
+        options:
+          'yes': Ydy
+          'no': Nac ydy
+      agree_with_claimants_description_of_job_or_title:
+        label: "A yw disgrifiad yr hawlydd o’i swydd neu deitl ei swydd yn gywir? (dewisol)"
+        options:
+          'yes': Ydy
+          'no': Nac ydy
       disagree_claimants_job_or_title:
         label: "Rhowch y manylion sy’n gywir yn eich barn chi (dewisol)"
     # Earnings and Benefits Page
@@ -277,24 +262,36 @@ cy:
     confirmation_of_additional_information_answers:
       caption: Gwybodaeth Ychwanegol
   confirmation_of_supplied_details:
-    case_number: "Rhif yr achos"
-    name: Enw'r unigolyn, cwmni neu sefydliad
-    contact: Enw llawn y cyswllt
-    building_name: Enw neu rif yr adeilad
-    street: Stryd
-    town: Tref/Dinas
-    county: Sir
-    postcode: Cod post
-    dx_number: Rhif Cyfnewid Dogfennau (DX)
-    contact_number: Rhif cyswllt
-    contact_mobile_number: Rhif ffôn symudol
-    contact_preference: Sut hoffech i ni gysylltu â chi?
-    fax: Rhif ffacs
-    email_address: Cyfeiriad e-bost
-    organisation_employ_gb: "Faint o bobl sy’n gyflogedig gan y sefydliad hwn ym Mhrydain Fawr?"
-    organisation_more_than_one_site: "A oes gan y sefydliad hwn fwy nag un safle ym Mhrydain Fawr?"
-    employment_at_site_number: "Faint o bobl sy’n gyflogedig ar y safle ble'r oedd yr hawlydd yn gweithio?"
-    video_call: A allech chi gymryd rhan mewn gwrandawiad drwy fideo? (angen mynediad i'r rhyngrwyd).
+    respondents_details:
+      case_number: "Rhif yr achos"
+      name: Enw'r unigolyn, cwmni neu sefydliad
+      contact: Enw llawn y cyswllt
+      building_name: Enw neu rif yr adeilad
+      street: Stryd
+      town: Tref/Dinas
+      county: Sir
+      postcode: Cod post
+      dx_number: Rhif Cyfnewid Dogfennau (DX)
+      contact_number: Rhif cyswllt
+      contact_mobile_number: Rhif ffôn symudol
+      contact_preference: Sut hoffech i ni gysylltu â chi?
+      fax: Rhif ffacs
+      email_address: Cyfeiriad e-bost
+      organisation_employ_gb: "Faint o bobl sy’n gyflogedig gan y sefydliad hwn ym Mhrydain Fawr?"
+      organisation_more_than_one_site: "A oes gan y sefydliad hwn fwy nag un safle ym Mhrydain Fawr?"
+      employment_at_site_number: "Faint o bobl sy’n gyflogedig ar y safle ble'r oedd yr hawlydd yn gweithio?"
+      video_call: A allech chi gymryd rhan mewn gwrandawiad drwy fideo? (angen mynediad i'r rhyngrwyd).
+    claimants_details:
+      claimants_name: Enw llawn yr hawlydd
+      agree_with_early_conciliation_details: "A ydych chi'n cytuno gyda'r manylion a roddodd yr hawlydd ynghylch Cymodi Cynnar gydag Acas?"
+      disagree_conciliation_reason: "Pam yr ydych yn anghytuno â’r hawlydd?"
+      agree_with_employment_dates: "A yw'r dyddiadau cyflogaeth a roddwyd gan yr hawlydd yn gywir?"
+      employment_start: "Pa bryd ddechreuodd ei gyflogaeth"
+      employment_end: "Pa bryd ddaeth ei gyflogaeth i ben, neu y bydd yn dod i ben"
+      disagree_employment: "Pam yr ydych yn anghytuno â’r dyddiadau a roddwyd gan yr hawlydd"
+      continued_employment: "A yw'n parhau i fod mewn swydd?"
+      agree_with_claimants_description_of_job_or_title: "A yw disgrifiad yr hawlydd o’i swydd neu deitl ei swydd yn gywir?"
+      disagree_claimants_job_or_title: "Rhowch y manylion sy’n gywir yn eich barn chi"
   errors:
     header: Adolygwch y canlynol
     description: Bydd clicio ar gwall yn mynd â chi'n syth at y cwestiwn. \nCywirwch y gwallau hyn cyn parhau.

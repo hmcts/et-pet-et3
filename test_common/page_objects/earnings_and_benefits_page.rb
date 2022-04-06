@@ -71,7 +71,7 @@ module ET3
 
           def set(*args); field.set(*args); end
         end
-        
+
         def set_for(user_persona)
           choose(factory_translate(user_persona.agree_with_earnings_details), name: 'earnings_and_benefits[agree_with_earnings_details]')
           if t(user_persona.agree_with_earnings_details) == t('questions.agree_with_earnings_details.no.label')
@@ -86,7 +86,7 @@ module ET3
           find(:gds_multiple_choice_option,
                user_persona.agree_with_earnings_details).assert_selector(:field, nil, checked: true) &&
 
-          if t(user_persona.agree_with_claimants_description_of_job_or_title) == t('questions.agree_with_claimants_description_of_job_or_title.no.label')
+          if user_persona.agree_with_claimants_description_of_job_or_title.to_s.split('.').last == 'no'
             root_element.
                 assert_selector(
                     :field,

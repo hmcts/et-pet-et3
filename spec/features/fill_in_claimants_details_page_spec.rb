@@ -23,9 +23,9 @@ RSpec.feature "Fill in Claimants Details Page", js: true do
 
     expect(claimants_details_page).to have_header
     expect(claimants_details_page).to have_error_header
-    expect(claimants_details_page.claimants_name_question).to have_error_contains_numbers
-    expect(claimants_details_page.agree_with_employment_dates_question.employment_start).to have_error_blank
-    expect(claimants_details_page.agree_with_employment_dates_question.employment_end).to have_error_blank
+    claimants_details_page.claimants_name_question.assert_error_message(t('errors.custom.claimants_name.not_a_number'))
+    claimants_details_page.employment_start.assert_error_message(t('errors.messages.blank'))
+    claimants_details_page.employment_end.assert_error_message(t('errors.messages.blank'))
   end
 
   scenario "correctly will enable user to check answers and return to edit them" do
@@ -37,11 +37,18 @@ RSpec.feature "Fill in Claimants Details Page", js: true do
 
     expect(claimants_details_page).to be_displayed
     expect(claimants_details_page).to have_header
-    expect(claimants_details_page.claimants_name_question.field.value).to eql @claimant.claimants_name
-    claimants_details_page.agree_with_early_conciliation_details_question.assert_answers_for(@claimant)
-    claimants_details_page.agree_with_employment_dates_question.assert_answers_for(@claimant)
-    claimants_details_page.continued_employment_question.assert_answer(@claimant.continued_employment)
-    claimants_details_page.agree_with_claimants_description_of_job_or_title_question.assert_answers_for(@claimant)
+    expect(claimants_details_page.claimants_name_question.value).to eql @claimant.claimants_name
+    expect(claimants_details_page.agree_with_early_conciliation_details_question.value).to eql(t(@claimant.agree_with_early_conciliation_details))
+    expect(claimants_details_page.disagree_conciliation_reason.value).to eql(@claimant.disagree_conciliation_reason) if @claimant.agree_with_early_conciliation_details_question.to_s.split('.').last == 'no'
+    expect(claimants_details_page.agree_with_employment_dates_question.value).to eql(t(@claimant.agree_with_employment_dates))
+    if @claimant.agree_with_employment_dates.to_s.split('.').last == 'no'
+      expect(claimants_details_page.employment_start.value).to eql Date.parse(@claimant.employment_start)
+      expect(claimants_details_page.employment_end.value).to eql Date.parse(@claimant.employment_end)
+      expect(claimants_details_page.disagree_employment.value).to eql @claimant.disagree_employment
+    end
+    expect(claimants_details_page.continued_employment_question.value).to eql(t(@claimant.continued_employment))
+    expect(claimants_details_page.agree_with_claimants_description_of_job_or_title_question.value).to eql(t(@claimant.agree_with_claimants_description_of_job_or_title))
+    expect(claimants_details_page.disagree_claimants_job_or_title.value).to eql(@claimant.disagree_claimants_job_or_title)
   end
 
   scenario 'Will be able to go to the next page without answering anything'do
@@ -58,7 +65,7 @@ RSpec.feature "Fill in Claimants Details Page", js: true do
 
     expect(claimants_details_page).to have_header
     expect(claimants_details_page).to have_error_header
-    expect(claimants_details_page.agree_with_employment_dates_question.employment_end).to have_error_employment_end_before_start
+    claimants_details_page.employment_end.assert_error_message(t('errors.custom.employment_end_before_start'))
   end
 end
 

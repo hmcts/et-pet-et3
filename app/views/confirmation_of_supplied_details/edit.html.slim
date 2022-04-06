@@ -85,38 +85,38 @@
           th = t('components.confirmation_of_supplied_details.answer_header')
       tbody
         tr
-          td = t('helpers.label.claimants_detail.claimants_name')
+          td = t('claimants_details.edit.claimants_name.label')
           td = @hash_store.dig(:claimants_detail_answers, :claimants_name)
         tr
-          td = t('helpers.fieldset.claimants_detail.agree_with_early_conciliation_details')
+          td = t('claimants_details.edit.agree_with_early_conciliation_details.label')
           td = translate_stored_value(@hash_store.dig(:claimants_detail_answers, :agree_with_early_conciliation_details),
                       'claimants_detail.agree_with_early_conciliation_details')
         tr
-          td = t('helpers.label.claimants_detail.disagree_conciliation_reason')
+          td = t('claimants_details.edit.disagree_conciliation_reason.label')
           td = @hash_store.dig(:claimants_detail_answers, :disagree_conciliation_reason)
         tr
-          td = t('helpers.fieldset.claimants_detail.agree_with_employment_dates')
+          td = t('claimants_details.edit.agree_with_employment_dates.label')
           td = translate_stored_value(@hash_store.dig(:claimants_detail_answers, :agree_with_employment_dates),
                       'claimants_detail.agree_with_employment_dates')
         tr
-          td = t('helpers.label.claimants_detail.employment_start')
+          td = t('claimants_details.edit.employment_start.label')
           td = @hash_store.dig(:claimants_detail_answers, :employment_start)
         tr
-          td = t('helpers.label.claimants_detail.employment_end')
+          td = t('claimants_details.edit.employment_end.label')
           td = @hash_store.dig(:claimants_detail_answers, :employment_end)
         tr
-          td = t('helpers.label.claimants_detail.disagree_employment')
+          td = t('claimants_details.edit.disagree_employment.label')
           td = @hash_store.dig(:claimants_detail_answers, :disagree_employment)
         tr
-          td = t('helpers.fieldset.claimants_detail.continued_employment')
+          td = t('claimants_details.edit.continued_employment.label')
           td = translate_stored_value(@hash_store.dig(:claimants_detail_answers, :continued_employment),
                   'claimants_detail.continued_employment')
         tr
-          td = t('helpers.fieldset.claimants_detail.agree_with_claimants_description_of_job_or_title')
+          td = t('claimants_details.edit.agree_with_claimants_description_of_job_or_title.label')
           td = translate_stored_value(@hash_store.dig(:claimants_detail_answers, :agree_with_claimants_description_of_job_or_title),
                   'claimants_detail.agree_with_claimants_description_of_job_or_title')
         tr
-          td = t('helpers.label.claimants_detail.disagree_claimants_job_or_title')
+          td = t('claimants_details.edit.disagree_claimants_job_or_title.label')
           td = @hash_store.dig(:claimants_detail_answers, :disagree_claimants_job_or_title)
         tr
           td

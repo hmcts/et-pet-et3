@@ -34,11 +34,6 @@ cy:
     fieldset:
       respondents_detail:
         cookies: A ydych eisiau derbyn cwcis dadansoddol?
-      claimants_detail:
-        agree_with_early_conciliation_details: "A ydych chi'n cytuno gyda'r manylion a roddodd yr hawlydd ynghylch Cymodi Cynnar gydag Acas? (dewisol) "
-        agree_with_employment_dates: "A yw'r dyddiadau cyflogaeth a roddwyd gan yr hawlydd yn gywir? (dewisol)"
-        continued_employment: "A yw'n parhau i fod mewn swydd? (dewisol) "
-        agree_with_claimants_description_of_job_or_title: "A yw disgrifiad yr hawlydd o’i swydd neu deitl ei swydd yn gywir? (dewisol) "
       earnings_and_benefits:
         agree_with_claimants_hours: "A yw’r oriau gwaith yn gywir? (dewisol)"
         agree_with_earnings_details: "A yw’r enillion yn gywir? (dewisol)"
@@ -62,29 +57,6 @@ cy:
         choices:
           'yes': 'Ydw'
           'no': 'Nac ydw'
-      claimants_detail:
-        claimants_name: Enw llawn yr hawlydd (dewisol)
-        agree_with_early_conciliation_details:
-          choices:
-            'yes': 'Ydw'
-            'no': 'Nac ydw'
-        disagree_conciliation_reason: "Pam yr ydych yn anghytuno â’r hawlydd? (dewisol) "
-        agree_with_employment_dates:
-          choices:
-            'yes': 'Ydy'
-            'no': 'Nac ydy'
-        employment_start: Pa bryd ddechreuodd ei gyflogaeth
-        employment_end: "Pa bryd ddaeth ei gyflogaeth i ben, neu y bydd yn dod i ben"
-        disagree_employment: Pam yr ydych yn anghytuno â’r dyddiadau a roddwyd gan yr hawlydd (dewisol)
-        continued_employment:
-          choices:
-            'yes': 'Ydy'
-            'no': 'Nac ydy'
-        agree_with_claimants_description_of_job_or_title:
-          choices:
-            'yes': 'Ydy'
-            'no': 'Nac ydy'
-        disagree_claimants_job_or_title: "Rhowch y manylion sy’n gywir yn eich barn chi (dewisol) "
       earnings_and_benefits:
         agree_with_claimants_hours:
           choices:
@@ -174,9 +146,6 @@ cy:
       confirmation_of_supplied_details:
         email_receipt: "Cyfeiriad e-bost (dewisol) "
     hint:
-      claimants_detail:
-        employment_start: "Er enghraifft, 31 03 2010"
-        employment_end: "Er enghraifft, 01 12 2017 "
       earnings_and_benefits:
         queried_hours: "Nodwch nifer yr oriau fesul wythnos, er enghraifft, 39"
         agree_with_earnings_details:
@@ -829,6 +798,42 @@ cy:
         options:
           'true': Gallaf
           'false': Na allaf
+  claimants_details:
+    edit:
+      claimants_name:
+        label: Enw llawn yr hawlydd
+      agree_with_early_conciliation_details:
+        label: "A ydych chi'n cytuno gyda'r manylion a roddodd yr hawlydd ynghylch Cymodi Cynnar gydag Acas?"
+        options:
+          'true': 'Ydw'
+          'false': 'Nac ydw'
+      disagree_conciliation_reason:
+        label: "Pam yr ydych yn anghytuno â’r hawlydd?"
+      agree_with_employment_dates:
+        label: "A yw'r dyddiadau cyflogaeth a roddwyd gan yr hawlydd yn gywir?"
+        options:
+          'true': 'Ydy'
+          'false': 'Nac ydy'
+      employment_start:
+        label: Pa bryd ddechreuodd ei gyflogaeth
+        hint: "Er enghraifft, 31 03 2010"
+      employment_end:
+        label: "Pa bryd ddaeth ei gyflogaeth i ben, neu y bydd yn dod i ben"
+        hint: "Er enghraifft, 01 12 2017 "
+      disagree_employment:
+        label: Pam yr ydych yn anghytuno â’r dyddiadau a roddwyd gan yr hawlydd
+      continued_employment:
+        label: "A yw'n parhau i fod mewn swydd?"
+        options:
+          'true': 'Ydy'
+          'false': 'Nac ydy'
+      agree_with_claimants_description_of_job_or_title:
+        label: "A yw disgrifiad yr hawlydd o’i swydd neu deitl ei swydd yn gywir?"
+        options:
+          'true': 'Ydy'
+          'false': 'Nac ydy'
+      disagree_claimants_job_or_title:
+        label: "Rhowch y manylion sy’n gywir yn eich barn chi"
   activerecord:
     errors:
       models:

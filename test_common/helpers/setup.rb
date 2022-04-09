@@ -115,8 +115,8 @@ module ET3
       # Response Page
       def answer_defend_claim_question
         user = @claimant
-        response_page.defend_claim_question.set_for(user)
-
+        response_page.defend_claim_question.set(user.defend_claim.to_s.split('.').last.to_sym)
+        response_page.defend_claim_facts.set(user.defend_claim_facts) if user.defend_claim.to_s.split('.').last == 'yes'
         response_page.next
       end
 

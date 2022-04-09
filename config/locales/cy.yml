@@ -34,8 +34,6 @@ cy:
     fieldset:
       respondents_detail:
         cookies: A ydych eisiau derbyn cwcis dadansoddol?
-      response:
-        defend_claim: "A ydych yn amddiffyn yr hawliad? "
       your_representative:
         have_representative: "Dyma rywun sydd wedi cytuno i weithredu ar eich rhan."
       your_representatives_details:
@@ -50,12 +48,6 @@ cy:
         choices:
           'yes': 'Ydw'
           'no': 'Nac ydw'
-      response:
-        defend_claim:
-          choices:
-            'yes': 'Ydw'
-            'no': 'Nac ydw'
-        defend_claim_facts: "Dywedwch wrthym y ffeithiau rydych chi'n dibynnu arnyn nhw i amddiffyn yr hawliad."
       your_representative:
         have_representative:
           choices:
@@ -107,9 +99,6 @@ cy:
       confirmation_of_supplied_details:
         email_receipt: "Cyfeiriad e-bost (dewisol) "
     hint:
-      response:
-        defend_claim_facts: |
-          Gallwch nodi hyd at 2500 nod. Gallwch uwchlwytho dogfen gyda manylion ychwanegol cyn i chi gyflwyno'ch ymateb.
       disability:
         disability_information: |
           NODER - Dim ond gwybodaeth gyfyngedig y gallwch roi yma (hyd at 350 o nodau). Os hoffech gynnwys rhagor o wybodaeth, defnyddiwch y cyfleuster sydd ar ddiwedd y ffurflen hon i lwytho ffeil Rich Text Format (.rtf).
@@ -833,6 +822,16 @@ cy:
       disagree_claimant_pension_benefits_reason:
         label: "Nodwch y manylion rydych chi’n credu sy’n gywir. (dewisol)"
         hint: Gallwch ddefnyddio hyd at 350 o nodau. Gallwch uwchlwytho dogfen gyda rhagor o fanylion cyn ichi gyflwyno eich ymateb.
+  responses:
+    edit:
+      defend_claim:
+        label: "A ydych yn amddiffyn yr hawliad? "
+        options:
+          'true': 'Ydw'
+          'false': 'Nac ydw'
+      defend_claim_facts:
+        label: "Dywedwch wrthym y ffeithiau rydych chi'n dibynnu arnyn nhw i amddiffyn yr hawliad."
+        hint: Gallwch nodi hyd at 2500 nod. Gallwch uwchlwytho dogfen gyda manylion ychwanegol cyn i chi gyflwyno'ch ymateb.
   activerecord:
     errors:
       models:

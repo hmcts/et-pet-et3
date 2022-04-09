@@ -134,10 +134,10 @@ module ET3
       end
 
       section :confirmation_of_response_answers, :table_captioned, 'questions.confirmation_of_response_answers.caption', exact: true do
-        section :defend_claim_row, :table_row_with_td_labelled, 'questions.defend_claim.label', exact: true do
+        section :defend_claim_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.responses.defend_claim', exact: true do
           element :defend_claim_answer, :return_answer
         end
-        section :defend_claim_facts_row, :table_row_with_td_labelled, 'questions.defend_claim.defend_claim_facts.label', exact: true do
+        section :defend_claim_facts_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.responses.defend_claim_facts', exact: true do
           element :defend_claim_facts_answer, :return_answer
         end
         element :edit_response_page_link, :link_named, 'links.confirmation_of_supplied_details.edit_response_page', exact: true

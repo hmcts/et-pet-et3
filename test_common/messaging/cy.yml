@@ -143,12 +143,12 @@ cy:
       disagree_claimant_pension_benefits_reason:
         label: "Nodwch y manylion rydych chi’n credu sy’n gywir. (dewisol)"
     # Response Page
-    defend_claim:
-      label: "A ydych yn amddiffyn yr hawliad?"
-      'yes':
-        label: Ydw
-      'no':
-        label: Nac ydw
+    responses:
+      defend_claim:
+        label: "A ydych yn amddiffyn yr hawliad?"
+        options:
+          'yes': Ydw
+          'no': Nac ydw
       defend_claim_facts:
         label: "Dywedwch wrthym y ffeithiau rydych chi'n dibynnu arnyn nhw i amddiffyn yr hawliad."
     # Your Representatives Page
@@ -299,6 +299,9 @@ cy:
       disagree_claimant_notice_reason: "Nodwch y manylion rydych chi’n credu sy’n gywir."
       agree_with_claimant_pension_benefits: "A yw’r manylion am bensiynau a budd-daliadau eraill yn gywir?"
       disagree_claimant_pension_benefits_reason: "Nodwch y manylion rydych chi’n credu sy’n gywir."
+    responses:
+      defend_claim: "A ydych yn amddiffyn yr hawliad?"
+      defend_claim_facts: "Dywedwch wrthym y ffeithiau rydych chi'n dibynnu arnyn nhw i amddiffyn yr hawliad."
   errors:
     header: Adolygwch y canlynol
     description: Bydd clicio ar gwall yn mynd â chi'n syth at y cwestiwn. \nCywirwch y gwallau hyn cyn parhau.

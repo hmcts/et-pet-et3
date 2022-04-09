@@ -34,8 +34,6 @@ en:
     fieldset:
       respondents_detail:
         cookies: Do you want to accept analytics cookies?
-      response:
-        defend_claim: Do you defend the claim ?
       your_representative:
         have_representative: This is someone who has agreed to act on your behalf.
       your_representatives_details:
@@ -50,12 +48,6 @@ en:
         choices:
           'yes': 'Yes'
           'no': 'No'
-      response:
-        defend_claim:
-          choices:
-            'yes': 'Yes'
-            'no': 'No'
-        defend_claim_facts: Tell us the facts that you rely on to defend the claim.
       your_representative:
         have_representative:
           choices:
@@ -109,9 +101,6 @@ en:
     hint:
       respondents_detail:
         employment_at_site_number: For example, 10
-      response:
-        defend_claim_facts: |
-          You can enter up to 2500 characters. You can upload a document with additional details before you submit your response.
       disability:
         disability_information: |
           PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 350 characters) if you would like to include more please
@@ -771,6 +760,17 @@ en:
       disagree_claimant_pension_benefits_reason:
         label: Tell us the details you believe to be correct. (optional)
         hint: Enter up to 350 characters. You can upload a document with more details before you submit your response.
+  responses:
+    edit:
+      defend_claim:
+        label: Do you defend the claim ?
+        options:
+          'true': 'Yes'
+          'false': 'No'
+      defend_claim_facts:
+        label: Tell us the facts that you rely on to defend the claim.
+        hint: You can enter up to 2500 characters. You can upload a document with additional details before you submit your response.
+
   activerecord:
     errors:
       models:

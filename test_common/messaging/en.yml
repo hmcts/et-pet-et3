@@ -143,12 +143,12 @@ en:
       disagree_claimant_pension_benefits_reason:
         label: Tell us the details you believe to be correct. (optional)
     # Response Page
-    defend_claim:
-      label: Do you defend the claim ?
-      'yes':
-        label: 'Yes'
-      'no':
-        label: 'No'
+    responses:
+      defend_claim:
+        label: Do you defend the claim ?
+        options:
+          'yes': 'Yes'
+          'no': 'No'
       defend_claim_facts:
         label: Tell us the facts that you rely on to defend the claim.
     # Your Representatives Page
@@ -297,6 +297,9 @@ en:
       disagree_claimant_notice_reason: Tell us the details you believe to be correct.
       agree_with_claimant_pension_benefits: Are the details about pensions and other benefits correct?
       disagree_claimant_pension_benefits_reason: Tell us the details you believe to be correct.
+    responses:
+      defend_claim: Do you defend the claim ?
+      defend_claim_facts: Tell us the facts that you rely on to defend the claim.
   errors:
     header: Please review the following
     description: Clicking on an error will navigate you directly to the question. Please correct these errors before continuing.

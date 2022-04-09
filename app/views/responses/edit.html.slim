@@ -1,18 +1,13 @@
 - content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
 .content-body.response
 
-  = form_for @response, url: response_path, method: :patch  do |f|
+  = form_for @response, url: response_path, method: :patch, builder: EtGdsDesignSystem.form_builder_class  do |f|
 
     div data-turbolinks="false"
-      = GovukElementsErrorsHelper.error_summary @response,
-        t('errors.header'),
-        t('errors.description')
+      =  f.govuk_error_summary(t 'errors.header')
 
-    = f.radio_button_fieldset :defend_claim do |b|
-      = content_tag :div, {class: 'multiple-choice', data: { target: :defend_claim_facts }} do
-        = b.radio_button(:defend_claim, true) + b.label(:defend_claim, t('helpers.label.response.defend_claim.choices.yes'), value: true)
-      = content_tag :div, {class: 'multiple-choice'} do
-        = b.radio_button(:defend_claim, false) + b.label(:defend_claim, t('helpers.label.response.defend_claim.choices.no'), value: false)
-      #defend_claim_facts.panel.panel-border-narrow.js-hidden
+    = f.collection_radio_buttons :defend_claim
+    = f.revealed_content :defend_claim, values: [:true]
+      .govuk-inset-text
         = f.text_area :defend_claim_facts, size: "70x30"
-    = f.submit(t('components.common.save_and_continue_button'), class: 'button')
+    = f.submit(t('components.common.save_and_continue_button'))

@@ -34,13 +34,6 @@ en:
     fieldset:
       respondents_detail:
         cookies: Do you want to accept analytics cookies?
-      earnings_and_benefits:
-        agree_with_claimants_hours: Are the hours of work correct? (optional)
-        agree_with_earnings_details: Are the earnings correct? (optional)
-        queried_pay_before_tax_period: Pay before tax period (optional)
-        queried_take_home_pay_period: Normal take-home pay period (optional)
-        agree_with_claimant_notice: Are the details about being paid for or working a period of notice correct? (optional)
-        agree_with_claimant_pension_benefits: Are the details about pensions and other benefits correct? (optional)
       response:
         defend_claim: Do you defend the claim ?
       your_representative:
@@ -57,38 +50,6 @@ en:
         choices:
           'yes': 'Yes'
           'no': 'No'
-      earnings_and_benefits:
-        agree_with_claimants_hours:
-          choices:
-            'yes': 'Yes'
-            'no': 'No'
-        queried_hours: Tell us the details you believe to be correct.
-        agree_with_earnings_details:
-          choices:
-            'yes': 'Yes'
-            'no': 'No'
-        queried_pay_before_tax: Pay before tax (optional)
-        queried_pay_before_tax_period:
-          choices:
-            monthly: Monthly
-            weekly: Weekly
-        queried_take_home_pay: Normal take-home pay (optional)
-        queried_take_home_pay_period:
-          choices:
-            monthly: Monthly
-            weekly: Weekly
-        agree_with_claimant_notice:
-          choices:
-            'yes': 'Yes'
-            'no': 'No'
-        disagree_claimant_notice_reason: |
-          Tell us the details you believe to be correct.
-        agree_with_claimant_pension_benefits:
-          choices:
-            'yes': 'Yes'
-            'no': 'No'
-        disagree_claimant_pension_benefits_reason:
-          Tell us the details you believe to be correct. (optional)
       response:
         defend_claim:
           choices:
@@ -148,16 +109,6 @@ en:
     hint:
       respondents_detail:
         employment_at_site_number: For example, 10
-      earnings_and_benefits:
-        queried_hours: Enter hours per week, for example 39
-        agree_with_earnings_details:
-        queried_pay_before_tax: Including overtime, commission, bonuses, etc. For example, 28000
-        queried_take_home_pay: Including overtime, commission, bonuses, etc. For example, 20000
-        disagree_claimant_notice_reason: |
-          Explain what happened and why. Enter up to 400 characters. You can upload a document with more details before you submit your response.
-        agree_with_claimant_pension_benefits: For example a company car or medical insurance.
-        disagree_claimant_pension_benefits_reason: |
-          Enter up to 350 characters. You can upload a document with more details before you submit your response.
       response:
         defend_claim_facts: |
           You can enter up to 2500 characters. You can upload a document with additional details before you submit your response.
@@ -772,8 +723,54 @@ en:
           'false': 'No'
       disagree_claimants_job_or_title:
         label: Please give the details you believe to be correct
-
-
+  earnings_and_benefits:
+    edit:
+      agree_with_claimants_hours:
+        label: Are the hours of work correct?
+        options:
+          'true': 'Yes'
+          'false': 'No'
+      queried_hours:
+        label: Tell us the details you believe to be correct.
+        hint: Enter hours per week, for example 39
+      agree_with_earnings_details:
+        label: Are the earnings correct?
+        options:
+          'true': 'Yes'
+          'false': 'No'
+      queried_pay_before_tax:
+        label: Pay before tax
+        hint: Including overtime, commission, bonuses, etc. For example, 28000
+      queried_pay_before_tax_period:
+        label: Pay before tax period
+        options:
+          Monthly: Monthly
+          Weekly: Weekly
+      queried_take_home_pay:
+        label: Normal take-home pay
+        hint: Including overtime, commission, bonuses, etc. For example, 20000
+      queried_take_home_pay_period:
+        label: Normal take-home pay period
+        options:
+          Monthly: Monthly
+          Weekly: Weekly
+      agree_with_claimant_notice:
+        label: Are the details about being paid for or working a period of notice correct?
+        options:
+          'true': 'Yes'
+          'false': 'No'
+      disagree_claimant_notice_reason:
+        label: Tell us the details you believe to be correct.
+        hint: Explain what happened and why. Enter up to 400 characters. You can upload a document with more details before you submit your response.
+      agree_with_claimant_pension_benefits:
+        label: Are the details about pensions and other benefits correct?
+        hint: For example a company car or medical insurance.
+        options:
+          'true': 'Yes'
+          'false': 'No'
+      disagree_claimant_pension_benefits_reason:
+        label: Tell us the details you believe to be correct. (optional)
+        hint: Enter up to 350 characters. You can upload a document with more details before you submit your response.
   activerecord:
     errors:
       models:

@@ -101,50 +101,45 @@ en:
       disagree_claimants_job_or_title:
         label: Please give the details you believe to be correct (optional)
     # Earnings and Benefits Page
-    agree_with_claimants_hours:
-      label: Are the hours of work correct? (optional)
-      'yes':
-        label: 'Yes'
-      'no':
-        label: 'No'
+    earnings_and_benefits:
+      agree_with_claimants_hours:
+        label: Are the hours of work correct? (optional)
+        options:
+          'yes': 'Yes'
+          'no': 'No'
       queried_hours:
         label: Tell us the details you believe to be correct.
-    agree_with_earnings_details:
-      label: Are the earnings correct? (optional)
-      'yes':
-        label: 'Yes'
-      'no':
-        label: 'No'
+      agree_with_earnings_details:
+        label: Are the earnings correct? (optional)
+        options:
+          'yes': 'Yes'
+          'no': 'No'
       queried_pay_before_tax:
         label: Pay before tax (optional)
       queried_pay_before_tax_period:
         label: Pay before tax period (optional)
-        monthly:
-          label: Monthly
-        weekly:
-          label: Weekly
+        options:
+          monthly: Monthly
+          weekly: Weekly
       queried_take_home_pay:
         label: Normal take-home pay (optional)
       queried_take_home_pay_period:
         label: Normal take-home pay period (optional)
-        monthly:
-          label: Monthly
-        weekly:
-          label: Weekly
-    agree_with_claimant_notice:
-      label: Are the details about being paid for or working a period of notice correct? (optional)
-      'yes':
-        label: 'Yes'
-      'no':
-        label: 'No'
+        options:
+          monthly: Monthly
+          weekly: Weekly
+      agree_with_claimant_notice:
+        label: Are the details about being paid for or working a period of notice correct? (optional)
+        options:
+          'yes': 'Yes'
+          'no': 'No'
       disagree_claimant_notice_reason:
         label: Tell us the details you believe to be correct.
-    agree_with_claimant_pension_benefits:
-      label: Are the details about pensions and other benefits correct? (optional)
-      'yes':
-        label: 'Yes'
-      'no':
-        label: 'No'
+      agree_with_claimant_pension_benefits:
+        label: Are the details about pensions and other benefits correct? (optional)
+        options:
+          'yes': 'Yes'
+          'no': 'No'
       disagree_claimant_pension_benefits_reason:
         label: Tell us the details you believe to be correct. (optional)
     # Response Page
@@ -290,6 +285,18 @@ en:
       continued_employment: Is their employment continuing?
       agree_with_claimants_description_of_job_or_title: Is the claimant's description of their job or job title correct?
       disagree_claimants_job_or_title: Please give the details you believe to be correct
+    earnings_and_benefits:
+      agree_with_claimants_hours: Are the hours of work correct?
+      queried_hours: Tell us the details you believe to be correct.
+      agree_with_earnings_details: Are the earnings correct?
+      queried_pay_before_tax: Pay before tax
+      queried_pay_before_tax_period: Pay before tax period
+      queried_take_home_pay: Normal take-home pay
+      queried_take_home_pay_period: Normal take-home pay period
+      agree_with_claimant_notice: Are the details about being paid for or working a period of notice correct?
+      disagree_claimant_notice_reason: Tell us the details you believe to be correct.
+      agree_with_claimant_pension_benefits: Are the details about pensions and other benefits correct?
+      disagree_claimant_pension_benefits_reason: Tell us the details you believe to be correct.
   errors:
     header: Please review the following
     description: Clicking on an error will navigate you directly to the question. Please correct these errors before continuing.

@@ -1,5 +1,4 @@
 class EarningsAndBenefitsController < ApplicationController
-  layout 'old_application'
   def edit
     @earnings_and_benefits ||= EarningsAndBenefits.new(current_store.hash_store.fetch(:earnings_and_benefits_answers, {}))
     convert_to_currency(:queried_pay_before_tax) unless @earnings_and_benefits[:queried_pay_before_tax].nil?

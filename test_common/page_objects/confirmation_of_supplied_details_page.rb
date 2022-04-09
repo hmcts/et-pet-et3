@@ -97,37 +97,37 @@ module ET3
       end
 
       section :confirmation_of_earnings_and_benefits_answers, :table_captioned, 'questions.confirmation_of_earnings_and_benefits_answers.caption', exact: true do
-        section :agree_with_claimants_hours_row, :table_row_with_td_labelled, 'questions.agree_with_claimants_hours.label', exact: true do
+        section :agree_with_claimants_hours_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.earnings_and_benefits.agree_with_claimants_hours', exact: true do
           element :agree_with_claimants_hours_answer, :return_answer
         end
-        section :queried_hours_row, :table_row_with_td_labelled, 'questions.agree_with_claimants_hours.queried_hours.label', exact: true do
+        section :queried_hours_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.earnings_and_benefits.queried_hours', exact: true do
           element :queried_hours_answer, :return_answer
         end
-        section :agree_with_earnings_details_row, :table_row_with_td_labelled, 'questions.agree_with_earnings_details.label', exact: true do
+        section :agree_with_earnings_details_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.earnings_and_benefits.agree_with_earnings_details', exact: true do
           element :agree_with_earnings_details_answer, :return_answer
         end
-        section :queried_pay_before_tax_row, :table_row_with_td_labelled, 'questions.agree_with_earnings_details.queried_pay_before_tax.label', exact: true do
+        section :queried_pay_before_tax_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.earnings_and_benefits.queried_pay_before_tax', exact: true do
           element :queried_pay_before_tax_answer, :return_answer
         end
-        section :queried_pay_before_tax_period_row, :table_row_with_td_labelled, 'questions.agree_with_earnings_details.queried_pay_before_tax_period.label', exact: true do
+        section :queried_pay_before_tax_period_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.earnings_and_benefits.queried_pay_before_tax_period', exact: true do
           element :queried_pay_before_tax_period_answer, :return_answer
         end
-        section :queried_take_home_pay_row, :table_row_with_td_labelled, 'questions.agree_with_earnings_details.queried_take_home_pay.label', exact: true do
+        section :queried_take_home_pay_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.earnings_and_benefits.queried_take_home_pay', exact: true do
           element :queried_take_home_pay_answer, :return_answer
         end
-        section :queried_take_home_pay_period_row, :table_row_with_td_labelled, 'questions.agree_with_earnings_details.queried_take_home_pay_period.label', exact: true do
+        section :queried_take_home_pay_period_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.earnings_and_benefits.queried_take_home_pay_period', exact: true do
           element :queried_take_home_pay_period_answer, :return_answer
         end
-        section :agree_with_claimant_notice_row, :table_row_with_td_labelled, 'questions.agree_with_claimant_notice.label', exact: true do
+        section :agree_with_claimant_notice_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.earnings_and_benefits.agree_with_claimant_notice', exact: true do
           element :agree_with_claimant_notice_answer, :return_answer
         end
         section :disagree_claimant_notice_reason_row, 'tr[data-attribute=disagree_claimant_notice_reason]' do
           element :disagree_claimant_notice_reason_answer, :return_answer
         end
-        section :agree_with_claimant_pension_benefits_row, :table_row_with_td_labelled, 'questions.agree_with_claimant_pension_benefits.label', exact: true do
+        section :agree_with_claimant_pension_benefits_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.earnings_and_benefits.agree_with_claimant_pension_benefits', exact: true do
           element :agree_with_claimant_pension_benefits_answer, :return_answer
         end
-        section :disagree_claimant_pension_benefits_reason_row, :table_row_with_td_labelled, 'questions.agree_with_claimant_pension_benefits.disagree_claimant_pension_benefits_reason.label', exact: true do
+        section :disagree_claimant_pension_benefits_reason_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.earnings_and_benefits.disagree_claimant_pension_benefits_reason', exact: true do
           element :disagree_claimant_pension_benefits_reason_answer, :return_answer
         end
         element :edit_earnings_and_benefit_page_link, :link_named, 'links.confirmation_of_supplied_details.edit_earnings_and_benefit_page', exact: true

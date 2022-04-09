@@ -149,7 +149,6 @@ RSpec.feature "Fill in whole form", js: true do
       expect(earnings_and_benefits_table.agree_with_claimant_notice_row.agree_with_claimant_notice_answer).to have_text t(@claimant.agree_with_claimant_notice)
       expect(earnings_and_benefits_table.disagree_claimant_notice_reason_row.disagree_claimant_notice_reason_answer).to have_text @claimant.disagree_claimant_notice_reason
       expect(earnings_and_benefits_table.agree_with_claimant_pension_benefits_row.agree_with_claimant_pension_benefits_answer).to have_text t(@claimant.agree_with_claimant_pension_benefits)
-      expect(earnings_and_benefits_table.disagree_claimant_pension_benefits_reason_row.disagree_claimant_pension_benefits_reason_answer).to have_text @claimant.disagree_claimant_pension_benefits_reason
 
       expect(confirmation_of_supplied_details_page).to have_confirmation_of_response_answers
 
@@ -224,9 +223,9 @@ RSpec.feature "Fill in whole form", js: true do
               expect(request_body["data"][0]["data"]["queried_hours"]).to eql @claimant.queried_hours
               expect(request_body["data"][0]["data"]["agree_with_earnings_details"]).to eql false
               expect(request_body["data"][0]["data"]["queried_pay_before_tax"]).to eql @claimant.queried_pay_before_tax
-              expect(request_body["data"][0]["data"]["queried_pay_before_tax_period"]).to eql @claimant.queried_pay_before_tax_period.to_s.split('.')[-2].titleize
+              expect(request_body["data"][0]["data"]["queried_pay_before_tax_period"]).to eql @claimant.queried_pay_before_tax_period.to_s.split('.').last.titleize
               expect(request_body["data"][0]["data"]["queried_take_home_pay"]).to eql @claimant.queried_take_home_pay
-              expect(request_body["data"][0]["data"]["queried_take_home_pay_period"]).to eql @claimant.queried_take_home_pay_period.to_s.split('.')[-2].titleize
+              expect(request_body["data"][0]["data"]["queried_take_home_pay_period"]).to eql @claimant.queried_take_home_pay_period.to_s.split('.').last.titleize
               expect(request_body["data"][0]["data"]["agree_with_claimant_notice"]).to eql false
               expect(request_body["data"][0]["data"]["disagree_claimant_notice_reason"]).to eql @claimant.disagree_claimant_notice_reason
               expect(request_body["data"][0]["data"]["agree_with_claimant_pension_benefits"]).to eql false

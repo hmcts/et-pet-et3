@@ -9,10 +9,9 @@
 - content_for :after_header do
   = render "shared/google_tag_manager_body", account: Rails.application.config.google_tag_manager_account
 - content_for :body_end
-- if start_session_timer?
-  javascript:
-    Et.components.SessionPrompt.init();
-  yield
+  - if start_session_timer?
+    javascript:
+      Et.components.SessionPrompt.init();
 - content_for :inside_header
   .govuk-header__content
     = link_to('Employment Tribunals', 'https://www.employmenttribunals.service.gov.uk/', {class: 'govuk-header__link govuk-header__link--service-name'})

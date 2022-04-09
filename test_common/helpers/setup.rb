@@ -92,11 +92,23 @@ module ET3
       # Earnings and Benefits Page
       def answer_earnings_and_benefits
         user = @claimant
-        earnings_and_benefits_page.agree_with_claimants_hours_question.set_for(user)
-        earnings_and_benefits_page.agree_with_earnings_details_question.set_for(user)
-        earnings_and_benefits_page.agree_with_claimant_notice_question.set_for(user)
-        earnings_and_benefits_page.agree_with_claimant_pension_benefits_question.set_for(user)
-
+        earnings_and_benefits_page.agree_with_claimants_hours_question.set(user.agree_with_claimants_hours.to_s.split('.').last.to_sym)
+        earnings_and_benefits_page.queried_hours.set(user.queried_hours)
+        earnings_and_benefits_page.agree_with_earnings_details_question.set(user.agree_with_earnings_details.to_s.split('.').last.to_sym)
+        if user.agree_with_earnings_details.to_s.split('.').last == 'no'
+          earnings_and_benefits_page.queried_pay_before_tax.set(user.queried_pay_before_tax)
+          earnings_and_benefits_page.queried_pay_before_tax_period.set(user.queried_pay_before_tax_period.to_s.split('.').last.to_sym)
+          earnings_and_benefits_page.queried_take_home_pay.set(user.queried_take_home_pay)
+          earnings_and_benefits_page.queried_take_home_pay_period.set(user.queried_take_home_pay_period.to_s.split('.').last.to_sym)
+        end
+        earnings_and_benefits_page.agree_with_claimant_notice_question.set(user.agree_with_claimant_notice.to_s.split('.').last.to_sym)
+        if user.agree_with_claimant_notice.to_s.split('.').last == 'no'
+          earnings_and_benefits_page.disagree_claimant_notice_reason.set(user.disagree_claimant_notice_reason)
+        end
+        earnings_and_benefits_page.agree_with_claimant_pension_benefits_question.set(user.agree_with_claimant_pension_benefits.to_s.split('.').last.to_sym)
+        if user.agree_with_claimant_pension_benefits.to_s.split('.').last == 'no'
+          earnings_and_benefits_page.disagree_claimant_pension_benefits_reason.set(user.disagree_claimant_pension_benefits_reason)
+        end
         earnings_and_benefits_page.next
       end
 

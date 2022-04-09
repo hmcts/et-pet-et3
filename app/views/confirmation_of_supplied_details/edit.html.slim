@@ -131,41 +131,41 @@
           th = t('components.confirmation_of_supplied_details.answer_header')
       tbody
         tr
-          td = t('helpers.fieldset.earnings_and_benefits.agree_with_claimants_hours')
+          td = t('earnings_and_benefits.edit.agree_with_claimants_hours.label')
           td = translate_stored_value(@hash_store.dig(:earnings_and_benefits_answers, :agree_with_claimants_hours),
                   'earnings_and_benefits.agree_with_claimants_hours')
         tr data-attribute="queried_hours"
-          td = t('helpers.label.earnings_and_benefits.queried_hours')
+          td = t('earnings_and_benefits.edit.queried_hours.label')
           td = @hash_store.dig(:earnings_and_benefits_answers, :queried_hours)
         tr
-          td = t('helpers.fieldset.earnings_and_benefits.agree_with_earnings_details')
+          td = t('earnings_and_benefits.edit.agree_with_earnings_details.label')
           td = translate_stored_value(@hash_store.dig(:earnings_and_benefits_answers, :agree_with_earnings_details),
                   'earnings_and_benefits.agree_with_earnings_details')
         tr
-          td = t('helpers.label.earnings_and_benefits.queried_pay_before_tax')
+          td = t('earnings_and_benefits.edit.queried_pay_before_tax.label')
           td = number_to_currency(@hash_store.dig(:earnings_and_benefits_answers, :queried_pay_before_tax), unit: '&pound;'.html_safe)
         tr
-          td = t('helpers.fieldset.earnings_and_benefits.queried_pay_before_tax_period')
+          td = t('earnings_and_benefits.edit.queried_pay_before_tax_period.label')
           td = translate_pay_period(@hash_store.dig(:earnings_and_benefits_answers, :queried_pay_before_tax_period))
         tr
-          td = t('helpers.label.earnings_and_benefits.queried_take_home_pay')
+          td = t('earnings_and_benefits.edit.queried_take_home_pay.label')
           td = number_to_currency(@hash_store.dig(:earnings_and_benefits_answers, :queried_take_home_pay), unit: '&pound;'.html_safe)
         tr
-          td = t('helpers.fieldset.earnings_and_benefits.queried_take_home_pay_period')
+          td = t('earnings_and_benefits.edit.queried_take_home_pay_period.label')
           td = translate_pay_period(@hash_store.dig(:earnings_and_benefits_answers, :queried_take_home_pay_period))
         tr
-          td = t('helpers.fieldset.earnings_and_benefits.agree_with_claimant_notice')
+          td = t('earnings_and_benefits.edit.agree_with_claimant_notice.label')
           td = translate_stored_value(@hash_store.dig(:earnings_and_benefits_answers, :agree_with_claimant_notice),
                   'earnings_and_benefits.agree_with_claimant_notice')
         tr data-attribute="disagree_claimant_notice_reason"
-          td = t('helpers.label.earnings_and_benefits.disagree_claimant_notice_reason')
+          td = t('earnings_and_benefits.edit.disagree_claimant_notice_reason.label')
           td = @hash_store.dig(:earnings_and_benefits_answers, :disagree_claimant_notice_reason)
         tr
-          td = t('helpers.fieldset.earnings_and_benefits.agree_with_claimant_pension_benefits')
+          td = t('earnings_and_benefits.edit.agree_with_claimant_pension_benefits.label')
           td = translate_stored_value(@hash_store.dig(:earnings_and_benefits_answers, :agree_with_claimant_pension_benefits),
                   'earnings_and_benefits.agree_with_claimant_pension_benefits')
         tr data-attribute= "disagree_claimant_pension_benefits_reason"
-          td = t('helpers.label.earnings_and_benefits.disagree_claimant_pension_benefits_reason')
+          td = t('earnings_and_benefits.edit.disagree_claimant_pension_benefits_reason.label')
           td = @hash_store.dig(:earnings_and_benefits_answers, :disagree_claimant_pension_benefits_reason)
         tr
           td

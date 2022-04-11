@@ -152,12 +152,12 @@ en:
       defend_claim_facts:
         label: Tell us the facts that you rely on to defend the claim.
     # Your Representatives Page
-    have_representative:
-      label: This is someone who has agreed to act on your behalf.
-      'yes':
-        label: 'Yes'
-      'no':
-        label: 'No'
+    your_representatives:
+      have_representative:
+        label: This is someone who has agreed to act on your behalf.
+        options:
+          'yes': 'Yes'
+          'no': 'No'
     # Your Representatives Details Page
     type_of_representative:
       label: Type of Representative
@@ -300,6 +300,8 @@ en:
     responses:
       defend_claim: Do you defend the claim ?
       defend_claim_facts: Tell us the facts that you rely on to defend the claim.
+    your_representatives:
+      have_representative: This is someone who has agreed to act on your behalf.
   errors:
     header: Please review the following
     description: Clicking on an error will navigate you directly to the question. Please correct these errors before continuing.

@@ -34,8 +34,6 @@ en:
     fieldset:
       respondents_detail:
         cookies: Do you want to accept analytics cookies?
-      your_representative:
-        have_representative: This is someone who has agreed to act on your behalf.
       your_representatives_details:
         type_of_representative: Type of Representative
         representative_contact_preference: How would you prefer us to contact your representative? (optional)
@@ -48,11 +46,6 @@ en:
         choices:
           'yes': 'Yes'
           'no': 'No'
-      your_representative:
-        have_representative:
-          choices:
-            'yes': 'Yes'
-            'no': 'No'
       your_representatives_details:
         type_of_representative:
           choices:
@@ -770,7 +763,13 @@ en:
       defend_claim_facts:
         label: Tell us the facts that you rely on to defend the claim.
         hint: You can enter up to 2500 characters. You can upload a document with additional details before you submit your response.
-
+  your_representatives:
+    edit:
+      have_representative:
+        label: This is someone who has agreed to act on your behalf.
+        options:
+          'true': 'Yes'
+          'false': 'No'
   activerecord:
     errors:
       models:

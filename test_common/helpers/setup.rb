@@ -123,8 +123,8 @@ module ET3
       # Your Representative Page
       def answer_representative
         user = @representative
-        if t(user.have_representative) == t('questions.have_representative.yes.label')
-          your_representative_page.have_representative_question.set_for(user)
+        if t(user.have_representative) == t('questions.your_representatives.have_representative.options.yes')
+          your_representative_page.have_representative_question.set(user.have_representative.to_s.split('.').last.to_sym)
           your_representative_page.next
           your_representatives_details_page.type_of_representative_question.set_for(user)
           your_representatives_details_page.representative_org_name_question.set(user.organisation_name)

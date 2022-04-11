@@ -12,7 +12,7 @@ RSpec.feature "Fill in Your Representative Page", js: true do
   scenario "correctly will enable user to continue to representative details page" do
     your_representative_page.load(locale: current_locale_parameter)
     given_valid_data
-    your_representative_page.have_representative_question.set_for(@representative)
+    your_representative_page.have_representative_question.set(@representative.have_representative.to_s.split('.').last.to_sym)
     your_representative_page.next
 
     expect(your_representatives_details_page).to be_displayed
@@ -20,7 +20,7 @@ RSpec.feature "Fill in Your Representative Page", js: true do
 
   scenario "correctly will enable user to continue to disability page" do
     your_representative_page.load(locale: current_locale_parameter)
-    @representative = FactoryBot.create(:representative, :representative_valid, have_representative: :"questions.have_representative.yes.label")
+    @representative = FactoryBot.create(:representative, :representative_valid, have_representative: :"questions.your_representatives.have_representative.options.yes")
     answer_representative
 
     expect(disability_page).to be_displayed
@@ -41,6 +41,6 @@ RSpec.feature "Fill in Your Representative Page", js: true do
     confirmation_of_supplied_details_page.confirmation_of_your_representative_answers.edit_representative_page_link.click
 
     expect(your_representative_page).to have_header
-    your_representative_page.have_representative_question.assert_answer(@representative.have_representative)
+    expect(your_representative_page.have_representative_question.value).to eql(t(@representative.have_representative))
   end
 end

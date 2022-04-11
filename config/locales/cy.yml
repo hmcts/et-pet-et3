@@ -34,8 +34,6 @@ cy:
     fieldset:
       respondents_detail:
         cookies: A ydych eisiau derbyn cwcis dadansoddol?
-      your_representative:
-        have_representative: "Dyma rywun sydd wedi cytuno i weithredu ar eich rhan."
       your_representatives_details:
         type_of_representative: Math o Gynrychiolydd
         representative_contact_preference: "Sut hoffech i ni gysylltu â'ch cynrychiolydd? (dewisol) "
@@ -48,11 +46,6 @@ cy:
         choices:
           'yes': 'Ydw'
           'no': 'Nac ydw'
-      your_representative:
-        have_representative:
-          choices:
-            'yes': 'Oes'
-            'no': 'Nac oes'
       your_representatives_details:
         type_of_representative:
           choices:
@@ -832,6 +825,14 @@ cy:
       defend_claim_facts:
         label: "Dywedwch wrthym y ffeithiau rydych chi'n dibynnu arnyn nhw i amddiffyn yr hawliad."
         hint: Gallwch nodi hyd at 2500 nod. Gallwch uwchlwytho dogfen gyda manylion ychwanegol cyn i chi gyflwyno'ch ymateb.
+  your_representatives:
+    edit:
+      have_representative:
+        label: "Dyma rywun sydd wedi cytuno i weithredu ar eich rhan."
+        options:
+          'true': 'Oes'
+          'false': 'Nac oes'
+
   activerecord:
     errors:
       models:

@@ -144,7 +144,7 @@ module ET3
       end
 
       section :confirmation_of_your_representative_answers, :table_captioned, 'questions.confirmation_of_your_representative_answers.caption', exact: true do
-        section :have_representative_row, :table_row_with_td_labelled, 'questions.have_representative.label', exact: true do
+        section :have_representative_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.your_representatives.have_representative', exact: true do
           element :have_representative_answer, :return_answer
         end
         element :edit_representative_page_link, :link_named, 'links.confirmation_of_supplied_details.edit_representative_page', exact: true

@@ -152,12 +152,12 @@ cy:
       defend_claim_facts:
         label: "Dywedwch wrthym y ffeithiau rydych chi'n dibynnu arnyn nhw i amddiffyn yr hawliad."
     # Your Representatives Page
-    have_representative:
-      label: "Dyma rywun sydd wedi cytuno i weithredu ar eich rhan."
-      'yes':
-        label: Oes
-      'no':
-        label: Nac oes
+    your_representatives:
+      have_representative:
+        label: "Dyma rywun sydd wedi cytuno i weithredu ar eich rhan."
+        options:
+          'yes': Oes
+          'no': Nac oes
     # Your Representatives Details Page
     type_of_representative:
       label: Math o Gynrychiolydd
@@ -302,6 +302,8 @@ cy:
     responses:
       defend_claim: "A ydych yn amddiffyn yr hawliad?"
       defend_claim_facts: "Dywedwch wrthym y ffeithiau rydych chi'n dibynnu arnyn nhw i amddiffyn yr hawliad."
+    your_representatives:
+      have_representative: "Dyma rywun sydd wedi cytuno i weithredu ar eich rhan."
   errors:
     header: Adolygwch y canlynol
     description: Bydd clicio ar gwall yn mynd â chi'n syth at y cwestiwn. \nCywirwch y gwallau hyn cyn parhau.

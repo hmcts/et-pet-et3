@@ -159,54 +159,49 @@ en:
           'yes': 'Yes'
           'no': 'No'
     # Your Representatives Details Page
-    type_of_representative:
-      label: Type of Representative
-      citizens_advice_bureau:
-        label: Citizen's advice bureau
-      free_representation_unit:
-        label: Free representation unit
-      law_centre:
-        label: Law centre
-      union:
-        label: Union
-      solicitor:
-        label: Solicitor
-      private_individual:
-        label: Private individual
-      trade_association:
-        label: Trade association
-      other:
-        label: Other
-    representative_org_name:
-      label: Name of the representative's organisation (optional)
-    representative_name:
-      label: Representative's full name
-    representative_building:
-      label: Building name or number
-    representative_street:
-      label: Street
-    representative_town:
-      label: Town/City
-    representative_county:
-      label: County (optional)
-    representative_postcode:
-      label: Postcode
-    representative_phone:
-      label: Phone number (optional)
-    representative_mobile:
-      label: Mobile number (optional)
-    representative_dx_number:
-      label: Document exchange (DX) number (optional)
-    representative_reference:
-      label: Reference (optional)
-    representative_contact_preference:
-      label: How would you prefer us to contact your representative? (optional)
-      email:
-        label: Email
-        input_label: Email address
-      fax:
-        label: Fax
-        input_label: Fax number
+    your_representatives_details:
+      type_of_representative:
+        label: Type of Representative
+        options:
+          citizens_advice_bureau: Citizen's advice bureau
+          free_representation_unit: Free representation unit
+          law_centre: Law centre
+          union: Union
+          solicitor: Solicitor
+          private_individual: Private individual
+          trade_association: Trade association
+          other: Other
+      representative_org_name:
+        label: Name of the representative's organisation (optional)
+      representative_name:
+        label: Representative's full name
+      representative_building:
+        label: Building name or number
+      representative_street:
+        label: Street
+      representative_town:
+        label: Town/City
+      representative_county:
+        label: County (optional)
+      representative_postcode:
+        label: Postcode
+      representative_phone:
+        label: Phone number (optional)
+      representative_mobile:
+        label: Mobile number (optional)
+      representative_dx_number:
+        label: Document exchange (DX) number (optional)
+      representative_reference:
+        label: Reference (optional)
+      representative_contact_preference:
+        label: How would you prefer us to contact your representative? (optional)
+        options:
+          email: Email
+          fax: Fax
+      preference_email:
+        label: Email address
+      preference_fax:
+        label: Fax number
     # Disability Page
     disability:
       label: Do you have a disability? (optional)
@@ -302,6 +297,22 @@ en:
       defend_claim_facts: Tell us the facts that you rely on to defend the claim.
     your_representatives:
       have_representative: This is someone who has agreed to act on your behalf.
+    your_representatives_details:
+      type_of_representative: Type of Representative
+      representative_org_name: Name of the representative's organisation
+      representative_name:  Representative's full name
+      representative_building: Building name or number
+      representative_street: Street
+      representative_town: Town/City
+      representative_county: County
+      representative_postcode: Postcode
+      representative_phone: Phone number
+      representative_mobile: Mobile number
+      representative_dx_number: Document exchange (DX) number
+      representative_reference: Reference
+      representative_contact_preference: How would you prefer us to contact your representative?
+      preference_email: Email address
+      preference_fax: Fax number
   errors:
     header: Please review the following
     description: Clicking on an error will navigate you directly to the question. Please correct these errors before continuing.

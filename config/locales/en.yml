@@ -34,9 +34,6 @@ en:
     fieldset:
       respondents_detail:
         cookies: Do you want to accept analytics cookies?
-      your_representatives_details:
-        type_of_representative: Type of Representative
-        representative_contact_preference: How would you prefer us to contact your representative? (optional)
       disability:
         disability: Do you have a disability? (optional)
       employers_contract_claim:
@@ -46,35 +43,6 @@ en:
         choices:
           'yes': 'Yes'
           'no': 'No'
-      your_representatives_details:
-        type_of_representative:
-          choices:
-            citizens_advice_bureau: Citizen's advice bureau
-            free_representation_unit: Free representation unit
-            law_centre: Law centre
-            union: Union
-            solicitor: Solicitor
-            private_individual: Private individual
-            trade_association: Trade association
-            other: Other
-        representative_org_name: Name of the representative's organisation (optional)
-        representative_name: Representative's full name
-        representative_building: Building name or number
-        representative_street: Street
-        representative_town: Town/City
-        representative_county: County (optional)
-        representative_postcode: Postcode
-        representative_phone: Phone number (optional)
-        representative_mobile: Mobile number (optional)
-        representative_dx_number: Document exchange (DX) number (optional)
-        representative_reference: Reference (optional)
-        representative_contact_preference:
-          choices:
-            email: Email
-            post: Post
-            fax: Fax
-        representative_email: Email address
-        representative_fax: Fax number
       disability:
         disability:
           choices:
@@ -770,6 +738,56 @@ en:
         options:
           'true': 'Yes'
           'false': 'No'
+  your_representatives_details:
+    edit:
+      type_of_representative:
+        label: Type of Representative
+        options:
+          'Citizens Advice Bureau': Citizen's advice bureau
+          'Free Representation Unit': Free representation unit
+          'Law Centre': Law centre
+          'Union': Union
+          'Solicitor': Solicitor
+          'Private Individual': Private individual
+          'Trade Association': Trade association
+          'Other': Other
+      representative_org_name:
+        label: Name of the representative's organisation
+      representative_name:
+        label: Representative's full name
+      representative_building:
+        label: Building name or number
+      representative_street:
+        label: Street
+      representative_town:
+        label: Town/City
+      representative_county:
+        label: County
+      representative_postcode:
+        label: Postcode
+      representative_phone:
+        label: Phone number
+      representative_mobile:
+        label: Mobile number
+      representative_dx_number:
+        label: Document exchange (DX) number
+      representative_reference:
+        label: Reference
+      representative_contact_preference:
+        label: How would you prefer us to contact your representative?
+        options:
+          email: Email
+          post: Post
+          fax: Fax
+      representative_email:
+        label: Email address
+      representative_fax:
+        label: Fax number
+
+
+
+
+
   activerecord:
     errors:
       models:

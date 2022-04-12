@@ -151,49 +151,49 @@ module ET3
       end
 
       section :confirmation_of_your_representatives_details_answers, :table_captioned, 'questions.confirmation_of_your_representatives_details_answers.caption', exact: true do
-        section :type_of_representative_row, :table_row_with_td_labelled, 'questions.type_of_representative.label', exact: true do
+        section :type_of_representative_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.your_representatives_details.type_of_representative', exact: true do
           element :type_of_representative_answer, :return_answer
         end
-        section :representative_org_name_row, :table_row_with_td_labelled, 'questions.representative_org_name.label', exact: true do
+        section :representative_org_name_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.your_representatives_details.representative_org_name', exact: true do
           element :representative_org_name_answer, :return_answer
         end
-        section :representative_name_row, :table_row_with_td_labelled, 'questions.representative_name.label', exact: true do
+        section :representative_name_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.your_representatives_details.representative_name', exact: true do
           element :representative_name_answer, :return_answer
         end
-        section :representative_building_row, :table_row_with_td_labelled, 'questions.representative_building.label', exact: true do
+        section :representative_building_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.your_representatives_details.representative_building', exact: true do
           element :representative_building_answer, :return_answer
         end
-        section :representative_street_row, :table_row_with_td_labelled, 'questions.representative_street.label', exact: true do
+        section :representative_street_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.your_representatives_details.representative_street', exact: true do
           element :representative_street_answer, :return_answer
         end
-        section :representative_town_row, :table_row_with_td_labelled, 'questions.representative_town.label', exact: true do
+        section :representative_town_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.your_representatives_details.representative_town', exact: true do
           element :representative_town_answer, :return_answer
         end
-        section :representative_county_row, :table_row_with_td_labelled, 'questions.representative_county.label', exact: true do
+        section :representative_county_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.your_representatives_details.representative_county', exact: true do
           element :representative_county_answer, :return_answer
         end
-        section :representative_postcode_row, :table_row_with_td_labelled, 'questions.representative_postcode.label', exact: true do
+        section :representative_postcode_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.your_representatives_details.representative_postcode', exact: true do
           element :representative_postcode_answer, :return_answer
         end
-        section :representative_phone_row, :table_row_with_td_labelled, 'questions.representative_phone.label', exact: true do
+        section :representative_phone_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.your_representatives_details.representative_phone', exact: true do
           element :representative_phone_answer, :return_answer
         end
-        section :representative_mobile_row, :table_row_with_td_labelled, 'questions.representative_mobile.label', exact: true do
+        section :representative_mobile_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.your_representatives_details.representative_mobile', exact: true do
           element :representative_mobile_answer, :return_answer
         end
-        section :representative_dx_number_row, :table_row_with_td_labelled, 'questions.representative_dx_number.label', exact: true do
+        section :representative_dx_number_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.your_representatives_details.representative_dx_number', exact: true do
           element :representative_dx_number_answer, :return_answer
         end
-        section :representative_reference_row, :table_row_with_td_labelled, 'questions.representative_reference.label', exact: true do
+        section :representative_reference_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.your_representatives_details.representative_reference', exact: true do
           element :representative_reference_answer, :return_answer
         end
-        section :representative_contact_preference_row, :table_row_with_td_labelled, 'questions.representative_contact_preference.label', exact: true do
+        section :representative_contact_preference_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.your_representatives_details.representative_contact_preference', exact: true do
           element :representative_contact_preference_answer, :return_answer
         end
-        section :email_row, :table_row_with_td_labelled, 'questions.representative_contact_preference.email.input_label', exact: true do
+        section :email_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.your_representatives_details.preference_email', exact: true do
           element :email_answer, :return_answer
         end
-        section :fax_row, :table_row_with_td_labelled, 'questions.representative_contact_preference.fax.input_label', exact: true do
+        section :fax_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.your_representatives_details.preference_fax', exact: true do
           element :fax_answer, :return_answer
         end
         element :edit_representative_details_page_link, :link_named, 'links.confirmation_of_supplied_details.edit_representative_details_page', exact: true

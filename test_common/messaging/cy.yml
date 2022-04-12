@@ -159,56 +159,50 @@ cy:
           'yes': Oes
           'no': Nac oes
     # Your Representatives Details Page
-    type_of_representative:
-      label: Math o Gynrychiolydd
-      citizens_advice_bureau:
-        label: Canolfan Cyngor ar Bopeth
-      free_representation_unit:
-        label: Uned Cynrychiolaeth am Ddim
-      law_centre:
-        label: Canolfan y Gyfraith
-      union:
-        label: Uned
-      solicitor:
-        label: Cyfreithiwr
-      private_individual:
-        label: Unigolyn preifat
-      trade_association:
-        label: Cymdeithasau Masnach
-      other:
-        label: Arall
-    representative_org_name:
-      label: "Enw sefydliad y cynrychiolydd (dewisol)"
-    representative_name:
-      label: Enw llawn y cynrychiolydd
-    representative_building:
-      label: "Enw neu rif yr adeilad"
-    representative_street:
-      label: Stryd
-    representative_town:
-      label: Tref/Dinas
-    representative_county:
-      label: Sir (dewisol)
-    representative_postcode:
-      label: Cod post
-    representative_phone:
-      label: "Rhif ffôn (dewisol)"
-    representative_mobile:
-      label: "Rhif ffôn symudol (dewisol)"
-    representative_dx_number:
-      label: "Rhif Cyfnewid Dogfennau (DX) (dewisol)"
-    representative_reference:
-      label: "Cyfeirnod (dewisol)"
-    representative_contact_preference:
-      label: "Sut hoffech i ni gysylltu â'ch cynrychiolydd? (dewisol)"
-      email:
-        label: E-bost
-        input_label: Cyfeiriad e-bost
-      post:
-        label: Post
-      fax:
-        label: Ffacs
-        input_label: Rhif ffacs
+    your_representatives_details:
+      type_of_representative:
+        label: Math o Gynrychiolydd
+        options:
+          citizens_advice_bureau: Canolfan Cyngor ar Bopeth
+          free_representation_unit: Uned Cynrychiolaeth am Ddim
+          law_centre: Canolfan y Gyfraith
+          union: Uned
+          solicitor: Cyfreithiwr
+          private_individual: Unigolyn preifat
+          trade_association: Cymdeithasau Masnach
+          other: Arall
+      representative_org_name:
+        label: "Enw sefydliad y cynrychiolydd (dewisol)"
+      representative_name:
+        label: Enw llawn y cynrychiolydd
+      representative_building:
+        label: "Enw neu rif yr adeilad"
+      representative_street:
+        label: Stryd
+      representative_town:
+        label: Tref/Dinas
+      representative_county:
+        label: Sir (dewisol)
+      representative_postcode:
+        label: Cod post
+      representative_phone:
+        label: "Rhif ffôn (dewisol)"
+      representative_mobile:
+        label: "Rhif ffôn symudol (dewisol)"
+      representative_dx_number:
+        label: "Rhif Cyfnewid Dogfennau (DX) (dewisol)"
+      representative_reference:
+        label: "Cyfeirnod (dewisol)"
+      representative_contact_preference:
+        label: "Sut hoffech i ni gysylltu â'ch cynrychiolydd? (dewisol)"
+        options:
+          email: E-bost
+          post: Post
+          fax: Ffacs
+      preference_email:
+        label: Cyfeiriad e-bost
+      preference_fax:
+        label: Rhif ffacs
     # Disability Page
     disability:
       label: A oes gennych chi anabledd? (dewisol)
@@ -304,6 +298,22 @@ cy:
       defend_claim_facts: "Dywedwch wrthym y ffeithiau rydych chi'n dibynnu arnyn nhw i amddiffyn yr hawliad."
     your_representatives:
       have_representative: "Dyma rywun sydd wedi cytuno i weithredu ar eich rhan."
+    your_representatives_details:
+      type_of_representative: Math o Gynrychiolydd
+      representative_org_name: "Enw sefydliad y cynrychiolydd"
+      representative_name: Enw llawn y cynrychiolydd
+      representative_building: "Enw neu rif yr adeilad"
+      representative_street: Stryd
+      representative_town: Tref/Dinas
+      representative_county: Sir
+      representative_postcode: Cod post
+      representative_phone: "Rhif ffôn"
+      representative_mobile: "Rhif ffôn symudol"
+      representative_dx_number: "Rhif Cyfnewid Dogfennau (DX)"
+      representative_reference: "Cyfeirnod"
+      representative_contact_preference: "Sut hoffech i ni gysylltu â'ch cynrychiolydd?"
+      preference_email: Cyfeiriad e-bost
+      preference_fax: Rhif ffacs
   errors:
     header: Adolygwch y canlynol
     description: Bydd clicio ar gwall yn mynd â chi'n syth at y cwestiwn. \nCywirwch y gwallau hyn cyn parhau.

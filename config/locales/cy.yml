@@ -34,9 +34,6 @@ cy:
     fieldset:
       respondents_detail:
         cookies: A ydych eisiau derbyn cwcis dadansoddol?
-      your_representatives_details:
-        type_of_representative: Math o Gynrychiolydd
-        representative_contact_preference: "Sut hoffech i ni gysylltu â'ch cynrychiolydd? (dewisol) "
       disability:
         disability: "A oes gennych chi anabledd? (dewisol) "
       employers_contract_claim:
@@ -46,35 +43,6 @@ cy:
         choices:
           'yes': 'Ydw'
           'no': 'Nac ydw'
-      your_representatives_details:
-        type_of_representative:
-          choices:
-            citizens_advice_bureau: "Canolfan Cyngor ar Bopeth "
-            free_representation_unit: Uned Cynrychiolaeth am Ddim
-            law_centre: "Canolfan y Gyfraith "
-            union: Undeb
-            solicitor: Cyfreithiwr
-            private_individual: "Unigolyn preifat "
-            trade_association: "Cymdeithas Masnach "
-            other: Arall
-        representative_org_name: "Enw sefydliad y cynrychiolydd (dewisol) "
-        representative_name: Enw llawn y cynrychiolydd
-        representative_building: "Enw neu rif yr adeilad "
-        representative_street: "Stryd "
-        representative_town: "Tref/Dinas "
-        representative_county: "Sir (dewisol) "
-        representative_postcode: "Cod post "
-        representative_phone: "Rhif ffôn (dewisol) "
-        representative_mobile: "Rhif ffôn symudol (dewisol) "
-        representative_dx_number: "Rhif Cyfnewid Dogfennau (DX) (dewisol) "
-        representative_reference: "Cyfeirnod (dewisol) "
-        representative_contact_preference:
-          choices:
-            email: E-bost
-            post: Post
-            fax: Ffacs
-        representative_email: "Cyfeiriad e-bost "
-        representative_fax: "Rhif ffacs "
       disability:
         disability:
           choices:
@@ -832,7 +800,51 @@ cy:
         options:
           'true': 'Oes'
           'false': 'Nac oes'
-
+  your_representatives_details:
+    edit:
+      type_of_representative:
+        label: Math o Gynrychiolydd
+        options:
+          'Citizens Advice Bureau': "Canolfan Cyngor ar Bopeth "
+          'Free Representation Unit': Uned Cynrychiolaeth am Ddim
+          'Law Centre': "Canolfan y Gyfraith "
+          'Union': Undeb
+          'Solicitor': Cyfreithiwr
+          'Private Individual': "Unigolyn preifat "
+          'Trade Association': "Cymdeithas Masnach "
+          'Other': Arall
+      representative_org_name:
+        label: "Enw sefydliad y cynrychiolydd"
+      representative_name:
+        label: Enw llawn y cynrychiolydd
+      representative_building:
+        label: "Enw neu rif yr adeilad "
+      representative_street:
+        label: "Stryd "
+      representative_town:
+        label: "Tref/Dinas "
+      representative_county:
+        label: "Sir"
+      representative_postcode:
+        label: "Cod post "
+      representative_phone:
+        label: "Rhif ffôn"
+      representative_mobile:
+        label: "Rhif ffôn symudol"
+      representative_dx_number:
+        label: "Rhif Cyfnewid Dogfennau (DX)"
+      representative_reference:
+        label: "Cyfeirnod"
+      representative_contact_preference:
+        label: "Sut hoffech i ni gysylltu â'ch cynrychiolydd?"
+        options:
+          email: E-bost
+          post: Post
+          fax: Ffacs
+      representative_email:
+        label: "Cyfeiriad e-bost "
+      representative_fax:
+        label: "Rhif ffacs "
   activerecord:
     errors:
       models:

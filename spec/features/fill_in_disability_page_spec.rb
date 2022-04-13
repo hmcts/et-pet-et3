@@ -22,7 +22,7 @@ RSpec.feature "Fill in Disability Page", js: true do
     answer_disability_question
 
     expect(disability_page).to have_error_header
-    expect(disability_page.disability_question).to have_error_too_long
+    disability_page.disability_information.assert_error_message(t('errors.messages.too_long'))
   end
 
   scenario "correctly will enable user to check answers and return to edit them" do
@@ -34,6 +34,9 @@ RSpec.feature "Fill in Disability Page", js: true do
     confirmation_of_supplied_details_page.confirmation_of_disability_answers.edit_disability_page_link.click
 
     expect(disability_page).to be_displayed
-    disability_page.disability_question.assert_answers_for(@respondent)
+    expect(disability_page.disability_question.value).to eql(t(@respondent.disability))
+    if @respondent.disability.end_with?('.yes')
+      expect(disability_page.disability_information.value).to eql(@respondent.disability_information)
+    end
   end
 end

@@ -34,8 +34,6 @@ en:
     fieldset:
       respondents_detail:
         cookies: Do you want to accept analytics cookies?
-      disability:
-        disability: Do you have a disability? (optional)
       employers_contract_claim:
         make_employer_contract_claim: Do you wish to make an Employer Contract Claim? (optional)
     label:
@@ -43,12 +41,6 @@ en:
         choices:
           'yes': 'Yes'
           'no': 'No'
-      disability:
-        disability:
-          choices:
-            'yes': 'Yes'
-            'no': 'No'
-        disability_information: It would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises
       employers_contract_claim:
         make_employer_contract_claim:
           choices:
@@ -62,10 +54,6 @@ en:
     hint:
       respondents_detail:
         employment_at_site_number: For example, 10
-      disability:
-        disability_information: |
-          PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 350 characters) if you would like to include more please
-          use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
       employers_contract_claim:
         claim_information: |
           See guidance for more information on what details should be included.
@@ -783,6 +771,19 @@ en:
         label: Email address
       representative_fax:
         label: Fax number
+  disabilities:
+    edit:
+      disability:
+        label: Do you have a disability?
+        options:
+          'true': 'Yes'
+          'false': 'No'
+      disability_information:
+        label: It would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises
+        hint: |
+          PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 350 characters) if you would like to include more please
+          use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
+
 
 
 

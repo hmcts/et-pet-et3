@@ -204,15 +204,15 @@ cy:
       preference_fax:
         label: Rhif ffacs
     # Disability Page
-    disability:
-      label: A oes gennych chi anabledd? (dewisol)
-      'yes':
-        label: Oes
-      'no':
-        label: Nac oes
+    disabilities:
+      disability:
+        label: A oes gennych chi anabledd?
+        options:
+          'yes': Oes
+          'no': Nac oes
       disability_information:
         label: "Byddai o gymorth i ni pe baech yn nodi beth yw'ch anabledd, a dweud pa gymorth, os o gwbl, fydd arnoch ei angen wrth i'ch hawliad fynd drwy'r system, gan gynnwys ar gyfer unrhyw wrandawiadau a gynhelir mewn adeilad tribiwnlys"
-        content: "NODER - Dim ond gwybodaeth gyfyngedig y gallwch roi yma (hyd at 350 o nodau). Os hoffech gynnwys rhagor o wybodaeth, defnyddiwch y cyfleuster sydd ar ddiwedd y ffurflen hon i lwytho ffeil Rich Text Format (.rtf)."
+        hint: "NODER - Dim ond gwybodaeth gyfyngedig y gallwch roi yma (hyd at 350 o nodau). Os hoffech gynnwys rhagor o wybodaeth, defnyddiwch y cyfleuster sydd ar ddiwedd y ffurflen hon i lwytho ffeil Rich Text Format (.rtf)."
     # Employers Contract Claim Page
     make_employer_contract_claim:
       label: Ydych chi eisiau gwneud Hawliad Contract y Cyflogwr? (dewisol)
@@ -314,6 +314,9 @@ cy:
       representative_contact_preference: "Sut hoffech i ni gysylltu â'ch cynrychiolydd?"
       preference_email: Cyfeiriad e-bost
       preference_fax: Rhif ffacs
+    disabilities:
+      disability: A oes gennych chi anabledd?
+      disability_information: "Byddai o gymorth i ni pe baech yn nodi beth yw'ch anabledd, a dweud pa gymorth, os o gwbl, fydd arnoch ei angen wrth i'ch hawliad fynd drwy'r system, gan gynnwys ar gyfer unrhyw wrandawiadau a gynhelir mewn adeilad tribiwnlys"
   errors:
     header: Adolygwch y canlynol
     description: Bydd clicio ar gwall yn mynd â chi'n syth at y cwestiwn. \nCywirwch y gwallau hyn cyn parhau.

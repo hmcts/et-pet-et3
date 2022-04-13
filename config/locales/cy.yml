@@ -34,8 +34,6 @@ cy:
     fieldset:
       respondents_detail:
         cookies: A ydych eisiau derbyn cwcis dadansoddol?
-      disability:
-        disability: "A oes gennych chi anabledd? (dewisol) "
       employers_contract_claim:
         make_employer_contract_claim: "Ydych chi eisiau gwneud Hawliad Contract y Cyflogwr? (dewisol) "
     label:
@@ -43,12 +41,6 @@ cy:
         choices:
           'yes': 'Ydw'
           'no': 'Nac ydw'
-      disability:
-        disability:
-          choices:
-            'yes': 'Oes'
-            'no': 'Nac oes'
-        disability_information: "Byddai o gymorth i ni pe baech yn nodi beth yw'ch anabledd, a dweud pa gymorth, os o gwbl, fydd arnoch ei angen wrth i'ch hawliad fynd drwy'r system, gan gynnwys ar gyfer unrhyw wrandawiadau a gynhelir mewn adeilad tribiwnlys"
       employers_contract_claim:
         make_employer_contract_claim:
           choices:
@@ -60,9 +52,6 @@ cy:
       confirmation_of_supplied_details:
         email_receipt: "Cyfeiriad e-bost (dewisol) "
     hint:
-      disability:
-        disability_information: |
-          NODER - Dim ond gwybodaeth gyfyngedig y gallwch roi yma (hyd at 350 o nodau). Os hoffech gynnwys rhagor o wybodaeth, defnyddiwch y cyfleuster sydd ar ddiwedd y ffurflen hon i lwytho ffeil Rich Text Format (.rtf).
       employers_contract_claim:
         claim_information: |
           Gweler y canllaw am fwy o wybodaeth ynghylch pa fanylion dylech gynnwys.
@@ -845,6 +834,19 @@ cy:
         label: "Cyfeiriad e-bost "
       representative_fax:
         label: "Rhif ffacs "
+  disabilities:
+    edit:
+      disability:
+        label: "A oes gennych chi anabledd? (dewisol) "
+        options:
+          'true': 'Oes'
+          'false': 'Nac oes'
+      disability_information:
+        label: "Byddai o gymorth i ni pe baech yn nodi beth yw'ch anabledd, a dweud pa gymorth, os o gwbl, fydd arnoch ei angen wrth i'ch hawliad fynd drwy'r system, gan gynnwys ar gyfer unrhyw wrandawiadau a gynhelir mewn adeilad tribiwnlys"
+        hint: |
+          NODER - Dim ond gwybodaeth gyfyngedig y gallwch roi yma (hyd at 350 o nodau). Os hoffech gynnwys rhagor o wybodaeth, defnyddiwch y cyfleuster sydd ar ddiwedd y ffurflen hon i lwytho ffeil Rich Text Format (.rtf).
+      
+
   activerecord:
     errors:
       models:

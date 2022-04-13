@@ -1,5 +1,4 @@
 class DisabilitiesController < ApplicationController
-  layout 'old_application'
   def edit
     @disability ||= Disability.new(current_store.hash_store.fetch(:disability_answers, {}))
   end

@@ -27,7 +27,7 @@ FactoryBot.define do
     make_employer_contract_claim {:"questions.make_employer_contract_claim.yes.label"}
     claim_information {"lorem ipsum info"}
     email_receipt {"sivvoy.taing@hmcts.net"}
-    disability {:"questions.disability.yes.label"}
+    disability {:"questions.disabilities.disability.options.yes"}
     disability_information {"Lorem ipsum disability"}
     video_call {:"questions.respondents_details.video_call.options.no"}
   end
@@ -54,7 +54,7 @@ FactoryBot.define do
     make_employer_contract_claim {:"questions.make_employer_contract_claim.yes.label"}
     claim_information {Faker::Lorem.characters(number: 4501)}
     email_receipt {""}
-    disability {:"questions.disability.yes.label"}
+    disability {:"questions.disabilities.disability.options.yes"}
     disability_information { Faker::Lorem.characters(number: 351) }
     video_call {nil}
   end

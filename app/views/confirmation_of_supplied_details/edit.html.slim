@@ -272,11 +272,11 @@
           th = t('components.confirmation_of_supplied_details.answer_header')
       tbody
         tr
-          td = t('helpers.fieldset.disability.disability')
+          td = t('disabilities.edit.disability.label')
           td = translate_stored_value(@hash_store.dig(:disability_answers, :disability),
                   'disability.disability')
         tr
-          td = t('helpers.label.disability.disability_information')
+          td = t('disabilities.edit.disability_information.label')
           td = @hash_store.dig(:disability_answers, :disability_information)
         tr
           td

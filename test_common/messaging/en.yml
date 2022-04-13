@@ -203,15 +203,15 @@ en:
       preference_fax:
         label: Fax number
     # Disability Page
-    disability:
-      label: Do you have a disability? (optional)
-      'yes':
-        label: 'Yes'
-      'no':
-        label: 'No'
+    disabilities:
+      disability:
+        label: Do you have a disability? (optional)
+        options:
+          'yes': 'Yes'
+          'no': 'No'
       disability_information:
         label: It would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises
-        content: PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 350 characters) if you would like to include more please use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
+        hint: PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 350 characters) if you would like to include more please use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
     # Employers Contract Claim Page
     make_employer_contract_claim:
       label: Do you wish to make an Employer Contract Claim? (optional)
@@ -313,6 +313,9 @@ en:
       representative_contact_preference: How would you prefer us to contact your representative?
       preference_email: Email address
       preference_fax: Fax number
+    disabilities:
+      disability: Do you have a disability?
+      disability_information: It would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises
   errors:
     header: Please review the following
     description: Clicking on an error will navigate you directly to the question. Please correct these errors before continuing.

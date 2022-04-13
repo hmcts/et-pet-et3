@@ -201,10 +201,10 @@ module ET3
       end
 
       section :confirmation_of_disability_answers, :table_captioned, 'questions.confirmation_of_disability_answers.caption', exact: true do
-        section :disability_row, :table_row_with_td_labelled, 'questions.disability.label', exact: true do
+        section :disability_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.disabilities.disability', exact: true do
           element :disability_answer, :return_answer
         end
-        section :disability_information_row, :table_row_with_td_labelled, 'questions.disability.disability_information.label', exact: true do
+        section :disability_information_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.disabilities.disability_information', exact: true do
           element :disability_information_answer, :return_answer
         end
         element :edit_disability_page_link, :link_named, 'links.confirmation_of_supplied_details.edit_disability_page', exact: true

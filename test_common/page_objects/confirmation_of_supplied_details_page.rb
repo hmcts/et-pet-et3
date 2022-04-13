@@ -212,10 +212,10 @@ module ET3
 
 
       section :confirmation_of_employer_contract_claim_answers, :table_captioned, 'questions.confirmation_of_employer_contract_claim_answers.caption', exact: true do
-        section :make_employer_contract_claim_row, :table_row_with_td_labelled, 'questions.make_employer_contract_claim.label', exact: true do
+        section :make_employer_contract_claim_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.employers_contract_claims.make_employer_contract_claim', exact: true do
           element :make_employer_contract_claim_answer, :return_answer
         end
-        section :claim_information_row, :table_row_with_td_labelled, 'questions.make_employer_contract_claim.claim_information.label', exact: true do
+        section :claim_information_row, :table_row_with_td_labelled, 'confirmation_of_supplied_details.employers_contract_claims.claim_information', exact: true do
           element :claim_information_answer, :return_answer
         end
         element :edit_employer_contract_claim_page_link, :link_named, 'links.confirmation_of_supplied_details.edit_employer_contract_claim_page', exact: true

@@ -34,28 +34,16 @@ cy:
     fieldset:
       respondents_detail:
         cookies: A ydych eisiau derbyn cwcis dadansoddol?
-      employers_contract_claim:
-        make_employer_contract_claim: "Ydych chi eisiau gwneud Hawliad Contract y Cyflogwr? (dewisol) "
     label:
       cookies:
         choices:
           'yes': 'Ydw'
           'no': 'Nac ydw'
-      employers_contract_claim:
-        make_employer_contract_claim:
-          choices:
-            'yes': 'Oes'
-            'no': 'Nac oes'
-        claim_information: "Rhowch gefndir a manylion eich hawliad isod. Dylech gynnwys pob dyddiad pwysig (dewisol) "
       additional_information:
         upload_additional_information: "Llwythwch ffeil i ddarparu unrhyw wybodaeth ychwanegol bwysig am eich ymateb nad ydych wedi’i chynnwys hyd yma (dewisol) "
       confirmation_of_supplied_details:
         email_receipt: "Cyfeiriad e-bost (dewisol) "
     hint:
-      employers_contract_claim:
-        claim_information: |
-          Gweler y canllaw am fwy o wybodaeth ynghylch pa fanylion dylech gynnwys.
-          NODER - Dim ond gwybodaeth gyfyngedig y gallwch roi yma (hyd at 4500 o nodau). Os hoffech gynnwys rhagor o wybodaeth, defnyddiwch y cyfleuster sydd ar ddiwedd y ffurflen hon i lwytho ffeil Rich Text Format (.rtf). Os byddwch yn ysgrifenu mwy na 50 llinell, ni fyddwch yn cael holl fanylion eich ymateb yn y PDF a fydd yn cael ei ddychwelyd atoch ar ôl ichi gyflwyno'r ffurflen.
       additional_information:
         upload_additional_information: "Math o ffeil: .rtf "
   errors:
@@ -845,8 +833,18 @@ cy:
         label: "Byddai o gymorth i ni pe baech yn nodi beth yw'ch anabledd, a dweud pa gymorth, os o gwbl, fydd arnoch ei angen wrth i'ch hawliad fynd drwy'r system, gan gynnwys ar gyfer unrhyw wrandawiadau a gynhelir mewn adeilad tribiwnlys"
         hint: |
           NODER - Dim ond gwybodaeth gyfyngedig y gallwch roi yma (hyd at 350 o nodau). Os hoffech gynnwys rhagor o wybodaeth, defnyddiwch y cyfleuster sydd ar ddiwedd y ffurflen hon i lwytho ffeil Rich Text Format (.rtf).
-      
-
+  employment_contract_claims:
+    edit:
+      make_employer_contract_claim:
+        label: "Ydych chi eisiau gwneud Hawliad Contract y Cyflogwr?"
+        options:
+          'true': 'Oes'
+          'false': 'Nac oes'
+      claim_information:
+        label: "Rhowch gefndir a manylion eich hawliad isod. Dylech gynnwys pob dyddiad pwysig"
+        hint: |
+          Gweler y canllaw am fwy o wybodaeth ynghylch pa fanylion dylech gynnwys.
+          NODER - Dim ond gwybodaeth gyfyngedig y gallwch roi yma (hyd at 4500 o nodau). Os hoffech gynnwys rhagor o wybodaeth, defnyddiwch y cyfleuster sydd ar ddiwedd y ffurflen hon i lwytho ffeil Rich Text Format (.rtf). Os byddwch yn ysgrifenu mwy na 50 llinell, ni fyddwch yn cael holl fanylion eich ymateb yn y PDF a fydd yn cael ei ddychwelyd atoch ar ôl ichi gyflwyno'r ffurflen.
   activerecord:
     errors:
       models:

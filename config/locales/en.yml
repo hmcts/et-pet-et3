@@ -34,19 +34,11 @@ en:
     fieldset:
       respondents_detail:
         cookies: Do you want to accept analytics cookies?
-      employers_contract_claim:
-        make_employer_contract_claim: Do you wish to make an Employer Contract Claim? (optional)
     label:
       cookies:
         choices:
           'yes': 'Yes'
           'no': 'No'
-      employers_contract_claim:
-        make_employer_contract_claim:
-          choices:
-            'yes': 'Yes'
-            'no': 'No'
-        claim_information: Please set out the background and details of your claim below, which should include all important dates (optional)
       additional_information:
         upload_additional_information: Please upload a file to provide any important additional information about your response which you have not been able to include so far (optional)
       confirmation_of_supplied_details:
@@ -54,12 +46,6 @@ en:
     hint:
       respondents_detail:
         employment_at_site_number: For example, 10
-      employers_contract_claim:
-        claim_information: |
-          See guidance for more information on what details should be included.
-          PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 4500 characters) if you would like to include more please
-          use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
-          If you exceed 50 lines you will not receive full details of your claim in the PDF returned to you on submission of the form.
       additional_information:
         upload_additional_information: "Supported file type: .rtf"
   errors:
@@ -783,6 +769,20 @@ en:
         hint: |
           PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 350 characters) if you would like to include more please
           use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
+  employers_contract_claims:
+    edit:
+      make_employer_contract_claim:
+        label: Do you wish to make an Employer Contract Claim?
+        options:
+          'true': 'Yes'
+          'false': 'No'
+      claim_information:
+        label: Please set out the background and details of your claim below, which should include all important dates
+        hint: |
+          See guidance for more information on what details should be included.
+          PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 4500 characters) if you would like to include more please
+          use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
+          If you exceed 50 lines you will not receive full details of your claim in the PDF returned to you on submission of the form.
 
 
 

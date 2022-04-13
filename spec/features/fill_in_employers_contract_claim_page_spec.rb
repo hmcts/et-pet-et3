@@ -22,7 +22,7 @@ RSpec.feature "Fill in Employers Contract Claim Page", js: true do
     answer_employers_contract_claim
 
     expect(employers_contract_claim_page).to have_error_header
-    expect(employers_contract_claim_page.make_employer_contract_claim_question).to have_error_too_long
+    employers_contract_claim_page.claim_information.assert_error_message(t('errors.messages.too_long'))
   end
 
   scenario "correctly will enable user to check answers and return to edit them" do
@@ -34,6 +34,9 @@ RSpec.feature "Fill in Employers Contract Claim Page", js: true do
     confirmation_of_supplied_details_page.confirmation_of_employer_contract_claim_answers.edit_employer_contract_claim_page_link.click
 
     expect(employers_contract_claim_page).to be_displayed
-    employers_contract_claim_page.make_employer_contract_claim_question.assert_answers_for(@respondent)
+    expect(employers_contract_claim_page.make_employer_contract_claim_question.value).to eql(t(@respondent.make_employer_contract_claim))
+    if @respondent.make_employer_contract_claim.end_with?('.yes')
+      expect(employers_contract_claim_page.claim_information.value).to eql(@respondent.claim_information)
+    end
   end
 end

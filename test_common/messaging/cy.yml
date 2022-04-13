@@ -214,12 +214,12 @@ cy:
         label: "Byddai o gymorth i ni pe baech yn nodi beth yw'ch anabledd, a dweud pa gymorth, os o gwbl, fydd arnoch ei angen wrth i'ch hawliad fynd drwy'r system, gan gynnwys ar gyfer unrhyw wrandawiadau a gynhelir mewn adeilad tribiwnlys"
         hint: "NODER - Dim ond gwybodaeth gyfyngedig y gallwch roi yma (hyd at 350 o nodau). Os hoffech gynnwys rhagor o wybodaeth, defnyddiwch y cyfleuster sydd ar ddiwedd y ffurflen hon i lwytho ffeil Rich Text Format (.rtf)."
     # Employers Contract Claim Page
-    make_employer_contract_claim:
-      label: Ydych chi eisiau gwneud Hawliad Contract y Cyflogwr? (dewisol)
-      'yes':
-        label: Oes
-      'no':
-        label: Nac oes
+    employers_contract_claims:
+      make_employer_contract_claim:
+        label: Ydych chi eisiau gwneud Hawliad Contract y Cyflogwr? (dewisol)
+        options:
+          'yes': Oes
+          'no': Nac oes
       claim_information:
         label: Rhowch gefndir a manylion eich hawliad isod. Dylech gynnwys pob dyddiad pwysig (dewisol)
     # Additional Informatation Page
@@ -317,6 +317,9 @@ cy:
     disabilities:
       disability: A oes gennych chi anabledd?
       disability_information: "Byddai o gymorth i ni pe baech yn nodi beth yw'ch anabledd, a dweud pa gymorth, os o gwbl, fydd arnoch ei angen wrth i'ch hawliad fynd drwy'r system, gan gynnwys ar gyfer unrhyw wrandawiadau a gynhelir mewn adeilad tribiwnlys"
+    employers_contract_claims:
+      make_employer_contract_claim: Ydych chi eisiau gwneud Hawliad Contract y Cyflogwr?
+      claim_information: Rhowch gefndir a manylion eich hawliad isod. Dylech gynnwys pob dyddiad pwysig
   errors:
     header: Adolygwch y canlynol
     description: Bydd clicio ar gwall yn mynd â chi'n syth at y cwestiwn. \nCywirwch y gwallau hyn cyn parhau.

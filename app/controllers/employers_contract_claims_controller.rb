@@ -1,5 +1,4 @@
 class EmployersContractClaimsController < ApplicationController
-  layout 'old_application'
   def edit
     @employers_contract_claim ||= EmployersContractClaim.new(current_store.hash_store.fetch(:employer_contract_claim_answers, {}))
   end

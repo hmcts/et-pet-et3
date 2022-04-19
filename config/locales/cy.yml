@@ -39,13 +39,8 @@ cy:
         choices:
           'yes': 'Ydw'
           'no': 'Nac ydw'
-      additional_information:
-        upload_additional_information: "Llwythwch ffeil i ddarparu unrhyw wybodaeth ychwanegol bwysig am eich ymateb nad ydych wedi’i chynnwys hyd yma (dewisol) "
       confirmation_of_supplied_details:
         email_receipt: "Cyfeiriad e-bost (dewisol) "
-    hint:
-      additional_information:
-        upload_additional_information: "Math o ffeil: .rtf "
   errors:
     header: "Adolygwch y canlynol "
     description: Bydd clicio ar wall yn mynd â chi'n syth at y cwestiwn. Cywirwch y gwallau hyn cyn parhau.
@@ -845,6 +840,14 @@ cy:
         hint: |
           Gweler y canllaw am fwy o wybodaeth ynghylch pa fanylion dylech gynnwys.
           NODER - Dim ond gwybodaeth gyfyngedig y gallwch roi yma (hyd at 4500 o nodau). Os hoffech gynnwys rhagor o wybodaeth, defnyddiwch y cyfleuster sydd ar ddiwedd y ffurflen hon i lwytho ffeil Rich Text Format (.rtf). Os byddwch yn ysgrifenu mwy na 50 llinell, ni fyddwch yn cael holl fanylion eich ymateb yn y PDF a fydd yn cael ei ddychwelyd atoch ar ôl ichi gyflwyno'r ffurflen.
+  additional_informations:
+    edit:
+      upload_additional_information:
+        label: "Llwythwch ffeil i ddarparu unrhyw wybodaeth ychwanegol bwysig am eich ymateb nad ydych wedi’i chynnwys hyd yma"
+        hint: "Math o ffeil: .rtf "
+        button_text: Dewiswch ffeil
+        remove_file_button_text: Dileu ffeil
+        file_selected_text: "Ffeil wedi'i dewis:"
   activerecord:
     errors:
       models:

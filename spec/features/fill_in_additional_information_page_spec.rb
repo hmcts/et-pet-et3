@@ -34,7 +34,7 @@ RSpec.feature "Fill in Additional Information Page", js: true do
       given_valid_data
       answer_additional_information
 
-      expect(keys_in_container).to include Store.last.hash_store[:additional_information_answers][:upload_additional_information]
+      expect(keys_in_container).to include Store.last.hash_store[:additional_information_answers][:upload_additional_information][:path]
     end
 
     scenario "correctly will enable you to remove a file that is already loaded" do
@@ -42,7 +42,7 @@ RSpec.feature "Fill in Additional Information Page", js: true do
       given_valid_data
       answer_additional_information
       additional_information_page.load(locale: current_locale_parameter)
-      expect(additional_information_page).to have_link(t('components.confirmation_of_supplied_details.remove_file_link'))
+      expect(additional_information_page).to have_button(t('components.confirmation_of_supplied_details.remove_file_link'))
     end
   end
 end

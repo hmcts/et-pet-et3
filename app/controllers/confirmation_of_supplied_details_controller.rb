@@ -19,7 +19,6 @@ class ConfirmationOfSuppliedDetailsController < ApplicationController
 
   def destroy_rtf
     current_store.hash_store[:additional_information_answers].delete(:upload_additional_information)
-    current_store.hash_store[:additional_information_answers].delete(:upload_file_name)
     redirect_to edit_confirmation_of_supplied_details_path
   end
 

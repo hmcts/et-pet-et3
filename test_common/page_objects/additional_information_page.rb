@@ -3,6 +3,7 @@ module ET3
   module Test
     class AdditionalInformationPage < BasePage
       include ET3::Test::UploadHelper
+      include EtTestHelpers::Page
       set_url '/respond/additional_information'
 
       element :header, :content_header, 'additional_information.header'
@@ -10,18 +11,12 @@ module ET3
 
       element :error_header, :error_titled, 'errors.header', exact: true
 
-      section :upload_additional_information_question, :css, 'form.dropzone' do
-        include ET3::Test::I18n
+      # @!method upload_file_question
+      #   A govuk file field component wrapping the input, label, hint etc.. for the upload file question
+      #   @return [EtTestHelpers::Components::GovUKFileDropzoneField] The site prism section
+      gds_file_dropzone_upload :upload_additional_information_question, :'questions.additional_informations.upload_additional_information'
 
-        element :upload_select, :select_button, 'questions.upload_additional_information.button'
-
-        element :error_too_long, :exact_error_text, 'errors.messages.too_long', exact: false
-        element :error_inclusion, :exact_error_text, 'errors.messages.inclusion', exact: false
-
-        def set(*args); upload_select.set(*args); end
-      end
-
-      element :continue_button, :submit_text, 'components.save_and_continue_button'
+      gds_submit_button :continue_button, :'components.save_and_continue_button'
       def next
         continue_button.click
       end
@@ -30,21 +25,8 @@ module ET3
         data = respondent.to_h
         return if respondent.nil?
         if data.key?(:rtf_file)
-          page.execute_script <<-JS
-            fakeFileInput = window.$('<input/>').attr(
-              {id: 'fakeFileInput', type:'file'}
-            ).appendTo('body');
-          JS
-
-          force_remote do
-            attach_file("fakeFileInput", Rails.root.join('test_common', 'files', data[:rtf_file]))
-          end
-          page.execute_script <<-JS
-            var e = jQuery.Event('drop', { dataTransfer : { files : [fakeFileInput.files[0]] } });
-            $('.dropzone')[0].dropzone.listeners[0].events.drop(e);
-          JS
+          upload_additional_information_question.set(Rails.root.join('test_common', 'files', data[:rtf_file]))
         end
-        sleep 2
         page.has_content?('Remove file')
       end
     end

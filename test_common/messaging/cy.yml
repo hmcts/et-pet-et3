@@ -223,9 +223,9 @@ cy:
       claim_information:
         label: Rhowch gefndir a manylion eich hawliad isod. Dylech gynnwys pob dyddiad pwysig (dewisol)
     # Additional Informatation Page
-    upload_additional_information:
-      label: "Llwythwch ffeil i ddarparu unrhyw wybodaeth ychwanegol bwysig am eich ymateb nad ydych wedi’i chynnwys hyd yma (dewisol)"
-      button: "Cliciwch yma i lwytho ffeil rtf"
+    additional_informations:
+      upload_additional_information:
+        label: "Llwythwch ffeil i ddarparu unrhyw wybodaeth ychwanegol bwysig am eich ymateb nad ydych wedi’i chynnwys hyd yma (dewisol)"
     # Confirmation of Supplied Details Page
     email_receipt:
       label: Cyfeiriad e-bost (dewisol)
@@ -320,6 +320,8 @@ cy:
     employers_contract_claims:
       make_employer_contract_claim: Ydych chi eisiau gwneud Hawliad Contract y Cyflogwr?
       claim_information: Rhowch gefndir a manylion eich hawliad isod. Dylech gynnwys pob dyddiad pwysig
+    additional_informations:
+      upload_additional_information: "Llwythwch ffeil i ddarparu unrhyw wybodaeth ychwanegol bwysig am eich ymateb nad ydych wedi’i chynnwys hyd yma"
   errors:
     header: Adolygwch y canlynol
     description: Bydd clicio ar gwall yn mynd â chi'n syth at y cwestiwn. \nCywirwch y gwallau hyn cyn parhau.

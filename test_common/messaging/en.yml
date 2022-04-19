@@ -222,9 +222,9 @@ en:
       claim_information:
         label: 'Please set out the background and details of your claim below, which should include all important dates (optional)'
     # Additional Informatation Page
-    upload_additional_information:
-      label: Please upload a file to provide any important additional information about your response which you have not been able to include so far (optional)
-      button: Click here to upload a file
+    additional_informations:
+      upload_additional_information:
+        label: Please upload a file to provide any important additional information about your response which you have not been able to include so far (optional)
     # Confirmation of Supplied Details Page
     email_receipt:
       label: Email address (optional)
@@ -319,6 +319,8 @@ en:
     employers_contract_claims:
       make_employer_contract_claim: Do you wish to make an Employer Contract Claim?
       claim_information: 'Please set out the background and details of your claim below, which should include all important dates'
+    additional_informations:
+      upload_additional_information: Please upload a file to provide any important additional information about your response which you have not been able to include so far
   errors:
     header: Please review the following
     description: Clicking on an error will navigate you directly to the question. Please correct these errors before continuing.

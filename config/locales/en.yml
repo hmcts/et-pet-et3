@@ -39,15 +39,11 @@ en:
         choices:
           'yes': 'Yes'
           'no': 'No'
-      additional_information:
-        upload_additional_information: Please upload a file to provide any important additional information about your response which you have not been able to include so far (optional)
       confirmation_of_supplied_details:
         email_receipt: Email address (optional)
     hint:
       respondents_detail:
         employment_at_site_number: For example, 10
-      additional_information:
-        upload_additional_information: "Supported file type: .rtf"
   errors:
     header: Please review the following
     description: Clicking on an error will navigate you directly to the question. Please correct these errors before continuing.
@@ -788,6 +784,15 @@ en:
 
 
 
+
+  additional_informations:
+    edit:
+      upload_additional_information:
+        label: Please upload a file to provide any important additional information about your response which you have not been able to include so far
+        hint: "Supported file type: .rtf"
+        button_text: Choose File
+        remove_file_button_text: Remove file
+        file_selected_text: "File selected:"
 
   activerecord:
     errors:

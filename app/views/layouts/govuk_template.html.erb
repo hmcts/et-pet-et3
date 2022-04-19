@@ -101,6 +101,7 @@
 
     <%= javascript_include_tag "govuk-template.js", integrity: true, crossorigin: "anonymous" %>
 
+    <%= yield :javascripts %>
     <%= yield :body_end %>
 
     <%# if no GOVUK-namespaced module has loaded we can assume JS has failed and remove the class %>

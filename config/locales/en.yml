@@ -39,8 +39,6 @@ en:
         choices:
           'yes': 'Yes'
           'no': 'No'
-      confirmation_of_supplied_details:
-        email_receipt: Email address (optional)
     hint:
       respondents_detail:
         employment_at_site_number: For example, 10
@@ -129,7 +127,6 @@ en:
     confirmation_of_supplied_details:
       header: Check and submit your response
       receipt_header: Email receipt
-      receipt_description: We can email you a copy of your receipt.
       table_header: Confirmation of Supplied Details
       question_header: Question
       answer_header: Answer
@@ -793,7 +790,11 @@ en:
         button_text: Choose File
         remove_file_button_text: Remove file
         file_selected_text: "File selected:"
-
+  confirmation_of_supplied_details:
+    edit:
+      email_receipt:
+        label: Email address
+        hint: We can email you a copy of your receipt.
   activerecord:
     errors:
       models:

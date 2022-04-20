@@ -39,8 +39,6 @@ cy:
         choices:
           'yes': 'Ydw'
           'no': 'Nac ydw'
-      confirmation_of_supplied_details:
-        email_receipt: "Cyfeiriad e-bost (dewisol) "
   errors:
     header: "Adolygwch y canlynol "
     description: Bydd clicio ar wall yn mynd â chi'n syth at y cwestiwn. Cywirwch y gwallau hyn cyn parhau.
@@ -127,7 +125,6 @@ cy:
     confirmation_of_supplied_details:
       header: Gwirio a chyflwyno eich ymateb
       receipt_header: E-bost yn cadarnhau bod y manylion wedi'u hanfon
-      receipt_description: Gallwn anfon copi o’ch derbynneb atoch drwy e-bost.
       submit_guidance: 'Bydd clicio ar "Cyflwyno Ffurflen " ar waelod y dudalen yn anfon y manylion a gadarnhawyd isod i''w prosesu.'
       table_header: "Cadarnhau'r manylion a roddwyd "
       question_header: "Cwestiwn "
@@ -848,6 +845,11 @@ cy:
         button_text: Dewiswch ffeil
         remove_file_button_text: Dileu ffeil
         file_selected_text: "Ffeil wedi'i dewis:"
+  confirmation_of_supplied_details:
+    edit:
+      email_receipt:
+        label: "Cyfeiriad e-bost"
+        hint: Gallwn anfon copi o’ch derbynneb atoch drwy e-bost.
   activerecord:
     errors:
       models:

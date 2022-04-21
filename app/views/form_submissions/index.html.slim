@@ -10,20 +10,20 @@
   p
     - if @respondent_email.present?
       p = t('components.form_submission.covid_19')
-      p = link_to ('https://www.gov.uk/guidance/coronavirus-covid-19-courts-and-tribunals-planning-and-preparation'), t('components.form_submission.covid_19_link')
+      p = link_to t('components.form_submission.covid_19_link'), 'https://www.gov.uk/guidance/coronavirus-covid-19-courts-and-tribunals-planning-and-preparation', class: 'govuk-link'
       p
         = t('components.form_submission.copy_sent', email: @respondent_email)
         = ' '
-        = link_to t('components.form_submission.valid_pdf_download'), @pdf_url, class: 'pdf-success'
-        = link_to t('components.form_submission.invalid_pdf_download'), nil, class: 'pdf-failure hidden'
+        = link_to t('components.form_submission.valid_pdf_download'), @pdf_url, class: 'pdf-success govuk-link'
+        = link_to t('components.form_submission.invalid_pdf_download'), nil, class: 'pdf-failure hidden govuk-link'
         = '.'
     - else
       p = t('components.form_submission.covid_19')
-      p = link_to ('https://www.gov.uk/guidance/coronavirus-covid-19-courts-and-tribunals-planning-and-preparation'), t('components.form_submission.covid_19_link')
+      p = link_to t('components.form_submission.covid_19_link'), 'https://www.gov.uk/guidance/coronavirus-covid-19-courts-and-tribunals-planning-and-preparation', class: 'govuk-link'
       p
         = t('components.form_submission.copy_sent_without_email')
-        = link_to t('components.form_submission.valid_pdf_download'), @pdf_url, class: 'pdf-success'
-        = link_to t('components.form_submission.invalid_pdf_download'), nil, class: 'pdf-failure hidden'
+        = link_to t('components.form_submission.valid_pdf_download'), @pdf_url, class: 'pdf-success govuk-link'
+        = link_to t('components.form_submission.invalid_pdf_download'), nil, class: 'pdf-failure hidden govuk-link'
         = '.'
 
   p

@@ -22,10 +22,12 @@ import "./stylesheets/application.scss"
 require("@rails/ujs").start();
 import SessionPrompt from "./components/SessionPrompt";
 import AdditionalInformationPage from "./pages/AdditionalnformationPage";
+import FormSubmissionPage from "./pages/FormSubmissionPage";
 EtGdsDesignSystem.initAll();
 window.Et = {
   pages: {
-    AdditionalInformationPage: AdditionalInformationPage
+    AdditionalInformationPage: AdditionalInformationPage,
+    FormSubmissionPage: FormSubmissionPage
   },
   components: {
     SessionPrompt

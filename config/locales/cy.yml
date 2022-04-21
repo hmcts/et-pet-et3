@@ -31,14 +31,6 @@
 
 cy:
   helpers:
-    fieldset:
-      respondents_detail:
-        cookies: A ydych eisiau derbyn cwcis dadansoddol?
-    label:
-      cookies:
-        choices:
-          'yes': 'Ydw'
-          'no': 'Nac ydw'
   errors:
     header: "Adolygwch y canlynol "
     description: Bydd clicio ar wall yn mynd â chi'n syth at y cwestiwn. Cywirwch y gwallau hyn cyn parhau.
@@ -850,6 +842,13 @@ cy:
       email_receipt:
         label: "Cyfeiriad e-bost"
         hint: Gallwn anfon copi o’ch derbynneb atoch drwy e-bost.
+  cookies:
+    edit:
+      usage:
+        label: A ydych eisiau derbyn cwcis dadansoddol?
+        options:
+          'true': 'Ydw'
+          'false': 'Nac ydw'
   activerecord:
     errors:
       models:

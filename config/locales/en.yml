@@ -31,14 +31,6 @@
 
 en:
   helpers:
-    fieldset:
-      respondents_detail:
-        cookies: Do you want to accept analytics cookies?
-    label:
-      cookies:
-        choices:
-          'yes': 'Yes'
-          'no': 'No'
     hint:
       respondents_detail:
         employment_at_site_number: For example, 10
@@ -795,6 +787,13 @@ en:
       email_receipt:
         label: Email address
         hint: We can email you a copy of your receipt.
+  cookies:
+    edit:
+      usage:
+        label: Do you want to accept analytics cookies?
+        options:
+          'true': 'Yes'
+          'false': 'No'
   activerecord:
     errors:
       models:

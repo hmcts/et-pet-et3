@@ -1,7 +1,6 @@
 class CookiesController < ApplicationController
   include CookiesHelper
   include ApplicationHelper
-  layout 'old_application'
   skip_before_action :authenticate_user!
 
   def update(cookie_expiry: Rails.application.config.x.cookie_expiry)

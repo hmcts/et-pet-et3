@@ -704,7 +704,7 @@ cy:
           'true': 'Ydy'
           'false': 'Nac ydy'
       queried_hours:
-        label: "Dywedwch beth ydych chi’n credu yw’r oriau gwaith cywir (dewisol) "
+        label: "Dywedwch beth ydych chi’n credu yw’r oriau gwaith cywir"
         hint: "Nodwch nifer yr oriau fesul wythnos, er enghraifft, 39"
       agree_with_earnings_details:
         label: "A yw’r enillion yn gywir?"
@@ -809,7 +809,7 @@ cy:
   disabilities:
     edit:
       disability:
-        label: "A oes gennych chi anabledd? (dewisol) "
+        label: "A oes gennych chi anabledd?"
         options:
           'true': 'Oes'
           'false': 'Nac oes'
@@ -817,7 +817,7 @@ cy:
         label: "Byddai o gymorth i ni pe baech yn nodi beth yw'ch anabledd, a dweud pa gymorth, os o gwbl, fydd arnoch ei angen wrth i'ch hawliad fynd drwy'r system, gan gynnwys ar gyfer unrhyw wrandawiadau a gynhelir mewn adeilad tribiwnlys"
         hint: |
           NODER - Dim ond gwybodaeth gyfyngedig y gallwch roi yma (hyd at 350 o nodau). Os hoffech gynnwys rhagor o wybodaeth, defnyddiwch y cyfleuster sydd ar ddiwedd y ffurflen hon i lwytho ffeil Rich Text Format (.rtf).
-  employment_contract_claims:
+  employers_contract_claims:
     edit:
       make_employer_contract_claim:
         label: "Ydych chi eisiau gwneud Hawliad Contract y Cyflogwr?"

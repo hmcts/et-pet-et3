@@ -47,9 +47,9 @@ RSpec.feature "Fill in Earnings and Benefits Page", js: true do
       expect(p.agree_with_earnings_details_question.value).to eql(t(user.agree_with_earnings_details))
       if user.agree_with_earnings_details.to_s.split('.').last == 'no'
         expect(p.queried_pay_before_tax.value.gsub(',', '')).to eql sprintf('%.2f', user.queried_pay_before_tax)
-        expect(p.queried_pay_before_tax_period.value).to eql user.queried_pay_before_tax_period.to_s.split('.').last.titleize
+        expect(p.queried_pay_before_tax_period.value).to eql t(user.queried_pay_before_tax_period)
         expect(p.queried_take_home_pay.value).to eql sprintf('%.2f', user.queried_take_home_pay)
-        expect(p.queried_take_home_pay_period.value).to eql user.queried_take_home_pay_period.to_s.split('.').last.titleize
+        expect(p.queried_take_home_pay_period.value).to eql t(user.queried_take_home_pay_period)
 
       end
       expect(p.agree_with_claimant_notice_question.value).to eql(t(user.agree_with_claimant_notice))

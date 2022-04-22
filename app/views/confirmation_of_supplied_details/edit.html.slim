@@ -54,14 +54,14 @@
       .govuk-summary-list__row
         dt.govuk-summary-list__key = t('respondents_details.edit.video_call.label')
         dd.govuk-summary-list__value = translate_stored_value(@hash_store.dig(:respondents_detail_answers, :video_call),
-                  'respondents_detail.video_call')
+                  'respondents_details.video_call')
       .govuk-summary-list__row
         dt.govuk-summary-list__key = t('respondents_details.edit.organisation_employ_gb.label')
         dd.govuk-summary-list__value = @hash_store.dig(:respondents_detail_answers, :organisation_employ_gb)
       .govuk-summary-list__row
         dt.govuk-summary-list__key = t('respondents_details.edit.organisation_more_than_one_site.label')
         dd.govuk-summary-list__value = translate_stored_value(@hash_store.dig(:respondents_detail_answers, :organisation_more_than_one_site),
-                  'respondents_detail.organisation_more_than_one_site')
+                  'respondents_details.organisation_more_than_one_site')
       .govuk-summary-list__row
         dt.govuk-summary-list__key = t('respondents_details.edit.employment_at_site_number.label')
         dd.govuk-summary-list__value = @hash_store.dig(:respondents_detail_answers, :employment_at_site_number)
@@ -78,14 +78,14 @@
       .govuk-summary-list__row
         dt.govuk-summary-list__key = t('claimants_details.edit.agree_with_early_conciliation_details.label')
         dd.govuk-summary-list__value = translate_stored_value(@hash_store.dig(:claimants_detail_answers, :agree_with_early_conciliation_details),
-                    'claimants_detail.agree_with_early_conciliation_details')
+                    'claimants_details.agree_with_early_conciliation_details')
       .govuk-summary-list__row
         dt.govuk-summary-list__key = t('claimants_details.edit.disagree_conciliation_reason.label')
         dd.govuk-summary-list__value = @hash_store.dig(:claimants_detail_answers, :disagree_conciliation_reason)
       .govuk-summary-list__row
         dt.govuk-summary-list__key = t('claimants_details.edit.agree_with_employment_dates.label')
         dd.govuk-summary-list__value = translate_stored_value(@hash_store.dig(:claimants_detail_answers, :agree_with_employment_dates),
-                    'claimants_detail.agree_with_employment_dates')
+                    'claimants_details.agree_with_employment_dates')
       .govuk-summary-list__row
         dt.govuk-summary-list__key = t('claimants_details.edit.employment_start.label')
         dd.govuk-summary-list__value = @hash_store.dig(:claimants_detail_answers, :employment_start)
@@ -98,11 +98,11 @@
       .govuk-summary-list__row
         dt.govuk-summary-list__key = t('claimants_details.edit.continued_employment.label')
         dd.govuk-summary-list__value = translate_stored_value(@hash_store.dig(:claimants_detail_answers, :continued_employment),
-                'claimants_detail.continued_employment')
+                'claimants_details.continued_employment')
       .govuk-summary-list__row
         dt.govuk-summary-list__key = t('claimants_details.edit.agree_with_claimants_description_of_job_or_title.label')
         dd.govuk-summary-list__value = translate_stored_value(@hash_store.dig(:claimants_detail_answers, :agree_with_claimants_description_of_job_or_title),
-                'claimants_detail.agree_with_claimants_description_of_job_or_title')
+                'claimants_details.agree_with_claimants_description_of_job_or_title')
       .govuk-summary-list__row
         dt.govuk-summary-list__key = t('claimants_details.edit.disagree_claimants_job_or_title.label')
         dd.govuk-summary-list__value = @hash_store.dig(:claimants_detail_answers, :disagree_claimants_job_or_title)
@@ -160,7 +160,7 @@
       .govuk-summary-list__row
         dt.govuk-summary-list__key = t('responses.edit.defend_claim.label')
         dd.govuk-summary-list__value = translate_stored_value(@hash_store.dig(:response_answers, :defend_claim),
-                'response.defend_claim')
+                'responses.defend_claim')
       .govuk-summary-list__row
         dt.govuk-summary-list__key = t('responses.edit.defend_claim_facts.label')
         dd.govuk-summary-list__value = @hash_store.dig(:response_answers, :defend_claim_facts)
@@ -237,7 +237,7 @@
       .govuk-summary-list__row
         dt.govuk-summary-list__key = t('disabilities.edit.disability.label')
         dd.govuk-summary-list__value = translate_stored_value(@hash_store.dig(:disability_answers, :disability),
-                'disability.disability')
+                'disabilities.disability')
       .govuk-summary-list__row
         dt.govuk-summary-list__key = t('disabilities.edit.disability_information.label')
         dd.govuk-summary-list__value = @hash_store.dig(:disability_answers, :disability_information)
@@ -251,7 +251,7 @@
       .govuk-summary-list__row
         dt.govuk-summary-list__key = t('employers_contract_claims.edit.make_employer_contract_claim.label')
         dd.govuk-summary-list__value = translate_stored_value(@hash_store.dig(:employer_contract_claim_answers, :make_employer_contract_claim),
-                'employers_contract_claim.make_employer_contract_claim')
+                'employers_contract_claims.make_employer_contract_claim')
       .govuk-summary-list__row
         dt.govuk-summary-list__key = t('employers_contract_claims.edit.claim_information.label')
         dd.govuk-summary-list__value = @hash_store.dig(:employer_contract_claim_answers, :claim_information)

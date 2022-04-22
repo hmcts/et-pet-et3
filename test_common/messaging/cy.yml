@@ -48,7 +48,7 @@ cy:
           email: E-bost
           post: Post
           fax: Ffacs
-      fax:
+      fax_number:
         label: Rhif ffacs
       email_address:
         label: Cyfeiriad e-bost
@@ -82,12 +82,12 @@ cy:
         options:
           'yes': Ydy
           'no': Nac ydy
-        employment_start:
-          label: "Pa bryd ddechreuodd ei gyflogaeth"
-        employment_end:
-          label: "Pa bryd ddaeth ei gyflogaeth i ben, neu y bydd yn dod i ben"
-        disagree_employment:
-          label: "Pam yr ydych yn anghytuno â’r dyddiadau a roddwyd gan yr hawlydd (dewisol)"
+      employment_start:
+        label: "Pa bryd ddechreuodd ei gyflogaeth"
+      employment_end:
+        label: "Pa bryd ddaeth ei gyflogaeth i ben, neu y bydd yn dod i ben"
+      disagree_employment:
+        label: "Pam yr ydych yn anghytuno â’r dyddiadau a roddwyd gan yr hawlydd (dewisol)"
       continued_employment:
         label: "A yw'n parhau i fod mewn swydd? (dewisol)"
         options:
@@ -206,7 +206,7 @@ cy:
     # Disability Page
     disabilities:
       disability:
-        label: A oes gennych chi anabledd?
+        label: A oes gennych chi anabledd? (dewisol)
         options:
           'yes': Oes
           'no': Nac oes
@@ -264,7 +264,7 @@ cy:
       contact_number: Rhif cyswllt
       contact_mobile_number: Rhif ffôn symudol
       contact_preference: Sut hoffech i ni gysylltu â chi?
-      fax: Rhif ffacs
+      fax_number: Rhif ffacs
       email_address: Cyfeiriad e-bost
       organisation_employ_gb: "Faint o bobl sy’n gyflogedig gan y sefydliad hwn ym Mhrydain Fawr?"
       organisation_more_than_one_site: "A oes gan y sefydliad hwn fwy nag un safle ym Mhrydain Fawr?"

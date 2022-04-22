@@ -11,7 +11,7 @@ p= t('components.earnings_and_benefits.content')
     = f.collection_radio_buttons :agree_with_claimants_hours, optional: true
     = f.revealed_content :agree_with_claimants_hours, values: [:false] do
       .govuk-inset-text
-        = f.text_field :queried_hours
+        = f.text_field :queried_hours, optional: true
     = f.collection_radio_buttons :agree_with_earnings_details, optional: true
     = f.revealed_content :agree_with_earnings_details, values: [:false]
       .govuk-inset-text

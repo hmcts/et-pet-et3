@@ -27,7 +27,7 @@ gem 'sprockets', '~> 3.7', '>= 3.7.2'
 
 gem 'slim-rails', '~> 3.2'
 gem 'jquery-rails', '~> 4.3'
-gem 'activerecord-nulldb-adapter', git: 'https://github.com/hmcts/nulldb.git', ref: '61af6221df8cbd20441a03425a8962993c024a53'
+gem 'activerecord-nulldb-adapter', '~> 0.8.0'
 gem 'httparty', '~> 0.17'
 gem 'uk_postcode', '~> 2.1'
 # Add .env file to store environment variables

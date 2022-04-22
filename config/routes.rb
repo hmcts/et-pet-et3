@@ -27,7 +27,6 @@ Rails.application.routes.draw do
     get "/session_expired" => 'static_pages#expired'
     root 'static_pages#index'
     delete "/respond/confirmation_of_supplied_details/remove_rtf" => 'confirmation_of_supplied_details#destroy_rtf', as: :remove_rtf
-    mount EtDropzoneUploader::Engine, at: '/api/v2/build_blob'
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   end
   put "/" => 'static_pages#start_new_session', as: 'start_new_session'

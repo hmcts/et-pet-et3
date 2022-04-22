@@ -7,16 +7,6 @@ GIT
       application_insights (~> 0.5.7)
 
 GIT
-  remote: https://github.com/hmcts/et_dropzone_uploader.git
-  revision: 9a6a457eee9ec074e0e59bf217a506dbf3e0ed22
-  tag: v2.2.6
-  specs:
-    et_dropzone_uploader (2.2.6)
-      dropzonejs-rails (~> 0.8)
-      rack-proxy (~> 0.6.5)
-      rails (>= 5.2.2)
-
-GIT
   remote: https://github.com/hmcts/et_gds_design_system.git
   revision: c480c2701de11a730ac7a07d1131b94bda9aab99
   tag: v3.0.6
@@ -185,8 +175,6 @@ GEM
     dotenv-rails (2.7.6)
       dotenv (= 2.7.6)
       railties (>= 3.2)
-    dropzonejs-rails (0.8.5)
-      rails (> 3.1)
     erubi (1.10.0)
     execjs (2.7.0)
     factory_bot (6.1.0)
@@ -427,7 +415,6 @@ DEPENDENCIES
   devise (~> 4.7, >= 4.7.3)
   dotenv-rails (~> 2.7)
   et_azure_insights (= 0.2.13)!
-  et_dropzone_uploader!
   et_gds_design_system!
   et_test_helpers!
   factory_bot (~> 6.1)

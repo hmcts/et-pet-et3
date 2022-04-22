@@ -26,10 +26,6 @@ gem 'sprockets', '~> 3.7', '>= 3.7.2'
 # gem 'capistrano-rails', group: :development
 
 gem 'slim-rails', '~> 3.2'
-gem 'govuk_template', '~> 0.26.0'
-gem 'govuk_elements_rails', '~> 3.1'
-gem 'govuk_elements_form_builder',  '~>1.3'
-gem 'gov_uk_date_fields', '~> 2.1'
 gem 'jquery-rails', '~> 4.3'
 gem 'activerecord-nulldb-adapter', git: 'https://github.com/hmcts/nulldb.git', ref: '61af6221df8cbd20441a03425a8962993c024a53'
 gem 'httparty', '~> 0.17'

@@ -6,7 +6,6 @@ require 'rails/all'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
-require_relative '../lib/form_builder'
 
 module Et3
   class Application < Rails::Application
@@ -19,7 +18,7 @@ module Et3
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    ActionView::Base.default_form_builder = FormBuilder
+    ActionView::Base.default_form_builder = EtGdsDesignSystem.form_builder_class
 
     config.time_zone = "London"
     if ENV.key? 'SMTP_HOSTNAME'

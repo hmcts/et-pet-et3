@@ -1,20 +1,22 @@
 // Manages session timeout & displays prompt prior to session expiry
 const SessionPrompt = (function () {
 
+    const SECOND = 1000
+    const MINUTE = 60 * SECOND
     let settings = {
         SECOND: 1000
     };
-    settings.MINUTE = 60 * settings.SECOND;
-    settings.FIVE_MINUTES = 5 * settings.MINUTE;
-    settings.FIFTY_FIVE_MINUTES = 55 * settings.MINUTE;
+    settings.graceTimeout = 1 * MINUTE;
+    settings.sessionTimeout = 2 * MINUTE;
 
     const sessionPrompt = {
 
         timerRef: null,
 
         init: function (options) {
+            console.log("SessionPrompt.init() called")
             settings = Object.assign(settings, options);
-            this.counter = settings.FIVE_MINUTES;
+            this.counter = settings.graceTimeout;
             this.updateTimeLeftOnPrompt(this.counter);
             this.setPromptExtendSessionClickEvent();
             this.startSessionTimer();
@@ -23,7 +25,7 @@ const SessionPrompt = (function () {
         startSessionTimer: function () {
             setTimeout(()=> {
                 this.timeoutPrompt.apply(this)
-            }, settings.FIFTY_FIVE_MINUTES);
+            }, settings.sessionTimeout - settings.graceTimeout);
         },
 
         setPromptExtendSessionClickEvent: function () {
@@ -31,15 +33,18 @@ const SessionPrompt = (function () {
         },
 
         timeoutPrompt: function () {
+            console.log(`SessionPrompt.timeoutPrompt called after ${settings.sessionTimeout - settings.graceTimeout}`)
             this.timerRef = setInterval(()=> { this.promptUpdate.apply(this) }, settings.SECOND);
             this.togglePromptVisibility();
         },
 
         promptUpdate: function () {
             if (this.counter === 0) {
+                console.log("SessionPrompt.promptUpdate has now expired the session")
                 this.expireSession();
             } else {
-                this.counter -= settings.SECOND;
+                this.counter -= SECOND;
+                console.log(`SessionPrompt.promptUpdate - ${this.counter} seconds left`)
                 this.updateTimeLeftOnPrompt(this.counter);
             }
         },

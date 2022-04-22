@@ -1,28 +1,33 @@
 // Manages session timeout & displays prompt prior to session expiry
-
-let settings = {
-    SECOND: 1000
-};
-settings.MINUTE = 60 * settings.SECOND;
-settings.FIVE_MINUTES = 5 * settings.MINUTE;
-settings.FIFTY_FIVE_MINUTES = 55 * settings.MINUTE;
+const SECOND = 1000;
+const MINUTE = 60 * SECOND;
+const settings = {
+    graceTimeout: 5 * MINUTE,
+    sessionTimeout: 60 * MINUTE
+}
 
 const SessionPrompt = {
 
-    timerRef: null,
+    graceTimerRef: null,
+    sessionTimerRef: null,
 
     init: function (options) {
-        settings = Object.assign(settings, options);
-        this.counter = settings.FIVE_MINUTES;
+        console.log("SessionPrompt.init() called")
+        const mySettings = {...settings, ...options};
+        this.counter = settings.graceTimeout;
         this.updateTimeLeftOnPrompt(this.counter);
         this.setPromptExtendSessionClickEvent();
         this.startSessionTimer();
     },
-
+    disable: function () {
+        console.log("SessionPrompt.disable() called")
+        if(this.sessionTimerRef) { clearTimeout(this.sessionTimerRef) }
+        if(this.graceTimerRef) { clearInterval(this.graceTimerRef) }
+    },
     startSessionTimer: function () {
-        setTimeout(()=> {
+        this.sessionTimerRef = setTimeout(()=> {
             this.timeoutPrompt.apply(this)
-        }, settings.FIFTY_FIVE_MINUTES);
+        }, settings.sessionTimeout - settings.graceTimeout);
     },
 
     setPromptExtendSessionClickEvent: function () {
@@ -30,15 +35,18 @@ const SessionPrompt = {
     },
 
     timeoutPrompt: function () {
-        this.timerRef = setInterval(()=> { this.promptUpdate.apply(this) }, settings.SECOND);
+        console.log(`SessionPrompt.timeoutPrompt called after ${settings.sessionTimeout - settings.graceTimeout}`)
+        this.graceTimerRef = setInterval(()=> { this.promptUpdate.apply(this) }, SECOND);
         this.togglePromptVisibility();
     },
 
     promptUpdate: function () {
         if (this.counter === 0) {
+            console.log("SessionPrompt.promptUpdate has now expired the session")
             this.expireSession();
         } else {
-            this.counter -= settings.SECOND;
+            this.counter -= SECOND;
+            console.log(`SessionPrompt.promptUpdate - ${this.counter / SECOND} seconds left`)
             this.updateTimeLeftOnPrompt(this.counter);
         }
     },
@@ -54,7 +62,7 @@ const SessionPrompt = {
     },
 
     updateTimeLeftOnPrompt: function (timeInMillis) {
-        const seconds = timeInMillis / settings.SECOND;
+        const seconds = timeInMillis / SECOND;
         const mins = Math.floor(seconds / 60);
         const secs = seconds % 60;
         const time = (mins === 0) ? secs : (mins + ":" + this.padSeconds(secs));
@@ -70,7 +78,7 @@ const SessionPrompt = {
     },
 
     refreshSession: function () {
-        clearInterval(this.timerRef);
+        clearInterval(this.graceTimerRef);
         const that = this;
         fetch("/respond/session/touch", { credentials: 'include' }).then((response)=>{
             if(!response.ok) { return }

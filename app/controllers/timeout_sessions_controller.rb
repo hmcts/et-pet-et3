@@ -1,5 +1,5 @@
 class TimeoutSessionsController < ApplicationController
-  layout 'old_application'
+  skip_before_action :set_start_session_timer
 
   def touch
     head :ok

@@ -7,7 +7,7 @@ class EtApiHandler
     data_array = [build_response_data(form_hash), build_respondent_data(form_hash)]
     data_array.push(build_representative_data(form_hash)) if form_hash[:your_representative_answers][:have_representative]
 
-    http_response = HTTParty.post("#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api')}/v2/respondents/build_response",
+    http_response = HTTParty.post("#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api/v2')}/respondents/build_response",
       body: {
         "uuid": SecureRandom.uuid,
         "command": "SerialSequence",
@@ -50,7 +50,7 @@ class EtApiHandler
         "defend_claim_facts": full_hash[:response_answers][:defend_claim_facts],
         "make_employer_contract_claim": full_hash[:employer_contract_claim_answers][:make_employer_contract_claim],
         "claim_information": full_hash[:employer_contract_claim_answers][:claim_information],
-        "additional_information_key": (full_hash[:additional_information_answers][:upload_additional_information] == "" ? nil : full_hash[:additional_information_answers][:upload_additional_information]),
+        "additional_information_key": (full_hash[:additional_information_answers][:upload_additional_information].blank? ? nil : full_hash[:additional_information_answers][:upload_additional_information][:path]),
         "email_receipt": full_hash[:confirmation_of_supplied_details_answers][:email_receipt],
         "pdf_template_reference": "et3-v2-#{I18n.locale}",
         "email_template_reference": "et3-v1-#{I18n.locale}"

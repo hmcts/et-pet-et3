@@ -22,11 +22,11 @@ RSpec.feature "Fill in Earnings and Benefits Page", js: true do
 
     expect(earnings_and_benefits_page).to have_header
     expect(earnings_and_benefits_page).to have_error_header
-    expect(earnings_and_benefits_page.agree_with_claimants_hours_question).to have_error_not_a_number
-    expect(earnings_and_benefits_page.agree_with_earnings_details_question.queried_pay_before_tax).to have_error_not_a_number
-    expect(earnings_and_benefits_page.agree_with_earnings_details_question.queried_take_home_pay).to have_error_not_a_number
-    expect(earnings_and_benefits_page.agree_with_claimant_notice_question).to have_error_too_long
-    expect(earnings_and_benefits_page.agree_with_claimant_pension_benefits_question).to have_error_too_long
+    earnings_and_benefits_page.queried_hours.assert_error_message(t('errors.custom.queried_hours.not_a_number'))
+    earnings_and_benefits_page.queried_pay_before_tax.assert_error_message(t('errors.custom.queried_pay_before_tax.not_a_number'))
+    earnings_and_benefits_page.queried_take_home_pay.assert_error_message(t('errors.custom.queried_take_home_pay.not_a_number'))
+    earnings_and_benefits_page.disagree_claimant_notice_reason.assert_error_message(t('errors.messages.too_long'))
+    earnings_and_benefits_page.disagree_claimant_pension_benefits_reason.assert_error_message(t('errors.messages.too_long'))
   end
 
   scenario "correctly will enable user to check answers and return to edit them" do
@@ -39,9 +39,27 @@ RSpec.feature "Fill in Earnings and Benefits Page", js: true do
     expect(earnings_and_benefits_page).to be_displayed
     user = @claimant
 
-    earnings_and_benefits_page.agree_with_claimants_hours_question.assert_answers_for(user)
-    earnings_and_benefits_page.agree_with_earnings_details_question.assert_answers_for(user)
-    earnings_and_benefits_page.agree_with_claimant_notice_question.assert_answers_for(user)
-    earnings_and_benefits_page.agree_with_claimant_pension_benefits_question.assert_answers_for(user)
+    earnings_and_benefits_page.tap do |p|
+      expect(p.agree_with_claimants_hours_question.value).to eql(t(user.agree_with_claimants_hours))
+      if user.agree_with_claimants_hours.to_s.split('.').last == 'no'
+        expect(p.queried_hours.value).to eql user.queried_hours.to_s
+      end
+      expect(p.agree_with_earnings_details_question.value).to eql(t(user.agree_with_earnings_details))
+      if user.agree_with_earnings_details.to_s.split('.').last == 'no'
+        expect(p.queried_pay_before_tax.value.gsub(',', '')).to eql sprintf('%.2f', user.queried_pay_before_tax)
+        expect(p.queried_pay_before_tax_period.value).to eql t(user.queried_pay_before_tax_period)
+        expect(p.queried_take_home_pay.value).to eql sprintf('%.2f', user.queried_take_home_pay)
+        expect(p.queried_take_home_pay_period.value).to eql t(user.queried_take_home_pay_period)
+
+      end
+      expect(p.agree_with_claimant_notice_question.value).to eql(t(user.agree_with_claimant_notice))
+      if user.agree_with_claimant_notice.to_s.split('.').last == 'no'
+        expect(p.disagree_claimant_notice_reason.value).to eql user.disagree_claimant_notice_reason
+      end
+      expect(p.agree_with_claimant_pension_benefits_question.value).to eql(t(user.agree_with_claimant_pension_benefits))
+      if user.agree_with_claimant_pension_benefits.to_s.split('.').last == 'no'
+        expect(p.disagree_claimant_pension_benefits_reason.value).to eql user.disagree_claimant_pension_benefits_reason
+      end
+    end
   end
 end

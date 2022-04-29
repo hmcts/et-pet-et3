@@ -2,44 +2,33 @@
 - content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
 .content-body.claimants-details
 
-  = form_for @claimants_detail, url: claimants_details_path, method: :patch  do |f|
+  = form_for @claimants_detail, url: claimants_details_path, method: :patch, builder: EtGdsDesignSystem.form_builder_class  do |f|
 
     div data-turbolinks="false"
-      = GovukElementsErrorsHelper.error_summary @claimants_detail,
-        t('errors.header'),
-        t('errors.description')
+      =  f.govuk_error_summary(t 'errors.header')
 
-    = f.text_field :claimants_name
-    = f.radio_button_fieldset :agree_with_early_conciliation_details do |b|
-      = content_tag :div, {class: 'multiple-choice'} do
-        = b.radio_button(:agree_with_early_conciliation_details, true) + b.label(:agree_with_early_conciliation_details, t('helpers.label.claimants_detail.agree_with_early_conciliation_details.choices.yes'), value: true)
-      = content_tag :div, {class: 'multiple-choice', data: { target: :disagree_conciliation_reason }} do
-        = b.radio_button(:agree_with_early_conciliation_details, false) + b.label(:agree_with_early_conciliation_details, t('helpers.label.claimants_detail.agree_with_early_conciliation_details.choices.no'), value: false)
-      #disagree_conciliation_reason.panel.panel-border-narrow.js-hidden
-        = f.text_area :disagree_conciliation_reason
-    = f.radio_button_fieldset :agree_with_employment_dates do |b|
-      = content_tag :div, {class: 'multiple-choice'} do
-        = b.radio_button(:agree_with_employment_dates, true) + b.label(:agree_with_employment_dates, t('helpers.label.claimants_detail.agree_with_employment_dates.choices.yes'), value: true)
-      = content_tag :div, {class: 'multiple-choice', data: { target: :disagree_employment_dates }} do
-        = b.radio_button(:agree_with_employment_dates, false) + b.label(:agree_with_employment_dates, t('helpers.label.claimants_detail.agree_with_employment_dates.choices.no'), value: false)
-      #disagree_employment_dates.panel.panel-border-narrow.js-hidden
-        .form-group
-          = f.gov_uk_date_field :employment_start, legend_text: t('helpers.label.claimants_detail.employment_start'), form_hint_text: t('helpers.hint.claimants_detail.employment_start')
-        .form-group
-          = f.gov_uk_date_field :employment_end, legend_text: t('helpers.label.claimants_detail.employment_end'), form_hint_text: t('helpers.hint.claimants_detail.employment_end')
-        .form-group
-          = f.text_area :disagree_employment
-    = f.radio_button_fieldset :continued_employment do |b|
-      = content_tag :div, {class: 'multiple-choice'} do
-        = b.radio_button(:continued_employment, true) + b.label(:continued_employment, t('helpers.label.claimants_detail.continued_employment.choices.yes'), value: true)
-      = content_tag :div, {class: 'multiple-choice'} do
-        = b.radio_button(:continued_employment, false) + b.label(:continued_employment, t('helpers.label.claimants_detail.continued_employment.choices.no'), value: false)
-    = f.radio_button_fieldset :agree_with_claimants_description_of_job_or_title do |b|
-      = content_tag :div, {class: 'multiple-choice'} do
-        = b.radio_button(:agree_with_claimants_description_of_job_or_title, true) + b.label(:agree_with_claimants_description_of_job_or_title, t('helpers.label.claimants_detail.agree_with_claimants_description_of_job_or_title.choices.yes'), value: true)
-      = content_tag :div, {class: 'multiple-choice', data: { target: :disagree_claimants_job_or_title }} do
-        = b.radio_button(:agree_with_claimants_description_of_job_or_title, false) + b.label(:agree_with_claimants_description_of_job_or_title, t('helpers.label.claimants_detail.agree_with_claimants_description_of_job_or_title.choices.no'), value: false)
-      #disagree_claimants_job_or_title.panel.panel-border-narrow.js-hidden
-        = f.text_area :disagree_claimants_job_or_title
+    = f.text_field :claimants_name, optional: true
+    = f.collection_radio_buttons :agree_with_early_conciliation_details, optional: true
+    = f.revealed_content :agree_with_early_conciliation_details, values: [:false] do
+      .govuk-inset-text
+        = f.text_area :disagree_conciliation_reason, optional: true
+    = f.collection_radio_buttons :agree_with_employment_dates, optional: true
+    = f.revealed_content :agree_with_employment_dates, values: [:false] do
+      .govuk-inset-text
+        = f.date_field :employment_start, maxlength_enabled: true
+        = f.date_field :employment_end, maxlength_enabled: true
+        = f.text_area :disagree_employment, optional: true
+    = f.collection_radio_buttons :continued_employment, optional: true
+    = f.collection_radio_buttons :agree_with_claimants_description_of_job_or_title, optional: true
+    = f.revealed_content :agree_with_claimants_description_of_job_or_title, values: [:false] do
+      .govuk-inset-text
+        = f.text_area :disagree_claimants_job_or_title, optional: true
+    / = f.radio_button_fieldset :agree_with_claimants_description_of_job_or_title do |b|
+    /   = content_tag :div, {class: 'multiple-choice'} do
+    /     = b.radio_button(:agree_with_claimants_description_of_job_or_title, true) + b.label(:agree_with_claimants_description_of_job_or_title, t('helpers.label.claimants_detail.agree_with_claimants_description_of_job_or_title.choices.yes'), value: true)
+    /   = content_tag :div, {class: 'multiple-choice', data: { target: :disagree_claimants_job_or_title }} do
+    /     = b.radio_button(:agree_with_claimants_description_of_job_or_title, false) + b.label(:agree_with_claimants_description_of_job_or_title, t('helpers.label.claimants_detail.agree_with_claimants_description_of_job_or_title.choices.no'), value: false)
+    /   #disagree_claimants_job_or_title.panel.panel-border-narrow.js-hidden
+    /     = f.text_area :disagree_claimants_job_or_title
 
     = f.submit(t('components.common.save_and_continue_button'), class: 'button')

@@ -20,6 +20,6 @@ class AdditionalInformationsController < ApplicationController
   end
 
   def additional_information_params
-    params.require(:additional_information).permit(:upload_additional_information, :upload_file_name)
+    params.require(:additional_information).permit(upload_additional_information: [:path, :content_type, :filename])
   end
 end

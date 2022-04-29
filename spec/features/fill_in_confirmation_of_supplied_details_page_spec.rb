@@ -44,6 +44,6 @@ RSpec.feature "Fill in Confirmation of Supplied Details Page", js: true do
     answer_confirmation_of_supplied_details
 
     expect(confirmation_of_supplied_details_page).to have_error_header
-    expect(confirmation_of_supplied_details_page.email_receipt_question).to have_error_invalid_email
+    confirmation_of_supplied_details_page.email_receipt_question.assert_error_message(t('errors.messages.invalid_email'))
   end
 end

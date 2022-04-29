@@ -1,8 +1,8 @@
 - if user_signed_in?
   - content_for :sidebar
-  .column-one-third
+  div class="column-one-third govuk-grid-column-one-third govuk-!-margin-top-9"
     .sidebar
     .sidebar-header
-      h2.heading-medium =t('components.sidebar.save_header')
+      h2.heading-medium.govuk-heading-m =t('components.sidebar.save_header')
     .sidebar-content
-      p = link_to(t('components.sidebar.save_and_complete'), destroy_user_session_path, method: :delete)
+      p = link_to(t('components.sidebar.save_and_complete'), destroy_user_session_path, method: :delete, class: 'govuk-link')

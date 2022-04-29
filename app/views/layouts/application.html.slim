@@ -1,79 +1,72 @@
 - content_for :html_lang
   = I18n.locale
 - content_for :head
-  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-  = javascript_include_tag 'application'
+  = stylesheet_pack_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+  = javascript_pack_tag 'application'
   = csrf_meta_tags
   = render "shared/google_tag_manager_head", account: Rails.application.config.google_tag_manager_account
   = yield(:page_head)
-- content_for :body_start do
+- content_for :after_header do
   = render "shared/google_tag_manager_body", account: Rails.application.config.google_tag_manager_account
 - content_for :body_end
-  javascript:
-    var showHideContent = new GOVUK.ShowHideContent();
-    showHideContent.init();
   - if start_session_timer?
     javascript:
-      SessionPrompt.init();
-  yield
+      Et.components.SessionPrompt.init();
+  - else
+    javascript:
+      Et.components.SessionPrompt.disable()
 - content_for :inside_header
-  .header-proposition
-    .content
-      = link_to('Employment Tribunals', 'https://www.employmenttribunals.service.gov.uk/', {id: 'proposition-name'})
-- content_for :content
-  .direction-ltr#content
-    main role="main"
-      .grid-row
-        .column-full
-          - if content_for?(:translation)
-            = yield(:translation)
-          - else
-            = raw "&nbsp;"
+  .govuk-header__content
+    = link_to('Employment Tribunals', 'https://www.employmenttribunals.service.gov.uk/', {class: 'govuk-header__link govuk-header__link--service-name'})
+- content_for :content_override
+  div class="govuk-width-container govuk-!-margin-bottom-9"
+    main#main-content role="main"
+      .container
+        - if content_for?(:translation)
+          .govuk-phase-banner
+            .govuk-grid-row
+              = yield(:translation)
         = render "shared/maintenance_notice" if ENV['SHOW_DOWNTIME_BANNER'].present?
-        .column-full
-          .content-header
-            - %w<info notice alert>.each do |type|
-              - next unless flash[type].present?
-              = render partial: 'shared/flash_message', locals: {type: type}
-            = render partial: 'shared/session_prompt'
-        .column-two-thirds
-          .content-header
-            h2.heading-medium data-behavior="heading" = yield(:form_page_title)
-          = yield
-        .column-one-third
-          = yield(:sidebar)
-        = render "shared/aside_save" unless @disable_save_and_return
+        - %w<info notice alert>.each do |type|
+          - next unless flash[type].present?
+          = render partial: 'shared/flash_message', locals: {type: type}
+        = render partial: 'shared/session_prompt'
+        .govuk-grid-row
+          .govuk-grid-column-two-thirds
+            h1 class="govuk-heading-l govuk-!-margin-top-9"  = yield(:form_page_title)
+            = yield
+          .govuk-grid-column-one-third
+            = yield(:sidebar)
+          = render "shared/aside_save" unless @disable_save_and_return
 - content_for :footer_support_links
   = render 'shared/footer_links'
 
 - content_for :cookie_message do
   - unless cookie_settings['seen']
-    .govuk-cookie-banner.confirmation aria-label= t('cookie_banner.banner.cookie_aria_label') role="region"
-      .govuk-cookie-banner__message.govuk-width-container.banner-background
-        .govuk-grid-row.banner-container
-          .govuk-grid-column-two-thirds
-            h2.govuk-cookie-banner__heading.govuk-heading-m.bold.banner-title= t('cookie_banner.banner.title')
-            .govuk-cookie-banner__content
-              p= t('cookie_banner.banner.first_line')
-              p= t('cookie_banner.banner.second_line')
+    = form_for cookie_form, as: :cookie, url: cookies_path, method: :post, builder: EtGdsDesignSystem.form_builder_class do |f|
+      = f.hidden_field :return_path, value: path_only(request.url)
+      .govuk-cookie-banner aria-label= t('cookie_banner.banner.cookie_aria_label') role="region" data-nosnippet=true
+        .govuk-cookie-banner__message.govuk-width-container
+          .govuk-grid-row
+            .govuk-grid-column-two-thirds
+              h2.govuk-cookie-banner__heading.govuk-heading-m= t('cookie_banner.banner.title')
+              .govuk-cookie-banner__content
+                p.govuk-body= t('cookie_banner.banner.first_line')
+                p.govuk-body= t('cookie_banner.banner.second_line')
           .govuk-button-group
-            = form_for cookie_form, as: :cookie, url: cookies_path, method: :post, html: {style: 'display: inline'} do |f|
-              = f.hidden_field :usage, value: 'true'
-              = f.hidden_field :return_path, value: path_only(request.url)
-              = f.submit(t('cookie_banner.banner.accept_analytics'), class: 'button')
-            = form_for cookie_form, as: :cookie, url: cookies_path, method: :post, html: {style: 'display: inline'} do |f|
-              = f.hidden_field :usage, value: 'false'
-              = f.hidden_field :return_path, value: path_only(request.url)
-              = f.submit(t('cookie_banner.banner.reject_analytics'), class: 'button button-banner')
-            = link_to t('cookie_banner.banner.cookie_link'), edit_cookies_path
+            button.govuk-button.button data-module="govuk-button" value= "true" name= "cookie[usage]" type= "submit"
+              = t('cookie_banner.banner.accept_analytics')
+            button.govuk-button.button data-module="govuk-button" value= "false" name= "cookie[usage]" type= "submit"
+              = t('cookie_banner.banner.reject_analytics')
+            = link_to t('cookie_banner.banner.cookie_link'), edit_cookies_path, class: 'govuk-link'
   - if flash[:cookie_banner_confirmation].present?
     .govuk-cookie-banner.confirmation aria-label= t('cookie_banner.banner.cookie_aria_label') role="region"
       .govuk-cookie-banner__message.govuk-width-container role="alert"
-        .govuk-grid-row.banner-container
+        .govuk-grid-row
           .govuk-grid-column-two-thirds
             .govuk-cookie-banner__content
               p.banner-flash= flash[:cookie_banner_confirmation].html_safe
-        .govuk-button-group.banner-container
+        .govuk-button-group
           form action=(request.url) method="get"
             button.govuk-button.button data-module="govuk-button"
               = t('cookie_banner.banner.hide_button')

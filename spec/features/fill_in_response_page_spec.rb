@@ -22,7 +22,7 @@ RSpec.feature "Fill in Response Page", js: true do
     answer_defend_claim_question
 
     expect(response_page).to have_error_header
-    expect(response_page.defend_claim_question).to have_error_too_long
+    response_page.defend_claim_facts.assert_error_message(t('errors.messages.too_long'))
   end
 
   scenario "correctly will enable user to check answers and return to edit them" do
@@ -34,6 +34,9 @@ RSpec.feature "Fill in Response Page", js: true do
     confirmation_of_supplied_details_page.confirmation_of_response_answers.edit_response_page_link.click
 
     expect(response_page).to be_displayed
-    response_page.defend_claim_question.assert_answers_for(@claimant)
+    expect(response_page.defend_claim_question.value).to eql(t(@claimant.defend_claim))
+    if @claimant.defend_claim.to_s.split('.').last == 'yes'
+      expect(response_page.defend_claim_facts.value).to eql @claimant.defend_claim_facts
+    end
   end
 end

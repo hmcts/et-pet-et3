@@ -4,52 +4,52 @@
 
   p = t('components.privacy_notice.introduction',
           terms_and_conditions_href: link_to(t('components.privacy_notice.terms_and_conditions_href'),
-                  terms_and_conditions_path, target: :_blank)).html_safe
+                  terms_and_conditions_path, target: :_blank, class: 'govuk-link')).html_safe
 
   #who-manages-service
-    h4.heading-small = t('components.privacy_notice.who_manages.header')
+    h4.govuk-heading-s = t('components.privacy_notice.who_manages.header')
     - t('components.privacy_notice.who_manages.content',
     personal_info_charter_href: link_to(t('components.privacy_notice.personal_info_charter_href'),
             'https://www.gov.uk/government/organisations/ministry-of-justice/about/personal-information-charter',
-            target: :_blank)).each do |paragraph|
+            target: :_blank, class: 'govuk-link')).each do |paragraph|
       p = paragraph.html_safe
 
   #personal-data
-    h4.heading-small = t('components.privacy_notice.personal_data.header')
+    h4.govuk-heading-s = t('components.privacy_notice.personal_data.header')
     = render 'static_pages/policy_elements',
             translated_content_array: t('components.privacy_notice.personal_data.content',
             using_cookies_href: link_to(t('components.privacy_notice.using_cookies_href'),
-                    'http://www.aboutcookies.org.uk/managing-cookies', target: :_blank))
+                    'http://www.aboutcookies.org.uk/managing-cookies', target: :_blank, class: 'govuk-link'))
 
   #what-we-do-data
-    h4.heading-small = t('components.privacy_notice.what_we_do_data.header')
+    h4.govuk-heading-s = t('components.privacy_notice.what_we_do_data.header')
     = render 'static_pages/policy_elements', translated_content_array: t('components.privacy_notice.what_we_do_data.content')
 
   #your-rights
-    h4.heading-small = t('components.privacy_notice.your_rights.header')
+    h4.govuk-heading-s = t('components.privacy_notice.your_rights.header')
     = render 'static_pages/policy_elements', translated_content_array: t('components.privacy_notice.your_rights.content')
 
   #sharing-your-data
-    h4.heading-small = t('components.privacy_notice.sharing_your_data.header')
+    h4.govuk-heading-s = t('components.privacy_notice.sharing_your_data.header')
     p = t('components.privacy_notice.sharing_your_data.content',
             terms_and_conditions_href: link_to(t('components.privacy_notice.terms_and_conditions_href'),
-                    terms_and_conditions_path, target: :_blank)).html_safe
+                    terms_and_conditions_path, target: :_blank, class: 'govuk-link')).html_safe
 
   #receiving-notifications
-    h4.heading-small = t('components.privacy_notice.receiving_notifications.header')
+    h4.govuk-heading-s = t('components.privacy_notice.receiving_notifications.header')
     - t('components.privacy_notice.receiving_notifications.content',
             contact_us_href: link_to(t('components.privacy_notice.receiving_notifications.contact_us_href'),
                     'https://www.gov.uk/guidance/employment-tribunal-offices-and-venues',
-                    target: :_blank)).each do |paragraph|
+                    target: :_blank, class: 'govuk-link')).each do |paragraph|
       p = paragraph.html_safe
 
   #how-to-complain
-    h4.heading-small = t('components.privacy_notice.how_to_complain.header')
+    h4.govuk-heading-s = t('components.privacy_notice.how_to_complain.header')
     - t('components.privacy_notice.how_to_complain.content',
             ico_href: link_to(t('components.privacy_notice.how_to_complain.ico_href'),
-                    'https://ico.org.uk/global/contact-us', target: :_blank)).each do |paragraph|
+                    'https://ico.org.uk/global/contact-us', target: :_blank, class: 'govuk-link')).each do |paragraph|
       p = paragraph.html_safe
 
   #further-information
-    h4.heading-small = t('components.privacy_notice.further_info.header')
-    p = raw t("components.privacy_notice.further_info.refer_to_govuk", link: link_to(t("components.privacy_notice.further_info.govuk_link_text"), "https://www.gov.uk/help/cookies", rel: "external", target: "_blank"))
+    h4.govuk-heading-s = t('components.privacy_notice.further_info.header')
+    p = raw t("components.privacy_notice.further_info.refer_to_govuk", link: link_to(t("components.privacy_notice.further_info.govuk_link_text"), "https://www.gov.uk/help/cookies", rel: "external", target: "_blank", class: 'govuk-link'))

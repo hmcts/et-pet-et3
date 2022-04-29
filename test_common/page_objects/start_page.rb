@@ -2,7 +2,8 @@ module ET3
   module Test
     class StartPage < BasePage
       set_url '/'
-      section :switch_language, LanguageSwitcherSection, '.switch-language'
+      include EtTestHelpers::Page
+      section :switch_language, LanguageSwitcherSection, '.language-picker'
       element :header, :content_header, "introduction.header"
       element :description, :element_with_text, "introduction.description"
       section :what_you_need, :wrapper_headered, "introduction.what_title" do
@@ -24,8 +25,8 @@ module ET3
         element :header, :element_with_text, "introduction.data_title"
         element :section_content, :element_with_text, "introduction.data_content"
       end
-      element :start_button, :css, ".button.button-start"
-      element :return_to_my_response_button, :link_named, "components.return_to_response_button"
+      gds_submit_button :start_button, :'introduction.start_now'
+      gds_submit_button :return_to_my_response_button, :'components.return_to_response_button'
       def next
         start_button.click
       end

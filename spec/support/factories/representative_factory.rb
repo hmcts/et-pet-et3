@@ -3,7 +3,7 @@ FactoryBot.define do
   end
 
   trait :representative_valid do
-    type {:"questions.type_of_representative.solicitor.label"}
+    type {:"questions.your_representatives_details.type_of_representative.options.solicitor"}
     organisation_name { Faker::Company.bs }
     name { Faker::Name.name }
     building {"106"}
@@ -15,10 +15,10 @@ FactoryBot.define do
     alternative_telephone_number {"02222 654321"}
     email_address  {"sivvoy.taing@hmcts.net"}
     dx_number  {"dx1234567890"}
-    have_representative {:"questions.have_representative.yes.label"}
+    have_representative {:"questions.your_representatives.have_representative.options.yes"}
     representative_mobile {"07987654321"}
     representative_reference {"Rep Ref"}
-    representative_contact_preference {:"questions.representative_contact_preference.fax.label"}
+    representative_contact_preference {:"questions.your_representatives_details.representative_contact_preference.options.fax"}
     representative_fax {"0207 345 6789"}
   end
 
@@ -35,10 +35,10 @@ FactoryBot.define do
     alternative_telephone_number {"string"}
     email_address  {"Email"}
     dx_number {"724060 Derby 21 (no validation)"}
-    have_representative {:"questions.have_representative.no.label"}
+    have_representative {:"questions.your_representatives.have_representative.options.no"}
     representative_mobile {"string"}
     representative_reference {""}
-    representative_contact_preference {:"questions.representative_contact_preference.email.label"}
+    representative_contact_preference {:"questions.your_representatives_details.representative_contact_preference.options.email"}
     representative_fax {"string"}
     employer_contract_claim {:"questions.employer_contract_claim.yes.label"}
   end

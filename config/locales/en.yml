@@ -31,227 +31,9 @@
 
 en:
   helpers:
-    fieldset:
-      respondents_detail:
-        contact_preference: How would you prefer us to contact you? (optional)
-        organisation_more_than_one_site: Does this organisation have more than one site in Great Britain? (optional)
-        video_call: Would you be able to take part in a hearing by video? (Requires internet access).
-        cookies: Do you want to accept analytics cookies?
-      claimants_detail:
-        agree_with_early_conciliation_details: Do you agree with the details given by the claimant about Early Conciliation with Acas? (optional)
-        agree_with_employment_dates: Are the dates of employment given by the claimant correct? (optional)
-        continued_employment: Is their employment continuing? (optional)
-        agree_with_claimants_description_of_job_or_title: Is the claimant's description of their job or job title correct? (optional)
-      earnings_and_benefits:
-        agree_with_claimants_hours: Are the hours of work correct? (optional)
-        agree_with_earnings_details: Are the earnings correct? (optional)
-        queried_pay_before_tax_period: Pay before tax period (optional)
-        queried_take_home_pay_period: Normal take-home pay period (optional)
-        agree_with_claimant_notice: Are the details about being paid for or working a period of notice correct? (optional)
-        agree_with_claimant_pension_benefits: Are the details about pensions and other benefits correct? (optional)
-      response:
-        defend_claim: Do you defend the claim ?
-      your_representative:
-        have_representative: This is someone who has agreed to act on your behalf.
-      your_representatives_details:
-        type_of_representative: Type of Representative
-        representative_contact_preference: How would you prefer us to contact your representative? (optional)
-      disability:
-        disability: Do you have a disability? (optional)
-      employers_contract_claim:
-        make_employer_contract_claim: Do you wish to make an Employer Contract Claim? (optional)
-    label:
-      cookies:
-        choices:
-          'yes': 'Yes'
-          'no': 'No'
-      save_and_return[user]:
-        email: Enter your email address to receive your save and return number (optional)
-        password: Create your memorable word
-      user:
-        password: Memorable word
-        reference: Save and return number
-        email: Enter your email address
-      respondents_detail:
-        case_number: Case number
-        name: Name of individual, company or organisation
-        contact: Full name of contact (optional)
-        building_name: Building name or number
-        street_name: Street
-        town: Town/City
-        county: County (optional)
-        postcode: Postcode
-        dx_number: Document exchange (DX) number (optional)
-        contact_number: Contact number (optional)
-        mobile_number: Mobile number (optional)
-        contact_preference:
-          choices:
-            email: Email
-            post: Post
-            fax: Fax
-        email_address: Email address
-        fax_number: Fax number
-        organisation_employ_gb: How many people does this organisation employ in Great Britain? (optional)
-        organisation_more_than_one_site:
-          choices:
-            'yes': 'Yes'
-            'no': 'No'
-        employment_at_site_number: How many people are employed at the place where the claimant worked?
-        video_call:
-          choices:
-            'yes': 'Yes'
-            'no': 'No'
-      claimants_detail:
-        claimants_name: Claimant's full name (optional)
-        agree_with_early_conciliation_details:
-          choices:
-            'yes': 'Yes'
-            'no': 'No'
-        disagree_conciliation_reason: Why do you disagree with the claimant? (optional)
-        agree_with_employment_dates:
-          choices:
-            'yes': 'Yes'
-            'no': 'No'
-        employment_start: When their employment started
-        employment_end: When their employment ended or will end
-        disagree_employment: Why do you disagree with the dates given by the claimant (optional)
-        continued_employment:
-          choices:
-            'yes': 'Yes'
-            'no': 'No'
-        agree_with_claimants_description_of_job_or_title:
-          choices:
-            'yes': 'Yes'
-            'no': 'No'
-        disagree_claimants_job_or_title: Please give the details you believe to be correct (optional)
-      earnings_and_benefits:
-        agree_with_claimants_hours:
-          choices:
-            'yes': 'Yes'
-            'no': 'No'
-        queried_hours: Tell us the details you believe to be correct.
-        agree_with_earnings_details:
-          choices:
-            'yes': 'Yes'
-            'no': 'No'
-        queried_pay_before_tax: Pay before tax (optional)
-        queried_pay_before_tax_period:
-          choices:
-            monthly: Monthly
-            weekly: Weekly
-        queried_take_home_pay: Normal take-home pay (optional)
-        queried_take_home_pay_period:
-          choices:
-            monthly: Monthly
-            weekly: Weekly
-        agree_with_claimant_notice:
-          choices:
-            'yes': 'Yes'
-            'no': 'No'
-        disagree_claimant_notice_reason: |
-          Tell us the details you believe to be correct.
-        agree_with_claimant_pension_benefits:
-          choices:
-            'yes': 'Yes'
-            'no': 'No'
-        disagree_claimant_pension_benefits_reason:
-          Tell us the details you believe to be correct. (optional)
-      response:
-        defend_claim:
-          choices:
-            'yes': 'Yes'
-            'no': 'No'
-        defend_claim_facts: Tell us the facts that you rely on to defend the claim.
-      your_representative:
-        have_representative:
-          choices:
-            'yes': 'Yes'
-            'no': 'No'
-      your_representatives_details:
-        type_of_representative:
-          choices:
-            citizens_advice_bureau: Citizen's advice bureau
-            free_representation_unit: Free representation unit
-            law_centre: Law centre
-            union: Union
-            solicitor: Solicitor
-            private_individual: Private individual
-            trade_association: Trade association
-            other: Other
-        representative_org_name: Name of the representative's organisation (optional)
-        representative_name: Representative's full name
-        representative_building: Building name or number
-        representative_street: Street
-        representative_town: Town/City
-        representative_county: County (optional)
-        representative_postcode: Postcode
-        representative_phone: Phone number (optional)
-        representative_mobile: Mobile number (optional)
-        representative_dx_number: Document exchange (DX) number (optional)
-        representative_reference: Reference (optional)
-        representative_contact_preference:
-          choices:
-            email: Email
-            post: Post
-            fax: Fax
-        representative_email: Email address
-        representative_fax: Fax number
-      disability:
-        disability:
-          choices:
-            'yes': 'Yes'
-            'no': 'No'
-        disability_information: It would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises
-      employers_contract_claim:
-        make_employer_contract_claim:
-          choices:
-            'yes': 'Yes'
-            'no': 'No'
-        claim_information: Please set out the background and details of your claim below, which should include all important dates (optional)
-      additional_information:
-        upload_additional_information: Please upload a file to provide any important additional information about your response which you have not been able to include so far (optional)
-      confirmation_of_supplied_details:
-        email_receipt: Email address (optional)
     hint:
-      save_and_return[user]:
-        password: If you have entered your email address above, you will be able to reset your memorable word if you forget it
-      user:
-        reference: This was emailed to you (if you entered your email address)
-        email: If you entered a valid email address when you started your response, we will email you with instructions on how to reset your memorable word. If we cannot match your email address or you did not enter a valid email address you will need to start a new response.
       respondents_detail:
-        contact: For example, John Smith
-        mobile_number: If different to your primary contact number
         employment_at_site_number: For example, 10
-        organisation_employ_gb: For example, 10
-        video_call: Further details on video hearings can be found on the following link https://www.gov.uk/guidance/hmcts-telephone-and-videohearings-during-coronavirus-outbreak
-      claimants_detail:
-        employment_start: For example, 31 03 2010
-        employment_end: For example, 01 12 2017
-      earnings_and_benefits:
-        queried_hours: Enter hours per week, for example 39
-        agree_with_earnings_details:
-        queried_pay_before_tax: Including overtime, commission, bonuses, etc. For example, 28000
-        queried_take_home_pay: Including overtime, commission, bonuses, etc. For example, 20000
-        disagree_claimant_notice_reason: |
-          Explain what happened and why. Enter up to 400 characters. You can upload a document with more details before you submit your response.
-        agree_with_claimant_pension_benefits: For example a company car or medical insurance.
-        disagree_claimant_pension_benefits_reason: |
-          Enter up to 350 characters. You can upload a document with more details before you submit your response.
-      response:
-        defend_claim_facts: |
-          You can enter up to 2500 characters. You can upload a document with additional details before you submit your response.
-      disability:
-        disability_information: |
-          PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 350 characters) if you would like to include more please
-          use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
-      employers_contract_claim:
-        claim_information: |
-          See guidance for more information on what details should be included.
-          PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 4500 characters) if you would like to include more please
-          use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
-          If you exceed 50 lines you will not receive full details of your claim in the PDF returned to you on submission of the form.
-      additional_information:
-        upload_additional_information: "Supported file type: .rtf"
   errors:
     header: Please review the following
     description: Clicking on an error will navigate you directly to the question. Please correct these errors before continuing.
@@ -337,7 +119,6 @@ en:
     confirmation_of_supplied_details:
       header: Check and submit your response
       receipt_header: Email receipt
-      receipt_description: We can email you a copy of your receipt.
       table_header: Confirmation of Supplied Details
       question_header: Question
       answer_header: Answer
@@ -673,6 +454,12 @@ en:
         intro_text: You can save your response and return to it at any time. You will need your save and return number (above), and memorable word, which you create below.  If you enter your email address you will be able to reset your memorable word if you forget it.
         print_link: Print this page
         print_copy: to have a copy of your save and return number for reference
+        email:
+          label: 'Enter your email address to receive your save and return number'
+        password:
+          label: Create your memorable word
+          hint: If you have entered your email address above, you will be able to reset your memorable word if you forget it
+
     sessions:
       user:
         reject_submitted: "Your response has already been submitted so you are unable to return to it."
@@ -684,14 +471,25 @@ en:
         forgot_password: "Forgot your memorable word? "
         reset_password: Click here to reset
         hint_html: Don’t have these details? <a href="%{path}">Start a new response</a>.
-        password: Enter your memorable word
+        reference:
+          label: Save and return number
+          hint: This was emailed to you (if you entered your email address)
+        password:
+          label: Memorable word
     passwords:
       new:
         header: Reset memorable word
         intro_text: Enter your details below
+        email:
+          label: Enter your email address
+          hint: If you entered a valid email address when you started your response, we will email you with instructions on how to reset your memorable word. If we cannot match your email address or you did not enter a valid email address you will need to start a new response.
+        reference:
+          label: Save and return number
       edit:
         header: Reset memorable word
         intro_text: Enter your new details below
+        password:
+          label: Memorable word
       user:
         send_instructions: "You will receive an email with instructions on how to reset your memorable word in a few minutes."
         updated_not_active: Your memorable word has been updated. You can use it below and return to your response.
@@ -746,6 +544,256 @@ en:
       subheader: |
         Your response has been saved. You can return to it by entering your reference number and your memorable word.
       sign_out_button: Sign out now
+  respondents_details:
+    edit:
+      case_number:
+        label: Case number
+      name:
+        label: Name of individual, company or organisation
+      contact:
+        label: Full name of contact
+        hint: For example, John Smith
+      building_name:
+        label: Building name or number
+      street_name:
+        label: Street
+      town:
+        label: Town/City
+      county:
+        label: County
+      postcode:
+        label: Postcode
+      dx_number:
+        label: Document exchange (DX) number
+      contact_number:
+        label: Contact number
+      mobile_number:
+        label: Mobile number
+        hint: If different to your primary contact number
+      email_address:
+        label: Email address
+      fax_number:
+        label: Fax number
+      organisation_employ_gb:
+        label: How many people does this organisation employ in Great Britain?
+        hint: For example, 10
+      employment_at_site_number:
+        label: How many people are employed at the place where the claimant worked?
+      contact_preference:
+        label: How would you prefer us to contact you?
+        options:
+          email: Email
+          post: Post
+          fax: Fax
+      video_call:
+        label: Would you be able to take part in a hearing by video? (Requires internet access).
+        hint: Further details on video hearings can be found on the following link https://www.gov.uk/guidance/hmcts-telephone-and-videohearings-during-coronavirus-outbreak
+        options:
+          'true': 'Yes'
+          'false': 'No'
+      organisation_more_than_one_site:
+        label: Does this organisation have more than one site in Great Britain?
+        options:
+          'true': 'Yes'
+          'false': 'No'
+  claimants_details:
+    edit:
+      claimants_name:
+        label: Claimant's full name
+      agree_with_early_conciliation_details:
+        label: Do you agree with the details given by the claimant about Early Conciliation with Acas?
+        options:
+          'true': 'Yes'
+          'false': 'No'
+      disagree_conciliation_reason:
+        label: Why do you disagree with the claimant?
+      agree_with_employment_dates:
+        label: Are the dates of employment given by the claimant correct?
+        options:
+          'true': 'Yes'
+          'false': 'No'
+      employment_start:
+        label: When their employment started
+        hint: For example, 31 03 2010
+      employment_end:
+        label: When their employment ended or will end
+        hint: For example, 01 12 2017
+      disagree_employment:
+        label: Why do you disagree with the dates given by the claimant
+      continued_employment:
+        label: Is their employment continuing?
+        options:
+          'true': 'Yes'
+          'false': 'No'
+      agree_with_claimants_description_of_job_or_title:
+        label: Is the claimant's description of their job or job title correct?
+        options:
+          'true': 'Yes'
+          'false': 'No'
+      disagree_claimants_job_or_title:
+        label: Please give the details you believe to be correct
+  earnings_and_benefits:
+    edit:
+      agree_with_claimants_hours:
+        label: Are the hours of work correct?
+        options:
+          'true': 'Yes'
+          'false': 'No'
+      queried_hours:
+        label: Tell us the details you believe to be correct.
+        hint: Enter hours per week, for example 39
+      agree_with_earnings_details:
+        label: Are the earnings correct?
+        options:
+          'true': 'Yes'
+          'false': 'No'
+      queried_pay_before_tax:
+        label: Pay before tax
+        hint: Including overtime, commission, bonuses, etc. For example, 28000
+      queried_pay_before_tax_period:
+        label: Pay before tax period
+        options:
+          Monthly: Monthly
+          Weekly: Weekly
+      queried_take_home_pay:
+        label: Normal take-home pay
+        hint: Including overtime, commission, bonuses, etc. For example, 20000
+      queried_take_home_pay_period:
+        label: Normal take-home pay period
+        options:
+          Monthly: Monthly
+          Weekly: Weekly
+      agree_with_claimant_notice:
+        label: Are the details about being paid for or working a period of notice correct?
+        options:
+          'true': 'Yes'
+          'false': 'No'
+      disagree_claimant_notice_reason:
+        label: Tell us the details you believe to be correct.
+        hint: Explain what happened and why. Enter up to 400 characters. You can upload a document with more details before you submit your response.
+      agree_with_claimant_pension_benefits:
+        label: Are the details about pensions and other benefits correct?
+        hint: For example a company car or medical insurance.
+        options:
+          'true': 'Yes'
+          'false': 'No'
+      disagree_claimant_pension_benefits_reason:
+        label: Tell us the details you believe to be correct. (optional)
+        hint: Enter up to 350 characters. You can upload a document with more details before you submit your response.
+  responses:
+    edit:
+      defend_claim:
+        label: Do you defend the claim ?
+        options:
+          'true': 'Yes'
+          'false': 'No'
+      defend_claim_facts:
+        label: Tell us the facts that you rely on to defend the claim.
+        hint: You can enter up to 2500 characters. You can upload a document with additional details before you submit your response.
+  your_representatives:
+    edit:
+      have_representative:
+        label: This is someone who has agreed to act on your behalf.
+        options:
+          'true': 'Yes'
+          'false': 'No'
+  your_representatives_details:
+    edit:
+      type_of_representative:
+        label: Type of Representative
+        options:
+          'Citizens Advice Bureau': Citizen's advice bureau
+          'Free Representation Unit': Free representation unit
+          'Law Centre': Law centre
+          'Union': Union
+          'Solicitor': Solicitor
+          'Private Individual': Private individual
+          'Trade Association': Trade association
+          'Other': Other
+      representative_org_name:
+        label: Name of the representative's organisation
+      representative_name:
+        label: Representative's full name
+      representative_building:
+        label: Building name or number
+      representative_street:
+        label: Street
+      representative_town:
+        label: Town/City
+      representative_county:
+        label: County
+      representative_postcode:
+        label: Postcode
+      representative_phone:
+        label: Phone number
+      representative_mobile:
+        label: Mobile number
+      representative_dx_number:
+        label: Document exchange (DX) number
+      representative_reference:
+        label: Reference
+      representative_contact_preference:
+        label: How would you prefer us to contact your representative?
+        options:
+          email: Email
+          post: Post
+          fax: Fax
+      representative_email:
+        label: Email address
+      representative_fax:
+        label: Fax number
+  disabilities:
+    edit:
+      disability:
+        label: Do you have a disability?
+        options:
+          'true': 'Yes'
+          'false': 'No'
+      disability_information:
+        label: It would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises
+        hint: |
+          PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 350 characters) if you would like to include more please
+          use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
+  employers_contract_claims:
+    edit:
+      make_employer_contract_claim:
+        label: Do you wish to make an Employer Contract Claim?
+        options:
+          'true': 'Yes'
+          'false': 'No'
+      claim_information:
+        label: Please set out the background and details of your claim below, which should include all important dates
+        hint: |
+          See guidance for more information on what details should be included.
+          PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 4500 characters) if you would like to include more please
+          use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
+          If you exceed 50 lines you will not receive full details of your claim in the PDF returned to you on submission of the form.
+
+
+
+
+
+
+  additional_informations:
+    edit:
+      upload_additional_information:
+        label: Please upload a file to provide any important additional information about your response which you have not been able to include so far
+        hint: "Supported file type: .rtf"
+        button_text: Choose File
+        remove_file_button_text: Remove file
+        file_selected_text: "File selected:"
+  confirmation_of_supplied_details:
+    edit:
+      email_receipt:
+        label: Email address
+        hint: We can email you a copy of your receipt.
+  cookies:
+    edit:
+      usage:
+        label: Do you want to accept analytics cookies?
+        options:
+          'true': 'Yes'
+          'false': 'No'
   activerecord:
     errors:
       models:
@@ -762,3 +810,5 @@ en:
           attributes:
             employment_end:
               employment_end_before_start: End date must be after the employment start date
+  shared:
+    optional: (optional)

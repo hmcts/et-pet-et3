@@ -6,7 +6,6 @@ require 'rails/all'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
-require_relative '../lib/form_builder'
 
 module Et3
   class Application < Rails::Application
@@ -19,7 +18,7 @@ module Et3
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    ActionView::Base.default_form_builder = FormBuilder
+    ActionView::Base.default_form_builder = EtGdsDesignSystem.form_builder_class
 
     config.time_zone = "London"
     if ENV.key? 'SMTP_HOSTNAME'
@@ -51,6 +50,7 @@ module Et3
     config.maintenance_enabled = ENV.fetch('MAINTENANCE_ENABLED', 'false').downcase == 'true'
     config.maintenance_allowed_ips = ENV.fetch('MAINTENANCE_ALLOWED_IPS', '').split(',').map(&:strip)
     config.maintenance_end = ENV.fetch('MAINTENANCE_END', nil)
-
+    config.active_record.legacy_connection_handling = false
+    config.et_gds_design_system.api_url = ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api/v2')
   end
 end

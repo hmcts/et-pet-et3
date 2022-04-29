@@ -7,64 +7,60 @@
           managing_cookies_href: link_to(t('components.cookies.managing_cookies_href'),
                   'http://www.aboutcookies.org.uk/', target: :_blank))
 
-  h2.heading-medium = t('components.cookies.subheader')
-  h2.heading-small = t('components.cookies.cookie_usage.header')
+  h2.govuk-heading-m = t('components.cookies.subheader')
+  h2.govuk-heading-s = t('components.cookies.cookie_usage.header')
   p= t('components.cookies.cookie_usage.first_line')
-  h2.heading-small = t('components.cookies.cookie_usage.second_header')
+  h2.govuk-heading-s = t('components.cookies.cookie_usage.second_header')
   p= t('components.cookies.cookie_usage.second_line')
 
-  table
-    thead
-      tr
-        th = t('components.cookies.table_header.name')
-        th = t('components.cookies.table_header.purpose')
-        th = t('components.cookies.table_header.expires')
-    tbody
-      tr
-        td = t('components.cookies.introductory_message.table.name')
-        td = t('components.cookies.introductory_message.table.purpose')
-        td = t('components.cookies.introductory_message.table.expires')
+  table.govuk-table
+    thead.govuk-table__head
+      tr.govuk-table__row
+        th.govuk-table__header = t('components.cookies.table_header.name')
+        th.govuk-table__header = t('components.cookies.table_header.purpose')
+        th.govuk-table__header = t('components.cookies.table_header.expires')
+    tbody.govuk-table__body
+      tr.govuk-table__row
+        td.govuk-table__cell = t('components.cookies.introductory_message.table.name')
+        td.govuk-table__cell = t('components.cookies.introductory_message.table.purpose')
+        td.govuk-table__cell = t('components.cookies.introductory_message.table.expires')
 
-  h2.heading-small = t('components.cookies.cookie_message.header')
+  h2.govuk-heading-s = t('components.cookies.cookie_message.header')
   p = t('components.cookies.cookie_message.first_line')
 
-  table
-    thead
-      tr
-        th = t('components.cookies.table_header.name')
-        th = t('components.cookies.table_header.purpose')
-        th = t('components.cookies.table_header.expires')
+  table.govuk-table
+    thead.govuk-table__head
+      tr.govuk-table__row
+        th.govuk-table__header = t('components.cookies.table_header.name')
+        th.govuk-table__header = t('components.cookies.table_header.purpose')
+        th.govuk-table__header = t('components.cookies.table_header.expires')
     tbody
-      tr
-        td = t('components.cookies.cookie_message.table.name')
-        td = t('components.cookies.cookie_message.table.purpose')
-        td = t('components.cookies.cookie_message.table.expires')
+      tr.govuk-table__row
+        td.govuk-table__cell = t('components.cookies.cookie_message.table.name')
+        td.govuk-table__cell = t('components.cookies.cookie_message.table.purpose')
+        td.govuk-table__cell = t('components.cookies.cookie_message.table.expires')
 
   #website-usage
-    h2.heading-medium = t('components.cookies.website_usage.header')
-    h2.heading-small = t('components.cookies.website_usage.second_header')
+    h2.govuk-heading-m = t('components.cookies.website_usage.header')
+    h2.govuk-heading-s = t('components.cookies.website_usage.second_header')
     = render 'static_pages/policy_elements', translated_content_array: t('components.cookies.website_usage.content',
             google_privacy_policy_href: link_to(t('components.cookies.google_privacy_policy_href'),
                     'https://www.google.com/policies/privacy/partners/', target: :_blank),
             opt_out_href: link_to(t('components.cookies.opt_out_href'),
                     'https://tools.google.com/dlpage/gaoptout', target: :_blank))
-    table
+    table.govuk-table
       thead
-        tr
-          th = t('components.cookies.table_header.name')
-          th = t('components.cookies.table_header.purpose')
-          th = t('components.cookies.table_header.expires')
+        tr.govuk-table__row
+          th.govuk-table__header = t('components.cookies.table_header.name')
+          th.govuk-table__header = t('components.cookies.table_header.purpose')
+          th.govuk-table__header = t('components.cookies.table_header.expires')
       tbody
         - t('components.cookies.website_usage.table').each do |row|
-          tr
+          tr.govuk-table__row
             - row.each do |cell|
-              td = cell
+              td.govuk-table__cell = cell
     br
 
-  = form_for(cookie_form, as: :cookie, url: cookies_path, method: :patch) do |f|
-    = f.radio_button_fieldset :cookies, legend_options: {text: t('helpers.fieldset.respondents_detail.cookies')} do |b|
-      = content_tag :div, {class: 'multiple-choice', data: {target: :usage}} do
-        = b.radio_button(:usage, true) + b.label(:usage, t('helpers.label.cookies.choices.yes'), value: true)
-      = content_tag :div, {class: 'multiple-choice'} do
-        = b.radio_button(:usage, false) + b.label(:usage, t('helpers.label.cookies.choices.no'), value: false)
-    = f.submit(t('components.common.cookies_save_button'), class: 'button')
+  = form_for(cookie_form, as: :cookie, url: cookies_path, method: :patch, builder: EtGdsDesignSystem.form_builder_class) do |f|
+    = f.collection_radio_buttons :usage
+    = f.submit(t('components.common.cookies_save_button'))

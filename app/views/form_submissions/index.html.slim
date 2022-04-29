@@ -1,27 +1,29 @@
 - content_for :page_title, "#{t('components.form_submission.page_title')} | Response to Claim"
 .content-body.form-submission
-  .govuk-box-highlight.submission-confirmation
-    h1.heading-xlarge = t 'components.form_submission.header'
-    p.font-large = t('components.form_submission.reference_text')
-    p.font-large
-      strong.bold.reference-number = @reference_number
+  div.submission-confirmation.govuk-notification-banner.govuk-notification-banner--success role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner"
+    .govuk-notification-banner__header
+      h2.govuk-notification-banner__title = t 'components.form_submission.header'
+    .govuk-notification-banner__content
+      .govuk-notification-banner__heading
+        p.govuk-body = t('components.form_submission.reference_text')
+        span.reference-number = @reference_number
   p
     - if @respondent_email.present?
       p = t('components.form_submission.covid_19')
-      p = link_to ('https://www.gov.uk/guidance/coronavirus-covid-19-courts-and-tribunals-planning-and-preparation'), t('components.form_submission.covid_19_link')
+      p = link_to t('components.form_submission.covid_19_link'), 'https://www.gov.uk/guidance/coronavirus-covid-19-courts-and-tribunals-planning-and-preparation', class: 'govuk-link'
       p
         = t('components.form_submission.copy_sent', email: @respondent_email)
         = ' '
-        = link_to t('components.form_submission.valid_pdf_download'), @pdf_url, class: 'pdf-success'
-        = link_to t('components.form_submission.invalid_pdf_download'), nil, class: 'pdf-failure hidden'
+        = link_to t('components.form_submission.valid_pdf_download'), @pdf_url, class: 'pdf-success govuk-link'
+        = link_to t('components.form_submission.invalid_pdf_download'), nil, class: 'pdf-failure hidden govuk-link'
         = '.'
     - else
       p = t('components.form_submission.covid_19')
-      p = link_to ('https://www.gov.uk/guidance/coronavirus-covid-19-courts-and-tribunals-planning-and-preparation'), t('components.form_submission.covid_19_link')
+      p = link_to t('components.form_submission.covid_19_link'), 'https://www.gov.uk/guidance/coronavirus-covid-19-courts-and-tribunals-planning-and-preparation', class: 'govuk-link'
       p
         = t('components.form_submission.copy_sent_without_email')
-        = link_to t('components.form_submission.valid_pdf_download'), @pdf_url, class: 'pdf-success'
-        = link_to t('components.form_submission.invalid_pdf_download'), nil, class: 'pdf-failure hidden'
+        = link_to t('components.form_submission.valid_pdf_download'), @pdf_url, class: 'pdf-success govuk-link'
+        = link_to t('components.form_submission.invalid_pdf_download'), nil, class: 'pdf-failure hidden govuk-link'
         = '.'
 
   p
@@ -33,14 +35,21 @@
     = raw t('components.form_submission.contact_office', email: mail_to(@office_email))
     span.office-phone = @office_phone_number
 
-  p.panel.panel-border-narrow
-    = t('components.form_submission.include_quote_case')
+  .govuk-inset-text
+    p
+      = t('components.form_submission.include_quote_case')
 
-  h1.heading-medium
+  h1.govuk-heading-m
     strong.bold = t('components.form_submission.submission_feedback')
 
   p
     = t('components.form_submission.feedback_content')
   br
 
-  = link_to t('components.form_submission.return_link'), 'https://www.smartsurvey.co.uk/s/ETES20/', class: 'button button-start'
+  = link_to 'https://www.smartsurvey.co.uk/s/ETES20/', class: 'govuk-button govuk-button--start'
+    = t('components.form_submission.return_link')
+    svg.govuk-button__start-icon xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false"
+      path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"
+- content_for(:javascripts)
+  javascript:
+    Et.pages.FormSubmissionPage()

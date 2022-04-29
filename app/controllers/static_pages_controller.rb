@@ -19,6 +19,8 @@ class StaticPagesController < ApplicationController
   private
 
   def sign_out_user
+    return if flash[:skip_sign_out]
+
     sign_out
   end
 end

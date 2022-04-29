@@ -19,240 +19,213 @@ cy:
     email_address:
       label: Nodwch eich cyfeiriad e-bost
     # Respondent's Details Page
-    case_number:
-      label: "Rhif yr achos"
-    name:
-      label: Enw'r unigolyn, cwmni neu sefydliad
-    contact:
-      label: Enw llawn y cyswllt (dewisol)
-    building_name:
-      label: Enw neu rif yr adeilad
-    street:
-      label: Stryd
-    town:
-      label: Tref/Dinas
-    county:
-      label: Sir (dewisol)
-    postcode:
-      label: Cod post
-    dx_number:
-      label: Rhif Cyfnewid Dogfennau (DX) (dewisol)
-    contact_number:
-      label: Rhif cyswllt (dewisol)
-    contact_mobile_number:
-      label: Rhif ffôn symudol (dewisol)
-    contact_preference:
-      label: Sut hoffech i ni gysylltu â chi? (dewisol)
-      email:
-        label: E-bost
-        input_label: Cyfeiriad e-bost
-      post:
-        label: Post
-      fax:
-        label: Ffacs
-        input_label: Rhif ffacs
-    organisation_employ_gb:
-      label: "Faint o bobl sy’n gyflogedig gan y sefydliad hwn ym Mhrydain Fawr? (dewisol)"
-    organisation_more_than_one_site:
-      label: "A oes gan y sefydliad hwn fwy nag un safle ym Mhrydain Fawr? (dewisol)"
-      'yes':
-        label: Oes
-      'no':
-        label: Nac oes
+    respondents_details:
+      case_number:
+        label: "Rhif yr achos"
+      name:
+        label: Enw'r unigolyn, cwmni neu sefydliad
+      contact:
+        label: Enw llawn y cyswllt (dewisol)
+      building_name:
+        label: Enw neu rif yr adeilad
+      street:
+        label: Stryd
+      town:
+        label: Tref/Dinas
+      county:
+        label: Sir (dewisol)
+      postcode:
+        label: Cod post
+      dx_number:
+        label: Rhif Cyfnewid Dogfennau (DX) (dewisol)
+      contact_number:
+        label: Rhif cyswllt (dewisol)
+      contact_mobile_number:
+        label: Rhif ffôn symudol (dewisol)
+      contact_preference:
+        label: Sut hoffech i ni gysylltu â chi? (dewisol)
+        options:
+          email: E-bost
+          post: Post
+          fax: Ffacs
+      fax_number:
+        label: Rhif ffacs
+      email_address:
+        label: Cyfeiriad e-bost
+      organisation_employ_gb:
+        label: "Faint o bobl sy’n gyflogedig gan y sefydliad hwn ym Mhrydain Fawr? (dewisol)"
+      organisation_more_than_one_site:
+        label: "A oes gan y sefydliad hwn fwy nag un safle ym Mhrydain Fawr? (dewisol)"
+        options:
+          'yes': Oes
+          'no': Nac oes
       employment_at_site_number:
         label: "Faint o bobl sy’n gyflogedig ar y safle ble'r oedd yr hawlydd yn gweithio?"
-    video_call:
-      label: A allech chi gymryd rhan mewn gwrandawiad drwy fideo? (angen mynediad i'r rhyngrwyd).
-      'yes':
-        label: Gallaf
-      'no':
-        label: Na allaf
+      video_call:
+        label: A allech chi gymryd rhan mewn gwrandawiad drwy fideo? (angen mynediad i'r rhyngrwyd).
+        options:
+          'yes': Gallaf
+          'no': Na allaf
     # Claimant's Details Page
-    claimants_name:
-      label: Enw llawn yr hawlydd (dewisol)
-    agree_with_early_conciliation_details:
-      label: "A ydych chi'n cytuno gyda'r manylion a roddodd yr hawlydd ynghylch Cymodi Cynnar gydag Acas? (dewisol)"
-      'yes':
-        label: Ydw
-      'no':
-        label: Nac ydw
+    claimants_details:
+      claimants_name:
+        label: Enw llawn yr hawlydd (dewisol)
+      agree_with_early_conciliation_details:
+        label: "A ydych chi'n cytuno gyda'r manylion a roddodd yr hawlydd ynghylch Cymodi Cynnar gydag Acas? (dewisol)"
+        options:
+          'yes': Ydw
+          'no': Nac ydw
       disagree_conciliation_reason:
         label: "Pam yr ydych yn anghytuno â’r hawlydd? (dewisol)"
-    agree_with_employment_dates:
-      label: "A yw'r dyddiadau cyflogaeth a roddwyd gan yr hawlydd yn gywir? (dewisol)"
-      'yes':
-        label: Ydy
-      'no':
-        label: Nac ydy
+      agree_with_employment_dates:
+        label: "A yw'r dyddiadau cyflogaeth a roddwyd gan yr hawlydd yn gywir? (dewisol)"
+        options:
+          'yes': Ydy
+          'no': Nac ydy
       employment_start:
         label: "Pa bryd ddechreuodd ei gyflogaeth"
-        day:
-          label: Day
-        month:
-          label: Month
-        year:
-          label: Year
       employment_end:
         label: "Pa bryd ddaeth ei gyflogaeth i ben, neu y bydd yn dod i ben"
-        day:
-          label: Day
-        month:
-          label: Month
-        year:
-          label: Year
       disagree_employment:
         label: "Pam yr ydych yn anghytuno â’r dyddiadau a roddwyd gan yr hawlydd (dewisol)"
-    continued_employment:
-      label: "A yw'n parhau i fod mewn swydd? (dewisol)"
-      'yes':
-        label: Ydy
-      'no':
-        label: Nac ydy
-    agree_with_claimants_description_of_job_or_title:
-      label: "A yw disgrifiad yr hawlydd o’i swydd neu deitl ei swydd yn gywir? (dewisol)"
-      'yes':
-        label: Ydy
-      'no':
-        label: Nac ydy
+      continued_employment:
+        label: "A yw'n parhau i fod mewn swydd? (dewisol)"
+        options:
+          'yes': Ydy
+          'no': Nac ydy
+      agree_with_claimants_description_of_job_or_title:
+        label: "A yw disgrifiad yr hawlydd o’i swydd neu deitl ei swydd yn gywir? (dewisol)"
+        options:
+          'yes': Ydy
+          'no': Nac ydy
       disagree_claimants_job_or_title:
         label: "Rhowch y manylion sy’n gywir yn eich barn chi (dewisol)"
     # Earnings and Benefits Page
-    agree_with_claimants_hours:
-      label: "A yw’r oriau gwaith yn gywir? (dewisol)"
-      'yes':
-        label: Ydy
-      'no':
-        label: Nac ydy
+    earnings_and_benefits:
+      agree_with_claimants_hours:
+        label: "A yw’r oriau gwaith yn gywir? (dewisol)"
+        options:
+          'yes': Ydy
+          'no': Nac ydy
       queried_hours:
         label: "Dywedwch beth ydych chi’n credu yw’r oriau gwaith cywir (dewisol)"
-    agree_with_earnings_details:
-      label: "A yw’r enillion yn gywir? (dewisol)"
-      'yes':
-        label: Ydy
-      'no':
-        label: Nac ydy
+      agree_with_earnings_details:
+        label: "A yw’r enillion yn gywir? (dewisol)"
+        options:
+          'yes': Ydy
+          'no': Nac ydy
       queried_pay_before_tax:
         label: "Tâl cyn treth (dewisol)"
       queried_pay_before_tax_period:
         label: "Tâl cyn cyfnod treth (dewisol)"
-        monthly:
-          label: Misol
-        weekly:
-          label: Wythnosol
+        options:
+          monthly: Misol
+          weekly: Wythnosol
       queried_take_home_pay:
         label: "Tâl terfynol arferol (dewisol)"
       queried_take_home_pay_period:
         label: "Cyfnod tâl terfynol arferol (dewisol)"
-        monthly:
-          label: Misol
-        weekly:
-          label: Wythnosol
-    agree_with_claimant_notice:
-      label: "A yw’r manylion am gael eich talu am neu weithio cyfnod o rybudd yn gywir? (dewisol)"
-      'yes':
-        label: Ydy
-      'no':
-        label: Nac ydy
+        options:
+          monthly: Misol
+          weekly: Wythnosol
+      agree_with_claimant_notice:
+        label: "A yw’r manylion am gael eich talu am neu weithio cyfnod o rybudd yn gywir? (dewisol)"
+        options:
+          'yes': Ydy
+          'no': Nac ydy
       disagree_claimant_notice_reason:
         label: "Nodwch y manylion rydych chi’n credu sy’n gywir."
-    agree_with_claimant_pension_benefits:
-      label: "A yw’r manylion am bensiynau a budd-daliadau eraill yn gywir? (dewisol)"
-      'yes':
-        label: Ydy
-      'no':
-        label: Nac ydy
+      agree_with_claimant_pension_benefits:
+        label: "A yw’r manylion am bensiynau a budd-daliadau eraill yn gywir? (dewisol)"
+        options:
+          'yes': Ydy
+          'no': Nac ydy
       disagree_claimant_pension_benefits_reason:
         label: "Nodwch y manylion rydych chi’n credu sy’n gywir. (dewisol)"
     # Response Page
-    defend_claim:
-      label: "A ydych yn amddiffyn yr hawliad?"
-      'yes':
-        label: Ydw
-      'no':
-        label: Nac ydw
+    responses:
+      defend_claim:
+        label: "A ydych yn amddiffyn yr hawliad?"
+        options:
+          'yes': Ydw
+          'no': Nac ydw
       defend_claim_facts:
         label: "Dywedwch wrthym y ffeithiau rydych chi'n dibynnu arnyn nhw i amddiffyn yr hawliad."
     # Your Representatives Page
-    have_representative:
-      label: "Dyma rywun sydd wedi cytuno i weithredu ar eich rhan."
-      'yes':
-        label: Oes
-      'no':
-        label: Nac oes
+    your_representatives:
+      have_representative:
+        label: "Dyma rywun sydd wedi cytuno i weithredu ar eich rhan."
+        options:
+          'yes': Oes
+          'no': Nac oes
     # Your Representatives Details Page
-    type_of_representative:
-      label: Math o Gynrychiolydd
-      citizens_advice_bureau:
-        label: Canolfan Cyngor ar Bopeth
-      free_representation_unit:
-        label: Uned Cynrychiolaeth am Ddim
-      law_centre:
-        label: Canolfan y Gyfraith
-      union:
-        label: Uned
-      solicitor:
-        label: Cyfreithiwr
-      private_individual:
-        label: Unigolyn preifat
-      trade_association:
-        label: Cymdeithasau Masnach
-      other:
-        label: Arall
-    representative_org_name:
-      label: "Enw sefydliad y cynrychiolydd (dewisol)"
-    representative_name:
-      label: Enw llawn y cynrychiolydd
-    representative_building:
-      label: "Enw neu rif yr adeilad"
-    representative_street:
-      label: Stryd
-    representative_town:
-      label: Tref/Dinas
-    representative_county:
-      label: Sir (dewisol)
-    representative_postcode:
-      label: Cod post
-    representative_phone:
-      label: "Rhif ffôn (dewisol)"
-    representative_mobile:
-      label: "Rhif ffôn symudol (dewisol)"
-    representative_dx_number:
-      label: "Rhif Cyfnewid Dogfennau (DX) (dewisol)"
-    representative_reference:
-      label: "Cyfeirnod (dewisol)"
-    representative_contact_preference:
-      label: "Sut hoffech i ni gysylltu â'ch cynrychiolydd? (dewisol)"
-      email:
-        label: E-bost
-        input_label: Cyfeiriad e-bost
-      post:
-        label: Post
-      fax:
-        label: Ffacs
-        input_label: Rhif ffacs
+    your_representatives_details:
+      type_of_representative:
+        label: Math o Gynrychiolydd
+        options:
+          citizens_advice_bureau: Canolfan Cyngor ar Bopeth
+          free_representation_unit: Uned Cynrychiolaeth am Ddim
+          law_centre: Canolfan y Gyfraith
+          union: Uned
+          solicitor: Cyfreithiwr
+          private_individual: Unigolyn preifat
+          trade_association: Cymdeithasau Masnach
+          other: Arall
+      representative_org_name:
+        label: "Enw sefydliad y cynrychiolydd (dewisol)"
+      representative_name:
+        label: Enw llawn y cynrychiolydd
+      representative_building:
+        label: "Enw neu rif yr adeilad"
+      representative_street:
+        label: Stryd
+      representative_town:
+        label: Tref/Dinas
+      representative_county:
+        label: Sir (dewisol)
+      representative_postcode:
+        label: Cod post
+      representative_phone:
+        label: "Rhif ffôn (dewisol)"
+      representative_mobile:
+        label: "Rhif ffôn symudol (dewisol)"
+      representative_dx_number:
+        label: "Rhif Cyfnewid Dogfennau (DX) (dewisol)"
+      representative_reference:
+        label: "Cyfeirnod (dewisol)"
+      representative_contact_preference:
+        label: "Sut hoffech i ni gysylltu â'ch cynrychiolydd? (dewisol)"
+        options:
+          email: E-bost
+          post: Post
+          fax: Ffacs
+      preference_email:
+        label: Cyfeiriad e-bost
+      preference_fax:
+        label: Rhif ffacs
     # Disability Page
-    disability:
-      label: A oes gennych chi anabledd? (dewisol)
-      'yes':
-        label: Oes
-      'no':
-        label: Nac oes
+    disabilities:
+      disability:
+        label: A oes gennych chi anabledd? (dewisol)
+        options:
+          'yes': Oes
+          'no': Nac oes
       disability_information:
         label: "Byddai o gymorth i ni pe baech yn nodi beth yw'ch anabledd, a dweud pa gymorth, os o gwbl, fydd arnoch ei angen wrth i'ch hawliad fynd drwy'r system, gan gynnwys ar gyfer unrhyw wrandawiadau a gynhelir mewn adeilad tribiwnlys"
-        content: "NODER - Dim ond gwybodaeth gyfyngedig y gallwch roi yma (hyd at 350 o nodau). Os hoffech gynnwys rhagor o wybodaeth, defnyddiwch y cyfleuster sydd ar ddiwedd y ffurflen hon i lwytho ffeil Rich Text Format (.rtf)."
+        hint: "NODER - Dim ond gwybodaeth gyfyngedig y gallwch roi yma (hyd at 350 o nodau). Os hoffech gynnwys rhagor o wybodaeth, defnyddiwch y cyfleuster sydd ar ddiwedd y ffurflen hon i lwytho ffeil Rich Text Format (.rtf)."
     # Employers Contract Claim Page
-    make_employer_contract_claim:
-      label: Ydych chi eisiau gwneud Hawliad Contract y Cyflogwr? (dewisol)
-      'yes':
-        label: Oes
-      'no':
-        label: Nac oes
+    employers_contract_claims:
+      make_employer_contract_claim:
+        label: Ydych chi eisiau gwneud Hawliad Contract y Cyflogwr? (dewisol)
+        options:
+          'yes': Oes
+          'no': Nac oes
       claim_information:
         label: Rhowch gefndir a manylion eich hawliad isod. Dylech gynnwys pob dyddiad pwysig (dewisol)
     # Additional Informatation Page
-    upload_additional_information:
-      label: "Llwythwch ffeil i ddarparu unrhyw wybodaeth ychwanegol bwysig am eich ymateb nad ydych wedi’i chynnwys hyd yma (dewisol)"
-      button: "Cliciwch yma i lwytho ffeil rtf"
+    additional_informations:
+      upload_additional_information:
+        label: "Llwythwch ffeil i ddarparu unrhyw wybodaeth ychwanegol bwysig am eich ymateb nad ydych wedi’i chynnwys hyd yma (dewisol)"
     # Confirmation of Supplied Details Page
     email_receipt:
       label: Cyfeiriad e-bost (dewisol)
@@ -277,6 +250,78 @@ cy:
       caption: Hawliad Contract y Cyflogwr
     confirmation_of_additional_information_answers:
       caption: Gwybodaeth Ychwanegol
+  confirmation_of_supplied_details:
+    respondents_details:
+      case_number: "Rhif yr achos"
+      name: Enw'r unigolyn, cwmni neu sefydliad
+      contact: Enw llawn y cyswllt
+      building_name: Enw neu rif yr adeilad
+      street: Stryd
+      town: Tref/Dinas
+      county: Sir
+      postcode: Cod post
+      dx_number: Rhif Cyfnewid Dogfennau (DX)
+      contact_number: Rhif cyswllt
+      contact_mobile_number: Rhif ffôn symudol
+      contact_preference: Sut hoffech i ni gysylltu â chi?
+      fax_number: Rhif ffacs
+      email_address: Cyfeiriad e-bost
+      organisation_employ_gb: "Faint o bobl sy’n gyflogedig gan y sefydliad hwn ym Mhrydain Fawr?"
+      organisation_more_than_one_site: "A oes gan y sefydliad hwn fwy nag un safle ym Mhrydain Fawr?"
+      employment_at_site_number: "Faint o bobl sy’n gyflogedig ar y safle ble'r oedd yr hawlydd yn gweithio?"
+      video_call: A allech chi gymryd rhan mewn gwrandawiad drwy fideo? (angen mynediad i'r rhyngrwyd).
+    claimants_details:
+      claimants_name: Enw llawn yr hawlydd
+      agree_with_early_conciliation_details: "A ydych chi'n cytuno gyda'r manylion a roddodd yr hawlydd ynghylch Cymodi Cynnar gydag Acas?"
+      disagree_conciliation_reason: "Pam yr ydych yn anghytuno â’r hawlydd?"
+      agree_with_employment_dates: "A yw'r dyddiadau cyflogaeth a roddwyd gan yr hawlydd yn gywir?"
+      employment_start: "Pa bryd ddechreuodd ei gyflogaeth"
+      employment_end: "Pa bryd ddaeth ei gyflogaeth i ben, neu y bydd yn dod i ben"
+      disagree_employment: "Pam yr ydych yn anghytuno â’r dyddiadau a roddwyd gan yr hawlydd"
+      continued_employment: "A yw'n parhau i fod mewn swydd?"
+      agree_with_claimants_description_of_job_or_title: "A yw disgrifiad yr hawlydd o’i swydd neu deitl ei swydd yn gywir?"
+      disagree_claimants_job_or_title: "Rhowch y manylion sy’n gywir yn eich barn chi"
+    earnings_and_benefits:
+      agree_with_claimants_hours: "A yw’r oriau gwaith yn gywir?"
+      queried_hours: "Dywedwch beth ydych chi’n credu yw’r oriau gwaith cywir"
+      agree_with_earnings_details: "A yw’r enillion yn gywir?"
+      queried_pay_before_tax: "Tâl cyn treth"
+      queried_pay_before_tax_period: "Tâl cyn cyfnod treth"
+      queried_take_home_pay: "Tâl terfynol arferol"
+      queried_take_home_pay_period: "Cyfnod tâl terfynol arferol"
+      agree_with_claimant_notice: "A yw’r manylion am gael eich talu am neu weithio cyfnod o rybudd yn gywir?"
+      disagree_claimant_notice_reason: "Nodwch y manylion rydych chi’n credu sy’n gywir."
+      agree_with_claimant_pension_benefits: "A yw’r manylion am bensiynau a budd-daliadau eraill yn gywir?"
+      disagree_claimant_pension_benefits_reason: "Nodwch y manylion rydych chi’n credu sy’n gywir."
+    responses:
+      defend_claim: "A ydych yn amddiffyn yr hawliad?"
+      defend_claim_facts: "Dywedwch wrthym y ffeithiau rydych chi'n dibynnu arnyn nhw i amddiffyn yr hawliad."
+    your_representatives:
+      have_representative: "Dyma rywun sydd wedi cytuno i weithredu ar eich rhan."
+    your_representatives_details:
+      type_of_representative: Math o Gynrychiolydd
+      representative_org_name: "Enw sefydliad y cynrychiolydd"
+      representative_name: Enw llawn y cynrychiolydd
+      representative_building: "Enw neu rif yr adeilad"
+      representative_street: Stryd
+      representative_town: Tref/Dinas
+      representative_county: Sir
+      representative_postcode: Cod post
+      representative_phone: "Rhif ffôn"
+      representative_mobile: "Rhif ffôn symudol"
+      representative_dx_number: "Rhif Cyfnewid Dogfennau (DX)"
+      representative_reference: "Cyfeirnod"
+      representative_contact_preference: "Sut hoffech i ni gysylltu â'ch cynrychiolydd?"
+      preference_email: Cyfeiriad e-bost
+      preference_fax: Rhif ffacs
+    disabilities:
+      disability: A oes gennych chi anabledd?
+      disability_information: "Byddai o gymorth i ni pe baech yn nodi beth yw'ch anabledd, a dweud pa gymorth, os o gwbl, fydd arnoch ei angen wrth i'ch hawliad fynd drwy'r system, gan gynnwys ar gyfer unrhyw wrandawiadau a gynhelir mewn adeilad tribiwnlys"
+    employers_contract_claims:
+      make_employer_contract_claim: Ydych chi eisiau gwneud Hawliad Contract y Cyflogwr?
+      claim_information: Rhowch gefndir a manylion eich hawliad isod. Dylech gynnwys pob dyddiad pwysig
+    additional_informations:
+      upload_additional_information: "Llwythwch ffeil i ddarparu unrhyw wybodaeth ychwanegol bwysig am eich ymateb nad ydych wedi’i chynnwys hyd yma"
   errors:
     header: Adolygwch y canlynol
     description: Bydd clicio ar gwall yn mynd â chi'n syth at y cwestiwn. \nCywirwch y gwallau hyn cyn parhau.

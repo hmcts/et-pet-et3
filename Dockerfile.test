@@ -3,7 +3,6 @@ FROM ${source_image}
 ENV RAILS_ENV=test
 ENV TEST_BROWSER=firefox_local
 COPY --chown=app:app ./spec /home/app/et3/spec
-COPY --chown=app:app ./test_common /home/app/et3/test_common
 COPY --chown=app:app ./.rspec /home/app/et3/.rspec
 COPY --chown=app:app ./.rspec_parallel /home/app/et3/.rspec_parallel
 USER root

@@ -11,7 +11,6 @@ tmp/**/*
 /.bundle
 /.git
 /spec
-/test_common
 /.env.*
 /.rspec*
 /.rubocop*

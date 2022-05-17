@@ -277,3 +277,6 @@ module ET3
     end
   end
 end
+RSpec.configure do |c|
+  c.include ET3::Test::Setup, type: :feature
+end

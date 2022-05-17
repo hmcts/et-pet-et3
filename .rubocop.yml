@@ -17,7 +17,7 @@ AllCops:
     - 'spec/rails_helper.rb'
     - 'lib/tasks/cucumber.rake'
     - 'features/support/env.rb'
-    - 'test_common/page_objects/**/*'
+    - 'spec/support/page_objects/**/*'
     - 'script/cucumber'
     - 'lib/log_stuff.rb'
     - 'config/routes.rb'
@@ -34,16 +34,14 @@ Metrics/LineLength:
   Exclude:
     - 'features/**/*'
     - 'spec/**/*'
-    - 'test_common/**/*'
     - 'Gemfile'
 Metrics/ModuleLength:
   Max: 120
   Exclude:
-    - 'test_common/helpers/**/*'
+    - 'spec/support/helpers/**/*'
 Metrics/AbcSize:
   Exclude:
     - 'spec/**/*'
-    - 'test_common/**/*'
 
 # Allow expect {}.to blocks in specs
 # but not in the code
@@ -187,7 +185,6 @@ RSpec/ExpectActual:
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
-    - 'test_common/**/*'
     - 'config/**/*'
     - 'lib/tasks/**/*'
 
@@ -222,6 +219,6 @@ Capybara/FeatureMethods:
 
 Naming/PredicateName:
   Exclude:
-    - 'test_common/**/*'
+    - 'spec/support/**/*'
 
 require: rubocop-rspec

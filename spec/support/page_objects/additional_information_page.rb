@@ -25,7 +25,7 @@ module ET3
         data = respondent.to_h
         return if respondent.nil?
         if data.key?(:rtf_file)
-          upload_additional_information_question.set(Rails.root.join('test_common', 'files', data[:rtf_file]))
+          upload_additional_information_question.set(Rails.root.join('spec', 'support', 'files', data[:rtf_file]))
         end
         page.has_content?('Remove file')
       end

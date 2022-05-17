@@ -1,4 +1,3 @@
-require_relative '../test_common'
 module ET3
   module Test
     class EmailsSent

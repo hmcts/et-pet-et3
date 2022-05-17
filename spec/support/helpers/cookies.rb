@@ -8,3 +8,8 @@ module ET3
     end
   end
 end
+RSpec.configure do |c|
+  c.include ET3::Test::Cookies, type: :request
+  c.include ET3::Test::Cookies, type: :feature
+end
+

@@ -24,6 +24,7 @@ require 'rspec/rails'
 # require only the support files necessary.
 #
 require_relative './support/azure_storage_patch'
+require_relative './support/messaging'
 Dir[Rails.root.join("spec/support/**/*.rb")].sort.each { |f| require f }
 
 

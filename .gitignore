@@ -25,7 +25,7 @@ public/assets/**
 
 # Ignore dotenv file
 .env
-
+.env.*
 /public/packs
 /public/packs-test
 /node_modules

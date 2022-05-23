@@ -5,7 +5,7 @@
   p = t('components.introduction.description')
 
   .what-you-need
-    h4.govuk-heading-s = t('components.introduction.what_title')
+    h2.govuk-heading-s = t('components.introduction.what_title')
     ul.govuk-list.govuk-list--bullet
       li = t('components.introduction.what_content_1')
       li = t('components.introduction.what_content_2')
@@ -15,14 +15,14 @@
       li = t('components.introduction.what_content_6')
 
   .how-to-fill
-    h4.govuk-heading-s = t('components.introduction.how_title')
+    h2.govuk-heading-s = t('components.introduction.how_title')
     ul.govuk-list.govuk-list--bullet
       li = t('components.introduction.how_content_1')
       li = t('components.introduction.how_content_2')
       li = t('components.introduction.how_content_3')
 
   .data
-    h4.govuk-heading-s = t('components.introduction.data_title')
+    h2.govuk-heading-s = t('components.introduction.data_title')
     p = t('components.introduction.data_content')
 
   = form_for User.new, url: new_user_registration_path, html: { class: 'inline-form', method: :get }, builder: EtGdsDesignSystem.form_builder_class do |f|

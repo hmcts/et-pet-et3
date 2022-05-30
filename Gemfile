@@ -60,14 +60,14 @@ end
 
 group :test do
   gem 'capybara-screenshot', '~> 1.0'
-  gem 'et_test_helpers', git: 'https://github.com/hmcts/et_test_helpers.git', tag: 'v1.0.8'
+  gem 'et_test_helpers', git: 'https://github.com/hmcts/et_test_helpers.git', tag: 'v1.0.16'
   gem 'rspec-rails', '~> 5.1'
   gem 'site_prism', '~> 3.7'
   gem 'webdrivers', '~> 5.0'
   gem 'database_cleaner', '~> 2.0'
   gem 'webmock', '~> 3.11'
   gem 'faker', '~> 2.15'
-  gem 'azure-storage', '~> 0.15.0.preview'
+  gem 'azure-storage-blob', '~> 2.0', '>= 2.0.1'
   gem 'factory_bot', '~> 6.1'
 end
 
@@ -90,7 +90,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'sentry-raven', '~> 2.12'
+gem 'sentry-raven', '~> 3.1'
 gem 'et_azure_insights', '0.2.13', git: 'https://github.com/hmcts/et-azure-insights.git', tag: 'v0.2.13'
 gem 'application_insights', git: 'https://github.com/microsoft/ApplicationInsights-Ruby.git', ref: '5db6b4'
 

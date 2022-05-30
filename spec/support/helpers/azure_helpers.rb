@@ -9,18 +9,18 @@ module ET3
       CONTAINER_NAME = 'et3-direct-bucket-test'
 
       def self.configured_test_client
-        @configured_test_client ||= Azure::Storage.client options
+        @configured_test_client ||= Azure::Storage::Blob::BlobService.create(options)
       end
 
       def self.configure_test_container
         direct_container_name = CONTAINER_NAME
 
-        direct_upload_containers = configured_test_client.blob_client.list_containers
+        direct_upload_containers = configured_test_client.list_containers
         if direct_upload_containers.map(&:name).include?(direct_container_name)
           Rails.logger.info "Azure already has container #{direct_container_name}"
         else
           begin
-            configured_test_client.blob_client.create_container(direct_container_name)
+            configured_test_client.create_container(direct_container_name)
           rescue Azure::Core::Http::HTTPError
             Rails.logger.warn "AZURE: Potential race condition, attempted to create container despite detecting it as non-existent"
           end
@@ -29,12 +29,12 @@ module ET3
       end
 
       def self.configured_signer
-        Azure::Storage::Core::Auth::SharedAccessSignature.new(ACCOUNT_NAME, ACCESS_KEY)
+        Azure::Storage::Common::Core::Auth::SharedAccessSignature.new(ACCOUNT_NAME, ACCESS_KEY)
       end
 
       def self.url_for_direct_upload(key, expires_in:)
         configured_signer.signed_uri(
-          configured_test_client.blob_client.generate_uri("#{CONTAINER_NAME}/#{key}"), false,
+          configured_test_client.generate_uri("#{CONTAINER_NAME}/#{key}"), false,
           service: "b",
           permissions: "rw",
           expiry: expires_in ? Time.now.utc.advance(seconds: expires_in).iso8601 : nil
@@ -43,10 +43,10 @@ module ET3
 
       def self.configure_cors
         direct_upload_client = configured_test_client
-        service_properties = direct_upload_client.blob_client.get_service_properties
+        service_properties = direct_upload_client.get_service_properties
         if service_properties.cors.cors_rules.empty?
           service_properties.cors.cors_rules = [create_cors_rules]
-          direct_upload_client.blob_client.set_service_properties(service_properties)
+          direct_upload_client.set_service_properties(service_properties)
           Rails.logger.info "Direct upload storage account now has cors configured"
         else
           Rails.logger.info "Direct upload storage account has existing cors config - cowardly refusing to touch it"
@@ -54,7 +54,7 @@ module ET3
       end
 
       def self.keys_in_container
-        stored_items = configured_test_client.blob_client.list_blobs(CONTAINER_NAME)
+        stored_items = configured_test_client.list_blobs(CONTAINER_NAME)
 
         stored_items.map(&:name)
       end

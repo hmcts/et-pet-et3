@@ -8,21 +8,21 @@ GIT
 
 GIT
   remote: https://github.com/hmcts/et_gds_design_system.git
-  revision: 341ff4aa62a7294dcd45ba20ad06e829fc386c52
-  tag: v3.0.8
+  revision: fce3b22b14561f574f30c01d64b38f279dcdc1d3
+  tag: v4.0.1
   specs:
-    et_gds_design_system (3.0.8)
-      govuk_design_system_formbuilder (~> 2.1)
+    et_gds_design_system (4.0.1)
+      govuk_design_system_formbuilder (~> 3.0)
       rack-proxy (~> 0.6)
       rails (>= 6.0)
       webpacker (~> 5.0)
 
 GIT
   remote: https://github.com/hmcts/et_test_helpers.git
-  revision: 6882aed6c988c9f2a724733401278cffe4376fc0
-  tag: v1.0.16
+  revision: e9db876106aaf13fcec03db2d1c6a6088e3cebaf
+  tag: v1.0.17
   specs:
-    et_test_helpers (1.0.16)
+    et_test_helpers (1.0.17)
       activesupport (> 5.0)
       capybara (~> 3)
       i18n (~> 1.8)
@@ -127,7 +127,7 @@ GEM
     base32_pure (0.1.0)
     bcrypt (3.1.18)
     bindex (0.8.1)
-    bootsnap (1.11.1)
+    bootsnap (1.12.0)
       msgpack (~> 1.2)
     builder (3.2.4)
     byebug (11.1.3)
@@ -163,7 +163,6 @@ GEM
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0.0)
     database_cleaner-core (2.0.1)
-    deep_merge (1.2.2)
     devise (4.8.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -211,12 +210,14 @@ GEM
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
-    govuk_design_system_formbuilder (2.8.0)
-      actionview (>= 6.0)
-      activemodel (>= 6.0)
-      activesupport (>= 6.0)
-      deep_merge (~> 1.2.1)
+    govuk_design_system_formbuilder (3.0.3)
+      actionview (>= 6.1)
+      activemodel (>= 6.1)
+      activesupport (>= 6.1)
+      html-attributes-utils (~> 0.9.0)
     hashdiff (1.0.1)
+    html-attributes-utils (0.9.0)
+      activesupport (>= 6.1.4.4)
     httparty (0.20.0)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
@@ -251,9 +252,9 @@ GEM
     mini_mime (1.1.2)
     mini_portile2 (2.8.0)
     minitest (5.15.0)
-    msgpack (1.5.1)
+    msgpack (1.5.2)
     multi_xml (0.6.0)
-    multipart-post (2.1.1)
+    multipart-post (2.2.0)
     net-http-persistent (4.0.1)
       connection_pool (~> 2.2)
     net-imap (0.2.3)
@@ -276,7 +277,7 @@ GEM
       racc (~> 1.4)
     orm_adapter (0.5.0)
     parallel (1.22.1)
-    parallel_tests (3.10.1)
+    parallel_tests (3.11.0)
       parallel
     parser (3.1.2.0)
       ast (~> 2.4.1)
@@ -286,7 +287,7 @@ GEM
       method_source (~> 1.0)
     public_suffix (4.0.7)
     racc (1.6.0)
-    rack (2.2.3)
+    rack (2.2.3.1)
     rack-proxy (0.7.2)
       rack
     rack-test (1.1.0)
@@ -322,7 +323,7 @@ GEM
     rb-fsevent (0.11.1)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    regexp_parser (2.4.0)
+    regexp_parser (2.5.0)
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -348,13 +349,13 @@ GEM
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
     rspec-support (3.11.0)
-    rubocop (1.29.1)
+    rubocop (1.30.0)
       parallel (~> 1.10)
       parser (>= 3.1.0.0)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 1.8, < 3.0)
       rexml (>= 3.2.5, < 4.0)
-      rubocop-ast (>= 1.17.0, < 2.0)
+      rubocop-ast (>= 1.18.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 3.0)
     rubocop-ast (1.18.0)
@@ -364,10 +365,11 @@ GEM
     ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
-    selenium-webdriver (4.1.0)
+    selenium-webdriver (4.2.1)
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
-      rubyzip (>= 1.2.2)
+      rubyzip (>= 1.2.2, < 3.0)
+      websocket (~> 1.0)
     semantic_range (3.0.0)
     sentry-raven (3.1.2)
       faraday (>= 1.0)
@@ -427,6 +429,7 @@ GEM
       rack-proxy (>= 0.6.1)
       railties (>= 5.2)
       semantic_range (>= 2.3.0)
+    websocket (1.2.9)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -462,7 +465,7 @@ DEPENDENCIES
   jbuilder (~> 2.10)
   jquery-rails (~> 4.5)
   listen (>= 3.0.5)
-  parallel_tests (~> 3.10.1)
+  parallel_tests (~> 3.11)
   pg (~> 1.1)
   pry (~> 0.12)
   rails (~> 7.0.3)

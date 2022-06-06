@@ -47,7 +47,7 @@ group :development, :test do
   gem 'simplecov', '~> 0.21'
   gem 'pry', '~> 0.12'
   # Run Rspec tests in parallel to speed the test suite up
-  gem 'parallel_tests', '~> 3.10.1'
+  gem 'parallel_tests', '~> 3.11'
 end
 
 group :development do
@@ -60,7 +60,7 @@ end
 
 group :test do
   gem 'capybara-screenshot', '~> 1.0'
-  gem 'et_test_helpers', git: 'https://github.com/hmcts/et_test_helpers.git', tag: 'v1.0.16'
+  gem 'et_test_helpers', git: 'https://github.com/hmcts/et_test_helpers.git', tag: 'v1.0.17'
   gem 'rspec-rails', '~> 5.1'
   gem 'site_prism', '~> 3.7'
   gem 'webdrivers', '~> 5.0'
@@ -95,4 +95,4 @@ gem 'et_azure_insights', '0.2.13', git: 'https://github.com/hmcts/et-azure-insig
 gem 'application_insights', git: 'https://github.com/microsoft/ApplicationInsights-Ruby.git', ref: '5db6b4'
 
 gem "webpacker", "~> 5.4"
-gem 'et_gds_design_system', git:'https://github.com/hmcts/et_gds_design_system.git', tag: 'v3.0.8'
+gem 'et_gds_design_system', git:'https://github.com/hmcts/et_gds_design_system.git', tag: 'v4.0.1'

@@ -60,7 +60,7 @@ module ET3
       end
 
       def self.create_cors_rules
-        cors_rule = Azure::Storage::Service::CorsRule.new
+        cors_rule = Azure::Storage::Common::Service::CorsRule.new
         cors_rule.allowed_origins = ['*']
         cors_rule.allowed_methods = ['POST', 'GET', 'PUT', 'HEAD']
         cors_rule.allowed_headers = ['*']

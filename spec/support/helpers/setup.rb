@@ -264,7 +264,7 @@ module ET3
                     "signature": queries['sig']
                   },
                   "url": azure_response,
-                  "unsigned_url": ET3::Test::AzureHelpers.configured_test_client.blob_client.generate_uri("et3-direct-bucket-test/#{key}")
+                  "unsigned_url": ET3::Test::AzureHelpers.configured_test_client.generate_uri("et3-direct-bucket-test/#{key}")
                 },
                 "meta": {
                   "cloud_provider": "azure"

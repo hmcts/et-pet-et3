@@ -12,14 +12,13 @@
 # So, to prevent you going mad when you upgrade for a different reason, this patch will deliberately fail, forcing you to come back to this file
 # and read this comment - then deciding if the patch is still needed.
 
-require 'azure/storage'
-require 'azure/storage/version'
-if Azure::Storage::Version.to_s != '0.15.0.preview'
-  raise "The patch in #{__FILE__} is only compatible with 0.15.0.preview - please check if PR https://github.com/Azure/azure-storage-ruby/pull/140 has been merged into your version"
+require 'azure/storage/blob'
+if Azure::Storage::Blob::Version.to_s != '2.0.3'
+  raise "The patch in #{__FILE__} is only compatible with 2.0.3"
 end
-require "azure/storage/service/serialization"
+require "azure/storage/common/service/serialization"
 
-module Azure::Storage
+module Azure::Storage::Common
   module Service
     module Serialization
       module ClassMethods

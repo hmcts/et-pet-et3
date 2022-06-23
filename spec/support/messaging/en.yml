@@ -134,7 +134,7 @@ en:
           'yes': 'Yes'
           'no': 'No'
       disagree_claimant_notice_reason:
-        label: Tell us the details you believe to be correct.
+        label: Tell us the details you believe to be correct. (optional)
       agree_with_claimant_pension_benefits:
         label: Are the details about pensions and other benefits correct? (optional)
         options:
@@ -150,11 +150,11 @@ en:
           'yes': 'Yes'
           'no': 'No'
       defend_claim_facts:
-        label: Tell us the facts that you rely on to defend the claim.
+        label: Tell us the facts that you rely on to defend the claim. (optional)
     # Your Representatives Page
     your_representatives:
       have_representative:
-        label: This is someone who has agreed to act on your behalf.
+        label: This is someone who has agreed to act on your behalf. (optional)
         options:
           'yes': 'Yes'
           'no': 'No'
@@ -289,14 +289,14 @@ en:
       queried_take_home_pay: Normal take-home pay
       queried_take_home_pay_period: Normal take-home pay period
       agree_with_claimant_notice: Are the details about being paid for or working a period of notice correct?
-      disagree_claimant_notice_reason: Tell us the details you believe to be correct.
+      disagree_claimant_notice_reason: Tell us the details you believe to be correct. (optional)
       agree_with_claimant_pension_benefits: Are the details about pensions and other benefits correct?
       disagree_claimant_pension_benefits_reason: Tell us the details you believe to be correct.
     responses:
       defend_claim: Do you defend the claim ?
-      defend_claim_facts: Tell us the facts that you rely on to defend the claim.
+      defend_claim_facts: Tell us the facts that you rely on to defend the claim. (optional)
     your_representatives:
-      have_representative: This is someone who has agreed to act on your behalf.
+      have_representative: This is someone who has agreed to act on your behalf. (optional)
     your_representatives_details:
       type_of_representative: Type of Representative
       representative_org_name: Name of the representative's organisation

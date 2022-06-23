@@ -134,7 +134,7 @@ en:
           'yes': 'Yes'
           'no': 'No'
       disagree_claimant_notice_reason:
-        label: Tell us the details you believe to be correct.
+        label: Tell us the details you believe to be correct. (optional)
       agree_with_claimant_pension_benefits:
         label: Are the details about pensions and other benefits correct? (optional)
         options:
@@ -150,11 +150,11 @@ en:
           'yes': 'Yes'
           'no': 'No'
       defend_claim_facts:
-        label: Tell us the facts that you rely on to defend the claim.
+        label: Tell us the facts that you rely on to defend the claim. (optional)
     # Your Representatives Page
     your_representatives:
       have_representative:
-        label: This is someone who has agreed to act on your behalf.
+        label: This is someone who has agreed to act on your behalf. (optional)
         options:
           'yes': 'Yes'
           'no': 'No'

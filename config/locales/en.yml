@@ -669,7 +669,7 @@ en:
           'true': 'Yes'
           'false': 'No'
       disagree_claimant_notice_reason:
-        label: Tell us the details you believe to be correct. (optional)
+        label: Tell us the details you believe to be correct.
         hint: Explain what happened and why. Enter up to 400 characters. You can upload a document with more details before you submit your response.
       agree_with_claimant_pension_benefits:
         label: Are the details about pensions and other benefits correct?
@@ -688,12 +688,12 @@ en:
           'true': 'Yes'
           'false': 'No'
       defend_claim_facts:
-        label: Tell us the facts that you rely on to defend the claim. (optional)
+        label: Tell us the facts that you rely on to defend the claim.
         hint: You can enter up to 2500 characters. You can upload a document with additional details before you submit your response.
   your_representatives:
     edit:
       have_representative:
-        label: This is someone who has agreed to act on your behalf. (optional)
+        label: This is someone who has agreed to act on your behalf.
         options:
           'true': 'Yes'
           'false': 'No'

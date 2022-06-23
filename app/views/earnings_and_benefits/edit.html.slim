@@ -22,7 +22,7 @@ p= t('components.earnings_and_benefits.content')
     = f.collection_radio_buttons :agree_with_claimant_notice, optional: true
     = f.revealed_content :agree_with_claimant_notice, values: [:false]
       .govuk-inset-text
-        = f.text_area :disagree_claimant_notice_reason
+        = f.text_area :disagree_claimant_notice_reason, optional: true
     = f.collection_radio_buttons :agree_with_claimant_pension_benefits, optional: true
     = f.revealed_content :agree_with_claimant_pension_benefits, values: [:false]
       .govuk-inset-text

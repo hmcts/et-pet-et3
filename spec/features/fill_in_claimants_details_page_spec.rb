@@ -24,8 +24,8 @@ RSpec.feature "Fill in Claimants Details Page", js: true do
     expect(claimants_details_page).to have_header
     expect(claimants_details_page).to have_error_header
     claimants_details_page.claimants_name_question.assert_error_message(t('errors.custom.claimants_name.not_a_number'))
-    claimants_details_page.employment_start.assert_error_message(t('errors.messages.blank'))
-    claimants_details_page.employment_end.assert_error_message(t('errors.messages.blank'))
+    claimants_details_page.employment_start.assert_error_message(t('errors.messages.invalid'))
+    claimants_details_page.employment_end.assert_error_message(t('errors.messages.invalid'))
   end
 
   scenario "correctly will enable user to check answers and return to edit them" do

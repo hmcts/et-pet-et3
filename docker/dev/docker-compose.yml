@@ -6,34 +6,6 @@ services:
       POSTGRES_HOST_AUTH_METHOD: trust
     ports:
     - "${DB_PORT:-5432}:5432"
-  zalenium:
-    image: "dosel/zalenium"
-    hostname: zalenium
-    tty: true
-    volumes:
-      - /tmp/videos:/home/seluser/videos
-      - /var/run/docker.sock:/var/run/docker.sock
-    ports:
-      - ${SELENIUM_PORT:-4444}:4444
-    command: >
-      start --desiredContainers 2
-            --maxDockerSeleniumContainers 8
-            --screenWidth 1280 --screenHeight 720
-            --timeZone "Europe/Berlin"
-            --videoRecordingEnabled true
-            --sauceLabsEnabled false
-            --browserStackEnabled false
-            --testingBotEnabled false
-            --startTunnel false
-    environment:
-      - HOST_UID
-      - HOST_GID
-      - SAUCE_USERNAME
-      - SAUCE_ACCESS_KEY
-      - BROWSER_STACK_USER
-      - BROWSER_STACK_KEY
-      - TESTINGBOT_KEY
-      - TESTINGBOT_SECRET
   azurite:
     image: mcr.microsoft.com/azurestorage-azurite:2.6.7
     ports:
@@ -42,6 +14,5 @@ services:
       - azurite_data:/opt/azurite/folder
     environment:
       executable: blob
-
 volumes:
   azurite_data:

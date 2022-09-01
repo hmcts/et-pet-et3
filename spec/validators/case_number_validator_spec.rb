@@ -61,4 +61,20 @@ RSpec.describe CaseNumberValidator do
     expect(model.errors.details[:case_number]).to include a_hash_including(error: :invalid)
   end
 
+  it 'will validate a string of the correct format starting with "6" for the "new reformed ET1" cases' do
+    model = model_class.new(case_number: "6054321/2017")
+
+    model.valid?
+
+    expect(model.errors).not_to include :case_number
+  end
+
+  it 'will validate a string of the correct format starting with "8" for the "new reformed ET1" cases' do
+    model = model_class.new(case_number: "8054321/2017")
+
+    model.valid?
+
+    expect(model.errors).not_to include :case_number
+  end
+
 end

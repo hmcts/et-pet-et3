@@ -35,8 +35,8 @@ class ClaimantsDetail < BaseForm
     allow_blank: true
   validates :agree_with_employment_dates, inclusion: { in: [true, false] }, allow_blank: true
   validates :employment_start, :employment_end,
-    presence: true,
     date: true,
+    presence: true,
     if: :disagree_with_employment_dates?
   validate :end_date_is_after_start_date,
            if: :disagree_with_employment_dates?

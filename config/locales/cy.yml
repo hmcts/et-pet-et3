@@ -742,7 +742,7 @@ cy:
           'true': 'Ydy'
           'false': 'Nac ydy'
       disagree_claimant_pension_benefits_reason:
-        label: "Nodwch y manylion rydych chi’n credu sy’n gywir. (dewisol)"
+        label: "Nodwch y manylion rydych chi’n credu sy’n gywir."
         hint: Gallwch ddefnyddio hyd at 350 o nodau. Gallwch uwchlwytho dogfen gyda rhagor o fanylion cyn ichi gyflwyno eich ymateb.
   responses:
     edit:

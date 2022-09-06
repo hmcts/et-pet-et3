@@ -26,5 +26,5 @@ p= t('components.earnings_and_benefits.content')
     = f.collection_radio_buttons :agree_with_claimant_pension_benefits, optional: true
     = f.revealed_content :agree_with_claimant_pension_benefits, values: [:false]
       .govuk-inset-text
-        = f.text_area :disagree_claimant_pension_benefits_reason
+        = f.text_area :disagree_claimant_pension_benefits_reason, optional: true
     = f.submit(t('components.common.save_and_continue_button'), class: 'button')

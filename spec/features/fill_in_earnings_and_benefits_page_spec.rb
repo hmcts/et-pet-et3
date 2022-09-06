@@ -25,6 +25,11 @@ RSpec.feature "Fill in Earnings and Benefits Page", js: true do
     earnings_and_benefits_page.queried_hours.assert_error_message(t('errors.custom.queried_hours.not_a_number'))
     earnings_and_benefits_page.queried_pay_before_tax.assert_error_message(t('errors.custom.queried_pay_before_tax.not_a_number'))
     earnings_and_benefits_page.queried_take_home_pay.assert_error_message(t('errors.custom.queried_take_home_pay.not_a_number'))
+    earnings_and_benefits_page.disagree_claimant_notice_reason.set(Faker::Lorem.characters(number: 451))
+    earnings_and_benefits_page.agree_with_claimant_notice_question.set(:yes)
+    earnings_and_benefits_page.disagree_claimant_pension_benefits_reason.set(Faker::Lorem.characters(number: 351))
+    earnings_and_benefits_page.agree_with_claimant_notice_question.set(:no)
+    earnings_and_benefits_page.next
     earnings_and_benefits_page.disagree_claimant_notice_reason.assert_error_message(t('errors.messages.too_long'))
     earnings_and_benefits_page.disagree_claimant_pension_benefits_reason.assert_error_message(t('errors.messages.too_long'))
   end
@@ -53,7 +58,7 @@ RSpec.feature "Fill in Earnings and Benefits Page", js: true do
 
       end
       expect(p.agree_with_claimant_notice_question.value).to eql(t(user.agree_with_claimant_notice))
-      if user.agree_with_claimant_notice.to_s.split('.').last == 'no'
+      if user.agree_with_claimant_notice.to_s.split('.').last == 'no' and user.agree_with_claimant_pension_benefits.to_s.split('.').last == 'yes'
         expect(p.disagree_claimant_notice_reason.value).to eql user.disagree_claimant_notice_reason
       end
       expect(p.agree_with_claimant_pension_benefits_question.value).to eql(t(user.agree_with_claimant_pension_benefits))

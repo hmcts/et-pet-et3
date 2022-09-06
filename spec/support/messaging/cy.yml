@@ -134,7 +134,7 @@ cy:
           'yes': Ydy
           'no': Nac ydy
       disagree_claimant_notice_reason:
-        label: "Nodwch y manylion rydych chi’n credu sy’n gywir."
+        label: "Nodwch y manylion rydych chi’n credu sy’n gywir. (dewisol)"
       agree_with_claimant_pension_benefits:
         label: "A yw’r manylion am bensiynau a budd-daliadau eraill yn gywir? (dewisol)"
         options:

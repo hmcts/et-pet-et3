@@ -3,6 +3,6 @@
 
   h2.govuk-heading-xl = t('components.session_expiry.header')
 
-  p = t('components.session_expiry.content')
+  p.govuk-body = t('components.session_expiry.content')
 
   = link_to t('components.session_expiry.homepage_link'), root_path, class: 'govuk-link'

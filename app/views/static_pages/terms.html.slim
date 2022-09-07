@@ -2,23 +2,23 @@
 - content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
 .content-body.terms-conditions
 
-  p = t('components.terms_and_conditions.introduction',
+  p.govuk-body = t('components.terms_and_conditions.introduction',
           privacy_policy_href: link_to(t('components.terms_and_conditions.privacy_policy_href'),
                   privacy_notice_path, target: :_blank, class: 'govuk-link')).html_safe
 
   #who-we-are
     h4.govuk-heading-s = t('components.terms_and_conditions.who_we_are.header')
     - t('components.terms_and_conditions.who_we_are.content').each do |paragraph|
-      p = paragraph
+      p.govuk-body = paragraph
 
   #info-provided-by-service
     h4.govuk-heading-s = t('components.terms_and_conditions.info_provided.header')
     - t('components.terms_and_conditions.info_provided.content').each do |paragraph|
-      p = paragraph
+      p.govuk-body = paragraph
 
   #sharing-storing-data
     h4.govuk-heading-s = t('components.terms_and_conditions.sharing_storing_data.header')
-    p = t('components.terms_and_conditions.sharing_storing_data.content',
+    p.govuk-body = t('components.terms_and_conditions.sharing_storing_data.content',
             privacy_policy_href: link_to(t('components.terms_and_conditions.privacy_policy_href'),
                     privacy_notice_path, target: :_blank, class: 'govuk-link'),
             cookie_policy_href: link_to(t('components.terms_and_conditions.cookie_policy_href'),

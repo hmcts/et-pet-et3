@@ -5,4 +5,4 @@
     .sidebar-header
       h2.heading-medium.govuk-heading-m =t('components.sidebar.save_header')
     .sidebar-content
-      p = link_to(t('components.sidebar.save_and_complete'), destroy_user_session_path, method: :delete, class: 'govuk-link')
+      p.govuk-body = link_to(t('components.sidebar.save_and_complete'), destroy_user_session_path, method: :delete, class: 'govuk-link')

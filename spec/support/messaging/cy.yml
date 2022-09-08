@@ -150,11 +150,11 @@ cy:
           'yes': Ydw
           'no': Nac ydw
       defend_claim_facts:
-        label: "Dywedwch wrthym y ffeithiau rydych chi'n dibynnu arnyn nhw i amddiffyn yr hawliad."
+        label: "Dywedwch wrthym y ffeithiau rydych chi'n dibynnu arnyn nhw i amddiffyn yr hawliad. (dewisol)"
     # Your Representatives Page
     your_representatives:
       have_representative:
-        label: "Dyma rywun sydd wedi cytuno i weithredu ar eich rhan."
+        label: "Dyma rywun sydd wedi cytuno i weithredu ar eich rhan. (dewisol)"
         options:
           'yes': Oes
           'no': Nac oes

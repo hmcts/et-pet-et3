@@ -678,7 +678,7 @@ en:
           'true': 'Yes'
           'false': 'No'
       disagree_claimant_pension_benefits_reason:
-        label: Tell us the details you believe to be correct. (optional)
+        label: Tell us the details you believe to be correct.
         hint: Enter up to 350 characters. You can upload a document with more details before you submit your response.
   responses:
     edit:

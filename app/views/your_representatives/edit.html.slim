@@ -3,5 +3,5 @@
 .content-body.your-representative
 
   = form_for @your_representative, url: your_representative_path, method: :patch, builder: EtGdsDesignSystem.form_builder_class  do |f|
-    = f.collection_radio_buttons :have_representative
+    = f.collection_radio_buttons :have_representative, optional: true
     = f.submit(t('components.common.save_and_continue_button'), class: 'button')

@@ -9,5 +9,5 @@
     = f.collection_radio_buttons :defend_claim
     = f.revealed_content :defend_claim, values: [:true]
       .govuk-inset-text
-        = f.text_area :defend_claim_facts, size: "70x30"
+        = f.text_area :defend_claim_facts, size: "70x30", optional: true
     = f.submit(t('components.common.save_and_continue_button'))

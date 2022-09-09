@@ -105,10 +105,12 @@ module ET3
         if user.agree_with_claimant_notice.to_s.split('.').last == 'no'
           earnings_and_benefits_page.disagree_claimant_notice_reason.set(user.disagree_claimant_notice_reason)
         end
+        earnings_and_benefits_page.agree_with_claimant_notice_question.set(:yes)
         earnings_and_benefits_page.agree_with_claimant_pension_benefits_question.set(user.agree_with_claimant_pension_benefits.to_s.split('.').last.to_sym)
         if user.agree_with_claimant_pension_benefits.to_s.split('.').last == 'no'
           earnings_and_benefits_page.disagree_claimant_pension_benefits_reason.set(user.disagree_claimant_pension_benefits_reason)
         end
+        earnings_and_benefits_page.agree_with_claimant_notice_question.set(:no)
         earnings_and_benefits_page.next
       end
 

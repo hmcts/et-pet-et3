@@ -2,7 +2,7 @@
 - content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
 .content-body.privacy-notice
 
-  p = t('components.privacy_notice.introduction',
+  p.govuk-body = t('components.privacy_notice.introduction',
           terms_and_conditions_href: link_to(t('components.privacy_notice.terms_and_conditions_href'),
                   terms_and_conditions_path, target: :_blank, class: 'govuk-link')).html_safe
 
@@ -12,7 +12,7 @@
     personal_info_charter_href: link_to(t('components.privacy_notice.personal_info_charter_href'),
             'https://www.gov.uk/government/organisations/ministry-of-justice/about/personal-information-charter',
             target: :_blank, class: 'govuk-link')).each do |paragraph|
-      p = paragraph.html_safe
+      p.govuk-body = paragraph.html_safe
 
   #personal-data
     h4.govuk-heading-s = t('components.privacy_notice.personal_data.header')
@@ -31,7 +31,7 @@
 
   #sharing-your-data
     h4.govuk-heading-s = t('components.privacy_notice.sharing_your_data.header')
-    p = t('components.privacy_notice.sharing_your_data.content',
+    p.govuk-body = t('components.privacy_notice.sharing_your_data.content',
             terms_and_conditions_href: link_to(t('components.privacy_notice.terms_and_conditions_href'),
                     terms_and_conditions_path, target: :_blank, class: 'govuk-link')).html_safe
 
@@ -41,15 +41,15 @@
             contact_us_href: link_to(t('components.privacy_notice.receiving_notifications.contact_us_href'),
                     'https://www.gov.uk/guidance/employment-tribunal-offices-and-venues',
                     target: :_blank, class: 'govuk-link')).each do |paragraph|
-      p = paragraph.html_safe
+      p.govuk-body = paragraph.html_safe
 
   #how-to-complain
     h4.govuk-heading-s = t('components.privacy_notice.how_to_complain.header')
     - t('components.privacy_notice.how_to_complain.content',
             ico_href: link_to(t('components.privacy_notice.how_to_complain.ico_href'),
                     'https://ico.org.uk/global/contact-us', target: :_blank, class: 'govuk-link')).each do |paragraph|
-      p = paragraph.html_safe
+      p.govuk-body = paragraph.html_safe
 
   #further-information
     h4.govuk-heading-s = t('components.privacy_notice.further_info.header')
-    p = raw t("components.privacy_notice.further_info.refer_to_govuk", link: link_to(t("components.privacy_notice.further_info.govuk_link_text"), "https://www.gov.uk/help/cookies", rel: "external", target: "_blank", class: 'govuk-link'))
+    p.govuk-body = raw t("components.privacy_notice.further_info.refer_to_govuk", link: link_to(t("components.privacy_notice.further_info.govuk_link_text"), "https://www.gov.uk/help/cookies", rel: "external", target: "_blank", class: 'govuk-link'))

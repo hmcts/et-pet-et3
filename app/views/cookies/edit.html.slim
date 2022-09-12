@@ -2,16 +2,16 @@
 - content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
 .content-body.cookies
 
-  p = t('components.cookies.introduction')
+  p.govuk-body = t('components.cookies.introduction')
   = render 'static_pages/policy_elements', translated_content_array: t('components.cookies.introduction_bullets',
           managing_cookies_href: link_to(t('components.cookies.managing_cookies_href'),
                   'http://www.aboutcookies.org.uk/', target: :_blank))
 
   h2.govuk-heading-m = t('components.cookies.subheader')
   h2.govuk-heading-s = t('components.cookies.cookie_usage.header')
-  p= t('components.cookies.cookie_usage.first_line')
+  p.govuk-body = t('components.cookies.cookie_usage.first_line')
   h2.govuk-heading-s = t('components.cookies.cookie_usage.second_header')
-  p= t('components.cookies.cookie_usage.second_line')
+  p.govuk-body = t('components.cookies.cookie_usage.second_line')
 
   table.govuk-table
     thead.govuk-table__head
@@ -26,7 +26,7 @@
         td.govuk-table__cell = t('components.cookies.introductory_message.table.expires')
 
   h2.govuk-heading-s = t('components.cookies.cookie_message.header')
-  p = t('components.cookies.cookie_message.first_line')
+  p.govuk-body = t('components.cookies.cookie_message.first_line')
 
   table.govuk-table
     thead.govuk-table__head

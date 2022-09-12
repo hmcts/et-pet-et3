@@ -2,7 +2,7 @@
 - content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
 .content-body.your-representatives-details
 
-  p = t('components.your_representatives_details.description')
+  p.govuk-body = t('components.your_representatives_details.description')
 
   = form_for @your_representatives_details, url: your_representatives_details_path, method: :patch, builder: EtGdsDesignSystem.form_builder_class  do |f|
 

@@ -54,8 +54,8 @@
           .govuk-grid-column-two-thirds
             h2.govuk-cookie-banner__heading.govuk-heading-m.bold.banner-title= t('cookie_banner.banner.title')
             .govuk-cookie-banner__content
-              p= t('cookie_banner.banner.first_line')
-              p= t('cookie_banner.banner.second_line')
+              p.govuk-body= t('cookie_banner.banner.first_line')
+              p.govuk-body= t('cookie_banner.banner.second_line')
           .govuk-button-group
             = form_for cookie_form, as: :cookie, url: cookies_path, method: :post, html: {style: 'display: inline'} do |f|
               = f.hidden_field :usage, value: 'true'

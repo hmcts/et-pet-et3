@@ -53,12 +53,6 @@ module ET3
         end
       end
 
-      def self.keys_in_container
-        stored_items = configured_test_client.list_blobs(CONTAINER_NAME)
-
-        stored_items.map(&:name)
-      end
-
       def self.create_cors_rules
         cors_rule = Azure::Storage::Common::Service::CorsRule.new
         cors_rule.allowed_origins = ['*']

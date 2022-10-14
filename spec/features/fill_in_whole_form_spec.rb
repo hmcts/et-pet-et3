@@ -9,7 +9,7 @@ RSpec.feature "Fill in whole form", js: true do
 
     before do
       stub_et_api
-      stub_build_blob_to_azure
+      stub_create_blob_to_azure
     end
 
     scenario "correctly will delete hash_store and prevent the next user seeing answers on the respondents details page" do
@@ -81,10 +81,8 @@ RSpec.feature "Fill in whole form", js: true do
 
   context "when uploading to azure" do
     before do
-      stub_build_blob_to_azure
+      stub_create_blob_to_azure
     end
-
-    let(:stored_keys) { ET3::Test::AzureHelpers.keys_in_container }
 
     scenario "correctly will flow without error" do
       given_valid_user
@@ -201,7 +199,6 @@ RSpec.feature "Fill in whole form", js: true do
       expect(form_submission_page).to be_displayed
       aggregate_failures "testing request" do
         # TODO: Potentially move this into another spec and simply check the submission is a string in the request below
-        file_upload_keys = stored_keys
         expect(a_request(:post, "http://api.et.127.0.0.1.nip.io:3100/api/v2/respondents/build_response").
             with { |request|
               request_body = JSON.parse(request.body)
@@ -234,7 +231,6 @@ RSpec.feature "Fill in whole form", js: true do
               expect(request_body["data"][0]["data"]["defend_claim_facts"]).to eql @claimant.defend_claim_facts
               expect(request_body["data"][0]["data"]["make_employer_contract_claim"]).to eql true
               expect(request_body["data"][0]["data"]["claim_information"]).to eql @respondent.claim_information
-              expect(file_upload_keys).to include request_body["data"][0]["data"]["additional_information_key"]
               expect(request_body["data"][0]["data"]["email_receipt"]).to eql ""
               expect(request_body["data"][0]["data"]["pdf_template_reference"]).to eql "et3-v2-#{::ET3::Test::Messaging.instance.current_locale}"
               expect(request_body["data"][0]["data"]["email_template_reference"]).to eql "et3-v1-#{::ET3::Test::Messaging.instance.current_locale}"

@@ -5,7 +5,7 @@ RSpec.feature "Access Cookies", js: true do
 
   before do
     stub_et_api
-    stub_build_blob_to_azure
+    stub_create_blob_to_azure
   end
 
   before do

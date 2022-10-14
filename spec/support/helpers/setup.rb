@@ -245,28 +245,17 @@ module ET3
       end
 
       # Stub Calls to API for Azure Blob Storage URLs
-      def stub_build_blob_to_azure
+      def stub_create_blob_to_azure
         key = "direct_uploads/#{SecureRandom.uuid}".freeze
-        azure_response = ET3::Test::AzureHelpers.url_for_direct_upload(key, expires_in: 1.hour)
 
-        queries = Rack::Utils.parse_nested_query(URI.parse(azure_response).query)
 
-        stub_request(:post, "#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api/v2')}/build_blob").
+        stub_request(:post, "#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api/v2')}/create_blob").
           to_return(
             headers: { 'Content-Type': 'application/json' },
             body:
               {
                 "data": {
-                  "fields": {
-                    "key": key,
-                    "permissions": queries['sp'],
-                    "version": queries['sv'],
-                    "expiry": queries['se'],
-                    "resource": queries['sr'],
-                    "signature": queries['sig']
-                  },
-                  "url": azure_response,
-                  "unsigned_url": ET3::Test::AzureHelpers.configured_test_client.generate_uri("et3-direct-bucket-test/#{key}")
+                  "key": key
                 },
                 "meta": {
                   "cloud_provider": "azure"

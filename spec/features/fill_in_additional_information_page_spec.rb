@@ -5,7 +5,7 @@ RSpec.feature "Fill in Additional Information Page", js: true do
 
   context "when uploading to azure" do
     before do
-      stub_build_blob_to_azure
+      stub_create_blob_to_azure
     end
 
     before do
@@ -13,8 +13,6 @@ RSpec.feature "Fill in Additional Information Page", js: true do
       start_a_new_et3_response
       registration_start
     end
-
-    let(:keys_in_container) { ET3::Test::AzureHelpers.keys_in_container }
 
     scenario "correctly will enable user to continue to next page" do
       additional_information_page.load(locale: current_locale_parameter)
@@ -27,14 +25,6 @@ RSpec.feature "Fill in Additional Information Page", js: true do
       additional_information_page.load(locale: current_locale_parameter)
       additional_information_page.next
       expect(confirmation_of_supplied_details_page.confirmation_of_additional_information_answers.upload_additional_information_row).to have_no_remove_file_link
-    end
-
-    scenario "correctly will leave a file in the storage container" do
-      additional_information_page.load(locale: current_locale_parameter)
-      given_valid_data
-      answer_additional_information
-
-      expect(keys_in_container).to include Store.last.hash_store[:additional_information_answers][:upload_additional_information][:path]
     end
 
     scenario "correctly will enable you to remove a file that is already loaded" do

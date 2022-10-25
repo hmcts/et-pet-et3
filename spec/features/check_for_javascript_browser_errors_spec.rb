@@ -4,7 +4,7 @@ RSpec.feature "Check for Javascript Browser Errors", js: true, driver: :firefox_
   include ET3::Test::I18n
 
   before do
-    stub_build_blob_to_azure
+    stub_create_blob_to_azure
     stub_et_api
   end
 

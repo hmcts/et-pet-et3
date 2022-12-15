@@ -116,20 +116,8 @@ Used to specify the database port.
  
 For example, used within the docker-compose configuration.
 
-### AZURE_STORAGE_BLOB_PORT
-
-Used to specify the azurite port.
-
-For example, used within the docker-compose configuration.
-
 ### SELENIUM_PORT
 
 Used to expose Selenium to a viewer.
 
 For example, used in conjunction with Zalenium to take a video of tests being run.
-
-### AZURE_STORAGE_BLOB_HOST
-
-Used as the Azure endpoint, often taking in the `AZURE_STORAGE_BLOB_PORT` as a parameter.
-
-For example, used to configure the container setup in azurite.

@@ -67,7 +67,6 @@ group :test do
   gem 'database_cleaner', '~> 2.0'
   gem 'webmock', '~> 3.11'
   gem 'faker', '~> 2.15'
-  gem 'azure-storage-blob', '~> 2.0', '>= 2.0.1'
   gem 'factory_bot', '~> 6.1'
 end
 

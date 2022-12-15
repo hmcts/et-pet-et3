@@ -9,15 +9,13 @@ services:
         source_image: ${SOURCE_DOCKER_IMAGE}
     links:
       - db
-      - azurite
     environment:
       DB_HOST: 'db'
       DB_USERNAME: 'postgres'
       TEST_BROWSER: 'firefox_local'
       RAILS_LOG_LEVEL: info
-      AZURE_STORAGE_BLOB_HOST: http://azurite:10000
       TEST_LOCALE: ${TEST_LOCALE:-en}
-      WAIT_HOSTS: db:5432, azurite:10000
+      WAIT_HOSTS: db:5432
 
     volumes:
       - ./tmp/capybara:/home/app/et3/tmp/capybara
@@ -25,8 +23,4 @@ services:
     image: postgres:9.6
     environment:
       POSTGRES_HOST_AUTH_METHOD: trust
-  azurite:
-    image: mcr.microsoft.com/azurestorage-azurite:2.6.7
-    environment:
-      executable: blob
 

@@ -6,13 +6,3 @@ services:
       POSTGRES_HOST_AUTH_METHOD: trust
     ports:
     - "${DB_PORT:-5432}:5432"
-  azurite:
-    image: mcr.microsoft.com/azurestorage-azurite:2.6.7
-    ports:
-      - ${AZURE_BLOB_PORT:-10000}:10000
-    volumes:
-      - azurite_data:/opt/azurite/folder
-    environment:
-      executable: blob
-volumes:
-  azurite_data:

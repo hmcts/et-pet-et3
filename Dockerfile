@@ -6,7 +6,7 @@ COPY --chown=app:app . /home/app/et3
 ENV RAILS_ENV=production
 ENV HOME=/home/app
 RUN apk add --no-cache libpq-dev tzdata shared-mime-info libc6-compat && \
-    apk add --no-cache --virtual .build-tools git build-base nodejs yarn && \
+    apk add --no-cache --virtual .build-tools git build-base curl-dev nodejs yarn && \
     cd /home/app/et3 && \
     gem install bundler -v 1.17.3 && \
     bundle install --no-cache --jobs=5 --retry=3 --without=test development --with=assets production --deployment && \
@@ -37,7 +37,7 @@ COPY --chown=app:app . /home/app/et3
 COPY --from=assets --chown=app:app /home/app/et3/public/packs /home/app/et3/public/packs
 COPY --from=assets --chown=app:app /home/app/et3/vendor/bundle /home/app/et3/vendor/bundle
 RUN chown -R app:app /usr/local/bundle
-RUN apk add --no-cache libpq-dev tzdata shared-mime-info libc6-compat bash && \
+RUN apk add --no-cache libpq-dev tzdata shared-mime-info curl-dev libc6-compat bash && \
     apk add --no-cache postgresql-client~=11.12 --repository=http://dl-cdn.alpinelinux.org/alpine/v3.10/main && \
     apk add --no-cache --virtual .build-tools git build-base && \
     cd /home/app/et3 && \

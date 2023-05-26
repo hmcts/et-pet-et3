@@ -47,7 +47,7 @@ group :development, :test do
   gem 'simplecov', '~> 0.21'
   gem 'pry', '~> 0.12'
   # Run Rspec tests in parallel to speed the test suite up
-  gem 'parallel_tests', '~> 3.11'
+  gem 'parallel_tests', '~> 4.2'
 end
 
 group :development do

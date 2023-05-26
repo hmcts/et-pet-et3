@@ -19,15 +19,16 @@ GIT
 
 GIT
   remote: https://github.com/hmcts/et_test_helpers.git
-  revision: 6c97b12e3666570b100046cfbc6c804bed364761
-  tag: v1.1.4
+  revision: 95aceac8e69ab47d34f0e6e6d10c799aaa764b94
+  tag: v1.3.1
   specs:
-    et_test_helpers (1.1.4)
+    et_test_helpers (1.3.1)
       activesupport (> 5.0)
       capybara (~> 3)
       i18n (~> 1.8)
       rspec (>= 3.0)
       site_prism (~> 3.5)
+      webmock
 
 GIT
   remote: https://github.com/microsoft/ApplicationInsights-Ruby.git
@@ -295,27 +296,27 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
-    rspec (3.11.0)
-      rspec-core (~> 3.11.0)
-      rspec-expectations (~> 3.11.0)
-      rspec-mocks (~> 3.11.0)
-    rspec-core (3.11.0)
-      rspec-support (~> 3.11.0)
-    rspec-expectations (3.11.1)
+    rspec (3.12.0)
+      rspec-core (~> 3.12.0)
+      rspec-expectations (~> 3.12.0)
+      rspec-mocks (~> 3.12.0)
+    rspec-core (3.12.2)
+      rspec-support (~> 3.12.0)
+    rspec-expectations (3.12.3)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.11.0)
-    rspec-mocks (3.11.2)
+      rspec-support (~> 3.12.0)
+    rspec-mocks (3.12.5)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.11.0)
-    rspec-rails (6.0.1)
+      rspec-support (~> 3.12.0)
+    rspec-rails (6.0.2)
       actionpack (>= 6.1)
       activesupport (>= 6.1)
       railties (>= 6.1)
-      rspec-core (~> 3.11)
-      rspec-expectations (~> 3.11)
-      rspec-mocks (~> 3.11)
-      rspec-support (~> 3.11)
-    rspec-support (3.11.1)
+      rspec-core (~> 3.12)
+      rspec-expectations (~> 3.12)
+      rspec-mocks (~> 3.12)
+      rspec-support (~> 3.12)
+    rspec-support (3.12.0)
     rubocop (1.51.0)
       json (~> 2.3)
       parallel (~> 1.10)

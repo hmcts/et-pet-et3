@@ -66,7 +66,7 @@ group :test do
   gem 'webdrivers', '~> 5.0'
   gem 'database_cleaner', '~> 2.0'
   gem 'webmock', '~> 3.11'
-  gem 'faker', '~> 2.15'
+  gem 'faker', '~> 3.2'
   gem 'factory_bot', '~> 6.1'
 end
 

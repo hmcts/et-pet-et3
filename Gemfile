@@ -25,7 +25,7 @@ gem 'sprockets', '~> 4.0.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'slim-rails', '~> 3.5.1'
+gem 'slim-rails', '~> 3.6.0'
 gem 'jquery-rails', '~> 4.5'
 gem 'activerecord-nulldb-adapter', '~> 0.8.0'
 gem 'httparty', '~> 0.17'

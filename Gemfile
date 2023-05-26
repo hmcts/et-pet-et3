@@ -33,7 +33,7 @@ gem 'uk_postcode', '~> 2.1'
 # Add .env file to store environment variables
 gem 'dotenv-rails', '~> 2.7'
 gem 'invisible_captcha', '~> 2.0.0'
-gem 'devise', '~> 4.8'
+gem 'devise', '~> 4.9.0'
 gem 'base32_pure', '~> 0.1'
 
 group :development, :test do

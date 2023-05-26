@@ -27,12 +27,12 @@ gem 'sprockets', '~> 4.2.0'
 
 gem 'slim-rails', '~> 3.6.0'
 gem 'jquery-rails', '~> 4.5'
-gem 'activerecord-nulldb-adapter', '~> 0.8.0'
+gem 'activerecord-nulldb-adapter', '~> 0.9.0'
 gem 'httparty', '~> 0.17'
 gem 'uk_postcode', '~> 2.1'
 # Add .env file to store environment variables
 gem 'dotenv-rails', '~> 2.7'
-gem 'invisible_captcha', '~> 2.0.0'
+gem 'invisible_captcha', '~> 2.1.0'
 gem 'devise', '~> 4.9.0'
 gem 'base32_pure', '~> 0.1'
 

@@ -33,7 +33,7 @@ end
 
 Capybara.register_driver :firefox_local do |app|
   options = Selenium::WebDriver::Firefox::Options.new
-  options.headless!
+  options.add_argument('-headless')
   Capybara::Selenium::Driver.new(app, browser: :firefox, options: options)
 end
 

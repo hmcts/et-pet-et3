@@ -61,7 +61,7 @@ end
 group :test do
   gem 'capybara-screenshot', '~> 1.0'
   gem 'et_test_helpers', git: 'https://github.com/hmcts/et_test_helpers.git', tag: 'v1.1.4'
-  gem 'rspec-rails', '~> 5.1'
+  gem 'rspec-rails', '~> 6.0'
   gem 'site_prism', '~> 3.7'
   gem 'webdrivers', '~> 5.0'
   gem 'database_cleaner', '~> 2.0'

@@ -172,7 +172,7 @@ GEM
     execjs (2.8.1)
     factory_bot (6.2.1)
       activesupport (>= 5.0.0)
-    faker (2.21.0)
+    faker (3.2.0)
       i18n (>= 1.8.11, < 2)
     faraday (2.7.2)
       faraday-net_http (>= 2.0, < 3.1)
@@ -431,7 +431,7 @@ DEPENDENCIES
   et_gds_design_system!
   et_test_helpers!
   factory_bot (~> 6.1)
-  faker (~> 2.15)
+  faker (~> 3.2)
   httparty (~> 0.17)
   invisible_captcha (~> 2.0.0)
   iodine (~> 0.7.47)

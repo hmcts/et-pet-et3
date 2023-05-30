@@ -48,6 +48,8 @@ group :development, :test do
   gem 'pry', '~> 0.12'
   # Run Rspec tests in parallel to speed the test suite up
   gem 'parallel_tests', '~> 4.2'
+  gem 'solargraph'
+  gem 'webrick'
 end
 
 group :development do

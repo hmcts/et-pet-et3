@@ -55,8 +55,8 @@ module ET3
 
       private
 
-      def t(*args)
-        ::ET3::Test::Messaging.instance.t(*args)
+      def t(*args, **kw_args)
+        ::ET3::Test::Messaging.instance.t(*args, **kw_args)
       end
 
       def current_locale
@@ -73,8 +73,8 @@ module ET3
       end
 
       class_methods do
-        def t(*args)
-          ::ET3::Test::Messaging.instance.t(*args)
+        def t(*args, **kw_args)
+          ::ET3::Test::Messaging.instance.t(*args, **kw_args)
         end
 
         def factory_translate(*args)

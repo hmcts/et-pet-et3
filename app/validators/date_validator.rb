@@ -1,9 +1,9 @@
 # @TODO This class can be much simpler once we are not worrying about values being hashes,
 # strings etc.. (once all forms are converted to NullDbForm)
 class DateValidator < ActiveModel::EachValidator
-  def initialize(omit_day: false, **kwargs)
+  def initialize(*args, omit_day: false, **kwargs)
     @omit_day = omit_day
-    super(**kwargs)
+    super(*args, **kwargs)
   end
 
   def validate_each(record, attribute, value)

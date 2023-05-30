@@ -92,7 +92,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'sentry-raven', '~> 3.1'
-gem 'et_azure_insights', '0.2.13', git: 'https://github.com/hmcts/et-azure-insights.git', tag: 'v0.2.13'
+gem 'et_azure_insights', '1.0.0', git: 'https://github.com/hmcts/et-azure-insights.git', tag: 'v1.0.0'
 gem 'application_insights', git: 'https://github.com/microsoft/ApplicationInsights-Ruby.git', ref: '5db6b4'
 
 gem "webpacker", "~> 5.4"

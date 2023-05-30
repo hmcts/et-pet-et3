@@ -96,11 +96,6 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  Raven.configure do |config|
-    config.dsn = ENV.fetch('RAVEN_DSN', '')
-    config.ssl_verification = ENV.fetch('RAVEN_SSL_VERIFICATION', 'true').downcase == 'true'
-  end
-
   # The google tag manager account - fetched from environment variable, defaulting to false.  An empty string in the env
   # var can also be used to disable.
   config.google_tag_manager_account = ENV.fetch('GTM_ACCOUNT', false)

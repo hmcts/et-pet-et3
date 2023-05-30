@@ -91,7 +91,9 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'sentry-raven', '~> 3.1'
+gem "sentry-ruby", "~> 5.9"
+gem "sentry-rails", "~> 5.9"
+
 gem 'et_azure_insights', '1.0.0', git: 'https://github.com/hmcts/et-azure-insights.git', tag: 'v1.0.0'
 gem 'application_insights', git: 'https://github.com/microsoft/ApplicationInsights-Ruby.git', ref: '5db6b4'
 

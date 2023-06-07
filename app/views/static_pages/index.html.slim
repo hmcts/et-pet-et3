@@ -28,7 +28,7 @@
   = form_for User.new, url: new_user_registration_path, html: { class: 'inline-form', method: :get }, builder: EtGdsDesignSystem.form_builder_class do |f|
     = f.submit t('components.introduction.start_now')
   = form_for User.new, url: new_user_session_path, html: { class: 'inline-form', method: :get }, builder: EtGdsDesignSystem.form_builder_class do |f|
-    = f.submit t('components.introduction.return_to_claim'), secondary: true, classes: ['govuk-!-margin-left-2']
+    = f.submit t('components.introduction.return_to_claim'), secondary: true, class: ['govuk-!-margin-left-2']
 
 
   - content_for :sidebar

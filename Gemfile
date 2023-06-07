@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 7.0.4.3'
+gem 'rails', '~> 7.0.5'
 # Azure deployment so we need this
 gem 'azure_env_secrets', git: 'https://github.com/ministryofjustice/azure_env_secrets.git', tag: 'v0.1.3'
 
@@ -21,19 +21,19 @@ gem 'jbuilder', '~> 2.10'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'sprockets', '~> 4.0.0'
+gem 'sprockets', '~> 4.2.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'slim-rails', '~> 3.5.1'
+gem 'slim-rails', '~> 3.6.0'
 gem 'jquery-rails', '~> 4.5'
-gem 'activerecord-nulldb-adapter', '~> 0.8.0'
+gem 'activerecord-nulldb-adapter', '~> 0.9.0'
 gem 'httparty', '~> 0.17'
 gem 'uk_postcode', '~> 2.1'
 # Add .env file to store environment variables
 gem 'dotenv-rails', '~> 2.7'
-gem 'invisible_captcha', '~> 2.0.0'
-gem 'devise', '~> 4.8'
+gem 'invisible_captcha', '~> 2.1.0'
+gem 'devise', '~> 4.9.0'
 gem 'base32_pure', '~> 0.1'
 
 group :development, :test do
@@ -41,13 +41,13 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 3.34'
-  gem 'selenium-webdriver', '~> 4.1'
+  gem 'selenium-webdriver', '~> 4.9'
   gem 'rubocop', '~> 1.8'
   gem 'rubocop-rspec', '~> 2.1'
   gem 'simplecov', '~> 0.21'
   gem 'pry', '~> 0.12'
   # Run Rspec tests in parallel to speed the test suite up
-  gem 'parallel_tests', '~> 3.11'
+  gem 'parallel_tests', '~> 4.2'
 end
 
 group :development do
@@ -60,13 +60,13 @@ end
 
 group :test do
   gem 'capybara-screenshot', '~> 1.0'
-  gem 'et_test_helpers', git: 'https://github.com/hmcts/et_test_helpers.git', tag: 'v1.1.4'
-  gem 'rspec-rails', '~> 5.1'
-  gem 'site_prism', '~> 3.7'
+  gem 'et_test_helpers', git: 'https://github.com/hmcts/et_test_helpers.git', tag: 'v1.3.2'
+  gem 'rspec-rails', '~> 6.0'
+  gem 'site_prism', '~> 4.0'
   gem 'webdrivers', '~> 5.0'
   gem 'database_cleaner', '~> 2.0'
   gem 'webmock', '~> 3.11'
-  gem 'faker', '~> 2.15'
+  gem 'faker', '~> 3.2'
   gem 'factory_bot', '~> 6.1'
 end
 

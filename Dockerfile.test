@@ -1,6 +1,7 @@
 ARG source_image
 FROM ${source_image}
 ENV RAILS_ENV=test
+ENV NODE_OPTIONS=--openssl-legacy-provider
 ENV TEST_BROWSER=firefox_local
 COPY --chown=app:app ./spec /home/app/et3/spec
 COPY --chown=app:app ./.rspec /home/app/et3/.rspec

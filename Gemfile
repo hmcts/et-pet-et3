@@ -38,6 +38,7 @@ gem 'base32_pure', '~> 0.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'bundler-audit', '~> 0.9.1'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 3.34'
@@ -50,6 +51,7 @@ group :development, :test do
   gem 'parallel_tests', '~> 4.2'
   gem 'solargraph'
   gem 'webrick'
+
 end
 
 group :development do
@@ -64,6 +66,7 @@ group :test do
   gem 'capybara-screenshot', '~> 1.0'
   gem 'et_test_helpers', git: 'https://github.com/hmcts/et_test_helpers.git', tag: 'v1.3.2'
   gem 'rspec-rails', '~> 6.0'
+  gem 'rspec_junit_formatter', '~> 0.6.0'
   gem 'site_prism', '~> 4.0'
   gem 'webdrivers', '~> 5.0'
   gem 'database_cleaner', '~> 2.0'

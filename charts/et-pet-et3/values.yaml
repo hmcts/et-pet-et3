@@ -1,0 +1,10 @@
+base:
+  applicationPort: 8080
+  readinessPath: /ping.json
+  livenessPath: /ping.json
+  startupPath: /ping.json
+  image: 'hmctspublic.azurecr.io/et-pet/et3:latest'
+  ingressHost: et-pet-et3.{{ .Values.global.environment }}.platform.hmcts.net
+  aadIdentityName: et3-pet
+  environment:
+    RAILS_ENV: 'production'

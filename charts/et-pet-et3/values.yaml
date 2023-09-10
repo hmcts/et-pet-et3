@@ -3,8 +3,62 @@ base:
   readinessPath: /ping.json
   livenessPath: /ping.json
   startupPath: /ping.json
-  image: 'hmctspublic.azurecr.io/et-pet/et3:latest'
+  image: "hmctspublic.azurecr.io/et-pet/et3:latest"
   ingressHost: et-pet-et3.{{ .Values.global.environment }}.platform.hmcts.net
   aadIdentityName: et3-pet
   environment:
-    RAILS_ENV: 'production'
+    RAILS_ENV: "production"
+    SECRETS_PATH: "/kvmnt/"
+    RAILS_SERVE_STATIC_FILES: true
+    REMOVE_ASSET_HOST: "https://bbea327e42bedevet3.blob.core.windows.net/"
+    CLOUD_PROVIDER: "azure"
+    SECRET_KEY_BASE:
+      secretRef: "et3-secret-key-base"
+      key: "et3-secret-key-base"
+      disabled: false
+    DEVISE_SECRET_KEY:
+      secretRef: "et3-devise-secret-key"
+      key: "et3-devise-secret-key"
+      disabled: false
+    GTM_ACCOUNT:
+      secretRef: "et3-gtm-account"
+      key: "et3-gtm-account"
+      disabled: false
+    SMTP_USERNAME:
+      secretRef: "et3-smtp-sendgrid-username"
+      key: "et3-smtp-sendgrid-username"
+      disabled: false
+    SMTP_PASSWORD:
+      secretRef: "et3-smtp-sendgrid-password"
+      key: "et3-smtp-sendgrid-password"
+      disabled: false
+    RAVEN_DSN:
+      secretRef: "et3-raven-dsn"
+      key: "et3-raven-dsn"
+      disabled: false
+    GOVUK_NOTIFY_API_KEY_LIVE:
+      secretRef: "et3-govuk-notify-api-key"
+      key: "et3-govuk-notify-api-key"
+      disabled: false
+    DB_HOST: "employment-tribunals-et3-demo.postgres.database.azure.com"
+    DB_PORT: 5432
+    DB_USERNAME: "employment_tribunals_postgresql_user@employment-tribunals-et3-demo"
+    DB_NAME: "et3"
+    ABSOLUTE_HOST: "http://et3-dev-azure.dev.et.dsd.io"
+    SMTP_HOSTNAME: "smtp.sendgrid.net"
+    SMTP_PORT: 587
+    RAILS_LOG_LEVEL: "info"
+    RACK_ENV: "production"
+    WEB_CONCURRENCY: 3
+    DISABLE_WELSH: false
+    ET_API_URL: "http://et-api.employmenttribunal:8080/api/v2"
+    RAILS_LOG_TO_STDOUT: true
+    DOCKER_STATE: "migrate"
+    RAVEN_SSL_VERIFICATION: false
+    AZURE_APP_INSIGHTS_KEY:
+      secretRef: "et3-appinsights-key"
+      key: "et3-appinsights-key"
+      disabled: false
+    AZURE_APP_INSIGHTS_ROLE_NAME: "ET3"
+    SENDING_HOST: "et3-dev-azure.dev.et.dsd.io"
+    ROOT_URL: "https://et3-dev-azure.dev.et.dsd.io"

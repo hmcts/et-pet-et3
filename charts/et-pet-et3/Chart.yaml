@@ -1,9 +1,9 @@
 apiVersion: v2
-appVersion: '1.0'
+appVersion: "1.0"
 description: A Helm chart for et-pet et3 application
 name: et-pet-et3
 home: https://github.com/hmcts/et-pet-et3
-version: 0.0.1
+version: 0.0.2
 dependencies:
   - name: base
     version: 0.2.7

@@ -3,8 +3,56 @@ base:
   readinessPath: /ping.json
   livenessPath: /ping.json
   startupPath: /ping.json
-  image: 'hmctspublic.azurecr.io/et-pet/et3:latest'
+  image: "hmctspublic.azurecr.io/et-pet/et3:latest"
   ingressHost: et-pet-et3.{{ .Values.global.environment }}.platform.hmcts.net
-  aadIdentityName: et3-pet
+  aadIdentityName: et-pet
   environment:
-    RAILS_ENV: 'production'
+    SECRETS_PATH: "/mnt/secrets/et-pet"
+    RAILS_SERVE_STATIC_FILES: true
+    CLOUD_PROVIDER: "azure"
+    ABSOLUTE_HOST: "http://tribunal-response.employmenttribunals.service.gov.uk"
+    SMTP_HOSTNAME: "smtp.sendgrid.net"
+    SMTP_PORT: 587
+    RAILS_ENV: "production"
+    RACK_ENV: "production"
+    RAILS_LOG_LEVEL: "info"
+    WEB_CONCURRENCY: 3
+    DISABLE_WELSH: false
+    ET_API_URL: "http://et-api.employmenttribunal:8080/api/v2"
+    RAILS_LOG_TO_STDOUT: true
+    DOCKER_STATE: "migrate"
+    RAVEN_SSL_VERIFICATION: false
+    SENDING_HOST: "tribunal-response.employmenttribunals.service.gov.uk"
+    ROOT_URL: "https://tribunal-response.employmenttribunals.service.gov.uk"
+    MAINTENANCE_ENABLED: false
+    SERVICE_FQDN: ${SERVICE_FQDN}
+    DB_SSL_MODE: "require"
+  keyVaults:
+    et-pet:
+      secrets:
+        - name: et3-postgres-host
+          alias: DB_HOST
+        - name: et3-postgres-port
+          alias: DB_PORT
+        - name: et3-postgres-user
+          alias: DB_USERNAME
+        - name: et3-postgres-password
+          alias: DB_PASSWORD
+        - name: et3-postgres-database
+          alias: DB_NAME
+        - name: et3-secret-key-base
+          alias: SECRET_KEY_BASE
+        - name: et3-devise-secret-key
+          alias: DEVISE_SECRET_KEY
+        - name: et3-gtm-account
+          alias: GTM_ACCOUNT
+        - name: sendgrid-username
+          alias: SMTP_USERNAME
+        - name: sendgrid-password
+          alias: SMTP_PASSWORD
+        - name: et3-raven-dsn
+          alias: RAVEN_DSN
+        - name: govuk-notify-api-key
+          alias: GOVUK_NOTIFY_API_KEY_LIVE
+        - name: et3-appinsights-key
+          alias: AZURE_APP_INSIGHTS_KEY

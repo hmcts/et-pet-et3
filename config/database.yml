@@ -24,7 +24,7 @@ default: &default
   username: '<%= ENV.fetch("DB_USERNAME", "postgres") %>'
   password: '<%= ENV['DB_PASSWORD']  || '' %>'
   port: <%= ENV.fetch("DB_PORT", "5432") %>
-
+  sslmode: '<%= ENV.fetch('DB_SSL_MODE', 'disable') %>'
 development:
   <<: *default
   database: '<%= ENV.fetch("DB_NAME", "et3_development") %><%= ENV['TEST_ENV_NUMBER'] %>'

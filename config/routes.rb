@@ -30,6 +30,8 @@ Rails.application.routes.draw do
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   end
   put "/" => 'static_pages#start_new_session', as: 'start_new_session'
-  get "/ping" => "status#ping"
-  get "/healthcheck" => "status#healthcheck"
+
+  get '/health' => 'status#healthcheck', defaults: { format: 'json' }
+  get '/health/readiness' => 'status#healthcheck', defaults: { format: 'json' }
+  get '/health/liveness' => 'status#healthcheck', defaults: { format: 'json' }
 end

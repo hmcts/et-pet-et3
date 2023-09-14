@@ -7,7 +7,6 @@ base:
     SECRETS_PATH: "/mnt/secrets/et-pet"
     RAILS_SERVE_STATIC_FILES: true
     CLOUD_PROVIDER: "azure"
-    ABSOLUTE_HOST: "http://tribunal-response.employmenttribunals.service.gov.uk"
     SMTP_HOSTNAME: "smtp.sendgrid.net"
     SMTP_PORT: 587
     RAILS_ENV: "production"
@@ -19,8 +18,7 @@ base:
     RAILS_LOG_TO_STDOUT: true
     DOCKER_STATE: "migrate"
     RAVEN_SSL_VERIFICATION: false
-    SENDING_HOST: "tribunal-response.employmenttribunals.service.gov.uk"
-    ROOT_URL: "https://tribunal-response.employmenttribunals.service.gov.uk"
+    SENDING_HOST: ${SERVICE_FQDN}
     MAINTENANCE_ENABLED: false
     SERVICE_FQDN: ${SERVICE_FQDN}
     DB_SSL_MODE: "require"

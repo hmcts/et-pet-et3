@@ -101,4 +101,5 @@ Rails.application.configure do
   config.google_tag_manager_account = ENV.fetch('GTM_ACCOUNT', false)
 
   config.azure_insights.logger = config.logger
+  config.secure_cookies = ENV.fetch('SECURE_SESSION_COOKIE', 'true').downcase == 'true'
 end

@@ -52,6 +52,7 @@ RUN apk add --no-cache libpq-dev tzdata shared-mime-info curl-dev libc6-compat b
     bundle install --no-cache --jobs=5 --retry=3 && \
     apk del .build-tools && \
     chown -R app:app /usr/local/bundle && \
+    chown -R app:app /home/app/et3/vendor/bundle && \
     mkdir -p /home/app/et3/tmp && \
     chown -R app:app /home/app/et3/tmp
 

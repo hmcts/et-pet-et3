@@ -7,9 +7,9 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 7.0.5'
+gem 'rails', '7.0.7.1'
 # Azure deployment so we need this
-gem 'azure_env_secrets', git: 'https://github.com/ministryofjustice/azure_env_secrets.git', tag: 'v0.1.3'
+gem 'azure_env_secrets', git: 'https://github.com/hmcts/azure_env_secrets.git', tag: 'v1.0.1'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
@@ -38,6 +38,7 @@ gem 'base32_pure', '~> 0.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'bundler-audit', '~> 0.9.1'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 3.34'
@@ -50,6 +51,7 @@ group :development, :test do
   gem 'parallel_tests', '~> 4.2'
   gem 'solargraph'
   gem 'webrick'
+
 end
 
 group :development do
@@ -64,6 +66,7 @@ group :test do
   gem 'capybara-screenshot', '~> 1.0'
   gem 'et_test_helpers', git: 'https://github.com/hmcts/et_test_helpers.git', tag: 'v1.3.2'
   gem 'rspec-rails', '~> 6.0'
+  gem 'rspec_junit_formatter', '~> 0.6.0'
   gem 'site_prism', '~> 4.0'
   gem 'webdrivers', '~> 5.0'
   gem 'database_cleaner', '~> 2.0'
@@ -98,4 +101,4 @@ gem 'et_azure_insights', '1.0.0', git: 'https://github.com/hmcts/et-azure-insigh
 gem 'application_insights', git: 'https://github.com/microsoft/ApplicationInsights-Ruby.git', ref: '5db6b4'
 
 gem "webpacker", "~> 5.4"
-gem 'et_gds_design_system', git:'https://github.com/hmcts/et_gds_design_system.git', tag: 'v5.4.1'
+gem 'et_gds_design_system', git:'https://github.com/hmcts/et_gds_design_system.git', tag: 'v5.4.2'

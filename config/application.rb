@@ -33,6 +33,7 @@ module Et3
       }
     end
 
+    config.secure_cookies = false
     config.log_level = ENV.fetch('RAILS_LOG_LEVEL', 'info').to_sym
 
     insights_key = ENV.fetch('AZURE_APP_INSIGHTS_KEY', false)

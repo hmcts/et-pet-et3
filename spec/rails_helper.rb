@@ -1,7 +1,9 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 require 'simplecov'
+require "simplecov_json_formatter"
 ENV['RAILS_ENV'] ||= 'test'
+SimpleCov.formatter = SimpleCov::Formatter::JSONFormatter
 SimpleCov.start if ENV.fetch('ENABLE_COVERAGE', 'false').downcase == 'true'
 
 require File.expand_path('../../config/environment', __FILE__)

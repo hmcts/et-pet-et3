@@ -1,13 +1,14 @@
 # @TODO This class can be much simpler once we are not worrying about values being hashes,
 # strings etc.. (once all forms are converted to NullDbForm)
 class DateValidator < ActiveModel::EachValidator
-  def initialize(*args, omit_day: false, **kwargs)
-    @omit_day = omit_day
-    super(*args, **kwargs)
+  def initialize(options, &block)
+    my_options = options.dup
+    @omit_day = my_options.delete(:omit_day)
+    super(my_options, &block)
   end
 
   def validate_each(record, attribute, value)
-    if illegal_date?(record, attribute)
+    if illegal_date?(record, attribute, value)
       record.errors.add(attribute, :invalid)
     elsif illegal_year?(value)
       record.errors.add(attribute, :invalid)
@@ -39,9 +40,11 @@ class DateValidator < ActiveModel::EachValidator
   def illegal_year?(value)
     # Needs to verify that four digits are given for a year
     return false if value.nil?
-    if value.is_a?(String)
+
+    case value
+    when String
       Date.parse(value).year < 1000
-    elsif value.is_a?(Date) || value.is_a?(Time)
+    when Date, Time
       value.year < 1000
     else
       value[1].present? && value[1].to_i < 1000
@@ -50,24 +53,21 @@ class DateValidator < ActiveModel::EachValidator
     false
   end
 
-  def illegal_date?(record, attribute)
+  def illegal_date?(record, attribute, value)
     # The date type in rails seems a bit basic in terms of validation - it will accept 31/2/xxxx but not 32/2/xxxx,
     #   neither of which should be valid so we are going to validate better here.
-    value = read_attribute_before_type_cast(record, attribute, default: nil)
-    if value.is_a?(Hash) && value.values.all?(&:present?)
-      Date.new(value[1], value[2], value[3] || (omit_day ? 1 : null))
+    raw_value = read_attribute_before_type_cast(record, attribute, default: nil)
+    if raw_value.is_a?(String) && raw_value.blank?
       false
-    elsif value.is_a?(String) && value.blank?
+    elsif raw_value.is_a?(String)
+      Date.parse(raw_value)
       false
-    elsif value.is_a?(String)
-      Date.parse(value)
+    elsif raw_value.is_a?(Date) || raw_value.is_a?(Time)
       false
-    elsif value.is_a?(Date) || value.is_a?(Time)
-      false
-    elsif value.nil?
+    elsif raw_value.nil?
       false
     else
-      true
+      value.is_a?(EtDateType::InvalidDate)
     end
   rescue Date::Error, TypeError
     true
@@ -75,6 +75,7 @@ class DateValidator < ActiveModel::EachValidator
 
   def read_attribute_before_type_cast(record, attribute, default:)
     return default unless record.respond_to?(:read_attribute_before_type_cast)
+
     record.read_attribute_before_type_cast(attribute)
   end
 end

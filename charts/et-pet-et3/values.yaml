@@ -49,5 +49,5 @@ base:
           alias: RAVEN_DSN
         - name: govuk-notify-api-key
           alias: GOVUK_NOTIFY_API_KEY_LIVE
-        - name: et3-appinsights-key
+        - name: app-insights-instrumentation-key
           alias: AZURE_APP_INSIGHTS_KEY

@@ -1,8 +1,8 @@
 require 'securerandom'
 class Store < ApplicationRecord
   attribute :uuid, :string
-  serialize :hash_store
-  serialize :api_response
+  serialize :hash_store, coder: YAML
+  serialize :api_response, coder: YAML
   before_validation :generate_uuid, unless: :uuid_present?
   belongs_to :user
 

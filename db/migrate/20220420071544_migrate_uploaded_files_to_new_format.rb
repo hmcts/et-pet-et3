@@ -1,8 +1,8 @@
 class MigrateUploadedFilesToNewFormat < ActiveRecord::Migration[6.0]
   class Store < ActiveRecord::Base
     self.table_name = :stores
-    serialize :hash_store
-    serialize :api_response
+    serialize :hash_store, coder: YAML
+    serialize :api_response, coder: YAML
   end
 
   def up

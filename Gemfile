@@ -102,4 +102,4 @@ gem 'et_azure_insights', '1.0.0', git: 'https://github.com/hmcts/et-azure-insigh
 gem 'application_insights', git: 'https://github.com/microsoft/ApplicationInsights-Ruby.git', ref: '5db6b4'
 
 gem "webpacker", "~> 5.4"
-gem 'et_gds_design_system', git:'https://github.com/hmcts/et_gds_design_system.git', tag: 'v5.4.2'
+gem 'et_gds_design_system', git:'https://github.com/hmcts/et_gds_design_system.git', tag: 'v5.4.3-rc1'

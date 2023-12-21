@@ -15,11 +15,12 @@ GIT
 
 GIT
   remote: https://github.com/hmcts/et_gds_design_system.git
-  revision: 0315abb851246e3ef9bf870a5b188c3db2556610
-  tag: v5.4.2
+  revision: 4c195885743e33e87c16d78644edb85af89cae97
+  tag: v5.4.3-rc1
   specs:
-    et_gds_design_system (5.4.2)
+    et_gds_design_system (5.4.3)
       govuk_design_system_formbuilder (~> 4.0)
+      rack (< 3.0.0)
       rails (>= 6.0)
       typhoeus (~> 1.4)
       webpacker (~> 5.0)
@@ -438,7 +439,7 @@ GEM
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
-    typhoeus (1.4.0)
+    typhoeus (1.4.1)
       ethon (>= 0.9.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
@@ -533,4 +534,4 @@ DEPENDENCIES
   webrick
 
 BUNDLED WITH
-   2.4.13
+   2.5.1

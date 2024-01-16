@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Store, type: :model do
 
   let(:populated_store) { described_class.new(uuid: '32db7ef9-1144-464e-b561-9c8880b41d28', hash_store: { hash_key: :key_value }, user: user) }
-  let(:user) { FactoryBot.create(:user) }
+  let(:user) { create(:user) }
 
   it "stores a SecureRandom.uuid" do
     store = described_class.new(uuid: '8002e436-dc3a-452e-a4fd-9ba466c737b1', user: user)

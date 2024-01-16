@@ -27,9 +27,9 @@ RSpec.feature "Fill in Confirmation of Supplied Details Page", js: true do
 
   scenario "incorrectly will provide errors" do
     given_valid_user
-    @claimant = FactoryBot.create(:claimant, :claimant_valid)
-    @respondent = FactoryBot.create(:respondent, :respondent_valid, :upload_additional_information, email_receipt: 'invalid.email')
-    @representative = FactoryBot.create(:representative, :representative_valid)
+    @claimant = create(:claimant, :claimant_valid)
+    @respondent = create(:respondent, :respondent_valid, :upload_additional_information, email_receipt: 'invalid.email')
+    @representative = create(:representative, :representative_valid)
 
     start_a_new_et3_response
     registration_start

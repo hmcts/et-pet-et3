@@ -369,4 +369,3 @@ RSpec.describe EarningsAndBenefits, type: :model do
   end
 
 end
-

@@ -14,6 +14,14 @@ GIT
       application_insights (~> 0.5.7)
 
 GIT
+  remote: https://github.com/hmcts/et-full-system-control.git
+  revision: 4a3991b399d8dae1ed55a6965a2e7587f8fda71d
+  specs:
+    et_full_system_control (0.1.0)
+      docker-api (~> 2.2)
+      rails (>= 7.0.0)
+
+GIT
   remote: https://github.com/hmcts/et_gds_design_system.git
   revision: 0315abb851246e3ef9bf870a5b188c3db2556610
   tag: v5.4.2
@@ -180,6 +188,9 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.5.0)
     docile (1.4.0)
+    docker-api (2.2.0)
+      excon (>= 0.47.0)
+      multi_json
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
@@ -190,6 +201,7 @@ GEM
     erubi (1.12.0)
     ethon (0.16.0)
       ffi (>= 1.15.0)
+    excon (0.109.0)
     execjs (2.8.1)
     factory_bot (6.2.1)
       activesupport (>= 5.0.0)
@@ -251,6 +263,7 @@ GEM
     mini_portile2 (2.8.5)
     minitest (5.20.0)
     msgpack (1.7.1)
+    multi_json (1.15.0)
     multi_xml (0.6.0)
     mutex_m (0.2.0)
     net-imap (0.4.5)
@@ -494,6 +507,7 @@ DEPENDENCIES
   devise (~> 4.9.0)
   dotenv-rails (~> 2.7)
   et_azure_insights (= 1.0.0)!
+  et_full_system_control!
   et_gds_design_system!
   et_test_helpers!
   factory_bot (~> 6.1)

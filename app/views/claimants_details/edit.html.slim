@@ -15,8 +15,8 @@
     = f.collection_radio_buttons :agree_with_employment_dates, optional: true
     = f.revealed_content :agree_with_employment_dates, values: [:false] do
       .govuk-inset-text
-        = f.date_field :employment_start, maxlength_enabled: true
-        = f.date_field :employment_end, maxlength_enabled: true
+        = f.date_field :employment_start, maxlength_enabled: true, optional: true
+        = f.date_field :employment_end, maxlength_enabled: true, optional: true
         = f.text_area :disagree_employment, optional: true
     = f.collection_radio_buttons :continued_employment, optional: true
     = f.collection_radio_buttons :agree_with_claimants_description_of_job_or_title, optional: true

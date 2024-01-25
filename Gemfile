@@ -36,6 +36,7 @@ gem 'dotenv-rails', '~> 2.7'
 gem 'invisible_captcha', '~> 2.1.0'
 gem 'devise', '~> 4.9.0'
 gem 'base32_pure', '~> 0.1'
+gem 'iodine', '~> 0.7.47'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -52,7 +53,7 @@ group :development, :test do
   gem 'parallel_tests', '~> 4.2'
   gem 'solargraph'
   gem 'webrick'
-
+  gem 'et_full_system_control', git: 'https://github.com/hmcts/et-full-system-control.git'
 end
 
 group :development do
@@ -79,7 +80,6 @@ end
 group :production do
   # Add bootsnap for 5.2
   gem 'bootsnap', '~> 1.4'
-  gem 'iodine', '~> 0.7.47'
 end
 
 group :assets do

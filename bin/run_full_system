@@ -20,8 +20,6 @@ FileUtils.chdir APP_ROOT do
 
   if ENV.fetch('RAILS_ENV', 'development') == 'development'
     puts "\n== bundling for development"
-    system! 'bundle config set with "development test"'
-    system! 'bundle config --delete without'
     system! 'bundle install'
 
     puts "\n== Running yarn install"
@@ -32,5 +30,5 @@ FileUtils.chdir APP_ROOT do
   system! 'bin/rails db:create db:migrate'
 
   puts "\n== Starting app"
-  system! 'bundle exec iodine -port 8080'
+  system! "cd #{APP_ROOT} && invoker start"
 end

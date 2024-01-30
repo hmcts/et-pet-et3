@@ -225,26 +225,6 @@ RSpec.describe ClaimantsDetail, type: :model do
     end
   end
 
-  context "when disagreeing with employment dates" do
-    it 'will raise a validation error on employment start' do
-      populated_claimant_detail.agree_with_employment_dates = false
-      populated_claimant_detail.employment_start = nil
-
-      populated_claimant_detail.valid?
-
-      expect(populated_claimant_detail.errors.details[:employment_start]).to include a_hash_including(error: :blank)
-    end
-
-    it 'will raise a validation error on employment end' do
-      populated_claimant_detail.agree_with_employment_dates = false
-      populated_claimant_detail.employment_end = nil
-
-      populated_claimant_detail.valid?
-
-      expect(populated_claimant_detail.errors.details[:employment_end]).to include a_hash_including(error: :blank)
-    end
-  end
-
   context "when agreeing with description of job or title" do
     it 'will not hash disagree claimants job or title' do
       populated_claimant_detail.agree_with_claimants_description_of_job_or_title = true

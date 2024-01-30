@@ -83,9 +83,9 @@ cy:
           'yes': Ydy
           'no': Nac ydy
       employment_start:
-        label: "Pa bryd ddechreuodd ei gyflogaeth"
+        label: "Pa bryd ddechreuodd ei gyflogaeth (dewisol)"
       employment_end:
-        label: "Pa bryd ddaeth ei gyflogaeth i ben, neu y bydd yn dod i ben"
+        label: "Pa bryd ddaeth ei gyflogaeth i ben, neu y bydd yn dod i ben (dewisol)"
       disagree_employment:
         label: "Pam yr ydych yn anghytuno â’r dyddiadau a roddwyd gan yr hawlydd (dewisol)"
       continued_employment:

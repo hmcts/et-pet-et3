@@ -83,9 +83,9 @@ en:
           'yes': 'Yes'
           'no': 'No'
       employment_start:
-        label: When their employment started
+        label: When their employment started (optional)
       employment_end:
-        label: When their employment ended or will end
+        label: When their employment ended or will end (optional)
       disagree_employment:
         label: Why do you disagree with the dates given by the claimant (optional)
       continued_employment:

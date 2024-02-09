@@ -27,7 +27,10 @@ class EarningsAndBenefits < BaseForm
                                         queried_take_home_pay_period: queried_take_home_pay_period)
     end
     earnings_and_benefits_hash[:disagree_claimant_notice_reason] = disagree_claimant_notice_reason if earnings_and_benefits_hash[:agree_with_claimant_notice] == false
-    earnings_and_benefits_hash[:disagree_claimant_pension_benefits_reason] = disagree_claimant_pension_benefits_reason if earnings_and_benefits_hash[:agree_with_claimant_pension_benefits] == false
+    if earnings_and_benefits_hash[:agree_with_claimant_pension_benefits] == false
+      earnings_and_benefits_hash[:disagree_claimant_pension_benefits_reason] =
+        disagree_claimant_pension_benefits_reason
+    end
 
     earnings_and_benefits_hash
   end

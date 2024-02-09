@@ -66,5 +66,3 @@ RSpec.feature "Fill in Claimants Details Page", js: true do
     claimants_details_page.employment_end.assert_error_message(t('errors.custom.employment_end_before_start'))
   end
 end
-
-

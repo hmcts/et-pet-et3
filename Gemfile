@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '7.1.2'
+gem 'rails', '7.1.3.2'
 gem 'rack', '~> 2.2.3' # Currently, we cannot use rack 3 because of an issue proxying the file uploads
 # Azure deployment so we need this
 gem 'azure_env_secrets', git: 'https://github.com/hmcts/azure_env_secrets.git', tag: 'v1.0.1'
@@ -51,7 +51,6 @@ group :development, :test do
   gem 'pry', '~> 0.12'
   # Run Rspec tests in parallel to speed the test suite up
   gem 'parallel_tests', '~> 4.2'
-  gem 'solargraph'
   gem 'webrick'
   gem 'et_full_system_control', git: 'https://github.com/hmcts/et-full-system-control.git'
 end

@@ -202,7 +202,7 @@ GEM
     execjs (2.8.1)
     factory_bot (6.2.1)
       activesupport (>= 5.0.0)
-    faker (3.2.0)
+    faker (3.2.3)
       i18n (>= 1.8.11, < 2)
     ffi (1.16.3)
     globalid (1.2.1)

@@ -200,7 +200,7 @@ GEM
       ffi (>= 1.15.0)
     excon (0.109.0)
     execjs (2.8.1)
-    factory_bot (6.2.1)
+    factory_bot (6.4.6)
       activesupport (>= 5.0.0)
     faker (3.2.3)
       i18n (>= 1.8.11, < 2)

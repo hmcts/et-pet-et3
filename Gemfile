@@ -32,7 +32,7 @@ gem 'activerecord-nulldb-adapter', '~> 1.0'
 gem 'httparty', '~> 0.17'
 gem 'uk_postcode', '~> 2.1'
 # Add .env file to store environment variables
-gem 'dotenv-rails', '~> 2.7'
+gem 'dotenv-rails', '~> 3.1'
 gem 'invisible_captcha', '~> 2.1.0'
 gem 'devise', '~> 4.9.0'
 gem 'base32_pure', '~> 0.1'

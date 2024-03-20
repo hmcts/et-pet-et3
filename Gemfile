@@ -68,7 +68,7 @@ group :test do
   gem 'et_test_helpers', git: 'https://github.com/hmcts/et_test_helpers.git', tag: 'v1.3.2'
   gem 'rspec-rails', '~> 6.1'
   gem 'rspec_junit_formatter', '~> 0.6.0'
-  gem 'site_prism', '~> 4.0'
+  gem 'site_prism', '~> 5.0'
   gem 'database_cleaner', '~> 2.0'
   gem 'webmock', '~> 3.11'
   gem 'faker', '~> 3.2'

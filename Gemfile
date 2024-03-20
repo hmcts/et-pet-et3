@@ -33,7 +33,7 @@ gem 'httparty', '~> 0.17'
 gem 'uk_postcode', '~> 2.1'
 # Add .env file to store environment variables
 gem 'dotenv-rails', '~> 3.1'
-gem 'invisible_captcha', '~> 2.1.0'
+gem 'invisible_captcha', '~> 2.3'
 gem 'devise', '~> 4.9.0'
 gem 'base32_pure', '~> 0.1'
 gem 'iodine', '~> 0.7.47'

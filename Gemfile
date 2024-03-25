@@ -32,8 +32,8 @@ gem 'activerecord-nulldb-adapter', '~> 1.0'
 gem 'httparty', '~> 0.17'
 gem 'uk_postcode', '~> 2.1'
 # Add .env file to store environment variables
-gem 'dotenv-rails', '~> 2.7'
-gem 'invisible_captcha', '~> 2.1.0'
+gem 'dotenv-rails', '~> 3.1'
+gem 'invisible_captcha', '~> 2.3'
 gem 'devise', '~> 4.9.0'
 gem 'base32_pure', '~> 0.1'
 gem 'iodine', '~> 0.7.47'
@@ -44,7 +44,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 3.34'
-  gem 'selenium-webdriver', '~> 4.9'
+  gem 'selenium-webdriver', '~> 4.18'
   gem 'rubocop', '~> 1.8'
   gem 'rubocop-rspec', '~> 2.1'
   gem 'simplecov', '~> 0.21'
@@ -66,10 +66,9 @@ end
 group :test do
   gem 'capybara-screenshot', '~> 1.0'
   gem 'et_test_helpers', git: 'https://github.com/hmcts/et_test_helpers.git', tag: 'v1.3.2'
-  gem 'rspec-rails', '~> 6.0'
+  gem 'rspec-rails', '~> 6.1'
   gem 'rspec_junit_formatter', '~> 0.6.0'
-  gem 'site_prism', '~> 4.0'
-  gem 'webdrivers', '~> 5.0'
+  gem 'site_prism', '~> 5.0'
   gem 'database_cleaner', '~> 2.0'
   gem 'webmock', '~> 3.11'
   gem 'faker', '~> 3.2'
@@ -87,8 +86,6 @@ group :assets do
   gem 'uglifier', '>= 1.3.0'
   # See https://github.com/rails/execjs#readme for more supported runtimes
   # gem 'therubyracer', platforms: :ruby
-  # Use CoffeeScript for .coffee assets and views
-  gem 'coffee-rails', '~> 5.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

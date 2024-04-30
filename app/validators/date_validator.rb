@@ -68,8 +68,10 @@ class DateValidator < ActiveModel::EachValidator
       false
     elsif raw_value.nil?
       false
+    elsif value.is_a?(EtDateType::InvalidDate)
+      true
     else
-      value.is_a?(EtDateType::InvalidDate)
+      value.is_a?(EtDateType)
     end
   rescue Date::Error, TypeError
     true

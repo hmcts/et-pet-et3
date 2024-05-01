@@ -181,6 +181,8 @@ cy:
       feedback_content: "Byddwn yn ddiolchgar i gael eich adborth ar y gwasanaeth hwn fel y gallwn ei wella."
     introduction:
       header: "Cyflwyniad "
+      inset_text: Os ydych chi'n weithiwr proffesiynol cyfreithiol neu'n fath arall o weithiwr proffesiynol a dderbyniodd gyfeirnod 16 digid yn eich pecyn ymateb, gallwch %{myhmcts_account_href}.
+      my_hmcts_account: ymateb ar-lein gan ddefnyddio cyfrif MyHMCTS
       description: Llenwch a chyflwynwch ffurflen ymateb ET3 pan fydd rhywun yn gwneud hawliad tribiwnlys cyflogaeth yn eich erbyn.
       what_title: Beth sydd ei angen arnoch ar gyfer llenwi'r ffurflen hon
       what_content_1: "rhif eich achos (sydd ar y llythyr a anfonwyd atoch) "

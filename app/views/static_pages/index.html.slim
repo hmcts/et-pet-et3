@@ -2,6 +2,9 @@
 - content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
 .content-body.introduction
 
+  p.govuk-inset-text = raw(t('components.introduction.inset_text', myhmcts_account_href: link_to(t('components.introduction.my_hmcts_account'),
+          'https://www.gov.uk/government/publications/myhmcts-respond-to-an-employment-tribunal-claim', target: :_blank)))
+
   p.govuk-body = t('components.introduction.description')
 
   .what-you-need

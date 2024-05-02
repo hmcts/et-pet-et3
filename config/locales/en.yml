@@ -182,6 +182,8 @@ en:
       feedback_content: "We'd like your feedback on this service so we can improve it."
     introduction:
       header: Introduction
+      inset_text: If you're a legal professional or another type of professional who received a 16-digit reference number in your response pack, you can %{myhmcts_account_href}.
+      my_hmcts_account: respond online using a MyHMCTS account
       description: Complete and submit an ET3 response form when someone makes an employment tribunal claim against you.
       what_title: What you need for this form
       what_content_1: your case number (on the letter we sent you)

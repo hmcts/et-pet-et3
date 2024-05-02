@@ -4,6 +4,9 @@
 
   p.govuk-body = t('components.introduction.description')
 
+  p.govuk-inset-text = raw(t('components.introduction.inset_text', myhmcts_account_href: link_to(t('components.introduction.my_hmcts_account'),
+          'https://www.gov.uk/government/publications/myhmcts-respond-to-an-employment-tribunal-claim', target: :_blank)))
+
   .what-you-need
     h2.govuk-heading-s = t('components.introduction.what_title')
     ul.govuk-list.govuk-list--bullet

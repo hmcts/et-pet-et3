@@ -44,8 +44,10 @@ class DateValidator < ActiveModel::EachValidator
     case value
     when String
       Date.parse(value).year < 1000
-    when Date, Time
+    when Date, Time,
       value.year < 1000
+    when EtDateType::InvalidDate
+      value.year.to_i < 1000
     else
       value[1].present? && value[1].to_i < 1000
     end
@@ -66,8 +68,10 @@ class DateValidator < ActiveModel::EachValidator
       false
     elsif raw_value.nil?
       false
+    elsif value.is_a?(EtDateType::InvalidDate)
+      true
     else
-      value.is_a?(EtDateType::InvalidDate)
+      value.is_a?(EtDateType)
     end
   rescue Date::Error, TypeError
     true

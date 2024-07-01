@@ -218,7 +218,7 @@ GEM
     invisible_captcha (2.3.0)
       rails (>= 5.2)
     io-console (0.7.2)
-    iodine (0.7.57)
+    iodine (0.7.58)
     irb (1.13.1)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)

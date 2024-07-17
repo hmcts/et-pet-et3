@@ -218,7 +218,7 @@ GEM
     invisible_captcha (2.3.0)
       rails (>= 5.2)
     io-console (0.7.2)
-    iodine (0.7.57)
+    iodine (0.7.58)
     irb (1.13.1)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
@@ -335,8 +335,8 @@ GEM
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
-    rexml (3.2.8)
-      strscan (>= 3.0.9)
+    rexml (3.3.2)
+      strscan    
     rspec (3.13.0)
       rspec-core (~> 3.13.0)
       rspec-expectations (~> 3.13.0)
@@ -514,4 +514,4 @@ DEPENDENCIES
   webrick
 
 BUNDLED WITH
-   2.5.1
+   2.5.7

@@ -615,6 +615,18 @@ cy:
         label: Rhif yr achos
       name:
         label: "Enw'r unigolyn, cwmni neu sefydliad "
+      title:
+        label: Teitl
+        options:
+          '': Dewiswch
+          Mr: Mr
+          Mrs: Mrs
+          Miss: Miss
+          Ms: Ms
+          Mx: Mx
+          Other: Arall
+      other_title:
+        label: Arall
       contact:
         label: Enw llawn y cyswllt
         hint: "Er enghraifft, John Smith "

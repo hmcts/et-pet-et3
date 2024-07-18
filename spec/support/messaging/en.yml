@@ -24,6 +24,18 @@ en:
         label: Case number
       name:
         label: Name of individual, company or organisation
+      title:
+        label: Title (optional)
+        options:
+          '': Please select
+          Mr: Mr
+          Mrs: Mrs
+          Miss: Miss
+          Ms: Ms
+          Mx: Mx
+          Other: Other
+      other_title:
+        label: Other
       contact:
         label: Full name of contact (optional)
       building_name:
@@ -253,6 +265,7 @@ en:
     respondents_details:
       case_number: Case number
       name: Name of individual, company or organisation
+      title: Title
       contact: Full name of contact
       building_name: Building name or number
       street: Street

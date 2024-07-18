@@ -16,6 +16,7 @@ FactoryBot.define do
   end
 
   trait :respondent_valid do
+    title { :Mr }
     contact { Faker::Name.name }
     county {"london"}
     dx_number {"234242342"}

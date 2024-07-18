@@ -1,5 +1,6 @@
 require 'rails_helper'
 RSpec.feature "Fill in whole form", js: true do
+  include ET3::Test::I18n
 
   before do
     stub_et_api
@@ -45,11 +46,10 @@ RSpec.feature "Fill in whole form", js: true do
       expect(respondents_details_page.contact_number_question.value).to eql ""
       expect(respondents_details_page.contact_mobile_number_question.value).to eql ""
       expect(respondents_details_page.contact_preference_question.value).to be_nil
-      expect(respondents_details_page.email_address_question.value).to eql ""
-      expect(respondents_details_page.fax_number_question.value).to eql ""
+      expect(respondents_details_page).not_to have_email_address_question
       expect(respondents_details_page.organisation_employ_gb_question.value).to eql ""
       expect(respondents_details_page.organisation_more_than_one_site_question.value).to be_nil
-      expect(respondents_details_page.employment_at_site_number_question.value).to eql ""
+      expect(respondents_details_page).not_to have_employment_at_site_number_question
     end
 
     scenario "correctly followed by removing the uploaded file will not submit it to the API" do

@@ -2,6 +2,7 @@
   "name": "et3",
   "private": true,
   "dependencies": {
+    "@hotwired/stimulus": "^3.2.2",
     "@rails/webpacker": "5.4.3",
     "axios": "^0.26.1",
     "et_gds_design_system": "https://github.com/hmcts/et_gds_design_system.git#v6.0.0",

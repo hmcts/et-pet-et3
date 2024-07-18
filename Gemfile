@@ -27,6 +27,7 @@ gem 'sprockets', '~> 4.2.0'
 # gem 'capistrano-rails', group: :development
 
 gem 'slim-rails', '~> 3.6.0'
+gem 'stimulus-rails', '~> 1.3', '>= 1.3.3'
 gem 'jquery-rails', '~> 4.5'
 gem 'activerecord-nulldb-adapter', '~> 1.0'
 gem 'httparty', '~> 0.17'

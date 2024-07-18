@@ -14,6 +14,7 @@ RSpec.feature "Clear existing session with new session", js: true do
 
     expect(respondents_details_page.case_number_question.value).to eql ""
     expect(respondents_details_page.name_question.value).to eql ""
+    expect(respondents_details_page.company_number_question.value).to eql ""
     expect(respondents_details_page.contact_question.value).to eql ""
     expect(respondents_details_page.building_name_question.value).to eql ""
     expect(respondents_details_page.street_question.value).to eql ""

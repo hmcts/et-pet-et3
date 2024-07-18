@@ -7,6 +7,7 @@ module ET3
       element :error_header, :error_titled, 'errors.header', exact: true
       gds_text_input :case_number_question, :'questions.respondents_details.case_number.label', exact: false
       gds_text_input :name_question, :'questions.respondents_details.name.label', exact: false
+      gds_text_input :company_number_question, :'questions.respondents_details.company_number'
       gds_select :title_question, :'questions.respondents_details.title'
       gds_text_input :other_title_question, :'questions.respondents_details.other_title'
       gds_text_input :contact_question, :'questions.respondents_details.contact.label', exact: false

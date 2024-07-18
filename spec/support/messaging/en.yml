@@ -24,6 +24,8 @@ en:
         label: Case number
       name:
         label: Name of individual, company or organisation
+      company_number:
+        label: Enter the company number, if applicable (optional)
       title:
         label: Title (optional)
         options:
@@ -265,6 +267,7 @@ en:
     respondents_details:
       case_number: Case number
       name: Name of individual, company or organisation
+      company_number: Enter the company number, if applicable
       title: Title
       contact: Full name of contact
       building_name: Building name or number

@@ -9,6 +9,7 @@
 
     = f.text_field :case_number
     = f.text_field :name
+    = f.text_field :company_number, optional: true
     = f.collection_select :title, optional: true, data: { action: "change->respondents-details#showOrHideOtherTitle", respondents_details_target: 'title' }
     div.govuk-inset-text data-respondents-details-target='otherTitle'
       = f.text_field :other_title, optional: false

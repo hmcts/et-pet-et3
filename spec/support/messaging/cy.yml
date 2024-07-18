@@ -24,6 +24,8 @@ cy:
         label: "Rhif yr achos"
       name:
         label: Enw'r unigolyn, cwmni neu sefydliad
+      company_number:
+        label: Nodwch rif y cwmni, os yw'm berthnasol (dewisol)
       title:
         label: Teitl (dewisol)
         options:
@@ -266,6 +268,7 @@ cy:
     respondents_details:
       case_number: "Rhif yr achos"
       name: Enw'r unigolyn, cwmni neu sefydliad
+      company_number: Nodwch rif y cwmni, os yw'm berthnasol
       title: Teitl
       contact: Enw llawn y cyswllt
       building_name: Enw neu rif yr adeilad

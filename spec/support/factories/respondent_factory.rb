@@ -6,6 +6,7 @@ FactoryBot.define do
       memorable_word {"password"}
       case_number {"1454321/2017"}
       name { Faker::Company.name }
+      company_number { '194632819' }
       building_name {"the-shard"}
       street_name { Faker::Address.street_name }
       town {"westminster"}

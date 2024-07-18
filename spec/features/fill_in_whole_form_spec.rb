@@ -36,6 +36,7 @@ RSpec.feature "Fill in whole form", js: true do
 
       expect(respondents_details_page.case_number_question.value).to eql ""
       expect(respondents_details_page.name_question.value).to eql ""
+      expect(respondents_details_page.company_number_question.value).to eql ""
       expect(respondents_details_page.contact_question.value).to eql ""
       expect(respondents_details_page.building_name_question.value).to eql ""
       expect(respondents_details_page.street_question.value).to eql ""
@@ -103,6 +104,7 @@ RSpec.feature "Fill in whole form", js: true do
       respondents_details_table = confirmation_of_supplied_details_page.confirmation_of_respondents_details_answers
       expect(respondents_details_table.case_number_row.case_number_answer).to have_text @respondent.case_number
       expect(respondents_details_table.name_row.name_answer).to have_text @respondent.name
+      expect(respondents_details_table.company_number_row.company_number_answer).to have_text @respondent.company_number
       expect(respondents_details_table.title_row.title_answer).to have_text @respondent.title.to_s.split('.').last == 'Other' ? @respondent.other_title : @respondent.title.to_s
       expect(respondents_details_table.contact_row.contact_answer).to have_text @respondent.contact
       expect(respondents_details_table.building_name_row.building_name_answer).to have_text @respondent.building_name
@@ -238,6 +240,7 @@ RSpec.feature "Fill in whole form", js: true do
               expect(request_body["data"][0]["uuid"]).to be_an_instance_of(String)
               expect(request_body["data"][1]["command"]).to eql "BuildRespondent"
               expect(request_body["data"][1]["data"]["name"]).to eql @respondent.name
+              expect(request_body["data"][1]["data"]["company_number"]).to eql @respondent.company_number
               expect(request_body["data"][1]["data"]["title"]).to eql @respondent.title.to_s.split('.').last == 'Other' ? @respondent.other_title : @respondent.title.to_s
               expect(request_body["data"][1]["data"]["contact"]).to eql @respondent.contact
               expect(request_body["data"][1]["data"]["address_attributes"]["building"]).to eql @respondent.building_name

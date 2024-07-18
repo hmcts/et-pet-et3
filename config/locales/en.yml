@@ -552,6 +552,8 @@ en:
         label: Case number
       name:
         label: Name of individual, company or organisation
+      company_number:
+        label: Enter the company number, if applicable
       title:
         label: Title
         options:

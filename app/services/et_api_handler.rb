@@ -64,6 +64,7 @@ class EtApiHandler
       "command": "BuildRespondent",
       "data": {
         "name": full_hash[:respondents_detail_answers][:name],
+        "company_number": full_hash[:respondents_detail_answers][:company_number],
         "title": full_hash[:respondents_detail_answers][:title] == 'Other' ? full_hash[:respondents_detail_answers][:other_title] : full_hash[:respondents_detail_answers][:title],
         "contact": full_hash[:respondents_detail_answers][:contact],
         "address_attributes": {

@@ -1,6 +1,7 @@
 class RespondentsDetail < BaseForm
   attribute :case_number, :string
   attribute :name, :string
+  attribute :company_number, :string
   attribute :title, :string
   attribute :other_title, :string
   attribute :contact, :string
@@ -24,6 +25,7 @@ class RespondentsDetail < BaseForm
     respondents_detail_hash = {
       case_number: case_number,
       name: name,
+      company_number: company_number,
       title: title,
       other_title: other_title,
       contact: contact,

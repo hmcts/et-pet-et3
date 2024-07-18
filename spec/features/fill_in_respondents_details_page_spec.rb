@@ -70,6 +70,7 @@ RSpec.feature "Fill in Respondents Details Page", js: true do
     expect(respondents_details_page).to have_header
     expect(respondents_details_page.case_number_question.value).to eql user.case_number
     expect(respondents_details_page.name_question.value).to eql user.name
+    expect(respondents_details_page.company_number_question.value).to eql user.company_number
     expect(respondents_details_page.contact_question.value).to eql user.contact
     expect(respondents_details_page.building_name_question.value).to eql user.building_name
     expect(respondents_details_page.street_question.value).to eql user.street_name

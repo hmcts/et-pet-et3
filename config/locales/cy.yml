@@ -615,6 +615,8 @@ cy:
         label: Rhif yr achos
       name:
         label: "Enw'r unigolyn, cwmni neu sefydliad "
+      company_number:
+        label: Nodwch rif y cwmni, os yw'm berthnasol
       title:
         label: Teitl
         options:

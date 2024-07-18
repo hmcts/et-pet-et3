@@ -16,6 +16,15 @@ RSpec.feature "Fill in Respondents Details Page", js: true do
     expect(claimants_details_page).to be_displayed
   end
 
+  scenario "hides the other title field until the other option is selected and hides it again when changed" do
+    respondents_details_page.load(locale: current_locale_parameter)
+    expect(respondents_details_page).not_to have_other_title_question
+    respondents_details_page.title_question.set(:Other)
+    expect(respondents_details_page).to have_other_title_question
+    respondents_details_page.title_question.set(:Mr)
+    expect(respondents_details_page).not_to have_other_title_question
+  end
+
   scenario "incorrectly will provide many errors" do
     respondents_details_page.load(locale: current_locale_parameter)
     given_invalid_data

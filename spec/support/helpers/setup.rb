@@ -50,6 +50,8 @@ module ET3
       def answer_respondents_details
         user = @respondent
         respondents_details_page.case_number_question.set(user.case_number)
+        respondents_details_page.title_question.set(user.title)
+        respondents_details_page.other_title_question.set(user.other_title) if user.other_title.present?
         respondents_details_page.name_question.set(user.name)
         respondents_details_page.contact_question.set(user.contact)
         respondents_details_page.building_name_question.set(user.building_name)

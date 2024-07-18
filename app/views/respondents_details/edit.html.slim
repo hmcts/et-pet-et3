@@ -1,6 +1,6 @@
 - content_for :form_page_title, t('components.respondents_details.header')
 - content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
-.content-body.respondents-details
+.content-body.respondents-details data-controller="respondents-details"
 
   = form_for @respondents_detail, url: respondents_details_path, method: :patch, builder: EtGdsDesignSystem.form_builder_class  do |f|
 
@@ -9,6 +9,9 @@
 
     = f.text_field :case_number
     = f.text_field :name
+    = f.collection_select :title, optional: true, data: { action: "change->respondents-details#showOrHideOtherTitle", respondents_details_target: 'title' }
+    div.govuk-inset-text data-respondents-details-target='otherTitle'
+      = f.text_field :other_title, optional: false
     = f.text_field :contact, optional: true
     = f.text_field :building_name
     = f.text_field :street_name

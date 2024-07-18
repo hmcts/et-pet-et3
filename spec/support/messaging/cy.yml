@@ -24,6 +24,18 @@ cy:
         label: "Rhif yr achos"
       name:
         label: Enw'r unigolyn, cwmni neu sefydliad
+      title:
+        label: Teitl (dewisol)
+        options:
+          '': Dewiswch
+          Mr: Mr
+          Mrs: Mrs
+          Miss: Miss
+          Ms: Ms
+          Mx: Mx
+          Other: Arall
+      other_title:
+        label: Arall
       contact:
         label: Enw llawn y cyswllt (dewisol)
       building_name:
@@ -254,6 +266,7 @@ cy:
     respondents_details:
       case_number: "Rhif yr achos"
       name: Enw'r unigolyn, cwmni neu sefydliad
+      title: Teitl
       contact: Enw llawn y cyswllt
       building_name: Enw neu rif yr adeilad
       street: Stryd

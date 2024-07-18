@@ -552,6 +552,18 @@ en:
         label: Case number
       name:
         label: Name of individual, company or organisation
+      title:
+        label: Title
+        options:
+          '': Please select
+          Mr: Mr
+          Mrs: Mrs
+          Miss: Miss
+          Ms: Ms
+          Mx: Mx
+          Other: Other
+      other_title:
+        label: Other
       contact:
         label: Full name of contact
         hint: For example, John Smith

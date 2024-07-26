@@ -54,9 +54,6 @@ module ET3
         section :email_address_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.respondents_details.email_address', exact: true do
           element :email_address_answer, :govuk_summary_list_col
         end
-        section :fax_number_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.respondents_details.fax_number', exact: true do
-          element :fax_number_answer, :govuk_summary_list_col
-        end
         section :organisation_employ_gb_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.respondents_details.organisation_employ_gb', exact: true do
           element :organisation_employ_gb_answer, :govuk_summary_list_col
         end

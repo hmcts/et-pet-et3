@@ -663,11 +663,8 @@ cy:
         options:
           email: "E-bost "
           post: Post
-          fax: "Ffacs "
       email_address:
         label: "Cyfeiriad e-bost "
-      fax_number:
-        label: "Rhif ffacs "
       organisation_employ_gb:
         label: "Faint o bobl sy’n gyflogedig gan y sefydliad hwn ym Mhrydain Fawr?"
         hint: "Er enghraifft, 10"

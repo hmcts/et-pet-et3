@@ -16,7 +16,6 @@ class RespondentsDetail < BaseForm
   attribute :mobile_number, :string
   attribute :contact_preference, :string
   attribute :email_address, :string
-  attribute :fax_number, :string
   attribute :organisation_employ_gb, :integer
   attribute :organisation_more_than_one_site, :boolean
   attribute :employment_at_site_number, :integer
@@ -46,7 +45,6 @@ class RespondentsDetail < BaseForm
     }
 
     respondents_detail_hash[:email_address] = email_address if respondents_detail_hash[:contact_preference] == "email"
-    respondents_detail_hash[:fax_number] = fax_number if respondents_detail_hash[:contact_preference] == "fax"
     respondents_detail_hash[:employment_at_site_number] = employment_at_site_number if respondents_detail_hash[:organisation_more_than_one_site]
 
     respondents_detail_hash
@@ -65,9 +63,6 @@ class RespondentsDetail < BaseForm
   validates :email_address,
     email_address: true,
     if: :prefer_email?
-  validates :fax_number,
-    phone_number: true,
-    if: :prefer_fax?
   validates :organisation_employ_gb,
     numericality: true,
     allow_blank: true
@@ -79,10 +74,6 @@ class RespondentsDetail < BaseForm
 
   def prefer_email?
     contact_preference == "email"
-  end
-
-  def prefer_fax?
-    contact_preference == "fax"
   end
 
   def more_than_one_site?

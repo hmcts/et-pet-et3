@@ -80,7 +80,6 @@ class EtApiHandler
         "alt_phone_number": full_hash[:respondents_detail_answers][:mobile_number],
         "contact_preference": full_hash[:respondents_detail_answers][:contact_preference],
         "email_address": full_hash[:respondents_detail_answers][:email_address],
-        "fax_number": full_hash[:respondents_detail_answers][:fax_number],
         "organisation_employ_gb": full_hash[:respondents_detail_answers][:organisation_employ_gb],
         "organisation_more_than_one_site": full_hash[:respondents_detail_answers][:organisation_more_than_one_site],
         "employment_at_site_number": full_hash[:respondents_detail_answers][:employment_at_site_number],

@@ -118,7 +118,6 @@ RSpec.feature "Fill in whole form", js: true do
       expect(respondents_details_table.mobile_number_row.mobile_number_answer).to have_text @respondent.contact_mobile_number
       expect(respondents_details_table.contact_preference_row.contact_preference_answer).to have_text t(@respondent.contact_preference)
       expect(respondents_details_table.email_address_row.email_address_answer).to have_text @respondent.email_address
-      expect(respondents_details_table.fax_number_row.fax_number_answer).to have_text nil
       expect(respondents_details_table.organisation_employ_gb_row.organisation_employ_gb_answer).to have_text @respondent.organisation_employ_gb
       expect(respondents_details_table.organisation_more_than_one_site_row.organisation_more_than_one_site_answer).to have_text t(@respondent.organisation_more_than_one_site)
       expect(respondents_details_table.employment_at_site_number_row.employment_at_site_number_answer).to have_text nil
@@ -255,7 +254,6 @@ RSpec.feature "Fill in whole form", js: true do
               expect(request_body["data"][1]["data"]["alt_phone_number"]).to eql @respondent.contact_mobile_number
               expect(request_body["data"][1]["data"]["contact_preference"]).to eql @respondent.contact_preference.to_s.split('.').last
               expect(request_body["data"][1]["data"]["email_address"]).to eql @respondent.email_address if @respondent.contact_preference == 'email'
-              expect(request_body["data"][1]["data"]["fax_number"]).to eql @respondent.fax_number if @respondent.contact_preference == 'fax'
               expect(request_body["data"][1]["data"]["organisation_employ_gb"].to_s).to eql @respondent.organisation_employ_gb
               expect(request_body["data"][1]["data"]["organisation_more_than_one_site"]).to eql false
               expect(request_body["data"][1]["data"]["employment_at_site_number"]).to eql @respondent.employment_at_site_number

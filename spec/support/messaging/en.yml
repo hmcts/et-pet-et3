@@ -70,9 +70,6 @@ en:
         options:
           email: Email
           post: Post
-          fax: Fax
-      fax_number:
-        label: Fax number
       email_address:
         label: Email address
       organisation_employ_gb:
@@ -289,7 +286,6 @@ en:
       contact_number: Contact number
       contact_mobile_number: Mobile number
       contact_preference:  How would you prefer us to contact you?
-      fax_number: Fax number
       email_address: Email address
       organisation_employ_gb: How many people does this organisation employ in Great Britain?
       organisation_more_than_one_site: Does this organisation have more than one site in Great Britain?

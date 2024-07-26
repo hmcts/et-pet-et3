@@ -6,7 +6,7 @@ RSpec.describe RespondentsDetail, type: :model do
     described_class.new(
       case_number: '2454321/2017', name: 'dodgy_co', contact: 'John Smith', building_name: 'the_shard', street_name: 'downing_street',
       town: 'westminster', county: 'greater london', postcode: 'wc1 1aa', dx_number: '724060 Derby 21', contact_number: '0207 123 4567',
-      mobile_number: '07123456789', contact_preference: 'email', email_address: 'john@dodgyco.com', fax_number: '0207 123 4567',
+      mobile_number: '07123456789', contact_preference: 'email', email_address: 'john@dodgyco.com',
       organisation_employ_gb: 100, organisation_more_than_one_site: true, employment_at_site_number: 20, video_call: false
     )
   }
@@ -36,15 +36,6 @@ RSpec.describe RespondentsDetail, type: :model do
       populated_respondent_detail.valid?
 
       expect(populated_respondent_detail.errors.details[:contact]).to include a_hash_including(error: :contains_numbers)
-    end
-
-    it 'will not validate an incorrect fax number' do
-      populated_respondent_detail.contact_preference = "fax"
-      populated_respondent_detail.fax_number = "123"
-
-      populated_respondent_detail.valid?
-
-      expect(populated_respondent_detail.errors.details[:fax_number]).to include a_hash_including(error: :invalid_phone_number)
     end
 
     it 'will not validate a contact_number with letters' do
@@ -144,10 +135,6 @@ RSpec.describe RespondentsDetail, type: :model do
       expect(populated_respondent_detail.email_address).to eql 'john@dodgyco.com'
     end
 
-    it 'returns the correct fax number' do
-      expect(populated_respondent_detail.fax_number).to eql '0207 123 4567'
-    end
-
     it 'returns the correct organisation_employ_gb' do
       expect(populated_respondent_detail.organisation_employ_gb).to be 100
     end
@@ -216,12 +203,6 @@ RSpec.describe RespondentsDetail, type: :model do
 
     it 'will return the email_address key and value pair' do
       expect(populated_respondent_detail.to_h).to include(email_address: 'john@dodgyco.com')
-    end
-
-    it 'will return the fax_number key and value pair' do
-      populated_respondent_detail.contact_preference = "fax"
-
-      expect(populated_respondent_detail.to_h).to include(fax_number: '0207 123 4567')
     end
 
     it 'will return the organisation_employ_gb key and value pair' do
@@ -329,13 +310,6 @@ RSpec.describe RespondentsDetail, type: :model do
       expect(populated_respondent_detail).to be_valid
     end
 
-    it 'will not raise a validation error on fax_number' do
-      populated_respondent_detail.contact_preference = nil
-      populated_respondent_detail.fax_number = nil
-
-      expect(populated_respondent_detail).to be_valid
-    end
-
     it 'will not raise a validation error on organisation_employ_gb' do
       populated_respondent_detail.organisation_employ_gb = nil
 
@@ -367,78 +341,19 @@ RSpec.describe RespondentsDetail, type: :model do
 
       expect(populated_respondent_detail).to be_valid
     end
-
-    it "will not validate a fax number" do
-      populated_respondent_detail.contact_preference = "email"
-      populated_respondent_detail.fax_number = "invalid fax"
-
-      expect(populated_respondent_detail).to be_valid
-    end
-
-    it "will not hash a fax number" do
-      populated_respondent_detail.contact_preference = "email"
-      populated_respondent_detail.fax_number = "0203 123 4567"
-
-      expect(populated_respondent_detail.to_h).not_to include(:fax_number)
-    end
-
   end
 
   context "when post is the preferred contact method" do
 
-    it "will not validate an email address or fax number" do
-      populated_respondent_detail.contact_preference = "post"
-      populated_respondent_detail.email_address = "invalid email"
-      populated_respondent_detail.fax_number = "invalid fax"
-
-      expect(populated_respondent_detail).to be_valid
-    end
-
-    it "will not hash an email address" do
-      populated_respondent_detail.contact_preference = "post"
-      populated_respondent_detail.email_address = "john@dodgyco.com"
-
-      expect(populated_respondent_detail.to_h).not_to include(:email_address)
-    end
-
-    it "will not hash a fax number" do
-      populated_respondent_detail.contact_preference = "post"
-      populated_respondent_detail.fax_number = "0203 123 4567"
-
-      expect(populated_respondent_detail.to_h).not_to include(:fax_number)
-    end
-  end
-
-  context "when fax is the preferred contact method" do
-
-    it "will raise a validation error if a fax number is not entered" do
-      populated_respondent_detail.contact_preference = "fax"
-      populated_respondent_detail.fax_number = nil
-
-      populated_respondent_detail.valid?
-
-      expect(populated_respondent_detail.errors.details[:fax_number]).to include a_hash_including(error: :invalid_phone_number)
-    end
-
-    it "will not raise a validation error if a fax number is provided" do
-      populated_respondent_detail.contact_preference = "fax"
-      populated_respondent_detail.fax_number = "0203 123 4567"
-
-      expect(populated_respondent_detail).to be_valid
-    end
-
     it "will not validate an email address" do
-      populated_respondent_detail.contact_preference = "fax"
-      populated_respondent_detail.fax_number = "0203 123 4567"
+      populated_respondent_detail.contact_preference = "post"
       populated_respondent_detail.email_address = "invalid email"
-
-      populated_respondent_detail.valid?
 
       expect(populated_respondent_detail).to be_valid
     end
 
     it "will not hash an email address" do
-      populated_respondent_detail.contact_preference = "fax"
+      populated_respondent_detail.contact_preference = "post"
       populated_respondent_detail.email_address = "john@dodgyco.com"
 
       expect(populated_respondent_detail.to_h).not_to include(:email_address)

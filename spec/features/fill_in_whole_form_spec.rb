@@ -105,6 +105,7 @@ RSpec.feature "Fill in whole form", js: true do
       expect(respondents_details_table.case_number_row.case_number_answer).to have_text @respondent.case_number
       expect(respondents_details_table.name_row.name_answer).to have_text @respondent.name
       expect(respondents_details_table.company_number_row.company_number_answer).to have_text @respondent.company_number
+      expect(respondents_details_table.type_of_employer_row.type_of_employer_answer).to have_text t("questions.respondents_details.type_of_employer.options.#{@respondent.company_type}")
       expect(respondents_details_table.title_row.title_answer).to have_text @respondent.title.to_s.split('.').last == 'Other' ? @respondent.other_title : @respondent.title.to_s
       expect(respondents_details_table.contact_row.contact_answer).to have_text @respondent.contact
       expect(respondents_details_table.building_name_row.building_name_answer).to have_text @respondent.building_name
@@ -241,6 +242,7 @@ RSpec.feature "Fill in whole form", js: true do
               expect(request_body["data"][1]["command"]).to eql "BuildRespondent"
               expect(request_body["data"][1]["data"]["name"]).to eql @respondent.name
               expect(request_body["data"][1]["data"]["company_number"]).to eql @respondent.company_number
+              expect(request_body["data"][1]["data"]["type_of_employer"]).to eql t("questions.respondents_details.type_of_employer.options.#{@respondent.company_type}", locale: :en)
               expect(request_body["data"][1]["data"]["title"]).to eql @respondent.title.to_s.split('.').last == 'Other' ? @respondent.other_title : @respondent.title.to_s
               expect(request_body["data"][1]["data"]["contact"]).to eql @respondent.contact
               expect(request_body["data"][1]["data"]["address_attributes"]["building"]).to eql @respondent.building_name

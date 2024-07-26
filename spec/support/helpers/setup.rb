@@ -54,6 +54,7 @@ module ET3
         respondents_details_page.other_title_question.set(user.other_title) if user.other_title.present?
         respondents_details_page.name_question.set(user.name)
         respondents_details_page.company_number_question.set(user.company_number)
+        respondents_details_page.type_of_employer_question.set(user.company_type)
         respondents_details_page.contact_question.set(user.contact)
         respondents_details_page.building_name_question.set(user.building_name)
         respondents_details_page.street_question.set(user.street_name)

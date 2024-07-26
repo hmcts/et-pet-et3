@@ -2,6 +2,7 @@ class RespondentsDetail < BaseForm
   attribute :case_number, :string
   attribute :name, :string
   attribute :company_number, :string
+  attribute :type_of_employer, :string
   attribute :title, :string
   attribute :other_title, :string
   attribute :contact, :string
@@ -26,6 +27,7 @@ class RespondentsDetail < BaseForm
       case_number: case_number,
       name: name,
       company_number: company_number,
+      type_of_employer: type_of_employer,
       title: title,
       other_title: other_title,
       contact: contact,

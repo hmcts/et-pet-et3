@@ -21,6 +21,7 @@ module ET3
         ET3::Test::PasswordPage.new
       end
 
+      # @return [ET3::Test::RespondentsDetailsPage]
       def respondents_details_page
         ET3::Test::RespondentsDetailsPage.new
       end

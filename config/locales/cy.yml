@@ -617,6 +617,15 @@ cy:
         label: "Enw'r unigolyn, cwmni neu sefydliad "
       company_number:
         label: Nodwch rif y cwmni, os yw'm berthnasol
+      type_of_employer:
+        label: Pa fath o gyflogwr yw'r atebydd ?
+        options:
+          '': Dewiswch os gwelwch yn dda
+          individual: Unigol
+          limited_company: Cwmni cyfyngedig
+          partnership: Partneriaeth
+          unincorporated_association: Cymdeithas anghorfforedig (fel clwb chwaraeon)
+          other: Arall
       title:
         label: Teitl
         options:

@@ -27,9 +27,6 @@
     = f.revealed_content :contact_preference, values: [:email]
       .govuk-inset-text
         = f.text_field :email_address
-    = f.revealed_content :contact_preference, values: [:fax]
-        .govuk-inset-text
-          = f.text_field :fax_number
     = f.collection_radio_buttons :video_call
     = f.text_field :organisation_employ_gb, optional: true
     = f.collection_radio_buttons :organisation_more_than_one_site, optional: true

@@ -22,7 +22,6 @@ module ET3
       gds_phone_input :contact_mobile_number_question, :'questions.respondents_details.contact_mobile_number.label', exact: false
       gds_radios :contact_preference_question, :'questions.respondents_details.contact_preference'
       gds_text_input :email_address_question, :'questions.respondents_details.email_address'
-      gds_text_input :fax_number_question, :'questions.respondents_details.fax_number'
       gds_text_input :employment_at_site_number_question, :'questions.respondents_details.employment_at_site_number'
       gds_text_input :organisation_employ_gb_question, :'questions.respondents_details.organisation_employ_gb.label', exact: false
       gds_radios :video_call_question, :'questions.respondents_details.video_call'

@@ -58,9 +58,6 @@
         dt.govuk-summary-list__key = t('respondents_details.edit.email_address.label')
         dd.govuk-summary-list__value = @hash_store.dig(:respondents_detail_answers, :email_address)
       .govuk-summary-list__row
-        dt.govuk-summary-list__key = t('respondents_details.edit.fax_number.label')
-        dd.govuk-summary-list__value = @hash_store.dig(:respondents_detail_answers, :fax_number)
-      .govuk-summary-list__row
         dt.govuk-summary-list__key = t('respondents_details.edit.video_call.label')
         dd.govuk-summary-list__value = translate_stored_value(@hash_store.dig(:respondents_detail_answers, :video_call),
                   'respondents_details.video_call')

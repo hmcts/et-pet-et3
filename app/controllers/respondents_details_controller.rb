@@ -22,6 +22,6 @@ class RespondentsDetailsController < ApplicationController
   def respondents_detail_params
     params.require(:respondents_detail).permit(:case_number, :name, :contact, :company_number, :type_of_employer, :title, :other_title, :building_name, :street_name, :town,
       :county, :postcode, :dx_number, :contact_number, :mobile_number, :contact_preference, :email_address,
-      :fax_number, :organisation_employ_gb, :organisation_more_than_one_site, :employment_at_site_number, :video_call)
+      :organisation_employ_gb, :organisation_more_than_one_site, :employment_at_site_number, :video_call)
   end
 end

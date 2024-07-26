@@ -50,8 +50,7 @@ FactoryBot.define do
     dx_number {"724060 Derby 21 (no validation)"}
     contact_number {"string"}
     contact_mobile_number {"string"}
-    contact_preference {:"questions.respondents_details.contact_preference.options.fax"}
-    fax_number {"string"}
+    contact_preference {:"questions.respondents_details.contact_preference.options.email"}
     employment_at_site_number {"string"}
     organisation_employ_gb {"string"}
     make_employer_contract_claim {:"questions.employers_contract_claims.make_employer_contract_claim.options.yes"}

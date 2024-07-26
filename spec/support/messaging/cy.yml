@@ -70,9 +70,6 @@ cy:
         options:
           email: E-bost
           post: Post
-          fax: Ffacs
-      fax_number:
-        label: Rhif ffacs
       email_address:
         label: Cyfeiriad e-bost
       organisation_employ_gb:
@@ -290,7 +287,6 @@ cy:
       contact_number: Rhif cyswllt
       contact_mobile_number: Rhif ffôn symudol
       contact_preference: Sut hoffech i ni gysylltu â chi?
-      fax_number: Rhif ffacs
       email_address: Cyfeiriad e-bost
       organisation_employ_gb: "Faint o bobl sy’n gyflogedig gan y sefydliad hwn ym Mhrydain Fawr?"
       organisation_more_than_one_site: "A oes gan y sefydliad hwn fwy nag un safle ym Mhrydain Fawr?"

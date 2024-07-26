@@ -597,8 +597,6 @@ en:
         hint: If different to your primary contact number
       email_address:
         label: Email address
-      fax_number:
-        label: Fax number
       organisation_employ_gb:
         label: How many people does this organisation employ in Great Britain?
         hint: For example, 10
@@ -609,7 +607,6 @@ en:
         options:
           email: Email
           post: Post
-          fax: Fax
       video_call:
         label: Would you be able to take part in a hearing by video? (Requires internet access).
         hint: Further details on video hearings can be found on the following link https://www.gov.uk/guidance/hmcts-telephone-and-videohearings-during-coronavirus-outbreak

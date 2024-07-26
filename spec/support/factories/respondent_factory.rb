@@ -7,6 +7,7 @@ FactoryBot.define do
       case_number {"1454321/2017"}
       name { Faker::Company.name }
       company_number { '194632819' }
+      company_type { :limited_company }
       building_name {"the-shard"}
       street_name { Faker::Address.street_name }
       town {"westminster"}

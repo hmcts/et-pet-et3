@@ -15,6 +15,9 @@ module ET3
         section :company_number_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.respondents_details.company_number', exact: true do
           element :company_number_answer, :govuk_summary_list_col
         end
+        section :type_of_employer_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.respondents_details.type_of_employer', exact: true do
+          element :type_of_employer_answer, :govuk_summary_list_col
+        end
         section :title_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.respondents_details.title', exact: true do
           element :title_answer, :govuk_summary_list_col
         end

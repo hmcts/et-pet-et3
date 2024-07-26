@@ -26,6 +26,15 @@ cy:
         label: Enw'r unigolyn, cwmni neu sefydliad
       company_number:
         label: Nodwch rif y cwmni, os yw'm berthnasol (dewisol)
+      type_of_employer:
+        label: Pa fath o gyflogwr yw'r atebydd ? (dewisol)
+        options:
+          '': Dewiswch os gwelwch yn dda
+          individual: Unigol
+          limited_company: Cwmni cyfyngedig
+          partnership: Partneriaeth
+          unincorporated_association: Cymdeithas anghorfforedig (fel clwb chwaraeon)
+          other: Arall
       title:
         label: Teitl (dewisol)
         options:
@@ -269,6 +278,7 @@ cy:
       case_number: "Rhif yr achos"
       name: Enw'r unigolyn, cwmni neu sefydliad
       company_number: Nodwch rif y cwmni, os yw'm berthnasol
+      type_of_employer: Pa fath o gyflogwr yw'r atebydd ?
       title: Teitl
       contact: Enw llawn y cyswllt
       building_name: Enw neu rif yr adeilad

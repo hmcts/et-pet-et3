@@ -26,6 +26,15 @@ en:
         label: Name of individual, company or organisation
       company_number:
         label: Enter the company number, if applicable (optional)
+      type_of_employer:
+        label: What type of employer is the respondent ? (optional)
+        options:
+          '': Please select
+          individual: Individual
+          limited_company: Limited company
+          partnership: Partnership
+          unincorporated_association: Unincorporated association (such as a sports club)
+          other: Other
       title:
         label: Title (optional)
         options:
@@ -268,6 +277,7 @@ en:
       case_number: Case number
       name: Name of individual, company or organisation
       company_number: Enter the company number, if applicable
+      type_of_employer: What type of employer is the respondent ?
       title: Title
       contact: Full name of contact
       building_name: Building name or number

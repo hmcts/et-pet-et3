@@ -19,6 +19,9 @@
         dt.govuk-summary-list__key = t('respondents_details.edit.company_number.label')
         dd.govuk-summary-list__value = @hash_store.dig(:respondents_detail_answers, :company_number)
       .govuk-summary-list__row
+        dt.govuk-summary-list__key = t('respondents_details.edit.type_of_employer.label')
+        dd.govuk-summary-list__value = t("respondents_details.edit.type_of_employer.options.#{@hash_store.dig(:respondents_detail_answers, :type_of_employer)}")
+      .govuk-summary-list__row
         dt.govuk-summary-list__key = t('respondents_details.edit.title.label')
         dd.govuk-summary-list__value = @hash_store.fetch(:respondents_detail_answers, {}).then { |answers| answers[:title] == 'Other' ? answers[:other_title] : answers[:title] }
       .govuk-summary-list__row

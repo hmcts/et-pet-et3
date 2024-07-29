@@ -19,7 +19,7 @@ class RespondentsDetail < BaseForm
   attribute :organisation_employ_gb, :integer
   attribute :organisation_more_than_one_site, :boolean
   attribute :employment_at_site_number, :integer
-  attribute :video_call, :boolean
+  attribute :allow_phone_or_video_attendance
 
   def to_h # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
     respondents_detail_hash = {
@@ -41,7 +41,7 @@ class RespondentsDetail < BaseForm
       contact_preference: contact_preference,
       organisation_employ_gb: organisation_employ_gb,
       organisation_more_than_one_site: organisation_more_than_one_site,
-      video_call: video_call,
+      allow_phone_or_video_attendance: allow_phone_or_video_attendance
     }
 
     respondents_detail_hash[:email_address] = email_address if respondents_detail_hash[:contact_preference] == "email"
@@ -68,7 +68,10 @@ class RespondentsDetail < BaseForm
     allow_blank: true
   validates :organisation_more_than_one_site, inclusion: { in: [true, false] }, allow_blank: true
   validates :employment_at_site_number, numericality: true, if: :more_than_one_site?
-  validates :video_call, inclusion: { in: [true, false] }
+
+  def allow_phone_or_video_attendance=(value)
+    write_attribute(:allow_phone_or_video_attendance, value&.reject(&:blank?))
+  end
 
   private
 

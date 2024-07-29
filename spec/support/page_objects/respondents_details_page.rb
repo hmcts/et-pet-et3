@@ -24,7 +24,10 @@ module ET3
       gds_text_input :email_address_question, :'questions.respondents_details.email_address'
       gds_text_input :employment_at_site_number_question, :'questions.respondents_details.employment_at_site_number'
       gds_text_input :organisation_employ_gb_question, :'questions.respondents_details.organisation_employ_gb.label', exact: false
-      gds_radios :video_call_question, :'questions.respondents_details.video_call'
+      # @!method allow_phone_or_video_attendance_question
+      #   A govuk radio button component for the phone or video question
+      #   @return [EtTestHelpers::Components::GovUKCollectionCheckBoxes] The site prism section
+      gds_checkboxes :allow_phone_or_video_attendance_question, :'questions.respondents_details.allow_phone_or_video_attendance'
       gds_radios :organisation_more_than_one_site_question, :'questions.respondents_details.organisation_more_than_one_site'
       gds_submit_button :continue_button, :'components.save_and_continue_button'
       element :save_and_complete_later_button, :link_named, "components.save_and_complete_later_button"

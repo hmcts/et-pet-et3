@@ -676,12 +676,12 @@ cy:
       employment_at_site_number:
         label: "Faint o bobl sy’n gyflogedig ar y safle ble'r oedd yr hawlydd yn gweithio?"
         hint: "Er enghraifft, 10"
-      video_call:
-        label: A allech chi gymryd rhan mewn gwrandawiad drwy fideo? (angen mynediad i'r rhyngrwyd).
-        hint: Ceir rhagor o fanylion am wrandawiadau fideo drwy ddilyn y ddolen a ganlyn https://www.gov.uk/guidance/hmcts-telephone-and-video-hearings-during-coronavirus-outbreak
+      allow_phone_or_video_attendance:
+        label: "A ydych chi’n gallu cymryd rhan mewn gwrandawiadau drwy fideo a dros y ffôn?"
+        hint: "Ceir rhagor o fanylion am wrandawiadau fideo drwy ddilyn y ddolen a ganlyn: https://www.gov.uk/guidance/hmcts-telephone-and-video-hearings-during-coronavirus-outbreak"
         options:
-          'true': Gallaf
-          'false': Na allaf
+          video: Gallaf gymryd rhan mewn gwrandawiad fideo
+          phone: Gallaf gymryd rhan mewn gwrandawiad dros y ffôn
   claimants_details:
     edit:
       claimants_name:

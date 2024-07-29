@@ -14,7 +14,7 @@ FactoryBot.define do
       county {"london"}
       postcode {"wc1 1aa"}
       organisation_more_than_one_site {:"questions.respondents_details.organisation_more_than_one_site.options.no"}
-      video_call {:"questions.respondents_details.video_call.options.no"}
+      allow_phone_or_video_attendance { [:video] }
   end
 
   trait :respondent_valid do
@@ -32,7 +32,7 @@ FactoryBot.define do
     email_receipt {"sivvoy.taing@hmcts.net"}
     disability {:"questions.disabilities.disability.options.yes"}
     disability_information {"Lorem ipsum disability"}
-    video_call {:"questions.respondents_details.video_call.options.no"}
+    allow_phone_or_video_attendance { [:video] }
   end
 
   trait :contact_preference_post do
@@ -58,6 +58,6 @@ FactoryBot.define do
     email_receipt {""}
     disability {:"questions.disabilities.disability.options.yes"}
     disability_information { Faker::Lorem.characters(number: 351) }
-    video_call {nil}
+    allow_phone_or_video_attendance { [] }
   end
 end

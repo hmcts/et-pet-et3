@@ -607,12 +607,11 @@ en:
         options:
           email: Email
           post: Post
-      video_call:
-        label: Would you be able to take part in a hearing by video? (Requires internet access).
-        hint: Further details on video hearings can be found on the following link https://www.gov.uk/guidance/hmcts-telephone-and-videohearings-during-coronavirus-outbreak
+      allow_phone_or_video_attendance:
+        label:  Would you be able to take part in hearings by video and phone?
         options:
-          'true': 'Yes'
-          'false': 'No'
+          "phone": "Yes, I can take part in phone hearings"
+          "video": "Yes, I can take part in video hearings"
       organisation_more_than_one_site:
         label: Does this organisation have more than one site in Great Britain?
         options:

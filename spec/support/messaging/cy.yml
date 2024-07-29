@@ -81,11 +81,12 @@ cy:
           'no': Nac oes
       employment_at_site_number:
         label: "Faint o bobl sy’n gyflogedig ar y safle ble'r oedd yr hawlydd yn gweithio?"
-      video_call:
-        label: A allech chi gymryd rhan mewn gwrandawiad drwy fideo? (angen mynediad i'r rhyngrwyd).
+      allow_phone_or_video_attendance:
+        label: "A ydych chi’n gallu cymryd rhan mewn gwrandawiadau drwy fideo a dros y ffôn?"
+        hint: "Ceir rhagor o fanylion am wrandawiadau fideo drwy ddilyn y ddolen a ganlyn: https://www.gov.uk/guidance/hmcts-telephone-and-video-hearings-during-coronavirus-outbreak"
         options:
-          'yes': Gallaf
-          'no': Na allaf
+          video: Gallaf gymryd rhan mewn gwrandawiad fideo
+          phone: Gallaf gymryd rhan mewn gwrandawiad dros y ffôn
     # Claimant's Details Page
     claimants_details:
       claimants_name:
@@ -291,7 +292,7 @@ cy:
       organisation_employ_gb: "Faint o bobl sy’n gyflogedig gan y sefydliad hwn ym Mhrydain Fawr?"
       organisation_more_than_one_site: "A oes gan y sefydliad hwn fwy nag un safle ym Mhrydain Fawr?"
       employment_at_site_number: "Faint o bobl sy’n gyflogedig ar y safle ble'r oedd yr hawlydd yn gweithio?"
-      video_call: A allech chi gymryd rhan mewn gwrandawiad drwy fideo? (angen mynediad i'r rhyngrwyd).
+      allow_phone_or_video_attendance: A ydych chi’n gallu cymryd rhan mewn gwrandawiadau drwy fideo a dros y ffôn?
     claimants_details:
       claimants_name: Enw llawn yr hawlydd
       agree_with_early_conciliation_details: "A ydych chi'n cytuno gyda'r manylion a roddodd yr hawlydd ynghylch Cymodi Cynnar gydag Acas?"
@@ -687,7 +688,7 @@ cy:
     return_link: Rhowch adborth
   hint:
     respondents_detail:
-      video_call:
+      allow_phone_or_video_attendance:
   mailer:
     reference_number: Eich rhif hawliad
     access_details_email:

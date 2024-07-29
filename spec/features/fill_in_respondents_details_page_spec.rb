@@ -39,7 +39,6 @@ RSpec.feature "Fill in Respondents Details Page", js: true do
     respondents_details_page.organisation_employ_gb_question.set(user.organisation_employ_gb)
     respondents_details_page.organisation_more_than_one_site_question.set(user.organisation_more_than_one_site.to_s.split('.').last.to_sym)
     respondents_details_page.employment_at_site_number_question.set(user.employment_at_site_number) if user.organisation_more_than_one_site.to_s.split('.')[-2] == 'yes'
-    respondents_details_page.video_call_question.set(user.video_call)
     respondents_details_page.next
 
     expect(respondents_details_page).to have_header
@@ -53,7 +52,6 @@ RSpec.feature "Fill in Respondents Details Page", js: true do
     respondents_details_page.postcode_question.assert_error_message(t('errors.messages.invalid_postcode'))
     respondents_details_page.organisation_employ_gb_question.assert_error_message(t('errors.custom.organisation_employ_gb.not_a_number'))
     respondents_details_page.employment_at_site_number_question.assert_error_message(t('errors.custom.organisation_more_than_one_site.not_a_number'))
-    respondents_details_page.video_call_question.assert_error_message(t('errors.messages.inclusion'))
   end
 
   scenario "correctly will enable user to check answers and return to edit them" do
@@ -83,6 +81,5 @@ RSpec.feature "Fill in Respondents Details Page", js: true do
     expect(respondents_details_page.organisation_employ_gb_question.value).to eql user.organisation_employ_gb
     expect(respondents_details_page.organisation_more_than_one_site_question.value).to eql t(user.organisation_more_than_one_site)
     expect(respondents_details_page.employment_at_site_number_question.value).to eql user.employment_at_site_number if user.organisation_more_than_one_site.to_s.split('.').last == 'yes'
-    respondents_details_page.video_call_question.set(user.video_call.to_s.split('.').last.to_sym)
   end
 end

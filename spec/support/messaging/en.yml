@@ -81,11 +81,12 @@ en:
           'no': 'No'
       employment_at_site_number:
         label: How many people are employed at the place where the claimant worked?
-      video_call:
-        label: Would you be able to take part in a hearing by video? (Requires internet access).
+      allow_phone_or_video_attendance:
+        label: "Would you be able to take part in hearings by video and phone?"
+        hint: "Further details on video hearings can be found on the following link https://www.gov.uk/guidance/hmcts-telephone-and-videohearings-during-coronavirus-outbreak"
         options:
-          'yes': 'Yes'
-          'no': 'No'
+          "video": 'Yes, I can take part in video hearings'
+          "phone": 'Yes, I can take part in phone hearings'
     # Claimant's Details Page
     claimants_details:
       claimants_name:
@@ -290,7 +291,7 @@ en:
       organisation_employ_gb: How many people does this organisation employ in Great Britain?
       organisation_more_than_one_site: Does this organisation have more than one site in Great Britain?
       employment_at_site_number: How many people are employed at the place where the claimant worked?
-      video_call: Would you be able to take part in a hearing by video? (Requires internet access).
+      allow_phone_or_video_attendance: Would you be able to take part in hearings by video and phone?
     claimants_details:
       claimants_name: Claimant's full name
       agree_with_early_conciliation_details: Do you agree with the details given by the claimant about Early Conciliation with Acas?
@@ -645,7 +646,7 @@ en:
       mobile_number: If different to your primary contact number
       employment_at_site_number: For example, 10
       organisation_employ_gb: For example, 10
-      video_call: Further details on video hearings can be found on the following link
+      allow_phone_or_video_attendance: Further details on video hearings can be found on the following link
     claimants_detail:
       employment_start: For example, 31 03 2010
       employment_end: For example, 01 12 2017

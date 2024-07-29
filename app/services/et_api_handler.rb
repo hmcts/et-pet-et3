@@ -83,7 +83,8 @@ class EtApiHandler
         "organisation_employ_gb": full_hash[:respondents_detail_answers][:organisation_employ_gb],
         "organisation_more_than_one_site": full_hash[:respondents_detail_answers][:organisation_more_than_one_site],
         "employment_at_site_number": full_hash[:respondents_detail_answers][:employment_at_site_number],
-        "allow_video_attendance": full_hash[:respondents_detail_answers][:video_call]
+        "allow_video_attendance": full_hash[:respondents_detail_answers][:allow_phone_or_video_attendance]&.include?('video'),
+        "allow_phone_attendance": full_hash[:respondents_detail_answers][:allow_phone_or_video_attendance]&.include?('phone')
       },
       "uuid": SecureRandom.uuid
     }

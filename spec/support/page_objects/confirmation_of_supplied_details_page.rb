@@ -60,8 +60,8 @@ module ET3
         section :organisation_more_than_one_site_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.respondents_details.organisation_more_than_one_site', exact: true do
           element :organisation_more_than_one_site_answer, :govuk_summary_list_col
         end
-        section :video_call_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.respondents_details.video_call', exact: true do
-          element :video_call_answer, :govuk_summary_list_col
+        section :allow_phone_or_video_attendance_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.respondents_details.allow_phone_or_video_attendance', exact: true do
+          element :allow_phone_or_video_attendance_answer, :govuk_summary_list_col
         end
         section :employment_at_site_number_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.respondents_details.employment_at_site_number', exact: true do
           element :employment_at_site_number_answer, :govuk_summary_list_col

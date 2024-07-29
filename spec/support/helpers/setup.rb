@@ -69,7 +69,7 @@ module ET3
         respondents_details_page.organisation_more_than_one_site_question.set(user.organisation_more_than_one_site.to_s.split('.').last.to_sym)
         respondents_details_page.employment_at_site_number_question.set(user.employment_at_site_number) if user.organisation_more_than_one_site.to_s.split('.')[-2] == 'yes'
         respondents_details_page.organisation_employ_gb_question.set(user.organisation_employ_gb)
-        respondents_details_page.video_call_question.set(user.video_call.to_s.split('.').last.to_sym)
+        respondents_details_page.allow_phone_or_video_attendance_question.set(user.allow_phone_or_video_attendance)
 
         respondents_details_page.next
       end

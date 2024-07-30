@@ -463,7 +463,6 @@ cy:
     claimants_name: enw llawn yr hawlydd
     agree_with_early_conciliation_details: a ydych chi'n cytuno gyda'r manylion a roddodd yr hawlydd ynghylch Cymodi Cynnar gydag Acas?
     disagree_conciliation_reason: pam yr ydych yn anghytuno â’r hawlydd?
-    agree_with_employment_dates: a yw'r dyddiadau cyflogaeth a roddwyd gan yr hawlydd yn gywir?
     employment_start: pa bryd ddechreuodd ei gyflogaeth
     employment_end: pa bryd ddaeth ei gyflogaeth i ben, neu y bydd yn dod i ben
     disagree_employment: pam yr ydych yn anghytuno â’r dyddiadau a roddwyd gan yr hawlydd
@@ -698,6 +697,7 @@ cy:
         options:
           'true': 'Ydy'
           'false': 'Nac ydy'
+          'not_applicable': 'Ddim yn berthnasol'
       employment_start:
         label: Pa bryd ddechreuodd ei gyflogaeth
         hint: "Er enghraifft, 31 03 2010"

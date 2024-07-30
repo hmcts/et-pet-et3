@@ -131,7 +131,7 @@ RSpec.feature "Fill in whole form", js: true do
       expect(claimants_details_table.claimants_name_row.claimants_name_answer).to have_text @claimant.claimants_name
       expect(claimants_details_table.agree_with_early_conciliation_details_row.agree_with_early_conciliation_details_answer).to have_text t(@claimant.agree_with_early_conciliation_details)
       expect(claimants_details_table.disagree_conciliation_reason_row.disagree_conciliation_reason_answer).to have_text @claimant.disagree_conciliation_reason
-      expect(claimants_details_table.agree_with_employment_dates_row.agree_with_employment_dates_answer).to have_text t(@claimant.agree_with_employment_dates)
+      expect(claimants_details_table.agree_with_employment_dates_row.agree_with_employment_dates_answer).to have_text t("questions.claimants_details.agree_with_employment_dates.options.#{@claimant.agree_with_employment_dates}")
       expect(claimants_details_table.employment_start_row.employment_start_answer).to have_text @claimant.employment_start.to_date.strftime('%Y-%m-%d')
       expect(claimants_details_table.employment_end_row.employment_end_answer).to have_text @claimant.employment_end.to_date.strftime('%Y-%m-%d')
       expect(claimants_details_table.disagree_employment_row.disagree_employment_answer).to have_text @claimant.disagree_employment
@@ -214,7 +214,7 @@ RSpec.feature "Fill in whole form", js: true do
               expect(request_body["data"][0]["data"]["claimants_name"]).to eql @claimant.claimants_name
               expect(request_body["data"][0]["data"]["agree_with_early_conciliation_details"]).to eql false
               expect(request_body["data"][0]["data"]["disagree_conciliation_reason"]).to eql @claimant.disagree_conciliation_reason
-              expect(request_body["data"][0]["data"]["agree_with_employment_dates"]).to eql false
+              expect(request_body["data"][0]["data"]["agree_with_employment_dates"]).to eql ({no: 'false', yes: 'true', not_applicable: 'not_applicable'}[@claimant.agree_with_employment_dates])
               expect(Date.parse(request_body["data"][0]["data"]["employment_start"]).strftime('%d/%m/%Y')).to eql @claimant.employment_start
               expect(Date.parse(request_body["data"][0]["data"]["employment_end"]).strftime('%d/%m/%Y')).to eql @claimant.employment_end
               expect(request_body["data"][0]["data"]["disagree_employment"]).to eql @claimant.disagree_employment

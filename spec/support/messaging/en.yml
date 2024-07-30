@@ -103,6 +103,7 @@ en:
         options:
           'yes': 'Yes'
           'no': 'No'
+          'not_applicable': 'Not applicable'
       employment_start:
         label: When their employment started (optional)
       employment_end:

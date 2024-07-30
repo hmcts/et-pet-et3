@@ -103,6 +103,7 @@ cy:
         options:
           'yes': Ydy
           'no': Nac ydy
+          'not_applicable': 'Ddim yn berthnasol'
       employment_start:
         label: "Pa bryd ddechreuodd ei gyflogaeth (dewisol)"
       employment_end:

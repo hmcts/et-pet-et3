@@ -13,7 +13,7 @@
       .govuk-inset-text
         = f.text_area :disagree_conciliation_reason, optional: true
     = f.collection_radio_buttons :agree_with_employment_dates, optional: true
-    = f.revealed_content :agree_with_employment_dates, values: [:false] do
+    = f.revealed_content :agree_with_employment_dates, values: ['false'] do
       .govuk-inset-text
         = f.date_field :employment_start, maxlength_enabled: true, optional: true
         = f.date_field :employment_end, maxlength_enabled: true, optional: true

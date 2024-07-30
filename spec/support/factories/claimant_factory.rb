@@ -24,7 +24,7 @@ FactoryBot.define do
     disagree_claimant_pension_benefits_reason {"lorem ipsum claimant pension"}
     defend_claim {:"questions.responses.defend_claim.options.yes"}
     defend_claim_facts {"lorem ipsum defence"}
-    agree_with_employment_dates {:"questions.claimants_details.agree_with_employment_dates.options.no"}
+    agree_with_employment_dates {:no}
     employment_start {"01/01/2017"}
     employment_end {"31/12/2017"}
     disagree_employment {"lorem ipsum employment"}
@@ -50,7 +50,7 @@ FactoryBot.define do
     disagree_claimant_pension_benefits_reason { Faker::Lorem.characters(number: 351) }
     defend_claim {:"questions.responses.defend_claim.options.yes"}
     defend_claim_facts { Faker::Lorem.characters(number: 2501) }
-    agree_with_employment_dates {:"questions.claimants_details.agree_with_employment_dates.options.no"}
+    agree_with_employment_dates {:no}
     employment_start {"0/0/0"}
     employment_end {"0/0/0"}
     disagree_employment {nil}

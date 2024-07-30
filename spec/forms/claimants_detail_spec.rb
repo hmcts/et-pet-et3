@@ -6,7 +6,7 @@ RSpec.describe ClaimantsDetail, type: :model do
     described_class.new(
       employment_start: '01/01/2017', employment_end: '31/12/2017', claimants_name: 'Jane Doe',
       agree_with_early_conciliation_details: false, disagree_conciliation_reason: 'lorem ipsum conciliation',
-      agree_with_employment_dates: false, disagree_employment: 'lorem ipsum employment',
+      agree_with_employment_dates: 'false', disagree_employment: 'lorem ipsum employment',
       continued_employment: false, agree_with_claimants_description_of_job_or_title: false,
       disagree_claimants_job_or_title: 'lorem ipsum job title'
     )
@@ -39,7 +39,7 @@ RSpec.describe ClaimantsDetail, type: :model do
     end
 
     it 'returns agree with employment dates' do
-      expect(populated_claimant_detail.agree_with_employment_dates).to be false
+      expect(populated_claimant_detail.agree_with_employment_dates).to eql 'false'
     end
 
     it 'returns the employment start date' do
@@ -93,7 +93,7 @@ RSpec.describe ClaimantsDetail, type: :model do
     end
 
     it 'will return the agree_with_employment_dates key and value pair' do
-      expect(populated_claimant_detail.to_h).to include(agree_with_employment_dates: false)
+      expect(populated_claimant_detail.to_h).to include(agree_with_employment_dates: 'false')
     end
 
     it 'will return the employment_start key and value pair' do
@@ -183,21 +183,21 @@ RSpec.describe ClaimantsDetail, type: :model do
 
   context "when agreeing with employment dates" do
     it 'will not validate employment start' do
-      populated_claimant_detail.agree_with_employment_dates = true
+      populated_claimant_detail.agree_with_employment_dates = 'true'
       populated_claimant_detail.employment_start = ""
 
       expect(populated_claimant_detail).to be_valid
     end
 
     it 'will not validate employment end' do
-      populated_claimant_detail.agree_with_employment_dates = true
+      populated_claimant_detail.agree_with_employment_dates = 'true'
       populated_claimant_detail.employment_end = ""
 
       expect(populated_claimant_detail).to be_valid
     end
 
     it 'will not validate disagree employment dates' do
-      populated_claimant_detail.agree_with_employment_dates = true
+      populated_claimant_detail.agree_with_employment_dates = 'true'
       populated_claimant_detail.disagree_employment = ""
 
       expect(populated_claimant_detail).to be_valid

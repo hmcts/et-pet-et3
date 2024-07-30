@@ -91,8 +91,7 @@
         dd.govuk-summary-list__value = @hash_store.dig(:claimants_detail_answers, :disagree_conciliation_reason)
       .govuk-summary-list__row
         dt.govuk-summary-list__key = t('claimants_details.edit.agree_with_employment_dates.label')
-        dd.govuk-summary-list__value = translate_stored_value(@hash_store.dig(:claimants_detail_answers, :agree_with_employment_dates),
-                    'claimants_details.agree_with_employment_dates')
+        dd.govuk-summary-list__value = t("claimants_details.edit.agree_with_employment_dates.options.#{@hash_store.dig(:claimants_detail_answers, :agree_with_employment_dates)}")
       .govuk-summary-list__row
         dt.govuk-summary-list__key = t('claimants_details.edit.employment_start.label')
         dd.govuk-summary-list__value = @hash_store.dig(:claimants_detail_answers, :employment_start)

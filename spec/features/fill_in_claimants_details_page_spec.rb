@@ -38,7 +38,7 @@ RSpec.feature "Fill in Claimants Details Page", js: true do
     expect(claimants_details_page.claimants_name_question.value).to eql @claimant.claimants_name
     expect(claimants_details_page.agree_with_early_conciliation_details_question.value).to eql(t(@claimant.agree_with_early_conciliation_details))
     expect(claimants_details_page.disagree_conciliation_reason.value).to eql(@claimant.disagree_conciliation_reason) if @claimant.agree_with_early_conciliation_details_question.to_s.split('.').last == 'no'
-    expect(claimants_details_page.agree_with_employment_dates_question.value).to eql(t(@claimant.agree_with_employment_dates))
+    expect(claimants_details_page.agree_with_employment_dates_question.value).to eql(t("questions.claimants_details.agree_with_employment_dates.options.#{@claimant.agree_with_employment_dates}"))
     if @claimant.agree_with_employment_dates.to_s.split('.').last == 'no'
       expect(claimants_details_page.employment_start.value).to eql Date.parse(@claimant.employment_start)
       expect(claimants_details_page.employment_end.value).to eql Date.parse(@claimant.employment_end)

@@ -2,7 +2,7 @@ class ClaimantsDetail < BaseForm
   attribute :claimants_name, :string
   attribute :agree_with_early_conciliation_details, :boolean
   attribute :disagree_conciliation_reason, :text
-  attribute :agree_with_employment_dates, :boolean
+  attribute :agree_with_employment_dates, :string
   attribute :employment_start, :et_date
   attribute :employment_end, :et_date
   attribute :disagree_employment, :text
@@ -20,7 +20,7 @@ class ClaimantsDetail < BaseForm
     }
 
     claimants_detail_hash[:disagree_conciliation_reason] = disagree_conciliation_reason if claimants_detail_hash[:agree_with_early_conciliation_details] == false
-    if claimants_detail_hash[:agree_with_employment_dates] == false
+    if claimants_detail_hash[:agree_with_employment_dates] == 'false'
       claimants_detail_hash.merge!(employment_start: employment_start,
                                    employment_end: employment_end,
                                    disagree_employment: disagree_employment)
@@ -33,7 +33,7 @@ class ClaimantsDetail < BaseForm
   validates :claimants_name,
     persons_name: true,
     allow_blank: true
-  validates :agree_with_employment_dates, inclusion: { in: [true, false] }, allow_blank: true
+  validates :agree_with_employment_dates, inclusion: { in: ['true', 'false', 'not_applicable'] }, allow_blank: true
   validates :employment_start, :employment_end,
     date: true, allow_blank: true,
     if: :disagree_with_employment_dates?
@@ -42,7 +42,7 @@ class ClaimantsDetail < BaseForm
   private
 
   def disagree_with_employment_dates?
-    agree_with_employment_dates == false
+    agree_with_employment_dates == 'false'
   end
 
   def end_date_is_after_start_date

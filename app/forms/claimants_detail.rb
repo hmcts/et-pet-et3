@@ -6,7 +6,7 @@ class ClaimantsDetail < BaseForm
   attribute :employment_start, :et_date
   attribute :employment_end, :et_date
   attribute :disagree_employment, :text
-  attribute :continued_employment, :boolean
+  attribute :continued_employment, :string
   attribute :agree_with_claimants_description_of_job_or_title, :boolean
   attribute :disagree_claimants_job_or_title, :text
 

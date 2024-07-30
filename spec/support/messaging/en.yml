@@ -115,6 +115,7 @@ en:
         options:
           'yes': 'Yes'
           'no': 'No'
+          'not_applicable': 'Not applicable'
       agree_with_claimants_description_of_job_or_title:
         label: Is the claimant's description of their job or job title correct? (optional)
         options:

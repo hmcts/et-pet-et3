@@ -8,7 +8,7 @@ FactoryBot.define do
     claimants_name { Faker::Name.name }
     agree_with_early_conciliation_details {:"questions.claimants_details.agree_with_early_conciliation_details.options.no"}
     disagree_conciliation_reason {"lorem ipsum conciliation"}
-    continued_employment {:"questions.claimants_details.continued_employment.options.no"}
+    continued_employment {:no}
     agree_with_claimants_description_of_job_or_title {:"questions.claimants_details.agree_with_claimants_description_of_job_or_title.options.no"}
     disagree_claimants_job_or_title {"lorem ipsum job title"}
     agree_with_claimants_hours {:"questions.earnings_and_benefits.agree_with_claimants_hours.options.no"}
@@ -34,7 +34,7 @@ FactoryBot.define do
     claimants_name {"J4ne D0e"}
     agree_with_early_conciliation_details {:"questions.claimants_details.agree_with_early_conciliation_details.options.yes"}
     disagree_conciliation_reason {nil}
-    continued_employment {:"questions.claimants_details.continued_employment.options.no"}
+    continued_employment {:no}
     agree_with_claimants_description_of_job_or_title {:"questions.claimants_details.agree_with_claimants_description_of_job_or_title.options.yes"}
     disagree_claimants_job_or_title {nil}
     agree_with_claimants_hours {:"questions.earnings_and_benefits.agree_with_claimants_hours.options.no"}

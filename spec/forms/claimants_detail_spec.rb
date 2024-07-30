@@ -7,7 +7,7 @@ RSpec.describe ClaimantsDetail, type: :model do
       employment_start: '01/01/2017', employment_end: '31/12/2017', claimants_name: 'Jane Doe',
       agree_with_early_conciliation_details: false, disagree_conciliation_reason: 'lorem ipsum conciliation',
       agree_with_employment_dates: 'false', disagree_employment: 'lorem ipsum employment',
-      continued_employment: false, agree_with_claimants_description_of_job_or_title: false,
+      continued_employment: 'false', agree_with_claimants_description_of_job_or_title: false,
       disagree_claimants_job_or_title: 'lorem ipsum job title'
     )
   }
@@ -63,7 +63,7 @@ RSpec.describe ClaimantsDetail, type: :model do
     end
 
     it 'returns the continued employment' do
-      expect(populated_claimant_detail.continued_employment).to be false
+      expect(populated_claimant_detail.continued_employment).to eql 'false'
     end
 
     it 'returns agree with claimants description of job or title' do
@@ -116,7 +116,7 @@ RSpec.describe ClaimantsDetail, type: :model do
     end
 
     it 'will return the continued_employment key and value pair' do
-      expect(populated_claimant_detail.to_h).to include(continued_employment: false)
+      expect(populated_claimant_detail.to_h).to include(continued_employment: 'false')
     end
 
     it 'will return the agree_with_claimants_description_of_job_or_title key and value pair' do

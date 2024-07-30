@@ -115,6 +115,7 @@ cy:
         options:
           'yes': Ydy
           'no': Nac ydy
+          'not_applicable': 'Ddim yn berthnasol'
       agree_with_claimants_description_of_job_or_title:
         label: "A yw disgrifiad yr hawlydd o’i swydd neu deitl ei swydd yn gywir? (dewisol)"
         options:

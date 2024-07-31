@@ -6,7 +6,7 @@ RSpec.describe EarningsAndBenefits, type: :model do
     described_class.new(
       agree_with_claimants_hours: 'false',
       queried_hours: 20.5,
-      agree_with_earnings_details: false,
+      agree_with_earnings_details: 'false',
       queried_pay_before_tax: '£12,345.67',
       queried_pay_before_tax_period: 'weekly',
       queried_take_home_pay: '  15000  ',
@@ -83,7 +83,7 @@ RSpec.describe EarningsAndBenefits, type: :model do
     end
 
     it 'returns the correct earnings details' do
-      expect(populated_earnings_and_benefits.agree_with_earnings_details).to be false
+      expect(populated_earnings_and_benefits.agree_with_earnings_details).to eql 'false'
     end
 
     it 'returns the correct queried_pay_before_tax' do
@@ -133,7 +133,7 @@ RSpec.describe EarningsAndBenefits, type: :model do
     end
 
     it 'will return the agree_with_earnings_details key and value pair' do
-      expect(populated_earnings_and_benefits.to_h).to include(agree_with_earnings_details: false)
+      expect(populated_earnings_and_benefits.to_h).to include(agree_with_earnings_details: 'false')
     end
 
     it 'will return the queried_pay_before_tax key and value pair' do
@@ -267,28 +267,28 @@ RSpec.describe EarningsAndBenefits, type: :model do
 
   context "when agreeing with claimants earnings details" do
     it 'will not validate queried pay before tax' do
-      populated_earnings_and_benefits.agree_with_earnings_details = true
+      populated_earnings_and_benefits.agree_with_earnings_details = 'true'
       populated_earnings_and_benefits.queried_pay_before_tax = "a string"
 
       expect(populated_earnings_and_benefits).to be_valid
     end
 
     it 'will not validate queried take home pay' do
-      populated_earnings_and_benefits.agree_with_earnings_details = true
+      populated_earnings_and_benefits.agree_with_earnings_details = 'true'
       populated_earnings_and_benefits.queried_take_home_pay = "a string"
 
       expect(populated_earnings_and_benefits).to be_valid
     end
 
     it 'will not hash queried pay before tax' do
-      populated_earnings_and_benefits.agree_with_earnings_details = true
+      populated_earnings_and_benefits.agree_with_earnings_details = 'true'
       populated_earnings_and_benefits.queried_pay_before_tax = "a string"
 
       expect(populated_earnings_and_benefits.to_h).not_to include(:queried_pay_before_tax)
     end
 
     it 'will not hash queried take home pay' do
-      populated_earnings_and_benefits.agree_with_earnings_details = true
+      populated_earnings_and_benefits.agree_with_earnings_details = 'true'
       populated_earnings_and_benefits.queried_take_home_pay = "a string"
 
       expect(populated_earnings_and_benefits.to_h).not_to include(:queried_take_home_pay)
@@ -297,7 +297,7 @@ RSpec.describe EarningsAndBenefits, type: :model do
 
   context "when disagreeing with claimants earnings details" do
     it 'will raise a validation error on queried pay before tax' do
-      populated_earnings_and_benefits.agree_with_earnings_details = false
+      populated_earnings_and_benefits.agree_with_earnings_details = 'false'
       populated_earnings_and_benefits.queried_pay_before_tax = "a string"
 
       populated_earnings_and_benefits.valid?
@@ -306,7 +306,7 @@ RSpec.describe EarningsAndBenefits, type: :model do
     end
 
     it 'will raise a validation error on queried take home pay' do
-      populated_earnings_and_benefits.agree_with_earnings_details = false
+      populated_earnings_and_benefits.agree_with_earnings_details = 'false'
       populated_earnings_and_benefits.queried_take_home_pay = "a string"
 
       populated_earnings_and_benefits.valid?

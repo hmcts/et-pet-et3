@@ -49,8 +49,8 @@ RSpec.feature "Fill in Earnings and Benefits Page", js: true do
       if user.agree_with_claimants_hours == :no
         expect(p.queried_hours.value).to eql user.queried_hours.to_s
       end
-      expect(p.agree_with_earnings_details_question.value).to eql(t(user.agree_with_earnings_details))
-      if user.agree_with_earnings_details.to_s.split('.').last == 'no'
+      expect(p.agree_with_earnings_details_question.value).to eql(t("questions.earnings_and_benefits.agree_with_claimants_hours.options.#{user.agree_with_earnings_details}"))
+      if user.agree_with_earnings_details == :no
         expect(p.queried_pay_before_tax.value.gsub(',', '')).to eql sprintf('%.2f', user.queried_pay_before_tax)
         expect(p.queried_pay_before_tax_period.value).to eql t(user.queried_pay_before_tax_period)
         expect(p.queried_take_home_pay.value).to eql sprintf('%.2f', user.queried_take_home_pay)

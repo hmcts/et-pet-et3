@@ -97,8 +97,8 @@ module ET3
         user = @claimant
         earnings_and_benefits_page.agree_with_claimants_hours_question.set(user.agree_with_claimants_hours)
         earnings_and_benefits_page.queried_hours.set(user.queried_hours)
-        earnings_and_benefits_page.agree_with_earnings_details_question.set(user.agree_with_earnings_details.to_s.split('.').last.to_sym)
-        if user.agree_with_earnings_details.to_s.split('.').last == 'no'
+        earnings_and_benefits_page.agree_with_earnings_details_question.set(user.agree_with_earnings_details)
+        if user.agree_with_earnings_details == :no
           earnings_and_benefits_page.queried_pay_before_tax.set(user.queried_pay_before_tax)
           earnings_and_benefits_page.queried_pay_before_tax_period.set(user.queried_pay_before_tax_period.to_s.split('.').last.to_sym)
           earnings_and_benefits_page.queried_take_home_pay.set(user.queried_take_home_pay)

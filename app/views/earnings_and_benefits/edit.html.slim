@@ -13,7 +13,7 @@ p.govuk-body= t('components.earnings_and_benefits.content')
       .govuk-inset-text
         = f.text_field :queried_hours, optional: true
     = f.collection_radio_buttons :agree_with_earnings_details, optional: true
-    = f.revealed_content :agree_with_earnings_details, values: [:false]
+    = f.revealed_content :agree_with_earnings_details, values: ['false']
       .govuk-inset-text
         = f.text_field :queried_pay_before_tax, optional: true
         = f.collection_radio_buttons :queried_pay_before_tax_period, optional: true

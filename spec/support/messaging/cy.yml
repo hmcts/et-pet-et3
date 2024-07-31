@@ -139,6 +139,7 @@ cy:
         options:
           'yes': Ydy
           'no': Nac ydy
+          'not_applicable': 'Ddim yn berthnasol'
       queried_pay_before_tax:
         label: "Tâl cyn treth (dewisol)"
       queried_pay_before_tax_period:

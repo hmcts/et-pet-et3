@@ -468,7 +468,6 @@ cy:
     disagree_employment: pam yr ydych yn anghytuno â’r dyddiadau a roddwyd gan yr hawlydd
     disagree_claimants_job_or_title: rhowch y manylion sy’n gywir yn eich barn chi
     queried_hours: nodwch y manylion sy’n gywir yn eich barn chi
-    agree_with_earnings_details: a yw manylion yr enillion a roddwyd gan yr hawlydd yn gywir?
     queried_pay_before_tax: tâl cyn treth
     queried_pay_before_tax_period: tâl cyn cyfnod treth
     queried_take_home_pay: tâl terfynol arferol
@@ -733,6 +732,7 @@ cy:
         options:
           'true': 'Ydy'
           'false': 'Nac ydy'
+          'not_applicable': 'Ddim yn berthnasol'
       queried_pay_before_tax:
         label: "Tâl cyn treth"
         hint: "Gan gynnwys goramser, comisiwn a bonwsau ayb. Er enghraifft, 28000"

@@ -106,8 +106,7 @@
         dd.govuk-summary-list__value = t("claimants_details.edit.agree_with_employment_dates.options.#{@hash_store.dig(:claimants_detail_answers, :continued_employment)}")
       .govuk-summary-list__row
         dt.govuk-summary-list__key = t('claimants_details.edit.agree_with_claimants_description_of_job_or_title.label')
-        dd.govuk-summary-list__value = translate_stored_value(@hash_store.dig(:claimants_detail_answers, :agree_with_claimants_description_of_job_or_title),
-                'claimants_details.agree_with_claimants_description_of_job_or_title')
+        dd.govuk-summary-list__value = t("claimants_details.edit.agree_with_employment_dates.options.#{@hash_store.dig(:claimants_detail_answers, :agree_with_claimants_description_of_job_or_title)}")
       .govuk-summary-list__row
         dt.govuk-summary-list__key = t('claimants_details.edit.disagree_claimants_job_or_title.label')
         dd.govuk-summary-list__value = @hash_store.dig(:claimants_detail_answers, :disagree_claimants_job_or_title)

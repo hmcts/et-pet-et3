@@ -20,7 +20,7 @@
         = f.text_area :disagree_employment, optional: true
     = f.collection_radio_buttons :continued_employment, optional: true
     = f.collection_radio_buttons :agree_with_claimants_description_of_job_or_title, optional: true
-    = f.revealed_content :agree_with_claimants_description_of_job_or_title, values: [:false] do
+    = f.revealed_content :agree_with_claimants_description_of_job_or_title, values: ['false'] do
       .govuk-inset-text
         = f.text_area :disagree_claimants_job_or_title, optional: true
     / = f.radio_button_fieldset :agree_with_claimants_description_of_job_or_title do |b|

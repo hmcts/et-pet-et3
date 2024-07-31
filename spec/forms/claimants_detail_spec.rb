@@ -7,7 +7,7 @@ RSpec.describe ClaimantsDetail, type: :model do
       employment_start: '01/01/2017', employment_end: '31/12/2017', claimants_name: 'Jane Doe',
       agree_with_early_conciliation_details: false, disagree_conciliation_reason: 'lorem ipsum conciliation',
       agree_with_employment_dates: 'false', disagree_employment: 'lorem ipsum employment',
-      continued_employment: 'false', agree_with_claimants_description_of_job_or_title: false,
+      continued_employment: 'false', agree_with_claimants_description_of_job_or_title: 'false',
       disagree_claimants_job_or_title: 'lorem ipsum job title'
     )
   }
@@ -67,7 +67,7 @@ RSpec.describe ClaimantsDetail, type: :model do
     end
 
     it 'returns agree with claimants description of job or title' do
-      expect(populated_claimant_detail.agree_with_claimants_description_of_job_or_title).to be false
+      expect(populated_claimant_detail.agree_with_claimants_description_of_job_or_title).to eql 'false'
     end
 
     it 'returns the disagree claimants job or title reason' do
@@ -120,7 +120,7 @@ RSpec.describe ClaimantsDetail, type: :model do
     end
 
     it 'will return the agree_with_claimants_description_of_job_or_title key and value pair' do
-      expect(populated_claimant_detail.to_h).to include(agree_with_claimants_description_of_job_or_title: false)
+      expect(populated_claimant_detail.to_h).to include(agree_with_claimants_description_of_job_or_title: 'false')
     end
 
     it 'will return the disagree_claimants_job_or_title key and value pair' do
@@ -227,7 +227,7 @@ RSpec.describe ClaimantsDetail, type: :model do
 
   context "when agreeing with description of job or title" do
     it 'will not hash disagree claimants job or title' do
-      populated_claimant_detail.agree_with_claimants_description_of_job_or_title = true
+      populated_claimant_detail.agree_with_claimants_description_of_job_or_title = 'true'
       populated_claimant_detail.disagree_claimants_job_or_title = "string that will not be hashed"
 
       expect(populated_claimant_detail.to_h).not_to include(:disagree_claimants_job_or_title)
@@ -236,7 +236,7 @@ RSpec.describe ClaimantsDetail, type: :model do
 
   context "when disagreeing with description of job or title" do
     it 'will not raise a validation error on disagree claimants job or title' do
-      populated_claimant_detail.agree_with_claimants_description_of_job_or_title = false
+      populated_claimant_detail.agree_with_claimants_description_of_job_or_title = 'false'
       populated_claimant_detail.disagree_claimants_job_or_title = nil
 
       expect(populated_claimant_detail).to be_valid

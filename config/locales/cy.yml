@@ -466,7 +466,6 @@ cy:
     employment_start: pa bryd ddechreuodd ei gyflogaeth
     employment_end: pa bryd ddaeth ei gyflogaeth i ben, neu y bydd yn dod i ben
     disagree_employment: pam yr ydych yn anghytuno â’r dyddiadau a roddwyd gan yr hawlydd
-    agree_with_claimants_description_of_job_or_title: a yw disgrifiad yr hawlydd o’i swydd neu deitl ei swydd yn gywir?
     disagree_claimants_job_or_title: rhowch y manylion sy’n gywir yn eich barn chi
     agree_with_claimants_hours: a yw oriau gwaith yr hawlydd yn gywir?
     queried_hours: nodwch y manylion sy’n gywir yn eich barn chi
@@ -716,6 +715,7 @@ cy:
         options:
           'true': 'Ydy'
           'false': 'Nac ydy'
+          'not_applicable': 'Ddim yn berthnasol'
       disagree_claimants_job_or_title:
         label: "Rhowch y manylion sy’n gywir yn eich barn chi"
   earnings_and_benefits:

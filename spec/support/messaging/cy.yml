@@ -121,6 +121,7 @@ cy:
         options:
           'yes': Ydy
           'no': Nac ydy
+          'not_applicable': 'Ddim yn berthnasol'
       disagree_claimants_job_or_title:
         label: "Rhowch y manylion sy’n gywir yn eich barn chi (dewisol)"
     # Earnings and Benefits Page

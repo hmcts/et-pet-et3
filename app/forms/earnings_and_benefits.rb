@@ -6,7 +6,7 @@ class EarningsAndBenefits < BaseForm
   attribute :queried_pay_before_tax_period, :string
   attribute :queried_take_home_pay, :currency_float
   attribute :queried_take_home_pay_period, :string
-  attribute :agree_with_claimant_notice, :boolean
+  attribute :agree_with_claimant_notice, :string
   attribute :disagree_claimant_notice_reason, :text
   attribute :agree_with_claimant_pension_benefits, :boolean
   attribute :disagree_claimant_pension_benefits_reason, :text
@@ -26,7 +26,7 @@ class EarningsAndBenefits < BaseForm
                                         queried_take_home_pay: queried_take_home_pay,
                                         queried_take_home_pay_period: queried_take_home_pay_period)
     end
-    earnings_and_benefits_hash[:disagree_claimant_notice_reason] = disagree_claimant_notice_reason if earnings_and_benefits_hash[:agree_with_claimant_notice] == false
+    earnings_and_benefits_hash[:disagree_claimant_notice_reason] = disagree_claimant_notice_reason if earnings_and_benefits_hash[:agree_with_claimant_notice] == 'false'
     earnings_and_benefits_hash[:disagree_claimant_pension_benefits_reason] = disagree_claimant_pension_benefits_reason if earnings_and_benefits_hash[:agree_with_claimant_pension_benefits] == false
 
     earnings_and_benefits_hash
@@ -62,7 +62,7 @@ class EarningsAndBenefits < BaseForm
   end
 
   def disagree_claimants_notice?
-    agree_with_claimant_notice == false
+    agree_with_claimant_notice == 'false'
   end
 
   def disagree_claimants_pension_benefits?

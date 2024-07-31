@@ -696,6 +696,7 @@ en:
         options:
           'true': 'Yes'
           'false': 'No'
+          'not_applicable': 'Not applicable'
       disagree_claimant_notice_reason:
         label: Tell us the details you believe to be correct.
         hint: Explain what happened and why. Enter up to 400 characters. You can upload a document with more details before you submit your response.

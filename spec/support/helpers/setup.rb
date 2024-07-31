@@ -104,8 +104,8 @@ module ET3
           earnings_and_benefits_page.queried_take_home_pay.set(user.queried_take_home_pay)
           earnings_and_benefits_page.queried_take_home_pay_period.set(user.queried_take_home_pay_period.to_s.split('.').last.to_sym)
         end
-        earnings_and_benefits_page.agree_with_claimant_notice_question.set(user.agree_with_claimant_notice.to_s.split('.').last.to_sym)
-        if user.agree_with_claimant_notice.to_s.split('.').last == 'no'
+        earnings_and_benefits_page.agree_with_claimant_notice_question.set(user.agree_with_claimant_notice)
+        if user.agree_with_claimant_notice == :no
           earnings_and_benefits_page.disagree_claimant_notice_reason.set(user.disagree_claimant_notice_reason)
         end
         earnings_and_benefits_page.agree_with_claimant_notice_question.set(:yes)

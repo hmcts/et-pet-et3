@@ -161,6 +161,7 @@ en:
         options:
           'yes': 'Yes'
           'no': 'No'
+          'not_applicable': 'Not applicable'
       disagree_claimant_notice_reason:
         label: Tell us the details you believe to be correct. (optional)
       agree_with_claimant_pension_benefits:

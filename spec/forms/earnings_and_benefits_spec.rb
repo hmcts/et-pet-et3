@@ -11,7 +11,7 @@ RSpec.describe EarningsAndBenefits, type: :model do
       queried_pay_before_tax_period: 'weekly',
       queried_take_home_pay: '  15000  ',
       queried_take_home_pay_period: 'weekly',
-      agree_with_claimant_notice: false,
+      agree_with_claimant_notice: 'false',
       disagree_claimant_notice_reason: 'lorem ipsum notice',
       agree_with_claimant_pension_benefits: false,
       disagree_claimant_pension_benefits_reason: 'lorem ipsum pension'
@@ -103,7 +103,7 @@ RSpec.describe EarningsAndBenefits, type: :model do
     end
 
     it 'returns the correct claimant_notice' do
-      expect(populated_earnings_and_benefits.agree_with_claimant_notice).to be false
+      expect(populated_earnings_and_benefits.agree_with_claimant_notice).to eql 'false'
     end
 
     it 'returns the correct disagree claimant notice' do
@@ -153,7 +153,7 @@ RSpec.describe EarningsAndBenefits, type: :model do
     end
 
     it 'will return the agree_with_claimant_notice key and value pair' do
-      expect(populated_earnings_and_benefits.to_h).to include(agree_with_claimant_notice: false)
+      expect(populated_earnings_and_benefits.to_h).to include(agree_with_claimant_notice: 'false')
     end
 
     it 'will return the disagree_claimant_notice_reason key and value pair' do
@@ -317,14 +317,14 @@ RSpec.describe EarningsAndBenefits, type: :model do
 
   context "when agreeing with claimants notice" do
     it 'will not validate disagree claimant notice reason' do
-      populated_earnings_and_benefits.agree_with_claimant_notice = true
+      populated_earnings_and_benefits.agree_with_claimant_notice = 'true'
       populated_earnings_and_benefits.disagree_claimant_notice_reason = four_hundred_and_one_chars
 
       expect(populated_earnings_and_benefits).to be_valid
     end
 
     it 'will not hash disagree claimant notice reason' do
-      populated_earnings_and_benefits.agree_with_claimant_notice = true
+      populated_earnings_and_benefits.agree_with_claimant_notice = 'true'
 
       expect(populated_earnings_and_benefits.to_h).not_to include(:disagree_claimant_notice_reason)
     end

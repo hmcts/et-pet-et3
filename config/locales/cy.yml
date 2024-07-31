@@ -741,6 +741,7 @@ cy:
         options:
           Monthly: Misol
           Weekly: Wythnosol
+          Annually: Yn flynyddol
       queried_take_home_pay:
         label: "Tâl terfynol arferol"
         hint: "Gan gynnwys goramser, comisiwn a bonwsau ayb. Er enghraifft, 20000"
@@ -749,6 +750,7 @@ cy:
         options:
           Monthly: Misol
           Weekly: "Wythnosol "
+          Annually: Yn flynyddol
       agree_with_claimant_notice:
         label: "A yw’r manylion am gael eich talu am neu weithio cyfnod o rybudd yn gywir?"
         options:

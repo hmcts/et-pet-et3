@@ -147,6 +147,7 @@ cy:
         options:
           monthly: Misol
           weekly: Wythnosol
+          annually: Yn flynyddol
       queried_take_home_pay:
         label: "Tâl terfynol arferol (dewisol)"
       queried_take_home_pay_period:
@@ -154,6 +155,7 @@ cy:
         options:
           monthly: Misol
           weekly: Wythnosol
+          annually: Yn flynyddol
       agree_with_claimant_notice:
         label: "A yw’r manylion am gael eich talu am neu weithio cyfnod o rybudd yn gywir? (dewisol)"
         options:

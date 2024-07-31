@@ -45,7 +45,7 @@ RSpec.feature "Fill in Claimants Details Page", js: true do
       expect(claimants_details_page.disagree_employment.value).to eql @claimant.disagree_employment
     end
     expect(claimants_details_page.continued_employment_question.value).to eql(t("questions.claimants_details.continued_employment.options.#{@claimant.continued_employment}"))
-    expect(claimants_details_page.agree_with_claimants_description_of_job_or_title_question.value).to eql(t(@claimant.agree_with_claimants_description_of_job_or_title))
+    expect(claimants_details_page.agree_with_claimants_description_of_job_or_title_question.value).to eql(t("questions.claimants_details.agree_with_claimants_description_of_job_or_title.options.#{@claimant.agree_with_claimants_description_of_job_or_title}"))
     expect(claimants_details_page.disagree_claimants_job_or_title.value).to eql(@claimant.disagree_claimants_job_or_title)
   end
 

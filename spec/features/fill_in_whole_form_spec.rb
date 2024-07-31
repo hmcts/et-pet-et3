@@ -136,7 +136,7 @@ RSpec.feature "Fill in whole form", js: true do
       expect(claimants_details_table.employment_end_row.employment_end_answer).to have_text @claimant.employment_end.to_date.strftime('%Y-%m-%d')
       expect(claimants_details_table.disagree_employment_row.disagree_employment_answer).to have_text @claimant.disagree_employment
       expect(claimants_details_table.continued_employment_row.continued_employment_answer).to have_text t("questions.claimants_details.continued_employment.options.#{@claimant.continued_employment}")
-      expect(claimants_details_table.agree_with_claimants_description_of_job_or_title_row.agree_with_claimants_description_of_job_or_title_answer).to have_text t(@claimant.agree_with_claimants_description_of_job_or_title)
+      expect(claimants_details_table.agree_with_claimants_description_of_job_or_title_row.agree_with_claimants_description_of_job_or_title_answer).to have_text t("questions.claimants_details.agree_with_claimants_description_of_job_or_title.options.#{@claimant.agree_with_claimants_description_of_job_or_title}")
       expect(claimants_details_table.disagree_claimants_job_or_title_row.disagree_claimants_job_or_title_answer).to have_text @claimant.disagree_claimants_job_or_title
 
       expect(confirmation_of_supplied_details_page).to have_confirmation_of_earnings_and_benefits_answers
@@ -219,7 +219,7 @@ RSpec.feature "Fill in whole form", js: true do
               expect(Date.parse(request_body["data"][0]["data"]["employment_end"]).strftime('%d/%m/%Y')).to eql @claimant.employment_end
               expect(request_body["data"][0]["data"]["disagree_employment"]).to eql @claimant.disagree_employment
               expect(request_body["data"][0]["data"]["continued_employment"]).to eql ({no: 'false', yes: 'true', not_applicable: 'not_applicable'}[@claimant.continued_employment])
-              expect(request_body["data"][0]["data"]["agree_with_claimants_description_of_job_or_title"]).to eql false
+              expect(request_body["data"][0]["data"]["agree_with_claimants_description_of_job_or_title"]).to eql ({no: 'false', yes: 'true', not_applicable: 'not_applicable'}[@claimant.agree_with_claimants_description_of_job_or_title])
               expect(request_body["data"][0]["data"]["disagree_claimants_job_or_title"]).to eql @claimant.disagree_claimants_job_or_title
               expect(request_body["data"][0]["data"]["agree_with_claimants_hours"]).to eql false
               expect(request_body["data"][0]["data"]["queried_hours"]).to eql @claimant.queried_hours

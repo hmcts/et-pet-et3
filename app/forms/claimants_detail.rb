@@ -7,7 +7,7 @@ class ClaimantsDetail < BaseForm
   attribute :employment_end, :et_date
   attribute :disagree_employment, :text
   attribute :continued_employment, :string
-  attribute :agree_with_claimants_description_of_job_or_title, :boolean
+  attribute :agree_with_claimants_description_of_job_or_title, :string
   attribute :disagree_claimants_job_or_title, :text
 
   def to_h # rubocop:disable Metrics/MethodLength
@@ -25,7 +25,7 @@ class ClaimantsDetail < BaseForm
                                    employment_end: employment_end,
                                    disagree_employment: disagree_employment)
     end
-    claimants_detail_hash[:disagree_claimants_job_or_title] = disagree_claimants_job_or_title if claimants_detail_hash[:agree_with_claimants_description_of_job_or_title] == false
+    claimants_detail_hash[:disagree_claimants_job_or_title] = disagree_claimants_job_or_title if claimants_detail_hash[:agree_with_claimants_description_of_job_or_title] == 'false'
 
     claimants_detail_hash
   end

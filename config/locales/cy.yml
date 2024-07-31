@@ -467,7 +467,6 @@ cy:
     employment_end: pa bryd ddaeth ei gyflogaeth i ben, neu y bydd yn dod i ben
     disagree_employment: pam yr ydych yn anghytuno â’r dyddiadau a roddwyd gan yr hawlydd
     disagree_claimants_job_or_title: rhowch y manylion sy’n gywir yn eich barn chi
-    agree_with_claimants_hours: a yw oriau gwaith yr hawlydd yn gywir?
     queried_hours: nodwch y manylion sy’n gywir yn eich barn chi
     agree_with_earnings_details: a yw manylion yr enillion a roddwyd gan yr hawlydd yn gywir?
     queried_pay_before_tax: tâl cyn treth
@@ -725,6 +724,7 @@ cy:
         options:
           'true': 'Ydy'
           'false': 'Nac ydy'
+          'not_applicable': 'Ddim yn berthnasol'
       queried_hours:
         label: "Dywedwch beth ydych chi’n credu yw’r oriau gwaith cywir"
         hint: "Nodwch nifer yr oriau fesul wythnos, er enghraifft, 39"

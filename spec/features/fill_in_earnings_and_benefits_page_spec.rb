@@ -45,8 +45,8 @@ RSpec.feature "Fill in Earnings and Benefits Page", js: true do
     user = @claimant
 
     earnings_and_benefits_page.tap do |p|
-      expect(p.agree_with_claimants_hours_question.value).to eql(t(user.agree_with_claimants_hours))
-      if user.agree_with_claimants_hours.to_s.split('.').last == 'no'
+      expect(p.agree_with_claimants_hours_question.value).to eql(t("questions.earnings_and_benefits.agree_with_claimants_hours.options.#{user.agree_with_claimants_hours}"))
+      if user.agree_with_claimants_hours == :no
         expect(p.queried_hours.value).to eql user.queried_hours.to_s
       end
       expect(p.agree_with_earnings_details_question.value).to eql(t(user.agree_with_earnings_details))

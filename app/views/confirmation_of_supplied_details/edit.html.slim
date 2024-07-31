@@ -119,8 +119,7 @@
     dl.govuk-summary-list
       .govuk-summary-list__row
         dt.govuk-summary-list__key = t('earnings_and_benefits.edit.agree_with_claimants_hours.label')
-        dd.govuk-summary-list__value = translate_stored_value(@hash_store.dig(:earnings_and_benefits_answers, :agree_with_claimants_hours),
-                'earnings_and_benefits.agree_with_claimants_hours')
+        dd.govuk-summary-list__value = t("earnings_and_benefits.edit.agree_with_claimants_hours.options.#{@hash_store.dig(:earnings_and_benefits_answers, :agree_with_claimants_hours)}")
       .govuk-summary-list__row data-attribute="queried_hours"
         dt.govuk-summary-list__key = t('earnings_and_benefits.edit.queried_hours.label')
         dd.govuk-summary-list__value = @hash_store.dig(:earnings_and_benefits_answers, :queried_hours)

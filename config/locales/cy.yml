@@ -472,7 +472,6 @@ cy:
     queried_pay_before_tax_period: tâl cyn cyfnod treth
     queried_take_home_pay: tâl terfynol arferol
     queried_take_home_pay_period: cyfnod tâl terfynol arferol
-    agree_with_claimant_notice: a yw’r wybodaeth a roddwyd gan yr hawlydd am gael tâl, neu weithio cyfnod o rybudd yn gywir?
     disagree_claimant_notice_reason: |
       rhowch y manylion sy’n gywir yn eich barn chi isod. Os na wnaethoch roi rhybudd iddo neu os na wnaethoch dalu iddo yn hytrach na gadael iddo weithio ei gyfnod o rybudd, eglurwch beth ddigwyddodd a pham
     agree_with_claimant_pension_benefits: a yw’r manylion am bensiwn a buddion eraill a roddwyd gan yr hawlydd yn gywir?
@@ -756,6 +755,7 @@ cy:
         options:
           'true': 'Ydy'
           'false': 'Nac ydy'
+          'not_applicable': 'Ddim yn berthnasol'
       disagree_claimant_notice_reason:
         label: Nodwch y manylion rydych chi’n credu sy’n gywir.
         hint: Esboniwch beth ddigwyddodd a pham. Gallwch ddefnyddio hyd at 400 o nodau. Gallwch uwchlwytho dogfen gyda rhagor o fanylion cyn ichi gyflwyno eich ymateb.

@@ -140,8 +140,7 @@
         dd.govuk-summary-list__value = translate_pay_period(@hash_store.dig(:earnings_and_benefits_answers, :queried_take_home_pay_period))
       .govuk-summary-list__row
         dt.govuk-summary-list__key = t('earnings_and_benefits.edit.agree_with_claimant_notice.label')
-        dd.govuk-summary-list__value = translate_stored_value(@hash_store.dig(:earnings_and_benefits_answers, :agree_with_claimant_notice),
-                'earnings_and_benefits.agree_with_claimant_notice')
+        dd.govuk-summary-list__value = t("earnings_and_benefits.edit.agree_with_claimant_notice.options.#{@hash_store.dig(:earnings_and_benefits_answers, :agree_with_claimant_notice)}")
       .govuk-summary-list__row data-attribute="disagree_claimant_notice_reason"
         dt.govuk-summary-list__key = t('earnings_and_benefits.edit.disagree_claimant_notice_reason.label')
         dd.govuk-summary-list__value = @hash_store.dig(:earnings_and_benefits_answers, :disagree_claimant_notice_reason)

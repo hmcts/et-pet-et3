@@ -149,7 +149,7 @@ RSpec.feature "Fill in whole form", js: true do
       expect(earnings_and_benefits_table.queried_pay_before_tax_period_row.queried_pay_before_tax_period_answer).to have_text t(@claimant.queried_pay_before_tax_period)
       expect(earnings_and_benefits_table.queried_take_home_pay_row.queried_take_home_pay_answer).to have_text ActionController::Base.helpers.number_to_currency(@claimant.queried_take_home_pay, unit: '£')
       expect(earnings_and_benefits_table.queried_take_home_pay_period_row.queried_take_home_pay_period_answer).to have_text t(@claimant.queried_take_home_pay_period)
-      expect(earnings_and_benefits_table.agree_with_claimant_notice_row.agree_with_claimant_notice_answer).to have_text t(@claimant.agree_with_claimant_notice)
+      expect(earnings_and_benefits_table.agree_with_claimant_notice_row.agree_with_claimant_notice_answer).to have_text t("questions.earnings_and_benefits.agree_with_claimant_notice.options.#{@claimant.agree_with_claimant_notice}")
       expect(earnings_and_benefits_table.disagree_claimant_notice_reason_row.disagree_claimant_notice_reason_answer).to have_text @claimant.disagree_claimant_notice_reason
       expect(earnings_and_benefits_table.agree_with_claimant_pension_benefits_row.agree_with_claimant_pension_benefits_answer).to have_text t(@claimant.agree_with_claimant_pension_benefits)
 
@@ -228,7 +228,7 @@ RSpec.feature "Fill in whole form", js: true do
               expect(request_body["data"][0]["data"]["queried_pay_before_tax_period"]).to eql @claimant.queried_pay_before_tax_period.to_s.split('.').last.titleize
               expect(request_body["data"][0]["data"]["queried_take_home_pay"]).to eql @claimant.queried_take_home_pay
               expect(request_body["data"][0]["data"]["queried_take_home_pay_period"]).to eql @claimant.queried_take_home_pay_period.to_s.split('.').last.titleize
-              expect(request_body["data"][0]["data"]["agree_with_claimant_notice"]).to eql false
+              expect(request_body["data"][0]["data"]["agree_with_claimant_notice"]).to eql({no: 'false', yes: 'true', not_applicable: 'not_applicable'}[@claimant.agree_with_claimant_notice])
               expect(request_body["data"][0]["data"]["disagree_claimant_notice_reason"]).to eql @claimant.disagree_claimant_notice_reason
               expect(request_body["data"][0]["data"]["agree_with_claimant_pension_benefits"]).to eql false
               expect(request_body["data"][0]["data"]["disagree_claimant_pension_benefits_reason"]).to eql @claimant.disagree_claimant_pension_benefits_reason

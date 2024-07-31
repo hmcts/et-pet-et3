@@ -13,7 +13,7 @@ FactoryBot.define do
     disagree_claimants_job_or_title {"lorem ipsum job title"}
     agree_with_claimants_hours {:no}
     queried_hours {32.0}
-    agree_with_earnings_details {:"questions.earnings_and_benefits.agree_with_earnings_details.options.no"}
+    agree_with_earnings_details {:no}
     queried_pay_before_tax {1000.0}
     queried_pay_before_tax_period {:"questions.earnings_and_benefits.queried_pay_before_tax_period.options.monthly"}
     queried_take_home_pay {900.0}
@@ -39,7 +39,7 @@ FactoryBot.define do
     disagree_claimants_job_or_title {nil}
     agree_with_claimants_hours {:no}
     queried_hours {"string"}
-    agree_with_earnings_details {:"questions.earnings_and_benefits.agree_with_earnings_details.options.no"}
+    agree_with_earnings_details {:no}
     queried_pay_before_tax {"string"}
     queried_pay_before_tax_period {:"questions.earnings_and_benefits.queried_pay_before_tax_period.options.weekly"}
     queried_take_home_pay {"string"}

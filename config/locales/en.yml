@@ -672,6 +672,7 @@ en:
         options:
           'true': 'Yes'
           'false': 'No'
+          'not_applicable': 'Not applicable'
       queried_pay_before_tax:
         label: Pay before tax
         hint: Including overtime, commission, bonuses, etc. For example, 28000

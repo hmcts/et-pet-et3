@@ -147,6 +147,7 @@ en:
         options:
           monthly: Monthly
           weekly: Weekly
+          annually: Annually
       queried_take_home_pay:
         label: Normal take-home pay (optional)
       queried_take_home_pay_period:
@@ -154,6 +155,7 @@ en:
         options:
           monthly: Monthly
           weekly: Weekly
+          annually: Annually
       agree_with_claimant_notice:
         label: Are the details about being paid for or working a period of notice correct? (optional)
         options:

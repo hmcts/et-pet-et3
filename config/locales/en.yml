@@ -681,6 +681,7 @@ en:
         options:
           Monthly: Monthly
           Weekly: Weekly
+          Annually: Annually
       queried_take_home_pay:
         label: Normal take-home pay
         hint: Including overtime, commission, bonuses, etc. For example, 20000
@@ -689,6 +690,7 @@ en:
         options:
           Monthly: Monthly
           Weekly: Weekly
+          Annually: Annually
       agree_with_claimant_notice:
         label: Are the details about being paid for or working a period of notice correct?
         options:

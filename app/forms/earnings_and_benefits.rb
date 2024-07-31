@@ -1,5 +1,5 @@
 class EarningsAndBenefits < BaseForm
-  attribute :agree_with_claimants_hours, :boolean
+  attribute :agree_with_claimants_hours, :string
   attribute :queried_hours, :float
   attribute :agree_with_earnings_details, :boolean
   attribute :queried_pay_before_tax, :currency_float
@@ -19,7 +19,7 @@ class EarningsAndBenefits < BaseForm
       agree_with_claimant_pension_benefits: agree_with_claimant_pension_benefits
     }
 
-    earnings_and_benefits_hash[:queried_hours] = queried_hours if earnings_and_benefits_hash[:agree_with_claimants_hours] == false
+    earnings_and_benefits_hash[:queried_hours] = queried_hours if earnings_and_benefits_hash[:agree_with_claimants_hours] == 'false'
     if earnings_and_benefits_hash[:agree_with_earnings_details] == false
       earnings_and_benefits_hash.merge!(queried_pay_before_tax: queried_pay_before_tax,
                                         queried_pay_before_tax_period: queried_pay_before_tax_period,
@@ -54,7 +54,7 @@ class EarningsAndBenefits < BaseForm
   private
 
   def disagree_claimants_hours?
-    agree_with_claimants_hours == false
+    agree_with_claimants_hours == 'false'
   end
 
   def disagree_earnings_details?

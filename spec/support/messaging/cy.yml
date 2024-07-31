@@ -131,6 +131,7 @@ cy:
         options:
           'yes': Ydy
           'no': Nac ydy
+          'not_applicable': 'Ddim yn berthnasol'
       queried_hours:
         label: "Dywedwch beth ydych chi’n credu yw’r oriau gwaith cywir (dewisol)"
       agree_with_earnings_details:

@@ -11,7 +11,7 @@ FactoryBot.define do
     continued_employment {:no}
     agree_with_claimants_description_of_job_or_title { :no }
     disagree_claimants_job_or_title {"lorem ipsum job title"}
-    agree_with_claimants_hours {:"questions.earnings_and_benefits.agree_with_claimants_hours.options.no"}
+    agree_with_claimants_hours {:no}
     queried_hours {32.0}
     agree_with_earnings_details {:"questions.earnings_and_benefits.agree_with_earnings_details.options.no"}
     queried_pay_before_tax {1000.0}
@@ -37,7 +37,7 @@ FactoryBot.define do
     continued_employment {:no}
     agree_with_claimants_description_of_job_or_title { :yes }
     disagree_claimants_job_or_title {nil}
-    agree_with_claimants_hours {:"questions.earnings_and_benefits.agree_with_claimants_hours.options.no"}
+    agree_with_claimants_hours {:no}
     queried_hours {"string"}
     agree_with_earnings_details {:"questions.earnings_and_benefits.agree_with_earnings_details.options.no"}
     queried_pay_before_tax {"string"}

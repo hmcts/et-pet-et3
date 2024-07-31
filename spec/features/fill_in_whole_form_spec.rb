@@ -142,7 +142,7 @@ RSpec.feature "Fill in whole form", js: true do
       expect(confirmation_of_supplied_details_page).to have_confirmation_of_earnings_and_benefits_answers
 
       earnings_and_benefits_table = confirmation_of_supplied_details_page.confirmation_of_earnings_and_benefits_answers
-      expect(earnings_and_benefits_table.agree_with_claimants_hours_row.agree_with_claimants_hours_answer).to have_text t(@claimant.agree_with_claimants_hours)
+      expect(earnings_and_benefits_table.agree_with_claimants_hours_row.agree_with_claimants_hours_answer).to have_text t("questions.earnings_and_benefits.agree_with_claimants_hours.options.#{@claimant.agree_with_claimants_hours}")
       expect(earnings_and_benefits_table.queried_hours_row.queried_hours_answer).to have_text @claimant.queried_hours
       expect(earnings_and_benefits_table.agree_with_earnings_details_row.agree_with_earnings_details_answer).to have_text t(@claimant.agree_with_earnings_details)
       expect(earnings_and_benefits_table.queried_pay_before_tax_row.queried_pay_before_tax_answer).to have_text ActionController::Base.helpers.number_to_currency(@claimant.queried_pay_before_tax, unit: '£')
@@ -221,7 +221,7 @@ RSpec.feature "Fill in whole form", js: true do
               expect(request_body["data"][0]["data"]["continued_employment"]).to eql ({no: 'false', yes: 'true', not_applicable: 'not_applicable'}[@claimant.continued_employment])
               expect(request_body["data"][0]["data"]["agree_with_claimants_description_of_job_or_title"]).to eql ({no: 'false', yes: 'true', not_applicable: 'not_applicable'}[@claimant.agree_with_claimants_description_of_job_or_title])
               expect(request_body["data"][0]["data"]["disagree_claimants_job_or_title"]).to eql @claimant.disagree_claimants_job_or_title
-              expect(request_body["data"][0]["data"]["agree_with_claimants_hours"]).to eql false
+              expect(request_body["data"][0]["data"]["agree_with_claimants_hours"]).to eql({no: 'false', yes: 'true', not_applicable: 'not_applicable'}[@claimant.agree_with_claimants_hours])
               expect(request_body["data"][0]["data"]["queried_hours"]).to eql @claimant.queried_hours
               expect(request_body["data"][0]["data"]["agree_with_earnings_details"]).to eql false
               expect(request_body["data"][0]["data"]["queried_pay_before_tax"]).to eql @claimant.queried_pay_before_tax

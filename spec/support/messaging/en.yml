@@ -131,6 +131,7 @@ en:
         options:
           'yes': 'Yes'
           'no': 'No'
+          'not_applicable': 'Not applicable'
       queried_hours:
         label: Tell us the details you believe to be correct.
       agree_with_earnings_details:

@@ -95,7 +95,7 @@ module ET3
       # Earnings and Benefits Page
       def answer_earnings_and_benefits
         user = @claimant
-        earnings_and_benefits_page.agree_with_claimants_hours_question.set(user.agree_with_claimants_hours.to_s.split('.').last.to_sym)
+        earnings_and_benefits_page.agree_with_claimants_hours_question.set(user.agree_with_claimants_hours)
         earnings_and_benefits_page.queried_hours.set(user.queried_hours)
         earnings_and_benefits_page.agree_with_earnings_details_question.set(user.agree_with_earnings_details.to_s.split('.').last.to_sym)
         if user.agree_with_earnings_details.to_s.split('.').last == 'no'

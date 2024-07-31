@@ -4,7 +4,7 @@ RSpec.describe EarningsAndBenefits, type: :model do
 
   let(:populated_earnings_and_benefits) {
     described_class.new(
-      agree_with_claimants_hours: false,
+      agree_with_claimants_hours: 'false',
       queried_hours: 20.5,
       agree_with_earnings_details: false,
       queried_pay_before_tax: '£12,345.67',
@@ -75,7 +75,7 @@ RSpec.describe EarningsAndBenefits, type: :model do
   context 'when correctly populated' do
 
     it 'returns the correct claimants hours' do
-      expect(populated_earnings_and_benefits.agree_with_claimants_hours).to be false
+      expect(populated_earnings_and_benefits.agree_with_claimants_hours).to eql 'false'
     end
 
     it 'returns the correct queried hours' do
@@ -125,7 +125,7 @@ RSpec.describe EarningsAndBenefits, type: :model do
     end
 
     it 'will return the agree_with_claimants_hours key and value pair' do
-      expect(populated_earnings_and_benefits.to_h).to include(agree_with_claimants_hours: false)
+      expect(populated_earnings_and_benefits.to_h).to include(agree_with_claimants_hours: 'false')
     end
 
     it 'will return the queried_hours key and value pair' do
@@ -240,14 +240,14 @@ RSpec.describe EarningsAndBenefits, type: :model do
 
   context "when agreeing with claimants hours of work" do
     it 'will not validate queried hours' do
-      populated_earnings_and_benefits.agree_with_claimants_hours = true
+      populated_earnings_and_benefits.agree_with_claimants_hours = 'true'
       populated_earnings_and_benefits.queried_hours = "a string"
 
       expect(populated_earnings_and_benefits).to be_valid
     end
 
     it 'will not hash queried hours' do
-      populated_earnings_and_benefits.agree_with_claimants_hours = true
+      populated_earnings_and_benefits.agree_with_claimants_hours = 'true'
       populated_earnings_and_benefits.queried_hours = "a string"
 
       expect(populated_earnings_and_benefits.to_h).not_to include(:queried_hours)
@@ -256,7 +256,7 @@ RSpec.describe EarningsAndBenefits, type: :model do
 
   context "when disagreeing with claimants hours of work" do
     it 'will raise a validation error on queried hours' do
-      populated_earnings_and_benefits.agree_with_claimants_hours = false
+      populated_earnings_and_benefits.agree_with_claimants_hours = 'false'
       populated_earnings_and_benefits.queried_hours = "a string"
 
       populated_earnings_and_benefits.valid?
@@ -332,7 +332,7 @@ RSpec.describe EarningsAndBenefits, type: :model do
 
   context "when disagreeing with claimants notice" do
     it 'will raise a validation error on disagree claimant notice reason' do
-      populated_earnings_and_benefits.agree_with_claimants_hours = false
+      populated_earnings_and_benefits.agree_with_claimants_hours = 'false'
       populated_earnings_and_benefits.disagree_claimant_notice_reason = four_hundred_and_one_chars
 
       populated_earnings_and_benefits.valid?
@@ -359,7 +359,7 @@ RSpec.describe EarningsAndBenefits, type: :model do
 
   context "when disagreeing with claimant pension benefits" do
     it 'will raise a validation error on disagree claimant pension benefits reason' do
-      populated_earnings_and_benefits.agree_with_claimants_hours = false
+      populated_earnings_and_benefits.agree_with_claimants_hours = 'false'
       populated_earnings_and_benefits.disagree_claimant_pension_benefits_reason = three_hundred_fifty_one_chars
 
       populated_earnings_and_benefits.valid?

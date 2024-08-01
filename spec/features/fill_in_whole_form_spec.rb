@@ -239,7 +239,7 @@ RSpec.feature "Fill in whole form", js: true do
               expect(request_body["data"][0]["data"]["make_employer_contract_claim"]).to eql true
               expect(request_body["data"][0]["data"]["claim_information"]).to eql @respondent.claim_information
               expect(request_body["data"][0]["data"]["email_receipt"]).to eql ""
-              expect(request_body["data"][0]["data"]["pdf_template_reference"]).to eql "et3-v2-#{::ET3::Test::Messaging.instance.current_locale}"
+              expect(request_body["data"][0]["data"]["pdf_template_reference"]).to eql "et3-v3-#{::ET3::Test::Messaging.instance.current_locale}"
               expect(request_body["data"][0]["data"]["email_template_reference"]).to eql "et3-v1-#{::ET3::Test::Messaging.instance.current_locale}"
               expect(request_body["data"][0]["uuid"]).to be_an_instance_of(String)
               expect(request_body["data"][1]["command"]).to eql "BuildRespondent"

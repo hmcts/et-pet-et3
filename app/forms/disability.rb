@@ -1,5 +1,5 @@
 class Disability < BaseForm
-  attribute :disability, :boolean
+  attribute :disability, :string
   attribute :disability_information, :text
 
   def to_h
@@ -7,7 +7,7 @@ class Disability < BaseForm
       disability: disability
     }
 
-    disability_hash[:disability_information] = disability_information if disability_hash[:disability]
+    disability_hash[:disability_information] = disability_information if disabled?
 
     disability_hash
   end
@@ -22,6 +22,6 @@ class Disability < BaseForm
   private
 
   def disabled?
-    disability
+    disability == 'true'
   end
 end

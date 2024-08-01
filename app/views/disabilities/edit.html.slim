@@ -7,7 +7,7 @@
     div data-turbolinks="false"
       =  f.govuk_error_summary(t 'errors.header')
     = f.collection_radio_buttons :disability, optional: true
-    = f.revealed_content :disability, values: [:true]
+    = f.revealed_content :disability, values: ['true']
       .govuk-inset-text
         = f.text_area :disability_information, size: "70x20"
     = f.submit(t('components.common.save_and_continue_button'))

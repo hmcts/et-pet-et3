@@ -188,7 +188,7 @@ RSpec.feature "Fill in whole form", js: true do
       expect(confirmation_of_supplied_details_page).to have_confirmation_of_disability_answers
 
       disability_table = confirmation_of_supplied_details_page.confirmation_of_disability_answers
-      expect(disability_table.disability_row.disability_answer).to have_text t(@respondent.disability)
+      expect(disability_table.disability_row.disability_answer).to have_text t("questions.disabilities.disability.options.#{@respondent.disability}")
       expect(disability_table.disability_information_row.disability_information_answer).to have_text @respondent.disability_information
 
       expect(confirmation_of_supplied_details_page).to have_confirmation_of_employer_contract_claim_answers
@@ -261,7 +261,7 @@ RSpec.feature "Fill in whole form", js: true do
               expect(request_body["data"][1]["data"]["organisation_employ_gb"].to_s).to eql @respondent.organisation_employ_gb
               expect(request_body["data"][1]["data"]["organisation_more_than_one_site"]).to eql false
               expect(request_body["data"][1]["data"]["employment_at_site_number"]).to eql @respondent.employment_at_site_number
-              expect(request_body["data"][1]["data"]["disability"]).to eql true
+              expect(request_body["data"][1]["data"]["disability"]).to eql({no: 'false', yes: 'true', not_applicable: 'not_applicable'}[@respondent.disability])
               expect(request_body["data"][1]["data"]["disability_information"]).to eql @respondent.disability_information
               expect(request_body["data"][1]["data"]["allow_video_attendance"]).to eql @respondent.allow_phone_or_video_attendance.include?(:video)
               expect(request_body["data"][1]["data"]["allow_phone_attendance"]).to eql @respondent.allow_phone_or_video_attendance.include?(:phone)

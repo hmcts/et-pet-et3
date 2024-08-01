@@ -157,8 +157,8 @@ module ET3
       # Disability Page
       def answer_disability_question
         user = @respondent
-        disability_page.disability_question.set(user.disability.to_s.split('.').last.to_sym)
-        if user.disability.end_with?('.yes') && user.disability_information != nil
+        disability_page.disability_question.set(user.disability)
+        if user.disability == :yes && user.disability_information != nil
           disability_page.disability_information.set(user.disability_information)
         end
 

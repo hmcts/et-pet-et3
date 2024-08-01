@@ -840,6 +840,7 @@ cy:
         options:
           'true': 'Oes'
           'false': 'Nac oes'
+          'not_applicable': 'Ddim yn berthnasol'
       disability_information:
         label: "Byddai o gymorth i ni pe baech yn nodi beth yw'ch anabledd, a dweud pa gymorth, os o gwbl, fydd arnoch ei angen wrth i'ch hawliad fynd drwy'r system, gan gynnwys ar gyfer unrhyw wrandawiadau a gynhelir mewn adeilad tribiwnlys"
         hint: |

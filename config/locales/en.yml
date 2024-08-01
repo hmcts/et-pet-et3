@@ -769,6 +769,11 @@ en:
           post: Post
       representative_email:
         label: Email address
+      allow_phone_or_video_attendance:
+        label: Would you be able to take part in hearings by video and phone?
+        options:
+          "phone": "Yes, I can take part in phone hearings"
+          "video": "Yes, I can take part in video hearings"
   disabilities:
     edit:
       disability:

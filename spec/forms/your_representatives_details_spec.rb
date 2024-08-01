@@ -8,7 +8,7 @@ RSpec.describe YourRepresentativesDetails, type: :model do
       representative_building: 'Rep Building', representative_street: 'Rep Street', representative_town: 'Rep Town',
       representative_county: 'Rep County', representative_postcode: 'WC2 2BB', representative_phone: '0207 987 6543',
       representative_mobile: '07987654321', representative_dx_number: 'DX 123 London 456', representative_reference: 'Rep Ref',
-      representative_contact_preference: 'email', representative_email: 'your@representative.email'
+      representative_contact_preference: 'email', representative_email: 'your@representative.email', allow_phone_or_video_attendance: ['video']
     )
   }
 

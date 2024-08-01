@@ -112,7 +112,9 @@ class EtApiHandler
         "dx_number": full_hash[:your_representatives_details_answers][:representative_dx_number],
         "reference": full_hash[:your_representatives_details_answers][:representative_reference],
         "contact_preference": full_hash[:your_representatives_details_answers][:representative_contact_preference],
-        "email_address": full_hash[:your_representatives_details_answers][:representative_email]
+        "email_address": full_hash[:your_representatives_details_answers][:representative_email],
+        "allow_video_attendance": full_hash[:your_representatives_details_answers][:allow_phone_or_video_attendance]&.include?('video'),
+        "allow_phone_attendance": full_hash[:your_representatives_details_answers][:allow_phone_or_video_attendance]&.include?('phone')
       },
       "uuid": SecureRandom.uuid
     }

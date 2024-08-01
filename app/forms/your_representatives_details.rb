@@ -13,6 +13,7 @@ class YourRepresentativesDetails < BaseForm
   attribute :representative_reference, :string
   attribute :representative_contact_preference, :string
   attribute :representative_email, :string
+  attribute :allow_phone_or_video_attendance
 
   def to_h # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
     representatives_detail_hash = {
@@ -29,6 +30,7 @@ class YourRepresentativesDetails < BaseForm
       representative_dx_number: representative_dx_number,
       representative_reference: representative_reference,
       representative_contact_preference: representative_contact_preference,
+      allow_phone_or_video_attendance: allow_phone_or_video_attendance
     }
 
     representatives_detail_hash[:representative_email] = representative_email if representatives_detail_hash[:representative_contact_preference] == "email"
@@ -66,6 +68,10 @@ class YourRepresentativesDetails < BaseForm
   validates :representative_email,
     email_address: true,
     if: :prefer_email?
+
+  def allow_phone_or_video_attendance=(value)
+    write_attribute(:allow_phone_or_video_attendance, value&.reject(&:blank?))
+  end
 
   private
 

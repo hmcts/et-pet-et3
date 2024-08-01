@@ -230,6 +230,12 @@ cy:
           post: Post
       preference_email:
         label: Cyfeiriad e-bost
+      allow_phone_or_video_attendance:
+        label: "A ydych chi’n gallu cymryd rhan mewn gwrandawiadau drwy fideo a dros y ffôn?"
+        hint: "Ceir rhagor o fanylion am wrandawiadau fideo drwy ddilyn y ddolen a ganlyn: https://www.gov.uk/guidance/hmcts-telephone-and-video-hearings-during-coronavirus-outbreak"
+        options:
+          video: Gallaf gymryd rhan mewn gwrandawiad fideo
+          phone: Gallaf gymryd rhan mewn gwrandawiad dros y ffôn
     # Disability Page
     disabilities:
       disability:
@@ -342,7 +348,7 @@ cy:
       representative_reference: "Cyfeirnod"
       representative_contact_preference: "Sut hoffech i ni gysylltu â'ch cynrychiolydd?"
       preference_email: Cyfeiriad e-bost
-      preference_fax: Rhif ffacs
+      allow_phone_or_video_attendance: A ydych chi’n gallu cymryd rhan mewn gwrandawiadau drwy fideo a dros y ffôn?
     disabilities:
       disability: A oes gennych chi anabledd?
       disability_information: "Byddai o gymorth i ni pe baech yn nodi beth yw'ch anabledd, a dweud pa gymorth, os o gwbl, fydd arnoch ei angen wrth i'ch hawliad fynd drwy'r system, gan gynnwys ar gyfer unrhyw wrandawiadau a gynhelir mewn adeilad tribiwnlys"

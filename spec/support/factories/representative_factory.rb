@@ -20,6 +20,7 @@ FactoryBot.define do
     representative_reference {"Rep Ref"}
     representative_contact_preference {:"questions.your_representatives_details.representative_contact_preference.options.email"}
     representative_email { "contact@solicitorsrus.com" }
+    allow_phone_or_video_attendance { [:video] }
   end
 
   trait :representative_invalid do
@@ -40,5 +41,6 @@ FactoryBot.define do
     representative_reference {""}
     representative_contact_preference {:"questions.your_representatives_details.representative_contact_preference.options.email"}
     employer_contract_claim {:"questions.employer_contract_claim.yes.label"}
+    allow_phone_or_video_attendance { [] }
   end
 end

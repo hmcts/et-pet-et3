@@ -200,6 +200,10 @@ module ET3
         section :email_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.your_representatives_details.preference_email', exact: true do
           element :email_answer, :govuk_summary_list_col
         end
+        section :allow_phone_or_video_attendance_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.your_representatives_details.allow_phone_or_video_attendance', exact: true do
+          element :allow_phone_or_video_attendance_answer, :govuk_summary_list_col
+        end
+
         element :edit_representative_details_page_link, :link_named, 'links.confirmation_of_supplied_details.edit_representative_details_page', exact: true
 
       end

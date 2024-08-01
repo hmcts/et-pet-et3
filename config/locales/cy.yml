@@ -474,7 +474,6 @@ cy:
     queried_take_home_pay_period: cyfnod tâl terfynol arferol
     disagree_claimant_notice_reason: |
       rhowch y manylion sy’n gywir yn eich barn chi isod. Os na wnaethoch roi rhybudd iddo neu os na wnaethoch dalu iddo yn hytrach na gadael iddo weithio ei gyfnod o rybudd, eglurwch beth ddigwyddodd a pham
-    agree_with_claimant_pension_benefits: a yw’r manylion am bensiwn a buddion eraill a roddwyd gan yr hawlydd yn gywir?
     disagree_claimant_pension_benefits_reason: rhowch y manylion sy’n gywir yn eich barn chi.
     defend_claim: a ydych yn amddiffyn yr hawliad
     defend_claim_facts: rhowch y ffeithiau yr ydych yn dibynnu arnynt i amddiffyn yr hawliad hwn
@@ -765,6 +764,7 @@ cy:
         options:
           'true': 'Ydy'
           'false': 'Nac ydy'
+          'not_applicable': 'Ddim yn berthnasol'
       disagree_claimant_pension_benefits_reason:
         label: "Nodwch y manylion rydych chi’n credu sy’n gywir."
         hint: Gallwch ddefnyddio hyd at 350 o nodau. Gallwch uwchlwytho dogfen gyda rhagor o fanylion cyn ichi gyflwyno eich ymateb.

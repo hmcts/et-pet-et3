@@ -74,7 +74,7 @@
 			"reference": "Rep Ref",
 			"contact_preference": "email",
 			"email_address": "me@solicitors.com",
-			"disability": true,
+			"disability": 'true',
 			"disability_information": "Lorem ipsum disability"
 		},
 		"uuid": "{{$guid}}"
@@ -155,7 +155,7 @@
 				"reference": "Rep Ref",
 				"contact_preference": "email",
 				"email_address": "email@example.com",
-				"disability": true,
+				"disability": 'true',
 				"disability_information": "Lorem ipsum disability"
 			},
 			"uuid": "{{$guid}}"

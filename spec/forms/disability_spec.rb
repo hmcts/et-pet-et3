@@ -4,7 +4,7 @@ RSpec.describe Disability, type: :model do
 
   let(:populated_disability) {
     described_class.new(
-      disability: true, disability_information: 'Lorem ipsum disability'
+      disability: 'true', disability_information: 'Lorem ipsum disability'
     )
   }
 
@@ -24,7 +24,7 @@ RSpec.describe Disability, type: :model do
   context 'when correctly populated' do
 
     it 'returns the disability' do
-      expect(populated_disability.disability).to be true
+      expect(populated_disability.disability).to eql 'true'
     end
   end
 
@@ -34,7 +34,7 @@ RSpec.describe Disability, type: :model do
     end
 
     it 'will return the disability key and value pair' do
-      expect(populated_disability.to_h).to include(disability: true)
+      expect(populated_disability.to_h).to include(disability: 'true')
     end
 
     it 'will return the disability_information key and value pair' do
@@ -54,7 +54,7 @@ RSpec.describe Disability, type: :model do
 
   context 'when respondent has disability' do
     it 'will raise a validation if disability information is not entered' do
-      populated_disability.disability = true
+      populated_disability.disability = 'true'
       populated_disability.disability_information = nil
 
       populated_disability.valid?
@@ -63,7 +63,7 @@ RSpec.describe Disability, type: :model do
     end
 
     it 'will not raise a validation if disability information is provided' do
-      populated_disability.disability = true
+      populated_disability.disability = 'true'
       populated_disability.disability_information = 'Lorem ipsum disability'
 
       populated_disability.valid?
@@ -74,14 +74,14 @@ RSpec.describe Disability, type: :model do
 
   context "when respondent does not have a disability" do
     it 'will not validate disability information' do
-      populated_disability.disability = false
+      populated_disability.disability = 'false'
       populated_disability.disability_information = three_hundred_fifty_one_chars
 
       expect(populated_disability).to be_valid
     end
 
     it 'will not hash respondent disability information' do
-      populated_disability.disability = false
+      populated_disability.disability = 'false'
       populated_disability.disability_information = 'Lorem ipsum disability'
 
       expect(populated_disability.to_h).not_to include(:disability_information)

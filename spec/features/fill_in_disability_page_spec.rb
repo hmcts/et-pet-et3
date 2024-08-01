@@ -34,8 +34,8 @@ RSpec.feature "Fill in Disability Page", js: true do
     confirmation_of_supplied_details_page.confirmation_of_disability_answers.edit_disability_page_link.click
 
     expect(disability_page).to be_displayed
-    expect(disability_page.disability_question.value).to eql(t(@respondent.disability))
-    if @respondent.disability.end_with?('.yes')
+    expect(disability_page.disability_question.value).to eql(t("questions.disabilities.disability.options.#{@respondent.disability}"))
+    if @respondent.disability == :yes
       expect(disability_page.disability_information.value).to eql(@respondent.disability_information)
     end
   end

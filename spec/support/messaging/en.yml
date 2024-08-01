@@ -227,11 +227,9 @@ en:
         label: How would you prefer us to contact your representative? (optional)
         options:
           email: Email
-          fax: Fax
+          post: Post
       preference_email:
         label: Email address
-      preference_fax:
-        label: Fax number
     # Disability Page
     disabilities:
       disability:
@@ -344,7 +342,6 @@ en:
       representative_reference: Reference
       representative_contact_preference: How would you prefer us to contact your representative?
       preference_email: Email address
-      preference_fax: Fax number
     disabilities:
       disability: Do you have a disability?
       disability_information: It would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises

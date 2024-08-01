@@ -181,7 +181,6 @@ RSpec.feature "Fill in whole form", js: true do
       expect(your_rep_details_table.representative_reference_row.representative_reference_answer).to have_text @representative.representative_reference
       expect(your_rep_details_table.representative_contact_preference_row.representative_contact_preference_answer).to have_text t(@representative.representative_contact_preference)
       expect(your_rep_details_table.email_row.email_answer).to have_text nil
-      expect(your_rep_details_table.fax_row.fax_answer).to have_text @representative.representative_fax
 
       expect(confirmation_of_supplied_details_page).to have_confirmation_of_disability_answers
 
@@ -278,8 +277,7 @@ RSpec.feature "Fill in whole form", js: true do
               expect(request_body["data"][2]["data"]["dx_number"]).to eql @representative.dx_number
               expect(request_body["data"][2]["data"]["reference"]).to eql @representative.representative_reference
               expect(request_body["data"][2]["data"]["contact_preference"]).to eql @representative.representative_contact_preference.to_s.split('.').last
-              expect(request_body["data"][2]["data"]["email_address"]).to eql nil
-              expect(request_body["data"][2]["data"]["fax_number"]).to eql @representative.representative_fax
+              expect(request_body["data"][2]["data"]["email_address"]).to eql @representative.representative_email
               expect(request_body["data"][2]["uuid"]).to be_an_instance_of(String)
               expect(request.headers).to include("Content-Type" => "application/json", "Accept" => "application/json")
             }).to have_been_made.once

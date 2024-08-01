@@ -112,8 +112,7 @@ class EtApiHandler
         "dx_number": full_hash[:your_representatives_details_answers][:representative_dx_number],
         "reference": full_hash[:your_representatives_details_answers][:representative_reference],
         "contact_preference": full_hash[:your_representatives_details_answers][:representative_contact_preference],
-        "email_address": full_hash[:your_representatives_details_answers][:representative_email],
-        "fax_number": full_hash[:your_representatives_details_answers][:representative_fax]
+        "email_address": full_hash[:your_representatives_details_answers][:representative_email]
       },
       "uuid": SecureRandom.uuid
     }

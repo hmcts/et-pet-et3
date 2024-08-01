@@ -228,11 +228,8 @@ cy:
         options:
           email: E-bost
           post: Post
-          fax: Ffacs
       preference_email:
         label: Cyfeiriad e-bost
-      preference_fax:
-        label: Rhif ffacs
     # Disability Page
     disabilities:
       disability:

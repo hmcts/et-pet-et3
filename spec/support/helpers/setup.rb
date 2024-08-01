@@ -147,9 +147,6 @@ module ET3
           if user.representative_contact_preference.end_with?('.email')
             your_representatives_details_page.preference_email.set(user.representative_email)
           end
-          if user.representative_contact_preference.end_with?('.fax')
-            your_representatives_details_page.preference_fax.set(user.representative_fax)
-          end
           your_representatives_details_page.next
         else
           your_representative_page.next

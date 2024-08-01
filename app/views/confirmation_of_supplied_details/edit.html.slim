@@ -225,9 +225,6 @@
         dt.govuk-summary-list__key = t('your_representatives_details.edit.representative_email.label')
         dd.govuk-summary-list__value = @hash_store.dig(:your_representatives_details_answers, :representative_email)
       .govuk-summary-list__row
-        dt.govuk-summary-list__key = t('your_representatives_details.edit.representative_fax.label')
-        dd.govuk-summary-list__value = @hash_store.dig(:your_representatives_details_answers, :representative_fax)
-      .govuk-summary-list__row
         dt.govuk-summary-list__key
           = link_to(t('components.confirmation_of_supplied_details.edit_representative_details_page'), edit_your_representatives_details_path, class: 'govuk-link')
         dd.govuk-summary-list__value

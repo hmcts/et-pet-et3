@@ -767,11 +767,8 @@ en:
         options:
           email: Email
           post: Post
-          fax: Fax
       representative_email:
         label: Email address
-      representative_fax:
-        label: Fax number
   disabilities:
     edit:
       disability:

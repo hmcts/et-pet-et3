@@ -13,7 +13,6 @@ class YourRepresentativesDetails < BaseForm
   attribute :representative_reference, :string
   attribute :representative_contact_preference, :string
   attribute :representative_email, :string
-  attribute :representative_fax, :string
 
   def to_h # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
     representatives_detail_hash = {
@@ -33,7 +32,6 @@ class YourRepresentativesDetails < BaseForm
     }
 
     representatives_detail_hash[:representative_email] = representative_email if representatives_detail_hash[:representative_contact_preference] == "email"
-    representatives_detail_hash[:representative_fax] = representative_fax if representatives_detail_hash[:representative_contact_preference] == "fax"
 
     representatives_detail_hash
   end
@@ -68,17 +66,10 @@ class YourRepresentativesDetails < BaseForm
   validates :representative_email,
     email_address: true,
     if: :prefer_email?
-  validates :representative_fax,
-    phone_number: true,
-    if: :prefer_fax?
 
   private
 
   def prefer_email?
     representative_contact_preference == "email"
-  end
-
-  def prefer_fax?
-    representative_contact_preference == "fax"
   end
 end

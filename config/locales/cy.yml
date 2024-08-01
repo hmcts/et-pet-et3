@@ -825,11 +825,8 @@ cy:
         options:
           email: E-bost
           post: Post
-          fax: Ffacs
       representative_email:
         label: "Cyfeiriad e-bost "
-      representative_fax:
-        label: "Rhif ffacs "
   disabilities:
     edit:
       disability:

@@ -146,8 +146,7 @@
         dd.govuk-summary-list__value = @hash_store.dig(:earnings_and_benefits_answers, :disagree_claimant_notice_reason)
       .govuk-summary-list__row
         dt.govuk-summary-list__key = t('earnings_and_benefits.edit.agree_with_claimant_pension_benefits.label')
-        dd.govuk-summary-list__value = translate_stored_value(@hash_store.dig(:earnings_and_benefits_answers, :agree_with_claimant_pension_benefits),
-                'earnings_and_benefits.agree_with_claimant_pension_benefits')
+        dd.govuk-summary-list__value = t("earnings_and_benefits.edit.agree_with_claimant_pension_benefits.options.#{@hash_store.dig(:earnings_and_benefits_answers, :agree_with_claimant_pension_benefits)}")
       .govuk-summary-list__row data-attribute= "disagree_claimant_pension_benefits_reason"
         dt.govuk-summary-list__key = t('earnings_and_benefits.edit.disagree_claimant_pension_benefits_reason.label')
         dd.govuk-summary-list__value = @hash_store.dig(:earnings_and_benefits_answers, :disagree_claimant_pension_benefits_reason)

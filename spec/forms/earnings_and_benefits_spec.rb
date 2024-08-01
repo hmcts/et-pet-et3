@@ -13,7 +13,7 @@ RSpec.describe EarningsAndBenefits, type: :model do
       queried_take_home_pay_period: 'weekly',
       agree_with_claimant_notice: 'false',
       disagree_claimant_notice_reason: 'lorem ipsum notice',
-      agree_with_claimant_pension_benefits: false,
+      agree_with_claimant_pension_benefits: 'false',
       disagree_claimant_pension_benefits_reason: 'lorem ipsum pension'
     )
   }
@@ -111,7 +111,7 @@ RSpec.describe EarningsAndBenefits, type: :model do
     end
 
     it 'returns the correct claimant_pension_benefits' do
-      expect(populated_earnings_and_benefits.agree_with_claimant_pension_benefits).to be false
+      expect(populated_earnings_and_benefits.agree_with_claimant_pension_benefits).to eql 'false'
     end
 
     it 'returns the correct disagree' do
@@ -161,7 +161,7 @@ RSpec.describe EarningsAndBenefits, type: :model do
     end
 
     it 'will return the agree_with_claimant_pension_benefits key and value pair' do
-      expect(populated_earnings_and_benefits.to_h).to include(agree_with_claimant_pension_benefits: false)
+      expect(populated_earnings_and_benefits.to_h).to include(agree_with_claimant_pension_benefits: 'false')
     end
 
     it 'will return the disagree_claimant_pension_benefits_reason key and value pair' do
@@ -343,14 +343,14 @@ RSpec.describe EarningsAndBenefits, type: :model do
 
   context "when agreeing with claimant pension benefits" do
     it 'will not validate disagree claimant pension benefits reason' do
-      populated_earnings_and_benefits.agree_with_claimant_pension_benefits = true
+      populated_earnings_and_benefits.agree_with_claimant_pension_benefits = 'true'
       populated_earnings_and_benefits.disagree_claimant_pension_benefits_reason = three_hundred_fifty_one_chars
 
       expect(populated_earnings_and_benefits).to be_valid
     end
 
     it 'will not hash disagree claimant pension benefits reason' do
-      populated_earnings_and_benefits.agree_with_claimant_pension_benefits = true
+      populated_earnings_and_benefits.agree_with_claimant_pension_benefits = 'true'
       populated_earnings_and_benefits.disagree_claimant_pension_benefits_reason = three_hundred_fifty_one_chars
 
       expect(populated_earnings_and_benefits.to_h).not_to include(:disagree_claimant_pension_benefits_reason)

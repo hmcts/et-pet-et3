@@ -20,7 +20,7 @@ FactoryBot.define do
     queried_take_home_pay_period {:"questions.earnings_and_benefits.queried_take_home_pay_period.options.monthly"}
     agree_with_claimant_notice {:no}
     disagree_claimant_notice_reason {"lorem ipsum notice reason"}
-    agree_with_claimant_pension_benefits {:"questions.earnings_and_benefits.agree_with_claimant_pension_benefits.options.no"}
+    agree_with_claimant_pension_benefits {:no}
     disagree_claimant_pension_benefits_reason {"lorem ipsum claimant pension"}
     defend_claim {:"questions.responses.defend_claim.options.yes"}
     defend_claim_facts {"lorem ipsum defence"}
@@ -46,7 +46,7 @@ FactoryBot.define do
     queried_take_home_pay_period {:"questions.earnings_and_benefits.queried_take_home_pay_period.options.weekly"}
     agree_with_claimant_notice {:no}
     disagree_claimant_notice_reason { Faker::Lorem.characters(number: 451) }
-    agree_with_claimant_pension_benefits {:"questions.earnings_and_benefits.agree_with_claimant_pension_benefits.options.no"}
+    agree_with_claimant_pension_benefits {:no}
     disagree_claimant_pension_benefits_reason { Faker::Lorem.characters(number: 351) }
     defend_claim {:"questions.responses.defend_claim.options.yes"}
     defend_claim_facts { Faker::Lorem.characters(number: 2501) }

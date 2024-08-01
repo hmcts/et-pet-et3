@@ -61,8 +61,8 @@ RSpec.feature "Fill in Earnings and Benefits Page", js: true do
         expect(p.disagree_claimant_notice_reason.value).to eql user.disagree_claimant_notice_reason
       end
       earnings_and_benefits_page.agree_with_claimant_notice_question.set(:yes)
-      expect(p.agree_with_claimant_pension_benefits_question.value).to eql(t(user.agree_with_claimant_pension_benefits))
-      if user.agree_with_claimant_pension_benefits.to_s.split('.').last == 'no'
+      expect(p.agree_with_claimant_pension_benefits_question.value).to eql(t("questions.earnings_and_benefits.agree_with_claimant_pension_benefits.options.#{user.agree_with_claimant_pension_benefits}"))
+      if user.agree_with_claimant_pension_benefits == :no
         expect(p.disagree_claimant_pension_benefits_reason.value).to eql user.disagree_claimant_pension_benefits_reason
       end
       earnings_and_benefits_page.agree_with_claimant_notice_question.set(:no)

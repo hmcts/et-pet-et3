@@ -181,6 +181,9 @@ RSpec.feature "Fill in whole form", js: true do
       expect(your_rep_details_table.representative_reference_row.representative_reference_answer).to have_text @representative.representative_reference
       expect(your_rep_details_table.representative_contact_preference_row.representative_contact_preference_answer).to have_text t(@representative.representative_contact_preference)
       expect(your_rep_details_table.email_row.email_answer).to have_text nil
+      @representative.allow_phone_or_video_attendance.each do |option|
+        expect(your_rep_details_table.allow_phone_or_video_attendance_row.allow_phone_or_video_attendance_answer).to have_text t("questions.your_representatives_details.allow_phone_or_video_attendance.options.#{option}")
+      end
 
       expect(confirmation_of_supplied_details_page).to have_confirmation_of_disability_answers
 
@@ -278,6 +281,8 @@ RSpec.feature "Fill in whole form", js: true do
               expect(request_body["data"][2]["data"]["reference"]).to eql @representative.representative_reference
               expect(request_body["data"][2]["data"]["contact_preference"]).to eql @representative.representative_contact_preference.to_s.split('.').last
               expect(request_body["data"][2]["data"]["email_address"]).to eql @representative.representative_email
+              expect(request_body["data"][2]["data"]["allow_video_attendance"]).to eql @representative.allow_phone_or_video_attendance.include?(:video)
+              expect(request_body["data"][2]["data"]["allow_phone_attendance"]).to eql @representative.allow_phone_or_video_attendance.include?(:phone)
               expect(request_body["data"][2]["uuid"]).to be_an_instance_of(String)
               expect(request.headers).to include("Content-Type" => "application/json", "Accept" => "application/json")
             }).to have_been_made.once

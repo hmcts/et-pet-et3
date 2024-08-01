@@ -24,6 +24,6 @@ class YourRepresentativesDetailsController < ApplicationController
       :representative_org_name, :representative_name, :representative_building, :representative_street,
       :representative_town, :representative_county, :representative_postcode, :representative_phone,
       :representative_mobile, :representative_dx_number, :representative_reference, :representative_contact_preference,
-      :representative_email)
+      :representative_email, allow_phone_or_video_attendance: [])
   end
 end

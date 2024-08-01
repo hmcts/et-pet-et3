@@ -147,6 +147,7 @@ module ET3
           if user.representative_contact_preference.end_with?('.email')
             your_representatives_details_page.preference_email.set(user.representative_email)
           end
+          your_representatives_details_page.allow_phone_or_video_attendance_question.set(user.allow_phone_or_video_attendance)
           your_representatives_details_page.next
         else
           your_representative_page.next

@@ -25,5 +25,5 @@
     = f.revealed_content :representative_contact_preference, values: [:email]
       .govuk-inset-text
         = f.text_field :representative_email
-
+    = f.collection_check_boxes :allow_phone_or_video_attendance
     = f.submit(t('components.common.save_and_continue_button'))

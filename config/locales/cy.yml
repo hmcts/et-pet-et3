@@ -827,6 +827,12 @@ cy:
           post: Post
       representative_email:
         label: "Cyfeiriad e-bost "
+      allow_phone_or_video_attendance:
+        label: "A ydych chi’n gallu cymryd rhan mewn gwrandawiadau drwy fideo a dros y ffôn?"
+        hint: "Ceir rhagor o fanylion am wrandawiadau fideo drwy ddilyn y ddolen a ganlyn: https://www.gov.uk/guidance/hmcts-telephone-and-video-hearings-during-coronavirus-outbreak"
+        options:
+          video: Gallaf gymryd rhan mewn gwrandawiad fideo
+          phone: Gallaf gymryd rhan mewn gwrandawiad dros y ffôn
   disabilities:
     edit:
       disability:

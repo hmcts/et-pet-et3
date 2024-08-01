@@ -30,6 +30,7 @@ RSpec.feature "Fill in Your Representatives Details Page", js: true do
     if user.representative_contact_preference.end_with?('.email')
       your_representatives_details_page.preference_email.set(user.representative_email)
     end
+    your_representatives_details_page.allow_phone_or_video_attendance_question.set(user.allow_phone_or_video_attendance)
     your_representatives_details_page.next
 
     expect(disability_page).to be_displayed
@@ -108,5 +109,6 @@ RSpec.feature "Fill in Your Representatives Details Page", js: true do
     if user.representative_contact_preference.end_with?('.email')
       expect(your_representatives_details_page.preference_email.value).to eql user.representative_email
     end
+    your_representatives_details_page.allow_phone_or_video_attendance_question.set(user.allow_phone_or_video_attendance)
   end
 end

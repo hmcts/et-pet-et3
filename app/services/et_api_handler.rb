@@ -65,7 +65,7 @@ class EtApiHandler
       "data": {
         "name": full_hash[:respondents_detail_answers][:name],
         "company_number": full_hash[:respondents_detail_answers][:company_number],
-        "type_of_employer": I18n.t("respondents_details.edit.type_of_employer.options.#{full_hash[:respondents_detail_answers][:type_of_employer]}", locale: :en),
+        "type_of_employer": full_hash[:respondents_detail_answers][:type_of_employer].then {|v| v.empty? ? v : I18n.t("respondents_details.edit.type_of_employer.options.#{v}" , locale: :en)},
         "title": full_hash[:respondents_detail_answers][:title] == 'Other' ? full_hash[:respondents_detail_answers][:other_title] : full_hash[:respondents_detail_answers][:title],
         "contact": full_hash[:respondents_detail_answers][:contact],
         "address_attributes": {

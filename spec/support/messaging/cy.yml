@@ -24,6 +24,29 @@ cy:
         label: "Rhif yr achos"
       name:
         label: Enw'r unigolyn, cwmni neu sefydliad
+      company_number:
+        label: Nodwch rif y cwmni, os yw'm berthnasol (dewisol)
+      type_of_employer:
+        label: Pa fath o gyflogwr yw'r atebydd ? (dewisol)
+        options:
+          '': Dewiswch os gwelwch yn dda
+          individual: Unigol
+          limited_company: Cwmni cyfyngedig
+          partnership: Partneriaeth
+          unincorporated_association: Cymdeithas anghorfforedig (fel clwb chwaraeon)
+          other: Arall
+      title:
+        label: Teitl (dewisol)
+        options:
+          '': Dewiswch
+          Mr: Mr
+          Mrs: Mrs
+          Miss: Miss
+          Ms: Ms
+          Mx: Mx
+          Other: Arall
+      other_title:
+        label: Arall
       contact:
         label: Enw llawn y cyswllt (dewisol)
       building_name:
@@ -47,9 +70,6 @@ cy:
         options:
           email: E-bost
           post: Post
-          fax: Ffacs
-      fax_number:
-        label: Rhif ffacs
       email_address:
         label: Cyfeiriad e-bost
       organisation_employ_gb:
@@ -61,11 +81,12 @@ cy:
           'no': Nac oes
       employment_at_site_number:
         label: "Faint o bobl sy’n gyflogedig ar y safle ble'r oedd yr hawlydd yn gweithio?"
-      video_call:
-        label: A allech chi gymryd rhan mewn gwrandawiad drwy fideo? (angen mynediad i'r rhyngrwyd).
+      allow_phone_or_video_attendance:
+        label: "A ydych chi’n gallu cymryd rhan mewn gwrandawiadau drwy fideo a dros y ffôn?"
+        hint: "Ceir rhagor o fanylion am wrandawiadau fideo drwy ddilyn y ddolen a ganlyn: https://www.gov.uk/guidance/hmcts-telephone-and-video-hearings-during-coronavirus-outbreak"
         options:
-          'yes': Gallaf
-          'no': Na allaf
+          video: Gallaf gymryd rhan mewn gwrandawiad fideo
+          phone: Gallaf gymryd rhan mewn gwrandawiad dros y ffôn
     # Claimant's Details Page
     claimants_details:
       claimants_name:
@@ -82,6 +103,7 @@ cy:
         options:
           'yes': Ydy
           'no': Nac ydy
+          'not_applicable': 'Ddim yn berthnasol'
       employment_start:
         label: "Pa bryd ddechreuodd ei gyflogaeth (dewisol)"
       employment_end:
@@ -93,11 +115,13 @@ cy:
         options:
           'yes': Ydy
           'no': Nac ydy
+          'not_applicable': 'Ddim yn berthnasol'
       agree_with_claimants_description_of_job_or_title:
         label: "A yw disgrifiad yr hawlydd o’i swydd neu deitl ei swydd yn gywir? (dewisol)"
         options:
           'yes': Ydy
           'no': Nac ydy
+          'not_applicable': 'Ddim yn berthnasol'
       disagree_claimants_job_or_title:
         label: "Rhowch y manylion sy’n gywir yn eich barn chi (dewisol)"
     # Earnings and Benefits Page
@@ -107,6 +131,7 @@ cy:
         options:
           'yes': Ydy
           'no': Nac ydy
+          'not_applicable': 'Ddim yn berthnasol'
       queried_hours:
         label: "Dywedwch beth ydych chi’n credu yw’r oriau gwaith cywir (dewisol)"
       agree_with_earnings_details:
@@ -114,6 +139,7 @@ cy:
         options:
           'yes': Ydy
           'no': Nac ydy
+          'not_applicable': 'Ddim yn berthnasol'
       queried_pay_before_tax:
         label: "Tâl cyn treth (dewisol)"
       queried_pay_before_tax_period:
@@ -121,6 +147,7 @@ cy:
         options:
           monthly: Misol
           weekly: Wythnosol
+          annually: Yn flynyddol
       queried_take_home_pay:
         label: "Tâl terfynol arferol (dewisol)"
       queried_take_home_pay_period:
@@ -128,11 +155,13 @@ cy:
         options:
           monthly: Misol
           weekly: Wythnosol
+          annually: Yn flynyddol
       agree_with_claimant_notice:
         label: "A yw’r manylion am gael eich talu am neu weithio cyfnod o rybudd yn gywir? (dewisol)"
         options:
           'yes': Ydy
           'no': Nac ydy
+          'not_applicable': 'Ddim yn berthnasol'
       disagree_claimant_notice_reason:
         label: "Nodwch y manylion rydych chi’n credu sy’n gywir. (dewisol)"
       agree_with_claimant_pension_benefits:
@@ -140,6 +169,7 @@ cy:
         options:
           'yes': Ydy
           'no': Nac ydy
+          'not_applicable': 'Ddim yn berthnasol'
       disagree_claimant_pension_benefits_reason:
         label: "Nodwch y manylion rydych chi’n credu sy’n gywir. (dewisol)"
     # Response Page
@@ -198,11 +228,14 @@ cy:
         options:
           email: E-bost
           post: Post
-          fax: Ffacs
       preference_email:
         label: Cyfeiriad e-bost
-      preference_fax:
-        label: Rhif ffacs
+      allow_phone_or_video_attendance:
+        label: "A ydych chi’n gallu cymryd rhan mewn gwrandawiadau drwy fideo a dros y ffôn?"
+        hint: "Ceir rhagor o fanylion am wrandawiadau fideo drwy ddilyn y ddolen a ganlyn: https://www.gov.uk/guidance/hmcts-telephone-and-video-hearings-during-coronavirus-outbreak"
+        options:
+          video: Gallaf gymryd rhan mewn gwrandawiad fideo
+          phone: Gallaf gymryd rhan mewn gwrandawiad dros y ffôn
     # Disability Page
     disabilities:
       disability:
@@ -210,6 +243,7 @@ cy:
         options:
           'yes': Oes
           'no': Nac oes
+          'not_applicable': 'Ddim yn berthnasol'
       disability_information:
         label: "Byddai o gymorth i ni pe baech yn nodi beth yw'ch anabledd, a dweud pa gymorth, os o gwbl, fydd arnoch ei angen wrth i'ch hawliad fynd drwy'r system, gan gynnwys ar gyfer unrhyw wrandawiadau a gynhelir mewn adeilad tribiwnlys"
         hint: "NODER - Dim ond gwybodaeth gyfyngedig y gallwch roi yma (hyd at 350 o nodau). Os hoffech gynnwys rhagor o wybodaeth, defnyddiwch y cyfleuster sydd ar ddiwedd y ffurflen hon i lwytho ffeil Rich Text Format (.rtf)."
@@ -254,6 +288,9 @@ cy:
     respondents_details:
       case_number: "Rhif yr achos"
       name: Enw'r unigolyn, cwmni neu sefydliad
+      company_number: Nodwch rif y cwmni, os yw'm berthnasol
+      type_of_employer: Pa fath o gyflogwr yw'r atebydd ?
+      title: Teitl
       contact: Enw llawn y cyswllt
       building_name: Enw neu rif yr adeilad
       street: Stryd
@@ -264,12 +301,11 @@ cy:
       contact_number: Rhif cyswllt
       contact_mobile_number: Rhif ffôn symudol
       contact_preference: Sut hoffech i ni gysylltu â chi?
-      fax_number: Rhif ffacs
       email_address: Cyfeiriad e-bost
       organisation_employ_gb: "Faint o bobl sy’n gyflogedig gan y sefydliad hwn ym Mhrydain Fawr?"
       organisation_more_than_one_site: "A oes gan y sefydliad hwn fwy nag un safle ym Mhrydain Fawr?"
       employment_at_site_number: "Faint o bobl sy’n gyflogedig ar y safle ble'r oedd yr hawlydd yn gweithio?"
-      video_call: A allech chi gymryd rhan mewn gwrandawiad drwy fideo? (angen mynediad i'r rhyngrwyd).
+      allow_phone_or_video_attendance: A ydych chi’n gallu cymryd rhan mewn gwrandawiadau drwy fideo a dros y ffôn?
     claimants_details:
       claimants_name: Enw llawn yr hawlydd
       agree_with_early_conciliation_details: "A ydych chi'n cytuno gyda'r manylion a roddodd yr hawlydd ynghylch Cymodi Cynnar gydag Acas?"
@@ -313,7 +349,7 @@ cy:
       representative_reference: "Cyfeirnod"
       representative_contact_preference: "Sut hoffech i ni gysylltu â'ch cynrychiolydd?"
       preference_email: Cyfeiriad e-bost
-      preference_fax: Rhif ffacs
+      allow_phone_or_video_attendance: A ydych chi’n gallu cymryd rhan mewn gwrandawiadau drwy fideo a dros y ffôn?
     disabilities:
       disability: A oes gennych chi anabledd?
       disability_information: "Byddai o gymorth i ni pe baech yn nodi beth yw'ch anabledd, a dweud pa gymorth, os o gwbl, fydd arnoch ei angen wrth i'ch hawliad fynd drwy'r system, gan gynnwys ar gyfer unrhyw wrandawiadau a gynhelir mewn adeilad tribiwnlys"
@@ -665,7 +701,7 @@ cy:
     return_link: Rhowch adborth
   hint:
     respondents_detail:
-      video_call:
+      allow_phone_or_video_attendance:
   mailer:
     reference_number: Eich rhif hawliad
     access_details_email:

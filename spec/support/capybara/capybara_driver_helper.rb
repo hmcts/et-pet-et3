@@ -4,7 +4,7 @@ Capybara.configure do |config|
   config.default_max_wait_time = 10
   config.match = :prefer_exact
   config.exact = true
-  config.ignore_hidden_elements = false
+  config.ignore_hidden_elements = true
   config.visible_text_only = true
   config.server = :webrick
 end
@@ -20,7 +20,7 @@ end
 Capybara.register_driver :chrome_local do |app|
   options = Selenium::WebDriver::Chrome::Options.new
   options.add_argument('--no-sandbox')
-  options.add_argument('--headless')
+  options.add_argument('--headless=new')
   options.add_argument('--lang=en-GB')
   Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
 end

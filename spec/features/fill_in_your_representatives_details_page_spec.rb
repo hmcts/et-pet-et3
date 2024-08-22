@@ -30,9 +30,7 @@ RSpec.feature "Fill in Your Representatives Details Page", js: true do
     if user.representative_contact_preference.end_with?('.email')
       your_representatives_details_page.preference_email.set(user.representative_email)
     end
-    if user.representative_contact_preference.end_with?('.fax')
-      your_representatives_details_page.preference_fax.set(user.representative_fax)
-    end
+    your_representatives_details_page.allow_phone_or_video_attendance_question.set(user.allow_phone_or_video_attendance)
     your_representatives_details_page.next
 
     expect(disability_page).to be_displayed
@@ -53,9 +51,6 @@ RSpec.feature "Fill in Your Representatives Details Page", js: true do
     your_representatives_details_page.representative_contact_preference_question.set(user.representative_contact_preference.to_s.split('.').last.to_sym)
     if user.representative_contact_preference.end_with?('.email')
       your_representatives_details_page.preference_email.set(user.representative_email)
-    end
-    if user.representative_contact_preference.end_with?('.fax')
-      your_representatives_details_page.preference_fax.set(user.representative_fax)
     end
     your_representatives_details_page.next
 
@@ -92,9 +87,6 @@ RSpec.feature "Fill in Your Representatives Details Page", js: true do
     if user.representative_contact_preference.end_with?('.email')
       your_representatives_details_page.preference_email.set(user.representative_email)
     end
-    if user.representative_contact_preference.end_with?('.fax')
-      your_representatives_details_page.preference_fax.set(user.representative_fax)
-    end
     your_representatives_details_page.next
 
     confirmation_of_supplied_details_page.load(locale: current_locale_parameter)
@@ -117,8 +109,6 @@ RSpec.feature "Fill in Your Representatives Details Page", js: true do
     if user.representative_contact_preference.end_with?('.email')
       expect(your_representatives_details_page.preference_email.value).to eql user.representative_email
     end
-    if user.representative_contact_preference.end_with?('.fax')
-      expect(your_representatives_details_page.preference_fax.value).to eql user.representative_fax
-    end
+    your_representatives_details_page.allow_phone_or_video_attendance_question.set(user.allow_phone_or_video_attendance)
   end
 end

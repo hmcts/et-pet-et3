@@ -50,7 +50,11 @@ module ET3
       def answer_respondents_details
         user = @respondent
         respondents_details_page.case_number_question.set(user.case_number)
+        respondents_details_page.title_question.set(user.title)
+        respondents_details_page.other_title_question.set(user.other_title) if user.other_title.present?
         respondents_details_page.name_question.set(user.name)
+        respondents_details_page.company_number_question.set(user.company_number)
+        respondents_details_page.type_of_employer_question.set(user.company_type)
         respondents_details_page.contact_question.set(user.contact)
         respondents_details_page.building_name_question.set(user.building_name)
         respondents_details_page.street_question.set(user.street_name)
@@ -62,11 +66,10 @@ module ET3
         respondents_details_page.contact_mobile_number_question.set(user.contact_mobile_number)
         respondents_details_page.contact_preference_question.set(user.contact_preference.to_s.split('.').last.to_sym)
         respondents_details_page.email_address_question.set(user.email_address) if user.contact_preference.to_s.split('.').last == 'email'
-        respondents_details_page.fax_number_question.set(user.fax_number) if user.contact_preference.to_s.split('.').last == 'fax'
         respondents_details_page.organisation_more_than_one_site_question.set(user.organisation_more_than_one_site.to_s.split('.').last.to_sym)
         respondents_details_page.employment_at_site_number_question.set(user.employment_at_site_number) if user.organisation_more_than_one_site.to_s.split('.')[-2] == 'yes'
         respondents_details_page.organisation_employ_gb_question.set(user.organisation_employ_gb)
-        respondents_details_page.video_call_question.set(user.video_call.to_s.split('.').last.to_sym)
+        respondents_details_page.allow_phone_or_video_attendance_question.set(user.allow_phone_or_video_attendance)
 
         respondents_details_page.next
       end
@@ -92,22 +95,22 @@ module ET3
       # Earnings and Benefits Page
       def answer_earnings_and_benefits
         user = @claimant
-        earnings_and_benefits_page.agree_with_claimants_hours_question.set(user.agree_with_claimants_hours.to_s.split('.').last.to_sym)
+        earnings_and_benefits_page.agree_with_claimants_hours_question.set(user.agree_with_claimants_hours)
         earnings_and_benefits_page.queried_hours.set(user.queried_hours)
-        earnings_and_benefits_page.agree_with_earnings_details_question.set(user.agree_with_earnings_details.to_s.split('.').last.to_sym)
-        if user.agree_with_earnings_details.to_s.split('.').last == 'no'
+        earnings_and_benefits_page.agree_with_earnings_details_question.set(user.agree_with_earnings_details)
+        if user.agree_with_earnings_details == :no
           earnings_and_benefits_page.queried_pay_before_tax.set(user.queried_pay_before_tax)
           earnings_and_benefits_page.queried_pay_before_tax_period.set(user.queried_pay_before_tax_period.to_s.split('.').last.to_sym)
           earnings_and_benefits_page.queried_take_home_pay.set(user.queried_take_home_pay)
           earnings_and_benefits_page.queried_take_home_pay_period.set(user.queried_take_home_pay_period.to_s.split('.').last.to_sym)
         end
-        earnings_and_benefits_page.agree_with_claimant_notice_question.set(user.agree_with_claimant_notice.to_s.split('.').last.to_sym)
-        if user.agree_with_claimant_notice.to_s.split('.').last == 'no'
+        earnings_and_benefits_page.agree_with_claimant_notice_question.set(user.agree_with_claimant_notice)
+        if user.agree_with_claimant_notice == :no
           earnings_and_benefits_page.disagree_claimant_notice_reason.set(user.disagree_claimant_notice_reason)
         end
         earnings_and_benefits_page.agree_with_claimant_notice_question.set(:yes)
-        earnings_and_benefits_page.agree_with_claimant_pension_benefits_question.set(user.agree_with_claimant_pension_benefits.to_s.split('.').last.to_sym)
-        if user.agree_with_claimant_pension_benefits.to_s.split('.').last == 'no'
+        earnings_and_benefits_page.agree_with_claimant_pension_benefits_question.set(user.agree_with_claimant_pension_benefits)
+        if user.agree_with_claimant_pension_benefits == :no
           earnings_and_benefits_page.disagree_claimant_pension_benefits_reason.set(user.disagree_claimant_pension_benefits_reason)
         end
         earnings_and_benefits_page.agree_with_claimant_notice_question.set(:no)
@@ -144,9 +147,7 @@ module ET3
           if user.representative_contact_preference.end_with?('.email')
             your_representatives_details_page.preference_email.set(user.representative_email)
           end
-          if user.representative_contact_preference.end_with?('.fax')
-            your_representatives_details_page.preference_fax.set(user.representative_fax)
-          end
+          your_representatives_details_page.allow_phone_or_video_attendance_question.set(user.allow_phone_or_video_attendance)
           your_representatives_details_page.next
         else
           your_representative_page.next
@@ -156,8 +157,8 @@ module ET3
       # Disability Page
       def answer_disability_question
         user = @respondent
-        disability_page.disability_question.set(user.disability.to_s.split('.').last.to_sym)
-        if user.disability.end_with?('.yes') && user.disability_information != nil
+        disability_page.disability_question.set(user.disability)
+        if user.disability == :yes && user.disability_information != nil
           disability_page.disability_information.set(user.disability_information)
         end
 

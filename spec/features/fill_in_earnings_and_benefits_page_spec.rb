@@ -45,24 +45,24 @@ RSpec.feature "Fill in Earnings and Benefits Page", js: true do
     user = @claimant
 
     earnings_and_benefits_page.tap do |p|
-      expect(p.agree_with_claimants_hours_question.value).to eql(t(user.agree_with_claimants_hours))
-      if user.agree_with_claimants_hours.to_s.split('.').last == 'no'
+      expect(p.agree_with_claimants_hours_question.value).to eql(t("questions.earnings_and_benefits.agree_with_claimants_hours.options.#{user.agree_with_claimants_hours}"))
+      if user.agree_with_claimants_hours == :no
         expect(p.queried_hours.value).to eql user.queried_hours.to_s
       end
-      expect(p.agree_with_earnings_details_question.value).to eql(t(user.agree_with_earnings_details))
-      if user.agree_with_earnings_details.to_s.split('.').last == 'no'
+      expect(p.agree_with_earnings_details_question.value).to eql(t("questions.earnings_and_benefits.agree_with_claimants_hours.options.#{user.agree_with_earnings_details}"))
+      if user.agree_with_earnings_details == :no
         expect(p.queried_pay_before_tax.value.gsub(',', '')).to eql sprintf('%.2f', user.queried_pay_before_tax)
         expect(p.queried_pay_before_tax_period.value).to eql t(user.queried_pay_before_tax_period)
         expect(p.queried_take_home_pay.value).to eql sprintf('%.2f', user.queried_take_home_pay)
         expect(p.queried_take_home_pay_period.value).to eql t(user.queried_take_home_pay_period)
       end
-      expect(p.agree_with_claimant_notice_question.value).to eql(t(user.agree_with_claimant_notice))
-      if user.agree_with_claimant_notice.to_s.split('.').last == 'no'
+      expect(p.agree_with_claimant_notice_question.value).to eql(t("questions.earnings_and_benefits.agree_with_claimant_notice.options.#{user.agree_with_claimant_notice}"))
+      if user.agree_with_claimant_notice == :no
         expect(p.disagree_claimant_notice_reason.value).to eql user.disagree_claimant_notice_reason
       end
       earnings_and_benefits_page.agree_with_claimant_notice_question.set(:yes)
-      expect(p.agree_with_claimant_pension_benefits_question.value).to eql(t(user.agree_with_claimant_pension_benefits))
-      if user.agree_with_claimant_pension_benefits.to_s.split('.').last == 'no'
+      expect(p.agree_with_claimant_pension_benefits_question.value).to eql(t("questions.earnings_and_benefits.agree_with_claimant_pension_benefits.options.#{user.agree_with_claimant_pension_benefits}"))
+      if user.agree_with_claimant_pension_benefits == :no
         expect(p.disagree_claimant_pension_benefits_reason.value).to eql user.disagree_claimant_pension_benefits_reason
       end
       earnings_and_benefits_page.agree_with_claimant_notice_question.set(:no)

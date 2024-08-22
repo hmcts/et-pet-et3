@@ -18,8 +18,9 @@ FactoryBot.define do
     have_representative {:"questions.your_representatives.have_representative.options.yes"}
     representative_mobile {"07987654321"}
     representative_reference {"Rep Ref"}
-    representative_contact_preference {:"questions.your_representatives_details.representative_contact_preference.options.fax"}
-    representative_fax {"0207 345 6789"}
+    representative_contact_preference {:"questions.your_representatives_details.representative_contact_preference.options.email"}
+    representative_email { "contact@solicitorsrus.com" }
+    allow_phone_or_video_attendance { [:video] }
   end
 
   trait :representative_invalid do
@@ -39,7 +40,7 @@ FactoryBot.define do
     representative_mobile {"string"}
     representative_reference {""}
     representative_contact_preference {:"questions.your_representatives_details.representative_contact_preference.options.email"}
-    representative_fax {"string"}
     employer_contract_claim {:"questions.employer_contract_claim.yes.label"}
+    allow_phone_or_video_attendance { [] }
   end
 end

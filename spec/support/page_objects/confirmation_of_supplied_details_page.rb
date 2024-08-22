@@ -12,6 +12,15 @@ module ET3
         section :name_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.respondents_details.name', exact: true do
           element :name_answer, :govuk_summary_list_col
         end
+        section :company_number_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.respondents_details.company_number', exact: true do
+          element :company_number_answer, :govuk_summary_list_col
+        end
+        section :type_of_employer_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.respondents_details.type_of_employer', exact: true do
+          element :type_of_employer_answer, :govuk_summary_list_col
+        end
+        section :title_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.respondents_details.title', exact: true do
+          element :title_answer, :govuk_summary_list_col
+        end
         section :contact_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.respondents_details.contact', exact: true do
           element :contact_answer, :govuk_summary_list_col
         end
@@ -45,17 +54,14 @@ module ET3
         section :email_address_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.respondents_details.email_address', exact: true do
           element :email_address_answer, :govuk_summary_list_col
         end
-        section :fax_number_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.respondents_details.fax_number', exact: true do
-          element :fax_number_answer, :govuk_summary_list_col
-        end
         section :organisation_employ_gb_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.respondents_details.organisation_employ_gb', exact: true do
           element :organisation_employ_gb_answer, :govuk_summary_list_col
         end
         section :organisation_more_than_one_site_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.respondents_details.organisation_more_than_one_site', exact: true do
           element :organisation_more_than_one_site_answer, :govuk_summary_list_col
         end
-        section :video_call_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.respondents_details.video_call', exact: true do
-          element :video_call_answer, :govuk_summary_list_col
+        section :allow_phone_or_video_attendance_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.respondents_details.allow_phone_or_video_attendance', exact: true do
+          element :allow_phone_or_video_attendance_answer, :govuk_summary_list_col
         end
         section :employment_at_site_number_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.respondents_details.employment_at_site_number', exact: true do
           element :employment_at_site_number_answer, :govuk_summary_list_col
@@ -194,9 +200,10 @@ module ET3
         section :email_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.your_representatives_details.preference_email', exact: true do
           element :email_answer, :govuk_summary_list_col
         end
-        section :fax_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.your_representatives_details.preference_fax', exact: true do
-          element :fax_answer, :govuk_summary_list_col
+        section :allow_phone_or_video_attendance_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.your_representatives_details.allow_phone_or_video_attendance', exact: true do
+          element :allow_phone_or_video_attendance_answer, :govuk_summary_list_col
         end
+
         element :edit_representative_details_page_link, :link_named, 'links.confirmation_of_supplied_details.edit_representative_details_page', exact: true
 
       end

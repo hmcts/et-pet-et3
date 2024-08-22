@@ -1,5 +1,6 @@
 require 'rails_helper'
 RSpec.feature "Fill in whole form", js: true do
+  include ET3::Test::I18n
 
   before do
     stub_et_api
@@ -35,6 +36,7 @@ RSpec.feature "Fill in whole form", js: true do
 
       expect(respondents_details_page.case_number_question.value).to eql ""
       expect(respondents_details_page.name_question.value).to eql ""
+      expect(respondents_details_page.company_number_question.value).to eql ""
       expect(respondents_details_page.contact_question.value).to eql ""
       expect(respondents_details_page.building_name_question.value).to eql ""
       expect(respondents_details_page.street_question.value).to eql ""
@@ -45,11 +47,10 @@ RSpec.feature "Fill in whole form", js: true do
       expect(respondents_details_page.contact_number_question.value).to eql ""
       expect(respondents_details_page.contact_mobile_number_question.value).to eql ""
       expect(respondents_details_page.contact_preference_question.value).to be_nil
-      expect(respondents_details_page.email_address_question.value).to eql ""
-      expect(respondents_details_page.fax_number_question.value).to eql ""
+      expect(respondents_details_page).not_to have_email_address_question
       expect(respondents_details_page.organisation_employ_gb_question.value).to eql ""
       expect(respondents_details_page.organisation_more_than_one_site_question.value).to be_nil
-      expect(respondents_details_page.employment_at_site_number_question.value).to eql ""
+      expect(respondents_details_page).not_to have_employment_at_site_number_question
     end
 
     scenario "correctly followed by removing the uploaded file will not submit it to the API" do
@@ -103,6 +104,9 @@ RSpec.feature "Fill in whole form", js: true do
       respondents_details_table = confirmation_of_supplied_details_page.confirmation_of_respondents_details_answers
       expect(respondents_details_table.case_number_row.case_number_answer).to have_text @respondent.case_number
       expect(respondents_details_table.name_row.name_answer).to have_text @respondent.name
+      expect(respondents_details_table.company_number_row.company_number_answer).to have_text @respondent.company_number
+      expect(respondents_details_table.type_of_employer_row.type_of_employer_answer).to have_text t("questions.respondents_details.type_of_employer.options.#{@respondent.company_type}")
+      expect(respondents_details_table.title_row.title_answer).to have_text @respondent.title.to_s.split('.').last == 'Other' ? @respondent.other_title : @respondent.title.to_s
       expect(respondents_details_table.contact_row.contact_answer).to have_text @respondent.contact
       expect(respondents_details_table.building_name_row.building_name_answer).to have_text @respondent.building_name
       expect(respondents_details_table.street_row.street_answer).to have_text @respondent.street_name
@@ -114,11 +118,12 @@ RSpec.feature "Fill in whole form", js: true do
       expect(respondents_details_table.mobile_number_row.mobile_number_answer).to have_text @respondent.contact_mobile_number
       expect(respondents_details_table.contact_preference_row.contact_preference_answer).to have_text t(@respondent.contact_preference)
       expect(respondents_details_table.email_address_row.email_address_answer).to have_text @respondent.email_address
-      expect(respondents_details_table.fax_number_row.fax_number_answer).to have_text nil
       expect(respondents_details_table.organisation_employ_gb_row.organisation_employ_gb_answer).to have_text @respondent.organisation_employ_gb
       expect(respondents_details_table.organisation_more_than_one_site_row.organisation_more_than_one_site_answer).to have_text t(@respondent.organisation_more_than_one_site)
       expect(respondents_details_table.employment_at_site_number_row.employment_at_site_number_answer).to have_text nil
-      expect(respondents_details_table.video_call_row.video_call_answer).to have_text t(@respondent.video_call)
+      @respondent.allow_phone_or_video_attendance.each do |option|
+        expect(respondents_details_table.allow_phone_or_video_attendance_row.allow_phone_or_video_attendance_answer).to have_text t("questions.respondents_details.allow_phone_or_video_attendance.options.#{option}")
+      end
 
       expect(confirmation_of_supplied_details_page).to have_confirmation_of_claimants_details_answers
 
@@ -126,27 +131,27 @@ RSpec.feature "Fill in whole form", js: true do
       expect(claimants_details_table.claimants_name_row.claimants_name_answer).to have_text @claimant.claimants_name
       expect(claimants_details_table.agree_with_early_conciliation_details_row.agree_with_early_conciliation_details_answer).to have_text t(@claimant.agree_with_early_conciliation_details)
       expect(claimants_details_table.disagree_conciliation_reason_row.disagree_conciliation_reason_answer).to have_text @claimant.disagree_conciliation_reason
-      expect(claimants_details_table.agree_with_employment_dates_row.agree_with_employment_dates_answer).to have_text t(@claimant.agree_with_employment_dates)
+      expect(claimants_details_table.agree_with_employment_dates_row.agree_with_employment_dates_answer).to have_text t("questions.claimants_details.agree_with_employment_dates.options.#{@claimant.agree_with_employment_dates}")
       expect(claimants_details_table.employment_start_row.employment_start_answer).to have_text @claimant.employment_start.to_date.strftime('%Y-%m-%d')
       expect(claimants_details_table.employment_end_row.employment_end_answer).to have_text @claimant.employment_end.to_date.strftime('%Y-%m-%d')
       expect(claimants_details_table.disagree_employment_row.disagree_employment_answer).to have_text @claimant.disagree_employment
-      expect(claimants_details_table.continued_employment_row.continued_employment_answer).to have_text t(@claimant.continued_employment)
-      expect(claimants_details_table.agree_with_claimants_description_of_job_or_title_row.agree_with_claimants_description_of_job_or_title_answer).to have_text t(@claimant.agree_with_claimants_description_of_job_or_title)
+      expect(claimants_details_table.continued_employment_row.continued_employment_answer).to have_text t("questions.claimants_details.continued_employment.options.#{@claimant.continued_employment}")
+      expect(claimants_details_table.agree_with_claimants_description_of_job_or_title_row.agree_with_claimants_description_of_job_or_title_answer).to have_text t("questions.claimants_details.agree_with_claimants_description_of_job_or_title.options.#{@claimant.agree_with_claimants_description_of_job_or_title}")
       expect(claimants_details_table.disagree_claimants_job_or_title_row.disagree_claimants_job_or_title_answer).to have_text @claimant.disagree_claimants_job_or_title
 
       expect(confirmation_of_supplied_details_page).to have_confirmation_of_earnings_and_benefits_answers
 
       earnings_and_benefits_table = confirmation_of_supplied_details_page.confirmation_of_earnings_and_benefits_answers
-      expect(earnings_and_benefits_table.agree_with_claimants_hours_row.agree_with_claimants_hours_answer).to have_text t(@claimant.agree_with_claimants_hours)
+      expect(earnings_and_benefits_table.agree_with_claimants_hours_row.agree_with_claimants_hours_answer).to have_text t("questions.earnings_and_benefits.agree_with_claimants_hours.options.#{@claimant.agree_with_claimants_hours}")
       expect(earnings_and_benefits_table.queried_hours_row.queried_hours_answer).to have_text @claimant.queried_hours
-      expect(earnings_and_benefits_table.agree_with_earnings_details_row.agree_with_earnings_details_answer).to have_text t(@claimant.agree_with_earnings_details)
+      expect(earnings_and_benefits_table.agree_with_earnings_details_row.agree_with_earnings_details_answer).to have_text t("questions.earnings_and_benefits.agree_with_claimants_hours.options.#{@claimant.agree_with_earnings_details}")
       expect(earnings_and_benefits_table.queried_pay_before_tax_row.queried_pay_before_tax_answer).to have_text ActionController::Base.helpers.number_to_currency(@claimant.queried_pay_before_tax, unit: '£')
       expect(earnings_and_benefits_table.queried_pay_before_tax_period_row.queried_pay_before_tax_period_answer).to have_text t(@claimant.queried_pay_before_tax_period)
       expect(earnings_and_benefits_table.queried_take_home_pay_row.queried_take_home_pay_answer).to have_text ActionController::Base.helpers.number_to_currency(@claimant.queried_take_home_pay, unit: '£')
       expect(earnings_and_benefits_table.queried_take_home_pay_period_row.queried_take_home_pay_period_answer).to have_text t(@claimant.queried_take_home_pay_period)
-      expect(earnings_and_benefits_table.agree_with_claimant_notice_row.agree_with_claimant_notice_answer).to have_text t(@claimant.agree_with_claimant_notice)
+      expect(earnings_and_benefits_table.agree_with_claimant_notice_row.agree_with_claimant_notice_answer).to have_text t("questions.earnings_and_benefits.agree_with_claimant_notice.options.#{@claimant.agree_with_claimant_notice}")
       expect(earnings_and_benefits_table.disagree_claimant_notice_reason_row.disagree_claimant_notice_reason_answer).to have_text @claimant.disagree_claimant_notice_reason
-      expect(earnings_and_benefits_table.agree_with_claimant_pension_benefits_row.agree_with_claimant_pension_benefits_answer).to have_text t(@claimant.agree_with_claimant_pension_benefits)
+      expect(earnings_and_benefits_table.agree_with_claimant_pension_benefits_row.agree_with_claimant_pension_benefits_answer).to have_text t("questions.earnings_and_benefits.agree_with_claimant_pension_benefits.options.#{@claimant.agree_with_claimant_pension_benefits}")
 
       expect(confirmation_of_supplied_details_page).to have_confirmation_of_response_answers
 
@@ -176,12 +181,14 @@ RSpec.feature "Fill in whole form", js: true do
       expect(your_rep_details_table.representative_reference_row.representative_reference_answer).to have_text @representative.representative_reference
       expect(your_rep_details_table.representative_contact_preference_row.representative_contact_preference_answer).to have_text t(@representative.representative_contact_preference)
       expect(your_rep_details_table.email_row.email_answer).to have_text nil
-      expect(your_rep_details_table.fax_row.fax_answer).to have_text @representative.representative_fax
+      @representative.allow_phone_or_video_attendance.each do |option|
+        expect(your_rep_details_table.allow_phone_or_video_attendance_row.allow_phone_or_video_attendance_answer).to have_text t("questions.your_representatives_details.allow_phone_or_video_attendance.options.#{option}")
+      end
 
       expect(confirmation_of_supplied_details_page).to have_confirmation_of_disability_answers
 
       disability_table = confirmation_of_supplied_details_page.confirmation_of_disability_answers
-      expect(disability_table.disability_row.disability_answer).to have_text t(@respondent.disability)
+      expect(disability_table.disability_row.disability_answer).to have_text t("questions.disabilities.disability.options.#{@respondent.disability}")
       expect(disability_table.disability_information_row.disability_information_answer).to have_text @respondent.disability_information
 
       expect(confirmation_of_supplied_details_page).to have_confirmation_of_employer_contract_claim_answers
@@ -209,34 +216,37 @@ RSpec.feature "Fill in whole form", js: true do
               expect(request_body["data"][0]["data"]["claimants_name"]).to eql @claimant.claimants_name
               expect(request_body["data"][0]["data"]["agree_with_early_conciliation_details"]).to eql false
               expect(request_body["data"][0]["data"]["disagree_conciliation_reason"]).to eql @claimant.disagree_conciliation_reason
-              expect(request_body["data"][0]["data"]["agree_with_employment_dates"]).to eql false
+              expect(request_body["data"][0]["data"]["agree_with_employment_dates"]).to eql({no: 'false', yes: 'true', not_applicable: 'not_applicable'}[@claimant.agree_with_employment_dates])
               expect(Date.parse(request_body["data"][0]["data"]["employment_start"]).strftime('%d/%m/%Y')).to eql @claimant.employment_start
               expect(Date.parse(request_body["data"][0]["data"]["employment_end"]).strftime('%d/%m/%Y')).to eql @claimant.employment_end
               expect(request_body["data"][0]["data"]["disagree_employment"]).to eql @claimant.disagree_employment
-              expect(request_body["data"][0]["data"]["continued_employment"]).to eql false
-              expect(request_body["data"][0]["data"]["agree_with_claimants_description_of_job_or_title"]).to eql false
+              expect(request_body["data"][0]["data"]["continued_employment"]).to eql({no: 'false', yes: 'true', not_applicable: 'not_applicable'}[@claimant.continued_employment])
+              expect(request_body["data"][0]["data"]["agree_with_claimants_description_of_job_or_title"]).to eql({no: 'false', yes: 'true', not_applicable: 'not_applicable'}[@claimant.agree_with_claimants_description_of_job_or_title])
               expect(request_body["data"][0]["data"]["disagree_claimants_job_or_title"]).to eql @claimant.disagree_claimants_job_or_title
-              expect(request_body["data"][0]["data"]["agree_with_claimants_hours"]).to eql false
+              expect(request_body["data"][0]["data"]["agree_with_claimants_hours"]).to eql({no: 'false', yes: 'true', not_applicable: 'not_applicable'}[@claimant.agree_with_claimants_hours])
               expect(request_body["data"][0]["data"]["queried_hours"]).to eql @claimant.queried_hours
-              expect(request_body["data"][0]["data"]["agree_with_earnings_details"]).to eql false
+              expect(request_body["data"][0]["data"]["agree_with_earnings_details"]).to eql({no: 'false', yes: 'true', not_applicable: 'not_applicable'}[@claimant.agree_with_earnings_details])
               expect(request_body["data"][0]["data"]["queried_pay_before_tax"]).to eql @claimant.queried_pay_before_tax
               expect(request_body["data"][0]["data"]["queried_pay_before_tax_period"]).to eql @claimant.queried_pay_before_tax_period.to_s.split('.').last.titleize
               expect(request_body["data"][0]["data"]["queried_take_home_pay"]).to eql @claimant.queried_take_home_pay
               expect(request_body["data"][0]["data"]["queried_take_home_pay_period"]).to eql @claimant.queried_take_home_pay_period.to_s.split('.').last.titleize
-              expect(request_body["data"][0]["data"]["agree_with_claimant_notice"]).to eql false
+              expect(request_body["data"][0]["data"]["agree_with_claimant_notice"]).to eql({no: 'false', yes: 'true', not_applicable: 'not_applicable'}[@claimant.agree_with_claimant_notice])
               expect(request_body["data"][0]["data"]["disagree_claimant_notice_reason"]).to eql @claimant.disagree_claimant_notice_reason
-              expect(request_body["data"][0]["data"]["agree_with_claimant_pension_benefits"]).to eql false
+              expect(request_body["data"][0]["data"]["agree_with_claimant_pension_benefits"]).to eql({no: 'false', yes: 'true', not_applicable: 'not_applicable'}[@claimant.agree_with_claimant_pension_benefits])
               expect(request_body["data"][0]["data"]["disagree_claimant_pension_benefits_reason"]).to eql @claimant.disagree_claimant_pension_benefits_reason
               expect(request_body["data"][0]["data"]["defend_claim"]).to eql true
               expect(request_body["data"][0]["data"]["defend_claim_facts"]).to eql @claimant.defend_claim_facts
               expect(request_body["data"][0]["data"]["make_employer_contract_claim"]).to eql true
               expect(request_body["data"][0]["data"]["claim_information"]).to eql @respondent.claim_information
               expect(request_body["data"][0]["data"]["email_receipt"]).to eql ""
-              expect(request_body["data"][0]["data"]["pdf_template_reference"]).to eql "et3-v2-#{::ET3::Test::Messaging.instance.current_locale}"
+              expect(request_body["data"][0]["data"]["pdf_template_reference"]).to eql "et3-v3-#{::ET3::Test::Messaging.instance.current_locale}"
               expect(request_body["data"][0]["data"]["email_template_reference"]).to eql "et3-v1-#{::ET3::Test::Messaging.instance.current_locale}"
               expect(request_body["data"][0]["uuid"]).to be_an_instance_of(String)
               expect(request_body["data"][1]["command"]).to eql "BuildRespondent"
               expect(request_body["data"][1]["data"]["name"]).to eql @respondent.name
+              expect(request_body["data"][1]["data"]["company_number"]).to eql @respondent.company_number
+              expect(request_body["data"][1]["data"]["type_of_employer"]).to eql t("questions.respondents_details.type_of_employer.options.#{@respondent.company_type}", locale: :en)
+              expect(request_body["data"][1]["data"]["title"]).to eql @respondent.title.to_s.split('.').last == 'Other' ? @respondent.other_title : @respondent.title.to_s
               expect(request_body["data"][1]["data"]["contact"]).to eql @respondent.contact
               expect(request_body["data"][1]["data"]["address_attributes"]["building"]).to eql @respondent.building_name
               expect(request_body["data"][1]["data"]["address_attributes"]["street"]).to eql @respondent.street_name
@@ -248,13 +258,13 @@ RSpec.feature "Fill in whole form", js: true do
               expect(request_body["data"][1]["data"]["alt_phone_number"]).to eql @respondent.contact_mobile_number
               expect(request_body["data"][1]["data"]["contact_preference"]).to eql @respondent.contact_preference.to_s.split('.').last
               expect(request_body["data"][1]["data"]["email_address"]).to eql @respondent.email_address if @respondent.contact_preference == 'email'
-              expect(request_body["data"][1]["data"]["fax_number"]).to eql @respondent.fax_number if @respondent.contact_preference == 'fax'
               expect(request_body["data"][1]["data"]["organisation_employ_gb"].to_s).to eql @respondent.organisation_employ_gb
               expect(request_body["data"][1]["data"]["organisation_more_than_one_site"]).to eql false
               expect(request_body["data"][1]["data"]["employment_at_site_number"]).to eql @respondent.employment_at_site_number
-              expect(request_body["data"][1]["data"]["disability"]).to eql true
+              expect(request_body["data"][1]["data"]["disability"]).to eql({no: 'false', yes: 'true', not_applicable: 'not_applicable'}[@respondent.disability])
               expect(request_body["data"][1]["data"]["disability_information"]).to eql @respondent.disability_information
-              expect(request_body["data"][1]["data"]["allow_video_attendance"]).to eql false
+              expect(request_body["data"][1]["data"]["allow_video_attendance"]).to eql @respondent.allow_phone_or_video_attendance.include?(:video)
+              expect(request_body["data"][1]["data"]["allow_phone_attendance"]).to eql @respondent.allow_phone_or_video_attendance.include?(:phone)
               expect(request_body["data"][1]["uuid"]).to be_an_instance_of(String)
               expect(request_body["data"][2]["command"]).to eql "BuildRepresentative"
               expect(request_body["data"][2]["data"]["name"]).to eql @representative.name
@@ -270,8 +280,9 @@ RSpec.feature "Fill in whole form", js: true do
               expect(request_body["data"][2]["data"]["dx_number"]).to eql @representative.dx_number
               expect(request_body["data"][2]["data"]["reference"]).to eql @representative.representative_reference
               expect(request_body["data"][2]["data"]["contact_preference"]).to eql @representative.representative_contact_preference.to_s.split('.').last
-              expect(request_body["data"][2]["data"]["email_address"]).to eql nil
-              expect(request_body["data"][2]["data"]["fax_number"]).to eql @representative.representative_fax
+              expect(request_body["data"][2]["data"]["email_address"]).to eql @representative.representative_email
+              expect(request_body["data"][2]["data"]["allow_video_attendance"]).to eql @representative.allow_phone_or_video_attendance.include?(:video)
+              expect(request_body["data"][2]["data"]["allow_phone_attendance"]).to eql @representative.allow_phone_or_video_attendance.include?(:phone)
               expect(request_body["data"][2]["uuid"]).to be_an_instance_of(String)
               expect(request.headers).to include("Content-Type" => "application/json", "Accept" => "application/json")
             }).to have_been_made.once

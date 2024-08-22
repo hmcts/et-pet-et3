@@ -17,6 +17,7 @@
 
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
+import "./controllers"
 import {EtGdsDesignSystem } from "et_gds_design_system"
 import "./stylesheets/application.scss"
 require("@rails/ujs").start();

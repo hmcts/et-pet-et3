@@ -718,7 +718,7 @@ en:
     receipt_description: We can email you a copy of your receipt.
     submit: Submit your response
   submission:
-    confirmation: Response submitted
+    confirmation: Your response has been submitted
     reference: 142000000100
     copy_sent: We've sent a copy of your response to
     copy_sent_without_email: "You can "

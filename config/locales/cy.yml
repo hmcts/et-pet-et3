@@ -157,12 +157,7 @@ cy:
       header: "Ymateb wedi'i gwblhau "
       confirmation: "Ymateb wedi'i gwblhau "
       reference_text: "Eich cyfeirnod, y dylid ei ddyfynnu ar bob gohebiaeth, yw "
-      copy_sent: "Rydym wedi anfon copi o’ch ymateb i %{email}. Gallwch chi hefyd"
-      copy_sent_without_email: "Gallwch chi "
-      submission_date: "Mae eich ymateb, a gyflwynwyd ar "
-      submission_office: ", wedi cael ei anfon i "
-      contact_office: "Os oes arnoch angen cysylltu â nhw, anfonwch neges e-bost i %{email} neu ffoniwch "
-      include_quote_case: "Bydd angen ichi gynnwys neu ddyfynnu eich rhif achos."
+      copy_sent: "Rydym wedi anfon cadarnhad atoch trwy e-bost"
       valid_pdf_download: "lawrlwythwch eich ymateb"
       invalid_pdf_download: Ddim yn barod eto - bydd fersiwn PDF o'ch ffurflen wedi'i llenwi ar gael i'w lawrlwytho maes o law
       pdf_help: "Gellid darllen dogfennau PDF (Portable Document Format) drwy ddefnyddio rhaglenni fel: "
@@ -176,6 +171,14 @@ cy:
       return_link: Rhowch adborth
       submission_feedback: "Eich adborth"
       feedback_content: "Byddwn yn ddiolchgar i gael eich adborth ar y gwasanaeth hwn fel y gallwn ei wella."
+      what_happens_next: "Beth fydd yn digwydd nesaf"
+      what_happens_next_content:
+        - Byddwn yn gwirio’ch ymateb ac efallai y byddwn yn cysylltu â chi os oes gennym unrhyw gwestiynau
+        - Byddwn yn cysylltu â chi unwaith y byddwn wedi anfon eich ymateb at yr hawlydd ac yn egluro beth fydd yn digwydd nesaf
+      response_questions:  Ar gyfer cwestiynau am eich ymateb
+      response_questions_content: Cysylltwch â swyddfa’r tribiwnlys canlynol ar gyfer cwestiynau am eich ymateb
+      process_questions: Ar gyfer cwestiynau am broses y tribiwnlys cyflogaeth
+      process_questions_content: Ffoniwch un o ganolfannau cyswllt cwsmeriaid y Tribiwnlys Cyflogaeth. Niallant roi cyngor cyfreithiol i chi.
     introduction:
       header: "Cyflwyniad "
       inset_text: Os ydych chi'n weithiwr proffesiynol cyfreithiol neu'n fath arall o weithiwr proffesiynol a dderbyniodd gyfeirnod 16 digid yn eich pecyn ymateb, gallwch %{myhmcts_account_href}.

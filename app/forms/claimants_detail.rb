@@ -35,18 +35,26 @@ class ClaimantsDetail < BaseForm
     allow_blank: true
   validates :agree_with_employment_dates, inclusion: { in: ['true', 'false', 'not_applicable'] }, allow_blank: true
   validates :employment_start, :employment_end,
-    date: true, allow_blank: true,
-    if: :disagree_with_employment_dates?
+            date: true, allow_blank: true,
+            if: :disagree_with_employment_dates?
   validate :end_date_is_after_start_date,
-           if: :disagree_with_employment_dates?
+           if: -> { disagree_with_employment_dates? && valid_employment_dates? }
+
   private
 
   def disagree_with_employment_dates?
     agree_with_employment_dates == 'false'
   end
 
+  def valid_employment_dates?
+    # although employment dates can be blank,
+    # presence needs to be validated when checking end_date_is_after_start_date
+    employment_end.present? && employment_start.present? && !employment_start.is_a?(EtDateType::InvalidDate) && !employment_end.is_a?(EtDateType::InvalidDate)
+  end
+
+
   def end_date_is_after_start_date
-    return if employment_end.blank? || employment_start.blank?
+    return unless valid_employment_dates?
 
     if employment_end < employment_start
       errors.add(:employment_end, :employment_end_before_start)

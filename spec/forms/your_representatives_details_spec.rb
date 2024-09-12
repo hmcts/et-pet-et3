@@ -8,8 +8,7 @@ RSpec.describe YourRepresentativesDetails, type: :model do
       representative_building: 'Rep Building', representative_street: 'Rep Street', representative_town: 'Rep Town',
       representative_county: 'Rep County', representative_postcode: 'WC2 2BB', representative_phone: '0207 987 6543',
       representative_mobile: '07987654321', representative_dx_number: 'DX 123 London 456', representative_reference: 'Rep Ref',
-      representative_contact_preference: 'email', representative_email: 'your@representative.email',
-      representative_fax: '0207 345 6789'
+      representative_contact_preference: 'email', representative_email: 'your@representative.email', allow_phone_or_video_attendance: ['video']
     )
   }
 
@@ -56,16 +55,6 @@ RSpec.describe YourRepresentativesDetails, type: :model do
 
       expect(populated_your_representatives_details.errors.details[:representative_email]).to include a_hash_including(error: :invalid_email)
     end
-
-    it 'will not validate a fax number with a "+" outside the first character' do
-      populated_your_representatives_details.representative_contact_preference = "fax"
-      populated_your_representatives_details.representative_fax = "0207+123+4567"
-
-      populated_your_representatives_details.valid?
-
-      expect(populated_your_representatives_details.errors.details[:representative_fax]).to include a_hash_including(error: :invalid_phone_number)
-    end
-
   end
 
   context 'when correctly populated' do
@@ -124,10 +113,6 @@ RSpec.describe YourRepresentativesDetails, type: :model do
 
     it 'returns the representative_email' do
       expect(populated_your_representatives_details.representative_email).to eql 'your@representative.email'
-    end
-
-    it 'returns the representative_fax' do
-      expect(populated_your_representatives_details.representative_fax).to eql '0207 345 6789'
     end
   end
 
@@ -190,11 +175,6 @@ RSpec.describe YourRepresentativesDetails, type: :model do
 
     it 'will return the representative_email key and value pair' do
       expect(populated_your_representatives_details.to_h).to include(representative_email: 'your@representative.email')
-    end
-
-    it 'will return the representative_fax key and value pair' do
-      populated_your_representatives_details.representative_contact_preference = "fax"
-      expect(populated_your_representatives_details.to_h).to include(representative_fax: '0207 345 6789')
     end
   end
 
@@ -321,77 +301,22 @@ RSpec.describe YourRepresentativesDetails, type: :model do
 
       expect(populated_your_representatives_details).to be_valid
     end
-
-    it 'will not validate a fax number' do
-      populated_your_representatives_details.representative_contact_preference = "email"
-      populated_your_representatives_details.representative_fax = "invalid fax"
-
-      expect(populated_your_representatives_details).to be_valid
-    end
-
-    it 'will not hash a fax number' do
-      populated_your_representatives_details.representative_contact_preference = "email"
-      populated_your_representatives_details.representative_fax = "0203 123 4567"
-
-      expect(populated_your_representatives_details.to_h).not_to include(:representative_fax)
-    end
   end
 
   context "when post is the preferred contact method" do
 
-    it "will not validate an email address or fax number" do
-      populated_your_representatives_details.representative_contact_preference = "post"
-      populated_your_representatives_details.representative_email = "invalid email"
-      populated_your_representatives_details.representative_fax = "invalid fax"
-
-      expect(populated_your_representatives_details).to be_valid
-    end
-
-    it "will not hash an email address" do
-      populated_your_representatives_details.representative_contact_preference = "post"
-      populated_your_representatives_details.representative_email = "john@dodgyco.com"
-
-      expect(populated_your_representatives_details.to_h).not_to include(:representative_email)
-    end
-
-    it "will not hash a fax number" do
-      populated_your_representatives_details.representative_contact_preference = "post"
-      populated_your_representatives_details.representative_fax = "0203 123 4567"
-
-      expect(populated_your_representatives_details.to_h).not_to include(:representative_fax)
-    end
-  end
-
-  context "when fax is the preferred contact method" do
-    it "will raise a validation error if a fax number is not entered" do
-      populated_your_representatives_details.representative_contact_preference = "fax"
-      populated_your_representatives_details.representative_fax = nil
-
-      populated_your_representatives_details.valid?
-
-      expect(populated_your_representatives_details.errors.details[:representative_fax]).to include a_hash_including(error: :invalid_phone_number)
-    end
-
-    it "will not raise a validation error if a fax number is provided" do
-      populated_your_representatives_details.representative_contact_preference = "fax"
-      populated_your_representatives_details.representative_fax = "0203 123 4567"
-
-      expect(populated_your_representatives_details).to be_valid
-    end
-
     it "will not validate an email address" do
-      populated_your_representatives_details.representative_contact_preference = "fax"
+      populated_your_representatives_details.representative_contact_preference = "post"
       populated_your_representatives_details.representative_email = "invalid email"
 
       expect(populated_your_representatives_details).to be_valid
     end
 
     it "will not hash an email address" do
-      populated_your_representatives_details.representative_contact_preference = "fax"
+      populated_your_representatives_details.representative_contact_preference = "post"
       populated_your_representatives_details.representative_email = "john@dodgyco.com"
 
       expect(populated_your_representatives_details.to_h).not_to include(:representative_email)
     end
   end
-
 end

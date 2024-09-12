@@ -20,7 +20,10 @@ module ET3
       gds_text_input :representative_reference_question, :'questions.your_representatives_details.representative_reference.label', exact: false
       gds_radios :representative_contact_preference_question, :'questions.your_representatives_details.representative_contact_preference', exact: false
       gds_text_input :preference_email, :'questions.your_representatives_details.preference_email'
-      gds_text_input :preference_fax, :'questions.your_representatives_details.preference_fax'
+      # @!method allow_phone_or_video_attendance_question
+      #   A govuk radio button component for the phone or video question
+      #   @return [EtTestHelpers::Components::GovUKCollectionCheckBoxes] The site prism section
+      gds_checkboxes :allow_phone_or_video_attendance_question, :'questions.your_representatives_details.allow_phone_or_video_attendance'
 
       gds_submit_button :continue_button, :'components.save_and_continue_button'
       def next

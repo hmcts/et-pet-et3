@@ -52,7 +52,7 @@ class EtApiHandler
         "claim_information": full_hash[:employer_contract_claim_answers][:claim_information],
         "additional_information_key": (full_hash[:additional_information_answers][:upload_additional_information].blank? ? nil : full_hash[:additional_information_answers][:upload_additional_information][:path]),
         "email_receipt": full_hash[:confirmation_of_supplied_details_answers][:email_receipt],
-        "pdf_template_reference": "et3-v2-#{I18n.locale}",
+        "pdf_template_reference": "et3-v3-#{I18n.locale}",
         "email_template_reference": "et3-v1-#{I18n.locale}"
       },
       "uuid": SecureRandom.uuid
@@ -64,6 +64,9 @@ class EtApiHandler
       "command": "BuildRespondent",
       "data": {
         "name": full_hash[:respondents_detail_answers][:name],
+        "company_number": full_hash[:respondents_detail_answers][:company_number],
+        "type_of_employer": full_hash[:respondents_detail_answers][:type_of_employer].then {|v| v.empty? ? v : I18n.t("respondents_details.edit.type_of_employer.options.#{v}" , locale: :en)},
+        "title": full_hash[:respondents_detail_answers][:title] == 'Other' ? full_hash[:respondents_detail_answers][:other_title] : full_hash[:respondents_detail_answers][:title],
         "contact": full_hash[:respondents_detail_answers][:contact],
         "address_attributes": {
           "building": full_hash[:respondents_detail_answers][:building_name],
@@ -77,11 +80,11 @@ class EtApiHandler
         "alt_phone_number": full_hash[:respondents_detail_answers][:mobile_number],
         "contact_preference": full_hash[:respondents_detail_answers][:contact_preference],
         "email_address": full_hash[:respondents_detail_answers][:email_address],
-        "fax_number": full_hash[:respondents_detail_answers][:fax_number],
         "organisation_employ_gb": full_hash[:respondents_detail_answers][:organisation_employ_gb],
         "organisation_more_than_one_site": full_hash[:respondents_detail_answers][:organisation_more_than_one_site],
         "employment_at_site_number": full_hash[:respondents_detail_answers][:employment_at_site_number],
-        "allow_video_attendance": full_hash[:respondents_detail_answers][:video_call]
+        "allow_video_attendance": full_hash[:respondents_detail_answers][:allow_phone_or_video_attendance]&.include?('video'),
+        "allow_phone_attendance": full_hash[:respondents_detail_answers][:allow_phone_or_video_attendance]&.include?('phone')
       },
       "uuid": SecureRandom.uuid
     }
@@ -110,7 +113,8 @@ class EtApiHandler
         "reference": full_hash[:your_representatives_details_answers][:representative_reference],
         "contact_preference": full_hash[:your_representatives_details_answers][:representative_contact_preference],
         "email_address": full_hash[:your_representatives_details_answers][:representative_email],
-        "fax_number": full_hash[:your_representatives_details_answers][:representative_fax]
+        "allow_video_attendance": full_hash[:your_representatives_details_answers][:allow_phone_or_video_attendance]&.include?('video'),
+        "allow_phone_attendance": full_hash[:your_representatives_details_answers][:allow_phone_or_video_attendance]&.include?('phone')
       },
       "uuid": SecureRandom.uuid
     }

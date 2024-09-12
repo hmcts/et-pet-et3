@@ -14,6 +14,7 @@ RSpec.feature "Clear existing session with new session", js: true do
 
     expect(respondents_details_page.case_number_question.value).to eql ""
     expect(respondents_details_page.name_question.value).to eql ""
+    expect(respondents_details_page.company_number_question.value).to eql ""
     expect(respondents_details_page.contact_question.value).to eql ""
     expect(respondents_details_page.building_name_question.value).to eql ""
     expect(respondents_details_page.street_question.value).to eql ""
@@ -26,7 +27,6 @@ RSpec.feature "Clear existing session with new session", js: true do
     expect(respondents_details_page.contact_preference_question.value).to be_nil
     expect(respondents_details_page.organisation_employ_gb_question.value).to eql ""
     expect(respondents_details_page.organisation_more_than_one_site_question.value).to be_nil
-    expect(respondents_details_page.employment_at_site_number_question.value).to eql ""
+    expect(respondents_details_page).not_to have_employment_at_site_number_question
   end
-
 end

@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '7.1.3.2'
+gem 'rails', '7.1.3.4'
 gem 'rack', '~> 2.2.3' # Currently, we cannot use rack 3 because of an issue proxying the file uploads
 # Azure deployment so we need this
 gem 'azure_env_secrets', git: 'https://github.com/hmcts/azure_env_secrets.git', tag: 'v1.0.1'
@@ -27,6 +27,7 @@ gem 'sprockets', '~> 4.2.0'
 # gem 'capistrano-rails', group: :development
 
 gem 'slim-rails', '~> 3.6.0'
+gem 'stimulus-rails', '~> 1.3', '>= 1.3.3'
 gem 'jquery-rails', '~> 4.5'
 gem 'activerecord-nulldb-adapter', '~> 1.0'
 gem 'httparty', '~> 0.17'
@@ -98,4 +99,4 @@ gem 'et_azure_insights', '1.0.0', git: 'https://github.com/hmcts/et-azure-insigh
 gem 'application_insights', git: 'https://github.com/microsoft/ApplicationInsights-Ruby.git', ref: '5db6b4'
 
 gem "webpacker", "~> 5.4"
-gem 'et_gds_design_system', git:'https://github.com/hmcts/et_gds_design_system.git', tag: 'v5.4.2'
+gem 'et_gds_design_system', git:'https://github.com/hmcts/et_gds_design_system.git', tag: 'v6.0.1'

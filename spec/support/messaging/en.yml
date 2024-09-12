@@ -24,6 +24,29 @@ en:
         label: Case number
       name:
         label: Name of individual, company or organisation
+      company_number:
+        label: Enter the company number, if applicable (optional)
+      type_of_employer:
+        label: What type of employer is the respondent ? (optional)
+        options:
+          '': Please select
+          individual: Individual
+          limited_company: Limited company
+          partnership: Partnership
+          unincorporated_association: Unincorporated association (such as a sports club)
+          other: Other
+      title:
+        label: Title (optional)
+        options:
+          '': Please select
+          Mr: Mr
+          Mrs: Mrs
+          Miss: Miss
+          Ms: Ms
+          Mx: Mx
+          Other: Other
+      other_title:
+        label: Other
       contact:
         label: Full name of contact (optional)
       building_name:
@@ -47,9 +70,6 @@ en:
         options:
           email: Email
           post: Post
-          fax: Fax
-      fax_number:
-        label: Fax number
       email_address:
         label: Email address
       organisation_employ_gb:
@@ -61,11 +81,12 @@ en:
           'no': 'No'
       employment_at_site_number:
         label: How many people are employed at the place where the claimant worked?
-      video_call:
-        label: Would you be able to take part in a hearing by video? (Requires internet access).
+      allow_phone_or_video_attendance:
+        label: "Would you be able to take part in hearings by video and phone?"
+        hint: "Further details on video hearings can be found on the following link https://www.gov.uk/guidance/hmcts-telephone-and-videohearings-during-coronavirus-outbreak"
         options:
-          'yes': 'Yes'
-          'no': 'No'
+          "video": 'Yes, I can take part in video hearings'
+          "phone": 'Yes, I can take part in phone hearings'
     # Claimant's Details Page
     claimants_details:
       claimants_name:
@@ -82,6 +103,7 @@ en:
         options:
           'yes': 'Yes'
           'no': 'No'
+          'not_applicable': 'Not applicable'
       employment_start:
         label: When their employment started (optional)
       employment_end:
@@ -93,11 +115,13 @@ en:
         options:
           'yes': 'Yes'
           'no': 'No'
+          'not_applicable': 'Not applicable'
       agree_with_claimants_description_of_job_or_title:
         label: Is the claimant's description of their job or job title correct? (optional)
         options:
           'yes': 'Yes'
           'no': 'No'
+          'not_applicable': 'Not applicable'
       disagree_claimants_job_or_title:
         label: Please give the details you believe to be correct (optional)
     # Earnings and Benefits Page
@@ -107,6 +131,7 @@ en:
         options:
           'yes': 'Yes'
           'no': 'No'
+          'not_applicable': 'Not applicable'
       queried_hours:
         label: Tell us the details you believe to be correct.
       agree_with_earnings_details:
@@ -114,6 +139,7 @@ en:
         options:
           'yes': 'Yes'
           'no': 'No'
+          'not_applicable': 'Not applicable'
       queried_pay_before_tax:
         label: Pay before tax (optional)
       queried_pay_before_tax_period:
@@ -121,6 +147,7 @@ en:
         options:
           monthly: Monthly
           weekly: Weekly
+          annually: Annually
       queried_take_home_pay:
         label: Normal take-home pay (optional)
       queried_take_home_pay_period:
@@ -128,11 +155,13 @@ en:
         options:
           monthly: Monthly
           weekly: Weekly
+          annually: Annually
       agree_with_claimant_notice:
         label: Are the details about being paid for or working a period of notice correct? (optional)
         options:
           'yes': 'Yes'
           'no': 'No'
+          'not_applicable': 'Not applicable'
       disagree_claimant_notice_reason:
         label: Tell us the details you believe to be correct. (optional)
       agree_with_claimant_pension_benefits:
@@ -140,6 +169,7 @@ en:
         options:
           'yes': 'Yes'
           'no': 'No'
+          'not_applicable': 'Not applicable'
       disagree_claimant_pension_benefits_reason:
         label: Tell us the details you believe to be correct. (optional)
     # Response Page
@@ -197,11 +227,15 @@ en:
         label: How would you prefer us to contact your representative? (optional)
         options:
           email: Email
-          fax: Fax
+          post: Post
       preference_email:
         label: Email address
-      preference_fax:
-        label: Fax number
+      allow_phone_or_video_attendance:
+        label: "Would you be able to take part in hearings by video and phone?"
+        hint: "Further details on video hearings can be found on the following link https://www.gov.uk/guidance/hmcts-telephone-and-videohearings-during-coronavirus-outbreak"
+        options:
+          "video": 'Yes, I can take part in video hearings'
+          "phone": 'Yes, I can take part in phone hearings'
     # Disability Page
     disabilities:
       disability:
@@ -209,6 +243,7 @@ en:
         options:
           'yes': 'Yes'
           'no': 'No'
+          'not_applicable': 'Not applicable'
       disability_information:
         label: It would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises
         hint: PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 350 characters) if you would like to include more please use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
@@ -253,6 +288,9 @@ en:
     respondents_details:
       case_number: Case number
       name: Name of individual, company or organisation
+      company_number: Enter the company number, if applicable
+      type_of_employer: What type of employer is the respondent ?
+      title: Title
       contact: Full name of contact
       building_name: Building name or number
       street: Street
@@ -263,12 +301,11 @@ en:
       contact_number: Contact number
       contact_mobile_number: Mobile number
       contact_preference:  How would you prefer us to contact you?
-      fax_number: Fax number
       email_address: Email address
       organisation_employ_gb: How many people does this organisation employ in Great Britain?
       organisation_more_than_one_site: Does this organisation have more than one site in Great Britain?
       employment_at_site_number: How many people are employed at the place where the claimant worked?
-      video_call: Would you be able to take part in a hearing by video? (Requires internet access).
+      allow_phone_or_video_attendance: Would you be able to take part in hearings by video and phone?
     claimants_details:
       claimants_name: Claimant's full name
       agree_with_early_conciliation_details: Do you agree with the details given by the claimant about Early Conciliation with Acas?
@@ -312,7 +349,7 @@ en:
       representative_reference: Reference
       representative_contact_preference: How would you prefer us to contact your representative?
       preference_email: Email address
-      preference_fax: Fax number
+      allow_phone_or_video_attendance: Would you be able to take part in hearings by video and phone?
     disabilities:
       disability: Do you have a disability?
       disability_information: It would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises
@@ -623,13 +660,12 @@ en:
       mobile_number: If different to your primary contact number
       employment_at_site_number: For example, 10
       organisation_employ_gb: For example, 10
-      video_call: Further details on video hearings can be found on the following link
+      allow_phone_or_video_attendance: Further details on video hearings can be found on the following link
     claimants_detail:
       employment_start: For example, 31 03 2010
       employment_end: For example, 01 12 2017
     earnings_and_benefits:
       queried_hours: Enter hours per week, for example 39
-      agree_with_earnings_details:
       queried_pay_before_tax: Including overtime, commission, bonuses, etc. For example, 28000
       queried_take_home_pay: Including overtime, commission, bonuses, etc. For example, 20000
       disagree_claimant_notice_reason: |

@@ -1,6 +1,6 @@
 - content_for :form_page_title, t('components.respondents_details.header')
 - content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
-.content-body.respondents-details
+.content-body.respondents-details data-controller="respondents-details"
 
   = form_for @respondents_detail, url: respondents_details_path, method: :patch, builder: EtGdsDesignSystem.form_builder_class  do |f|
 
@@ -9,6 +9,11 @@
 
     = f.text_field :case_number
     = f.text_field :name
+    = f.text_field :company_number, optional: true
+    = f.collection_select :type_of_employer, optional: true
+    = f.collection_select :title, optional: true, data: { action: "change->respondents-details#showOrHideOtherTitle", respondents_details_target: 'title' }
+    div.govuk-inset-text data-respondents-details-target='otherTitle'
+      = f.text_field :other_title, optional: false
     = f.text_field :contact, optional: true
     = f.text_field :building_name
     = f.text_field :street_name
@@ -22,10 +27,7 @@
     = f.revealed_content :contact_preference, values: [:email]
       .govuk-inset-text
         = f.text_field :email_address
-    = f.revealed_content :contact_preference, values: [:fax]
-        .govuk-inset-text
-          = f.text_field :fax_number
-    = f.collection_radio_buttons :video_call
+    = f.collection_check_boxes :allow_phone_or_video_attendance
     = f.text_field :organisation_employ_gb, optional: true
     = f.collection_radio_buttons :organisation_more_than_one_site, optional: true
     = f.revealed_content :organisation_more_than_one_site, values: [:true]

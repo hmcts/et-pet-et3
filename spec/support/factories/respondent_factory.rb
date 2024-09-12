@@ -6,16 +6,19 @@ FactoryBot.define do
       memorable_word {"password"}
       case_number {"1454321/2017"}
       name { Faker::Company.name }
+      company_number { '194632819' }
+      company_type { :limited_company }
       building_name {"the-shard"}
       street_name { Faker::Address.street_name }
       town {"westminster"}
       county {"london"}
       postcode {"wc1 1aa"}
       organisation_more_than_one_site {:"questions.respondents_details.organisation_more_than_one_site.options.no"}
-      video_call {:"questions.respondents_details.video_call.options.no"}
+      allow_phone_or_video_attendance { [:video] }
   end
 
   trait :respondent_valid do
+    title { :Mr }
     contact { Faker::Name.name }
     county {"london"}
     dx_number {"234242342"}
@@ -27,9 +30,9 @@ FactoryBot.define do
     make_employer_contract_claim {:"questions.employers_contract_claims.make_employer_contract_claim.options.yes"}
     claim_information {"lorem ipsum info"}
     email_receipt {"sivvoy.taing@hmcts.net"}
-    disability {:"questions.disabilities.disability.options.yes"}
+    disability {:yes}
     disability_information {"Lorem ipsum disability"}
-    video_call {:"questions.respondents_details.video_call.options.no"}
+    allow_phone_or_video_attendance { [:video] }
   end
 
   trait :contact_preference_post do
@@ -47,15 +50,14 @@ FactoryBot.define do
     dx_number {"724060 Derby 21 (no validation)"}
     contact_number {"string"}
     contact_mobile_number {"string"}
-    contact_preference {:"questions.respondents_details.contact_preference.options.fax"}
-    fax_number {"string"}
+    contact_preference {:"questions.respondents_details.contact_preference.options.email"}
     employment_at_site_number {"string"}
     organisation_employ_gb {"string"}
     make_employer_contract_claim {:"questions.employers_contract_claims.make_employer_contract_claim.options.yes"}
     claim_information {Faker::Lorem.characters(number: 4501)}
     email_receipt {""}
-    disability {:"questions.disabilities.disability.options.yes"}
+    disability {:yes}
     disability_information { Faker::Lorem.characters(number: 351) }
-    video_call {nil}
+    allow_phone_or_video_attendance { [] }
   end
 end

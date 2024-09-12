@@ -182,6 +182,8 @@ en:
       feedback_content: "We'd like your feedback on this service so we can improve it."
     introduction:
       header: Introduction
+      inset_text: If you're a legal professional or another type of professional who received a 16-digit reference number in your response pack, you can %{myhmcts_account_href}.
+      my_hmcts_account: respond online using a MyHMCTS account
       description: Complete and submit an ET3 response form when someone makes an employment tribunal claim against you.
       what_title: What you need for this form
       what_content_1: your case number (on the letter we sent you)
@@ -550,6 +552,29 @@ en:
         label: Case number
       name:
         label: Name of individual, company or organisation
+      company_number:
+        label: Enter the company number, if applicable
+      type_of_employer:
+        label: What type of employer is the respondent ?
+        options:
+          '': Please select
+          individual: Individual
+          limited_company: Limited company
+          partnership: Partnership
+          unincorporated_association: Unincorporated association (such as a sports club)
+          other: Other
+      title:
+        label: Title
+        options:
+          '': Please select
+          Mr: Mr
+          Mrs: Mrs
+          Miss: Miss
+          Ms: Ms
+          Mx: Mx
+          Other: Other
+      other_title:
+        label: Other
       contact:
         label: Full name of contact
         hint: For example, John Smith
@@ -572,8 +597,6 @@ en:
         hint: If different to your primary contact number
       email_address:
         label: Email address
-      fax_number:
-        label: Fax number
       organisation_employ_gb:
         label: How many people does this organisation employ in Great Britain?
         hint: For example, 10
@@ -584,13 +607,11 @@ en:
         options:
           email: Email
           post: Post
-          fax: Fax
-      video_call:
-        label: Would you be able to take part in a hearing by video? (Requires internet access).
-        hint: Further details on video hearings can be found on the following link https://www.gov.uk/guidance/hmcts-telephone-and-videohearings-during-coronavirus-outbreak
+      allow_phone_or_video_attendance:
+        label:  Would you be able to take part in hearings by video and phone?
         options:
-          'true': 'Yes'
-          'false': 'No'
+          "phone": "Yes, I can take part in phone hearings"
+          "video": "Yes, I can take part in video hearings"
       organisation_more_than_one_site:
         label: Does this organisation have more than one site in Great Britain?
         options:
@@ -612,6 +633,7 @@ en:
         options:
           'true': 'Yes'
           'false': 'No'
+          'not_applicable': 'Not applicable'
       employment_start:
         label: When their employment started
         hint: For example, 31 03 2010
@@ -625,11 +647,13 @@ en:
         options:
           'true': 'Yes'
           'false': 'No'
+          'not_applicable': 'Not applicable'
       agree_with_claimants_description_of_job_or_title:
         label: Is the claimant's description of their job or job title correct?
         options:
           'true': 'Yes'
           'false': 'No'
+          'not_applicable': 'Not applicable'
       disagree_claimants_job_or_title:
         label: Please give the details you believe to be correct
   earnings_and_benefits:
@@ -639,6 +663,7 @@ en:
         options:
           'true': 'Yes'
           'false': 'No'
+          'not_applicable': 'Not applicable'
       queried_hours:
         label: Tell us the details you believe to be correct.
         hint: Enter hours per week, for example 39
@@ -647,6 +672,7 @@ en:
         options:
           'true': 'Yes'
           'false': 'No'
+          'not_applicable': 'Not applicable'
       queried_pay_before_tax:
         label: Pay before tax
         hint: Including overtime, commission, bonuses, etc. For example, 28000
@@ -655,6 +681,7 @@ en:
         options:
           Monthly: Monthly
           Weekly: Weekly
+          Annually: Annually
       queried_take_home_pay:
         label: Normal take-home pay
         hint: Including overtime, commission, bonuses, etc. For example, 20000
@@ -663,11 +690,13 @@ en:
         options:
           Monthly: Monthly
           Weekly: Weekly
+          Annually: Annually
       agree_with_claimant_notice:
         label: Are the details about being paid for or working a period of notice correct?
         options:
           'true': 'Yes'
           'false': 'No'
+          'not_applicable': 'Not applicable'
       disagree_claimant_notice_reason:
         label: Tell us the details you believe to be correct.
         hint: Explain what happened and why. Enter up to 400 characters. You can upload a document with more details before you submit your response.
@@ -677,6 +706,7 @@ en:
         options:
           'true': 'Yes'
           'false': 'No'
+          'not_applicable': 'Not applicable'
       disagree_claimant_pension_benefits_reason:
         label: Tell us the details you believe to be correct.
         hint: Enter up to 350 characters. You can upload a document with more details before you submit your response.
@@ -737,11 +767,13 @@ en:
         options:
           email: Email
           post: Post
-          fax: Fax
       representative_email:
         label: Email address
-      representative_fax:
-        label: Fax number
+      allow_phone_or_video_attendance:
+        label: Would you be able to take part in hearings by video and phone?
+        options:
+          "phone": "Yes, I can take part in phone hearings"
+          "video": "Yes, I can take part in video hearings"
   disabilities:
     edit:
       disability:
@@ -749,6 +781,7 @@ en:
         options:
           'true': 'Yes'
           'false': 'No'
+          'not_applicable': 'Not applicable'
       disability_information:
         label: It would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises
         hint: |

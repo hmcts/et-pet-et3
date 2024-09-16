@@ -406,7 +406,7 @@ en:
       edit_additional_information_page: Edit Additional Information answers
     form_submission:
       invalid_pdf_download: Not quite ready yet - a PDF version of your completed form will be available for download shortly
-      valid_pdf_download: download your response
+      valid_pdf_download: Save a copy of your response
     footer:
       terms_and_conditions_href: terms and conditions
       personal_info_charter_href: personal information charter
@@ -718,12 +718,11 @@ en:
     receipt_description: We can email you a copy of your receipt.
     submit: Submit your response
   submission:
-    confirmation: Response submitted
+    confirmation: Your response has been submitted
     reference: 142000000100
-    copy_sent: We've sent a copy of your response to
-    copy_sent_without_email: "You can "
+    copy_sent: We've sent you an email confirmation
     office_contact: "Alexandra House, 14-22 The Parsonage, Manchester, M3 2JA"
-    date: "Your response submitted on "
+    date: Response submitted
     return_link: Give feedback
   mailer:
     reference_number: Reference number

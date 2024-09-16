@@ -155,19 +155,11 @@ en:
       submit: "Submit your response"
     form_submission:
       page_title: Application Complete
-      header: Response submitted
+      header: Your response has been submitted
       confirmation: Response Complete
       reference_text: Your submission number
-      covid_19: |
-       In view of the current situation with COVID-19, updated guidance from HMCTS is available here:
-      covid_19_link: "https://www.gov.uk/guidance/coronavirus-covid-19-courts-and-tribunals-planning-and-preparation"
-      copy_sent: We've sent a copy of your response to %{email}. You can also
-      copy_sent_without_email: "You can "
-      submission_date: "Your response submitted on "
-      submission_office: ", has been sent to "
-      contact_office: "If you need to contact them, please email %{email} or call "
-      include_quote_case: "You will need to include or quote your case number."
-      valid_pdf_download: download your response
+      copy_sent: "We've sent you an email confirmation"
+      valid_pdf_download: Save a copy of your response
       invalid_pdf_download: Not quite ready yet - a PDF version of your completed form will be available for download shortly
       pdf_help: "PDF (Portable Document Format) files can be read using applications such as: "
       adobe_link: "Adobe's Acrobat Reader"
@@ -180,6 +172,14 @@ en:
       return_link: Give feedback
       submission_feedback: "Your feedback"
       feedback_content: "We'd like your feedback on this service so we can improve it."
+      what_happens_next: "What happens next"
+      what_happens_next_content:
+        - We'll check your response and may contact you if we have any questions
+        - We'll contact you once we've sent your response to the claimant and explain what happens next
+      response_questions:  For questions about your response
+      response_questions_content: Contact the following tribunal office for questions about your response
+      process_questions: For questions about the employment tribunal process
+      process_questions_content: Call one of our Employment Tribunal customer contact centres. They cannot give you legal advice.
     introduction:
       header: Introduction
       inset_text: If you're a legal professional or another type of professional who received a 16-digit reference number in your response pack, you can %{myhmcts_account_href}.

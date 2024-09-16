@@ -1,43 +1,42 @@
 - content_for :page_title, "#{t('components.form_submission.page_title')} | Response to Claim"
 .content-body.form-submission
-  div.submission-confirmation.govuk-notification-banner.govuk-notification-banner--success role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner"
-    .govuk-notification-banner__header
-      h2.govuk-notification-banner__title = t 'components.form_submission.header'
-    .govuk-notification-banner__content
-      .govuk-notification-banner__heading
-        p.govuk-body = t('components.form_submission.reference_text')
-        span.reference-number = @reference_number
+  div.govuk-panel.govuk-panel--confirmation
+    h1.govuk-panel__title = t 'components.form_submission.header'
   p.govuk-body
-    - if @respondent_email.present?
-      p.govuk-body = t('components.form_submission.covid_19')
-      p.govuk-body = link_to t('components.form_submission.covid_19_link'), 'https://www.gov.uk/guidance/coronavirus-covid-19-courts-and-tribunals-planning-and-preparation', class: 'govuk-link'
-      p.govuk-body
-        = t('components.form_submission.copy_sent', email: @respondent_email)
-        = ' '
-        = link_to t('components.form_submission.valid_pdf_download'), @pdf_url, class: 'pdf-success govuk-link'
-        = link_to t('components.form_submission.invalid_pdf_download'), nil, class: 'pdf-failure hidden govuk-link'
-        = '.'
-    - else
-      p.govuk-body = t('components.form_submission.covid_19')
-      p.govuk-body = link_to t('components.form_submission.covid_19_link'), 'https://www.gov.uk/guidance/coronavirus-covid-19-courts-and-tribunals-planning-and-preparation', class: 'govuk-link'
-      p.govuk-body
-        = t('components.form_submission.copy_sent_without_email')
-        = link_to t('components.form_submission.valid_pdf_download'), @pdf_url, class: 'pdf-success govuk-link'
-        = link_to t('components.form_submission.invalid_pdf_download'), nil, class: 'pdf-failure hidden govuk-link'
-        = '.'
-
-  p.govuk-body
-    = t('components.form_submission.submission_date')
-    span.submission-date = l(@submission_date, format: :pretty)
-    = t('components.form_submission.submission_office')
-    span.office-address = @office_address
-  p.govuk-body
-    = raw t('components.form_submission.contact_office', email: mail_to(@office_email))
-    span.office-phone = @office_phone_number
-
-  .govuk-inset-text
     p.govuk-body
-      = t('components.form_submission.include_quote_case')
+      = t('components.form_submission.copy_sent')
+      = '.'
+
+
+  h2.govuk-heading-m
+    = t('components.form_submission.what_happens_next')
+  ul.govuk-list.govuk-list--bullet
+  - t('components.form_submission.what_happens_next_content').each do |content|
+    li.govuk-body
+      = content
+
+  h2.govuk-heading-m = "Submission Details"
+  dl.govuk-summary-list
+    .govuk-summary-list__row
+      dt.govuk-summary-list__key = 'Submission reference'
+      dd.govuk-summary-list__value = @reference_number
+    .govuk-summary-list__row
+      dt.govuk-summary-list__key = 'Response submitted'
+      dd.govuk-summary-list__value = @submission_date.strftime('%e %B %Y')
+    .govuk-summary-list__row
+      dt.govuk-summary-list__key = 'Download your response'
+      dd.govuk-summary-list__value 
+        = link_to t('components.form_submission.valid_pdf_download'), @pdf_url, class: 'pdf-success govuk-link'
+        = link_to t('components.form_submission.invalid_pdf_download'), nil, class: 'pdf-failure hidden govuk-link'
+    .govuk-summary-list__row
+      dt.govuk-summary-list__key = 'Attachments included'
+      dd.govuk-summary-list__value = @additional_information_file || 'None'
+
+  h2.govuk-heading-m = t('components.form_submission.process_questions')
+  p.govuk-body = t('components.form_submission.process_questions_content')
+  p.govuk-body Telephone: 0300 3230196
+  p.govuk-body Telephone: 0300 303 5176 (Welsh language)
+  p.govuk-body Telephone: 0300 790 6234 (Scotland)
 
   h1.govuk-heading-m
     strong.bold = t('components.form_submission.submission_feedback')

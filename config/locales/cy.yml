@@ -179,6 +179,11 @@ cy:
       response_questions_content: Cysylltwch â swyddfa’r tribiwnlys canlynol ar gyfer cwestiynau am eich ymateb
       process_questions: Ar gyfer cwestiynau am broses y tribiwnlys cyflogaeth
       process_questions_content: Ffoniwch un o ganolfannau cyswllt cwsmeriaid y Tribiwnlys Cyflogaeth. Niallant roi cyngor cyfreithiol i chi.
+      submission_reference: Cyfeirnod cyflwyno
+      response_submitted: Cyflwynwyd yr ymateb
+      download_your_response: Lawrlwythwch eich ymateb
+      attachments_included: Atodiadau yn cynnwys
+      submission_details: Manylion cyflwyno
     introduction:
       header: "Cyflwyniad "
       inset_text: Os ydych chi'n weithiwr proffesiynol cyfreithiol neu'n fath arall o weithiwr proffesiynol a dderbyniodd gyfeirnod 16 digid yn eich pecyn ymateb, gallwch %{myhmcts_account_href}.

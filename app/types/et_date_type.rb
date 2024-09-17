@@ -34,12 +34,6 @@ class EtDateType < ActiveRecord::Type::Date
     new_date(*values)
   end
 
-  def correct_year(year)
-    if year&.to_i&.< 100
-      year.to_i + 1900
-    end
-  end
-
   def fallback_string_to_date(string)
     new_date(*::Date._parse(string, false).values_at(:year, :mon, :mday).map(&:to_s))
   end

@@ -156,7 +156,6 @@ en:
     form_submission:
       page_title: Application Complete
       header: Your response has been submitted
-      confirmation: Response Complete
       reference_text: Your submission number
       copy_sent: "We've sent you an email confirmation"
       valid_pdf_download: Save a copy of your response

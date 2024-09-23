@@ -217,6 +217,14 @@ cy:
         first_line: Mae angen cwcis hanfodol er mwyn i'r gwasanaeth weithio. Nid oes angen inni ofyn am ganiatâd i'w defnyddio
         second_header: Eich cynnydd pan fyddwch yn defnyddio'r gwasanaeth
         second_line: Pan fyddwch yn defnyddio gwefan ‘gwneud hawliad i dribiwnlys cyflogaeth’, byddwn yn rhoi cwci ar eich cyfrifiadur i gofnodi eich cynnydd. Ni fydd y cwci hwn yn cadw eich data personol a chaiff ei ddileu pan fydd eich sesiwn yn dod i ben.
+        dynatrace_header: "I fesur perfformiad cais"
+        dynatrace_details:
+          paragraph1: "Rydym yn defnyddio Platfform Gwybodaeth Meddalwedd Dynatrace i ddarparu Gwasanaeth Monitro Perfformiad Cais i gasglu gwybodaeth am sut rydych chi'n defnyddio gwasanaethau GLlTEM. Rydym yn gwneud hyn i fonitro gwasanaethau GLlTEM er mwyn datrys problemau o fewn ein gwasanaethau yn ogystal â chasglu data ar sut y gellir gwella ein gwasanaethau. Mae GLlTEM yn storio gwybodaeth am:"
+          bullet-list:
+            - "Perfformiad y safle"
+            - "Defnydd o'r wefan"
+            - "Ymddygiad defnyddwyr"
+          paragraph2: "Cyflwynir gwybodaeth o fewn y gwasanaeth Monitro Perfformiad Cais at y dibenion a nodir uchod. Nid ydym yn defnyddio nac yn rhannu'r wybodaeth at unrhyw ddiben arall. Nid ydym yn caniatáu i Dynatrace ddefnyddio na rhannu'r wybodaeth at unrhyw ddibenion eraill."
       cookie_message:
         header: Neges yn ymwneud â chwcis
         first_line: Efallai y byddwch yn gweld baner pan ymwelwch â thribiwnlysoedd cyflogaeth yn eich gwahodd i dderbyn neu wrthod cwcis dewisol. Byddwn yn gosod cwcis ar eich cyfrifiadur fel ei fod yn gwybod eich bod wedi'i weld ac nad oes angen ei ddangos eto, a hefyd i storio eich gosodiadau.
@@ -276,6 +284,23 @@ cy:
       cookie_link_text: ""
       cookie_radio_buttons:
         header: A ydych eisiau derbyn cwcis dadansoddol?
+      dynatrace:
+        table:
+          dt-cookie:
+            purpose: "Olrhain ymweliad ar draws sawl cais"
+          expires:
+            session-end: "Pan ddaw'r sesiwn i ben"
+          dt-lat-c:
+            purpose: "Mesurau hwyrni gweinydd ar gyfer monitro perfformiad"
+          dt-pc:
+            purpose: "Angen nodi pwyntiau terfynbwyntiau priodol ar gyfer trosglwyddo beacon; yn cynnwys ID sesiwn ar gyfer cydberthynas"
+          dt-sa:
+            purpose: "Storfa ganolradd ar gyfer camau gweithredu rhychwantu tudalen"
+          rx-visitor:
+            purpose: "ID ymwelwyr i sesiynau cydberthyn"
+            expires: "Blwyddyn 1"
+          rxvt:
+            purpose: "Amser y sesiwn"
     terms_and_conditions:
       header: Telerau ac amodau
       introduction: Trwy ddefnyddio’r gwasanaeth hwn rydych yn cytuno i’r telerau defnydd hyn. Mae hyn yn cynnwys y %{privacy_policy_href}.

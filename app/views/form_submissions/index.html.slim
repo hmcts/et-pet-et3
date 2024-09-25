@@ -15,21 +15,21 @@
     li.govuk-body
       = content
 
-  h2.govuk-heading-m = "Submission Details"
+  h2.govuk-heading-m = t('components.form_submission.submission_details')
   dl.govuk-summary-list
     .govuk-summary-list__row
-      dt.govuk-summary-list__key = 'Submission reference'
+      dt.govuk-summary-list__key = t('components.form_submission.submission_reference')
       dd.govuk-summary-list__value = @reference_number
     .govuk-summary-list__row
-      dt.govuk-summary-list__key = 'Response submitted'
+      dt.govuk-summary-list__key = t('components.form_submission.response_submitted')
       dd.govuk-summary-list__value = @submission_date.strftime('%e %B %Y')
     .govuk-summary-list__row
-      dt.govuk-summary-list__key = 'Download your response'
+      dt.govuk-summary-list__key = t('components.form_submission.download_your_response')
       dd.govuk-summary-list__value 
         = link_to t('components.form_submission.valid_pdf_download'), @pdf_url, class: 'pdf-success govuk-link'
         = link_to t('components.form_submission.invalid_pdf_download'), nil, class: 'pdf-failure hidden govuk-link'
     .govuk-summary-list__row
-      dt.govuk-summary-list__key = 'Attachments included'
+      dt.govuk-summary-list__key = t('components.form_submission.attachments_included')
       dd.govuk-summary-list__value = @additional_information_file || 'None'
 
   h2.govuk-heading-m = t('components.form_submission.process_questions')

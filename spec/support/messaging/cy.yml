@@ -692,7 +692,7 @@ cy:
     receipt_description: Gallwn anfon copi o’ch derbynneb atoch drwy e-bost.
     submit: Cyflwyno eich ymateb
   submission:
-    confirmation: "Ymateb wedi'i gwblhau"
+    confirmation: "Mae eich ymateb wedi ei gyflwyno."
     reference: 142000000100
     copy_sent: Rydym wedi anfon copi o’ch ymateb i
     copy_sent_without_email: "Gallwch chi "

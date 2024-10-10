@@ -1,6 +1,7 @@
 - content_for :html_lang
   = I18n.locale
 - content_for :head
+  = dynatrace_script_tag
   = stylesheet_pack_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
   = javascript_pack_tag 'application'
   = csrf_meta_tags

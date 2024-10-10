@@ -222,6 +222,14 @@ en:
         first_line: Essential cookies are needed for the service to work. We do not need to ask for permission to use them.
         second_header: Your progress when using the service
         second_line: When using this service, we'll set a cookie to remember your progress. This cookie doesn’t store your personal data and is deleted when your session ends.
+        dynatrace_header: "To measure application performance"
+        dynatrace_details:
+          paragraph1: "We use Dynatrace Software Intelligence Platform to provide an Application Performance Monitoring Service to collect information about how you use HMCTS services. We do this to monitor HMCTS services in order to resolve issues within our services as well as collect data on how our services can be improved. HMCTS store information about:"
+          bullet-list:
+            - "Site performance"
+            - "Website usage"
+            - "User behaviour"
+          paragraph2: "Information is presented within the Application Performance Monitoring service for the purposes detailed above. We do not use or share the information for any other purpose. We do not allow Dynatrace to use or share the information for any other purposes."
       cookie_message:
         header: Cookies message
         first_line: You may see a banner when you visit employment tribunals inviting you to accept or reject optional cookies. We'll set cookies so that your computer knows you've seen it and not to show it again, and also store your settings.
@@ -281,6 +289,23 @@ en:
       cookie_link_text: "Gov.uk"
       cookie_radio_buttons:
         header: Do you want to accept analytics cookies?
+      dynatrace:
+        table:
+          dt-cookie:
+            purpose: "Tracks a visit across multiple requests"
+          expires:
+            session-end: "When session ends"
+          dt-lat-c:
+            purpose: "Measures server latency for performance monitoring"
+          dt-pc:
+            purpose: "Required to identify proper endpoints for beacon transmission; includes session ID for correlation"
+          dt-sa:
+            purpose: "Intermediate store for page-spanning actions"
+          rx-visitor:
+            purpose: "Visitor ID to correlate sessions"
+            expires: "1 year"
+          rxvt:
+            purpose: "Session timeout"
     terms_and_conditions:
       header: Terms and conditions
       introduction: By using this service you’re agreeing to these terms of use. This includes the %{privacy_policy_href}.

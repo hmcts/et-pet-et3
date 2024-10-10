@@ -39,7 +39,43 @@
         td.govuk-table__cell = t('components.cookies.cookie_message.table.name')
         td.govuk-table__cell = t('components.cookies.cookie_message.table.purpose')
         td.govuk-table__cell = t('components.cookies.cookie_message.table.expires')
-
+  h2.govuk-heading-s = t('components.cookies.cookie_usage.dynatrace_header')
+  p.govuk-body = t('components.cookies.cookie_usage.dynatrace_details.paragraph1')
+  ul.govuk-list.govuk-list--bullet
+    - t('components.cookies.cookie_usage.dynatrace_details.bullet-list').each do |bullet_text|
+      li = bullet_text
+  p.govuk-body = t('components.cookies.cookie_usage.dynatrace_details.paragraph2')
+  table.govuk-table
+    thead.govuk-table__head
+      tr.govuk-table__row
+        th.govuk-table__header = t('components.cookies.table_header.name')
+        th.govuk-table__header = t('components.cookies.table_header.purpose')
+        th.govuk-table__header = t('components.cookies.table_header.expires')
+    tbody.govuk-table__body
+      tr.govuk-table__row
+        td.govuk-table__cell dtCookie
+        td.govuk-table__cell = t('components.cookies.dynatrace.table.dt-cookie.purpose')
+        td.govuk-table__cell = t('components.cookies.dynatrace.table.expires.session-end')
+      tr.govuk-table__row
+        td.govuk-table__cell dtLatC
+        td.govuk-table__cell = t('components.cookies.dynatrace.table.dt-lat-c.purpose')
+        td.govuk-table__cell = t('components.cookies.dynatrace.table.expires.session-end')
+      tr.govuk-table__row
+        td.govuk-table__cell dtPC
+        td.govuk-table__cell = t('components.cookies.dynatrace.table.dt-pc.purpose')
+        td.govuk-table__cell = t('components.cookies.dynatrace.table.expires.session-end')
+      tr.govuk-table__row
+        td.govuk-table__cell dtSa
+        td.govuk-table__cell = t('components.cookies.dynatrace.table.dt-sa.purpose')
+        td.govuk-table__cell = t('components.cookies.dynatrace.table.expires.session-end')
+      tr.govuk-table__row
+        td.govuk-table__cell rxVisitor
+        td.govuk-table__cell = t('components.cookies.dynatrace.table.rx-visitor.purpose')
+        td.govuk-table__cell = t('components.cookies.dynatrace.table.rx-visitor.expires')
+      tr.govuk-table__row
+        td.govuk-table__cell rxvt
+        td.govuk-table__cell = t('components.cookies.dynatrace.table.rxvt.purpose')
+        td.govuk-table__cell = t('components.cookies.dynatrace.table.expires.session-end')
   #website-usage
     h2.govuk-heading-m = t('components.cookies.website_usage.header')
     h2.govuk-heading-s = t('components.cookies.website_usage.second_header')

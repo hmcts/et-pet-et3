@@ -47,7 +47,7 @@ group :development, :test do
   gem 'capybara', '~> 3.34'
   gem 'selenium-webdriver', '~> 4.18'
   gem 'rubocop', '~> 1.8'
-  gem 'rubocop-rspec', '~> 2.1'
+  gem 'rubocop-rspec', '~> 3.3'
   gem 'simplecov', '~> 0.21'
   gem 'pry', '~> 0.12'
   # Run Rspec tests in parallel to speed the test suite up

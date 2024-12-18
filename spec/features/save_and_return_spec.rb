@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Save and Return', js: true do
+RSpec.feature 'Save and Return', :js do
 
   let(:emails_sent) do
     ET3::Test::EmailsSent.new
@@ -18,7 +18,7 @@ RSpec.feature 'Save and Return', js: true do
     start_a_new_et3_response
     registration_page.next
 
-    registration_page.memorable_word_question.assert_error_message(t 'errors.custom.memorable_word')
+    registration_page.memorable_word_question.assert_error_message(t('errors.custom.memorable_word'))
   end
 
   scenario 'Correctly will log out user and have a new empty session' do
@@ -32,7 +32,7 @@ RSpec.feature 'Save and Return', js: true do
     start_a_new_et3_response
 
     expect(registration_page.email_question.value).to eql ""
-    expect(registration_page.memorable_word_question.value). to eql ""
+    expect(registration_page.memorable_word_question.value).to eql ""
   end
 
   scenario 'user will receive an email once registration done' do

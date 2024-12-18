@@ -15,7 +15,7 @@ RSpec.describe YourRepresentativesDetails, type: :model do
   let(:three_hundred_fifty_one_chars) { Faker::Lorem.characters(number: 351) }
 
   context 'with validators' do
-    it 'will not validate a name with numbers in' do
+    it 'does not validate a name with numbers in' do
       populated_your_representatives_details.representative_name = 'J4ne D0e'
 
       populated_your_representatives_details.valid?
@@ -31,7 +31,7 @@ RSpec.describe YourRepresentativesDetails, type: :model do
       expect(populated_your_representatives_details.errors.details[:representative_postcode]).to include a_hash_including(error: :invalid_postcode)
     end
 
-    it 'will not validate a contact_number with less than 7 integers' do
+    it 'does not validate a contact_number with less than 7 integers' do
       populated_your_representatives_details.representative_phone = "+0044---------9"
 
       populated_your_representatives_details.valid?
@@ -39,7 +39,7 @@ RSpec.describe YourRepresentativesDetails, type: :model do
       expect(populated_your_representatives_details.errors.details[:representative_phone]).to include a_hash_including(error: :invalid_phone_number)
     end
 
-    it 'will not validate a mobile_number with letter characters' do
+    it 'does not validate a mobile_number with letter characters' do
       populated_your_representatives_details.representative_mobile = "+44 71234567B9"
 
       populated_your_representatives_details.valid?
@@ -47,7 +47,7 @@ RSpec.describe YourRepresentativesDetails, type: :model do
       expect(populated_your_representatives_details.errors.details[:representative_mobile]).to include a_hash_including(error: :invalid_phone_number)
     end
 
-    it 'will not validate an email address without a domain' do
+    it 'does not validate an email address without a domain' do
       populated_your_representatives_details.representative_contact_preference = "email"
       populated_your_representatives_details.representative_email = "nodomain@.com"
 
@@ -116,70 +116,70 @@ RSpec.describe YourRepresentativesDetails, type: :model do
     end
   end
 
-  describe ".to_h " do
-    it "will return a hash" do
+  describe ".to_h" do
+    it "returns a hash" do
       expect(populated_your_representatives_details.to_h).to be_a(Hash)
     end
 
-    it 'will return the type_of_representative key and value pair' do
+    it 'returns the type_of_representative key and value pair' do
       expect(populated_your_representatives_details.to_h).to include(type_of_representative: 'Law Centre')
     end
 
-    it 'will return the representative_org_name key and value pair' do
+    it 'returns the representative_org_name key and value pair' do
       expect(populated_your_representatives_details.to_h).to include(representative_org_name: 'repco ltd')
     end
 
-    it 'will return the representative_name key and value pair' do
+    it 'returns the representative_name key and value pair' do
       expect(populated_your_representatives_details.to_h).to include(representative_name: 'Jane Doe')
     end
 
-    it 'will return the representative_building key and value pair' do
+    it 'returns the representative_building key and value pair' do
       expect(populated_your_representatives_details.to_h).to include(representative_building: 'Rep Building')
     end
 
-    it 'will return the representative_street key and value pair' do
+    it 'returns the representative_street key and value pair' do
       expect(populated_your_representatives_details.to_h).to include(representative_street: 'Rep Street')
     end
 
-    it 'will return the representative_town key and value pair' do
+    it 'returns the representative_town key and value pair' do
       expect(populated_your_representatives_details.to_h).to include(representative_town: 'Rep Town')
     end
 
-    it 'will return the representative_county key and value pair' do
+    it 'returns the representative_county key and value pair' do
       expect(populated_your_representatives_details.to_h).to include(representative_county: 'Rep County')
     end
 
-    it 'will return the representative_postcode key and value pair' do
+    it 'returns the representative_postcode key and value pair' do
       expect(populated_your_representatives_details.to_h).to include(representative_postcode: 'WC2 2BB')
     end
 
-    it 'will return the representative_phone key and value pair' do
+    it 'returns the representative_phone key and value pair' do
       expect(populated_your_representatives_details.to_h).to include(representative_phone: '0207 987 6543')
     end
 
-    it 'will return the representative_mobile key and value pair' do
+    it 'returns the representative_mobile key and value pair' do
       expect(populated_your_representatives_details.to_h).to include(representative_mobile: '07987654321')
     end
 
-    it 'will return the representative_dx_number key and value pair' do
+    it 'returns the representative_dx_number key and value pair' do
       expect(populated_your_representatives_details.to_h).to include(representative_dx_number: 'DX 123 London 456')
     end
 
-    it 'will return the representative_reference key and value pair' do
+    it 'returns the representative_reference key and value pair' do
       expect(populated_your_representatives_details.to_h).to include(representative_reference: 'Rep Ref')
     end
 
-    it 'will return the representative_contact_preference key and value pair' do
+    it 'returns the representative_contact_preference key and value pair' do
       expect(populated_your_representatives_details.to_h).to include(representative_contact_preference: 'email')
     end
 
-    it 'will return the representative_email key and value pair' do
+    it 'returns the representative_email key and value pair' do
       expect(populated_your_representatives_details.to_h).to include(representative_email: 'your@representative.email')
     end
   end
 
   context "when left blank" do
-    it 'will raise a validation error on type_of_representative' do
+    it 'raises a validation error on type_of_representative' do
       populated_your_representatives_details.type_of_representative = nil
 
       populated_your_representatives_details.valid?
@@ -187,7 +187,7 @@ RSpec.describe YourRepresentativesDetails, type: :model do
       expect(populated_your_representatives_details.errors.details[:type_of_representative]).to include a_hash_including(error: :inclusion)
     end
 
-    it 'will not raise a validation error on representative_org_name' do
+    it 'does not raise a validation error on representative_org_name' do
       populated_your_representatives_details.representative_org_name = nil
 
       populated_your_representatives_details.valid?
@@ -195,7 +195,7 @@ RSpec.describe YourRepresentativesDetails, type: :model do
       expect(populated_your_representatives_details).to be_valid
     end
 
-    it 'will raise a validation error on representative_name' do
+    it 'raises a validation error on representative_name' do
       populated_your_representatives_details.representative_name = nil
 
       populated_your_representatives_details.valid?
@@ -203,7 +203,7 @@ RSpec.describe YourRepresentativesDetails, type: :model do
       expect(populated_your_representatives_details.errors.details[:representative_name]).to include a_hash_including(error: :blank)
     end
 
-    it 'will raise a validation error on representative_building' do
+    it 'raises a validation error on representative_building' do
       populated_your_representatives_details.representative_building = nil
 
       populated_your_representatives_details.valid?
@@ -211,7 +211,7 @@ RSpec.describe YourRepresentativesDetails, type: :model do
       expect(populated_your_representatives_details.errors.details[:representative_building]).to include a_hash_including(error: :blank)
     end
 
-    it 'will raise a validation error on representative_street' do
+    it 'raises a validation error on representative_street' do
       populated_your_representatives_details.representative_street = nil
 
       populated_your_representatives_details.valid?
@@ -219,7 +219,7 @@ RSpec.describe YourRepresentativesDetails, type: :model do
       expect(populated_your_representatives_details.errors.details[:representative_street]).to include a_hash_including(error: :blank)
     end
 
-    it 'will raise a validation error on representative_town' do
+    it 'raises a validation error on representative_town' do
       populated_your_representatives_details.representative_town = nil
 
       populated_your_representatives_details.valid?
@@ -227,7 +227,7 @@ RSpec.describe YourRepresentativesDetails, type: :model do
       expect(populated_your_representatives_details.errors.details[:representative_town]).to include a_hash_including(error: :blank)
     end
 
-    it 'will not raise a validation error on representative_county' do
+    it 'does not raise a validation error on representative_county' do
       populated_your_representatives_details.representative_county = nil
 
       populated_your_representatives_details.valid?
@@ -235,7 +235,7 @@ RSpec.describe YourRepresentativesDetails, type: :model do
       expect(populated_your_representatives_details).to be_valid
     end
 
-    it 'will raise a validation error on representative_postcode' do
+    it 'raises a validation error on representative_postcode' do
       populated_your_representatives_details.representative_postcode = nil
 
       populated_your_representatives_details.valid?
@@ -243,7 +243,7 @@ RSpec.describe YourRepresentativesDetails, type: :model do
       expect(populated_your_representatives_details.errors.details[:representative_postcode]).to include a_hash_including(error: :blank)
     end
 
-    it 'will not raise a validation error on representative_phone' do
+    it 'does not raise a validation error on representative_phone' do
       populated_your_representatives_details.representative_phone = nil
 
       populated_your_representatives_details.valid?
@@ -251,7 +251,7 @@ RSpec.describe YourRepresentativesDetails, type: :model do
       expect(populated_your_representatives_details).to be_valid
     end
 
-    it 'will raise a validation error on representative_mobile' do
+    it 'raises a validation error on representative_mobile' do
       populated_your_representatives_details.representative_mobile = nil
 
       populated_your_representatives_details.valid?
@@ -259,7 +259,7 @@ RSpec.describe YourRepresentativesDetails, type: :model do
       expect(populated_your_representatives_details).to be_valid
     end
 
-    it 'will raise a validation error on representative_dx_number' do
+    it 'raises a validation error on representative_dx_number' do
       populated_your_representatives_details.representative_dx_number = nil
 
       populated_your_representatives_details.valid?
@@ -267,7 +267,7 @@ RSpec.describe YourRepresentativesDetails, type: :model do
       expect(populated_your_representatives_details).to be_valid
     end
 
-    it 'will raise a validation error on representative_reference' do
+    it 'raises a validation error on representative_reference' do
       populated_your_representatives_details.representative_reference = nil
 
       populated_your_representatives_details.valid?
@@ -275,7 +275,7 @@ RSpec.describe YourRepresentativesDetails, type: :model do
       expect(populated_your_representatives_details).to be_valid
     end
 
-    it 'will raise a validation error on representative_contact_preference' do
+    it 'raises a validation error on representative_contact_preference' do
       populated_your_representatives_details.representative_contact_preference = nil
 
       populated_your_representatives_details.valid?
@@ -286,7 +286,7 @@ RSpec.describe YourRepresentativesDetails, type: :model do
   end
 
   context "when email is the preferred contact method" do
-    it "will raise a validation error if an email address is not entered" do
+    it "raises a validation error if an email address is not entered" do
       populated_your_representatives_details.representative_contact_preference = "email"
       populated_your_representatives_details.representative_email = nil
 
@@ -295,7 +295,7 @@ RSpec.describe YourRepresentativesDetails, type: :model do
       expect(populated_your_representatives_details.errors.details[:representative_email]).to include a_hash_including(error: :invalid_email)
     end
 
-    it "will not raise a validation error if an email address is provided" do
+    it "does not raise a validation error if an email address is provided" do
       populated_your_representatives_details.representative_contact_preference = "email"
       populated_your_representatives_details.representative_email = "john@dodgyco.com"
 
@@ -305,14 +305,14 @@ RSpec.describe YourRepresentativesDetails, type: :model do
 
   context "when post is the preferred contact method" do
 
-    it "will not validate an email address" do
+    it "does not validate an email address" do
       populated_your_representatives_details.representative_contact_preference = "post"
       populated_your_representatives_details.representative_email = "invalid email"
 
       expect(populated_your_representatives_details).to be_valid
     end
 
-    it "will not hash an email address" do
+    it "does not hash an email address" do
       populated_your_representatives_details.representative_contact_preference = "post"
       populated_your_representatives_details.representative_email = "john@dodgyco.com"
 

@@ -7,6 +7,7 @@ class DateValidator < ActiveModel::EachValidator
     super(my_options, &block)
   end
 
+  # rubocop:disable Lint/DuplicateBranch
   def validate_each(record, attribute, value)
     if illegal_date?(record, attribute, value)
       record.errors.add(attribute, :invalid)
@@ -16,6 +17,7 @@ class DateValidator < ActiveModel::EachValidator
       record.errors.add(attribute, :invalid)
     end
   end
+  # rubocop:enable Lint/DuplicateBranch
 
   private
 
@@ -37,6 +39,7 @@ class DateValidator < ActiveModel::EachValidator
     (value.nil? && original_value.is_a?(String) && original_value.present?) || (value.is_a?(String) && value.present?)
   end
 
+  # rubocop:disable Metrics/MethodLength
   def illegal_year?(value)
     # Needs to verify that four digits are given for a year
     return false if value.nil?
@@ -52,7 +55,9 @@ class DateValidator < ActiveModel::EachValidator
   rescue ArgumentError
     false
   end
+  # rubocop:enable Metrics/MethodLength
 
+  # rubocop:disable Lint/DuplicateBranch, Metrics/PerceivedComplexity, Metrics/MethodLength, Metrics/CyclomaticComplexity
   def illegal_date?(record, attribute, value)
     # The date type in rails seems a bit basic in terms of validation - it will accept 31/2/xxxx but not 32/2/xxxx,
     #   neither of which should be valid so we are going to validate better here.
@@ -72,6 +77,7 @@ class DateValidator < ActiveModel::EachValidator
   rescue Date::Error, TypeError
     true
   end
+  # rubocop:enable Lint/DuplicateBranch, Metrics/PerceivedComplexity, Metrics/MethodLength, Metrics/CyclomaticComplexity
 
   def read_attribute_before_type_cast(record, attribute, default:)
     return default unless record.respond_to?(:read_attribute_before_type_cast)

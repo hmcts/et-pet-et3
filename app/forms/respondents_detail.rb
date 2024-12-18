@@ -53,19 +53,19 @@ class RespondentsDetail < BaseForm
   validates :case_number, case_number: true
   validates :name, presence: true
   validates :contact,
-    persons_name: true,
-    allow_blank: true
+            persons_name: true,
+            allow_blank: true
   validates :building_name, :street_name, :town, presence: true
   validates :postcode, postcode: true
   validates :contact_number, :mobile_number,
-    phone_number: true,
-    allow_blank: true
+            phone_number: true,
+            allow_blank: true
   validates :email_address,
-    email_address: true,
-    if: :prefer_email?
+            email_address: true,
+            if: :prefer_email?
   validates :organisation_employ_gb,
-    numericality: true,
-    allow_blank: true
+            numericality: true,
+            allow_blank: true
   validates :organisation_more_than_one_site, inclusion: { in: [true, false] }, allow_blank: true
   validates :employment_at_site_number, numericality: true, if: :more_than_one_site?
 

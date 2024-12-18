@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Access Start Page", js: true do
+RSpec.feature "Access Start Page", :js do
   let(:respondents_details_page) { ET3::Test::RespondentsDetailsPage.new }
 
   scenario "user will be able to read text" do

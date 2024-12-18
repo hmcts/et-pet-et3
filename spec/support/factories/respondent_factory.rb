@@ -2,61 +2,61 @@ require 'faker'
 
 FactoryBot.define do
   factory :respondent, class: OpenStruct do
-      email {"test@gmail.com"}
-      memorable_word {"password"}
-      case_number {"1454321/2017"}
-      name { Faker::Company.name }
-      company_number { '194632819' }
-      company_type { :limited_company }
-      building_name {"the-shard"}
-      street_name { Faker::Address.street_name }
-      town {"westminster"}
-      county {"london"}
-      postcode {"wc1 1aa"}
-      organisation_more_than_one_site {:"questions.respondents_details.organisation_more_than_one_site.options.no"}
-      allow_phone_or_video_attendance { [:video] }
+    email { "test@gmail.com" }
+    memorable_word { "password" }
+    case_number { "1454321/2017" }
+    name { Faker::Company.name }
+    company_number { '194632819' }
+    company_type { :limited_company }
+    building_name { "the-shard" }
+    street_name { Faker::Address.street_name }
+    town { "westminster" }
+    county { "london" }
+    postcode { "wc1 1aa" }
+    organisation_more_than_one_site { :'questions.respondents_details.organisation_more_than_one_site.options.no' }
+    allow_phone_or_video_attendance { [:video] }
   end
 
   trait :respondent_valid do
     title { :Mr }
     contact { Faker::Name.name }
-    county {"london"}
-    dx_number {"234242342"}
-    contact_number {"02081234567"}
-    contact_mobile_number {"07123456789"}
-    contact_preference {:"questions.respondents_details.contact_preference.options.email"}
-    email_address {"sivvoy.taing@hmcts.net"}
-    organisation_employ_gb {"100"}
-    make_employer_contract_claim {:"questions.employers_contract_claims.make_employer_contract_claim.options.yes"}
-    claim_information {"lorem ipsum info"}
-    email_receipt {"sivvoy.taing@hmcts.net"}
-    disability {:yes}
-    disability_information {"Lorem ipsum disability"}
+    county { "london" }
+    dx_number { "234242342" }
+    contact_number { "02081234567" }
+    contact_mobile_number { "07123456789" }
+    contact_preference { :'questions.respondents_details.contact_preference.options.email' }
+    email_address { "sivvoy.taing@hmcts.net" }
+    organisation_employ_gb { "100" }
+    make_employer_contract_claim { :'questions.employers_contract_claims.make_employer_contract_claim.options.yes' }
+    claim_information { "lorem ipsum info" }
+    email_receipt { "sivvoy.taing@hmcts.net" }
+    disability { :yes }
+    disability_information { "Lorem ipsum disability" }
     allow_phone_or_video_attendance { [:video] }
   end
 
   trait :contact_preference_post do
-    contact_preference {:"questions.respondents_details.contact_preference.options.post"}
+    contact_preference { :'questions.respondents_details.contact_preference.options.post' }
     email_address { nil }
   end
 
   trait :upload_additional_information do
-    rtf_file {"sample.rtf"}
+    rtf_file { "sample.rtf" }
   end
 
   trait :respondent_invalid do
-    contact {"J0hn Sm1th"}
-    county {nil}
-    dx_number {"724060 Derby 21 (no validation)"}
-    contact_number {"string"}
-    contact_mobile_number {"string"}
-    contact_preference {:"questions.respondents_details.contact_preference.options.email"}
-    employment_at_site_number {"string"}
-    organisation_employ_gb {"string"}
-    make_employer_contract_claim {:"questions.employers_contract_claims.make_employer_contract_claim.options.yes"}
-    claim_information {Faker::Lorem.characters(number: 4501)}
-    email_receipt {""}
-    disability {:yes}
+    contact { "J0hn Sm1th" }
+    county { nil }
+    dx_number { "724060 Derby 21 (no validation)" }
+    contact_number { "string" }
+    contact_mobile_number { "string" }
+    contact_preference { :'questions.respondents_details.contact_preference.options.email' }
+    employment_at_site_number { "string" }
+    organisation_employ_gb { "string" }
+    make_employer_contract_claim { :'questions.employers_contract_claims.make_employer_contract_claim.options.yes' }
+    claim_information { Faker::Lorem.characters(number: 4501) }
+    email_receipt { "" }
+    disability { :yes }
     disability_information { Faker::Lorem.characters(number: 351) }
     allow_phone_or_video_attendance { [] }
   end

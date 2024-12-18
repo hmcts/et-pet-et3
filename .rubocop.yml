@@ -23,6 +23,7 @@ AllCops:
     - 'config/routes.rb'
     - 'Gemfile'
 
+# Layouts
 # Allow long lines in specs, as it's almost impossible to fit RSpec's
 # expectations into 80 characters.
 Layout/LineLength:
@@ -34,6 +35,37 @@ Layout/LineLength:
     - 'config/initializers/devise.rb'
     - 'app/services/et_api_handler.rb'
     - 'app/forms/*'
+Layout/TrailingEmptyLines:
+  Enabled: true
+# private/protected/public
+Layout/AccessModifierIndentation:
+  EnforcedStyle: indent
+# Just indent parameters by two spaces. It's less volatile if methods change,
+# and there's less busy work lining things up.
+Layout/ParameterAlignment:
+  EnforcedStyle: with_fixed_indentation
+# Chain methods with trailing dots.
+Layout/DotPosition:
+  EnforcedStyle: trailing
+# Prefer blank line after class/module start.
+Layout/EmptyLinesAroundClassBody:
+  Enabled: false
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: false
+Layout/EmptyLinesAroundBlockBody:
+  Enabled: false
+Layout/EmptyLineAfterMagicComment:
+  Enabled: false
+Layout/LineEndStringConcatenationIndentation:
+  Enabled: true
+Layout/SpaceBeforeBrackets:
+  Enabled: true
+Layout/LineContinuationLeadingSpace:
+  Enabled: true
+Layout/LineContinuationSpacing:
+  Enabled: true
+
+# Metrics
 Metrics/ModuleLength:
   Max: 120
   Exclude:
@@ -42,20 +74,6 @@ Metrics/AbcSize:
   Exclude:
     - 'spec/**/*'
     - 'app/services/et_api_handler.rb'
-
-# Allow expect {}.to blocks in specs
-# but not in the code
-Style/BlockDelimiters:
-  Enabled: true
-  Exclude:
-    - 'spec/**/*'
-
-Style/AsciiComments:
-  Enabled: true
-  Exclude:
-    - 'spec/**/*'
-Layout/TrailingEmptyLines:
-  Enabled: true
 # Don't worry about long methods in specs.
 Metrics/MethodLength:
   Exclude:
@@ -66,29 +84,27 @@ Metrics/MethodLength:
 Metrics/ClassLength:
   Exclude:
     - 'app/services/et_api_handler.rb'
-
-# No need to check for describe class param in support files.
-RSpec/DescribeClass:
+Metrics/BlockLength:
   Exclude:
-    - spec/support/**/*
-    - spec/views/**/*
+    - 'spec/**/*'
+    - 'config/**/*'
+    - 'lib/tasks/**/*'
+Metrics/CollectionLiteralLength:
+  Enabled: true
 
-Rails/FilePath:
+# Styles
+# Allow expect {}.to blocks in specs
+# but not in the code
+Style/BlockDelimiters:
+  Enabled: true
   Exclude:
-    - spec/routing/**/*
-
-# private/protected/public
-Layout/AccessModifierIndentation:
-  EnforcedStyle: indent
-
-# Just indent parameters by two spaces. It's less volatile if methods change,
-# and there's less busy work lining things up.
-Layout/ParameterAlignment:
-  EnforcedStyle: with_fixed_indentation
-
+    - 'spec/**/*'
+Style/AsciiComments:
+  Enabled: true
+  Exclude:
+    - 'spec/**/*'
 Style/ClassAndModuleChildren:
   EnforcedStyle: nested
-
 Style/CollectionMethods:
   PreferredMethods:
     collect: 'map'
@@ -98,130 +114,57 @@ Style/CollectionMethods:
     reduce: 'inject'
     detect: 'find'
     find_all: 'select'
-
-# Chain methods with trailing dots.
-Layout/DotPosition:
-  EnforcedStyle: trailing
-
 # No, we don't prefer each_with_object
 Style/EachWithObject:
   Enabled: false
-
-# Prefer blank line after class/module start.
-Layout/EmptyLinesAroundClassBody:
-  Enabled: false
-
-Layout/EmptyLinesAroundModuleBody:
-  Enabled: false
-
-Layout/EmptyLinesAroundBlockBody:
-  Enabled: false
-
 # We have a mixture at the moment, so don't enforce anything.
 Style/FormatString:
   Enabled: false
-
 # It's not really clearer to replace every if with a return if.
 Style/GuardClause:
   Enabled: false
-
 # Groups of three is not always the right thing for numeric literals
 Style/NumericLiterals:
   Enabled: false
-
 Style/FrozenStringLiteralComment:
   Enabled: false
-
 # Percent-formatting and hash interpolation both have their place. Don't
 # enforce any particular one.
 Style/StringLiterals:
   Enabled: false
-
 # I'm happy with raise, thanks.
 Style/SignalException:
   Enabled: false
-
 # Let us use foo? methods
 Style/TrivialAccessors:
   AllowPredicates: true
-
 Style/MixinUsage:
   Enabled: true
   Exclude:
     - 'spec/**/*'
     - 'features/**/*'
-
 # Prefer sensible naming to comments everywhere.
 Style/Documentation:
   Description: Document classes and non-namespace modules.
   Enabled: false
-
 # Would enforce do_y if x over if x / do y / end. As with GuardClause above,
 # this enforces code organisation that doesn't necesarily make things clearer.
 Style/IfUnlessModifier:
   Enabled: false
-
-# Allow safe assignment in conditions.
-Lint/AssignmentInCondition:
-  AllowSafeAssignment: false
-
 # Just a preference to use %w[] over %w()
 Style/PercentLiteralDelimiters:
   PreferredDelimiters:
     '%w': '[]'
     '%W': '[]'
     '%i': '[]'
-
 # %w doesn't always make for clearer test data
 Style/WordArray:
   EnforcedStyle: brackets
-
 Style/SymbolArray:
   EnforcedStyle: brackets
-
-RSpec/NestedGroups:
-  Max: 10
-
-RSpec/ExpectActual:
-  Exclude:
-    - 'spec/routing/**/*'
-
-Metrics/BlockLength:
-  Exclude:
-    - 'spec/**/*'
-    - 'config/**/*'
-    - 'lib/tasks/**/*'
-
-Layout/EmptyLineAfterMagicComment:
-  Enabled: false
-
-# ---------------
-# HttpPositionalArguments is rails 5 only
-# https://github.com/bbatsov/rubocop/issues/3629
-# ---------------
-Rails/HttpPositionalArguments:
-  Enabled: false
-
-RSpec/MultipleExpectations:
-  Exclude:
-    - 'spec/features/**/*'
-
-RSpec/ExampleLength:
-  Exclude:
-    - 'spec/**/*'
-
 Style/NumericPredicate:
   Exclude:
     - 'spec/**/*'
-
-#Rails/OutputSafety:
-#  Exclude:
-#    - 'app/helpers/yaml_helper.rb'
-
-Naming/PredicateName:
-  Exclude:
-    - 'spec/support/**/*'
-
 Style/StringChars:
   Enabled: true
 Style/SuperArguments:
@@ -354,161 +297,66 @@ Style/ConcatArrayLiterals:
   Enabled: true
 Style/DataInheritance:
   Enabled: true
-Naming/BlockForwarding:
-  Enabled: true
-Security/CompoundHash:
-  Enabled: true
-Security/IoMethods:
-  Enabled: true
 Style/AmbiguousEndlessMethodDefinition:
   Enabled: true
 Style/ArgumentsForwarding:
   Enabled: true
 Style/ArrayIntersect:
   Enabled: true
-Lint/UnmodifiedReduceAccumulator:
-  Enabled: true
-Lint/UselessDefined:
-  Enabled: true
-Lint/UselessNumericOperation:
-  Enabled: true
-Lint/UselessRescue:
-  Enabled: true
-Lint/UselessRuby2Keywords:
-  Enabled: true
-Metrics/CollectionLiteralLength:
-  Enabled: true
-Lint/RequireRelativeSelfPath:
-  Enabled: true
-Lint/SymbolConversion:
-  Enabled: true
-Lint/ToEnumArguments:
-  Enabled: true
-Lint/TripleQuotes:
-  Enabled: true
-Lint/UnescapedBracketInRegexp:
-  Enabled: true
-Lint/UnexpectedBlockArity:
-  Enabled: true
-Lint/NumericOperationWithConstantResult:
-  Enabled: true
-Lint/OrAssignmentToConstant:
-  Enabled: true
-Lint/RedundantDirGlobSort:
-  Enabled: true
-Lint/RedundantRegexpQuantifiers:
-  Enabled: true
-Lint/RefinementImportMethods:
-  Enabled: true
-Lint/RequireRangeParentheses:
-  Enabled: true
-Lint/LambdaWithoutLiteralBlock:
-  Enabled: true
-Lint/LiteralAssignmentInCondition:
-  Enabled: true
-Lint/MixedCaseRange:
-  Enabled: true
-Lint/NoReturnInBeginEndBlocks:
-  Enabled: true
-Lint/NonAtomicFileOperation:
-  Enabled: true
-Lint/NumberedParameterAssignment:
-  Enabled: true
-Lint/EmptyBlock:
+Style/RedundantRegexpEscape:
   Enabled: false
-Lint/EmptyClass:
-  Enabled: true
-Lint/EmptyInPattern:
-  Enabled: true
-Lint/HashNewWithKeywordArgumentsAsDefault:
-  Enabled: true
-Lint/IncompatibleIoSelectWithFiberScheduler:
-  Enabled: true
-Lint/ItWithoutArgumentsInBlock:
-  Enabled: true
-Lint/DeprecatedConstants:
-  Enabled: true
-Lint/DuplicateBranch:
-  Enabled: true
-Lint/DuplicateMagicComment:
-  Enabled: true
-Lint/DuplicateMatchPattern:
-  Enabled: true
-Lint/DuplicateRegexpCharacterClassElement:
-  Enabled: true
-Lint/DuplicateSetElement:
-  Enabled: true
-Layout/LineEndStringConcatenationIndentation:
-  Enabled: true
-Layout/SpaceBeforeBrackets:
-  Enabled: true
-Lint/AmbiguousAssignment:
-  Enabled: true
-Lint/AmbiguousOperatorPrecedence:
-  Enabled: true
-Lint/AmbiguousRange:
-  Enabled: true
-Lint/ConstantOverwrittenInRescue:
-  Enabled: true
-Gemspec/AddRuntimeDependency:
-  Enabled: true
-Gemspec/DeprecatedAttributeAssignment:
-  Enabled: true
-Gemspec/DevelopmentDependencies:
-  Enabled: true
-Gemspec/RequireMFA:
-  Enabled: true
-Layout/LineContinuationLeadingSpace:
-  Enabled: true
-Layout/LineContinuationSpacing:
-  Enabled: true
-RSpecRails/AvoidSetupHook:
-  Enabled: true
-RSpecRails/HaveHttpStatus:
-  Enabled: true
-RSpecRails/InferredSpecType:
+Style/PreferredHashMethods:
   Enabled: false
-RSpecRails/MinitestAssertions:
-  Enabled: true
-RSpecRails/NegationBeValid:
-  Enabled: true
-RSpecRails/TravelAround:
-  Enabled: true
-FactoryBot/ExcessiveCreateList:
-  Enabled: true
-FactoryBot/FactoryAssociationWithStrategy:
-  Enabled: true
-FactoryBot/FactoryNameStyle:
-  Enabled: true
-FactoryBot/IdSequence:
-  Enabled: true
-FactoryBot/RedundantFactoryOption:
-  Enabled: true
-FactoryBot/SyntaxMethods:
+Style/SoleNestedConditional:
   Enabled: false
-Capybara/SpecificActions:
-  Enabled: true
-Capybara/SpecificFinders:
-  Enabled: true
-Capybara/SpecificMatcher:
-  Enabled: true
-Capybara/RSpec/HaveSelector:
-  Enabled: true
-FactoryBot/AssociationStyle:
-  Enabled: true
-FactoryBot/ConsistentParenthesesStyle:
-  Enabled: true
+Style/SpecialGlobalVars:
+  Enabled: false
+
+# RSpec
+# No need to check for describe class param in support files.
+RSpec/DescribeClass:
+  Exclude:
+    - spec/support/**/*
+    - spec/views/**/*
+RSpec/NestedGroups:
+  Max: 10
+RSpec/ExpectActual:
+  Exclude:
+    - 'spec/routing/**/*'
+RSpec/MultipleExpectations:
+  Exclude:
+    - 'spec/features/**/*'
+RSpec/ExampleLength:
+  Exclude:
+    - 'spec/**/*'
+RSpec/VoidExpect:
+  Enabled: false
+RSpec/LeakyConstantDeclaration:
+  Enabled: false
+RSpec/NamedSubject:
+  Enabled: false
+RSpec/RepeatedExampleGroupBody:
+  Enabled: false
+RSpec/ScatteredSetup:
+  Enabled: false
+RSpec/NoExpectationExample:
+  Enabled: false
+RSpec/InstanceVariable:
+  Enabled: false
+
+# Rails
+Rails/FilePath:
+  Exclude:
+    - spec/routing/**/*
+# ---------------
+# HttpPositionalArguments is rails 5 only
+# https://github.com/bbatsov/rubocop/issues/3629
+# ---------------
+Rails/HttpPositionalArguments:
+  Enabled: false
 Rails/WhereNotWithMultipleConditions:
   Enabled: true
 Rails/WhereRange:
-  Enabled: true
-Capybara/ClickLinkOrButtonStyle:
-  Enabled: true
-Capybara/MatchStyle:
-  Enabled: true
-Capybara/NegationMatcher:
-  Enabled: true
-Capybara/RedundantWithinFind:
   Enabled: true
 Rails/TransactionExitStatement:
   Enabled: true
@@ -622,35 +470,104 @@ Rails/ActionControllerFlashBeforeRender:
   Enabled: true
 Rails/ActionControllerTestCase:
   Enabled: true
+Rails/Delegate:
+  Enabled: false
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+Rails/HelperInstanceVariable:
+  Enabled: false
+Rails/ApplicationController:
+  Enabled: false
+
+# Lint
+# Allow safe assignment in conditions.
+Lint/AssignmentInCondition:
+  AllowSafeAssignment: false
+Lint/UnmodifiedReduceAccumulator:
+  Enabled: true
+Lint/UselessDefined:
+  Enabled: true
+Lint/UselessNumericOperation:
+  Enabled: true
+Lint/UselessRescue:
+  Enabled: true
+Lint/UselessRuby2Keywords:
+  Enabled: true
+Lint/RequireRelativeSelfPath:
+  Enabled: true
+Lint/SymbolConversion:
+  Enabled: true
+Lint/ToEnumArguments:
+  Enabled: true
+Lint/TripleQuotes:
+  Enabled: true
+Lint/UnescapedBracketInRegexp:
+  Enabled: true
+Lint/UnexpectedBlockArity:
+  Enabled: true
+Lint/NumericOperationWithConstantResult:
+  Enabled: true
+Lint/OrAssignmentToConstant:
+  Enabled: true
+Lint/RedundantDirGlobSort:
+  Enabled: true
+Lint/RedundantRegexpQuantifiers:
+  Enabled: true
+Lint/RefinementImportMethods:
+  Enabled: true
+Lint/RequireRangeParentheses:
+  Enabled: true
+Lint/LambdaWithoutLiteralBlock:
+  Enabled: true
+Lint/LiteralAssignmentInCondition:
+  Enabled: true
+Lint/MixedCaseRange:
+  Enabled: true
+Lint/NoReturnInBeginEndBlocks:
+  Enabled: true
+Lint/NonAtomicFileOperation:
+  Enabled: true
+Lint/NumberedParameterAssignment:
+  Enabled: true
+Lint/EmptyBlock:
+  Enabled: false
+Lint/EmptyClass:
+  Enabled: true
+Lint/EmptyInPattern:
+  Enabled: true
+Lint/HashNewWithKeywordArgumentsAsDefault:
+  Enabled: true
+Lint/IncompatibleIoSelectWithFiberScheduler:
+  Enabled: true
+Lint/ItWithoutArgumentsInBlock:
+  Enabled: true
+Lint/DeprecatedConstants:
+  Enabled: true
+Lint/DuplicateBranch:
+  Enabled: true
+Lint/DuplicateMagicComment:
+  Enabled: true
+Lint/DuplicateMatchPattern:
+  Enabled: true
+Lint/DuplicateRegexpCharacterClassElement:
+  Enabled: true
+Lint/DuplicateSetElement:
+  Enabled: true
+Lint/AmbiguousAssignment:
+  Enabled: true
+Lint/AmbiguousOperatorPrecedence:
+  Enabled: true
+Lint/AmbiguousRange:
+  Enabled: true
+Lint/ConstantOverwrittenInRescue:
+  Enabled: true
 Lint/NonDeterministicRequireOrder:
   Enabled: false
 Lint/RedundantSafeNavigation:
   Enabled: false
 Lint/UselessAssignment:
   Enabled: false
-Rails/Delegate:
-  Enabled: false
-Style/RedundantRegexpEscape:
-  Enabled: false
 Lint/MissingSuper:
-  Enabled: false
-RSpec/NamedSubject:
-  Enabled: false
-RSpec/RepeatedExampleGroupBody:
-  Enabled: false
-RSpec/ScatteredSetup:
-  Enabled: false
-RSpec/NoExpectationExample:
-  Enabled: false
-RSpec/InstanceVariable:
-  Enabled: false
-Rails/ApplicationController:
-  Enabled: false
-RSpec/LeakyConstantDeclaration:
-  Enabled: false
-Lint/ConstantDefinitionInBlock:
-  Enabled: false
-Style/SpecialGlobalVars:
   Enabled: false
 Lint/EmptyFile:
   Enabled: false
@@ -658,14 +575,83 @@ Lint/IneffectiveAccessModifier:
   Enabled: false
 Lint/UselessAccessModifier:
   Enabled: false
-Rails/HasManyOrHasOneDependent:
+Lint/ConstantDefinitionInBlock:
   Enabled: false
-Rails/HelperInstanceVariable:
-  Enabled: false
-Style/SoleNestedConditional:
-  Enabled: false
+
+# Naming
+Naming/PredicateName:
+  Exclude:
+    - 'spec/support/**/*'
+Naming/BlockForwarding:
+  Enabled: true
 Naming/MemoizedInstanceVariableName:
   Enabled: false
+
+# Security
+Security/CompoundHash:
+  Enabled: true
+Security/IoMethods:
+  Enabled: true
+
+# Gemspec
+Gemspec/AddRuntimeDependency:
+  Enabled: true
+Gemspec/DeprecatedAttributeAssignment:
+  Enabled: true
+Gemspec/DevelopmentDependencies:
+  Enabled: true
+Gemspec/RequireMFA:
+  Enabled: true
+
+# RSpecRails
+RSpecRails/AvoidSetupHook:
+  Enabled: true
+RSpecRails/HaveHttpStatus:
+  Enabled: true
+RSpecRails/InferredSpecType:
+  Enabled: false
+RSpecRails/MinitestAssertions:
+  Enabled: true
+RSpecRails/NegationBeValid:
+  Enabled: true
+RSpecRails/TravelAround:
+  Enabled: true
+
+# FactoryBot
+FactoryBot/ExcessiveCreateList:
+  Enabled: true
+FactoryBot/FactoryAssociationWithStrategy:
+  Enabled: true
+FactoryBot/FactoryNameStyle:
+  Enabled: true
+FactoryBot/IdSequence:
+  Enabled: true
+FactoryBot/RedundantFactoryOption:
+  Enabled: true
+FactoryBot/SyntaxMethods:
+  Enabled: false
+FactoryBot/AssociationStyle:
+  Enabled: true
+FactoryBot/ConsistentParenthesesStyle:
+  Enabled: true
+
+# Capybara
+Capybara/SpecificActions:
+  Enabled: true
+Capybara/SpecificFinders:
+  Enabled: true
+Capybara/SpecificMatcher:
+  Enabled: true
+Capybara/RSpec/HaveSelector:
+  Enabled: true
+Capybara/ClickLinkOrButtonStyle:
+  Enabled: true
+Capybara/MatchStyle:
+  Enabled: true
+Capybara/NegationMatcher:
+  Enabled: true
+Capybara/RedundantWithinFind:
+  Enabled: true
 
 require:
   - rubocop-rspec

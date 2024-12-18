@@ -21,7 +21,7 @@ module ET3
         end
 
         def has_reference_element?(reference)
-          reference_number.value?(text: reference)
+          reference_number.has_value?(text: reference)
         end
 
         attr_accessor :mail

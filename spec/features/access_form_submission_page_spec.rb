@@ -46,7 +46,7 @@ RSpec.feature "Access Form Submission Page", :js do
     answer_additional_information
     answer_confirmation_of_supplied_details
 
-    expect(form_submission_page.assert_copy_sent(@respondent)).to be true
+    expect(form_submission_page.assert_copy_sent(@respondent))
   end
 
   scenario 'user with email address' do
@@ -64,7 +64,7 @@ RSpec.feature "Access Form Submission Page", :js do
     answer_additional_information
     answer_confirmation_of_supplied_details
 
-    expect(form_submission_page.assert_copy_sent(@respondent)).to be true
+    expect(form_submission_page.assert_copy_sent(@respondent))
   end
 
 end

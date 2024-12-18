@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.feature "Fill in Claimants Details Page", js: true do
+RSpec.feature "Fill in Claimants Details Page", :js do
   let(:earnings_and_benefits_page) { ET3::Test::EarningsAndBenefitsPage.new }
 
   before do
@@ -49,7 +49,7 @@ RSpec.feature "Fill in Claimants Details Page", js: true do
     expect(claimants_details_page.disagree_claimants_job_or_title.value).to eql(@claimant.disagree_claimants_job_or_title)
   end
 
-  scenario 'Will be able to go to the next page without answering anything'do
+  scenario 'Will be able to go to the next page without answering anything' do
     claimants_details_page.load(locale: current_locale_parameter)
     claimants_details_page.next
 
@@ -66,5 +66,3 @@ RSpec.feature "Fill in Claimants Details Page", js: true do
     claimants_details_page.employment_end.assert_error_message(t('errors.custom.employment_end_before_start'))
   end
 end
-
-

@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.feature "Fill in Additional Information Page", js: true do
+RSpec.feature "Fill in Additional Information Page", :js do
   include ET3::Test::I18n
   let(:confirmation_of_supplied_details_page) { ET3::Test::ConfirmationOfSuppliedDetailsPage.new }
 

@@ -3,11 +3,11 @@ class ConfirmationOfSuppliedDetails < BaseForm
 
   def to_h
     {
-      email_receipt: email_receipt,
+      email_receipt: email_receipt
     }
   end
 
   validates :email_receipt,
-    email_address: true,
-    allow_blank: true
+            email_address: true,
+            allow_blank: true
 end

@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.feature "Fill in Your Representatives Details Page", js: true do
+RSpec.feature "Fill in Your Representatives Details Page", :js do
   let(:disability_page) { ET3::Test::DisabilityPage.new }
 
   before do

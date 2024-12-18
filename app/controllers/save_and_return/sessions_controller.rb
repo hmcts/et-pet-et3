@@ -3,6 +3,7 @@ module SaveAndReturn
     skip_before_action :authenticate_user!
     skip_before_action :set_start_session_timer
 
+    # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
     # POST /resource/sign_in
     def create
       self.resource = warden.authenticate!(auth_options)
@@ -18,6 +19,7 @@ module SaveAndReturn
         redirect_to new_user_session_path
       end
     end
+    # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
 
     protected
 

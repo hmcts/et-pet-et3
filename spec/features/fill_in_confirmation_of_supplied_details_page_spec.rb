@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.feature "Fill in Confirmation of Supplied Details Page", js: true do
+RSpec.feature "Fill in Confirmation of Supplied Details Page", :js do
   let(:form_submission_page) { ET3::Test::FormSubmissionPage.new }
 
   before do

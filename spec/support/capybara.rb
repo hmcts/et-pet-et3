@@ -1,1 +1,1 @@
-require_relative './capybara/capybara_driver_helper'
+require_relative 'capybara/capybara_driver_helper'

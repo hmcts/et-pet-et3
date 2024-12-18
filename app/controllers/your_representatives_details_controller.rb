@@ -1,6 +1,8 @@
 class YourRepresentativesDetailsController < ApplicationController
   def edit
-    @your_representatives_details ||= YourRepresentativesDetails.new(current_store.hash_store.fetch(:your_representatives_details_answers, {}))
+    @your_representatives_details ||= YourRepresentativesDetails.new(current_store.hash_store.fetch(
+                                                                       :your_representatives_details_answers, {}
+                                                                     ))
   end
 
   def update
@@ -19,6 +21,7 @@ class YourRepresentativesDetailsController < ApplicationController
     true
   end
 
+  # rubocop:disable Layout/ArgumentAlignment
   def your_representatives_details_params
     params.require(:your_representatives_details).permit(:have_representative, :type_of_representative,
       :representative_org_name, :representative_name, :representative_building, :representative_street,
@@ -26,4 +29,5 @@ class YourRepresentativesDetailsController < ApplicationController
       :representative_mobile, :representative_dx_number, :representative_reference, :representative_contact_preference,
       :representative_email, allow_phone_or_video_attendance: [])
   end
+  # rubocop:enable Layout/ArgumentAlignment
 end

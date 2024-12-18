@@ -13,7 +13,7 @@ RSpec.describe RespondentsDetail, type: :model do
 
   context 'with validators' do
 
-    it 'will not validate a case number with letters' do
+    it 'does not validate a case number with letters' do
       populated_respondent_detail.case_number = "a654321/2017"
 
       populated_respondent_detail.valid?
@@ -21,7 +21,7 @@ RSpec.describe RespondentsDetail, type: :model do
       expect(populated_respondent_detail.errors.details[:case_number]).to include a_hash_including(error: :invalid)
     end
 
-    it 'will not validate an incorrect email address' do
+    it 'does not validate an incorrect email address' do
       populated_respondent_detail.contact_preference = "email"
       populated_respondent_detail.email_address = "fakeemail.com"
 
@@ -30,7 +30,7 @@ RSpec.describe RespondentsDetail, type: :model do
       expect(populated_respondent_detail.errors.details[:email_address]).to include a_hash_including(error: :invalid_email)
     end
 
-    it 'will not validate a name with numbers in' do
+    it 'does not validate a name with numbers in' do
       populated_respondent_detail.contact = "J0hn Sm1th"
 
       populated_respondent_detail.valid?
@@ -38,7 +38,7 @@ RSpec.describe RespondentsDetail, type: :model do
       expect(populated_respondent_detail.errors.details[:contact]).to include a_hash_including(error: :contains_numbers)
     end
 
-    it 'will not validate a contact_number with letters' do
+    it 'does not validate a contact_number with letters' do
       populated_respondent_detail.contact_number = "O203 I23 A56T"
 
       populated_respondent_detail.valid?
@@ -46,7 +46,7 @@ RSpec.describe RespondentsDetail, type: :model do
       expect(populated_respondent_detail.errors.details[:contact_number]).to include a_hash_including(error: :invalid_phone_number)
     end
 
-    it 'will not validate a mobile_number with more than one "+"' do
+    it 'does not validate a mobile_number with more than one "+"' do
       populated_respondent_detail.mobile_number = "+44+7123456789"
 
       populated_respondent_detail.valid?
@@ -144,82 +144,82 @@ RSpec.describe RespondentsDetail, type: :model do
     end
 
     it 'returns the correct employment at site number' do
-      expect(populated_respondent_detail.employment_at_site_number). to be 20
+      expect(populated_respondent_detail.employment_at_site_number).to be 20
     end
   end
 
-  describe ".to_h " do
-    it "will take two strings and convert them into a hash" do
+  describe ".to_h" do
+    it "takes two strings and convert them into a hash" do
       expect(populated_respondent_detail.to_h).to be_a(Hash)
     end
 
-    it 'will return the case_number key and value pair' do
+    it 'returns the case_number key and value pair' do
       expect(populated_respondent_detail.to_h).to include(case_number: '2454321/2017')
     end
 
-    it 'will return the name key and value pair' do
+    it 'returns the name key and value pair' do
       expect(populated_respondent_detail.to_h).to include(name: 'dodgy_co')
     end
 
-    it 'will return the contact key and value pair' do
+    it 'returns the contact key and value pair' do
       expect(populated_respondent_detail.to_h).to include(contact: 'John Smith')
     end
 
-    it 'will return the building_name key and value pair' do
+    it 'returns the building_name key and value pair' do
       expect(populated_respondent_detail.to_h).to include(building_name: 'the_shard')
     end
 
-    it 'will return the street_name key and value pair' do
+    it 'returns the street_name key and value pair' do
       expect(populated_respondent_detail.to_h).to include(street_name: 'downing_street')
     end
 
-    it 'will return the town key and value pair' do
+    it 'returns the town key and value pair' do
       expect(populated_respondent_detail.to_h).to include(town: 'westminster')
     end
 
-    it 'will return the county key and value pair' do
+    it 'returns the county key and value pair' do
       expect(populated_respondent_detail.to_h).to include(county: 'greater london')
     end
 
-    it 'will return the postcode key and value pair' do
+    it 'returns the postcode key and value pair' do
       expect(populated_respondent_detail.to_h).to include(postcode: 'wc1 1aa')
     end
 
-    it 'will return the dx_number key and value pair' do
+    it 'returns the dx_number key and value pair' do
       expect(populated_respondent_detail.to_h).to include(dx_number: '724060 Derby 21')
     end
 
-    it 'will return the contact_number key and value pair' do
+    it 'returns the contact_number key and value pair' do
       expect(populated_respondent_detail.to_h).to include(contact_number: '0207 123 4567')
     end
 
-    it 'will return the mobile_number key and value pair' do
+    it 'returns the mobile_number key and value pair' do
       expect(populated_respondent_detail.to_h).to include(mobile_number: '07123456789')
     end
 
-    it 'will return the contact_preference key and value pair' do
+    it 'returns the contact_preference key and value pair' do
       expect(populated_respondent_detail.to_h).to include(contact_preference: 'email')
     end
 
-    it 'will return the email_address key and value pair' do
+    it 'returns the email_address key and value pair' do
       expect(populated_respondent_detail.to_h).to include(email_address: 'john@dodgyco.com')
     end
 
-    it 'will return the organisation_employ_gb key and value pair' do
+    it 'returns the organisation_employ_gb key and value pair' do
       expect(populated_respondent_detail.to_h).to include(organisation_employ_gb: 100)
     end
 
-    it 'will return the organisation_more_than_one_site key and value pair' do
+    it 'returns the organisation_more_than_one_site key and value pair' do
       expect(populated_respondent_detail.to_h).to include(organisation_more_than_one_site: true)
     end
 
-    it 'will return the employment_at_site_number key and value pair' do
+    it 'returns the employment_at_site_number key and value pair' do
       expect(populated_respondent_detail.to_h).to include(employment_at_site_number: 20)
     end
   end
 
   context "when left blank" do
-    it 'will raise a validation error on case_number' do
+    it 'raises a validation error on case_number' do
       populated_respondent_detail.case_number = nil
 
       populated_respondent_detail.valid?
@@ -227,7 +227,7 @@ RSpec.describe RespondentsDetail, type: :model do
       expect(populated_respondent_detail.errors.details[:case_number]).to include a_hash_including(error: :invalid)
     end
 
-    it 'will raise a validation error on name' do
+    it 'raises a validation error on name' do
       populated_respondent_detail.name = nil
 
       populated_respondent_detail.valid?
@@ -235,13 +235,13 @@ RSpec.describe RespondentsDetail, type: :model do
       expect(populated_respondent_detail.errors.details[:name]).to include a_hash_including(error: :blank)
     end
 
-    it 'will not raise a validation error on contact' do
+    it 'does not raise a validation error on contact' do
       populated_respondent_detail.contact = nil
 
       expect(populated_respondent_detail).to be_valid
     end
 
-    it 'will raise a validation error on building_name' do
+    it 'raises a validation error on building_name' do
       populated_respondent_detail.building_name = nil
 
       populated_respondent_detail.valid?
@@ -249,7 +249,7 @@ RSpec.describe RespondentsDetail, type: :model do
       expect(populated_respondent_detail.errors.details[:building_name]).to include a_hash_including(error: :blank)
     end
 
-    it 'will raise a validation error on street_name' do
+    it 'raises a validation error on street_name' do
       populated_respondent_detail.street_name = nil
 
       populated_respondent_detail.valid?
@@ -257,7 +257,7 @@ RSpec.describe RespondentsDetail, type: :model do
       expect(populated_respondent_detail.errors.details[:street_name]).to include a_hash_including(error: :blank)
     end
 
-    it 'will raise a validation error on town' do
+    it 'raises a validation error on town' do
       populated_respondent_detail.town = nil
 
       populated_respondent_detail.valid?
@@ -265,13 +265,13 @@ RSpec.describe RespondentsDetail, type: :model do
       expect(populated_respondent_detail.errors.details[:town]).to include a_hash_including(error: :blank)
     end
 
-    it 'will not raise a validation error on county' do
+    it 'does not raise a validation error on county' do
       populated_respondent_detail.county = nil
 
       expect(populated_respondent_detail).to be_valid
     end
 
-    it 'will raise a validation error on postcode' do
+    it 'raises a validation error on postcode' do
       populated_respondent_detail.postcode = nil
 
       populated_respondent_detail.valid?
@@ -279,44 +279,44 @@ RSpec.describe RespondentsDetail, type: :model do
       expect(populated_respondent_detail.errors.details[:postcode]).to include a_hash_including(error: :blank)
     end
 
-    it 'will not raise a validation error on dx_number' do
+    it 'does not raise a validation error on dx_number' do
       populated_respondent_detail.dx_number = nil
 
       expect(populated_respondent_detail).to be_valid
     end
 
-    it 'will not raise a validation error on contact_number' do
+    it 'does not raise a validation error on contact_number' do
       populated_respondent_detail.contact_number = nil
 
       expect(populated_respondent_detail).to be_valid
     end
 
-    it 'will not raise a validation error on mobile_number' do
+    it 'does not raise a validation error on mobile_number' do
       populated_respondent_detail.mobile_number = nil
 
       expect(populated_respondent_detail).to be_valid
     end
 
-    it 'will not raise a validation error on contact_preference' do
+    it 'does not raise a validation error on contact_preference' do
       populated_respondent_detail.contact_preference = nil
 
       expect(populated_respondent_detail).to be_valid
     end
 
-    it 'will not raise a validation error on email_address' do
+    it 'does not raise a validation error on email_address' do
       populated_respondent_detail.contact_preference = nil
       populated_respondent_detail.email_address = nil
 
       expect(populated_respondent_detail).to be_valid
     end
 
-    it 'will not raise a validation error on organisation_employ_gb' do
+    it 'does not raise a validation error on organisation_employ_gb' do
       populated_respondent_detail.organisation_employ_gb = nil
 
       expect(populated_respondent_detail).to be_valid
     end
 
-    it 'will not raise a validation error on employment_at_site_number' do
+    it 'does not raise a validation error on employment_at_site_number' do
       populated_respondent_detail.organisation_more_than_one_site = false
       populated_respondent_detail.employment_at_site_number = nil
 
@@ -326,7 +326,7 @@ RSpec.describe RespondentsDetail, type: :model do
 
   context "when email is the preferred contact method" do
 
-    it "will raise a validation error if an email address is not entered" do
+    it "raises a validation error if an email address is not entered" do
       populated_respondent_detail.contact_preference = "email"
       populated_respondent_detail.email_address = nil
 
@@ -335,7 +335,7 @@ RSpec.describe RespondentsDetail, type: :model do
       expect(populated_respondent_detail.errors.details[:email_address]).to include a_hash_including(error: :invalid_email)
     end
 
-    it "will not raise a validation error if an email address is provided" do
+    it "does not raise a validation error if an email address is provided" do
       populated_respondent_detail.contact_preference = "email"
       populated_respondent_detail.email_address = "john@dodgyco.com"
 
@@ -345,14 +345,14 @@ RSpec.describe RespondentsDetail, type: :model do
 
   context "when post is the preferred contact method" do
 
-    it "will not validate an email address" do
+    it "does not validate an email address" do
       populated_respondent_detail.contact_preference = "post"
       populated_respondent_detail.email_address = "invalid email"
 
       expect(populated_respondent_detail).to be_valid
     end
 
-    it "will not hash an email address" do
+    it "does not hash an email address" do
       populated_respondent_detail.contact_preference = "post"
       populated_respondent_detail.email_address = "john@dodgyco.com"
 
@@ -362,7 +362,7 @@ RSpec.describe RespondentsDetail, type: :model do
 
   context "when the organisation has more than one site" do
 
-    it "will raise a validation error if the number of employees at the claimant's site is not entered" do
+    it "raises a validation error if the number of employees at the claimant's site is not entered" do
       populated_respondent_detail.organisation_more_than_one_site = true
       populated_respondent_detail.employment_at_site_number = nil
 
@@ -371,7 +371,7 @@ RSpec.describe RespondentsDetail, type: :model do
       expect(populated_respondent_detail.errors.details[:employment_at_site_number]).to include a_hash_including(error: :not_a_number)
     end
 
-    it "will not raise a validation error if the number of employees at the claimant's site is provided" do
+    it "does not raise a validation error if the number of employees at the claimant's site is provided" do
       populated_respondent_detail.organisation_more_than_one_site = true
       populated_respondent_detail.employment_at_site_number = 20
 
@@ -381,7 +381,7 @@ RSpec.describe RespondentsDetail, type: :model do
   end
 
   context "when the organisation does not have more than one site" do
-    it "will not validate an employment at site number" do
+    it "does not validate an employment at site number" do
       populated_respondent_detail.organisation_more_than_one_site = false
       populated_respondent_detail.employment_at_site_number = "fsdf"
 
@@ -390,7 +390,7 @@ RSpec.describe RespondentsDetail, type: :model do
       expect(populated_respondent_detail).to be_valid
     end
 
-    it "will not hash an employment at site number" do
+    it "does not hash an employment at site number" do
       populated_respondent_detail.organisation_more_than_one_site = false
       populated_respondent_detail.employment_at_site_number = 20
 
@@ -398,5 +398,4 @@ RSpec.describe RespondentsDetail, type: :model do
     end
   end
 
-
-  end
+end

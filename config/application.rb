@@ -12,13 +12,13 @@ module Et3
     config.load_defaults 7.2
     config.active_support.cache_format_version = 7.0
 
-
-    config.action_mailer.default_options = { from: ENV.fetch('SMTP_FROM', 'no-reply@employmenttribunals.service.gov.uk') }
+    config.action_mailer.default_options = { from: ENV.fetch('SMTP_FROM',
+                                                             'no-reply@employmenttribunals.service.gov.uk') }
 
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
-    config.autoload_lib(ignore: %w[assets tasks])
+    config.autoload_lib(ignore: ['assets', 'tasks'])
 
     # Configuration for the application, engines, and railties goes here.
     #
@@ -34,10 +34,10 @@ module Et3
     if ENV.key? 'SMTP_HOSTNAME'
       config.action_mailer.smtp_settings = {
         address: ENV['SMTP_HOSTNAME'],
-        port: ENV['SMTP_PORT'],
-        domain: ENV['SENDING_HOST'],
-        user_name: ENV['SMTP_USERNAME'],
-        password: ENV['SMTP_PASSWORD'],
+        port: ENV.fetch('SMTP_PORT', nil),
+        domain: ENV.fetch('SENDING_HOST', nil),
+        user_name: ENV.fetch('SMTP_USERNAME', nil),
+        password: ENV.fetch('SMTP_PASSWORD', nil),
         authentication: :login,
         enable_starttls_auto: true
       }
@@ -62,6 +62,6 @@ module Et3
     config.maintenance_allowed_ips = ENV.fetch('MAINTENANCE_ALLOWED_IPS', '').split(',').map(&:strip)
     config.maintenance_end = ENV.fetch('MAINTENANCE_END', nil)
     config.et_gds_design_system.api_url = ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api/v2')
-    config.dynatrace_ui_tracking_id = ENV['DYNATRACE_UI_TRACKING_ID']
+    config.dynatrace_ui_tracking_id = ENV.fetch('DYNATRACE_UI_TRACKING_ID', nil)
   end
 end

@@ -15,7 +15,7 @@ RSpec.describe PostcodeValidator do
     end
   end
 
-  let(:mock_postcode_service) { class_spy("UKPostcode", parse: mock_postcode_instance) }
+  let(:mock_postcode_service) { class_spy(UKPostcode, parse: mock_postcode_instance) }
   let(:mock_postcode_instance) { double("mock_postcode_instance", full_valid?: true) } # rubocop:disable RSpec/VerifiedDoubles
 
   it 'passes the correct data to the UKPostcode service' do
@@ -26,7 +26,7 @@ RSpec.describe PostcodeValidator do
     expect(mock_postcode_service).to have_received(:parse).with("WC1A AAA")
   end
 
-  it 'will call the full_valid? method' do
+  it 'calls the full_valid? method' do
     model = model_class.new(postcode: "SW1H 9AJ")
 
     model.valid?
@@ -34,7 +34,7 @@ RSpec.describe PostcodeValidator do
     expect(mock_postcode_instance).to have_received(:full_valid?)
   end
 
-  it 'will not call the parse method if postcode is nil' do
+  it 'does not call the parse method if postcode is nil' do
     model = model_class.new(postcode: nil)
 
     model.valid?
@@ -42,7 +42,7 @@ RSpec.describe PostcodeValidator do
     expect(mock_postcode_service).not_to have_received(:parse)
   end
 
-  it 'will validate a UK postcode without returning an error' do
+  it 'validates a UK postcode without returning an error' do
     model = model_class.new(postcode: "SW1H 9AJ")
 
     model.valid?
@@ -50,7 +50,7 @@ RSpec.describe PostcodeValidator do
     expect(model.errors).not_to include :postcode
   end
 
-  it 'will return an error when an invalid postcode is entered' do
+  it 'returns an error when an invalid postcode is entered' do
     allow(mock_postcode_instance).to receive(:full_valid?).and_return(false)
     model = model_class.new(postcode: "not a postcode")
 
@@ -59,7 +59,7 @@ RSpec.describe PostcodeValidator do
     expect(model.errors.details[:postcode]).to include a_hash_including(error: :invalid_postcode)
   end
 
-  it 'will return an error when nil' do
+  it 'returns an error when nil' do
     model = model_class.new(postcode: nil)
 
     model.valid?

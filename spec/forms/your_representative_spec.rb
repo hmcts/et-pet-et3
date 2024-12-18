@@ -12,18 +12,18 @@ RSpec.describe YourRepresentative, type: :model do
 
   end
 
-  describe ".to_h " do
-    it "will return a hash" do
+  describe ".to_h" do
+    it "returns a hash" do
       expect(populated_your_representative.to_h).to be_a(Hash)
     end
 
-    it 'will return the have_representative key and value pair' do
+    it 'returns the have_representative key and value pair' do
       expect(populated_your_representative.to_h).to include(have_representative: true)
     end
   end
 
   context 'when left blank' do
-    it 'will not raise a validation error on have representative' do
+    it 'does not raise a validation error on have representative' do
       populated_your_representative.have_representative = nil
 
       populated_your_representative.valid?

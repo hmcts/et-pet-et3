@@ -4,7 +4,7 @@ class AdditionalInformation < BaseForm
 
   def to_h
     {
-      upload_additional_information: upload_additional_information,
+      upload_additional_information: upload_additional_information
     }
   end
 end

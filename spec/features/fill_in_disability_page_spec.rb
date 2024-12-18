@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.feature "Fill in Disability Page", js: true do
+RSpec.feature "Fill in Disability Page", :js do
   let(:employers_contract_claim_page) { ET3::Test::EmployersContractClaimPage.new }
 
   before do

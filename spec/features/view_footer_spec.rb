@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "View Footer", js: true do
+RSpec.feature "View Footer", :js do
   include ET3::Test::I18n
 
   before do

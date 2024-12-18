@@ -11,7 +11,7 @@ module ET3
         end
         yield
       ensure
-        browser.file_detector = old_file_detector if browser && browser.respond_to?(:file_detector=)
+        browser.file_detector = old_file_detector if browser&.respond_to?(:file_detector=)
       end
     end
   end

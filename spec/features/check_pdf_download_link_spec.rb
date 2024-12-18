@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Check PDF Download Link", js: true do
+RSpec.feature "Check PDF Download Link", :js do
 
   # Upon ET3 submission to API, the API generates a PDF version of the ET3 form it just received.
   # In the API's response to ET3's submission, it returns a URL for this PDF. However, due to

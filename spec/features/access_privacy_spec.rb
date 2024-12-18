@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Access Privacy", js: true do
+RSpec.feature "Access Privacy", :js do
   include ET3::Test::I18n
 
   before do
@@ -150,7 +150,6 @@ RSpec.feature "Access Privacy", js: true do
 
     response_page.privacy_notice.click
 
-
     expect(privacy_notice_page).to be_displayed
     expect(privacy_notice_page).to have_header
 
@@ -182,7 +181,6 @@ RSpec.feature "Access Privacy", js: true do
     your_representative_page.load(locale: current_locale_parameter)
 
     your_representative_page.privacy_notice.click
-
 
     expect(privacy_notice_page).to be_displayed
     expect(privacy_notice_page).to have_header
@@ -216,7 +214,6 @@ RSpec.feature "Access Privacy", js: true do
 
     your_representatives_details_page.privacy_notice.click
 
-
     expect(privacy_notice_page).to be_displayed
     expect(privacy_notice_page).to have_header
 
@@ -248,7 +245,6 @@ RSpec.feature "Access Privacy", js: true do
     disability_page.load(locale: current_locale_parameter)
 
     disability_page.privacy_notice.click
-
 
     expect(privacy_notice_page).to be_displayed
     expect(privacy_notice_page).to have_header
@@ -282,7 +278,6 @@ RSpec.feature "Access Privacy", js: true do
 
     employers_contract_claim_page.privacy_notice.click
 
-
     expect(privacy_notice_page).to be_displayed
     expect(privacy_notice_page).to have_header
 
@@ -315,7 +310,6 @@ RSpec.feature "Access Privacy", js: true do
 
     additional_information_page.privacy_notice.click
 
-
     expect(privacy_notice_page).to be_displayed
     expect(privacy_notice_page).to have_header
 
@@ -347,7 +341,6 @@ RSpec.feature "Access Privacy", js: true do
     confirmation_of_supplied_details_page.load(locale: current_locale_parameter)
 
     confirmation_of_supplied_details_page.privacy_notice.click
-
 
     expect(privacy_notice_page).to be_displayed
     expect(privacy_notice_page).to have_header
@@ -389,7 +382,6 @@ RSpec.feature "Access Privacy", js: true do
     answer_confirmation_of_supplied_details
 
     form_submission_page.privacy_notice.click
-
 
     expect(privacy_notice_page).to be_displayed
     expect(privacy_notice_page).to have_header

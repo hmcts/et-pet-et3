@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.feature "Fill in Respondents Details Page", js: true do
+RSpec.feature "Fill in Respondents Details Page", :js do
   let(:claimants_details_page) { ET3::Test::ClaimantsDetailsPage.new }
 
   before do
@@ -29,7 +29,7 @@ RSpec.feature "Fill in Respondents Details Page", js: true do
     respondents_details_page.load(locale: current_locale_parameter)
     given_invalid_data
 
-    user = FactoryBot.create(:respondent, :respondent_invalid, case_number: '7@54321/2017', name: '', postcode: 'sfsdf', organisation_more_than_one_site: :"questions.respondents_details.organisation_more_than_one_site.options.yes")
+    user = FactoryBot.create(:respondent, :respondent_invalid, case_number: '7@54321/2017', name: '', postcode: 'sfsdf', organisation_more_than_one_site: :'questions.respondents_details.organisation_more_than_one_site.options.yes')
     respondents_details_page.case_number_question.set(user.case_number)
     respondents_details_page.contact_question.set(user.contact)
     respondents_details_page.postcode_question.set(user.postcode)

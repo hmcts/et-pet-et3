@@ -14,7 +14,7 @@ RSpec.describe ClaimantsDetail, type: :model do
 
   context 'with validators' do
 
-    it 'will not validate a name with numbers in' do
+    it 'does not validate a name with numbers in' do
       populated_claimant_detail.claimants_name = "Jan3 D0e"
 
       populated_claimant_detail.valid?
@@ -75,62 +75,63 @@ RSpec.describe ClaimantsDetail, type: :model do
     end
   end
 
-  describe ".to_h " do
-    it "will return a hash" do
+  describe ".to_h" do
+    it "returns a hash" do
       expect(populated_claimant_detail.to_h).to be_a(Hash)
     end
 
-    it 'will return the claimants_name key and value pair' do
+    it 'returns the claimants_name key and value pair' do
       expect(populated_claimant_detail.to_h).to include(claimants_name: 'Jane Doe')
     end
 
-    it 'will return the agree_with_early_conciliation_details key and value pair' do
+    it 'returns the agree_with_early_conciliation_details key and value pair' do
       expect(populated_claimant_detail.to_h).to include(agree_with_early_conciliation_details: false)
     end
 
-    it 'will return the disagree_conciliation_reason key and value pair' do
+    it 'returns the disagree_conciliation_reason key and value pair' do
       expect(populated_claimant_detail.to_h).to include(disagree_conciliation_reason: 'lorem ipsum conciliation')
     end
 
-    it 'will return the agree_with_employment_dates key and value pair' do
+    it 'returns the agree_with_employment_dates key and value pair' do
       expect(populated_claimant_detail.to_h).to include(agree_with_employment_dates: 'false')
     end
 
-    it 'will return the employment_start key and value pair' do
+    it 'returns the employment_start key and value pair' do
       expect(populated_claimant_detail.to_h[:employment_start].strftime('%d/%m/%Y')).to eql '01/01/2017'
     end
 
-    it 'will return the employment_start value as a Date' do
+    it 'returns the employment_start value as a Date' do
       expect(populated_claimant_detail.to_h[:employment_start]).to be_a(Date)
     end
 
-    it 'will return the employment_end key and value pair' do
+    it 'returns the employment_end key and value pair' do
       expect(populated_claimant_detail.to_h[:employment_end].strftime('%d/%m/%Y')).to eql '31/12/2017'
     end
-    it 'will return the employment_end value as a Date' do
+
+    it 'returns the employment_end value as a Date' do
       expect(populated_claimant_detail.to_h[:employment_end]).to be_a(Date)
     end
 
-    it 'will return the disagree_employment key and value pair' do
+    it 'returns the disagree_employment key and value pair' do
       expect(populated_claimant_detail.to_h).to include(disagree_employment: 'lorem ipsum employment')
     end
 
-    it 'will return the continued_employment key and value pair' do
+    it 'returns the continued_employment key and value pair' do
       expect(populated_claimant_detail.to_h).to include(continued_employment: 'false')
     end
 
-    it 'will return the agree_with_claimants_description_of_job_or_title key and value pair' do
+    it 'returns the agree_with_claimants_description_of_job_or_title key and value pair' do
       expect(populated_claimant_detail.to_h).to include(agree_with_claimants_description_of_job_or_title: 'false')
     end
 
-    it 'will return the disagree_claimants_job_or_title key and value pair' do
+    it 'returns the disagree_claimants_job_or_title key and value pair' do
       expect(populated_claimant_detail.to_h).to include(disagree_claimants_job_or_title: 'lorem ipsum job title')
     end
 
   end
 
   context "when left blank" do
-    it 'will not raise a validation error on claimants name' do
+    it 'does not raise a validation error on claimants name' do
       populated_claimant_detail.claimants_name = nil
 
       populated_claimant_detail.valid?
@@ -138,7 +139,7 @@ RSpec.describe ClaimantsDetail, type: :model do
       expect(populated_claimant_detail).to be_valid
     end
 
-    it 'will not raise a validation error on agree with early conciliation details' do
+    it 'does not raise a validation error on agree with early conciliation details' do
       populated_claimant_detail.agree_with_early_conciliation_details = nil
 
       populated_claimant_detail.valid?
@@ -146,7 +147,7 @@ RSpec.describe ClaimantsDetail, type: :model do
       expect(populated_claimant_detail).to be_valid
     end
 
-    it 'will not raise a validation error on continued employment' do
+    it 'does not raise a validation error on continued employment' do
       populated_claimant_detail.continued_employment = nil
 
       populated_claimant_detail.valid?
@@ -154,7 +155,7 @@ RSpec.describe ClaimantsDetail, type: :model do
       expect(populated_claimant_detail).to be_valid
     end
 
-    it 'will not raise a validation error on agree with claimants description of job or title' do
+    it 'does not raise a validation error on agree with claimants description of job or title' do
       populated_claimant_detail.agree_with_claimants_description_of_job_or_title = nil
 
       populated_claimant_detail.valid?
@@ -164,7 +165,7 @@ RSpec.describe ClaimantsDetail, type: :model do
   end
 
   context "when agreeing with early conciliation reason" do
-    it 'will not hash disagree conciliation reason' do
+    it 'does not hash disagree conciliation reason' do
       populated_claimant_detail.agree_with_early_conciliation_details = true
       populated_claimant_detail.disagree_conciliation_reason = "will not be hashed"
 
@@ -173,7 +174,7 @@ RSpec.describe ClaimantsDetail, type: :model do
   end
 
   context "when disagreeing with early conciliation reason" do
-    it 'will not raise a validation error on disagree conciliation reason' do
+    it 'does not raise a validation error on disagree conciliation reason' do
       populated_claimant_detail.agree_with_early_conciliation_details = false
       populated_claimant_detail.disagree_conciliation_reason = nil
 
@@ -182,42 +183,42 @@ RSpec.describe ClaimantsDetail, type: :model do
   end
 
   context "when agreeing with employment dates" do
-    it 'will not validate employment start' do
+    it 'does not validate employment start' do
       populated_claimant_detail.agree_with_employment_dates = 'true'
       populated_claimant_detail.employment_start = ""
 
       expect(populated_claimant_detail).to be_valid
     end
 
-    it 'will not validate employment end' do
+    it 'does not validate employment end' do
       populated_claimant_detail.agree_with_employment_dates = 'true'
       populated_claimant_detail.employment_end = ""
 
       expect(populated_claimant_detail).to be_valid
     end
 
-    it 'will not validate disagree employment dates' do
+    it 'does not validate disagree employment dates' do
       populated_claimant_detail.agree_with_employment_dates = 'true'
       populated_claimant_detail.disagree_employment = ""
 
       expect(populated_claimant_detail).to be_valid
     end
 
-    it 'will not hash employment start' do
+    it 'does not hash employment start' do
       populated_claimant_detail.agree_with_employment_dates = true
       populated_claimant_detail.employment_start = '01/01/2017'
 
       expect(populated_claimant_detail.to_h).not_to include(:employment_start)
     end
 
-    it 'will not hash employment end' do
+    it 'does not hash employment end' do
       populated_claimant_detail.agree_with_employment_dates = true
       populated_claimant_detail.employment_end = '31/12/2017'
 
       expect(populated_claimant_detail.to_h).not_to include(:employment_end)
     end
 
-    it 'will not hash disagree employment dates' do
+    it 'does not hash disagree employment dates' do
       populated_claimant_detail.agree_with_employment_dates = true
       populated_claimant_detail.disagree_employment = 'disagree employment reason'
 
@@ -226,7 +227,7 @@ RSpec.describe ClaimantsDetail, type: :model do
   end
 
   context "when agreeing with description of job or title" do
-    it 'will not hash disagree claimants job or title' do
+    it 'does not hash disagree claimants job or title' do
       populated_claimant_detail.agree_with_claimants_description_of_job_or_title = 'true'
       populated_claimant_detail.disagree_claimants_job_or_title = "string that will not be hashed"
 
@@ -235,7 +236,7 @@ RSpec.describe ClaimantsDetail, type: :model do
   end
 
   context "when disagreeing with description of job or title" do
-    it 'will not raise a validation error on disagree claimants job or title' do
+    it 'does not raise a validation error on disagree claimants job or title' do
       populated_claimant_detail.agree_with_claimants_description_of_job_or_title = 'false'
       populated_claimant_detail.disagree_claimants_job_or_title = nil
 

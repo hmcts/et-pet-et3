@@ -81,14 +81,13 @@ Rails.application.configure do
 
   config.log_level = ENV.fetch('RAILS_LOG_LEVEL', 'debug').to_sym
 
-  config.log_tags = [ :request_id ]
+  config.log_tags = [:request_id]
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
-    logger           = ActiveSupport::Logger.new(STDOUT)
+    logger           = ActiveSupport::Logger.new($stdout)
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
-
 
   config.azure_insights.enable = false
 end

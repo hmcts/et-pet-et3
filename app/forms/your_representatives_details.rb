@@ -39,35 +39,35 @@ class YourRepresentativesDetails < BaseForm
   end
 
   validates :type_of_representative,
-    inclusion: {
-      in: [
-        "Citizens Advice Bureau",
-        "Free Representation Unit",
-        "Law Centre",
-        "Union",
-        "Solicitor",
-        "Private Individual",
-        "Trade Association",
-        "Other"
-      ]
-    }
+            inclusion: {
+              in: [
+                "Citizens Advice Bureau",
+                "Free Representation Unit",
+                "Law Centre",
+                "Union",
+                "Solicitor",
+                "Private Individual",
+                "Trade Association",
+                "Other"
+              ]
+            }
   validates :representative_name,
-    presence: true,
-    if: proc { |c| c.representative_name.blank? }
+            presence: true,
+            if: proc { |c| c.representative_name.blank? }
   validates :representative_name,
-    persons_name: true,
-    unless: proc { |c| c.representative_name.blank? }
+            persons_name: true,
+            unless: proc { |c| c.representative_name.blank? }
   validates :representative_building,
-    :representative_street,
-    :representative_town,
-    presence: true
+            :representative_street,
+            :representative_town,
+            presence: true
   validates :representative_postcode, postcode: true
   validates :representative_phone, :representative_mobile,
-    phone_number: true,
-    allow_blank: true
+            phone_number: true,
+            allow_blank: true
   validates :representative_email,
-    email_address: true,
-    if: :prefer_email?
+            email_address: true,
+            if: :prefer_email?
 
   def allow_phone_or_video_attendance=(value)
     write_attribute(:allow_phone_or_video_attendance, value&.reject(&:blank?))

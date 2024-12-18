@@ -4,7 +4,7 @@ class PostcodeValidator < ActiveModel::EachValidator
   def initialize(options)
     my_options = options.dup
     self.postcode_service = my_options.delete(:postcode_service) || UKPostcode
-    super my_options
+    super(my_options)
   end
 
   def validate_each(record, attribute, value)

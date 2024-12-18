@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Access Cookies", js: true do
+RSpec.feature "Access Cookies", :js do
   include ET3::Test::I18n
 
   before do

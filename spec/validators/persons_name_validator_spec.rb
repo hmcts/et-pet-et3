@@ -14,7 +14,7 @@ RSpec.describe PersonsNameValidator do
     end
   end
 
-  it 'will validate any letter-based string with spaces' do
+  it 'validates any letter-based string with spaces' do
     model = model_class.new(name: "John Smith")
 
     model.valid?
@@ -22,7 +22,7 @@ RSpec.describe PersonsNameValidator do
     expect(model.errors).not_to include :name
   end
 
-  it 'will validate any letter-based string with hyphens, apostrophes, full stops and spaces' do
+  it 'validates any letter-based string with hyphens, apostrophes, full stops and spaces' do
     model = model_class.new(name: "John-Jo' Smith Jnr.")
 
     model.valid?
@@ -30,7 +30,7 @@ RSpec.describe PersonsNameValidator do
     expect(model.errors).not_to include :name
   end
 
-  it 'will not validate a string with numbers in it' do
+  it 'does not validate a string with numbers in it' do
     model = model_class.new(name: "J0hn Sm1th")
 
     model.valid?
@@ -38,7 +38,7 @@ RSpec.describe PersonsNameValidator do
     expect(model.errors.details[:name]).to include a_hash_including(error: :contains_numbers)
   end
 
-  it 'will not validate a string without spaces in it' do
+  it 'does not validate a string without spaces in it' do
     model = model_class.new(name: "JohnSmith")
 
     model.valid?

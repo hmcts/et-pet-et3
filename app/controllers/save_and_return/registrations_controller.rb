@@ -11,13 +11,15 @@ module SaveAndReturn
 
     private
 
-
-
+    # rubocop:disable Metrics/CyclomaticComplexity
     def deliver_access_details
       return unless current_store && current_store&.user&.email.present?
 
-      Mailer.with(current_user: current_user, current_store: current_store).access_details_email.deliver_now if current_store&.user&.email.present?
+      if current_store&.user&.email.present?
+        Mailer.with(current_user: current_user, current_store: current_store).access_details_email.deliver_now
+      end
     end
+    # rubocop:enable Metrics/CyclomaticComplexity
 
     protected
 
@@ -29,7 +31,7 @@ module SaveAndReturn
       "save_and_return.#{controller_name}"
     end
 
-    def after_sign_up_path_for(resource)
+    def after_sign_up_path_for(_resource)
       edit_respondents_details_path
     end
 

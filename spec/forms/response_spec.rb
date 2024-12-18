@@ -12,7 +12,7 @@ RSpec.describe Response, type: :model do
 
   context 'with validators' do
 
-    it 'will not validate defend claim facts over 2,500 characters' do
+    it 'does not validate defend claim facts over 2,500 characters' do
       populated_response.defend_claim_facts = two_thousand_five_hundred_and_one_characters
 
       populated_response.valid?
@@ -33,22 +33,22 @@ RSpec.describe Response, type: :model do
     end
   end
 
-  describe ".to_h " do
-    it "will return a hash" do
+  describe ".to_h" do
+    it "returns a hash" do
       expect(populated_response.to_h).to be_a(Hash)
     end
 
-    it 'will return the defend_claim key and value pair' do
+    it 'returns the defend_claim key and value pair' do
       expect(populated_response.to_h).to include(defend_claim: true)
     end
 
-    it 'will return the defend_claim_facts key and value pair' do
+    it 'returns the defend_claim_facts key and value pair' do
       expect(populated_response.to_h).to include(defend_claim_facts: 'lorem ipsum defend claim facts')
     end
   end
 
   context 'when left blank' do
-    it 'will raise a validation error on defend claim' do
+    it 'raises a validation error on defend claim' do
       populated_response.defend_claim = nil
 
       populated_response.valid?
@@ -56,7 +56,7 @@ RSpec.describe Response, type: :model do
       expect(populated_response.errors.details[:defend_claim]).to include a_hash_including(error: :inclusion)
     end
 
-    it 'will not raise a validation error on defend claim facts' do
+    it 'does not raise a validation error on defend claim facts' do
       populated_response.defend_claim_facts = nil
 
       populated_response.valid?
@@ -66,7 +66,7 @@ RSpec.describe Response, type: :model do
   end
 
   context "when defending the claim" do
-    it 'will raise a validation error on defend_claim_facts' do
+    it 'raises a validation error on defend_claim_facts' do
       populated_response.defend_claim = true
       populated_response.defend_claim_facts = two_thousand_five_hundred_and_one_characters
 
@@ -77,14 +77,14 @@ RSpec.describe Response, type: :model do
   end
 
   context "when not defending the claim" do
-    it 'will not validate defend claim facts' do
+    it 'does not validate defend claim facts' do
       populated_response.defend_claim = false
       populated_response.defend_claim_facts = two_thousand_five_hundred_and_one_characters
 
       expect(populated_response).to be_valid
     end
 
-    it 'will not hash defend claim facts' do
+    it 'does not hash defend claim facts' do
       populated_response.defend_claim = false
       populated_response.defend_claim_facts = two_thousand_five_hundred_and_one_characters
 

@@ -25,17 +25,17 @@ module Et3
 end
 Capybara::Screenshot.prune_strategy = :keep_last_run
 Capybara::Screenshot.register_driver(:chrome) do |driver, path|
-  ::Et3::Test::FullScreenshot.with_resizing do
+  Et3::Test::FullScreenshot.with_resizing do
     driver.browser.save_screenshot(path)
   end
 end
 Capybara::Screenshot.register_driver(:chrome_local) do |driver, path|
-  ::Et3::Test::FullScreenshot.with_resizing do
+  Et3::Test::FullScreenshot.with_resizing do
     driver.browser.save_screenshot(path)
   end
 end
 Capybara::Screenshot.register_driver(:firefox_local) do |driver, path|
-  ::Et3::Test::FullScreenshot.with_resizing do
+  Et3::Test::FullScreenshot.with_resizing do
     driver.browser.save_screenshot(path)
   end
 end

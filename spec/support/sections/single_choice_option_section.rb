@@ -23,8 +23,6 @@ module ET3
           t('components.single_choice_option_section.yes')
         elsif no.has_checked_field?
           t('components.single_choice_option_section.no')
-        else
-          nil
         end
       end
 

@@ -11,6 +11,7 @@ class EarningsAndBenefits < BaseForm
   attribute :agree_with_claimant_pension_benefits, :string
   attribute :disagree_claimant_pension_benefits_reason, :text
 
+  # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
   def to_h
     earnings_and_benefits_hash = {
       agree_with_claimants_hours: agree_with_claimants_hours,
@@ -31,25 +32,26 @@ class EarningsAndBenefits < BaseForm
 
     earnings_and_benefits_hash
   end
+  # rubocop:enable Metrics/MethodLength, Metrics/AbcSize
 
   validates :queried_hours,
-    numericality: { less_than_or_equal_to: 168.0, greater_than: 0 },
-    allow_blank: true,
-    if: :disagree_claimants_hours?
+            numericality: { less_than_or_equal_to: 168.0, greater_than: 0 },
+            allow_blank: true,
+            if: :disagree_claimants_hours?
   validates :queried_pay_before_tax, :queried_take_home_pay,
-    numericality: true,
-    allow_blank: true,
-    if: :disagree_earnings_details?
+            numericality: true,
+            allow_blank: true,
+            if: :disagree_earnings_details?
   validates :disagree_claimant_notice_reason,
-    length: {
-      maximum: 400
-    },
-    if: :disagree_claimants_notice?
+            length: {
+              maximum: 400
+            },
+            if: :disagree_claimants_notice?
   validates :disagree_claimant_pension_benefits_reason,
-    length: {
-      maximum: 350
-    },
-    if: :disagree_claimants_pension_benefits?
+            length: {
+              maximum: 350
+            },
+            if: :disagree_claimants_pension_benefits?
 
   private
 

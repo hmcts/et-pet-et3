@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Access Form Submission Page", js: true do
+RSpec.feature "Access Form Submission Page", :js do
 
   before do
     stub_et_api

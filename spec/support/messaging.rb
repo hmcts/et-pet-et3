@@ -69,6 +69,7 @@ module ET3
 
       def factory_translate(value, *args)
         return value unless value.is_a?(Symbol)
+
         t(value, *args)
       end
 

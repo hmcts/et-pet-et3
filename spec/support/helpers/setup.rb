@@ -158,7 +158,7 @@ module ET3
       def answer_disability_question
         user = @respondent
         disability_page.disability_question.set(user.disability)
-        if user.disability == :yes && user.disability_information != nil
+        if user.disability == :yes && !user.disability_information.nil?
           disability_page.disability_information.set(user.disability_information)
         end
 
@@ -202,20 +202,20 @@ module ET3
       end
 
       # Stub Submission Calls to API
-      def stub_et_api # rubocop:disable Metrics/MethodLength
+      def stub_et_api
         stub_request(:post, "#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api/v2')}/respondents/build_response").
-          with(headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }).
+          with(headers: { 'Content-Type': 'application/json', Accept: 'application/json' }).
           to_return(
             headers: { 'Content-Type': 'application/json' },
             body:
               {
-                "meta": {
-                  "BuildResponse": {
-                    "reference": "142000000100",
-                    "submitted_at": "2018-01-13 14:00",
-                    "pdf_url": "http://#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}/",
-                    "office_address": "Alexandra House, 14-22 The Parsonage, Manchester, M3 2JA",
-                    "office_phone_number": "0161 833 6100"
+                meta: {
+                  BuildResponse: {
+                    reference: "142000000100",
+                    submitted_at: "2018-01-13 14:00",
+                    pdf_url: "http://#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}/",
+                    office_address: "Alexandra House, 14-22 The Parsonage, Manchester, M3 2JA",
+                    office_phone_number: "0161 833 6100"
                   }
                 }
               }.to_json,
@@ -224,20 +224,20 @@ module ET3
       end
 
       # Stub Submission Calls to API using Rack mounted PDF Download URL
-      def stub_submission_with_custom_pdf_download_link # rubocop:disable Metrics/MethodLength
+      def stub_submission_with_custom_pdf_download_link
         stub_request(:post, "#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api/v2')}/respondents/build_response").
-          with(headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }).
+          with(headers: { 'Content-Type': 'application/json', Accept: 'application/json' }).
           to_return(
             headers: { 'Content-Type': 'application/json' },
             body:
               {
-                "meta": {
-                  "BuildResponse": {
-                    "reference": "142000000100",
-                    "submitted_at": "2018-01-13 14:00",
-                    "pdf_url": "http://#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}/test/pdf-download",
-                    "office_address": "Alexandra House, 14-22 The Parsonage, Manchester, M3 2JA",
-                    "office_phone_number": "0161 833 6100"
+                meta: {
+                  BuildResponse: {
+                    reference: "142000000100",
+                    submitted_at: "2018-01-13 14:00",
+                    pdf_url: "http://#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}/test/pdf-download",
+                    office_address: "Alexandra House, 14-22 The Parsonage, Manchester, M3 2JA",
+                    office_phone_number: "0161 833 6100"
                   }
                 }
               }.to_json,
@@ -249,20 +249,19 @@ module ET3
       def stub_create_blob_to_azure
         key = "direct_uploads/#{SecureRandom.uuid}".freeze
 
-
         stub_request(:post, "#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api/v2')}/create_blob").
           to_return(
             headers: { 'Content-Type': 'application/json' },
             body:
               {
-                "data": {
-                  "key": key
+                data: {
+                  key: key
                 },
-                "meta": {
-                  "cloud_provider": "azure"
+                meta: {
+                  cloud_provider: "azure"
                 },
-                "status": "accepted",
-                "uuid": SecureRandom.uuid
+                status: "accepted",
+                uuid: SecureRandom.uuid
               }.to_json
           )
       end

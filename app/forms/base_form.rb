@@ -4,7 +4,7 @@ class BaseForm < ApplicationRecord
 
   def self.human_attribute_name(attribute_name, *)
     translated_attribute = catch :exception do
-      I18n.translate("attributes.#{attribute_name}", throw: true)
+      I18n.t("attributes.#{attribute_name}", throw: true)
     end
     if translated_attribute.is_a?(I18n::MissingTranslation)
       super

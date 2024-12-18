@@ -13,11 +13,11 @@ class Disability < BaseForm
   end
 
   validates :disability_information,
-    length: {
-      maximum: 350
-    },
-    presence: true,
-    if: :disabled?
+            length: {
+              maximum: 350
+            },
+            presence: true,
+            if: :disabled?
 
   private
 

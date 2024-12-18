@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.feature "Fill in whole form", js: true do
+RSpec.feature "Fill in whole form", :js do
   include ET3::Test::I18n
 
   before do
@@ -74,7 +74,7 @@ RSpec.feature "Fill in whole form", js: true do
       expect(a_request(:post, "http://api.et.127.0.0.1.nip.io:3100/api/v2/respondents/build_response").
           with { |request|
             request_body = JSON.parse(request.body)
-            expect(request_body["data"][0]["data"]["additional_information_key"]).to be nil
+            expect(request_body["data"][0]["data"]["additional_information_key"]).to be_nil
           }).to have_been_made.once
     end
 
@@ -214,33 +214,33 @@ RSpec.feature "Fill in whole form", js: true do
               expect(request_body["data"][0]["command"]).to eql "BuildResponse"
               expect(request_body["data"][0]["data"]["case_number"]).to eql @respondent.case_number
               expect(request_body["data"][0]["data"]["claimants_name"]).to eql @claimant.claimants_name
-              expect(request_body["data"][0]["data"]["agree_with_early_conciliation_details"]).to eql false
+              expect(request_body["data"][0]["data"]["agree_with_early_conciliation_details"]).to be false
               expect(request_body["data"][0]["data"]["disagree_conciliation_reason"]).to eql @claimant.disagree_conciliation_reason
-              expect(request_body["data"][0]["data"]["agree_with_employment_dates"]).to eql({no: 'false', yes: 'true', not_applicable: 'not_applicable'}[@claimant.agree_with_employment_dates])
+              expect(request_body["data"][0]["data"]["agree_with_employment_dates"]).to eql({ no: 'false', yes: 'true', not_applicable: 'not_applicable' }[@claimant.agree_with_employment_dates])
               expect(Date.parse(request_body["data"][0]["data"]["employment_start"]).strftime('%d/%m/%Y')).to eql @claimant.employment_start
               expect(Date.parse(request_body["data"][0]["data"]["employment_end"]).strftime('%d/%m/%Y')).to eql @claimant.employment_end
               expect(request_body["data"][0]["data"]["disagree_employment"]).to eql @claimant.disagree_employment
-              expect(request_body["data"][0]["data"]["continued_employment"]).to eql({no: 'false', yes: 'true', not_applicable: 'not_applicable'}[@claimant.continued_employment])
-              expect(request_body["data"][0]["data"]["agree_with_claimants_description_of_job_or_title"]).to eql({no: 'false', yes: 'true', not_applicable: 'not_applicable'}[@claimant.agree_with_claimants_description_of_job_or_title])
+              expect(request_body["data"][0]["data"]["continued_employment"]).to eql({ no: 'false', yes: 'true', not_applicable: 'not_applicable' }[@claimant.continued_employment])
+              expect(request_body["data"][0]["data"]["agree_with_claimants_description_of_job_or_title"]).to eql({ no: 'false', yes: 'true', not_applicable: 'not_applicable' }[@claimant.agree_with_claimants_description_of_job_or_title])
               expect(request_body["data"][0]["data"]["disagree_claimants_job_or_title"]).to eql @claimant.disagree_claimants_job_or_title
-              expect(request_body["data"][0]["data"]["agree_with_claimants_hours"]).to eql({no: 'false', yes: 'true', not_applicable: 'not_applicable'}[@claimant.agree_with_claimants_hours])
+              expect(request_body["data"][0]["data"]["agree_with_claimants_hours"]).to eql({ no: 'false', yes: 'true', not_applicable: 'not_applicable' }[@claimant.agree_with_claimants_hours])
               expect(request_body["data"][0]["data"]["queried_hours"]).to eql @claimant.queried_hours
-              expect(request_body["data"][0]["data"]["agree_with_earnings_details"]).to eql({no: 'false', yes: 'true', not_applicable: 'not_applicable'}[@claimant.agree_with_earnings_details])
+              expect(request_body["data"][0]["data"]["agree_with_earnings_details"]).to eql({ no: 'false', yes: 'true', not_applicable: 'not_applicable' }[@claimant.agree_with_earnings_details])
               expect(request_body["data"][0]["data"]["queried_pay_before_tax"]).to eql @claimant.queried_pay_before_tax
               expect(request_body["data"][0]["data"]["queried_pay_before_tax_period"]).to eql @claimant.queried_pay_before_tax_period.to_s.split('.').last.titleize
               expect(request_body["data"][0]["data"]["queried_take_home_pay"]).to eql @claimant.queried_take_home_pay
               expect(request_body["data"][0]["data"]["queried_take_home_pay_period"]).to eql @claimant.queried_take_home_pay_period.to_s.split('.').last.titleize
-              expect(request_body["data"][0]["data"]["agree_with_claimant_notice"]).to eql({no: 'false', yes: 'true', not_applicable: 'not_applicable'}[@claimant.agree_with_claimant_notice])
+              expect(request_body["data"][0]["data"]["agree_with_claimant_notice"]).to eql({ no: 'false', yes: 'true', not_applicable: 'not_applicable' }[@claimant.agree_with_claimant_notice])
               expect(request_body["data"][0]["data"]["disagree_claimant_notice_reason"]).to eql @claimant.disagree_claimant_notice_reason
-              expect(request_body["data"][0]["data"]["agree_with_claimant_pension_benefits"]).to eql({no: 'false', yes: 'true', not_applicable: 'not_applicable'}[@claimant.agree_with_claimant_pension_benefits])
+              expect(request_body["data"][0]["data"]["agree_with_claimant_pension_benefits"]).to eql({ no: 'false', yes: 'true', not_applicable: 'not_applicable' }[@claimant.agree_with_claimant_pension_benefits])
               expect(request_body["data"][0]["data"]["disagree_claimant_pension_benefits_reason"]).to eql @claimant.disagree_claimant_pension_benefits_reason
-              expect(request_body["data"][0]["data"]["defend_claim"]).to eql true
+              expect(request_body["data"][0]["data"]["defend_claim"]).to be true
               expect(request_body["data"][0]["data"]["defend_claim_facts"]).to eql @claimant.defend_claim_facts
-              expect(request_body["data"][0]["data"]["make_employer_contract_claim"]).to eql true
+              expect(request_body["data"][0]["data"]["make_employer_contract_claim"]).to be true
               expect(request_body["data"][0]["data"]["claim_information"]).to eql @respondent.claim_information
               expect(request_body["data"][0]["data"]["email_receipt"]).to eql ""
-              expect(request_body["data"][0]["data"]["pdf_template_reference"]).to eql "et3-v3-#{::ET3::Test::Messaging.instance.current_locale}"
-              expect(request_body["data"][0]["data"]["email_template_reference"]).to eql "et3-v1-#{::ET3::Test::Messaging.instance.current_locale}"
+              expect(request_body["data"][0]["data"]["pdf_template_reference"]).to eql "et3-v3-#{ET3::Test::Messaging.instance.current_locale}"
+              expect(request_body["data"][0]["data"]["email_template_reference"]).to eql "et3-v1-#{ET3::Test::Messaging.instance.current_locale}"
               expect(request_body["data"][0]["uuid"]).to be_an_instance_of(String)
               expect(request_body["data"][1]["command"]).to eql "BuildRespondent"
               expect(request_body["data"][1]["data"]["name"]).to eql @respondent.name
@@ -259,9 +259,9 @@ RSpec.feature "Fill in whole form", js: true do
               expect(request_body["data"][1]["data"]["contact_preference"]).to eql @respondent.contact_preference.to_s.split('.').last
               expect(request_body["data"][1]["data"]["email_address"]).to eql @respondent.email_address if @respondent.contact_preference == 'email'
               expect(request_body["data"][1]["data"]["organisation_employ_gb"].to_s).to eql @respondent.organisation_employ_gb
-              expect(request_body["data"][1]["data"]["organisation_more_than_one_site"]).to eql false
+              expect(request_body["data"][1]["data"]["organisation_more_than_one_site"]).to be false
               expect(request_body["data"][1]["data"]["employment_at_site_number"]).to eql @respondent.employment_at_site_number
-              expect(request_body["data"][1]["data"]["disability"]).to eql({no: 'false', yes: 'true', not_applicable: 'not_applicable'}[@respondent.disability])
+              expect(request_body["data"][1]["data"]["disability"]).to eql({ no: 'false', yes: 'true', not_applicable: 'not_applicable' }[@respondent.disability])
               expect(request_body["data"][1]["data"]["disability_information"]).to eql @respondent.disability_information
               expect(request_body["data"][1]["data"]["allow_video_attendance"]).to eql @respondent.allow_phone_or_video_attendance.include?(:video)
               expect(request_body["data"][1]["data"]["allow_phone_attendance"]).to eql @respondent.allow_phone_or_video_attendance.include?(:phone)
@@ -290,7 +290,7 @@ RSpec.feature "Fill in whole form", js: true do
 
       expect(form_submission_page).to have_submission_confirmation
       expect(form_submission_page.reference_number).to have_text "142000000100"
-      expect(form_submission_page.submission_date).to have_text /13 (January|Ionawr) 2018/
+      expect(form_submission_page.submission_date).to have_text(/13 (January|Ionawr) 2018/)
       expect(form_submission_page).to have_valid_pdf_download
     end
   end

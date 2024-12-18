@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.feature "Fill in Response Page", js: true do
+RSpec.feature "Fill in Response Page", :js do
   let(:your_representative_page) { ET3::Test::YourRepresentativePage.new }
 
   before do

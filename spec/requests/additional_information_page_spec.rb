@@ -6,7 +6,7 @@ RSpec.describe "Additional information page", type: :request do
     sign_in user
   end
 
-  let(:user) { create(:user) }
+  let(:user) { FactoryBot.create(:user) }
 
   describe "/respond/additional_information" do
     include_examples 'google tag manager', page_object_class: ET3::Test::AdditionalInformationPage

@@ -4,7 +4,7 @@ module MaintenanceNoticeHelper
       Time.zone.parse(d.strip).strftime("%l%P")
     end
 
-    day = I18n.localize(
+    day = I18n.l(
       Time.zone.parse(ENV['SHOW_DOWNTIME_BANNER'].split(',').last.strip), format: "%e %B %Y"
     )
 

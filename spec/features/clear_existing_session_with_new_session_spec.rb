@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.feature "Clear existing session with new session", js: true do
+RSpec.feature "Clear existing session with new session", :js do
 
   scenario "works when clicking the 'Start now' button" do
     given_valid_user

@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.feature "Fill in Your Representative Page", js: true do
+RSpec.feature "Fill in Your Representative Page", :js do
   let(:your_representatives_details_page) { ET3::Test::YourRepresentativesDetailsPage.new }
   let(:employers_contract_claim_page) { ET3::Test::EmployersContractClaimPage.new }
 
@@ -20,7 +20,7 @@ RSpec.feature "Fill in Your Representative Page", js: true do
 
   scenario "correctly will enable user to continue to disability page" do
     your_representative_page.load(locale: current_locale_parameter)
-    @representative = FactoryBot.create(:representative, :representative_valid, have_representative: :"questions.your_representatives.have_representative.options.yes")
+    @representative = FactoryBot.create(:representative, :representative_valid, have_representative: :'questions.your_representatives.have_representative.options.yes')
     answer_representative
 
     expect(disability_page).to be_displayed

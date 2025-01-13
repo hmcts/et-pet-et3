@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.feature "Fill in Earnings and Benefits Page", js: true do
+RSpec.feature "Fill in Earnings and Benefits Page", :js do
   let(:response_page) { ET3::Test::ResponsePage.new }
 
   before do

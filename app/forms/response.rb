@@ -4,7 +4,7 @@ class Response < BaseForm
 
   def to_h
     response_hash = {
-      defend_claim: defend_claim,
+      defend_claim: defend_claim
     }
 
     response_hash[:defend_claim_facts] = defend_claim_facts if response_hash[:defend_claim]
@@ -13,12 +13,12 @@ class Response < BaseForm
   end
 
   validates :defend_claim,
-    inclusion: { in: [true, false] }
+            inclusion: { in: [true, false] }
   validates :defend_claim_facts,
-    length: {
-      maximum: 2500
-    },
-    if: :defend_claim?
+            length: {
+              maximum: 2500
+            },
+            if: :defend_claim?
 
   private
 

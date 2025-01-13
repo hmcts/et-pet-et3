@@ -21,8 +21,9 @@ class ClaimantsDetailsController < ApplicationController
 
   def claimants_detail_params
     params.require(:claimants_detail).permit(:claimants_name, :agree_with_early_conciliation_details,
-      :disagree_conciliation_reason, :agree_with_employment_dates, :employment_start,
-      :employment_end, :disagree_employment,
-      :continued_employment, :agree_with_claimants_description_of_job_or_title, :disagree_claimants_job_or_title)
+                                             :disagree_conciliation_reason, :agree_with_employment_dates,
+                                             :employment_start, :employment_end, :disagree_employment,
+                                             :continued_employment, :agree_with_claimants_description_of_job_or_title,
+                                             :disagree_claimants_job_or_title)
   end
 end

@@ -4,7 +4,7 @@ module ET3
       class NewReferenceNumberEmailHtml < SitePrism::Page
         include ET3::Test::I18n
 
-        def self.find(repo: ActionMailer::Base.deliveries, reference:)
+        def self.find(reference:, repo: ActionMailer::Base.deliveries)
           instances = repo.map { |mail| new(mail) }
           instances.detect { |instance| instance.has_correct_subject? && instance.has_reference_element?(reference) }
         end

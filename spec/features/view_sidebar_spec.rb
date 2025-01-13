@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "View Sidebar", js: true do
+RSpec.feature "View Sidebar", :js do
   include ET3::Test::I18n
 
   scenario "start page" do

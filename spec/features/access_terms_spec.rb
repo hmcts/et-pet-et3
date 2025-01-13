@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Access Terms", js: true do
+RSpec.feature "Access Terms", :js do
   include ET3::Test::I18n
 
   before do
@@ -174,7 +174,7 @@ RSpec.feature "Access Terms", js: true do
     terms_and_conditions_page.disclaimer.assert_content
   end
 
-    scenario "from your representative page" do
+  scenario "from your representative page" do
     your_representative_page.load(locale: current_locale_parameter)
 
     your_representative_page.terms.click

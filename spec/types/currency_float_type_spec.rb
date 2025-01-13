@@ -48,7 +48,7 @@ RSpec.describe CurrencyFloatType do
     end
 
     it 'returns nil' do
-      expect(type.cast(nil)).to be nil
+      expect(type.cast(nil)).to be_nil
     end
   end
 

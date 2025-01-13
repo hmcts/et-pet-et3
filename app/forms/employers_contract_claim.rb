@@ -13,10 +13,10 @@ class EmployersContractClaim < BaseForm
   end
 
   validates :claim_information,
-    length: {
-      maximum: 4500
-    },
-    if: :make_claim?
+            length: {
+              maximum: 4500
+            },
+            if: :make_claim?
 
   private
 

@@ -33,6 +33,8 @@ FactoryBot.define do
     disability { :yes }
     disability_information { "Lorem ipsum disability" }
     allow_phone_or_video_attendance { [:video] }
+    case_heard_by_preference         { :judge }
+    case_heard_by_preference_reason  { 'I feel intimidated by a group' }
   end
 
   trait :contact_preference_post do
@@ -59,5 +61,7 @@ FactoryBot.define do
     disability { :yes }
     disability_information { Faker::Lorem.characters(number: 351) }
     allow_phone_or_video_attendance { [] }
+    case_heard_by_preference         { 'judge' }
+    case_heard_by_preference_reason  { nil }
   end
 end

@@ -87,6 +87,16 @@ en:
         options:
           "video": 'Yes, I can take part in video hearings'
           "phone": 'Yes, I can take part in phone hearings'
+    # Case Heard By Page
+    case_heard_by:
+      case_heard_by_preference:
+        label: How do you prefer to have your case heard? (optional)
+        options:
+          no_preference: I have no preference
+          judge: I prefer my case to be heard by a judge. Give your reasons in the box below.
+          panel: I prefer my case to be heard by a panel including non-legal members. Give your reasons in the box below.
+      case_heard_by_preference_reason:
+        label: Give reason
     # Claimant's Details Page
     claimants_details:
       claimants_name:
@@ -268,6 +278,8 @@ en:
       caption: Confirmation of Supplied Details
     confirmation_of_respondents_details_answers:
       caption: Respondent's Details
+    confirmation_of_case_heard_by_answers:
+      caption: Preference for judge or panel
     confirmation_of_claimants_details_answers:
       caption: Claimant's Details
     confirmation_of_earnings_and_benefits_answers:
@@ -306,6 +318,9 @@ en:
       organisation_more_than_one_site: Does this organisation have more than one site in Great Britain?
       employment_at_site_number: How many people are employed at the place where the claimant worked?
       allow_phone_or_video_attendance: Would you be able to take part in hearings by video and phone?
+    case_heard_by:
+      case_heard_by_preference: How do you prefer to have your case heard?
+      case_heard_by_preference_reason: Give reason
     claimants_details:
       claimants_name: Claimant's full name
       agree_with_early_conciliation_details: Do you agree with the details given by the claimant about Early Conciliation with Acas?
@@ -396,6 +411,7 @@ en:
     confirmation_of_supplied_details:
       edit_page: Edit answers on this page
       edit_respondent_details_page: Edit Respondent's Details answers
+      edit_case_heard_by_page: Edit Preference for judge or panel answers
       edit_claimants_details_page: Edit Claimant's Details answers
       edit_earnings_and_benefit_page: Edit Earnings and Benefits answers
       edit_response_page: Edit Response answers
@@ -692,6 +708,8 @@ en:
       upload_additional_information: "Supported file type: .rtf"
   respondents_details:
     header: "Respondent's Details"
+  case_heard_by:
+    header: "Preference for judge or panel"
   claimants_details:
     header: "Claimant's details"
   earnings_and_benefits:

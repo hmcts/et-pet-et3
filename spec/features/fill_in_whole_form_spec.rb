@@ -20,6 +20,7 @@ RSpec.feature "Fill in whole form", :js do
       start_a_new_et3_response
       registration_start
       answer_respondents_details
+      answer_case_heard_by
       answer_claimants_details
       answer_earnings_and_benefits
       answer_defend_claim_question
@@ -60,6 +61,7 @@ RSpec.feature "Fill in whole form", :js do
       start_a_new_et3_response
       registration_start
       answer_respondents_details
+      answer_case_heard_by
       answer_claimants_details
       answer_earnings_and_benefits
       answer_defend_claim_question
@@ -91,6 +93,7 @@ RSpec.feature "Fill in whole form", :js do
       start_a_new_et3_response
       registration_start
       answer_respondents_details
+      answer_case_heard_by
       answer_claimants_details
       answer_earnings_and_benefits
       answer_defend_claim_question
@@ -124,6 +127,12 @@ RSpec.feature "Fill in whole form", :js do
       @respondent.allow_phone_or_video_attendance.each do |option|
         expect(respondents_details_table.allow_phone_or_video_attendance_row.allow_phone_or_video_attendance_answer).to have_text t("questions.respondents_details.allow_phone_or_video_attendance.options.#{option}")
       end
+
+      expect(confirmation_of_supplied_details_page).to have_confirmation_of_case_heard_by_answers
+
+      case_heard_by_table = confirmation_of_supplied_details_page.confirmation_of_case_heard_by_answers
+      expect(case_heard_by_table.case_heard_by_preference_row.case_heard_by_preference_answer).to have_text @respondent.case_heard_by_preference
+      expect(case_heard_by_table.case_heard_by_preference_reason_row.case_heard_by_preference_reason_answer).to have_text @respondent.case_heard_by_preference_reason
 
       expect(confirmation_of_supplied_details_page).to have_confirmation_of_claimants_details_answers
 
@@ -212,6 +221,8 @@ RSpec.feature "Fill in whole form", :js do
               expect(request_body["uuid"]).to be_an_instance_of(String)
               expect(request_body["command"]).to eql "SerialSequence"
               expect(request_body["data"][0]["command"]).to eql "BuildResponse"
+              expect(request_body["data"][0]["data"]["case_heard_by_preference"]).to eql @respondent.case_heard_by_preference.to_s
+              expect(request_body["data"][0]["data"]["case_heard_by_preference_reason"]).to eql @respondent.case_heard_by_preference_reason.to_s
               expect(request_body["data"][0]["data"]["case_number"]).to eql @respondent.case_number
               expect(request_body["data"][0]["data"]["claimants_name"]).to eql @claimant.claimants_name
               expect(request_body["data"][0]["data"]["agree_with_early_conciliation_details"]).to be false
@@ -239,7 +250,7 @@ RSpec.feature "Fill in whole form", :js do
               expect(request_body["data"][0]["data"]["make_employer_contract_claim"]).to be true
               expect(request_body["data"][0]["data"]["claim_information"]).to eql @respondent.claim_information
               expect(request_body["data"][0]["data"]["email_receipt"]).to eql ""
-              expect(request_body["data"][0]["data"]["pdf_template_reference"]).to eql "et3-v3-#{ET3::Test::Messaging.instance.current_locale}"
+              expect(request_body["data"][0]["data"]["pdf_template_reference"]).to eql "et3-v4-#{ET3::Test::Messaging.instance.current_locale}"
               expect(request_body["data"][0]["data"]["email_template_reference"]).to eql "et3-v1-#{ET3::Test::Messaging.instance.current_locale}"
               expect(request_body["data"][0]["uuid"]).to be_an_instance_of(String)
               expect(request_body["data"][1]["command"]).to eql "BuildRespondent"

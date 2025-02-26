@@ -26,6 +26,12 @@ RSpec.feature "Check for Javascript Browser Errors", :js do
     expect(respondents_details_page.js_severe_errors).to be_empty
   end
 
+  scenario "on case heard by page" do
+    case_heard_by_page.load
+
+    expect(case_heard_by_page.js_severe_errors).to be_empty
+  end
+
   scenario "on claimant's details page" do
     claimants_details_page.load
 
@@ -83,6 +89,7 @@ RSpec.feature "Check for Javascript Browser Errors", :js do
   scenario "form submission page" do
     given_valid_data
     answer_respondents_details
+    answer_case_heard_by
     answer_claimants_details
     answer_earnings_and_benefits
     answer_defend_claim_question

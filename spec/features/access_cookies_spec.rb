@@ -45,6 +45,7 @@ RSpec.feature "Access Cookies", :js do
   scenario "from form submission page" do
     given_valid_data
     answer_respondents_details
+    answer_case_heard_by
     answer_claimants_details
     answer_earnings_and_benefits
     answer_defend_claim_question

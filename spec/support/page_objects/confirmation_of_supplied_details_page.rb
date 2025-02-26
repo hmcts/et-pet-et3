@@ -68,6 +68,15 @@ module ET3
         end
         element :edit_respondent_details_page_link, :link_named, 'links.confirmation_of_supplied_details.edit_respondent_details_page', exact: true
       end
+      section :confirmation_of_case_heard_by_answers, :check_answers_section, 'questions.confirmation_of_case_heard_by_answers.caption', exact: true do
+        section :case_heard_by_preference_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.case_heard_by.case_heard_by_preference', exact: true do
+          element :case_heard_by_preference_answer, :govuk_summary_list_col
+        end
+        section :case_heard_by_preference_reason_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.case_heard_by.case_heard_by_preference_reason', exact: true do
+          element :case_heard_by_preference_reason_answer, :govuk_summary_list_col
+        end
+        element :edit_case_heard_by_page_link, :link_named, 'links.confirmation_of_supplied_details.edit_case_heard_by_page', exact: true
+      end
 
       section :confirmation_of_claimants_details_answers, :check_answers_section, 'questions.confirmation_of_claimants_details_answers.caption', exact: true do
         section :claimants_name_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.claimants_details.claimants_name', exact: true do

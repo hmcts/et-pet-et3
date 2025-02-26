@@ -48,6 +48,7 @@ RSpec.feature "Check PDF Download Link", :js do
     start_a_new_et3_response
     registration_start
     answer_respondents_details
+    answer_case_heard_by
     answer_claimants_details
     answer_earnings_and_benefits
     answer_defend_claim_question
@@ -66,6 +67,7 @@ RSpec.feature "Check PDF Download Link", :js do
     start_a_new_et3_response
     registration_start
     answer_respondents_details
+    answer_case_heard_by
     answer_claimants_details
     answer_earnings_and_benefits
     answer_defend_claim_question
@@ -78,5 +80,4 @@ RSpec.feature "Check PDF Download Link", :js do
     expect(form_submission_page).to have_invalid_pdf_download
     expect(form_submission_page).to have_valid_pdf_download
   end
-
 end

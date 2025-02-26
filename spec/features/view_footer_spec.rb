@@ -28,6 +28,7 @@ RSpec.feature "View Footer", :js do
   scenario "on form submission page" do
     given_valid_data
     answer_respondents_details
+    answer_case_heard_by
     answer_claimants_details
     answer_earnings_and_benefits
     answer_defend_claim_question

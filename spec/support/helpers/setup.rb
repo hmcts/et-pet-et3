@@ -74,6 +74,11 @@ module ET3
         respondents_details_page.next
       end
 
+      def answer_case_heard_by
+        case_heard_by_page.fill_in_all(respondent: @respondent)
+        case_heard_by_page.next
+      end
+
       # Claimant's Details Page
       def answer_claimants_details
         user = @claimant

@@ -77,6 +77,19 @@
           = link_to(t('components.confirmation_of_supplied_details.edit_respondent_details_page'), edit_respondents_details_path, class: 'govuk-link')
         dd.govuk-summary-list__value
           = link_to t('components.confirmation_of_supplied_details.back_to_top'), "#content", class: 'govuk-link'
+    h2.govuk-heading-m = t('components.confirmation_of_supplied_details.confirmation_of_case_heard_by_answers.caption')
+    dl.govuk-summary-list
+      .govuk-summary-list__row
+        dt.govuk-summary-list__key = t('case_heard_by.edit.case_heard_by_preference.label')
+        dd.govuk-summary-list__value = translate_stored_value(@hash_store.dig(:case_heard_by_answers, :case_heard_by_preference), "case_heard_by.case_heard_by_preference")
+      .govuk-summary-list__row
+        dt.govuk-summary-list__key = t('case_heard_by.edit.case_heard_by_preference_reason.label')
+        dd.govuk-summary-list__value = @hash_store.dig(:case_heard_by_answers, :case_heard_by_preference_reason)
+      .govuk-summary-list__row
+        dt.govuk-summary-list__key
+          = link_to(t('components.confirmation_of_supplied_details.edit_case_heard_by_page'), edit_case_heard_by_path, class: 'govuk-link')
+        dd.govuk-summary-list__value
+          = link_to t('components.confirmation_of_supplied_details.back_to_top'), "#content", class: 'govuk-link'
     h2.govuk-heading-m = t('components.confirmation_of_supplied_details.confirmation_of_claimants_details_answers.caption')
     dl.govuk-summary-list
       .govuk-summary-list__row

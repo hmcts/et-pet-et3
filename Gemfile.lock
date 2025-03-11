@@ -287,7 +287,7 @@ GEM
       stringio
     public_suffix (5.0.4)
     racc (1.8.1)
-    rack (2.2.10)
+    rack (2.2.13)
     rack-proxy (0.7.7)
       rack
     rack-session (1.0.2)

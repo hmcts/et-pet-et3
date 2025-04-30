@@ -104,3 +104,5 @@ gem 'application_insights', git: 'https://github.com/microsoft/ApplicationInsigh
 
 gem "webpacker", "~> 5.4"
 gem 'et_gds_design_system', git:'https://github.com/hmcts/et_gds_design_system.git', tag: 'v6.0.1'
+
+gem "solid_queue", "~> 1.1"

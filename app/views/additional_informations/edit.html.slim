@@ -16,4 +16,6 @@
     = f.submit(t('components.common.save_and_continue_button'))
 - content_for(:javascripts)
   javascript:
-    Et.pages.AdditionalInformationPage()
+    document.addEventListener("turbolinks:load", function() {
+      Et.pages.AdditionalInformationPage()
+    });

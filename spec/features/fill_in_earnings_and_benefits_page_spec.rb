@@ -18,7 +18,7 @@ RSpec.feature "Fill in Earnings and Benefits Page", :js do
   scenario "incorrectly will provide many errors" do
     earnings_and_benefits_page.load(locale: current_locale_parameter)
     given_invalid_data
-    answer_earnings_and_benefits
+    answer_earnings_and_benefits(expect_errors: true)
 
     expect(earnings_and_benefits_page).to have_header
     expect(earnings_and_benefits_page).to have_error_header

@@ -51,4 +51,6 @@
       path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"
 - content_for(:javascripts)
   javascript:
-    Et.pages.FormSubmissionPage()
+    document.addEventListener("turbolinks:load", function() {
+      Et.pages.FormSubmissionPage()
+    });

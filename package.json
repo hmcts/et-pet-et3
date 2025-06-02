@@ -3,13 +3,13 @@
   "private": true,
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
-    "@rails/webpacker": "5.4.3",
     "axios": "^0.26.1",
-    "et_gds_design_system": "https://github.com/hmcts/et_gds_design_system.git#v6.0.0",
-    "webpack": "^4.46.0",
-    "webpack-cli": "^3.3.12"
+    "et_gds_design_system": "https://github.com/hmcts/et_gds_design_system.git#v7.0.1"
   },
   "devDependencies": {
-    "webpack-dev-server": "^3"
+    "vite": "^5.0.0",
+    "vite-plugin-full-reload": "^1.2.0",
+    "vite-plugin-ruby": "^5.1.0",
+    "vite-plugin-stimulus-hmr": "^3.0.0"
   }
 }

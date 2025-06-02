@@ -18,7 +18,6 @@ withPipeline(type, product, component) {
     env.TEST_BROWSER = 'chrome_local'
     env.NODE_OPTIONS='--openssl-legacy-provider'
     env.ENABLE_COVERAGE='true'
-    env.CI='true'
 
     before('build') {
         sh script:"""#!/bin/bash -l

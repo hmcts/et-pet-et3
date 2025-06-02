@@ -38,8 +38,7 @@ ENV APP_BUILD_TAG ${APP_BUILD_TAG}
 EXPOSE 8080
 
 COPY --chown=app:app . /home/app/et3
-COPY --from=assets --chown=app:app /home/app/et3/public/assets /home/app/et3/public/assets
-COPY --from=assets --chown=app:app /home/app/et3/public/vite /home/app/et3/public/vite
+COPY --from=assets --chown=app:app /home/app/et3/public/packs /home/app/et3/public/packs
 COPY --from=assets --chown=app:app /home/app/et3/vendor/bundle /home/app/et3/vendor/bundle
 RUN chown -R app:app /usr/local/bundle
 RUN apk add --no-cache libpq-dev tzdata shared-mime-info curl-dev libc6-compat bash && \

@@ -18,7 +18,8 @@ RSpec.feature "Fill in Claimants Details Page", :js do
   scenario "incorrectly will provide many errors" do
     claimants_details_page.load(locale: current_locale_parameter)
     claimants_invalid_dates
-    answer_claimants_details(expect_errors: true)
+    answer_claimants_details
+    claimants_details_page.next
 
     expect(claimants_details_page).to have_header
     expect(claimants_details_page).to have_error_header
@@ -58,7 +59,7 @@ RSpec.feature "Fill in Claimants Details Page", :js do
   scenario 'Will give an error if the end date is before the start date' do
     claimants_details_page.load(locale: current_locale_parameter)
     claimants_invalid_dates
-    answer_claimants_details(expect_errors: true)
+    answer_claimants_details
 
     expect(claimants_details_page).to have_header
     expect(claimants_details_page).to have_error_header

@@ -44,11 +44,10 @@ module ET3
         @save_and_return_number = registration_page.save_and_return_number.value.text
 
         registration_page.next
-        expect(respondents_details_page).to be_displayed
       end
 
       # Respondent's Details Page
-      def answer_respondents_details(expect_errors: false)
+      def answer_respondents_details
         user = @respondent
         respondents_details_page.case_number_question.set(user.case_number)
         respondents_details_page.title_question.set(user.title)
@@ -73,11 +72,10 @@ module ET3
         respondents_details_page.allow_phone_or_video_attendance_question.set(user.allow_phone_or_video_attendance)
 
         respondents_details_page.next
-        claimants_details_page.wait_until_displayed unless expect_errors
       end
 
       # Claimant's Details Page
-      def answer_claimants_details(expect_errors: false)
+      def answer_claimants_details
         user = @claimant
         claimants_details_page.claimants_name_question.set(user.claimants_name)
         claimants_details_page.agree_with_early_conciliation_details_question.set(user.agree_with_early_conciliation_details.to_s.split('.').last.to_sym)
@@ -92,11 +90,10 @@ module ET3
         claimants_details_page.agree_with_claimants_description_of_job_or_title_question.set(user.agree_with_claimants_description_of_job_or_title.to_s.split('.').last.to_sym)
         claimants_details_page.disagree_claimants_job_or_title.set(user.disagree_claimants_job_or_title) if user.agree_with_claimants_description_of_job_or_title.to_s.split('.').last == 'no'
         claimants_details_page.next
-        earnings_and_benefits_page.wait_until_displayed unless expect_errors
       end
 
       # Earnings and Benefits Page
-      def answer_earnings_and_benefits(expect_errors: false)
+      def answer_earnings_and_benefits
         user = @claimant
         earnings_and_benefits_page.agree_with_claimants_hours_question.set(user.agree_with_claimants_hours)
         earnings_and_benefits_page.queried_hours.set(user.queried_hours)
@@ -118,20 +115,18 @@ module ET3
         end
         earnings_and_benefits_page.agree_with_claimant_notice_question.set(:no)
         earnings_and_benefits_page.next
-        response_page.wait_until_displayed unless expect_errors
       end
 
       # Response Page
-      def answer_defend_claim_question(expect_errors: false)
+      def answer_defend_claim_question
         user = @claimant
         response_page.defend_claim_question.set(user.defend_claim.to_s.split('.').last.to_sym)
         response_page.defend_claim_facts.set(user.defend_claim_facts) if user.defend_claim.to_s.split('.').last == 'yes'
         response_page.next
-        your_representative_page.wait_until_displayed unless expect_errors
       end
 
       # Your Representative Page
-      def answer_representative(expect_errors: false)
+      def answer_representative
         user = @representative
         if t(user.have_representative) == t('questions.your_representatives.have_representative.options.yes')
           your_representative_page.have_representative_question.set(user.have_representative.to_s.split('.').last.to_sym)
@@ -157,11 +152,10 @@ module ET3
         else
           your_representative_page.next
         end
-        disability_page.wait_until_displayed unless expect_errors
       end
 
       # Disability Page
-      def answer_disability_question(expect_errors: false)
+      def answer_disability_question
         user = @respondent
         disability_page.disability_question.set(user.disability)
         if user.disability == :yes && !user.disability_information.nil?
@@ -169,11 +163,10 @@ module ET3
         end
 
         disability_page.next
-        employers_contract_claim_page.wait_until_displayed unless expect_errors
       end
 
       # Employers Contract Claim Page
-      def answer_employers_contract_claim(expect_errors: false)
+      def answer_employers_contract_claim
         user = @respondent
         employers_contract_claim_page.make_employer_contract_claim_question.set(user.make_employer_contract_claim.to_s.split('.').last.to_sym)
         if user.make_employer_contract_claim.end_with?('.yes')
@@ -181,7 +174,6 @@ module ET3
         end
 
         employers_contract_claim_page.next
-        additional_information_page.wait_until_displayed unless expect_errors
       end
 
       def displays_edited_answer
@@ -189,21 +181,19 @@ module ET3
       end
 
       # Additional Information Page
-      def answer_additional_information(expect_errors: false)
+      def answer_additional_information
         user = @respondent
         if user[:rtf_file]
           additional_information_page.attach_additional_information_file(user)
         end
         additional_information_page.next
-        confirmation_of_supplied_details_page.wait_until_displayed unless expect_errors
       end
 
       # Confirmation of Supplied Details Page
-      def answer_confirmation_of_supplied_details(expect_errors: false)
+      def answer_confirmation_of_supplied_details
         user = @respondent
         confirmation_of_supplied_details_page.email_receipt_question.set(user.email_receipt)
         confirmation_of_supplied_details_page.submit_form
-        form_submission_page.wait_until_displayed unless expect_errors
       end
 
       def email_receipt_question

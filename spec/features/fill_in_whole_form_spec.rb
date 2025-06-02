@@ -70,7 +70,6 @@ RSpec.feature "Fill in whole form", :js do
 
       confirmation_of_supplied_details_page.confirmation_of_additional_information_answers.upload_additional_information_row.remove_file_link.click
       confirmation_of_supplied_details_page.submit_form
-      form_submission_page.wait_until_displayed
 
       expect(a_request(:post, "http://api.et.127.0.0.1.nip.io:3100/api/v2/respondents/build_response").
           with { |request|

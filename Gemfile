@@ -102,7 +102,5 @@ gem "sentry-rails", "~> 5.9"
 gem 'et_azure_insights', '1.0.0', git: 'https://github.com/hmcts/et-azure-insights.git', tag: 'v1.0.0'
 gem 'application_insights', git: 'https://github.com/microsoft/ApplicationInsights-Ruby.git', ref: '5db6b4'
 
-gem 'et_gds_design_system', git:'https://github.com/hmcts/et_gds_design_system.git', tag: 'v7.0.1'
-gem 'vite_rails', '~> 3.0.19'
-
-gem "propshaft", "~> 1.1"
+gem "webpacker", "~> 5.4"
+gem 'et_gds_design_system', git:'https://github.com/hmcts/et_gds_design_system.git', tag: 'v6.0.1'

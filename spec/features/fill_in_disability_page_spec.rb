@@ -19,7 +19,7 @@ RSpec.feature "Fill in Disability Page", :js do
   scenario "incorrectly will provide errors" do
     disability_page.load(locale: current_locale_parameter)
     given_invalid_data
-    answer_disability_question(expect_errors: true)
+    answer_disability_question
 
     expect(disability_page).to have_error_header
     disability_page.disability_information.assert_error_message(t('errors.messages.too_long'))

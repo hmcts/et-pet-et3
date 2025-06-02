@@ -89,7 +89,6 @@ RSpec.feature "Fill in Your Representatives Details Page", :js do
     end
     your_representatives_details_page.next
 
-    disability_page.wait_until_displayed
     confirmation_of_supplied_details_page.load(locale: current_locale_parameter)
     confirmation_of_supplied_details_page.confirmation_of_your_representatives_details_answers.edit_representative_details_page_link.click
 

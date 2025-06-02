@@ -19,7 +19,7 @@ RSpec.feature "Fill in Employers Contract Claim Page", :js do
   scenario "incorrectly will provide errors" do
     employers_contract_claim_page.load(locale: current_locale_parameter)
     given_invalid_data
-    answer_employers_contract_claim(expect_errors: true)
+    answer_employers_contract_claim
 
     expect(employers_contract_claim_page).to have_error_header
     employers_contract_claim_page.claim_information.assert_error_message(t('errors.messages.too_long'))

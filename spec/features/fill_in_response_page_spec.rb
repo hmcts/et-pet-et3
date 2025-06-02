@@ -19,7 +19,7 @@ RSpec.feature "Fill in Response Page", :js do
   scenario "incorrectly will provide errors" do
     response_page.load(locale: current_locale_parameter)
     given_invalid_data
-    answer_defend_claim_question(expect_errors: true)
+    answer_defend_claim_question
 
     expect(response_page).to have_error_header
     response_page.defend_claim_facts.assert_error_message(t('errors.messages.too_long'))

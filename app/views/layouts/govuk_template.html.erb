@@ -9,20 +9,12 @@
     <meta name="theme-color" content="#0b0c0c">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <link  rel="icon" sizes="48x48"  href="<%= asset_path('favicon.ico') %>">
-    <link rel="icon" sizes="any" href="<%= asset_path('favicon.svg') %>" type="image/svg+xml">
-    <link rel="mask-icon" href="<%= asset_path('govuk-icon-mask.svg') %> color="#0b0c0c">
-    <link rel="apple-touch-icon" href="<%= asset_path('govuk-icon-180.png') %>">
-
     <%# the colour used for theme-color is the standard palette $black from
         https://github.com/alphagov/govuk_frontend_toolkit/blob/master/stylesheets/colours/_palette.scss %>
     <meta name="theme-color" content="#0b0c0c" />
 
     <%= yield :head %>
 
-    <%# The default og:image is added below :head so that scrapers see any custom metatags first, and this is just a fallback %>
-    <meta property="og:image" content="<%= asset_path "/assets/images/govuk-opengraph-image.png" %>">
   </head>
 
   <body class="govuk-template__body <%= content_for?(:body_classes) ? raw("#{yield(:body_classes)}") : '' %>">

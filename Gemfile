@@ -106,3 +106,5 @@ gem 'et_gds_design_system', git:'https://github.com/hmcts/et_gds_design_system.g
 gem 'vite_rails', '~> 3.0.19'
 
 gem "propshaft", "~> 1.1"
+
+gem "solid_queue", "~> 1.1"

@@ -9,6 +9,7 @@ ENV NODE_OPTIONS=--openssl-legacy-provider
 RUN apk add --no-cache libpq-dev tzdata shared-mime-info libc6-compat && \
     apk add --no-cache --virtual .build-tools git build-base curl-dev nodejs yarn && \
     cd /home/app/et3 && \
+    yarn install && \
     gem install bundler && \
     bundle config set without 'test development' && \
     bundle config set with 'assets production' && \

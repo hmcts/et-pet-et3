@@ -5,8 +5,9 @@ tmp/**/*
 /public/assets
 /public/apply
 /node_modules
-/public/packs
-/public/packs-test
+/public/vite
+/public/vite-test
+/public/vite-dev
 /coverage
 /.bundle
 /.git

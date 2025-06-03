@@ -7,6 +7,7 @@ end
 namespace :test do
   task smoke: :environment do
     puts "No smoke tests yet"
+  #   ADD SMOKE TESTS
   end
 
   task functional: :environment do

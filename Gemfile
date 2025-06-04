@@ -22,7 +22,6 @@ gem 'jbuilder', '~> 2.10'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'sprockets', '~> 4.2.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -46,6 +45,8 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 3.34'
   gem 'selenium-webdriver', '~> 4.18'
+  gem 'rspec-rails', '~> 6.1'
+  gem 'rspec_junit_formatter', '~> 0.6.0'
   gem 'rubocop', '~> 1.8', :require => false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', '~> 3.3', :require => false
@@ -71,8 +72,6 @@ end
 group :test do
   gem 'capybara-screenshot', '~> 1.0'
   gem 'et_test_helpers', git: 'https://github.com/hmcts/et_test_helpers.git', tag: 'v1.3.2'
-  gem 'rspec-rails', '~> 6.1'
-  gem 'rspec_junit_formatter', '~> 0.6.0'
   gem 'site_prism', '~> 5.0'
   gem 'database_cleaner', '~> 2.0'
   gem 'webmock', '~> 3.11'
@@ -108,3 +107,4 @@ gem 'vite_rails', '~> 3.0.19'
 gem "propshaft", "~> 1.1"
 
 gem "solid_queue", "~> 1.1"
+gem "mission_control-jobs", "~> 1.0.0"

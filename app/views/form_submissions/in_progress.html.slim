@@ -1,0 +1,34 @@
+- content_for :page_head
+  meta http-equiv="refresh" content="60"
+- content_for :page_title, "#{t('components.form_submission.page_title')} | Response to Claim"
+.content-body.form-submission--in-progress
+  h1.govuk-heading-l = t 'components.form_submission.error_header'
+  p.govuk-body
+    p.govuk-body
+      = t('components.form_submission.error_description')
+      = '.'
+
+
+  h2.govuk-heading-m
+    = t('components.form_submission.what_happens_next')
+  ul.govuk-list.govuk-list--bullet
+    li.govuk-body = t('components.form_submission.wait_for_page')
+    li.govuk-body = t('components.form_submission.wait_for_email')
+
+  h2.govuk-heading-m = t('components.form_submission.process_questions')
+  p.govuk-body = t('components.form_submission.process_questions_content')
+  p.govuk-body Telephone: 0300 3230196
+  p.govuk-body Telephone: 0300 303 5176 (Welsh language)
+  p.govuk-body Telephone: 0300 790 6234 (Scotland)
+
+  h1.govuk-heading-m
+    strong.bold = t('components.form_submission.submission_feedback')
+
+  p.govuk-body
+    = t('components.form_submission.feedback_content')
+  br
+
+  = link_to 'https://www.smartsurvey.co.uk/s/ETES20/', class: 'govuk-button govuk-button--start'
+    = t('components.form_submission.return_link')
+    svg.govuk-button__start-icon xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false"
+      path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"

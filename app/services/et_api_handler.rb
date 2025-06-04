@@ -1,7 +1,13 @@
 require 'httparty'
 
 class EtApiHandler
+  class SubmitError < StandardError; end
 
+  # Submits the form data to the ET API and returns the response.
+  #
+  # @param form_hash [Hash] The form data to be submitted.
+  # @return [Hash] The response from the ET API, including status code and data.
+  # @raise [SubmitError] If there is an error during submission.
   def self.submit(form_hash)
     data_array = [build_response_data(form_hash), build_respondent_data(form_hash)]
     data_array.push(build_representative_data(form_hash)) if form_hash[:your_representative_answers][:have_representative]
@@ -14,7 +20,13 @@ class EtApiHandler
                                   }.to_json,
                                   headers: { Accept: 'application/json', 'Content-Type': 'application/json' })
 
+
+    raise SubmitError, "Failed to submit form data - Client Error: #{http_response.code}" if http_response.code.in?(400..499)
+
+
     { data: http_response.parsed_response, status: http_response.code }
+  rescue HTTParty::Error, SocketError, Errno::ECONNREFUSED, Errno::ECONNRESET, Errno::ETIMEDOUT, Timeout::Error, OpenSSL::SSL::SSLError => e
+    raise SubmitError, "Failed to submit form data: #{e.message}", cause: e
   end
 
   private

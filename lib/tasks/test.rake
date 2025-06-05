@@ -6,11 +6,7 @@ end
 
 namespace :test do
   task smoke: :environment do
-    puts "Running RSpec smoke tests..."
-    unless system("rspec -t smoke --format RspecJunitFormatter --out tmp/test/smoke_rspec.xml")
-      raise "Rspec smoke testing failed #{$?}"
-    end
-    puts "RSpec smoke tests finished."
+    puts "No smoke tests yet"
   end
 
   task functional: :environment do

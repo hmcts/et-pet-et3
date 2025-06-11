@@ -65,5 +65,6 @@ module Et3
     # config.assets.precompile = []
     # config.assets.paths = []
     config.mission_control.jobs.base_controller_class = "JobsController"
+    config.browser_poll_time = 60
   end
 end

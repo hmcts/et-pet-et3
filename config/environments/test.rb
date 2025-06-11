@@ -67,5 +67,6 @@ Rails.application.configure do
   config.google_tag_manager_account = false
 
   config.azure_insights.enable = false
+  config.browser_poll_time = 5
 
 end

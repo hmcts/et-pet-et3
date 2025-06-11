@@ -1,5 +1,5 @@
 - content_for :page_head
-  meta http-equiv="refresh" content="60"
+  meta(http-equiv="refresh" content=Rails.application.config.browser_poll_time)
 - content_for :page_title, "#{t('components.form_submission.page_title')} | Response to Claim"
 .content-body.form-submission--in-progress
   h1.govuk-heading-l = t 'components.form_submission.error_header'

@@ -21,7 +21,7 @@ class EtApiHandler
                                   headers: { Accept: 'application/json', 'Content-Type': 'application/json' })
 
 
-    raise SubmitError, "Failed to submit form data - Client Error: #{http_response.code}" if http_response.code.in?(400..499)
+    raise SubmitError, "Failed to submit form data - Client Error: #{http_response.code}" if http_response.code.in?(400..599)
 
 
     { data: http_response.parsed_response, status: http_response.code }

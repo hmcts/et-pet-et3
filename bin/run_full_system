@@ -30,5 +30,5 @@ FileUtils.chdir APP_ROOT do
   system! 'bin/rails db:create db:migrate'
 
   puts "\n== Starting app"
-  system! "cd #{APP_ROOT} && invoker start"
+  system! "cd #{APP_ROOT} && invoker start Procfile"
 end

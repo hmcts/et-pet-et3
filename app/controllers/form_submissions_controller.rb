@@ -3,8 +3,8 @@ class FormSubmissionsController < ApplicationController
   before_action :disable_save_and_return
   helper_method :current_store
 
-  # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-  def index
+
+  def index # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
     @reference_number = current_store.api_response[:data]["meta"]["BuildResponse"]["reference"]
     @submission_date = Time.zone.
                        parse(current_store.api_response[:data]["meta"]["BuildResponse"]["submitted_at"]).to_date
@@ -17,7 +17,10 @@ class FormSubmissionsController < ApplicationController
                                                                 :upload_additional_information, :filename)
     clear_session_data if current_store.api_response[:status] == 202
   end
-  # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
+
+  def in_progress
+    redirect_to action: :index if current_store.api_response
+  end
 
   def disable_save_and_return
     @disable_save_and_return = true

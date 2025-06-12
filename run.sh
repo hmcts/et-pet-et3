@@ -13,4 +13,4 @@ create)
     ;;
 esac
 
-bundle exec iodine -port ${PORT:-8080}
+invoker start Procfile

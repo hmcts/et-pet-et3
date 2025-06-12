@@ -183,6 +183,10 @@ cy:
       download_your_response: Lawrlwythwch eich ymateb
       attachments_included: Atodiadau yn cynnwys
       submission_details: Manylion cyflwyno
+      error_header: "Nid yw eich ymateb wedi’i gyflwyno eto."
+      error_description: "Roedd yna wall wrth gyflwyno eich gwybodaeth."
+      wait_for_page: "Mae’n iawn cau’r dudalen hon neu gallwch ei gadael yn agored ac aros i’ch gwybodaeth gael ei chyflwyno."
+      wait_for_email: "Mae eich gwybodaeth wedi’i chasglu a byddwch yn derbyn e-bost ar ôl iddi gael ei chyflwyno."
     introduction:
       header: "Cyflwyniad "
       inset_text: Os ydych chi'n weithiwr proffesiynol cyfreithiol neu'n fath arall o weithiwr proffesiynol a dderbyniodd gyfeirnod 16 digid yn eich pecyn ymateb, gallwch %{myhmcts_account_href}.

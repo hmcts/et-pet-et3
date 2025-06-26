@@ -15,8 +15,10 @@ RUN apk add --no-cache libpq-dev tzdata shared-mime-info libc6-compat && \
     bundle config set with 'assets production' && \
     bundle config set deployment 'true' && \
     bundle install --no-cache --jobs=5 --retry=3 && \
-    mkdir -p app/assets/images && \
-    cp node_modules/govuk-frontend/dist/govuk/assets/rebrand/images/* app/assets/images && \
+    mkdir -p app/javascript/assets/images/ && \
+    cp node_modules/govuk-frontend/dist/govuk/assets/rebrand/images/* app/javascript/assets/images/ && \
+    mkdir -p app/javascript/assets/fonts && \
+    cp node_modules/govuk-frontend/dist/govuk/assets/fonts/* app/javascript/assets/fonts/ && \
     bundle exec rails assets:precompile non_digest_assets SECRET_KEY_BASE=doesntmatter && \
     chown -R app:app /usr/local/bundle && \
     apk del .build-tools

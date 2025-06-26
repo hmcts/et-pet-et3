@@ -4,7 +4,7 @@
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
     "axios": "^0.26.1",
-    "et_gds_design_system": "https://github.com/hmcts/et_gds_design_system.git#v7.0.1"
+    "et_gds_design_system": "https://github.com/hmcts/et_gds_design_system.git#v7.2.0"
   },
   "devDependencies": {
     "vite": "^5.0.0",

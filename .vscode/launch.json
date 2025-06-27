@@ -11,6 +11,12 @@
         "program": "bin/rails s -b 0.0.0.0"
     },
         {
+            "type": "ruby_lsp",
+            "request": "launch",
+            "name": "Debug rails server",
+            "program": "bin/rails server "
+        },
+        {
             "name": "Listen for rdebug-ide",
             "type": "Ruby",
             "request": "attach",

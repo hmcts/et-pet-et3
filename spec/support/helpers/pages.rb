@@ -82,6 +82,10 @@ module ET3
         ET3::Test::FeedbackPage.new
       end
 
+      def submission_in_progress_page
+        ET3::Test::SubmissionInProgressPage.new
+      end
+
       # Define other pages here
     end
   end

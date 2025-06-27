@@ -9,7 +9,6 @@ Digital ET3 form within the in-house ET microservice architecture, replacing a t
 This is a Ruby on Rails app which uses [GOV.UK Elements](https://github.com/alphagov/govuk_elements) and sits within the ET service.
 The form submits to the [ET API](https://github.com/ministryofjustice/et_api) which has been configured, via Docker, within the [ET Full System](https://github.com/ministryofjustice/et-full-system).
 Running this app will enable development of the app itself, with its test suite mocking the final submission.
-
 ### Prerequisites
 * Ruby 2.5.1 (we recommend using [RVM](https://rvm.io/))
 * [Rails 5.2](https://rubygems.org/gems/rails)

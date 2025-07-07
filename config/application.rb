@@ -61,5 +61,10 @@ module Et3
     config.maintenance_end = ENV.fetch('MAINTENANCE_END', nil)
     config.et_gds_design_system.api_url = ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api/v2')
     config.dynatrace_ui_tracking_id = ENV.fetch('DYNATRACE_UI_TRACKING_ID', nil)
+    # config.assets = ActiveSupport::OrderedOptions.new
+    # config.assets.precompile = []
+    # config.assets.paths = []
+    config.mission_control.jobs.base_controller_class = "JobsController"
+    config.browser_poll_time = 60
   end
 end

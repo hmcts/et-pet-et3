@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       resource :additional_information, only: [:create, :edit, :update], path_names: { edit: ''}
       resource :confirmation_of_supplied_details, only: [:edit, :update], path_names: { edit: ''}
       get "form_submission", to: "form_submissions#index"
+      get "form_submission/in_progress", to: "form_submissions#in_progress"
 
       resource :timeout_session, only: %i<destroy>, path: :session do
         member do
@@ -34,4 +35,5 @@ Rails.application.routes.draw do
   get '/health' => 'status#healthcheck', defaults: { format: 'json' }
   get '/health/readiness' => 'status#healthcheck', defaults: { format: 'json' }
   get '/health/liveness' => 'status#healthcheck', defaults: { format: 'json' }
+  mount MissionControl::Jobs::Engine, at: "/jobs" if ENV.fetch('ENABLE_MISSION_CONTROL', 'false') == 'true'
 end

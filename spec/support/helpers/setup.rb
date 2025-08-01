@@ -62,6 +62,7 @@ module ET3
         respondents_details_page.town_question.set(user.town)
         respondents_details_page.county_question.set(user.county)
         respondents_details_page.postcode_question.set(user.postcode)
+        respondents_details_page.address_country_question.set(user.address_country)
         respondents_details_page.dx_number_question.set(user.dx_number)
         respondents_details_page.contact_number_question.set(user.contact_number)
         respondents_details_page.contact_mobile_number_question.set(user.contact_mobile_number)

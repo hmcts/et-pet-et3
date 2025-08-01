@@ -17,6 +17,7 @@ module ET3
       gds_text_input :town_question, :'questions.respondents_details.town.label', exact: false
       gds_text_input :county_question, :'questions.respondents_details.county.label', exact: false
       gds_text_input :postcode_question, :'questions.respondents_details.postcode.label', exact: false
+      gds_radios :address_country_question, :'questions.respondents_details.country'
       gds_text_input :dx_number_question, :'questions.respondents_details.dx_number.label', exact: false
       gds_phone_input :contact_number_question, :'questions.respondents_details.contact_number.label', exact: false
       gds_phone_input :contact_mobile_number_question, :'questions.respondents_details.contact_mobile_number.label', exact: false

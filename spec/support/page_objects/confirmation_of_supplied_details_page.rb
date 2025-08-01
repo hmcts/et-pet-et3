@@ -39,6 +39,9 @@ module ET3
         section :postcode_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.respondents_details.postcode', exact: true do
           element :postcode_answer, :govuk_summary_list_col
         end
+        section :address_country_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.respondents_details.address_country', exact: true do
+          element :address_country_answer, :govuk_summary_list_col
+        end
         section :dx_number_row, :govuk_summary_list_row, :'confirmation_of_supplied_details.respondents_details.dx_number', exact: true do
           element :dx_number_answer, :govuk_summary_list_col
         end

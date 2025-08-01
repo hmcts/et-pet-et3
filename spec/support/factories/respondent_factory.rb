@@ -13,6 +13,7 @@ FactoryBot.define do
     town { "westminster" }
     county { "london" }
     postcode { "wc1 1aa" }
+    address_country { :united_kingdom }
     organisation_more_than_one_site { :'questions.respondents_details.organisation_more_than_one_site.options.no' }
     allow_phone_or_video_attendance { [:video] }
   end
@@ -33,6 +34,7 @@ FactoryBot.define do
     disability { :yes }
     disability_information { "Lorem ipsum disability" }
     allow_phone_or_video_attendance { [:video] }
+    address_country { :united_kingdom }
   end
 
   trait :contact_preference_post do

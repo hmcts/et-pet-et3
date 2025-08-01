@@ -114,6 +114,7 @@ RSpec.feature "Fill in whole form", :js do
       expect(respondents_details_table.town_row.town_answer).to have_text @respondent.town
       expect(respondents_details_table.county_row.county_answer).to have_text @respondent.county
       expect(respondents_details_table.postcode_row.postcode_answer).to have_text @respondent.postcode
+      expect(respondents_details_table.address_country_row.address_country_answer).to have_text t("questions.respondents_details.country.options.#{@respondent.address_country}")
       expect(respondents_details_table.dx_number_row.dx_number_answer).to have_text @respondent.dx_number
       expect(respondents_details_table.contact_number_row.contact_number_answer).to have_text @respondent.contact_number
       expect(respondents_details_table.mobile_number_row.mobile_number_answer).to have_text @respondent.contact_mobile_number

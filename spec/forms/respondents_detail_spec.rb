@@ -5,7 +5,8 @@ RSpec.describe RespondentsDetail, type: :model do
   let(:populated_respondent_detail) {
     described_class.new(
       case_number: '2454321/2017', name: 'dodgy_co', contact: 'John Smith', building_name: 'the_shard', street_name: 'downing_street',
-      town: 'westminster', county: 'greater london', postcode: 'wc1 1aa', dx_number: '724060 Derby 21', contact_number: '0207 123 4567',
+      town: 'westminster', county: 'greater london', postcode: 'wc1 1aa', address_country: 'united_kingdom',
+      dx_number: '724060 Derby 21', contact_number: '0207 123 4567',
       mobile_number: '07123456789', contact_preference: 'email', email_address: 'john@dodgyco.com',
       organisation_employ_gb: 100, organisation_more_than_one_site: true, employment_at_site_number: 20, allow_phone_or_video_attendance: ['video']
     )

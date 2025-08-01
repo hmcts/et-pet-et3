@@ -89,8 +89,8 @@ en:
       feedback_your: Your feedback
       feedback_helps_us: helps us to improve this service.
     single_choice_option_section:
-      'yes': "Yes"
-      'no': "No"
+      "yes": "Yes"
+      "no": "No"
     session_expiry:
       header: Session Expired
       content: |
@@ -175,7 +175,7 @@ en:
       what_happens_next_content:
         - We'll check your response and may contact you if we have any questions
         - We'll contact you once we've sent your response to the claimant and explain what happens next
-      response_questions:  For questions about your response
+      response_questions: For questions about your response
       response_questions_content: Contact the following tribunal office for questions about your response
       process_questions: For questions about the employment tribunal process
       process_questions_content: Call one of our Employment Tribunal customer contact centres. They cannot give you legal advice.
@@ -240,7 +240,7 @@ en:
         table:
           name: "cookie_setting"
           purpose: "Saves your cookie consent settings."
-          expires: 	1 year
+          expires: 1 year
       website_usage:
         header: Analytics cookies (optional)
         second_header: Measuring website usage (Google Analytics)
@@ -478,7 +478,7 @@ en:
       upload_button: "Click here to upload rtf file"
   date:
     formats:
-      pretty: '%e %B %Y'
+      pretty: "%e %B %Y"
   save_and_return:
     registrations:
       user:
@@ -490,7 +490,7 @@ en:
         print_link: Print this page
         print_copy: to have a copy of your save and return number for reference
         email:
-          label: 'Enter your email address to receive your save and return number'
+          label: "Enter your email address to receive your save and return number"
         password:
           label: Create your memorable word
           hint: If you have entered your email address above, you will be able to reset your memorable word if you forget it
@@ -499,7 +499,7 @@ en:
       user:
         reject_submitted: "Your response has already been submitted so you are unable to return to it."
         signed_out: "You have been logged out"
-        signed_in: 'Your response has been retrieved. You can now continue where you left off'
+        signed_in: "Your response has been retrieved. You can now continue where you left off"
       new:
         header: Return to your response
         intro_text: Enter your details below
@@ -532,7 +532,7 @@ en:
       footer:
         contact_us: Contact us
       access_details_email:
-        subject: 'Employment tribunal: complete your response'
+        subject: "Employment tribunal: complete your response"
         intro: |
           You’ve started a response to an employment tribunal. To return to your response you’ll need your reference number (above), and memorable word.
         about_confirmation: |
@@ -545,8 +545,8 @@ en:
         line_five: You'll receive a confirmation email once you've submitted your claim.
         line_six: "Contact us: http://www.justice.gov.uk/contacts/hmcts/tribunals/employment"
       shared:
-        button_complete_claim: 'Complete Response'
-        reference_number_light: 'Reference number'
+        button_complete_claim: "Complete Response"
+        reference_number_light: "Reference number"
       reset_password_instructions:
         someone_requested: "Someone has requested a link to reset your memorable word which you can do using the link below."
         not_be_changed: "Your memorable word will not be changed until you reset it using the link below."
@@ -590,7 +590,7 @@ en:
       type_of_employer:
         label: What type of employer is the respondent ?
         options:
-          '': Please select
+          "": Please select
           individual: Individual
           limited_company: Limited company
           partnership: Partnership
@@ -599,7 +599,7 @@ en:
       title:
         label: Title
         options:
-          '': Please select
+          "": Please select
           Mr: Mr
           Mrs: Mrs
           Miss: Miss
@@ -621,6 +621,11 @@ en:
         label: County
       postcode:
         label: Postcode
+      address_country:
+        label: Country
+        options:
+          united_kingdom: United Kingdom
+          other: Outside United Kingdom
       dx_number:
         label: Document exchange (DX) number
       contact_number:
@@ -641,15 +646,15 @@ en:
           email: Email
           post: Post
       allow_phone_or_video_attendance:
-        label:  Would you be able to take part in hearings by video and phone?
+        label: Would you be able to take part in hearings by video and phone?
         options:
           "phone": "Yes, I can take part in phone hearings"
           "video": "Yes, I can take part in video hearings"
       organisation_more_than_one_site:
         label: Does this organisation have more than one site in Great Britain?
         options:
-          'true': 'Yes'
-          'false': 'No'
+          "true": "Yes"
+          "false": "No"
   claimants_details:
     edit:
       claimants_name:
@@ -657,16 +662,16 @@ en:
       agree_with_early_conciliation_details:
         label: Do you agree with the details given by the claimant about Early Conciliation with Acas?
         options:
-          'true': 'Yes'
-          'false': 'No'
+          "true": "Yes"
+          "false": "No"
       disagree_conciliation_reason:
         label: Why do you disagree with the claimant?
       agree_with_employment_dates:
         label: Are the dates of employment given by the claimant correct?
         options:
-          'true': 'Yes'
-          'false': 'No'
-          'not_applicable': 'Not applicable'
+          "true": "Yes"
+          "false": "No"
+          "not_applicable": "Not applicable"
       employment_start:
         label: When their employment started
         hint: For example, 31 03 2010
@@ -678,15 +683,15 @@ en:
       continued_employment:
         label: Is their employment continuing?
         options:
-          'true': 'Yes'
-          'false': 'No'
-          'not_applicable': 'Not applicable'
+          "true": "Yes"
+          "false": "No"
+          "not_applicable": "Not applicable"
       agree_with_claimants_description_of_job_or_title:
         label: Is the claimant's description of their job or job title correct?
         options:
-          'true': 'Yes'
-          'false': 'No'
-          'not_applicable': 'Not applicable'
+          "true": "Yes"
+          "false": "No"
+          "not_applicable": "Not applicable"
       disagree_claimants_job_or_title:
         label: Please give the details you believe to be correct
   earnings_and_benefits:
@@ -694,18 +699,18 @@ en:
       agree_with_claimants_hours:
         label: Are the hours of work correct?
         options:
-          'true': 'Yes'
-          'false': 'No'
-          'not_applicable': 'Not applicable'
+          "true": "Yes"
+          "false": "No"
+          "not_applicable": "Not applicable"
       queried_hours:
         label: Tell us the details you believe to be correct.
         hint: Enter hours per week, for example 39
       agree_with_earnings_details:
         label: Are the earnings correct?
         options:
-          'true': 'Yes'
-          'false': 'No'
-          'not_applicable': 'Not applicable'
+          "true": "Yes"
+          "false": "No"
+          "not_applicable": "Not applicable"
       queried_pay_before_tax:
         label: Pay before tax
         hint: Including overtime, commission, bonuses, etc. For example, 28000
@@ -727,9 +732,9 @@ en:
       agree_with_claimant_notice:
         label: Are the details about being paid for or working a period of notice correct?
         options:
-          'true': 'Yes'
-          'false': 'No'
-          'not_applicable': 'Not applicable'
+          "true": "Yes"
+          "false": "No"
+          "not_applicable": "Not applicable"
       disagree_claimant_notice_reason:
         label: Tell us the details you believe to be correct.
         hint: Explain what happened and why. Enter up to 400 characters. You can upload a document with more details before you submit your response.
@@ -737,9 +742,9 @@ en:
         label: Are the details about pensions and other benefits correct?
         hint: For example a company car or medical insurance.
         options:
-          'true': 'Yes'
-          'false': 'No'
-          'not_applicable': 'Not applicable'
+          "true": "Yes"
+          "false": "No"
+          "not_applicable": "Not applicable"
       disagree_claimant_pension_benefits_reason:
         label: Tell us the details you believe to be correct.
         hint: Enter up to 350 characters. You can upload a document with more details before you submit your response.
@@ -748,8 +753,8 @@ en:
       defend_claim:
         label: Do you defend the claim ?
         options:
-          'true': 'Yes'
-          'false': 'No'
+          "true": "Yes"
+          "false": "No"
       defend_claim_facts:
         label: Tell us the facts that you rely on to defend the claim.
         hint: You can enter up to 2500 characters. You can upload a document with additional details before you submit your response.
@@ -758,21 +763,21 @@ en:
       have_representative:
         label: This is someone who has agreed to act on your behalf.
         options:
-          'true': 'Yes'
-          'false': 'No'
+          "true": "Yes"
+          "false": "No"
   your_representatives_details:
     edit:
       type_of_representative:
         label: Type of Representative
         options:
-          'Citizens Advice Bureau': Citizen's advice bureau
-          'Free Representation Unit': Free representation unit
-          'Law Centre': Law centre
-          'Union': Union
-          'Solicitor': Solicitor
-          'Private Individual': Private individual
-          'Trade Association': Trade association
-          'Other': Other
+          "Citizens Advice Bureau": Citizen's advice bureau
+          "Free Representation Unit": Free representation unit
+          "Law Centre": Law centre
+          "Union": Union
+          "Solicitor": Solicitor
+          "Private Individual": Private individual
+          "Trade Association": Trade association
+          "Other": Other
       representative_org_name:
         label: Name of the representative's organisation
       representative_name:
@@ -812,9 +817,9 @@ en:
       disability:
         label: Do you have a disability?
         options:
-          'true': 'Yes'
-          'false': 'No'
-          'not_applicable': 'Not applicable'
+          "true": "Yes"
+          "false": "No"
+          "not_applicable": "Not applicable"
       disability_information:
         label: It would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises
         hint: |
@@ -825,8 +830,8 @@ en:
       make_employer_contract_claim:
         label: Do you wish to make an Employer Contract Claim?
         options:
-          'true': 'Yes'
-          'false': 'No'
+          "true": "Yes"
+          "false": "No"
       claim_information:
         label: Please set out the background and details of your claim below, which should include all important dates
         hint: |
@@ -834,11 +839,6 @@ en:
           PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 4500 characters) if you would like to include more please
           use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
           If you exceed 50 lines you will not receive full details of your claim in the PDF returned to you on submission of the form.
-
-
-
-
-
 
   additional_informations:
     edit:
@@ -858,8 +858,8 @@ en:
       usage:
         label: Do you want to accept analytics cookies?
         options:
-          'true': 'Yes'
-          'false': 'No'
+          "true": "Yes"
+          "false": "No"
   activerecord:
     errors:
       models:
@@ -876,5 +876,10 @@ en:
           attributes:
             employment_end:
               employment_end_before_start: End date must be after the employment start date
+        respondents_detail:
+          attributes:
+            address_country:
+              blank: Please indicate the country
+
   shared:
     optional: (optional)

@@ -1,4 +1,5 @@
 class RespondentsDetail < BaseForm
+  COUNTRIES                = ['united_kingdom', 'other'].freeze
   attribute :case_number, :string
   attribute :name, :string
   attribute :company_number, :string
@@ -20,6 +21,7 @@ class RespondentsDetail < BaseForm
   attribute :organisation_more_than_one_site, :boolean
   attribute :employment_at_site_number, :integer
   attribute :allow_phone_or_video_attendance
+  attribute :address_country
 
   def to_h # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
     respondents_detail_hash = {
@@ -41,7 +43,8 @@ class RespondentsDetail < BaseForm
       contact_preference: contact_preference,
       organisation_employ_gb: organisation_employ_gb,
       organisation_more_than_one_site: organisation_more_than_one_site,
-      allow_phone_or_video_attendance: allow_phone_or_video_attendance
+      allow_phone_or_video_attendance: allow_phone_or_video_attendance,
+      address_country:
     }
 
     respondents_detail_hash[:email_address] = email_address if respondents_detail_hash[:contact_preference] == "email"
@@ -56,7 +59,7 @@ class RespondentsDetail < BaseForm
             persons_name: true,
             allow_blank: true
   validates :building_name, :street_name, :town, presence: true
-  validates :postcode, postcode: true
+  validates :postcode, postcode: true, unless: :international_address?
   validates :contact_number, :mobile_number,
             phone_number: true,
             allow_blank: true
@@ -68,6 +71,7 @@ class RespondentsDetail < BaseForm
             allow_blank: true
   validates :organisation_more_than_one_site, inclusion: { in: [true, false] }, allow_blank: true
   validates :employment_at_site_number, numericality: true, if: :more_than_one_site?
+  validates :address_country, presence: true, inclusion: { in: COUNTRIES }
 
   def allow_phone_or_video_attendance=(value)
     write_attribute(:allow_phone_or_video_attendance, value&.reject(&:blank?))
@@ -81,5 +85,9 @@ class RespondentsDetail < BaseForm
 
   def more_than_one_site?
     organisation_more_than_one_site
+  end
+
+  def international_address?
+    address_country != 'united_kingdom'
   end
 end

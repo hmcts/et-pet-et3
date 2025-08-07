@@ -25,6 +25,7 @@ class RespondentsDetailsController < ApplicationController
                                                :postcode, :dx_number, :contact_number, :mobile_number,
                                                :contact_preference, :email_address, :organisation_employ_gb,
                                                :organisation_more_than_one_site, :employment_at_site_number,
+                                               :address_country,
                                                allow_phone_or_video_attendance: [])
   end
 end

@@ -33,6 +33,7 @@ RSpec.feature "Fill in Respondents Details Page", :js do
     respondents_details_page.case_number_question.set(user.case_number)
     respondents_details_page.contact_question.set(user.contact)
     respondents_details_page.postcode_question.set(user.postcode)
+    respondents_details_page.address_country_question.set(user.address_country)
     respondents_details_page.contact_number_question.set(user.contact_number)
     respondents_details_page.contact_preference_question.set(user.contact_preference.to_s.split('.').last.to_sym)
     respondents_details_page.email_address_question.set(user.email_address) if user.contact_preference.to_s.split('.').last == 'email'

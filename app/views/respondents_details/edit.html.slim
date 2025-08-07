@@ -20,6 +20,7 @@
     = f.text_field :town
     = f.text_field :county, optional: true
     = f.text_field :postcode
+    = f.collection_radio_buttons :address_country
     = f.text_field :dx_number, optional: true
     = f.phone_field :contact_number, optional: true
     = f.phone_field :mobile_number, optional: true

@@ -43,6 +43,9 @@
         dt.govuk-summary-list__key = t('respondents_details.edit.postcode.label')
         dd.govuk-summary-list__value = @hash_store.dig(:respondents_detail_answers, :postcode)
       .govuk-summary-list__row
+        dt.govuk-summary-list__key = t('respondents_details.edit.address_country.label')
+        dd.govuk-summary-list__value = translate_address_country(@hash_store.dig(:respondents_detail_answers, :address_country))
+      .govuk-summary-list__row
         dt.govuk-summary-list__key = t('respondents_details.edit.dx_number.label')
         dd.govuk-summary-list__value = @hash_store.dig(:respondents_detail_answers, :dx_number)
       .govuk-summary-list__row

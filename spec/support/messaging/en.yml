@@ -29,7 +29,7 @@ en:
       type_of_employer:
         label: What type of employer is the respondent ? (optional)
         options:
-          '': Please select
+          "": Please select
           individual: Individual
           limited_company: Limited company
           partnership: Partnership
@@ -38,7 +38,7 @@ en:
       title:
         label: Title (optional)
         options:
-          '': Please select
+          "": Please select
           Mr: Mr
           Mrs: Mrs
           Miss: Miss
@@ -59,6 +59,11 @@ en:
         label: County (optional)
       postcode:
         label: Postcode
+      country:
+        label: Country
+        options:
+          united_kingdom: United Kingdom
+          outside_united_kingdom: Outside United Kingdom
       dx_number:
         label: Document exchange (DX) number (optional)
       contact_number:
@@ -77,16 +82,16 @@ en:
       organisation_more_than_one_site:
         label: Does this organisation have more than one site in Great Britain? (optional)
         options:
-          'yes': 'Yes'
-          'no': 'No'
+          "yes": "Yes"
+          "no": "No"
       employment_at_site_number:
         label: How many people are employed at the place where the claimant worked?
       allow_phone_or_video_attendance:
         label: "Would you be able to take part in hearings by video and phone?"
         hint: "Further details on video hearings can be found on the following link https://www.gov.uk/guidance/hmcts-telephone-and-videohearings-during-coronavirus-outbreak"
         options:
-          "video": 'Yes, I can take part in video hearings'
-          "phone": 'Yes, I can take part in phone hearings'
+          "video": "Yes, I can take part in video hearings"
+          "phone": "Yes, I can take part in phone hearings"
     # Claimant's Details Page
     claimants_details:
       claimants_name:
@@ -94,16 +99,16 @@ en:
       agree_with_early_conciliation_details:
         label: Do you agree with the details given by the claimant about Early Conciliation with Acas? (optional)
         options:
-          'yes': 'Yes'
-          'no': 'No'
+          "yes": "Yes"
+          "no": "No"
       disagree_conciliation_reason:
         label: Why do you disagree with the claimant? (optional)
       agree_with_employment_dates:
         label: Are the dates of employment given by the claimant correct? (optional)
         options:
-          'yes': 'Yes'
-          'no': 'No'
-          'not_applicable': 'Not applicable'
+          "yes": "Yes"
+          "no": "No"
+          "not_applicable": "Not applicable"
       employment_start:
         label: When their employment started (optional)
       employment_end:
@@ -113,15 +118,15 @@ en:
       continued_employment:
         label: Is their employment continuing? (optional)
         options:
-          'yes': 'Yes'
-          'no': 'No'
-          'not_applicable': 'Not applicable'
+          "yes": "Yes"
+          "no": "No"
+          "not_applicable": "Not applicable"
       agree_with_claimants_description_of_job_or_title:
         label: Is the claimant's description of their job or job title correct? (optional)
         options:
-          'yes': 'Yes'
-          'no': 'No'
-          'not_applicable': 'Not applicable'
+          "yes": "Yes"
+          "no": "No"
+          "not_applicable": "Not applicable"
       disagree_claimants_job_or_title:
         label: Please give the details you believe to be correct (optional)
     # Earnings and Benefits Page
@@ -129,17 +134,17 @@ en:
       agree_with_claimants_hours:
         label: Are the hours of work correct? (optional)
         options:
-          'yes': 'Yes'
-          'no': 'No'
-          'not_applicable': 'Not applicable'
+          "yes": "Yes"
+          "no": "No"
+          "not_applicable": "Not applicable"
       queried_hours:
         label: Tell us the details you believe to be correct.
       agree_with_earnings_details:
         label: Are the earnings correct? (optional)
         options:
-          'yes': 'Yes'
-          'no': 'No'
-          'not_applicable': 'Not applicable'
+          "yes": "Yes"
+          "no": "No"
+          "not_applicable": "Not applicable"
       queried_pay_before_tax:
         label: Pay before tax (optional)
       queried_pay_before_tax_period:
@@ -159,17 +164,17 @@ en:
       agree_with_claimant_notice:
         label: Are the details about being paid for or working a period of notice correct? (optional)
         options:
-          'yes': 'Yes'
-          'no': 'No'
-          'not_applicable': 'Not applicable'
+          "yes": "Yes"
+          "no": "No"
+          "not_applicable": "Not applicable"
       disagree_claimant_notice_reason:
         label: Tell us the details you believe to be correct. (optional)
       agree_with_claimant_pension_benefits:
         label: Are the details about pensions and other benefits correct? (optional)
         options:
-          'yes': 'Yes'
-          'no': 'No'
-          'not_applicable': 'Not applicable'
+          "yes": "Yes"
+          "no": "No"
+          "not_applicable": "Not applicable"
       disagree_claimant_pension_benefits_reason:
         label: Tell us the details you believe to be correct. (optional)
     # Response Page
@@ -177,8 +182,8 @@ en:
       defend_claim:
         label: Do you defend the claim ?
         options:
-          'yes': 'Yes'
-          'no': 'No'
+          "yes": "Yes"
+          "no": "No"
       defend_claim_facts:
         label: Tell us the facts that you rely on to defend the claim. (optional)
     # Your Representatives Page
@@ -186,8 +191,8 @@ en:
       have_representative:
         label: This is someone who has agreed to act on your behalf. (optional)
         options:
-          'yes': 'Yes'
-          'no': 'No'
+          "yes": "Yes"
+          "no": "No"
     # Your Representatives Details Page
     your_representatives_details:
       type_of_representative:
@@ -234,16 +239,16 @@ en:
         label: "Would you be able to take part in hearings by video and phone?"
         hint: "Further details on video hearings can be found on the following link https://www.gov.uk/guidance/hmcts-telephone-and-videohearings-during-coronavirus-outbreak"
         options:
-          "video": 'Yes, I can take part in video hearings'
-          "phone": 'Yes, I can take part in phone hearings'
+          "video": "Yes, I can take part in video hearings"
+          "phone": "Yes, I can take part in phone hearings"
     # Disability Page
     disabilities:
       disability:
         label: Do you have a disability? (optional)
         options:
-          'yes': 'Yes'
-          'no': 'No'
-          'not_applicable': 'Not applicable'
+          "yes": "Yes"
+          "no": "No"
+          "not_applicable": "Not applicable"
       disability_information:
         label: It would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises
         hint: PLEASE NOTE – You will only be able to enter a limited amount of information here (up to 350 characters) if you would like to include more please use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
@@ -252,10 +257,10 @@ en:
       make_employer_contract_claim:
         label: Do you wish to make an Employer Contract Claim? (optional)
         options:
-          'yes': 'Yes'
-          'no': 'No'
+          "yes": "Yes"
+          "no": "No"
       claim_information:
-        label: 'Please set out the background and details of your claim below, which should include all important dates (optional)'
+        label: "Please set out the background and details of your claim below, which should include all important dates (optional)"
     # Additional Informatation Page
     additional_informations:
       upload_additional_information:
@@ -297,10 +302,11 @@ en:
       town: Town/City
       county: County
       postcode: Postcode
+      address_country: Country
       dx_number: Document exchange (DX) number
       contact_number: Contact number
       contact_mobile_number: Mobile number
-      contact_preference:  How would you prefer us to contact you?
+      contact_preference: How would you prefer us to contact you?
       email_address: Email address
       organisation_employ_gb: How many people does this organisation employ in Great Britain?
       organisation_more_than_one_site: Does this organisation have more than one site in Great Britain?
@@ -312,7 +318,7 @@ en:
       disagree_conciliation_reason: Why do you disagree with the claimant?
       agree_with_employment_dates: Are the dates of employment given by the claimant correct?
       employment_start: When their employment started
-      employment_end:  When their employment ended or will end
+      employment_end: When their employment ended or will end
       disagree_employment: Why do you disagree with the dates given by the claimant
       continued_employment: Is their employment continuing?
       agree_with_claimants_description_of_job_or_title: Is the claimant's description of their job or job title correct?
@@ -337,7 +343,7 @@ en:
     your_representatives_details:
       type_of_representative: Type of Representative
       representative_org_name: Name of the representative's organisation
-      representative_name:  Representative's full name
+      representative_name: Representative's full name
       representative_building: Building name or number
       representative_street: Street
       representative_town: Town/City
@@ -355,7 +361,7 @@ en:
       disability_information: It would help us if you could say what this disability is and tell us what assistance, if any, you will need as your claim progresses through the system, including for any hearings that maybe held at tribunal premises
     employers_contract_claims:
       make_employer_contract_claim: Do you wish to make an Employer Contract Claim?
-      claim_information: 'Please set out the background and details of your claim below, which should include all important dates'
+      claim_information: "Please set out the background and details of your claim below, which should include all important dates"
     additional_informations:
       upload_additional_information: Please upload a file to provide any important additional information about your response which you have not been able to include so far
   errors:
@@ -428,8 +434,8 @@ en:
     return_to_response_button: Return to my response
     click_here_to_reset: Click here to reset
     single_choice_option_section:
-      'yes': "Yes"
-      'no': "No"
+      "yes": "Yes"
+      "no": "No"
     cookie_banner:
       header: Cookies on Employment tribunals
       first_line: We use some essential cookies to make this service work.
@@ -727,4 +733,4 @@ en:
   mailer:
     reference_number: Reference number
     access_details_email:
-      subject: 'Employment tribunal: complete your response'
+      subject: "Employment tribunal: complete your response"

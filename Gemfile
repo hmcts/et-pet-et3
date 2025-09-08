@@ -7,7 +7,7 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rack', '~> 2.2.3' # Currently, we cannot use rack 3 because of an issue proxying the file uploads
-gem 'rails', '8.0.2'
+gem 'rails', '8.0.2.1'
 # Azure deployment so we need this
 gem 'azure_env_secrets', git: 'https://github.com/hmcts/azure_env_secrets.git', tag: 'v1.0.1'
 

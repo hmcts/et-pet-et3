@@ -38,6 +38,15 @@ withPipeline(type, product, component) {
         rubyBuilder.bundle("exec rails db:create db:migrate assets:precompile")
     }
 
+    before('smokeTest') {
+      sh script:"""
+        rvm install ruby-3.3.5
+        rvm use ruby-3.3.5 --default
+        bundle install
+        yarn install
+      """
+    }
+
     afterAlways('test') {
         sh script: "docker stop pet-et-et3-test-postgres && docker rm pet-et-et3-test-postgres || echo 'Ignoring failure in stopping postgres'",
             label: "docker stop pet-et-et3-test-postgres"

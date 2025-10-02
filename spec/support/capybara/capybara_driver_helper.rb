@@ -53,6 +53,11 @@ if [:firefox, :chrome].include?(Capybara.javascript_driver)
   Capybara.app_host = ENV.fetch('CAPYBARA_APP_HOST', "http://localhost.from.docker")
   Capybara.server_host = ENV.fetch('CAPYBARA_SERVER_HOST', '0.0.0.0')
 end
-Capybara.app_host = ENV.fetch('CAPYBARA_APP_HOST') if ENV.key?('CAPYBARA_APP_HOST')
-Capybara.server_host = ENV.fetch('CAPYBARA_SERVER_HOST') if ENV.key?('CAPYBARA_SERVER_HOST')
-Capybara.server_port = ENV.fetch('CAPYBARA_SERVER_PORT') if ENV.key?('CAPYBARA_SERVER_PORT')
+if ENV['TEST_URL'].present?
+  Capybara.app_host = ENV['TEST_URL']
+  Capybara.run_server = false
+else
+  Capybara.app_host = ENV.fetch('CAPYBARA_APP_HOST') if ENV.key?('CAPYBARA_APP_HOST')
+  Capybara.server_host = ENV.fetch('CAPYBARA_SERVER_HOST') if ENV.key?('CAPYBARA_SERVER_HOST')
+  Capybara.server_port = ENV.fetch('CAPYBARA_SERVER_PORT') if ENV.key?('CAPYBARA_SERVER_PORT')
+end

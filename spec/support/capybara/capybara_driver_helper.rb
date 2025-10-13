@@ -1,5 +1,6 @@
+require 'capybara/cuprite'
 Capybara.configure do |config|
-  driver = ENV.fetch('TEST_BROWSER', 'chrome_local').to_sym
+  driver = ENV.fetch('TEST_BROWSER', 'cuprite').to_sym
   config.javascript_driver = driver
   config.default_max_wait_time = 10
   config.match = :prefer_exact
@@ -9,42 +10,32 @@ Capybara.configure do |config|
   config.server = :webrick
 end
 
-Capybara.register_driver :firefox do |app|
-  Capybara::Selenium::Driver.new(app, browser: :firefox, url: ENV.fetch('SELENIUM_URL', 'http://localhost:4444/wd/hub'))
+cuprite_options = {
+  'no-sandbox': nil,
+  'disable-gpu': nil,
+  'disable-software-rasterizer': nil,
+  'disable-dev-shm-usage': nil,
+  'disable-smooth-scrolling': true
+}
+Capybara.register_driver(:cuprite) do |app|
+  Capybara::Cuprite::Driver.new(app,
+                                window_size: [1600, 1000],
+                                timeout: 10,
+                                browser_options: cuprite_options,
+                                js_errors: true,
+                                process_timeout: 30,
+                                browser_timeout: 30)
 end
 
-Capybara.register_driver :chrome do |app|
-  Capybara::Selenium::Driver.new(app, browser: :chrome, url: ENV.fetch('SELENIUM_URL', 'http://localhost:4444/wd/hub'))
-end
-
-Capybara.register_driver :chrome_local do |app|
-  options = Selenium::WebDriver::Chrome::Options.new
-  options.add_argument('--no-sandbox')
-  options.add_argument('--headless=new')
-  options.add_argument('--lang=en-GB')
-  options.add_argument('--disable-dev-shm-usage')
-  options.add_argument('--disable-gpu')
-  Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
-end
-
-Capybara.register_driver :chrome_local_visible do |app|
-  options = Selenium::WebDriver::Chrome::Options.new
-  options.add_argument('--no-sandbox')
-  Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
-end
-
-Capybara.register_driver :firefox_local do |app|
-  options = Selenium::WebDriver::Firefox::Options.new
-  options.add_argument('-headless')
-  Capybara::Selenium::Driver.new(app, browser: :firefox, options: options)
-end
-
-Capybara.register_driver :firefox_local_visible do |app|
-  Capybara::Selenium::Driver.new(app, browser: :firefox)
-end
-
-Capybara.register_driver :safari do |app|
-  Capybara::Selenium::Driver.new(app, browser: :safari)
+Capybara.register_driver(:cuprite_visible) do |app|
+  Capybara::Cuprite::Driver.new(app,
+                                window_size: [1600, 1000],
+                                headless: false,
+                                timeout: 10,
+                                browser_options: cuprite_options,
+                                js_errors: true,
+                                process_timeout: 30,
+                                browser_timeout: 30)
 end
 
 Capybara.always_include_port = true

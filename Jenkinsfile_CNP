@@ -15,7 +15,6 @@ withPipeline(type, product, component) {
     env.DB_USER = 'postgres'
     env.DB_PORT = '5421'
     env.DB_PASSWORD = 'postgres'
-    env.TEST_BROWSER = 'chrome_local'
     env.NODE_OPTIONS='--openssl-legacy-provider'
     env.ENABLE_COVERAGE='true'
     env.CI='true'

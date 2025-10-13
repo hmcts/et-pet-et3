@@ -12,37 +12,66 @@ RSpec.feature "Check PDF Download Link", :js do
   # displayed to the user. It will then check the link every 10 seconds until the link is
   # valid.
   #
-  # This spec test this functionality, therefore it uses a special stub which returns a pdf
-  # URL of '/test/pdf-download'. This utilises the controller below to return an invalid
-  # link the first time of asking and a valid one thereafter.
+  # This spec tests this functionality by using Cuprite's network interception to simulate
+  # the PDF not being ready on the first request, then becoming available on subsequent requests.
 
-  class PdfDownloadLinkController < ActionController::Base
-    def show
-      session[:hit_count] ||= 0
-      if session[:hit_count] > 0
-        logger.debug 'Session count > 0'
-        head :ok
-      else
-        logger.debug 'Session count =< 0'
-        head :not_found
-      end
-      session[:hit_count] += 1
-    end
-  end
+  let(:pdf_url) { "http://example.com/test/response.pdf" }
 
   before do
-    Rails.application.routes.append do
-      get 'test/pdf-download' => 'pdf_download_link#show'
-    end
-    Rails.application.reload_routes!
-  end
-
-  before do
-    stub_submission_with_custom_pdf_download_link
+    # Reset Capybara session to avoid session pollution between scenarios
+    Capybara.reset_sessions!
+    stub_submission_with_pdf_url(pdf_url)
     stub_create_blob_to_azure
   end
 
+  def setup_pdf_network_interception(first_request_fails: true)
+    request_count = 0
+
+    page.driver.browser.network.intercept
+
+    page.driver.browser.on(:request) do |request|
+      if request.url.include?("example.com/test/response.pdf")
+        request_count += 1
+
+        if first_request_fails && request_count == 1
+          # First request: return 404 Not Found
+          request.abort
+        else
+          # Subsequent requests or if first_request_fails is false: return 200 OK
+          request.respond(
+            status: 200,
+            headers: { "Content-Type" => "application/pdf" },
+            body: ""
+          )
+        end
+      else
+        request.continue
+      end
+    end
+  end
+
+  def stub_submission_with_pdf_url(url)
+    stub_request(:post, "#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api/v2')}/respondents/build_response").
+      with(headers: { 'Content-Type': 'application/json', Accept: 'application/json' }).
+      to_return(
+        headers: { 'Content-Type': 'application/json' },
+        body: {
+          meta: {
+            BuildResponse: {
+              reference: "142000000100",
+              submitted_at: "2018-01-13 14:00",
+              pdf_url: url,
+              office_address: "Alexandra House, 14-22 The Parsonage, Manchester, M3 2JA",
+              office_phone_number: "0161 833 6100"
+            }
+          }
+        }.to_json
+      )
+  end
+
   scenario "link will be disabled as first request will not be valid" do
+    setup_pdf_network_interception(first_request_fails: true)
+
     given_valid_user
     given_valid_data
     start_a_new_et3_response
@@ -61,6 +90,8 @@ RSpec.feature "Check PDF Download Link", :js do
   end
 
   scenario "link will be enabled as second request will be valid" do
+    setup_pdf_network_interception(first_request_fails: true)
+
     given_valid_user
     given_valid_data
     start_a_new_et3_response

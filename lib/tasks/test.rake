@@ -1,5 +1,5 @@
 task test: :environment do
-  unless system("rspec -t ~smoke --format RspecJunitFormatter --out tmp/test/rspec.xml")
+  unless system("rspec -t ~smoke --format documentation --format RspecJunitFormatter --out tmp/test/rspec.xml")
     raise "Rspec testing failed #{$?}"
   end
 end

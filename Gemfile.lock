@@ -319,7 +319,7 @@ GEM
     public_suffix (6.0.2)
     raabro (1.4.0)
     racc (1.8.1)
-    rack (2.2.18)
+    rack (2.2.20)
     rack-proxy (0.7.7)
       rack
     rack-session (1.0.2)

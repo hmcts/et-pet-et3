@@ -52,7 +52,6 @@ group :development, :test do
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', '~> 3.3', require: false
   gem 'rubocop-rspec_rails', '~> 2.30', require: false
-  gem 'selenium-webdriver', '~> 4.18'
   gem 'simplecov', '~> 0.21'
   # Run Rspec tests in parallel to speed the test suite up
   gem 'et_full_system_control', git: 'https://github.com/hmcts/et-full-system-control.git'
@@ -70,6 +69,7 @@ end
 
 group :test do
   gem 'capybara-screenshot', '~> 1.0'
+  gem 'cuprite', '~> 0.10'
   gem 'database_cleaner', '~> 2.0'
   gem 'et_test_helpers', git: 'https://github.com/hmcts/et_test_helpers.git', tag: 'v1.3.2'
   gem 'factory_bot', '~> 6.1'

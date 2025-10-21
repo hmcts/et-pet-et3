@@ -5,7 +5,8 @@ function DisablePdfLink() {
 }
 
 function checkLinkStatus() {
-  let url = document.querySelector('.pdf-success').getAttribute('href');
+  let url = document.querySelector('.pdf-success')?.getAttribute('href');
+  if(!url) { return }
   axios.head(url)
     .then((response) => {
       document.querySelector('.pdf-failure').classList.add('hidden')

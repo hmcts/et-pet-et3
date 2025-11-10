@@ -175,7 +175,7 @@ Style/SwapValues:
   Enabled: true
 Style/YAMLFileRead:
   Enabled: true
-RSpec/StringAsInstanceDoubleConstant:
+RSpec/VerifiedDoubleReference:
   Enabled: true
 Style/RedundantStringEscape:
   Enabled: true

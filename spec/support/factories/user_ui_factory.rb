@@ -1,4 +1,5 @@
 require 'faker'
+require 'ostruct'
 
 FactoryBot.define do
   factory :user_ui, class: OpenStruct do

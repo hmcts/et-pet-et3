@@ -1,4 +1,5 @@
 require 'faker'
+require 'ostruct'
 
 FactoryBot.define do
   factory :respondent, class: OpenStruct do

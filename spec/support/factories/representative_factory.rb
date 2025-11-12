@@ -1,3 +1,5 @@
+require 'ostruct'
+
 FactoryBot.define do
   factory :representative, class: OpenStruct do
   end

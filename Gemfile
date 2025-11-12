@@ -45,7 +45,7 @@ group :development, :test do
   gem 'capybara', '~> 3.34'
   gem 'pry', '~> 0.12'
   gem 'rspec_junit_formatter', '~> 0.6.0'
-  gem 'rspec-rails', '~> 6.1'
+  gem 'rspec-rails', '~> 8.0'
   gem 'rubocop', '~> 1.8', require: false
   gem 'rubocop-capybara', '~> 2.21', require: false
   gem 'rubocop-factory_bot', '~> 2.26', require: false
@@ -55,7 +55,7 @@ group :development, :test do
   gem 'simplecov', '~> 0.21'
   # Run Rspec tests in parallel to speed the test suite up
   gem 'et_full_system_control', git: 'https://github.com/hmcts/et-full-system-control.git'
-  gem 'parallel_tests', '~> 4.2'
+  gem 'parallel_tests', '~> 5.0'
   gem 'webrick'
 end
 

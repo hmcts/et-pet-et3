@@ -12,7 +12,7 @@ base:
     RAILS_ENV: "production"
     RACK_ENV: "production"
     RAILS_LOG_LEVEL: "info"
-    WEB_CONCURRENCY: 3
+    WEB_CONCURRENCY: 2
     DISABLE_WELSH: false
     ET_API_URL: "http://et-pet-api-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal/api/v2"
     RAILS_LOG_TO_STDOUT: true

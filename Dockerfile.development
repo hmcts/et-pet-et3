@@ -35,4 +35,4 @@ ENV HOME /home/app
 WORKDIR /home/app/et3
 ENV RAILS_ENV=development
 ENV NODE_OPTIONS=--openssl-legacy-provider
-CMD ["bundle", "exec", "iodine", "-port", "8080"]
+CMD ["bundle", "exec", "puma", "--port", "8080"]

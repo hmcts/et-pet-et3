@@ -1,4 +1,4 @@
-FROM ruby:3.3.5-alpine AS assets
+FROM ruby:3.4.1-alpine3.21 AS assets
 RUN addgroup app --gid 1000
 RUN adduser -SD -u 1000 --shell /bin/bash --home /home/app app app
 RUN chown -R app:app /usr/local/bundle
@@ -7,19 +7,19 @@ ENV RAILS_ENV=production
 ENV HOME=/home/app
 ENV NODE_OPTIONS=--openssl-legacy-provider
 RUN apk add --no-cache libpq-dev tzdata shared-mime-info libc6-compat && \
-    apk add --no-cache --virtual .build-tools git build-base curl-dev nodejs yarn && \
-    cd /home/app/et3 && \
-    yarn install && \
-    gem install bundler && \
-    bundle config set without 'test development' && \
-    bundle config set with 'assets production' && \
-    bundle config set deployment 'true' && \
-    bundle install --no-cache --jobs=5 --retry=3 && \
-    bundle exec rails assets:precompile non_digest_assets SECRET_KEY_BASE=doesntmatter && \
-    chown -R app:app /usr/local/bundle && \
-    apk del .build-tools
+  apk add --no-cache --virtual .build-tools git build-base curl-dev nodejs yarn && \
+  cd /home/app/et3 && \
+  yarn install && \
+  gem install bundler && \
+  bundle config set without 'test development' && \
+  bundle config set with 'assets production' && \
+  bundle config set deployment 'true' && \
+  bundle install --no-cache --jobs=5 --retry=3 && \
+  bundle exec rails assets:precompile non_digest_assets SECRET_KEY_BASE=doesntmatter && \
+  chown -R app:app /usr/local/bundle && \
+  apk del .build-tools
 
-FROM ruby:3.3.5-alpine
+FROM ruby:3.4.1-alpine3.21
 
 RUN addgroup app --gid 1000
 RUN adduser -SD -u 1000 --shell /bin/bash --home /home/app app app
@@ -44,20 +44,20 @@ COPY --from=assets --chown=app:app /home/app/et3/public/vite /home/app/et3/publi
 COPY --from=assets --chown=app:app /home/app/et3/vendor/bundle /home/app/et3/vendor/bundle
 RUN chown -R app:app /usr/local/bundle
 RUN apk add --no-cache libpq-dev tzdata shared-mime-info curl-dev libc6-compat bash && \
-    apk add --no-cache postgresql-client~=11.12 --repository=http://dl-cdn.alpinelinux.org/alpine/v3.10/main && \
-    apk add --no-cache --virtual .build-tools git build-base && \
-    cd /home/app/et3 && \
-    BUNDLER_VERSION=$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1 | awk '{$1=$1};1') && \
-    gem install bundler:$BUNDLER_VERSION invoker && \
-    bundle config set without 'test development assets' && \
-    bundle config set with 'production' && \
-    bundle config set deployment 'true' && \
-    bundle install --no-cache --jobs=5 --retry=3 && \
-    apk del .build-tools && \
-    chown -R app:app /usr/local/bundle && \
-    chown -R app:app /home/app/et3/vendor/bundle && \
-    mkdir -p /home/app/et3/tmp && \
-    chown -R app:app /home/app/et3/tmp
+  apk add --no-cache postgresql-client~=11.12 --repository=http://dl-cdn.alpinelinux.org/alpine/v3.10/main && \
+  apk add --no-cache --virtual .build-tools git build-base && \
+  cd /home/app/et3 && \
+  BUNDLER_VERSION=$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1 | awk '{$1=$1};1') && \
+  gem install bundler:$BUNDLER_VERSION invoker && \
+  bundle config set without 'test development assets' && \
+  bundle config set with 'production' && \
+  bundle config set deployment 'true' && \
+  bundle install --no-cache --jobs=5 --retry=3 && \
+  apk del .build-tools && \
+  chown -R app:app /usr/local/bundle && \
+  chown -R app:app /home/app/et3/vendor/bundle && \
+  mkdir -p /home/app/et3/tmp && \
+  chown -R app:app /home/app/et3/tmp
 
 
 USER app

@@ -3,7 +3,7 @@
 //
 //    <%= vite_client_tag %>
 //    <%= vite_javascript_tag 'application' %>
-console.log('Vite ⚡️ Rails')
+console.log("Vite ⚡️ Rails");
 
 // If using a TypeScript entrypoint file:
 //     <%= vite_typescript_tag 'application' %>
@@ -11,7 +11,10 @@ console.log('Vite ⚡️ Rails')
 // If you want to use .jsx or .tsx, add the extension:
 //     <%= vite_javascript_tag 'application.jsx' %>
 
-console.log('Visit the guide for more information: ', 'https://vite-ruby.netlify.app/guide/rails')
+console.log(
+  "Visit the guide for more information: ",
+  "https://vite-ruby.netlify.app/guide/rails",
+);
 
 // Example: Load Rails libraries in Vite.
 //
@@ -26,12 +29,11 @@ console.log('Visit the guide for more information: ', 'https://vite-ruby.netlify
 
 // Example: Import a stylesheet in app/frontend/index.css
 // import '~/index.css'
-import 'core-js/stable'
-import 'regenerator-runtime/runtime'
-import "./controllers"
-import {EtGdsDesignSystem } from "et_gds_design_system"
-import "./stylesheets/application.scss"
-import "@rails/ujs"
+import "./controllers";
+import { EtGdsDesignSystem } from "et_gds_design_system";
+import "./stylesheets/application.scss";
+import Rails from "@rails/ujs";
+Rails.start();
 import SessionPrompt from "./components/SessionPrompt";
 import AdditionalInformationPage from "./pages/AdditionalnformationPage";
 import FormSubmissionPage from "./pages/FormSubmissionPage";
@@ -39,9 +41,9 @@ EtGdsDesignSystem.initAll();
 window.Et = {
   pages: {
     AdditionalInformationPage: AdditionalInformationPage,
-    FormSubmissionPage: FormSubmissionPage
+    FormSubmissionPage: FormSubmissionPage,
   },
   components: {
-    SessionPrompt
-  }
+    SessionPrompt,
+  },
 };

@@ -54,6 +54,9 @@ development:
   #   log, notice, warning, error, fatal, and panic
   # Defaults to warning.
   #min_messages: notice
+  <% if ENV['DEVELOPMENT_DB_URL'] %>
+  url: '<%= ENV['DEVELOPMENT_DB_URL'] %>'
+  <% end %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -61,6 +64,9 @@ development:
 test:
   <<: *default
   database: 'et3_test<%= ENV['TEST_ENV_NUMBER'] %>'
+  <% if ENV['TEST_DB_URL'] %>
+  url: '<%= ENV['TEST_DB_URL'] %>'
+  <% end %>
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is

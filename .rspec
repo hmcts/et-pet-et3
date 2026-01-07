@@ -3,3 +3,4 @@
 --format ParallelTests::RSpec::RuntimeLogger --out tmp/parallel_runtime_log/rspec.log
 --format ParallelTests::RSpec::SummaryLogger --out tmp/spec_summary.log
 --format ParallelTests::RSpec::FailuresLogger --out tmp/failing_specs.log
+--tag ~smoke

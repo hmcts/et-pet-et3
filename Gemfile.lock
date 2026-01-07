@@ -235,7 +235,6 @@ GEM
     invisible_captcha (2.3.0)
       rails (>= 5.2)
     io-console (0.8.1)
-    iodine (0.7.58)
     irb (1.15.3)
       pp (>= 0.6.0)
       rdoc (>= 4.0.0)
@@ -328,6 +327,8 @@ GEM
       date
       stringio
     public_suffix (6.0.2)
+    puma (6.6.1)
+      nio4r (~> 2.0)
     raabro (1.4.0)
     racc (1.8.1)
     rack (2.2.21)
@@ -559,7 +560,6 @@ DEPENDENCIES
   faker (~> 3.2)
   httparty (~> 0.17)
   invisible_captcha (~> 2.3)
-  iodine (~> 0.7.47)
   jbuilder (~> 2.10)
   jquery-rails (~> 4.5)
   listen (>= 3.0.5)
@@ -568,6 +568,7 @@ DEPENDENCIES
   pg (~> 1.1)
   propshaft (~> 1.1)
   pry (~> 0.12)
+  puma (~> 6.3)
   rack (~> 2.2.3)
   rails (= 8.0.2.1)
   rspec-rails (~> 8.0)

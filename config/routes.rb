@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  namespace :locale, path: '(:locale)', module: nil, as: nil, constraints: { locale: /en|cy/ } do
+  scope '(:locale)', constraints: { locale: /en|cy/ } do
     devise_for :users, module: 'save_and_return', only: [:password, :session, :registration]
     scope :respond do
       resource :respondents_details, only: [:edit, :update], path_names: { edit: ''}

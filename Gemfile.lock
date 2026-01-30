@@ -319,6 +319,7 @@ GEM
     nokogiri (1.19.0-x86_64-linux-gnu)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    ostruct (0.6.3)
     parallel (1.27.0)
     parallel_tests (5.5.0)
       parallel
@@ -581,6 +582,7 @@ DEPENDENCIES
   jquery-rails (~> 4.5)
   listen (>= 3.0.5)
   mission_control-jobs (~> 1.0.0)
+  ostruct (~> 0.6.3)
   parallel_tests (~> 5.0)
   pg (~> 1.1)
   propshaft (~> 1.1)

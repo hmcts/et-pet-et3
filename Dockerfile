@@ -1,4 +1,4 @@
-FROM ruby:3.4.1-alpine3.21 AS assets
+FROM ruby:4.0.1-alpine3.23 AS assets
 RUN addgroup app --gid 1000
 RUN adduser -SD -u 1000 --shell /bin/bash --home /home/app app app
 RUN chown -R app:app /usr/local/bundle
@@ -7,7 +7,7 @@ ENV RAILS_ENV=production
 ENV HOME=/home/app
 ENV NODE_OPTIONS=--openssl-legacy-provider
 RUN apk add --no-cache libpq-dev tzdata shared-mime-info libc6-compat && \
-  apk add --no-cache --virtual .build-tools git build-base curl-dev nodejs yarn && \
+  apk add --no-cache --virtual .build-tools git build-base curl-dev nodejs yarn linux-headers && \
   cd /home/app/et3 && \
   yarn install && \
   gem install bundler && \
@@ -19,7 +19,7 @@ RUN apk add --no-cache libpq-dev tzdata shared-mime-info libc6-compat && \
   chown -R app:app /usr/local/bundle && \
   apk del .build-tools
 
-FROM ruby:3.4.1-alpine3.21
+FROM ruby:4.0.1-alpine3.23
 
 RUN addgroup app --gid 1000
 RUN adduser -SD -u 1000 --shell /bin/bash --home /home/app app app
@@ -45,7 +45,7 @@ COPY --from=assets --chown=app:app /home/app/et3/vendor/bundle /home/app/et3/ven
 RUN chown -R app:app /usr/local/bundle
 RUN apk add --no-cache libpq-dev tzdata shared-mime-info curl-dev libc6-compat bash && \
   apk add --no-cache postgresql-client~=11.12 --repository=http://dl-cdn.alpinelinux.org/alpine/v3.10/main && \
-  apk add --no-cache --virtual .build-tools git build-base && \
+  apk add --no-cache --virtual .build-tools git build-base linux-headers && \
   cd /home/app/et3 && \
   BUNDLER_VERSION=$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1 | awk '{$1=$1};1') && \
   gem install bundler:$BUNDLER_VERSION invoker && \

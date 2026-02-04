@@ -72,7 +72,7 @@ group :test do
   gem 'capybara-screenshot', '~> 1.0'
   gem 'cuprite', '~> 0.10'
   gem 'database_cleaner', '~> 2.0'
-  gem 'et_test_helpers', git: 'https://github.com/hmcts/et_test_helpers.git', tag: 'v1.3.2'
+  gem 'et_test_helpers', git: 'https://github.com/hmcts/et_test_helpers.git', tag: 'v1.3.3'
   gem 'factory_bot', '~> 6.1'
   gem 'faker', '~> 3.2'
   gem 'site_prism', '~> 5.0'

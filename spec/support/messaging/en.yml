@@ -398,6 +398,7 @@ en:
         not_a_number: Please enter the normal take-home pay as a number
       type_of_representative:
         inclusion: Please select the type of your representative
+      invalid_date: Employment start is invalid
   links:
     confirmation_of_supplied_details:
       edit_page: Edit answers on this page

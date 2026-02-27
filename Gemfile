@@ -41,6 +41,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'bundler-audit', '~> 0.9.1'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'debug', require: false
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 3.34'
   gem 'ostruct', '~> 0.6.3'
@@ -72,7 +73,7 @@ group :test do
   gem 'capybara-screenshot', '~> 1.0'
   gem 'cuprite', '~> 0.10'
   gem 'database_cleaner', '~> 2.0'
-  gem 'et_test_helpers', git: 'https://github.com/hmcts/et_test_helpers.git', tag: 'v1.3.2'
+  gem 'et_test_helpers', git: 'https://github.com/hmcts/et_test_helpers.git', tag: 'v1.3.5'
   gem 'factory_bot', '~> 6.1'
   gem 'faker', '~> 3.2'
   gem 'site_prism', '~> 5.0'

@@ -47,7 +47,7 @@ class ClaimantsDetail < BaseForm
   end
 
   def end_date_is_after_start_date
-    return if employment_end.blank? || employment_start.blank?
+    return if employment_end.blank? || employment_start.blank? || employment_end.is_a?(EtDateType::InvalidDate) || employment_start.is_a?(EtDateType::InvalidDate)
 
     if employment_end < employment_start
       errors.add(:employment_end, :employment_end_before_start)

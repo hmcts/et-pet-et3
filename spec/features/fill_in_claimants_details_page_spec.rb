@@ -55,13 +55,17 @@ RSpec.feature "Fill in Claimants Details Page", :js do
     expect(earnings_and_benefits_page).to be_displayed
   end
 
-  scenario 'Will give an error if the end date is before the start date' do
+  scenario 'Will give an error and show the invalid date if unparseable date is given' do
     claimants_details_page.load(locale: current_locale_parameter)
     claimants_invalid_dates
+    @claimant.employment_start = '0/0/0'
     answer_claimants_details(expect_errors: true)
 
     expect(claimants_details_page).to have_header
     expect(claimants_details_page).to have_error_header
-    claimants_details_page.employment_end.assert_error_message(t('errors.custom.employment_end_before_start'))
+    claimants_details_page.employment_start.assert_error_message(t('errors.custom.invalid_date'))
+    claimants_details_page.
+      employment_start.
+      assert_raw_value('0/0/0')
   end
 end

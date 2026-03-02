@@ -48,7 +48,7 @@ class EtDateType < ActiveRecord::Type::Date
     attr_reader :day, :month, :year
 
     def blank?
-      true
+      false
     end
   end
 end

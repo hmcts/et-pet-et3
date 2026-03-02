@@ -7,7 +7,7 @@
     "pkg-config@latest"
   ],
   "shell": {
-    "init_hook": ["gem install ruby-lsp debug"],
+    "init_hook": [],
     "scripts": {
       "test": ["echo \"Error: no test specified\" && exit 1"]
     }

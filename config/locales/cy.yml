@@ -171,9 +171,7 @@ cy:
       submission_feedback: "Eich adborth"
       feedback_content: "Byddwn yn ddiolchgar i gael eich adborth ar y gwasanaeth hwn fel y gallwn ei wella."
       what_happens_next: "Beth fydd yn digwydd nesaf"
-      what_happens_next_content:
-        - Byddwn yn gwirio’ch ymateb ac efallai y byddwn yn cysylltu â chi os oes gennym unrhyw gwestiynau
-        - Byddwn yn cysylltu â chi unwaith y byddwn wedi anfon eich ymateb at yr hawlydd ac yn egluro beth fydd yn digwydd nesaf
+      what_happens_next_content: "Dylech dderbyn neges gadarnhau drwy e-bost gan swyddfa'r tribiwnlys yn prosesu eich ymateb. Noder bod yr amser prosesu presennol tua 20 diwrnod gwaith. Gall hyn gynyddu yn ystod cyfnodau prysur."
       response_questions: Ar gyfer cwestiynau am eich ymateb
       response_questions_content: Cysylltwch â swyddfa’r tribiwnlys canlynol ar gyfer cwestiynau am eich ymateb
       process_questions: Ar gyfer cwestiynau am broses y tribiwnlys cyflogaeth

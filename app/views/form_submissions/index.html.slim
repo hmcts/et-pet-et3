@@ -10,10 +10,7 @@
 
   h2.govuk-heading-m
     = t('components.form_submission.what_happens_next')
-  ul.govuk-list.govuk-list--bullet
-  - t('components.form_submission.what_happens_next_content').each do |content|
-    li.govuk-body
-      = content
+  p.govuk-body = t('components.form_submission.what_happens_next_content')
 
   h2.govuk-heading-m = t('components.form_submission.submission_details')
   dl.govuk-summary-list
@@ -25,7 +22,7 @@
       dd.govuk-summary-list__value = @submission_date.strftime('%e %B %Y')
     .govuk-summary-list__row
       dt.govuk-summary-list__key = t('components.form_submission.download_your_response')
-      dd.govuk-summary-list__value 
+      dd.govuk-summary-list__value
         = link_to t('components.form_submission.valid_pdf_download'), @pdf_url, class: 'pdf-success govuk-link'
         = link_to t('components.form_submission.invalid_pdf_download'), nil, class: 'pdf-failure hidden govuk-link'
     .govuk-summary-list__row

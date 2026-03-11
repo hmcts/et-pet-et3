@@ -172,9 +172,7 @@ en:
       submission_feedback: "Your feedback"
       feedback_content: "We'd like your feedback on this service so we can improve it."
       what_happens_next: "What happens next"
-      what_happens_next_content:
-        - We'll check your response and may contact you if we have any questions
-        - We'll contact you once we've sent your response to the claimant and explain what happens next
+      what_happens_next_content: "You should receive email confirmation from the tribunal office processing your response. Please be advised that the current processing time is approximately 20 working days. This may extend during busy periods."
       response_questions: For questions about your response
       response_questions_content: Contact the following tribunal office for questions about your response
       process_questions: For questions about the employment tribunal process

@@ -26,6 +26,7 @@ RSpec.feature "Access Form Submission Page", :js do
     expect(form_submission_page).to have_submission_confirmation
     expect(form_submission_page).to have_reference_number
     expect(form_submission_page).to have_copy_sent
+    expect(page).to have_text("You should receive email confirmation from the tribunal office processing your response. Please be advised that the current processing time is approximately 20 working days. This may extend during busy periods.")
     expect(form_submission_page).to have_valid_pdf_download
     expect(form_submission_page.submission_date).to have_text(I18n.l(Date.parse('13 January 2018'), format: :pretty, locale: ET3::Test::Messaging.instance.current_locale))
   end

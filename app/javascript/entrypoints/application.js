@@ -29,6 +29,8 @@ console.log(
 
 // Example: Import a stylesheet in app/frontend/index.css
 // import '~/index.css'
+import { initSentry } from "./utils/sentry";
+initSentry();
 import "./controllers";
 import { EtGdsDesignSystem } from "et_gds_design_system";
 import "./stylesheets/application.scss";

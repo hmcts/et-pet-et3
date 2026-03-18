@@ -16,7 +16,7 @@ module Et3
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
-    config.autoload_lib(ignore: %w[assets tasks])
+    config.autoload_lib(ignore: ['assets', 'tasks'])
 
     # Configuration for the application, engines, and railties goes here.
     #
@@ -66,5 +66,9 @@ module Et3
     # config.assets.paths = []
     config.mission_control.jobs.base_controller_class = "JobsController"
     config.browser_poll_time = 60
+
+    config.error_test_page_token = ENV.fetch('ERROR_TEST_PAGE_TOKEN', '')
+    config.sentry_public_dsn = ENV.fetch('RAVEN_PUBLIC_DSN', '')
+    config.app_version = ENV.fetch('APPVERSION', 'unknown')
   end
 end

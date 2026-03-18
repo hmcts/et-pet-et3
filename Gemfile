@@ -32,7 +32,7 @@ gem 'stimulus-rails', '~> 1.3', '>= 1.3.3'
 gem 'uk_postcode', '~> 2.1'
 # Add .env file to store environment variables
 gem 'base32_pure', '~> 0.1'
-gem 'devise', '~> 4.9.0'
+gem 'devise', '~> 5.0.0'
 gem 'dotenv-rails', '~> 3.1'
 gem 'invisible_captcha', '~> 2.3'
 gem 'puma', '~> 6.3'

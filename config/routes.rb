@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     get "/privacy" => 'static_pages#privacy', as: 'privacy_notice'
     resource :cookies, only: %i<edit update create>, path_names: { edit: '/' }
     get "/session_expired" => 'static_pages#expired'
+    resource :error_test, only: %i[show create], path: 'error-test'
     root 'static_pages#index'
     delete "/respond/confirmation_of_supplied_details/remove_rtf" => 'confirmation_of_supplied_details#destroy_rtf', as: :remove_rtf
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

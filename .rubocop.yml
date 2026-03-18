@@ -2,26 +2,26 @@ inherit_from:
   - .rubocop_todo.yml
 
 AllCops:
-  TargetRubyVersion: 2.5
+  TargetRubyVersion: 4.0
   # Exclude anything that isn't really part of our code.
   # rails_helper is excluded because it's full of solecisms, but it's mostly
   # generated code and copy-and-pasted snipets from READMEs.
   Exclude:
-    - 'Guardfile'
-    - 'vendor/**/*'
-    - 'db/**/*'
-    - 'bin/**/*'
-    - '**/*.gemspec'
-    - '**/Rakefile'
-    - '**/Vagrantfile'
-    - 'spec/rails_helper.rb'
-    - 'lib/tasks/cucumber.rake'
-    - 'features/support/env.rb'
-    - 'spec/support/page_objects/**/*'
-    - 'script/cucumber'
-    - 'lib/log_stuff.rb'
-    - 'config/routes.rb'
-    - 'Gemfile'
+    - "Guardfile"
+    - "vendor/**/*"
+    - "db/**/*"
+    - "bin/**/*"
+    - "**/*.gemspec"
+    - "**/Rakefile"
+    - "**/Vagrantfile"
+    - "spec/rails_helper.rb"
+    - "lib/tasks/cucumber.rake"
+    - "features/support/env.rb"
+    - "spec/support/page_objects/**/*"
+    - "script/cucumber"
+    - "lib/log_stuff.rb"
+    - "config/routes.rb"
+    - "Gemfile"
 
 # Layouts
 # Allow long lines in specs, as it's almost impossible to fit RSpec's
@@ -29,12 +29,12 @@ AllCops:
 Layout/LineLength:
   Max: 120
   Exclude:
-    - 'features/**/*'
-    - 'spec/**/*'
-    - 'Gemfile'
-    - 'config/initializers/devise.rb'
-    - 'app/services/et_api_handler.rb'
-    - 'app/forms/*'
+    - "features/**/*"
+    - "spec/**/*"
+    - "Gemfile"
+    - "config/initializers/devise.rb"
+    - "app/services/et_api_handler.rb"
+    - "app/forms/*"
 Layout/TrailingEmptyLines:
   Enabled: true
 # private/protected/public
@@ -69,26 +69,26 @@ Layout/LineContinuationSpacing:
 Metrics/ModuleLength:
   Max: 120
   Exclude:
-    - 'spec/support/helpers/**/*'
+    - "spec/support/helpers/**/*"
 Metrics/AbcSize:
   Exclude:
-    - 'spec/**/*'
-    - 'app/services/et_api_handler.rb'
+    - "spec/**/*"
+    - "app/services/et_api_handler.rb"
 # Don't worry about long methods in specs.
 Metrics/MethodLength:
   Exclude:
-    - 'spec/**/*'
-    - 'app/models/ability.rb'
-    - 'config/initializers/markdown_handler.rb'
-    - 'app/services/et_api_handler.rb'
+    - "spec/**/*"
+    - "app/models/ability.rb"
+    - "config/initializers/markdown_handler.rb"
+    - "app/services/et_api_handler.rb"
 Metrics/ClassLength:
   Exclude:
-    - 'app/services/et_api_handler.rb'
+    - "app/services/et_api_handler.rb"
 Metrics/BlockLength:
   Exclude:
-    - 'spec/**/*'
-    - 'config/**/*'
-    - 'lib/tasks/**/*'
+    - "spec/**/*"
+    - "config/**/*"
+    - "lib/tasks/**/*"
 Metrics/CollectionLiteralLength:
   Enabled: true
 
@@ -98,22 +98,22 @@ Metrics/CollectionLiteralLength:
 Style/BlockDelimiters:
   Enabled: true
   Exclude:
-    - 'spec/**/*'
+    - "spec/**/*"
 Style/AsciiComments:
   Enabled: true
   Exclude:
-    - 'spec/**/*'
+    - "spec/**/*"
 Style/ClassAndModuleChildren:
   EnforcedStyle: nested
 Style/CollectionMethods:
   PreferredMethods:
-    collect: 'map'
-    collect!: 'map!'
-    each_with_object: 'inject'
-    inject: 'inject'
-    reduce: 'inject'
-    detect: 'find'
-    find_all: 'select'
+    collect: "map"
+    collect!: "map!"
+    each_with_object: "inject"
+    inject: "inject"
+    reduce: "inject"
+    detect: "find"
+    find_all: "select"
 # No, we don't prefer each_with_object
 Style/EachWithObject:
   Enabled: false
@@ -141,8 +141,8 @@ Style/TrivialAccessors:
 Style/MixinUsage:
   Enabled: true
   Exclude:
-    - 'spec/**/*'
-    - 'features/**/*'
+    - "spec/**/*"
+    - "features/**/*"
 # Prefer sensible naming to comments everywhere.
 Style/Documentation:
   Description: Document classes and non-namespace modules.
@@ -154,9 +154,9 @@ Style/IfUnlessModifier:
 # Just a preference to use %w[] over %w()
 Style/PercentLiteralDelimiters:
   PreferredDelimiters:
-    '%w': '[]'
-    '%W': '[]'
-    '%i': '[]'
+    "%w": "[]"
+    "%W": "[]"
+    "%i": "[]"
 # %w doesn't always make for clearer test data
 Style/WordArray:
   EnforcedStyle: brackets
@@ -164,7 +164,7 @@ Style/SymbolArray:
   EnforcedStyle: brackets
 Style/NumericPredicate:
   Exclude:
-    - 'spec/**/*'
+    - "spec/**/*"
 Style/StringChars:
   Enabled: true
 Style/SuperArguments:
@@ -322,13 +322,13 @@ RSpec/NestedGroups:
   Max: 10
 RSpec/ExpectActual:
   Exclude:
-    - 'spec/routing/**/*'
+    - "spec/routing/**/*"
 RSpec/MultipleExpectations:
   Exclude:
-    - 'spec/features/**/*'
+    - "spec/features/**/*"
 RSpec/ExampleLength:
   Exclude:
-    - 'spec/**/*'
+    - "spec/**/*"
 RSpec/VoidExpect:
   Enabled: false
 RSpec/LeakyConstantDeclaration:
@@ -581,7 +581,7 @@ Lint/ConstantDefinitionInBlock:
 # Naming
 Naming/PredicateName:
   Exclude:
-    - 'spec/support/**/*'
+    - "spec/support/**/*"
 Naming/BlockForwarding:
   Enabled: true
 Naming/MemoizedInstanceVariableName:

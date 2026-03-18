@@ -1,6 +1,6 @@
 base:
   applicationPort: 8080
-  image: "hmctspublic.azurecr.io/et-pet/et3:latest"
+  image: "hmctsprod.azurecr.io/et-pet/et3:latest"
   ingressHost: et-pet-et3.{{ .Values.global.environment }}.platform.hmcts.net
   aadIdentityName: et-pet
   environment:
@@ -22,6 +22,7 @@ base:
     MAINTENANCE_ENABLED: false
     SERVICE_FQDN: ${SERVICE_FQDN}
     DB_SSL_MODE: "require"
+    ERROR_TEST_PAGE_TOKEN: "error"
   keyVaults:
     et-pet:
       secrets:
@@ -47,6 +48,8 @@ base:
           alias: SMTP_PASSWORD
         - name: et3-raven-dsn
           alias: RAVEN_DSN
+        - name: et3-raven-public-dsn
+          alias: RAVEN_PUBLIC_DSN
         - name: govuk-notify-api-key
           alias: GOVUK_NOTIFY_API_KEY_LIVE
         - name: app-insights-instrumentation-key

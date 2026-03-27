@@ -4,6 +4,7 @@ RSpec.feature "Access Form Submission Page", :js do
 
   before do
     stub_et_api
+    stub_api_additional_information_file_validator
     stub_create_blob_to_azure
   end
 

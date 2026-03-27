@@ -6,6 +6,7 @@ RSpec.feature "Access Cookies", :js do
   before do
     stub_et_api
     stub_create_blob_to_azure
+    stub_api_additional_information_file_validator
   end
 
   before do

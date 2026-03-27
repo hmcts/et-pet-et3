@@ -912,7 +912,7 @@ cy:
     edit:
       upload_additional_information:
         label: "Llwythwch ffeil i ddarparu unrhyw wybodaeth ychwanegol bwysig am eich ymateb nad ydych wedi’i chynnwys hyd yma"
-        hint: "Math o ffeil: .rtf "
+        hint: "Mae’r canlynol yn fformatau ffeiliau derbyniol: pdf, doc, docx, txt, dot, jpg, jpeg, bmp, tif, tiff, png, xls, xlt, xla, xlsx, xltx, ppt, pot, pps, ppa, pptx, potx, ppsx, rtf, csv."
         button_text: Dewiswch ffeil
         remove_file_button_text: Dileu ffeil
         file_selected_text: "Ffeil wedi'i dewis:"
@@ -946,6 +946,10 @@ cy:
           attributes:
             address_country:
               blank: Nodwch y wlad
+        additional_information:
+          attributes:
+            upload_additional_information:
+              password_protected: Mae'r ffeil hon wedi'i diogelu gan gyfrinair. Uwchlwythwch ffeil nad yw wedi'i diogelu gan gyfrinair.
 
   shared:
     optional: "(dewisol)"

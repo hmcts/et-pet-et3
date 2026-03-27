@@ -289,6 +289,13 @@ en:
       caption: Employer Contract Claim
     confirmation_of_additional_information_answers:
       caption: Additional Information
+  activerecord:
+    errors:
+      models:
+        additional_information:
+          attributes:
+            upload_additional_information:
+              password_protected: This file is password protected. Upload a file that isn’t password protected.
   confirmation_of_supplied_details:
     respondents_details:
       case_number: Case number
@@ -696,7 +703,7 @@ en:
         use our upload facility at the end of this form where you will be able to upload a Rich Text Format (.rtf) file.
         If you exceed 50 lines you will not receive full details of your claim in the PDF returned to you on submission of the form.
     additional_information:
-      upload_additional_information: "Supported file type: .rtf"
+      upload_additional_information: "Accepted file formats are pdf, doc, docx, txt, dot, jpg, jpeg, bmp, tif, tiff, png, xls, xlt, xla, xlsx, xltx, ppt, pot, pps, ppa, pptx, potx, ppsx, rtf, csv."
   respondents_details:
     header: "Respondent's Details"
   claimants_details:

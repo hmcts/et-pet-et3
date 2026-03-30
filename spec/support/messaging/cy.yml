@@ -690,7 +690,7 @@ cy:
     description: "Dim ond ar gael mewn amgylchiadau cyfyngedig lle mae'r Hawlydd wedi gwneud contract cyflogwr (gweler y canllawiau)"
   additional_information:
     header: "Gwybodaeth Ychwanegol"
-    content: "Mae’r canlynol yn fformatau ffeiliau derbyniol: pdf, doc, docx, txt, dot, jpg, jpeg, bmp, tif, tiff, png, xls, xlt, xla, xlsx, xltx, ppt, pot, pps, ppa, pptx, potx, ppsx, rtf, csv."
+    content: "Mae’r canlynol yn fformatau ffeiliau derbyniol: pdf, doc, docx, txt, rtf."
     drag_text: "Llusgwch y ffeiliau rtf a'u rhoi yma"
     or_text: "neu"
   confirmation:

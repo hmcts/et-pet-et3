@@ -6,6 +6,7 @@ RSpec.feature "Check for Javascript Browser Errors", :js do
   before do
     stub_create_blob_to_azure
     stub_et_api
+    stub_api_additional_information_file_validator
   end
 
   before do

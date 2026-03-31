@@ -212,6 +212,19 @@ module ET3
         confirmation_of_supplied_details_page.confirmation_of_employer_contract_claim_answers.edit_answers_link.click
       end
 
+      def stub_api_additional_information_file_validator
+        stub_request(:post, "#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api/v2')}/validate").
+          with(headers: { 'Content-Type': 'application/json', Accept: 'application/json' }).
+          to_return(
+            headers: { 'Content-Type': 'application/json' },
+            body: {
+              status: 'accepted',
+              errors: []
+            }.to_json,
+            status: 202
+          )
+      end
+
       # Stub Submission Calls to API
       def stub_et_api
         stub_request(:post, "#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api/v2')}/respondents/build_response").

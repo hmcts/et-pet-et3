@@ -8,7 +8,7 @@
       =  f.govuk_error_summary(t 'errors.header')
     = f.file_dropzone_field :upload_additional_information,
             optional: true,
-            accepted_files: ['.rtf'],
+            accepted_files: ['.pdf', '.doc', '.docx', '.txt', '.rtf'],
             hint: true,
             upload_button: true,
             remove_file_button: true

@@ -22,6 +22,7 @@ RSpec.feature "Check PDF Download Link", :js do
     Capybara.reset_sessions!
     stub_submission_with_pdf_url(pdf_url)
     stub_create_blob_to_azure
+    stub_api_additional_information_file_validator
   end
 
   def setup_pdf_network_interception(first_request_fails: true)

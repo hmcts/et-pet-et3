@@ -4,6 +4,7 @@ RSpec.feature "Fill in whole form", :js do
 
   before do
     stub_et_api
+    stub_api_additional_information_file_validator
   end
 
   context "without testing azure mode" do

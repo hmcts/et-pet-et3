@@ -3,6 +3,11 @@ require 'httparty'
 class EtApiHandler
   class SubmitError < StandardError; end
 
+  def self.validate_additional_information_file(record, attribute, value,
+    validate_additional_information_file_service: ValidateAdditionalInformationFileViaApiService)
+    validate_additional_information_file_service.call(record, attribute, value)
+  end
+
   # Submits the form data to the ET API and returns the response.
   #
   # @param form_hash [Hash] The form data to be submitted.
@@ -20,9 +25,7 @@ class EtApiHandler
                                   }.to_json,
                                   headers: { Accept: 'application/json', 'Content-Type': 'application/json' })
 
-
     raise SubmitError, "Failed to submit form data - Client Error: #{http_response.code}" if http_response.code.in?(400..599)
-
 
     { data: http_response.parsed_response, status: http_response.code }
   rescue HTTParty::Error, SocketError, Errno::ECONNREFUSED, Errno::ECONNRESET, Errno::ETIMEDOUT, Timeout::Error, OpenSSL::SSL::SSLError => e

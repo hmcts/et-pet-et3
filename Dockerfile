@@ -6,7 +6,7 @@ COPY --chown=app:app . /home/app/et3
 ENV RAILS_ENV=production
 ENV HOME=/home/app
 ENV NODE_OPTIONS=--openssl-legacy-provider
-RUN apk add --no-cache libpq-dev tzdata shared-mime-info libc6-compat && \
+RUN apk add --no-cache libpq-dev tzdata shared-mime-info libc6-compat libffi-dev yaml-dev && \
   apk add --no-cache --virtual .build-tools git build-base curl-dev nodejs yarn linux-headers && \
   cd /home/app/et3 && \
   yarn install && \

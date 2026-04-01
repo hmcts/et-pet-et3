@@ -4,8 +4,7 @@
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
     "@sentry/browser": "^10.43.0",
-    "axios": "^0.26.1",
-    "et_gds_design_system": "https://github.com/hmcts/et_gds_design_system.git#v7.2.4"
+    "et_gds_design_system": "https://github.com/hmcts/et_gds_design_system.git#v7.2.6"
   },
   "devDependencies": {
     "sass-embedded": "^1.93.3",

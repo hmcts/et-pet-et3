@@ -24,7 +24,12 @@
     <meta property="og:image" content="<%= asset_path "rebrand/images/govuk-opengraph-image.png" %>">
   </head>
 
-  <body class="govuk-template__body <%= content_for?(:body_classes) ? raw("#{yield(:body_classes)}") : '' %>">
+  <%= content_tag :body,
+    data: {
+      controller: 'session-prompt',
+      'session-prompt-enabled-value': start_session_timer?
+    },
+    class: "govuk-template__body #{content_for?(:body_classes) ? raw("#{yield(:body_classes)}") : ''}" do %>
   <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
 
     <a href="#main-content" class="govuk-skip-link" data-turbolinks="false">Skip to main content</a>
@@ -142,5 +147,5 @@
 
     <%# if no GOVUK-namespaced module has loaded we can assume JS has failed and remove the class %>
     <script>if (typeof window.GOVUK === 'undefined') document.body.className = document.body.className.replace('js-enabled', '');</script>
-  </body>
+  <% end %>
 </html>

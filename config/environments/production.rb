@@ -16,7 +16,13 @@ Rails.application.configure do
   config.action_controller.perform_caching = true
 
   # Cache assets for far-future expiry since they are all digest stamped.
-  config.public_file_server.headers = { "cache-control" => "public, max-age=#{1.year.to_i}" }
+  # Include baseline security headers for static responses.
+  config.public_file_server.headers = {
+    "cache-control" => "public, max-age=#{1.year.to_i}",
+    "x-frame-options" => "SAMEORIGIN",
+    "x-content-type-options" => "nosniff",
+    "content-security-policy" => "default-src 'self'; frame-ancestors 'self'; object-src 'none'; base-uri 'self'"
+  }
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   config.asset_host = ENV['ASSET_HOST'] if ENV['ASSET_HOST'].present?

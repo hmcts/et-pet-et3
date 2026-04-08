@@ -3,6 +3,7 @@ require 'securerandom'
 class ApplicationController < ActionController::Base
   helper_method :start_session_timer?
   protect_from_forgery with: :exception
+  rescue_from ActionController::InvalidAuthenticityToken, with: :handle_invalid_authenticity_token
   before_action :show_maintenance_page
   before_action :authenticate_user!
   before_action :set_locale
@@ -61,5 +62,10 @@ class ApplicationController < ActionController::Base
     return if !config.maintenance_enabled || config.maintenance_allowed_ips.include?(request.remote_ip)
 
     render 'static_pages/maintenance', layout: false, status: :service_unavailable
+  end
+
+  def handle_invalid_authenticity_token
+    reset_session
+    head :unprocessable_entity
   end
 end

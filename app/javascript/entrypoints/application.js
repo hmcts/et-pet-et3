@@ -36,16 +36,4 @@ import { EtGdsDesignSystem } from "et_gds_design_system";
 import "./stylesheets/application.scss";
 import Rails from "@rails/ujs";
 Rails.start();
-import SessionPrompt from "./components/SessionPrompt";
-import AdditionalInformationPage from "./pages/AdditionalnformationPage";
-import FormSubmissionPage from "./pages/FormSubmissionPage";
 EtGdsDesignSystem.initAll();
-window.Et = {
-  pages: {
-    AdditionalInformationPage: AdditionalInformationPage,
-    FormSubmissionPage: FormSubmissionPage,
-  },
-  components: {
-    SessionPrompt,
-  },
-};

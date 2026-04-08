@@ -2,7 +2,13 @@
 // Run that command whenever you add a new controller or create them with
 // ./bin/rails generate stimulus controllerName
 
-import { application } from "./application"
+import { application } from "./application";
 
-import RespondentsDetailsController from "./respondents_details_controller"
-application.register("respondents-details", RespondentsDetailsController)
+import RespondentsDetailsController from "./respondents_details_controller";
+import AdditionalInformationController from "./additional_information_controller";
+import FormSubmissionController from "./form_submission_controller";
+import SessionPromptController from "./session_prompt_controller";
+application.register("respondents-details", RespondentsDetailsController);
+application.register("additional-information", AdditionalInformationController);
+application.register("form-submission", FormSubmissionController);
+application.register("session-prompt", SessionPromptController);

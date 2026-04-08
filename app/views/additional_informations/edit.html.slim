@@ -1,7 +1,7 @@
 - content_for :form_page_title, t('components.additional_information.header')
 - content_for :page_title, raw("#{content_for :form_page_title} - Response to Claim - MoJ")
 - content_for :page_head, raw('<meta name="turbolinks-visit-control" content="reload">')
-.content-body.additional-information
+.content-body.additional-information data-controller="additional-information"
 
   = form_for @additional_information, url: additional_information_path, method: :patch, builder: EtGdsDesignSystem.form_builder_class do |f|
     div data-turbolinks="false"
@@ -14,8 +14,3 @@
             remove_file_button: true
 
     = f.submit(t('components.common.save_and_continue_button'))
-- content_for(:javascripts)
-  javascript:
-    document.addEventListener("turbolinks:load", function() {
-      Et.pages.AdditionalInformationPage()
-    });

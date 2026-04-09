@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   rescue_from ActionController::InvalidAuthenticityToken, with: :handle_invalid_authenticity_token
   before_action :show_maintenance_page
   before_action :authenticate_user!
+  before_action :set_cache_headers
   before_action :set_locale
   before_action :set_start_session_timer
   after_action :save_current_store
@@ -30,6 +31,12 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  def set_cache_headers
+    response.headers["Cache-Control"] = "no-cache, no-store, max-age=0, must-revalidate"
+    response.headers["Pragma"] = "no-cache"
+    response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
+  end
 
   def set_start_session_timer
     @start_session_timer = true

@@ -73,6 +73,7 @@ class ApplicationController < ActionController::Base
 
   def handle_invalid_authenticity_token
     reset_session
+    set_cache_headers
     head :unprocessable_entity
   end
 end

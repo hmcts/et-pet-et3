@@ -3,7 +3,7 @@
 - content_for :head
   = sentry_public_meta_tags
   = dynatrace_script_tag
-  = vite_javascript_tag 'application'
+  = vite_javascript_tag 'application', media: 'all'
   = csrf_meta_tags
   = render "shared/google_tag_manager_head", account: Rails.application.config.google_tag_manager_account
   = yield(:page_head)

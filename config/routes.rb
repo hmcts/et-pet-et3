@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   get '/health' => 'status#healthcheck', defaults: { format: 'json' }
   get '/health/readiness' => 'status#healthcheck', defaults: { format: 'json' }
   get '/health/liveness' => 'status#healthcheck', defaults: { format: 'json' }
+  mount EtGdsDesignSystem::Engine, at: '/'
   mount MissionControl::Jobs::Engine, at: "/jobs" if ENV.fetch('ENABLE_MISSION_CONTROL', 'false') == 'true'
   match '*path', to: 'errors#not_found', via: :all
 end

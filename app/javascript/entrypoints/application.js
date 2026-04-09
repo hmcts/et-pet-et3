@@ -31,9 +31,11 @@ console.log(
 // import '~/index.css'
 import { initSentry } from "./utils/sentry";
 initSentry();
-import "./controllers";
+import application from "./controllers";
+import TurboLinks from "turbolinks";
+TurboLinks.start();
 import { EtGdsDesignSystem } from "et_gds_design_system";
 import "./stylesheets/application.scss";
 import Rails from "@rails/ujs";
 Rails.start();
-EtGdsDesignSystem.initAll();
+EtGdsDesignSystem.initAll(application);

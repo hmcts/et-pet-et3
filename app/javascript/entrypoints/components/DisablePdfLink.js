@@ -13,15 +13,17 @@ async function checkLinkStatus() {
       throw new Error(`HEAD failed with status ${response.status}`);
     }
 
-    document.querySelector(".pdf-failure").classList.add("hidden");
+    document.querySelector(".pdf-failure").classList.add("govuk-!-display-none");
+    document.querySelector(".pdf-failure").classList.remove("govuk-!-display-block");
     let successLink = document.querySelector(".pdf-success");
-    successLink.classList.remove("hidden");
-    successLink.style.pointerEvents = "auto";
+    successLink.classList.remove("govuk-!-display-none");
+    successLink.classList.add("govuk-!-display-block");
   } catch (error) {
-    document.querySelector(".pdf-success").classList.add("hidden");
+    document.querySelector(".pdf-success").classList.add("govuk-!-display-none");
+    document.querySelector(".pdf-success").classList.remove("govuk-!-display-block");
     let failureLink = document.querySelector(".pdf-failure");
-    failureLink.classList.remove("hidden");
-    failureLink.style.pointerEvents = "none";
+    failureLink.classList.remove("govuk-!-display-none");
+    failureLink.classList.add("govuk-!-display-block");
     console.warn("Unable to find PDF, retrying " + url + " in 10 seconds");
     setTimeout(function () {
       checkLinkStatus();

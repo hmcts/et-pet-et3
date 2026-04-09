@@ -12,3 +12,4 @@ application.register("respondents-details", RespondentsDetailsController);
 application.register("additional-information", AdditionalInformationController);
 application.register("form-submission", FormSubmissionController);
 application.register("session-prompt", SessionPromptController);
+export default application;

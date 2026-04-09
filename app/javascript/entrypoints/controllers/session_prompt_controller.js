@@ -66,11 +66,8 @@ const SessionPrompt = {
 
   togglePromptVisibility: function () {
     const node = document.querySelector("#session_prompt");
-    if (node.style.display == "block") {
-      node.style.display = "none";
-    } else {
-      node.style.display = "block";
-    }
+    node.classList.toggle("govuk-!-display-none");
+    node.classList.toggle("govuk-!-display-block");
   },
 
   updateTimeLeftOnPrompt: function (timeInMillis) {

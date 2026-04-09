@@ -30,10 +30,6 @@
       'session-prompt-enabled-value': start_session_timer?
     },
     class: "govuk-template__body #{content_for?(:body_classes) ? raw("#{yield(:body_classes)}") : ''}" do %>
-      <%= javascript_tag nonce: true do %>
-        document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');
-      <% end %>
-
     <a href="#main-content" class="govuk-skip-link" data-turbolinks="false">Skip to main content</a>
 
     <div id="cookie-banner">

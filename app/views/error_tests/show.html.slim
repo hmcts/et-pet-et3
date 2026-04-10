@@ -3,16 +3,16 @@
 - content_for :page_head do
   meta name="robots" content="noindex,nofollow,noarchive"
 - content_for :body_end do
-  javascript:
-    document.addEventListener("turbolinks:load", function() {
-      var trigger = document.querySelector("[data-error-test-js-trigger]");
-      if (!trigger) return;
-
-      trigger.addEventListener("click", function(event) {
-        event.preventDefault();
-        throw new Error("Deliberate JavaScript error triggered from the hidden error test page");
-      }, { once: true });
-    });
+  = javascript_tag nonce: true do
+    | document.addEventListener("turbolinks:load", function() {
+    |   var trigger = document.querySelector("[data-error-test-js-trigger]");
+    |   if (!trigger) return;
+    |
+    |   trigger.addEventListener("click", function(event) {
+    |     event.preventDefault();
+    |     throw new Error("Deliberate JavaScript error triggered from the hidden error test page");
+    |   }, { once: true });
+    | });
 
 .content-body
   p.govuk-body

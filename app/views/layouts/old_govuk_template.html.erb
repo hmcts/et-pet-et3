@@ -37,7 +37,9 @@
   </head>
 
   <body<%= content_for?(:body_classes) ? raw(" class=\"#{yield(:body_classes)}\"") : '' %>>
-    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+    <%= javascript_tag nonce: true do %>
+      document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
+    <% end %>
 
     <%= yield :body_start %>
 
@@ -108,6 +110,8 @@
     <%= yield :body_end %>
 
     <%# if no GOVUK-namespaced module has loaded we can assume JS has failed and remove the class %>
-    <script>if (typeof window.GOVUK === 'undefined') document.body.className = document.body.className.replace('js-enabled', '');</script>
+    <%= javascript_tag nonce: true do %>
+      if (typeof window.GOVUK === 'undefined') document.body.className = document.body.className.replace('js-enabled', '');
+    <% end %>
   </body>
 </html>

@@ -9,12 +9,12 @@
 - content_for :body_start do
   = render "shared/google_tag_manager_body", account: Rails.application.config.google_tag_manager_account
 - content_for :body_end
-  javascript:
-    var showHideContent = new GOVUK.ShowHideContent();
-    showHideContent.init();
+  = javascript_tag nonce: true do
+    | var showHideContent = new GOVUK.ShowHideContent();
+    | showHideContent.init();
   - if start_session_timer?
-    javascript:
-      SessionPrompt.init();
+    = javascript_tag nonce: true do
+      | SessionPrompt.init();
   yield
 - content_for :inside_header
   .header-proposition

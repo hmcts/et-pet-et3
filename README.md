@@ -61,7 +61,7 @@ rails s
 
 which will run the web server.  The url is
 
-http://et3.et.127.0.0.1.nip.io:3100
+http://et3.localhost:3100
 
 
 ## Running Tests

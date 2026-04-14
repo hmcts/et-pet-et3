@@ -51,7 +51,7 @@ RSpec.feature "Fill in Confirmation of Supplied Details Page", :js do
   end
 
   scenario "an error 500 cause a please wait page and schedule a job" do
-    stub = stub_request(:post, "#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api/v2')}/respondents/build_response").
+    stub = stub_request(:post, "#{ENV.fetch('ET_API_URL', 'http://api:8080/api/v2')}/respondents/build_response").
            with(headers: { 'Content-Type': 'application/json', Accept: 'application/json' }).
            to_return(
              headers: { 'Content-Type': 'application/json' },

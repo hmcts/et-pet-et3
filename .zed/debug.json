@@ -1,0 +1,14 @@
+[
+  {
+    "label": "RSpec Current Line (explicit)",
+    "adapter": "rdbg",
+    "request": "launch",
+    "command": "ruby",
+    "args": ["-S", "rspec", "$ZED_FILE:$ZED_ROW"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "env": {
+      "BUNDLE_GEMFILE": "$ZED_WORKTREE_ROOT/Gemfile",
+      "RUBYOPT": "-rbundler/setup"
+    }
+  }
+]

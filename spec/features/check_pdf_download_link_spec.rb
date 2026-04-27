@@ -52,7 +52,7 @@ RSpec.feature "Check PDF Download Link", :js do
   end
 
   def stub_submission_with_pdf_url(url)
-    stub_request(:post, "#{ENV.fetch('ET_API_URL', 'http://api:8080/api/v2')}/respondents/build_response").
+    stub_request(:post, "#{ENV.fetch('ET_API_URL', 'http://api.localhost:3100/api/v2')}/respondents/build_response").
       with(headers: { 'Content-Type': 'application/json', Accept: 'application/json' }).
       to_return(
         headers: { 'Content-Type': 'application/json' },

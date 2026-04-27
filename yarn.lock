@@ -499,9 +499,9 @@ esbuild@^0.27.0:
     "@esbuild/win32-ia32" "0.27.2"
     "@esbuild/win32-x64" "0.27.2"
 
-"et_gds_design_system@https://github.com/hmcts/et_gds_design_system.git#v8.0.4":
-  version "8.0.4"
-  resolved "https://github.com/hmcts/et_gds_design_system.git#b2b9831934d75de112745021d6e07247b4d477dd"
+"et_gds_design_system@https://github.com/hmcts/et_gds_design_system.git#v8.0.5":
+  version "8.0.5"
+  resolved "https://github.com/hmcts/et_gds_design_system.git#b95c61bdf16e668e2395fe8cfa18004171b95542"
   dependencies:
     "@rails/ujs" "^6.0.0"
     dropzone "^6.0.0-beta.2"

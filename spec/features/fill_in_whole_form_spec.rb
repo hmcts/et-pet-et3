@@ -73,7 +73,7 @@ RSpec.feature "Fill in whole form", :js do
       confirmation_of_supplied_details_page.submit_form
       form_submission_page.wait_until_displayed
 
-      expect(a_request(:post, "http://api:8080/api/v2/respondents/build_response").
+      expect(a_request(:post, "http://api.localhost:3100/api/v2/respondents/build_response").
           with { |request|
             request_body = JSON.parse(request.body)
             expect(request_body["data"][0]["data"]["additional_information_key"]).to be_nil
@@ -209,7 +209,7 @@ RSpec.feature "Fill in whole form", :js do
       expect(form_submission_page).to be_displayed
       aggregate_failures "testing request" do
         # TODO: Potentially move this into another spec and simply check the submission is a string in the request below
-        expect(a_request(:post, "http://api:8080/api/v2/respondents/build_response").
+        expect(a_request(:post, "http://api.localhost:3100/api/v2/respondents/build_response").
             with { |request|
               request_body = JSON.parse(request.body)
               expect(request_body["uuid"]).to be_an_instance_of(String)

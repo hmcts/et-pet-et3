@@ -7,7 +7,7 @@ class SubmitToApiJob < ApplicationJob
     Rails.logger.info "Submitting to API in background"
     current_store.api_response = EtApiHandler.submit(current_store.hash_store)
     current_store.save!
- end
+  end
 
   def after_retry_exhausted(error)
     Sentry.capture_exception(error)

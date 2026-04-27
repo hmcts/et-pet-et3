@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   rescue_from ActionController::InvalidAuthenticityToken, with: :handle_invalid_authenticity_token
   before_action :show_maintenance_page
+  before_action :set_sentry_context
   before_action :authenticate_user!
   before_action :set_cache_headers
   before_action :set_locale
@@ -75,5 +76,23 @@ class ApplicationController < ActionController::Base
     reset_session
     set_cache_headers
     head :unprocessable_entity
+  end
+
+  def set_sentry_context
+    return if current_store&.id.blank?
+
+    Sentry.set_user(id: current_user&.id)
+    set_sentry_extras
+  end
+
+  def set_sentry_extras
+    Sentry.set_extras(
+      {
+        release: Rails.application.config.app_version,
+        userId: current_user&.id,
+        storeId: current_store&.id,
+        caseNumber: current_store&.hash_store&.dig(:respondents_detail_answers, :case_number)
+      }.compact
+    )
   end
 end

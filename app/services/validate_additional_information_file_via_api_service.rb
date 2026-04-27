@@ -33,7 +33,7 @@ class ValidateAdditionalInformationFileViaApiService
     }
 
     HTTParty.post(
-      "#{ENV.fetch('ET_API_URL', 'http://api.et.127.0.0.1.nip.io:3100/api/v2')}/validate",
+      "#{ENV.fetch('ET_API_URL', 'http://api.localhost:3100/api/v2')}/validate",
       body: json,
       headers: { Accept: 'application/json', 'Content-Type': 'application/json' }
     )

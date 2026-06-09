@@ -35,7 +35,7 @@ gem 'base32_pure', '~> 0.1'
 gem 'devise', '~> 5.0.0'
 gem 'dotenv-rails', '~> 3.1'
 gem 'invisible_captcha', '~> 2.3'
-gem 'puma', '~> 6.3'
+gem 'puma', '~> 7.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

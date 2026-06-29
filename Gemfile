@@ -35,7 +35,7 @@ gem 'base32_pure', '~> 0.1'
 gem 'devise', '~> 5.0.0'
 gem 'dotenv-rails', '~> 3.1'
 gem 'invisible_captcha', '~> 2.3'
-gem 'puma', '~> 6.3'
+gem 'puma', '~> 8.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -56,7 +56,6 @@ group :development, :test do
   gem 'rubocop-rspec_rails', '~> 2.30', require: false
   gem 'simplecov', '~> 0.21'
   # Run Rspec tests in parallel to speed the test suite up
-  gem 'et_full_system_control', git: 'https://github.com/hmcts/et-full-system-control.git'
   gem 'parallel_tests', '~> 5.0'
   gem 'webrick'
 end
@@ -98,7 +97,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "sentry-rails", "~> 6.0"
 gem "sentry-ruby", "~> 6.0"
-
 
 gem 'application_insights', git: 'https://github.com/microsoft/ApplicationInsights-Ruby.git', ref: '5db6b4'
 gem 'et_azure_insights', '1.0.2', git: 'https://github.com/hmcts/et-azure-insights.git', tag: 'v1.0.2'

@@ -15,6 +15,11 @@ export default defineConfig({
     myPlugin(),
     stableApplicationCssPlugin(),
   ],
+  css: {
+    lightningcss: {
+      errorRecovery: true,
+    }
+  }
 });
 
 function stableApplicationCssPlugin() {

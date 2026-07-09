@@ -74,7 +74,12 @@ module ET3
         respondents_details_page.allow_phone_or_video_attendance_question.set(user.allow_phone_or_video_attendance)
 
         respondents_details_page.next
-        claimants_details_page.wait_until_displayed unless expect_errors
+        case_heard_by_page.wait_until_displayed unless expect_errors
+      end
+
+      def answer_case_heard_by
+        case_heard_by_page.fill_in_all(respondent: @respondent)
+        case_heard_by_page.next
       end
 
       # Claimant's Details Page

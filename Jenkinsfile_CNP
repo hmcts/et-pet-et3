@@ -1,6 +1,6 @@
 #!groovy
 
-@Library("Infrastructure@2.0.0")
+@Library("Infrastructure@2.4.4")
 
 def type = "ruby"
 def product = "et-pet"
@@ -8,6 +8,30 @@ def component = "et3"
 
 def yarnBuilder = new uk.gov.hmcts.contino.YarnBuilder(this)
 def rubyBuilder = new uk.gov.hmcts.contino.RubyBuilder(this)
+
+def installRuby = {
+    sh script:"""#!/bin/bash -l
+        set +x
+        source /usr/local/rvm/scripts/rvm
+        rvm install ruby-4.0.1
+        rvm use ruby-4.0.1 --default
+    """, label: 'Ruby version install'
+}
+
+def useBundlePathOutsideWorkspace = {
+    def bundlePath = "${pwd(tmp: true)}/bundle"
+
+    sh script:"""#!/bin/bash -l
+        set +x
+        source /usr/local/rvm/scripts/rvm
+        rvm use
+        set -x
+
+        bundle config set path "${bundlePath}"
+        bundle install --jobs=4 --retry=3
+        rm -rf vendor/bundle
+    """, label: 'Use bundle path outside workspace'
+}
 
 withPipeline(type, product, component) {
     env.RAILS_ENV = 'test'
@@ -19,14 +43,15 @@ withPipeline(type, product, component) {
     env.ENABLE_COVERAGE='true'
     env.CI='true'
 
-    before('build') {
-        sh script:"""#!/bin/bash -l
-            set +x
-            source /usr/local/rvm/scripts/rvm
-            rvm install ruby-4.0.1
-            rvm use ruby-4.0.1 --default
-        """, label: 'Ruby version install'
+    afterSuccess('checkout') {
+      installRuby()
+      useBundlePathOutsideWorkspace()
     }
+
+    afterAlways('build') {
+      useBundlePathOutsideWorkspace()
+    }
+
     before('test') {
         sh script:"""
             yarn install
@@ -37,17 +62,14 @@ withPipeline(type, product, component) {
         rubyBuilder.bundle("exec rails db:create db:migrate assets:precompile")
     }
 
-    before('smoketest:preview') {
-      sh script:"""#!/bin/bash -l
-            set +x
-            source /usr/local/rvm/scripts/rvm
-            rvm install ruby-4.0.1
-            rvm use ruby-4.0.1 --default
-            bundle install
-            yarn install
-      """, label: 'Ruby version install'
+    before('functionalTest:preview') {
+        installRuby()
+        useBundlePathOutsideWorkspace()
+    }
 
-      rubyBuilder.bundle("install")
+    before('smoketest:preview') {
+      installRuby()
+      useBundlePathOutsideWorkspace()
     }
 
     afterAlways('test') {

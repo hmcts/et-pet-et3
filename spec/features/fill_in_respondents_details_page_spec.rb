@@ -13,7 +13,7 @@ RSpec.feature "Fill in Respondents Details Page", :js do
     given_valid_data
     answer_respondents_details
 
-    expect(claimants_details_page).to be_displayed
+    expect(case_heard_by_page).to be_displayed
   end
 
   scenario "hides the other title field until the other option is selected and hides it again when changed" do

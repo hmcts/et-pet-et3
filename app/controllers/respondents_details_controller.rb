@@ -7,7 +7,7 @@ class RespondentsDetailsController < ApplicationController
     @respondents_detail = RespondentsDetail.new(respondents_detail_params)
     if @respondents_detail.valid?
       current_store.hash_store[:respondents_detail_answers] = @respondents_detail.to_h
-      redirect_to edit_claimants_details_path
+      redirect_to edit_case_heard_by_path
     else
       render :edit
     end

@@ -26,7 +26,7 @@ Running this app will enable development of the app itself, with its test suite 
 1) Copy `.env.example` and rename to `.env`
 1) Run `./bin/dev/docker-support-services up`
 1) Run `bundle exec rake parallel:create parallel:migrate`
-1) Run `bundle exec rails db:create db:migrate`
+1) Run `bundle exec rails db:create db:migrate:with_data`
 
 ### Developing And Testing Using The et_full_system gem
 

@@ -27,7 +27,7 @@ FileUtils.chdir APP_ROOT do
   end
 
   puts "\n== Preparing database =="
-  system! 'bin/rails db:migrate:reset'
+  system! 'bin/rails db:create db:migrate:with_data'
 
   puts "\n== Starting app"
   system! "cd #{APP_ROOT} && invoker start Procfile"

@@ -35,7 +35,7 @@ class EtApiHandler
   private
 
   def self.build_response_data(full_hash)
-    {
+    data = {
       command: "BuildResponse",
       data: {
         case_number: full_hash[:respondents_detail_answers][:case_number],
@@ -71,6 +71,12 @@ class EtApiHandler
       },
       uuid: SecureRandom.uuid
     }
+    if FeatureFlag.value_for('era_oct_26')
+      data[:data].merge! case_heard_by_preference: full_hash[:case_heard_by_answers][:case_heard_by_preference],
+                         case_heard_by_preference_reason: full_hash[:case_heard_by_answers][:case_heard_by_preference_reason],
+                         pdf_template_reference: "et3-v4-#{I18n.locale}"
+    end
+    data
   end
 
   def self.build_respondent_data(full_hash)

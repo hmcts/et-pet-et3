@@ -37,6 +37,9 @@ gem 'dotenv-rails', '~> 3.1'
 gem 'invisible_captcha', '~> 2.3'
 gem 'puma', '~> 8.0'
 
+# For data migrations
+gem 'data_migrate', '>= 11.3.1'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'bundler-audit', '~> 0.9.1'

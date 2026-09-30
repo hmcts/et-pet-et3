@@ -26,6 +26,11 @@ module ET3
         ET3::Test::RespondentsDetailsPage.new
       end
 
+      # @return [ET3::Test::CaseHeardByPage]
+      def case_heard_by_page
+        ET3::Test::CaseHeardByPage.new
+      end
+
       def claimants_details_page
         ET3::Test::ClaimantsDetailsPage.new
       end

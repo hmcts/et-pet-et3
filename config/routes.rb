@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     devise_for :users, module: 'save_and_return', only: [:password, :session, :registration]
     scope :respond do
       resource :respondents_details, only: [:edit, :update], path_names: { edit: ''}
+      resource :case_heard_by, only: [:edit, :update], path_names: { edit: ''}, controller: :case_heard_by
       resource :claimants_details, only: [:edit, :update], path_names: { edit: ''}
       resource :earnings_and_benefits, only: [:edit, :update], path_names: { edit: ''}
       resource :response, only: [:edit, :update], path_names: { edit: ''}

@@ -1,5 +1,12 @@
 base:
+  disableTraefikTls: true
+  replicas: 2
+  useInterpodAntiAffinity: true
   applicationPort: 8080
+  memoryLimits: "4096Mi"
+  memoryRequests: "800Mi"
+  cpuLimits: "500m"
+  cpuRequests: "250m"
   image: "hmctsprod.azurecr.io/et-pet/et3:latest"
   ingressHost: et-pet-et3.{{ .Values.global.environment }}.platform.hmcts.net
   aadIdentityName: et-pet

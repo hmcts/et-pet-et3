@@ -3,8 +3,8 @@ base:
   replicas: 2
   useInterpodAntiAffinity: true
   applicationPort: 8080
-  memoryLimits: "3072Mi"
-  memoryRequests: "512Mi"
+  memoryLimits: "4096Mi"
+  memoryRequests: "800Mi"
   cpuLimits: "500m"
   cpuRequests: "250m"
   image: "hmctsprod.azurecr.io/et-pet/et3:latest"

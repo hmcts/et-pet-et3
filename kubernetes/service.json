@@ -5,7 +5,7 @@
     "base.image"
   ],
   "release": "et-local-et3",
-  "workload": "et3",
+  "workload": "et-local-et3-base",
   "hostPrefix": "et3",
   "domain": "k8s.orb.local",
   "ingressValues": [

@@ -17,7 +17,7 @@ This uses the existing `run.sh`, with `RAILS_ENV=production` and local
 `DOCKER_STATE=create`: create `et3_production`, migrate schema/data, seed, then
 start the existing Procfile web and Solid Queue processes together. Readiness
 checks the response start page at `/`. The API URL is the internal Service URL;
-Notify and SMTP use shared fake services and MailHog. HTTPS terminates at ingress.
+Notify and SMTP use shared fake services and Mailpit. HTTPS terminates at ingress.
 No application source or production chart values are changed.
 
 Admin connects to this database for its ET3 models, so ET3 database setup must

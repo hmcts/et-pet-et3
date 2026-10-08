@@ -1,4 +1,3 @@
 ---
 ignore:
-  # https://github.com/sidekiq/sidekiq/issues/6043, ignored till new 6.x version is released or Azure supports v7 of redis
   - GHSA-42qh-8mx8-7wqm

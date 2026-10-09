@@ -4,6 +4,11 @@ module SaveAndReturn
     skip_before_action :set_start_session_timer
     before_action :configure_permitted_parameters
 
+    def new
+      super
+      session[:reference] = @user.reference
+    end
+
     def create
       super
       deliver_access_details
@@ -24,7 +29,7 @@ module SaveAndReturn
     protected
 
     def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :reference])
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:email])
     end
 
     def translation_scope
@@ -36,7 +41,7 @@ module SaveAndReturn
     end
 
     def sign_up_params
-      params.require(:save_and_return).require(:user).permit(:email, :password, :reference).to_h.with_indifferent_access
+      params.require(:save_and_return).require(:user).permit(:email, :password).to_h.with_indifferent_access.merge(reference: session[:reference])
     end
   end
 end

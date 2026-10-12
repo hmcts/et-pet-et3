@@ -33,7 +33,9 @@ class ClaimantsDetail < BaseForm
   validates :claimants_name,
             persons_name: true,
             allow_blank: true
-  validates :agree_with_employment_dates, inclusion: { in: ['true', 'false', 'not_applicable'] }, allow_blank: true
+  validates :agree_with_employment_dates, inclusion: { in: ['true', 'false', 'not_applicable', '', nil] }
+  validates :continued_employment, inclusion: { in: ['true', 'false', 'not_applicable', '', nil] }
+  validates :agree_with_claimants_description_of_job_or_title, inclusion: { in: ['true', 'false', 'not_applicable', '', nil] }
   validates :employment_start, :employment_end,
             date: true, allow_blank: true,
             if: :disagree_with_employment_dates?

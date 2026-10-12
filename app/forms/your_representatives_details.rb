@@ -68,6 +68,8 @@ class YourRepresentativesDetails < BaseForm
   validates :representative_email,
             email_address: true,
             if: :prefer_email?
+  validates :representative_contact_preference, inclusion: { in: I18n.t('your_representatives_details.edit.representative_contact_preference.options').stringify_keys.keys + ['', nil] }
+  validates :allow_phone_or_video_attendance, array: { inclusion: { in: I18n.t('your_representatives_details.edit.allow_phone_or_video_attendance.options').stringify_keys.keys + ['', nil] }}, allow_nil: true
 
   def allow_phone_or_video_attendance=(value)
     write_attribute(:allow_phone_or_video_attendance, value&.reject(&:blank?))

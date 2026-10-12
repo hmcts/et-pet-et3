@@ -22,6 +22,17 @@ RSpec.describe ClaimantsDetail, type: :model do
       expect(populated_claimant_detail.errors.details[:claimants_name]).to include a_hash_including(error: :contains_numbers)
     end
 
+    it 'does not validate continued_employment when not in the list' do
+      populated_claimant_detail.continued_employment = 'not-in-the-list'
+      populated_claimant_detail.validate
+      expect(populated_claimant_detail.errors.where(:continued_employment, :inclusion)).to be_present
+    end
+
+    it 'does not validate agree_with_claimants_description_of_job_or_title when not in the list' do
+      populated_claimant_detail.agree_with_claimants_description_of_job_or_title = 'not-in-the-list'
+      populated_claimant_detail.validate
+      expect(populated_claimant_detail.errors.where(:agree_with_claimants_description_of_job_or_title, :inclusion)).to be_present
+    end
   end
 
   context 'when correctly populated' do

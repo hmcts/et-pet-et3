@@ -8,7 +8,8 @@ RSpec.describe RespondentsDetail, type: :model do
       town: 'westminster', county: 'greater london', postcode: 'wc1 1aa', address_country: 'united_kingdom',
       dx_number: '724060 Derby 21', contact_number: '0207 123 4567',
       mobile_number: '07123456789', contact_preference: 'email', email_address: 'john@dodgyco.com',
-      organisation_employ_gb: 100, organisation_more_than_one_site: true, employment_at_site_number: 20, allow_phone_or_video_attendance: ['video']
+      organisation_employ_gb: 100, organisation_more_than_one_site: true, employment_at_site_number: 20, allow_phone_or_video_attendance: ['video'],
+      type_of_employer: 'individual'
     )
   }
 
@@ -29,6 +30,12 @@ RSpec.describe RespondentsDetail, type: :model do
       populated_respondent_detail.valid?
 
       expect(populated_respondent_detail.errors.details[:email_address]).to include a_hash_including(error: :invalid_email)
+    end
+
+    it 'does not validate a contact_preference outside of the list' do
+      populated_respondent_detail.contact_preference = 'not-in-the-list'
+      populated_respondent_detail.validate
+      expect(populated_respondent_detail.errors.where(:contact_preference, :inclusion)).to be_present
     end
 
     it 'does not validate a name with numbers in' do
@@ -78,6 +85,30 @@ RSpec.describe RespondentsDetail, type: :model do
       populated_respondent_detail.valid?
 
       expect(populated_respondent_detail.errors.details[:organisation_employ_gb]).to include a_hash_including(error: :not_a_number)
+    end
+
+    it 'does not validate type_of_employer with a value outside of the list' do
+      populated_respondent_detail.type_of_employer = "not-in-the-list"
+      populated_respondent_detail.validate
+      expect(populated_respondent_detail.errors.where(:type_of_employer, :inclusion)).to be_present
+    end
+
+    it 'allows blank type_of_employer' do
+      populated_respondent_detail.type_of_employer = ""
+      populated_respondent_detail.validate
+      expect(populated_respondent_detail.errors.where(:type_of_employer)).not_to be_present
+    end
+
+    it 'does not validate allow_phone_or_video_attendance when value is outside of the list' do
+      populated_respondent_detail.allow_phone_or_video_attendance = ['not-in-the-list', 'another-one-not-in-the-list']
+      populated_respondent_detail.validate
+      expect(populated_respondent_detail.errors.where(:allow_phone_or_video_attendance, :inclusion)).to be_present
+    end
+
+    it 'allows blank allow_phone_or_video_attendance' do
+      populated_respondent_detail.allow_phone_or_video_attendance = ['']
+      populated_respondent_detail.validate
+      expect(populated_respondent_detail.errors.where(:allow_phone_or_video_attendance)).not_to be_present
     end
 
   end
@@ -146,6 +177,10 @@ RSpec.describe RespondentsDetail, type: :model do
 
     it 'returns the correct employment at site number' do
       expect(populated_respondent_detail.employment_at_site_number).to be 20
+    end
+
+    it 'returns the type_of_employer' do
+      expect(populated_respondent_detail.type_of_employer).to eql 'individual'
     end
   end
 

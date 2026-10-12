@@ -18,6 +18,7 @@ class Disability < BaseForm
             },
             presence: true,
             if: :disabled?
+  validates :disability, inclusion: { in: ['true', 'false', 'not_applicable', '', nil] }
 
   private
 

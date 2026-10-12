@@ -19,6 +19,12 @@ RSpec.describe Disability, type: :model do
 
       expect(populated_disability.errors.details[:disability_information]).to include a_hash_including(error: :too_long)
     end
+
+    it 'does not validate disability when not in the list' do
+      populated_disability.disability = 'not-in-the-list'
+      populated_disability.validate
+      expect(populated_disability.errors.where(:disability, :inclusion)).to be_present
+    end
   end
 
   context 'when correctly populated' do

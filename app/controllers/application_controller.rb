@@ -25,6 +25,7 @@ class ApplicationController < ActionController::Base
 
   def clear_session_data
     current_store.hash_store = {}
+    session.delete(:reference)
   end
 
   def start_session_timer?

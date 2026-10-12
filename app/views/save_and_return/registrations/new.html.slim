@@ -25,6 +25,5 @@
             = link_to t('.print_link'), '#', class: 'print-page govuk-link', data: { controller: 'print-page', action: 'click->print-page#click' }
             = '&nbsp;'.html_safe
             = t('.print_copy')
-          = f.hidden_field :reference
           .form-actions
           = f.submit(t('components.common.save_and_continue_button'))

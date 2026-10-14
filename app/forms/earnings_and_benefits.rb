@@ -52,6 +52,12 @@ class EarningsAndBenefits < BaseForm
               maximum: 350
             },
             if: :disagree_claimants_pension_benefits?
+  validates :agree_with_claimants_hours, inclusion: { in: ['true', 'false', 'not_applicable', '', nil] }
+  validates :agree_with_earnings_details, inclusion: { in: ['true', 'false', 'not_applicable', '', nil] }
+  validates :agree_with_claimant_notice, inclusion: { in: ['true', 'false', 'not_applicable', '', nil] }
+  validates :agree_with_claimant_pension_benefits, inclusion: { in: ['true', 'false', 'not_applicable', '', nil] }
+  validates :queried_pay_before_tax_period, inclusion: { in: I18n.t('earnings_and_benefits.edit.queried_pay_before_tax_period.options').stringify_keys.keys + ['', nil] }
+  validates :queried_take_home_pay_period, inclusion: { in: I18n.t('earnings_and_benefits.edit.queried_take_home_pay_period.options').stringify_keys.keys + ['', nil] }
 
   private
 

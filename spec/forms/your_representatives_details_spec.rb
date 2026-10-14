@@ -55,6 +55,18 @@ RSpec.describe YourRepresentativesDetails, type: :model do
 
       expect(populated_your_representatives_details.errors.details[:representative_email]).to include a_hash_including(error: :invalid_email)
     end
+
+    it 'does not validate representative_contact_preference when not in the list' do
+      populated_your_representatives_details.representative_contact_preference = 'not-in-the-list'
+      populated_your_representatives_details.validate
+      expect(populated_your_representatives_details.errors.where(:representative_contact_preference, :inclusion)).to be_present
+    end
+
+    it 'does not validate allow_phone_or_video_attendance when not in the list' do
+      populated_your_representatives_details.allow_phone_or_video_attendance = ['not-in-the-list', 'another-not-in-the-list']
+      populated_your_representatives_details.validate
+      expect(populated_your_representatives_details.errors.where(:allow_phone_or_video_attendance, :inclusion)).to be_present
+    end
   end
 
   context 'when correctly populated' do

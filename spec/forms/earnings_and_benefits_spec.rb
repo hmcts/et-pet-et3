@@ -8,9 +8,9 @@ RSpec.describe EarningsAndBenefits, type: :model do
       queried_hours: 20.5,
       agree_with_earnings_details: 'false',
       queried_pay_before_tax: '£12,345.67',
-      queried_pay_before_tax_period: 'weekly',
+      queried_pay_before_tax_period: 'Weekly',
       queried_take_home_pay: '  15000  ',
-      queried_take_home_pay_period: 'weekly',
+      queried_take_home_pay_period: 'Weekly',
       agree_with_claimant_notice: 'false',
       disagree_claimant_notice_reason: 'lorem ipsum notice',
       agree_with_claimant_pension_benefits: 'false',
@@ -70,6 +70,42 @@ RSpec.describe EarningsAndBenefits, type: :model do
 
       expect(populated_earnings_and_benefits.errors.details[:disagree_claimant_pension_benefits_reason]).to include a_hash_including(error: :too_long)
     end
+
+    it 'does not validate agree_with_claimants_hours when not in the list' do
+      populated_earnings_and_benefits.agree_with_claimants_hours = 'not-in-the-list'
+      populated_earnings_and_benefits.validate
+      expect(populated_earnings_and_benefits.errors.where(:agree_with_claimants_hours, :inclusion)).to be_present
+    end
+
+    it 'does not validate agree_with_earnings_details when not in the list' do
+      populated_earnings_and_benefits.agree_with_earnings_details = 'not-in-the-list'
+      populated_earnings_and_benefits.validate
+      expect(populated_earnings_and_benefits.errors.where(:agree_with_earnings_details, :inclusion)).to be_present
+    end
+
+    it 'does not validate queried_pay_before_tax_period when not in the list' do
+      populated_earnings_and_benefits.queried_pay_before_tax_period = 'not-in-the-list'
+      populated_earnings_and_benefits.validate
+      expect(populated_earnings_and_benefits.errors.where(:queried_pay_before_tax_period, :inclusion)).to be_present
+    end
+
+    it 'does not validate queried_take_home_pay_period when not in the list' do
+      populated_earnings_and_benefits.queried_take_home_pay_period = 'not-in-the-list'
+      populated_earnings_and_benefits.validate
+      expect(populated_earnings_and_benefits.errors.where(:queried_take_home_pay_period, :inclusion)).to be_present
+    end
+
+    it 'does not validate agree_with_claimant_notice when not in the list' do
+      populated_earnings_and_benefits.agree_with_claimant_notice = 'not-in-the-list'
+      populated_earnings_and_benefits.validate
+      expect(populated_earnings_and_benefits.errors.where(:agree_with_claimant_notice, :inclusion)).to be_present
+    end
+
+    it 'does not validate agree_with_claimant_pension_benefits when not in the list' do
+      populated_earnings_and_benefits.agree_with_claimant_pension_benefits = 'not-in-the-list'
+      populated_earnings_and_benefits.validate
+      expect(populated_earnings_and_benefits.errors.where(:agree_with_claimant_pension_benefits, :inclusion)).to be_present
+    end
   end
 
   context 'when correctly populated' do
@@ -91,7 +127,7 @@ RSpec.describe EarningsAndBenefits, type: :model do
     end
 
     it 'returns the correct queried_pay_before_tax_period' do
-      expect(populated_earnings_and_benefits.queried_pay_before_tax_period).to eql 'weekly'
+      expect(populated_earnings_and_benefits.queried_pay_before_tax_period).to eql 'Weekly'
     end
 
     it 'returns the correct queried_take_home_pay' do
@@ -99,7 +135,7 @@ RSpec.describe EarningsAndBenefits, type: :model do
     end
 
     it 'returns the correct queried_take_home_pay_period' do
-      expect(populated_earnings_and_benefits.queried_take_home_pay_period).to eql 'weekly'
+      expect(populated_earnings_and_benefits.queried_take_home_pay_period).to eql 'Weekly'
     end
 
     it 'returns the correct claimant_notice' do
@@ -141,7 +177,7 @@ RSpec.describe EarningsAndBenefits, type: :model do
     end
 
     it 'returns the queried_pay_before_tax_period key and value pair' do
-      expect(populated_earnings_and_benefits.to_h).to include(queried_pay_before_tax_period: 'weekly')
+      expect(populated_earnings_and_benefits.to_h).to include(queried_pay_before_tax_period: 'Weekly')
     end
 
     it 'returns the queried_take_home_pay key and value pair' do
@@ -149,7 +185,7 @@ RSpec.describe EarningsAndBenefits, type: :model do
     end
 
     it 'returns the queried_take_home_pay_period key and value pair' do
-      expect(populated_earnings_and_benefits.to_h).to include(queried_take_home_pay_period: 'weekly')
+      expect(populated_earnings_and_benefits.to_h).to include(queried_take_home_pay_period: 'Weekly')
     end
 
     it 'returns the agree_with_claimant_notice key and value pair' do

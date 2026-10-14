@@ -1,5 +1,4 @@
 class RespondentsDetail < BaseForm
-  COUNTRIES                = ['united_kingdom', 'other'].freeze
   attribute :case_number, :string
   attribute :name, :string
   attribute :company_number, :string
@@ -69,9 +68,12 @@ class RespondentsDetail < BaseForm
   validates :organisation_employ_gb,
             numericality: true,
             allow_blank: true
-  validates :organisation_more_than_one_site, inclusion: { in: [true, false] }, allow_blank: true
+  validates :organisation_more_than_one_site, inclusion: { in: [true, false, '', nil] }
   validates :employment_at_site_number, numericality: true, if: :more_than_one_site?
-  validates :address_country, presence: true, inclusion: { in: COUNTRIES }
+  validates :address_country, presence: true, inclusion: { in: I18n.t('respondents_details.edit.address_country.options').stringify_keys.keys + ['', nil] }
+  validates :type_of_employer, inclusion: { in: I18n.t('respondents_details.edit.type_of_employer.options').stringify_keys.keys + ['', nil]}
+  validates :contact_preference, inclusion: { in: I18n.t('respondents_details.edit.contact_preference.options').stringify_keys.keys + ['', nil] }
+  validates :allow_phone_or_video_attendance, array: { inclusion: { in: I18n.t('respondents_details.edit.allow_phone_or_video_attendance.options').stringify_keys.keys + ['', nil] } }, allow_nil: true
 
   def allow_phone_or_video_attendance=(value)
     write_attribute(:allow_phone_or_video_attendance, value&.reject(&:blank?))

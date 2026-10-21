@@ -5,7 +5,7 @@ class SubmitToApiJob < ApplicationJob
 
   def perform(current_store)
     Rails.logger.info "Submitting to API in background"
-    current_store.api_response = EtApiHandler.submit(current_store.hash_store)
+    current_store.api_response = EtApiHandler.submit(current_store.hash_store).response
     current_store.save!
   end
 

@@ -1,5 +1,11 @@
 class ConfirmationOfSuppliedDetailsController < ApplicationController
   rescue_from EtApiHandler::SubmitError, with: :handle_api_error
+  PAGE_MAPPINGS = {
+    respondents_detail_answers: :respondents_details_path,
+    claimants_detail_answers: :claimants_details_path,
+    employer_contract_claim_answers: :employers_contract_claim_path,
+  }.with_indifferent_access.freeze
+
   def edit
     @confirmation_of_supplied_details = ConfirmationOfSuppliedDetails.new
     @hash_store = current_store.hash_store
@@ -10,8 +16,19 @@ class ConfirmationOfSuppliedDetailsController < ApplicationController
     if @confirmation_of_supplied_details.valid?
       current_store.hash_store[:confirmation_of_supplied_details_answers] = @confirmation_of_supplied_details.to_h
       current_store.save
-      current_store.api_response = EtApiHandler.submit(current_store.hash_store)
-      redirect_to form_submission_path
+      result = EtApiHandler.submit(current_store.hash_store)
+      if result.valid?
+        current_store.api_response = result.response
+        redirect_to form_submission_path
+      else
+        page = result.errors.first.attribute.to_s.split('/').first
+        route = map_error_source_to_route(page)
+        if respond_to?(route)
+          redirect_to send(route)
+        else
+          redirect_to confirmation_of_supplied_details_path
+        end
+      end
     else
       @hash_store = current_store.hash_store
       render :edit
@@ -36,5 +53,13 @@ class ConfirmationOfSuppliedDetailsController < ApplicationController
   def handle_api_error(exception)
     SubmitToApiJob.new(current_store).enqueue(wait: 30.seconds)
     redirect_to form_submission_in_progress_path
+  end
+
+  def map_error_source_to_route(source)
+    if PAGE_MAPPINGS.key?(source)
+      PAGE_MAPPINGS[source]
+    else
+      :"#{source.gsub(/_answers\z/, '')}_path"
+    end
   end
 end

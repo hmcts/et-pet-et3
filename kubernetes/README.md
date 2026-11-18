@@ -13,10 +13,15 @@ Open <https://et3.k8s.orb.local/>. The default context is `orbstack`; override
 `--context`, `--docker-context`, `--domain` and `--https-port` as for ET1.
 Use `up --build` to build this checkout rather than use a cached image.
 
-This uses the existing `run.sh`, with `RAILS_ENV=production` and local
-`DOCKER_STATE=create`: create `et3_production`, migrate schema/data, seed, then
-start the existing Procfile web and Solid Queue processes together. Readiness
-checks the response start page at `/`. The API URL is the internal Service URL;
+Every `up` first runs the `et-local-et3-db-bootstrap` Job using the rendered web
+Deployment's image and configuration. It creates the databases, runs schema/data
+migrations and seeds. Setup stops on failure, and Helm deploys only after the Job
+succeeds. This requires the parent deployment script's `bootstrapDatabase` support.
+
+The existing `run.sh` then runs with `RAILS_ENV=production` and
+`DOCKER_STATE=migrate`, matching production, and starts the existing Procfile web
+and Solid Queue processes together. Readiness checks the response start page at
+`/`. The API URL is the internal Service URL;
 Notify and SMTP use shared fake services and Mailpit. HTTPS terminates at ingress.
 No application source or production chart values are changed.
 
